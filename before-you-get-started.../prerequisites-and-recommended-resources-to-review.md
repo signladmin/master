@@ -1,12 +1,6 @@
----
-description: Got to start some where....
----
-
-# Prerequisites and Resources to Review
+# Stake Pool Operators Checklist
 
 #### 
-
-![](../.gitbook/assets/download-6-.jpeg)
 
 #### Let's make sure we understand the true requirements for becoming a Cardano stake pool operator before we really dive into the weeds on how to operate a stake pool with Raspberry Pis. Follow this list of great educational content and report back once you have checked off all requirements to begin the tutorials.....😁 
 

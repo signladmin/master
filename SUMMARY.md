@@ -1,10 +1,10 @@
 # Table of contents
 
-* [Prerequisites and recommended resources to review](README.md)
+* [Where do I start!? 😳](README.md)
 
-## Before You Get Started...
+## What is required <a id="before-you-get-started..."></a>
 
-* [Prerequisites and Resources to Review](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
+* [Stake Pool Operators Checklist](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
 * [Hardware](before-you-get-started.../hardware.md)
 
 ## Beginner Guide <a id="beginner-guide-1"></a>
