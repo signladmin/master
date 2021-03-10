@@ -1,6 +1,13 @@
-### Under Construction!!
+# Prerequisites and recommended resources to review
 
-##### Currentl we have put all the tutorials on gitbook.io, we will be using this Github to link to the gitbook.io.
 
-##### After, I get the gitbook and Github merged we will fix this GitHub and add the content we put on gitbook. We apologize and will have this updated by 3/17/21.
+
+Let us make sure we understand the true requirements for becoming a Cardano stake pool operator before we really dive into the weeds on how to operate a stake pool with Raspberry Pis. 
+
+Follow this list of great educational content and report back once you have checked off all requirements to begin the tutorials.....😁 
+
+* [ ] * [ ] Coincashew: [https://www.coincashew.com/coins/overview-ada/guide-how-to-build-a-haskell-stakepool-node\#infinity-pre-announcements](https://www.coincashew.com/coins/overview-ada/guide-how-to-build-a-haskell-stakepool-node#infinity-pre-announcements)
+* [ ] Official Cardano Foundation Stake Pool Course: [https://cardano-foundation.gitbook.io/stake-pool-course/](https://cardano-foundation.gitbook.io/stake-pool-course/)
+
+
 
