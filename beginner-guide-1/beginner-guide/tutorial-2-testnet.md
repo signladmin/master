@@ -4,7 +4,7 @@ description: >-
   getting our Raspberry Pis onto the Cardano stake pool testnet.
 ---
 
-# Connect to Testnet
+# Connect to Testnet\(Work-inProgress\)
 
 ## Summary 
 

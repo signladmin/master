@@ -11,6 +11,6 @@
 
 * [Tutorials](beginner-guide-1/beginner-guide/README.md)
   * [Setting up the Raspberry Pis](beginner-guide-1/beginner-guide/untitled.md)
-  * [Connect to Testnet](beginner-guide-1/beginner-guide/tutorial-2-testnet.md)
+  * [Connect to Testnet\(Work-inProgress\)](beginner-guide-1/beginner-guide/tutorial-2-testnet.md)
   * [Citations/References](beginner-guide-1/beginner-guide/citations-references.md)
 

@@ -23,7 +23,11 @@ DON’T SKIP STEPS 😁
 
 ### Procedure <a id="h.lpv6ciisjqp3"></a>
 
-1. Download the Debian “buster” Raspberry Pi 64bit OS image right -&gt; [here](https://www.google.com/url?q=http://2020-08-20-raspios-buster-arm64.zip&sa=D&source=editors&ust=1615385045082000&usg=AOvVaw0SZJlYCsxvsiRy_vHlNh6A) and save it in an accessible location for now like your Desktop.
+Using your main  PC or Mac
+
+1. Download the Debian “buster” Raspberry Pi 64bit OS image right -&gt;  and save it in an accessible location for now like your Desktop.
+2. Download the raspberry pi imager software that we will use to get the OS onto our Pi's
+3. Insert your SSD external drive into your PC 
 
 Please, if you choose another flavor of Linux OS make sure it is NOT a 32-bit version.
 
