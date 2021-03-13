@@ -8,8 +8,13 @@ description: >-
 
 ## Summary 
 
-1. 2. Connecting relay to testnet
-3. 
+1. Downloading Docker
+2. Downloading the docker neussio/cardano image.
+3. Connecting relay to testnet
+4. Monitor Relay Node
+
+
+
 ## Getting Super Powers
 
 Becoming a super hero is a fairly straight forward process:
