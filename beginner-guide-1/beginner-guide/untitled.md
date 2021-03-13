@@ -6,26 +6,25 @@ description: In this tutorial we will get our Raspberry Pis prepared to
 
 ## Summary <a id="h.vrhvb96nxxe9"></a>
 
-1. Download your choice of Operating system \(OS\). For this tutorial, we will be using Debian “buster”.
-2. Downloading RPi Imager
-3. Insert SSD Flash EEPROM with OS
-4. Remove SSD \(if we want to go headless need to create an empty file in either system-boot or boot partition on SSD\)
-5. Downloading Docker
-6. Downloading the docker neussio/cardano image.
+1. Download an Operating system \(OS\). For this tutorial, we will be using the Raspberry Pi organization's Debian “buster” image.
+2. Install Raspberry Pi OS using Raspberry Pi Imager 
+3. Flash the OS onto the SD card
+4. Downloading Docker
+5. Downloading the docker neussio/cardano image.
 
 * Time Allotment: 1 hr
 
-## Implementation <a id="h.fnjk6vnqzbqk"></a>
+##  <a id="h.fnjk6vnqzbqk"></a>
 
 ### Installing Debian “buster” OS <a id="h.iwerjkqkfkua"></a>
 
 DON’T SKIP STEPS 😁
 
-### Procedure <a id="h.lpv6ciisjqp3"></a>
+### 1.  <a id="h.lpv6ciisjqp3"></a>
 
 Using your main  PC or Mac
 
-1. Download the Debian “buster” Raspberry Pi 64bit OS image right -&gt;  and save it in an accessible location for now like your Desktop.
+1. Download the Debian “buster” Raspberry Pi 64bit OS image right -&gt; here and save it in an accessible location for now like your Desktop.
 2. Download the raspberry pi imager software that we will use to get the OS onto our Pi's
 3. Insert your SSD external drive into your PC 
 

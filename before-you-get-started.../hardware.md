@@ -4,7 +4,7 @@ description: >-
   pool
 ---
 
-# Hardware
+# Hardware-Checklist
 
 <table>
   <thead>
@@ -22,10 +22,7 @@ description: >-
       <td style="text-align:left">$75-$88.50</td>
       <td style="text-align:left">2-3</td>
       <td style="text-align:left">YES</td>
-      <td style="text-align:left">
-        <p><a href="https://www.amazon.com/Raspberry-Pi-Computer-Suitable-Workstation/dp/B0899VXM8F/ref=sr_1_2?dchild=1&amp;keywords=Raspberry+Pi+4+Computer+Model+B+8GB+Single+Board+Computer&amp;qid=1615236479&amp;s=electronics&amp;sr=1-2">Amazon</a>
-        </p>
-        <p>Newark</p>
+      <td style="text-align:left"><a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi Approved Resellers </a>
       </td>
     </tr>
     <tr>
@@ -78,6 +75,21 @@ description: >-
           <p></p>
           <p></p>
         </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Micro HDMI to Standard HDMI</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">1</td>
+      <td style="text-align:left">YES</td>
+      <td style="text-align:left"><a href="https://www.raspberrypi.org/products/micro-hdmi-to-standard-hdmi-a-cable/">Raspberry Pi Approved Resellers</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
     </tr>
   </tbody>
 </table>

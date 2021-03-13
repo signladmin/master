@@ -4,15 +4,12 @@ description: >-
   getting our Raspberry Pis onto the Cardano stake pool testnet.
 ---
 
-# Connect to Testnet\(Work-inProgress\)
+# Connect a Relay Node to theTestnet\(Work-inProgress\)
 
 ## Summary 
 
 1. 2. Connecting relay to testnet
-3. 4. Connecting block producer to testnet
-
-
-
+3. 
 ## Getting Super Powers
 
 Becoming a super hero is a fairly straight forward process:
