@@ -15,7 +15,8 @@ description: >-
 | Micro SD Card | 1 |
 | External Solid State Drive  | 2 |
 | USB 3.0 to SATA III adapter | 2 |
-|  |  |
+| Ethernet Cable \(CAT6\) | 2 |
+| Network Router for ethernet connection | 1 |
 
 
 
