@@ -1,10 +1,12 @@
 ---
 description: >-
   This is the current list of hardware needed to build the Raspberry Pi stake
-  pool
+  pool (Not including your own Laptop or Computer)
 ---
 
 # Hardware-Checklist
+
+![](../.gitbook/assets/photo_2021-03-09-13.42.42.jpeg)
 
 <table>
   <thead>
@@ -78,7 +80,7 @@ description: >-
     </tr>
     <tr>
       <td style="text-align:left">Micro HDMI to Standard HDMI</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">$6.95</td>
       <td style="text-align:left">1</td>
       <td style="text-align:left">YES</td>
       <td style="text-align:left"><a href="https://www.raspberrypi.org/products/micro-hdmi-to-standard-hdmi-a-cable/">Raspberry Pi Approved Resellers</a>

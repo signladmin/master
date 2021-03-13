@@ -8,13 +8,13 @@ description: >-
 
 ### What you'll need for these lessons
 
-| Item   | Quantity |
+| Required Item   | Quantity |
 | :--- | :--- |
 | Laptop or Desktop Computer | 1 |
 | Raspberry Pi 4 Model B 8GB RAM | 2 |
 | Micro SD Card | 1 |
-| External SSD Hard | 2 |
-|  |  |
+| External Solid State Drive  | 2 |
+| USB 3.0 to SATA III adapter | 2 |
 |  |  |
 
 
