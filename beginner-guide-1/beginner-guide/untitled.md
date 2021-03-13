@@ -18,18 +18,22 @@ description: In this tutorial we will get our Raspberry Pis prepared to
 
 ### DON’T SKIP STEPS 😁
 
-###  Installing the Raspberry Pi Debian "buster" OS <a id="h.lpv6ciisjqp3"></a>
+###  Installing the Raspberry Pi Debian "buster" OS on to the SD CARD <a id="h.lpv6ciisjqp3"></a>
 
 We are going to now download the latest official release of Raspberry Pi 64bit Debian OS. This is the official Linux 64bit OS distribution that is designed for the Raspberry Pi and its arm64 CPU. This makes it stable and very easy to get started with the Raspberry Pi 
 
-1.  **Download the Debian “buster” Raspberry Pi 64bit OS image right -&gt;** [**here**](https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2020-08-24/2020-08-20-raspios-buster-arm64.zip) **and save it in an accessible location for now on your computer.**
-2. **Next, download the raspberry pi imager software that we will use in order to install the OS onto our  Raspberry Pi. This software is located on the** [**Raspberry Pi website**](https://www.raspberrypi.org/software/) **download the correct version for**
+**1. Download the Debian “buster” Raspberry Pi 64bit OS image right -&gt;** [**here**](https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2020-08-24/2020-08-20-raspios-buster-arm64.zip) **and save it in an accessible location for now on your computer.**  
 
-    **your computer.** 
+
+**2. Next, download the raspberry pi imager software that we will use in order to install the OS onto our  Raspberry Pi. This software is located on the** [**Raspberry Pi website**](https://www.raspberrypi.org/software/) **download the correct version for your computer.** 
 
 ![](../../.gitbook/assets/screen-shot-2021-03-12-at-5.36.30-pm.png)
 
-1. **Insert your SSD external drive into your PC** 
+ **3. Insert the SD card into your computer and open the "Raspberry Pi imager".**
+
+*  **Click on "CHOOSE OS"  then find the "2020-08-20-raspios-buster-arm64.zip" file you have downloaded in step \(1\) of this tutorial and select it.**
+* **Next, click on the "CHOOSE SD" and find the SD card you inserted in the computer**
+* **Finally, the "WRITE" button will appear and you can click on it to begin writing the OS to the SD card.** 
 
 Please, if you choose another flavor of Linux OS make sure it is NOT a 32-bit version.
 
@@ -44,6 +48,4 @@ Please, if you choose another flavor of Linux OS make sure it is NOT a 32-bit ve
 ##  <a id="h.6modoe1jkazy"></a>
 
 ##  <a id="h.lkmer6snv52n"></a>
-
-![](../../.gitbook/assets/image2.png)
 
