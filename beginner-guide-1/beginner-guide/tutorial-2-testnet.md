@@ -8,10 +8,9 @@ description: >-
 
 ## Summary 
 
-1. Downloading Docker
-2. Downloading the docker neussio/cardano image.
-3. Connecting relay to testnet
-4. Monitor Relay Node
+1. Downloading the docker neussio/cardano image.
+2. Connecting relay to testnet
+3. Monitor Relay Node
 
 
 
