@@ -21,7 +21,9 @@ description: In this tutorial we will get our Raspberry Pis prepared to
 ### DON’T SKIP STEPS 😁
 {% endhint %}
 
-###  Installing the Raspberry Pi Debian "buster" OS on to the SD CARD <a id="h.lpv6ciisjqp3"></a>
+### _**Part One:**_
+
+###  🍓Installing the Raspberry Pi Debian "buster" OS on to the SD CARD 🥧 <a id="h.lpv6ciisjqp3"></a>
 
 We are going to now download the latest official release of Raspberry Pi 64bit Debian OS. This is the official Linux 64bit OS distribution that is designed for the Raspberry Pi and its arm64 CPU. This makes it stable and very easy to get started with the Raspberry Pi 
 
@@ -37,16 +39,25 @@ We are going to now download the latest official release of Raspberry Pi 64bit D
 *  **Click on "CHOOSE OS"  then find the "2020-08-20-raspios-buster-arm64.zip" file you have downloaded in step \(1\) of this tutorial and select it.** 
 * **Next, click on the "CHOOSE SD" and find the SD card you inserted into the computer** 
 * **Now, the "WRITE" button will appear and you can click on it to begin writing/verifying the OS onto the SD card.**  
-* **Finally, once it has finished the writing/verifying process, you will see a pop-up window saying that the OS was succesfully written to the SD card, click "CONTINUE" and remove your SD card from the computer.**
-*  ****
+* **Finally, once it has finished the writing/verifying process, you will see a pop-up window saying that the OS was succesfully written to the SD card, click "CONTINUE" and remove your SD card from the computer.** 
 
 {% hint style="info" %}
 #### **If you still have issues following the written instructions** [**here**](https://www.youtube.com/watch?v=J024soVgEeM) **is a short video of this process 😎**
 {% endhint %}
 
+### Part 2:
+
+### Setting Up the Raspberry Pi for USB-Boot and SSH \(headless\) login
+
+The first thing that we want to do is get the Raspberry Pi booted up to the RaspiOS desktop screen.
+
+To do this we will need to plug hte  
 
 
 
+
+
+### 
 
 
 

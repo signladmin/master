@@ -10,6 +10,7 @@ description: >-
 
 | Required Item   | Quantity |  |
 | :--- | :--- | :--- |
+| TV or Monitor with an HDMI input | 1 |  |
 | Laptop or Desktop Computer \(macOS, Linux PC, Windows PC\) | 1 |  |
 | Raspberry Pi 4 Model B 8GB RAM | 2 |  |
 | Micro SD Card | 1 |  |
