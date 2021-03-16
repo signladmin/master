@@ -49,9 +49,9 @@ We are going to now download the latest official release of Raspberry Pi 64bit D
 
 ### Setting Up the Raspberry Pi for USB-Boot and SSH \(headless\) login
 
-The first thing that we want to do is get the Raspberry Pi booted up to the RaspiOS desktop screen.
+The first thing that we want to do is get the Raspberry Pi booted up to the RaspiOS desktop screen. To do this we will need to plug the mini HDMI to HDMI cable into the Raspberry Pi 4 \(make sure to plug into the mini HDMI port nearest to the USB-C power supply port on the RPi4\). Then we need to insert the SD Card into the slot on the bottom of the Raspberry Pi, then we should plugin our keyboard and mouse into the Pi. Lastly, we can now plug in our USB-C Raspberry Pi 4 power adapter into the Pi and it will begin to boot up.
 
-To do this we will need to plug hte  
+
 
 
 
