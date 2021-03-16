@@ -11,9 +11,9 @@ description: >-
 | Author/Contributor | Link to their GitHub/Work |
 | :--- | :--- |
 | Thomas Diesler, Alex Sarco | [https://github.com/tdiesler/nessus-cardano](https://github.com/tdiesler/nessus-cardano) |
-| Berry Pool |  |
-| NASEC Pool |  |
-| CoinCashew |  |
+| Berry Pool | [https://pipool.online/](https://pipool.online/) |
+| NASEC Pool | [https://nasec.co.uk/](https://nasec.co.uk/) |
+| Cardano-node-Documentaion | [https://docs.cardano.org/projects/cardano-node/en/latest/index.html](https://docs.cardano.org/projects/cardano-node/en/latest/index.html) |
 |  |  |
 |  |  |
 

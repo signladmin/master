@@ -8,9 +8,11 @@ description: >-
 
 ## Summary 
 
-1. Downloading the docker neussio/cardano image.
-2. Connecting relay to testnet
-3. Monitor Relay Node
+1. Downloading the Binaries needed to build Cardano node
+2. Download Configuration files from IOHK/Cardano-node
+3. Edit the settings like Alessandro showed how
+4. Run the basic passive relay node to connect to testnet
+5. Monitor Relay Node
 
 
 
