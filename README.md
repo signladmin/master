@@ -1,8 +1,8 @@
 # Home Page
 
-## I want to become a Raspberry Pi Stake Pool Operator on Cardano...
+## You want to become a Raspberry Pi Stake Pool Operator on Cardano...
 
-##                                              But, where do I start!? 😳
+##                                              But, where should you start!? 😳
 
 ![](.gitbook/assets/download-6-.jpeg)
 
