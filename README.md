@@ -1,4 +1,7 @@
-# Where do I start!? 😳
+# Home Page
+
+## I want to become a Raspberry Pi Stake Pool Operator on Cardano...
+## Where do I start!? 😳
 
 ![](.gitbook/assets/download-6-.jpeg)
 
