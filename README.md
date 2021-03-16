@@ -1,11 +1,12 @@
 # Home Page
 
 ## I want to become a Raspberry Pi Stake Pool Operator on Cardano...
-## Where do I start!? 😳
+
+##                                              But, where do I start!? 😳
 
 ![](.gitbook/assets/download-6-.jpeg)
 
-### Welcome to our ADA.Pi tutorial section, we are here to help future and or current Raspberry Pi Stake Pool Operators by providing our free educational resources to anyone. 
 
 
+### Welcome to ADA.Pi's tutorial section, we are here to help the future and or current Raspberry Pi Stake Pool Operators by providing our free educational resources to all. If you would like to know more about the ADA.Pi organization please head on over to our website...\(insert url\)
 

@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Where do I start!? 😳](README.md)
+* [Home Page](README.md)
 
 ## What is required <a id="before-you-get-started..."></a>
 
