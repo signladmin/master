@@ -15,7 +15,7 @@
 
 ## Intermediate Guide
 
-* [Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
+* [\[OTG\] Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
   * [Part I : Download & Flash image](intermediate-guide/pi-pool-tutorial/part-i-download-and-flash-image.md)
   * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-4.md)
   * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-3.md)

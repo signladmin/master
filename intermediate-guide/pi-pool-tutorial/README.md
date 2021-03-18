@@ -1,8 +1,8 @@
-# Pi-Pool Tutorial
+# \[OTG\] Pi-Pool Tutorial
 
 ### Contributor/Credits:
 
-_**We would like to thank**_ ✨_**Star Forge Stake Pool**_ ✨_**for providing this guide and tutorial, please use the following links below to either contact or delegate to Star Forge Pool**_  **❤️**
+_**We would like to thank**_ ✨_**Star Forge Stake Pool**_ ✨_**for providing this guide and tutorial, please use the following links below to either contact or delegate to Star Forge Pool**_ **❤️**_**\(Ticker symbol: \[OTG\] \)**_
 
 |  |  |
 | :--- | :--- |
