@@ -20,6 +20,6 @@
   * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-4.md)
   * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-3.md)
   * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-2.md)
-  * [Untitled](intermediate-guide/pi-pool-tutorial/untitled-1.md)
-  * [Untitled](intermediate-guide/pi-pool-tutorial/untitled.md)
+  * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-1.md)
+  * [Create .img file](intermediate-guide/pi-pool-tutorial/untitled.md)
 
