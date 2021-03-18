@@ -1,10 +1,8 @@
-# wcatz/pi-pool
+# Part 3: User Setup
 
 | description |
 | :--- |
 | Create the ada user, add to group sudo |
-
-## User Setup
 
 {% hint style="warning" %} If you are using a Pi Pool image you need only reference this material until we start configuring the server. You should however change the default password for ada. {% endhint %}
 

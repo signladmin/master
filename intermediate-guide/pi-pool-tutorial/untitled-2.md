@@ -1,4 +1,6 @@
-# wcatz/pi-pool
+# Part 4: Server Setup
+
+
 
 | description |
 | :--- |

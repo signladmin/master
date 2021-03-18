@@ -1,4 +1,4 @@
-# wcatz/pi-pool
+# Part 5: Environment Setup
 
 | description |
 | :--- |
