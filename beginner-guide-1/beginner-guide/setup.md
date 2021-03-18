@@ -1,5 +1,5 @@
 ---
-description: In this tutorial we will get our Raspberry Pis prepared to
+description: In this tutorial we walk through basic Raspberry Pi and Linux Set Up
 ---
 
 # Setting up the Raspberry Pi
@@ -39,7 +39,7 @@ We are going to now download the latest official release of Raspberry Pi 64bit D
 *  **Click on "CHOOSE OS"  then find the "2020-08-20-raspios-buster-arm64.zip" file you have downloaded in step \(1\) of this tutorial and select it.** 
 * **Next, click on the "CHOOSE SD" and find the SD card you inserted into the computer** 
 * **Now, the "WRITE" button will appear and you can click on it to begin writing/verifying the OS onto the SD card.**  
-* **Finally, once it has finished the writing/verifying process, you will see a pop-up window saying that the OS was succesfully written to the SD card, click "CONTINUE" and remove your SD card from the computer.** 
+* **Finally, once it has finished the writing/verifying process, you will see a pop-up window saying that the OS was successfully written to the SD card, click "CONTINUE" and remove your SD card from the computer.** 
 
 {% hint style="info" %}
 #### **If you still have issues following the written instructions** [**here**](https://www.youtube.com/watch?v=J024soVgEeM) **is a short video of this process 😎**

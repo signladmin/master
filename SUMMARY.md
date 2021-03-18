@@ -10,12 +10,16 @@
 ## Beginner Guide <a id="beginner-guide-1"></a>
 
 * [Tutorials](beginner-guide-1/beginner-guide/README.md)
-  * [Citations/References](beginner-guide-1/beginner-guide/citations-references.md)
   * [Setting up the Raspberry Pi](beginner-guide-1/beginner-guide/setup.md)
   * [Connect a Relay Node to theTestnet\(Work-inProgress\)](beginner-guide-1/beginner-guide/tutorial-2-testnet.md)
 
 ## Intermediate Guide
 
 * [Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
+  * [Part I : Download & Flash image](intermediate-guide/pi-pool-tutorial/part-i-download-and-flash-image.md)
+  * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-4.md)
+  * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-3.md)
+  * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-2.md)
+  * [Untitled](intermediate-guide/pi-pool-tutorial/untitled-1.md)
   * [Untitled](intermediate-guide/pi-pool-tutorial/untitled.md)
 
