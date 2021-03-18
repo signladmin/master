@@ -1,4 +1,4 @@
-# Stake Pool Operators Checklist
+# Stake Pool Operator Resources
 
 #### 
 

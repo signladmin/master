@@ -1,10 +1,10 @@
 ---
 description: >-
-  This is the current list of hardware needed to build the Raspberry Pi stake
-  pool (Not including your own Laptop or Computer)
+  This is the current list of hardware that can be used to build the Raspberry
+  Pi stake pool (Not including your own Laptop or Computer)
 ---
 
-# Hardware-Checklist
+# Hardware-Purchase-Links
 
 ![](../.gitbook/assets/photo_2021-03-09-13.42.42.jpeg)
 

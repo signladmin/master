@@ -6,7 +6,7 @@ description: >-
 
 # Tutorials
 
-### What you'll need for these lessons
+### What hardware you'll need for these lessons
 
 | Required Item   | Quantity |
 | :--- | :--- |
@@ -22,5 +22,14 @@ description: >-
 | Ethernet Cable \(CAT6\) | 2 |
 | Network Router for ethernet connection | 1 |
 
+### Citations/References
 
+#### I would like to thank all the hardworking members of the Cardano Stake Pool Community  🙏
+
+| Author/Contributor | Link to their GitHub/Work |
+| :--- | :--- |
+| Sun Forge Pool \[OTG\] | [https://github.com/tdiesler/nessus-cardano](https://github.com/tdiesler/nessus-cardano) |
+| Berry Pool \[Berry\] | [https://pipool.online/](https://pipool.online/) |
+| NASEC Pool | [https://nasec.co.uk/](https://nasec.co.uk/) |
+| Cardano-node-Documentaion | [https://docs.cardano.org/projects/cardano-node/en/latest/index.html](https://docs.cardano.org/projects/cardano-node/en/latest/index.html) |
 
