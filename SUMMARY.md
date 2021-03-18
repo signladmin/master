@@ -16,8 +16,8 @@
 ## Intermediate Guide
 
 * [\[OTG\] Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
-  * [Part I : Download & Flash image](intermediate-guide/pi-pool-tutorial/part-i-download-and-flash-image.md)
-  * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-4.md)
+  * [Part I: Download & Flash image](intermediate-guide/pi-pool-tutorial/part-i-download-and-flash-image.md)
+  * [Part 2: Logging in Securely](intermediate-guide/pi-pool-tutorial/untitled-4.md)
   * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-3.md)
   * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-2.md)
   * [wcatz/pi-pool](intermediate-guide/pi-pool-tutorial/untitled-1.md)
