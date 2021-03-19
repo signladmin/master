@@ -45,13 +45,24 @@ We are going to now download the latest official release of Raspberry Pi 64bit D
 
 ### Part 2:
 
-### Setting Up the Raspberry Pi for USB-Boot
+### Configuring the Raspberry Pi
 
-The first thing that we want to do is get the Raspberry Pi booted up to the RaspiOS desktop screen. To do this we will need to plug the mini HDMI into the Raspberry Pi 4's mini HDMI slot and the HDMI end our monitor.  
+  
+The first thing that we want to do is get the Raspberry Pi booted up to the RaspiOS desktop screen.
+
+ To do this we will need to plug the mini HDMI into the Raspberry Pi 4's mini HDMI slot and the HDMI end our monitor.  
   
  Then we need to insert the SD Card into the slot on the bottom of the Raspberry Pi, then we should plugin our keyboard and mouse into the Pi. Lastly, we will plug in our USB-C Raspberry Pi 4 power adapter into the Pi and it will begin to boot up.   
   
-Once the Raspberry Pi startup screen is finished
+Once the Raspberry Pi startup screen is finished and you have booted into the RaspianOS desktop screen we can now begin to set up our Raspberry Pi configuration and settings.
+
+{% hint style="danger" %}
+DON'T SKIP STEPS 
+{% endhint %}
+
+* [ ] First you need to change the raspberry pi's Hostname and Password, this will make sure you are not just running the basic login information and it a very good habit.
+
+  We need to just simply open the Raspberry Pi
 
 
 
@@ -59,7 +70,13 @@ Once the Raspberry Pi startup screen is finished
 
 
 
-### 
 
 
+
+
+* [ ] Open Terminal to update the OS \(need to do this **EVERYTIME** on Linux OS whenever you login/bootup\)
+
+```text
+$ sudo apt update
+```
 
