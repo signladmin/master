@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Home Page](README.md)
+* [Want to Contribute?](want-to-contribute.md)
 
 ## What is required <a id="before-you-get-started..."></a>
 
