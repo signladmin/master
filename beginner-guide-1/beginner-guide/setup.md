@@ -12,10 +12,8 @@ description: In this tutorial we walk through basic Raspberry Pi and Linux Set U
 4. Boot up the Pi and configure the settings 
 5. Insert external SSD and copy the SD card to it
 6. Shutdown and reboot from SSD
-7. Log in to Raspberry Pi via SSH
-8. Download and install Docker
 
-* Time Allotment: 1 hr
+
 
 {% hint style="info" %}
 ### DON’T SKIP STEPS 😁
