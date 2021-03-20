@@ -58,7 +58,7 @@ $ sudo reboot
 $ cd ~/
 $ unzip https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
 
-#  use ls to see if the "cardano-node" folder is there
+# use ls to see if the "cardano-node" folder is there
 $ ls
 
 $ cd cardano-node/
