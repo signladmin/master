@@ -23,7 +23,7 @@ This tutorial is meant only to get a single node syncing to the Cardano ledger/b
 Becoming a super hero is a fairly straight forward process:
 
 ```
-$ give me super-powers
+$ 
 ```
 
 {% hint style="info" %}
