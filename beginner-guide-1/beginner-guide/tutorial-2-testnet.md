@@ -46,7 +46,7 @@ $ sudo reboot
 
 * Now we need to head over to this website link to get our binaries we need to build the "cardano-node"
 
-| Provided By | Link to Cardano Binaries  |
+| Provided By | Link to Cardano Static Build  |
 | :--- | :--- |
 | [Moritz Angermann \[ZW3RK\]](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) | [https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip](https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip) |
 
@@ -54,18 +54,19 @@ $ sudo reboot
 
 ```text
 # First change to the home directory
-
 $ cd ~/
+
+# Now we can download the static build 
 $ wget https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
-$ unzip https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
-
-# use ls to see if the "cardano-node" folder is there
-$ ls
-
-$ cd cardano-node/
-$ mv cardano-cli cardano-node ~/.local/bin
-
 ```
 
+* Use "unzip" to get the cardano-node folder
 
+```text
+$ ls
+
+$ unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
+
+
+```
 
