@@ -118,7 +118,7 @@ sudo nano testnet-config.json
 
 * Get tmux installed before we run the node so we can exit it without terminating the process
 
-```text
+```bash
 sudo apt-get install tmux
 
 # Open new tmux terminal in cardano-node directory
@@ -130,7 +130,7 @@ tmux
 
 * Now we can start the "passive" node/relay to begin syncing to the blockchain 🧱 ⛓ 
 
-```text
+```bash
 pi@raspberrypi:~/cardano-node $ cardano-node run \
 >    --topology testnet-topology.json \
 >    --database-path db \
@@ -143,15 +143,43 @@ pi@raspberrypi:~/cardano-node $ cardano-node run \
 ## Setting up gLiveView to watch/monitor the node during its syncing process
 
 * First thing we need to do is download the prereq script from guild operators and set a few flags or we can just run it lol and watch it break..
+* I usually just put the gLiveView.sh into the cardano-node folder and change env
 
-```text
-mkdir "$HOME/tmp";cd "$HOME/tmp"
-# Install curl
-# CentOS / RedHat - sudo dnf -y install curl
-# Ubuntu / Debian - sudo apt -y install curl
-curl -sS -o prereqs.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/prereqs.sh
-chmod 755 prereqs.sh
-./prereqs.sh
-
+```bash
+cd cardano-node/
+curl -s -o gLiveView.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
+curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/env
+chmod 755 gLiveView.sh
 ```
+
+* [ ] Use nano to edit the env file and change only "**CNODE\_PORT**" to the port you set on your cardano-node, in our case we change it to **3000.**
+
+```bash
+sudo nano env
+```
+
+* Finally we can exit the nano editor and just run the gLiveView script 
+
+```bash
+cd cardano-node
+./gLiveView.sh
+```
+
+{% hint style="info" %}
+If you get this message "" do this...
+{% endhint %}
+
+{% tabs %}
+{% tab title="Get Cpu Temp" %}
+```bash
+vcgencmd measure_temp
+```
+{% endtab %}
+
+{% tab title="Use htop to see CPU and Ram performance" %}
+```bash
+htop
+```
+{% endtab %}
+{% endtabs %}
 
