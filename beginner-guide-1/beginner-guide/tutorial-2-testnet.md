@@ -18,7 +18,7 @@ description: >-
 
 1. Downloading the Binaries needed to build Cardano node relay
 2. Download Configuration files from IOHK/Cardano-node
-3. Edit the settings like Alessandro showed how
+3. Edit the config settings 
 4. Run the basic passive relay node to connect to testnet
 5. Monitor Relay Node with gLiveView  
 
