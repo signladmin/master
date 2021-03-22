@@ -140,5 +140,18 @@ pi@raspberrypi:~/cardano-node $ cardano-node run \
 >    --config testnet-config.json 
 ```
 
+## Setting up gLiveView to watch/monitor the node during its syncing process
 
+* First thing we need to do is download the prereq script from guild operators and set a few flags or we can just run it lol and watch it break..
+
+```text
+mkdir "$HOME/tmp";cd "$HOME/tmp"
+# Install curl
+# CentOS / RedHat - sudo dnf -y install curl
+# Ubuntu / Debian - sudo apt -y install curl
+curl -sS -o prereqs.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/prereqs.sh
+chmod 755 prereqs.sh
+./prereqs.sh
+
+```
 
