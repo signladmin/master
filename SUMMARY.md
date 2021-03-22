@@ -2,7 +2,7 @@
 
 * [Home Page](README.md)
 * [Want to contribute?](want-to-contribute/README.md)
-  * [Untitled](want-to-contribute/untitled-1.md)
+  * [Contributing Guide](want-to-contribute/untitled-1.md)
   * [Code of Conduct](want-to-contribute/untitled.md)
 
 ## What is required <a id="before-you-get-started..."></a>
