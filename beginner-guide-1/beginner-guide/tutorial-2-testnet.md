@@ -70,3 +70,49 @@ If you are unsure it the file downloaded or need the name of the folder/files we
 $ unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
 ```
 
+* Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present  
+
+```text
+$ ls
+```
+
+* You should see this in your home directory after running ls command 👇👇👇👇
+
+![](../../.gitbook/assets/screen-shot-2021-03-21-at-7.29.03-pm%20%281%29.png)
+
+* Now we need to move the cardano-node folder into our local binary directory 
+
+```text
+$ mv cardano-node ~/.local/bin
+```
+
+* Stay in the Home directory and a new directory/folder to download the Cardano config files and our monitoring service we will be using..
+
+```text
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
