@@ -107,10 +107,10 @@ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-fi
 
 ```
 
-* Use nano text editor to change a few things in our "testnet-config.json" file
-  * [ ] Change the **"TraceBlockFetchDecisions"** line from "**false**" to "**true**"
-  * [ ] Change the **"hasEKG"** to **12600**
-  * [ ] Change  the **"hasPrometheus"** address/port to 12700
+* **Use the nano text editor to change a few things in our "testnet-config.json" file**
+* [ ] Change the **"TraceBlockFetchDecisions"** line from "**false**" to "**true**"
+* [ ] Change the **"hasEKG"** to **12600**
+* [ ] Change  the **"hasPrometheus"** address/port to 12700
 
 ```text
 sudo nano testnet-config.json
