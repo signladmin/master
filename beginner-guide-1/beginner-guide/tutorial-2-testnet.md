@@ -183,3 +183,13 @@ htop
 {% endtab %}
 {% endtabs %}
 
+Citations-References:
+
+{% embed url="https://cardano-community.github.io/guild-operators/\#/Scripts/gliveview" %}
+
+{% embed url="https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles\_AND\_Connect.html" %}
+
+{% embed url="https://tmuxcheatsheet.com/" %}
+
+
+
