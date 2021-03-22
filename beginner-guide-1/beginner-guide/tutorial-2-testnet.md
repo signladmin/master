@@ -4,7 +4,7 @@ description: >-
   the testnet
 ---
 
-# Connect a Relay Node to theTestnet\(Work-inProgress\)
+# How to make a "passive" Relay Node on Testnet\(Work-inProgress\)
 
 {% hint style="danger" %}
 **This tutorial is meant only to get a single node syncing to the Cardano ledger/blockchain! We have skipped certain steps to make this tutorial as easily as possible DO NOT USE this tutorial to form a Stake Pool. Please use our intermediate guides for creation of Stake Pools because we wont be using some resources needed and security measures are almost non-existent in this tutorial.**  
@@ -120,9 +120,13 @@ sudo nano testnet-config.json
 
 ```text
 sudo apt-get install tmux
+
+# Open new tmux terminal in cardano-node directory
+cd cardano-node
+tmux
 ```
 
-
+* Now we can start the "passive" node/relay to begin syncing to the blockchain
 
 
 
