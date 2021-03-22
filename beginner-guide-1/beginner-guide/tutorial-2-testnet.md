@@ -88,15 +88,26 @@ $ mv cardano-node ~/.local/bin
 
 * Stay in the Home directory and a new directory/folder to download the Cardano config files and our monitoring service we will be using..
 
-```text
+{% hint style="success" %}
+You can call the folder whatever you would like, but it is recommend to name it according to its use 😎
+{% endhint %}
 
+```text
+$ mkdir testnet-relay
+
+# move into directory
+$ cd testnet-relay/
 ```
 
+* Download The four Cardano Node Configuration files we need to actually build from the official [IOHK website](https://hydra.iohk.io/build/5822084/download/1/index.html) and or [documentation](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html), we will be using our CLI "wget" command to download the files.
 
+```text
+$ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-config.json
+$ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-byron-genesis.json
+$ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-shelley-genesis.json
+$ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-topology.json
 
-
-
-
+```
 
 
 
