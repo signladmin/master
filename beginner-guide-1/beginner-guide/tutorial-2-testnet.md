@@ -126,9 +126,19 @@ cd cardano-node
 tmux
 ```
 
-* Now we can start the "passive" node/relay to begin syncing to the blockchain
+[https://tmuxcheatsheet.com/](https://tmuxcheatsheet.com/) - if you want to know more about tmux commands...
 
+* Now we can start the "passive" node/relay to begin syncing to the blockchain 🧱 ⛓ 
 
+```text
+pi@raspberrypi:~/cardano-node $ cardano-node run \
+>    --topology testnet-topology.json \
+>    --database-path db \
+>    --socket-path db/socket \
+>    --host-addr 0.0.0.0 \
+>    --port 3000 \
+>    --config testnet-config.json 
+```
 
 
 
