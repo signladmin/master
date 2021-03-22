@@ -1,4 +1,4 @@
-# Want to contribute?
+# index
 
 ## Our Pledge
 
