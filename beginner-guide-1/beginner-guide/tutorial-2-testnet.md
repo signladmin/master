@@ -33,15 +33,15 @@ Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.j
 ```
 # We are using the sudo preffix to run commands as non-root-user  
 
-$ sudo apt update
-$ sudo apt upgrade -y
+sudo apt update
+sudo apt upgrade -y
 
 ```
 
 * **We can now reboot the pi and let the updates take effect by running this command in terminal**
 
 ```text
-$ sudo reboot 
+sudo reboot 
 ```
 
 
@@ -54,10 +54,10 @@ $ sudo reboot
 
 ```text
 # First change to the home directory
-$ cd ~/
+cd ~/
 
 # Now we can download the static build 
-$ wget https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
+wget https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
 ```
 
 {% hint style="info" %}
@@ -67,13 +67,13 @@ If you are unsure it the file downloaded or need the name of the folder/files we
 * Use "unzip" command on the downloaded zip file...
 
 ```text
-$ unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
+unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
 ```
 
 * Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present  
 
 ```text
-$ ls
+ls
 ```
 
 * You should see this in your home directory after running ls command 👇👇👇👇
@@ -83,7 +83,7 @@ $ ls
 * Now we need to move the cardano-node folder into our local binary directory 
 
 ```text
-$ mv cardano-node ~/.local/bin
+mv cardano-node ~/.local/bin
 ```
 
 * Stay in the Home directory and a new directory/folder to download the Cardano config files and our monitoring service we will be using..
@@ -93,33 +93,34 @@ You can call the folder whatever you would like, but it is recommend to name it 
 {% endhint %}
 
 ```text
-$ mkdir testnet-relay
-
-# move into directory
-$ cd testnet-relay/
+mkdir testnet-relay
+cd testnet-relay/
 ```
 
 * Download The four Cardano Node Configuration files we need to actually build from the official [IOHK website](https://hydra.iohk.io/build/5822084/download/1/index.html) and or [documentation](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html), we will be using our CLI "wget" command to download the files.
 
 ```text
-$ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-config.json
-$ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-byron-genesis.json
-$ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-shelley-genesis.json
-$ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-topology.json
+wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-config.json
+wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-byron-genesis.json
+wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-shelley-genesis.json
+wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-topology.json
 
 ```
 
+* Use nano text editor to change a few things in our "testnet-config.json" file
+  * [ ] Change the **"TraceBlockFetchDecisions"** line from "**false**" to "**true**"
+  * [ ] Change the **"hasEKG"** to **12600**
+  * [ ] Change  the **"hasPrometheus"** address/port to 12700
 
+```text
+sudo nano testnet-config.json
+```
 
+* Get tmux installed before we run the node so we can exit it without terminating the process
 
-
-
-
-
-
-
-
-
+```text
+sudo apt-get install tmux
+```
 
 
 
