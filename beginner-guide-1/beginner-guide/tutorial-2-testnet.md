@@ -44,13 +44,13 @@ $ sudo apt upgrade -y
 $ sudo reboot 
 ```
 
-* Now we need to head over to this website link to get our binaries we need to build the "cardano-node"
+
 
 | Provided By | Link to Cardano Static Build  |
 | :--- | :--- |
-| [Moritz Angermann \[ZW3RK\]](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) | [https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip](https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip) |
+| [Moritz Angermann \[ZW3RK\]![](../../.gitbook/assets/git.jpeg)](https://github.com/angerman)  | [https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip](https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip) |
 
-* Now we need to simple download the zip file to our Pi's Home directory and then move it to the right location so we can call on it later to start the node.
+* Now we need to simply download the zip file above to our Pi's Home directory and then move it to the right location so we can call on it later to start the node.
 
 ```text
 # First change to the home directory
