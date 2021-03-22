@@ -60,13 +60,13 @@ $ cd ~/
 $ wget https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
 ```
 
-* Use "unzip" to get the cardano-node folder
+{% hint style="info" %}
+If you are unsure it the file downloaded or need the name of the folder/files we can use the linux "ls" command to list everything in our current working directory 
+{% endhint %}
+
+* Use "unzip" command on the downloaded zip file...
 
 ```text
-$ ls
-
 $ unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
-
-
 ```
 
