@@ -41,7 +41,7 @@ description: >-
         </td>
     </tr>
     <tr>
-      <td style="text-align:left">NETGEAR 5-Port Gigabit Ethernet Unmanaged PoE+ Switch (ONLY FOR USE WITH
+      <td style="text-align:left">NETGEAR 5-Port Gigabit Ethernet PoE+ Switch (FOR USE WITH
         A RPi PoE HAT)</td>
       <td style="text-align:left">$69.99</td>
       <td style="text-align:left">1</td>
