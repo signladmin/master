@@ -140,7 +140,7 @@ pi@raspberrypi:~/cardano-node $ cardano-node run \
 >    --config testnet-config.json 
 ```
 
-## Setting up gLiveView to watch/monitor the node during its syncing process
+## Setting up gLiveView to monitor the node during its syncing process
 
 * First thing we need to do is download the prereq script from guild operators and set a few flags or we can just run it lol and watch it break..
 * I usually just put the gLiveView.sh into the cardano-node folder and change env
