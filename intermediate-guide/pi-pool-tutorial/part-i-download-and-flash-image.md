@@ -4,22 +4,28 @@
 
 Download, install & open [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases/latest). Plug in your target USB drive.
 
-{% tabs %} {% tab title="Local Machine \(Ubuntu\)" %}
-
+{% tabs %}
+{% tab title="Local Machine \(Ubuntu\)" %}
 ```text
 # Ubuntu users can download and install with snapd
 sudo apt update
 sudo apt install snapd
 sudo snap install rpi-imager
 ```
+{% endtab %}
 
-{% endtab %} {% endtabs %}
+{% tab title="Second Tab" %}
 
-{% hint style="danger" %} Older models of the Pi4B 8GB need to have their boot loader updated to boot from USB. If your image won't boot remove the USB3 drive and use rpi-imager to flash Pi 4 EEPROM boot recovery to an sd card.
+{% endtab %}
+{% endtabs %}
+
+{% hint style="danger" %}
+Older models of the Pi4B 8GB need to have their boot loader updated to boot from USB. If your image won't boot remove the USB3 drive and use rpi-imager to flash Pi 4 EEPROM boot recovery to an sd card.
 
 Plug the Pi into a monitor, insert the sd card and power up. Once you see a green screen you should be good to boot from your USB3 drive. Newer versions are shipping with a USB boot capable boot loader. **Feeling lucky?**
 
-**Choose OS -&gt; Misc utility images -&gt; Raspberry Pi 4 EEPROM boot recovery** [https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md](https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md) {% endhint %}
+**Choose OS -&gt; Misc utility images -&gt; Raspberry Pi 4 EEPROM boot recovery** [https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md](https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md) 
+{% endhint %}
 
 {% tabs %} {% tab title="Pre configured Pi-Pool .img.gz" %}
 
