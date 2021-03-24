@@ -23,7 +23,9 @@ description: >-
 {% endtab %}
 
 {% tab title="Raspberry Pi HATs" %}
-
+|  |  |  |  |
+| :--- | :--- | :--- | :--- |
+| Official Raspberry Pi Power Over Ethernet \(PoE\) HAT for Raspberry Pi 3 B+ and 802.3af PoE Network | $29.91 | YES | [Amazon](https://www.amazon.com/poe-hat/dp/B07GR9XQJH/ref=sr_1_2?dchild=1&keywords=Official+Raspberry+Pi+Power+Over+Ethernet+%28PoE%29+HAT+for+Raspberry+Pi+3+B%2B+and+802.3af+PoE+Network&qid=1615236400&s=electronics&sr=1-2) |
 {% endtab %}
 
 {% tab title="Ethernet Cables" %}
