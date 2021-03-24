@@ -15,7 +15,7 @@
 
 * [Tutorials](beginner-guide-1/beginner-guide/README.md)
   * [Setting up the Raspberry Pi](beginner-guide-1/beginner-guide/setup.md)
-  * [How to make a "passive" Relay Node on Testnet\(Work-inProgress\)](beginner-guide-1/beginner-guide/tutorial-2-testnet.md)
+  * [How to make a "passive" Relay Node on Testnet](beginner-guide-1/beginner-guide/tutorial-2-testnet.md)
 
 ## Intermediate Guides <a id="intermediate-guide"></a>
 
