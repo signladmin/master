@@ -26,9 +26,13 @@ _**We would like to thank**_ ✨_**Star Forge Stake Pool**_ ✨_**for providing 
 
 
 
-{% hint style="danger" %} It is strongly recommended to work through the [Stake Pool School](https://cardano-foundation.gitbook.io/stake-pool-course/) course presented by the Cardano Foundation. {% endhint %}
+{% hint style="danger" %}
+It is strongly recommended to work through the [Stake Pool School](https://cardano-foundation.gitbook.io/stake-pool-course/) course presented by the Cardano Foundation.
+{% endhint %}
 
-{% hint style="warning" %} If you would like to create an .img file of your work that can be flashed for reuse on other Raspberry Pi's you should build on an 8GB sd card. It will take less time to image. See [image creation section](https://pi-pool.adamantium.online/create-.img-file). {% endhint %}
+{% hint style="warning" %}
+If you would like to create an .img file of your work that can be flashed for reuse on other Raspberry Pi's you should build on an 8GB sd card. It will take less time to image. See [image creation section](https://pi-pool.adamantium.online/create-.img-file).
+{% endhint %}
 
 ### Why this guide?
 
