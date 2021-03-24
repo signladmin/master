@@ -10,7 +10,9 @@ description: >-
 
 {% tabs %}
 {% tab title="Raspberry Pi Computers" %}
-
+| Product Name & Description | Price in USD | Verified by RPI SPOs | Links to Purchase |
+| :--- | :--- | :--- | :--- |
+|  |  |  |  |
 {% endtab %}
 
 {% tab title="Power Supplies" %}
