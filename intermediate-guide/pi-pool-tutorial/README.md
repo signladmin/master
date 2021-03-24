@@ -1,7 +1,3 @@
----
-description: "WORK IN PROGRESS \U0001F6A7\U0001F3D7"
----
-
 # \[OTG\] Pi-Pool Tutorial
 
 ![](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
