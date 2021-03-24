@@ -8,6 +8,34 @@ description: >-
 
 ![](../.gitbook/assets/photo_2021-03-09-13.42.42.jpeg)
 
+{% tabs %}
+{% tab title="Raspberry Pi Computers" %}
+
+{% endtab %}
+
+{% tab title="Power Supplies" %}
+
+{% endtab %}
+
+{% tab title="Raspberry Pi HATs" %}
+
+{% endtab %}
+
+{% tab title="Ethernet Cables" %}
+| Product Name & Description | Price in USD |  |  |
+| :--- | :--- | :--- | :--- |
+|  |  |  |  |
+{% endtab %}
+
+{% tab title="" %}
+
+{% endtab %}
+
+{% tab title="" %}
+
+{% endtab %}
+{% endtabs %}
+
 | Product Name & Description | Price in USD | Quantity | Verified/tested by Rpi SPO community | Links to Purchase |
 | :--- | :--- | :--- | :--- | :--- |
 | Raspberry Pi 4 Computer Model B 8GB Single Board Computer | $75-$88.50 | 2-3 | YES | [Raspberry Pi Approved Resellers](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb) |
