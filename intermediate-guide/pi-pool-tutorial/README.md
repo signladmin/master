@@ -4,6 +4,10 @@ description: "WORK IN PROGRESS \U0001F6A7\U0001F3D7"
 
 # \[OTG\] Pi-Pool Tutorial
 
+![](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
+
+### 
+
 ### Contributor/Credits:
 
 _**We would like to thank**_ ✨_**Star Forge Stake Pool**_ ✨_**for providing this guide and tutorial, please use the following links below to either contact or delegate to Star Forge Pool**_ **❤️**_**\(Ticker symbol: \[OTG\] \)**_
