@@ -12,11 +12,14 @@ description: >-
 {% tab title="Raspberry Pi Computers" %}
 | Product Name & Description | Price in USD | Verified by RPI SPOs | Links to Purchase |
 | :--- | :--- | :--- | :--- |
-|  |  |  |  |
+| Raspberry Pi 4 Computer Model B 8GB Single Board Computer | $75 - $88 | YES | [Raspberry Pi Approved Resellers](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb) |
 {% endtab %}
 
 {% tab title="Power Supplies" %}
-
+|  |  |  |  |
+| :--- | :--- | :--- | :--- |
+| NETGEAR 5-Port Gigabit Ethernet PoE+ Switch \(FOR USE WITH A RPi PoE HAT\) | $69.99 | YES | [Amazon](https://www.amazon.com/gp/product/B07WTXHSXC/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) |
+|  |  |  |  |
 {% endtab %}
 
 {% tab title="Raspberry Pi HATs" %}
@@ -27,10 +30,6 @@ description: >-
 | Product Name & Description | Price in USD |  |  |
 | :--- | :--- | :--- | :--- |
 |  |  |  |  |
-{% endtab %}
-
-{% tab title="" %}
-
 {% endtab %}
 
 {% tab title="" %}
