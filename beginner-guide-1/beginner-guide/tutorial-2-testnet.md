@@ -4,7 +4,7 @@ description: >-
   the testnet
 ---
 
-# How to make a "passive" Relay Node on Testnet
+# How to make a "passive" Relay Node on Testnet \(WORK-IN-PROGRESS\)
 
 {% hint style="danger" %}
 **This tutorial is meant only to get a single node syncing to the Cardano ledger/blockchain! We have skipped certain steps to make this tutorial as easily as possible DO NOT USE this tutorial to form a Stake Pool. Please use our intermediate guides for creation of Stake Pools because we wont be using some resources needed and security measures are almost non-existent in this tutorial.**  

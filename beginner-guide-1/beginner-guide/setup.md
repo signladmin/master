@@ -2,7 +2,7 @@
 description: In this tutorial we walk through basic Raspberry Pi and Linux Set Up
 ---
 
-# Setting up the Raspberry Pi
+# Setting up the Raspberry Pi \(WORK-IN-PROGRESS\)
 
 ## Summary <a id="h.vrhvb96nxxe9"></a>
 
