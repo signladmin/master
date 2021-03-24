@@ -34,7 +34,7 @@ description: >-
 |  |  |  |  |
 {% endtab %}
 
-{% tab title="" %}
+{% tab title="Other Accessories" %}
 
 {% endtab %}
 {% endtabs %}

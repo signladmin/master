@@ -2,6 +2,7 @@
 
 * [Home Page](README.md)
 * [Want to contribute?](want-to-contribute/README.md)
+  * [Delegate](want-to-contribute/delegate.md)
   * [Contributing Guide](want-to-contribute/untitled-1.md)
   * [Code of Conduct](want-to-contribute/untitled.md)
 
@@ -25,4 +26,8 @@
   * [Part 4: Server Setup](intermediate-guide/pi-pool-tutorial/untitled-2.md)
   * [Part 5: Environment Setup](intermediate-guide/pi-pool-tutorial/untitled-1.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/untitled.md)
+
+---
+
+* [Untitled](untitled.md)
 
