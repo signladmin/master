@@ -1,8 +1,8 @@
 # Table of contents
 
 * [Home Page](README.md)
-* [Want to contribute?](want-to-contribute/README.md)
-  * [Delegate](want-to-contribute/delegate.md)
+* [Delegate](delegate.md)
+* [Want to contribute content?](want-to-contribute/README.md)
   * [Contributing Guide](want-to-contribute/untitled-1.md)
   * [Code of Conduct](want-to-contribute/untitled.md)
 
