@@ -84,8 +84,6 @@ The cardano-node & cardano-cli binaries linked to in this guide require aarch64 
 * [PiShrink](https://github.com/Drewsif/PiShrink)
 * [cardanocli-js](https://docs.pipool.online/)
   * node.js library for pool creation/maintenance
-* Latest chain snapshot for quicker sync
-  * wget -r -np -nH -R "index.html\*" -e robots=off [https://db.adamantium.online/db/](https://db.adamantium.online/db/)
 
 ### Links
 

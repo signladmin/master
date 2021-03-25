@@ -13,10 +13,6 @@ sudo apt install snapd
 sudo snap install rpi-imager
 ```
 {% endtab %}
-
-{% tab title="Second Tab" %}
-
-{% endtab %}
 {% endtabs %}
 
 {% hint style="danger" %}
