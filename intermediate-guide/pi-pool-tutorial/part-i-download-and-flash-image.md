@@ -23,12 +23,22 @@ Plug the Pi into a monitor, insert the sd card and power up. Once you see a gree
 **Choose OS -&gt; Misc utility images -&gt; Raspberry Pi 4 EEPROM boot recovery** [https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md](https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md) 
 {% endhint %}
 
-{% tabs %} {% tab title="Pre configured Pi-Pool .img.gz" %}
+![](../../.gitbook/assets/otgpoltut.png)
 
-#### Obtain Pi-Pool .img.gz files
+{% tabs %}
+{% tab title="Pre configured Pi-Pool .img.gz" %}
 
-| [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz) | Pi-Relay | Pi-Core | Pi-Cold |
-| :--- | :--- | :--- | :--- |
+{% endtab %}
+
+{% tab title="Fresh Ubuntu 20.10 installation" %}
+
+{% endtab %}
+{% endtabs %}
+
+[Pi-Node](https://db.adamantium.online/Pi-Node.img.gz)
+
+| Pi-Relay | Pi-Core | Pi-Cold |
+| :--- | :--- | :--- |
 
 
 #### Within Raspberry Pi Imager
