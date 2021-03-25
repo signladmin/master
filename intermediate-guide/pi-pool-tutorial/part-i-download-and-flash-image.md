@@ -35,33 +35,13 @@ Plug the Pi into a monitor, insert the sd card and power up. Once you see a gree
 
 * [ ] **Choose OS -&gt; Use custom**
 * [ ] **Locate the .img.gz file you downloaded & wish to flash.**
-* [ ] Locate your target drive & write it to disk.
+* [ ] **Locate your target drive & write it to disk.**
 {% endtab %}
 
 {% tab title="Fresh Ubuntu 20.10 installation" %}
 
 {% endtab %}
 {% endtabs %}
-
-
-
-[Pi-Node](https://db.adamantium.online/Pi-Node.img.gz)
-
-| Pi-Relay | Pi-Core | Pi-Cold |
-| :--- | :--- | :--- |
-
-
-#### Within Raspberry Pi Imager
-
-**Choose OS -&gt; Use custom**
-
-Locate the .img.gz file you downloaded & wish to flash.
-
-Locate your target drive & write it to disk.
-
- {% endtab %}
-
-{% tab title="Fresh Ubuntu 20.10 installation" %}
 
 #### Within Raspberry Pi Imager
 
