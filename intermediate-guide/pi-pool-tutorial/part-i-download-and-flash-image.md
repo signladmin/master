@@ -27,13 +27,23 @@ Plug the Pi into a monitor, insert the sd card and power up. Once you see a gree
 
 {% tabs %}
 {% tab title="Pre configured Pi-Pool .img.gz" %}
+### Obtain Pi-Pool.img.gz files by clicking the link "PI-Node" and download [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz) 
 
+{% hint style="info" %}
+**The following steps are all done within the Raspberry Pi imager**
+{% endhint %}
+
+* [ ] **Choose OS -&gt; Use custom**
+* [ ] **Locate the .img.gz file you downloaded & wish to flash.**
+* [ ] Locate your target drive & write it to disk.
 {% endtab %}
 
 {% tab title="Fresh Ubuntu 20.10 installation" %}
 
 {% endtab %}
 {% endtabs %}
+
+
 
 [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz)
 
