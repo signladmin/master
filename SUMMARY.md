@@ -3,9 +3,11 @@
 * [Home Page](README.md)
 * [Delegate](delegate/README.md)
   * [How to delegate ADA](delegate/how-to-delegate-ada.md)
+* [Untitled](untitled-1.md)
 * [Want to contribute content?](want-to-contribute/README.md)
-  * [Contributing Guide](want-to-contribute/untitled-1.md)
-  * [Code of Conduct](want-to-contribute/untitled.md)
+  * [Contributing Guide](want-to-contribute/untitled-1/README.md)
+    * [Style Guide](want-to-contribute/untitled-1/style-guide.md)
+    * [Code of Conduct](want-to-contribute/untitled-1/untitled.md)
 
 ## What is required <a id="before-you-get-started..."></a>
 
@@ -32,4 +34,5 @@
 
 * [Coming Soon...](coming-soon.../README.md)
   * [Raspberry Pi Zero Trezor Wallet](coming-soon.../raspberry-pi-zero-trezor-wallet.md)
+* [Build software better, together](untitled.md)
 
