@@ -2,7 +2,7 @@
 description: This is how you create an image you can flash to other Pi's
 ---
 
-# index
+# Create .img file
 
 ## Make the .img file
 

@@ -28,5 +28,5 @@
 
 ---
 
-* [index](untitled.md)
+* [Create .img file](untitled.md)
 
