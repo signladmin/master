@@ -8,7 +8,7 @@
 | [Berry Pool](https://pipool.online/) | BERRY |  |  |
 | [Star Forge](%20https://adamantium.online/) | OTG |  |  |
 | ZW3RK | ZW3RK |  |  |
-|  |  |  |  |
+| NASEC |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
 
