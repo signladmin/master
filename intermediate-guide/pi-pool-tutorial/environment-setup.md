@@ -322,13 +322,12 @@ gLiveView.sh
 **Make sure your node is not running &** **you may need to delete the db folder if it exists.**
 {% endhint %}
 
-```
-cardano-service stop
-```
-
 ```bash
+cardano-service stop
 cd $NODE_HOME
 rm -r db/
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
+
+![Should look something like this once your synced to the tip of the chain.](../../.gitbook/assets/pi-node-glive.png)
 
