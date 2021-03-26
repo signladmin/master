@@ -19,7 +19,12 @@ description: >-
 | Product Name & Description | Price in USD | Verified by RPI SPOs |  |
 | :--- | :--- | :--- | :--- |
 | NETGEAR 5-Port Gigabit Ethernet PoE+ Switch \(FOR USE WITH A RPi PoE HAT\) | $69.99 | YES | [Amazon](https://www.amazon.com/gp/product/B07WTXHSXC/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) |
-|  |  |  |  |
+{% endtab %}
+
+{% tab title="Storage Devices" %}
+| Product Name & Description | Price in USD | Verified by RPI SPOs | Purchase Links |
+| :--- | :--- | :--- | :--- |
+| Kingston 120GB A400 SATA 3 2.5" Internal SSD SA400S37/120G | $24.99 | YES | [Amazon](https://www.amazon.com/Kingston-120GB-Solid-SA400S37-120G/dp/B01N6JQS8C/ref=sxts_sxwds-bia-wc-rsf-ajax2_0?crid=2IZ705SDHVNO2&cv_ct_cx=kingston+a400&dchild=1&keywords=kingston+a400&pd_rd_i=B01N6JQS8C&pd_rd_r=cff9c24d-82ba-4471-892a-a23276b8b1db&pd_rd_w=wzQ6v&pd_rd_wg=6jlaB&pf_rd_p=5c711241-c674-4eef-b21c-fe6add670f33&pf_rd_r=MMBZR2DHZVKB3J1QE3HY&psc=1&qid=1615235655&sprefix=kingsto%2Caps%2C254&sr=1-2-e30f047d-8e3c-4340-8179-6a77ce88d756) |
 {% endtab %}
 
 {% tab title="Raspberry Pi HATs" %}
@@ -37,7 +42,7 @@ description: >-
 {% tab title="Other Accessories" %}
 | Product Name & Description | Price in USD | Verified by RPI SPOs | Purchase links |
 | :--- | :--- | :--- | :--- |
-| Kingston 120GB A400 SATA 3 2.5" Internal SSD SA400S37/120G | $24.99 | YES | [Amazon](https://www.amazon.com/Kingston-120GB-Solid-SA400S37-120G/dp/B01N6JQS8C/ref=sxts_sxwds-bia-wc-rsf-ajax2_0?crid=2IZ705SDHVNO2&cv_ct_cx=kingston+a400&dchild=1&keywords=kingston+a400&pd_rd_i=B01N6JQS8C&pd_rd_r=cff9c24d-82ba-4471-892a-a23276b8b1db&pd_rd_w=wzQ6v&pd_rd_wg=6jlaB&pf_rd_p=5c711241-c674-4eef-b21c-fe6add670f33&pf_rd_r=MMBZR2DHZVKB3J1QE3HY&psc=1&qid=1615235655&sprefix=kingsto%2Caps%2C254&sr=1-2-e30f047d-8e3c-4340-8179-6a77ce88d756) |
+|  |  |  |  |
 {% endtab %}
 {% endtabs %}
 
