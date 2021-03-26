@@ -3,7 +3,6 @@
 * [Home Page](README.md)
 * [Delegate](delegate/README.md)
   * [How to delegate ADA](delegate/how-to-delegate-ada.md)
-* [Untitled](untitled-1.md)
 * [Want to contribute content?](want-to-contribute/README.md)
   * [Contributing Guide](want-to-contribute/untitled-1/README.md)
     * [Style Guide](want-to-contribute/untitled-1/style-guide.md)
