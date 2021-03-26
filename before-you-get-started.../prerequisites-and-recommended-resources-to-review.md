@@ -1,8 +1,8 @@
-# Cardano and Stake Pool Operator Resources
+---
+description: Get some knowledge about the various
+---
 
-#### 
-
-#### ~~Let's make sure we understand the expectati for becoming a Cardano stake pool operator before we really dive into the weeds on how to operate a stake pool with Raspberry Pis. Follow this list of great educational content and report back once you have checked off all requirements to begin the tutorials.....~~
+# Stake Pool Operator Resource Library
 
 {% tabs %}
 {% tab title="Official Cardano Foundation Documentation" %}

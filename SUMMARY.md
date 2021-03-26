@@ -1,14 +1,15 @@
 # Table of contents
 
 * [Home Page](README.md)
-* [Delegate](delegate.md)
+* [Delegate](delegate/README.md)
+  * [How to delegate ADA](delegate/how-to-delegate-ada.md)
 * [Want to contribute content?](want-to-contribute/README.md)
   * [Contributing Guide](want-to-contribute/untitled-1.md)
   * [Code of Conduct](want-to-contribute/untitled.md)
 
 ## What is required <a id="before-you-get-started..."></a>
 
-* [Cardano and Stake Pool Operator Resources](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
+* [Stake Pool Operator Resource Library](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
 * [Hardware-Purchase-Links](before-you-get-started.../hardware.md)
 
 ## Beginner Guides <a id="beginner-guide-1"></a>
