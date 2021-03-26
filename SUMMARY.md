@@ -25,8 +25,5 @@
   * [Logging in Securely](intermediate-guide/pi-pool-tutorial/untitled-4.md)
   * [User Setup](intermediate-guide/pi-pool-tutorial/untitled-5.md)
   * [Environment Setup](intermediate-guide/pi-pool-tutorial/environment-setup.md)
-
----
-
-* [Create .img file](untitled.md)
+  * [Create .img file](intermediate-guide/pi-pool-tutorial/untitled.md)
 
