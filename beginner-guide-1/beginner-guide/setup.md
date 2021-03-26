@@ -21,7 +21,7 @@ description: In this tutorial we walk through basic Raspberry Pi and Linux Set U
 
 ### _**Part One:**_
 
-###  🍓Installing the Raspberry Pi Debian "buster" OS on to the SD CARD 🥧 <a id="h.lpv6ciisjqp3"></a>
+###  🍓Installing the Raspberry Pi Debian "buster" OS  🥧 <a id="h.lpv6ciisjqp3"></a>
 
 We are going to now download the latest official release of Raspberry Pi 64bit Debian OS. This is the official Linux 64bit OS distribution that is designed for the Raspberry Pi and its arm64 CPU. This makes it stable and very easy to get started with the Raspberry Pi 
 
