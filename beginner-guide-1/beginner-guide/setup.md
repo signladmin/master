@@ -66,14 +66,6 @@ DON'T SKIP STEPS
 
 
 
-
-
-
-
-
-
-
-
 * [ ] Open Terminal to update the OS \(need to do this **EVERYTIME** on Linux OS whenever you login/bootup\)
 
 ```text
