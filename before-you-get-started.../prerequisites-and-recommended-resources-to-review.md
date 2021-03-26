@@ -1,19 +1,16 @@
----
-description: Get some knowledge about the various
----
-
 # Stake Pool Operator Resource Library
 
 {% tabs %}
 {% tab title="Official Cardano Foundation Documentation" %}
-we can use these tabs to insert our information we like...
+* [Stake Pool Operation and General Information](https://cardano.org/stake-pool-operation/) 
+* 
 {% endtab %}
 
 {% tab title="Youtube and Video Resources" %}
-
+* 
 {% endtab %}
 
-{% tab title="" %}
+{% tab title="Community Forum" %}
 
 {% endtab %}
 
