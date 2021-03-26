@@ -1,4 +1,4 @@
-# Part I: Download & Flash image
+# Download & Flash image
 
 ### Flash Image
 

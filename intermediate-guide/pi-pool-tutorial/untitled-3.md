@@ -1,196 +1,79 @@
-# Part 3: User Setup
+---
+description: >-
+  A guide to building a 4 watt per Pi, Cardano Stake Pool. A reference guide for
+  the Pi Pool images.
+---
 
-| description |
-| :--- |
-| Create the ada user, add to group sudo |
+# Overview & Credits
 
-{% hint style="warning" %} If you are using a Pi Pool image you need only reference this material until we start configuring the server. You should however change the default password for ada. {% endhint %}
+{% hint style="danger" %}
+It is strongly recommended to work through the [Stake Pool School](https://cardano-foundation.gitbook.io/stake-pool-course/) course presented by the Cardano Foundation.
+{% endhint %}
 
-### Create the ada user
+{% hint style="warning" %}
+If you would like to create an .img file of your work that can be flashed for reuse on other Raspberry Pi's you should build on an 8GB sd card. It will take less time to image. See [image creation section](https://pi-pool.adamantium.online/create-.img-file).
+{% endhint %}
 
-Create a new user and add them to the sudo group.
+## Why this guide?
 
-```text
-sudo adduser ada && sudo adduser ada sudo
-```
+Consolidate and organize the various guides into a single document that can be followed or referenced _specifically_ for running a pool using two \(or more\) Raspberry Pi 4B \(the 8GB version\) and one offline Pi for cold key operations.
 
-#### Change password
+Provide documentation of every step taken while building the Pi-Relay, Pi-Core & Pi-Cold images available for bootstrapping pool creation. A reference & guide.
 
-You can change the ada users password at anytime with.
+The most popular guides out there are aimed at x86 architecture and '_knowing what to throw away and knowing what to keep_' is not always clear. I aim to change that '_with a little help from my friends_'. 🎸
 
-{% hint style="warning" %} Careful where you use sudo. For example issuing 'sudo passwd' would change the root password. This seems to be a place where new users get confused. {% endhint %}
+## Hardware
 
-#### Login as ada
+{% hint style="warning" %}
+The cardano-node & cardano-cli binaries linked to in this guide require aarch64 architecture to run. You **must** use Pi4B 8GB for the Pi-Relay and Pi-Core. For the Pi-Cold img you can use the Pi3B+ or PI4B 4GB or 8GB version with a micro sd card.
+{% endhint %}
 
-Let's add our ssh public key to our new $USER ada's authorized\_keys file. Then we can log in as ada and delete the default 'ubuntu' user.
+{% hint style="info" %}
+[Here is a list of working adapters.](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/)
+{% endhint %}
 
-```text
-# drop back into your local terminal
-exit
-```
+### Shopping list
 
-Use ssh-copy-id to add your public key to ada users authorized\_keys file.
+* 2 [Pi4B 8GB](https://thepihut.com/products/raspberry-pi-4-model-b?variant=31994565689406) version.
+* 2 SSD Drives : \(NVMe **low power**, form & speed\).
+* NVMe to USB3.1 adapter or whatever works with your drive.
+* A 3'rd 64bit capable Pi as an offline machine\(Pi-Cold\). 
+* Class 10 micro sd card 8GB or larger. Pi-Cold has a desktop and a copy of this guide available in the browser.
+* Extra USB flash drives for backing up keys and configurations.
+* Consider a single 50+ watt power supply
+* Consider a 5 volt gigabit switch
+* Consider a case with a fan
 
-```text
-ssh-copy-id -i <ed25519-keyname.pub> ada@<server-ip>
-```
+## Credit & community
 
-and ssh into the Pi as ada.
+* [Alessandro konrad](https://github.com/alessandrokonrad) \|[ Berry](https://adapools.org/pool/2a748e3885f6f73320ad16a8331247b81fe01b8d39f57eec9caa5091) \(@berry\_ales\)
+* Moritz Angermann \| [zw3rk](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) \(@zw3rk\)
+* [CoinCashew: guide-how-to-build-a-haskell-stakepool-node](https://www.coincashew.com/coins/overview-ada/guide-how-to-build-a-haskell-stakepool-node)
+* \*\*\*\*[Chris-Graffagnino](https://github.com/Chris-Graffagnino)/[Setup Cardano Shelley staking node](https://github.com/Chris-Graffagnino/Jormungandr-for-Newbs/blob/master/docs/jormungandr_node_setup_guide.md)
+* [Arming Cardano](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w) Telegram Group
+* [Berry Pool](https://t.me/berry_pool) Telegram group
+* [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
 
-Test that ada is in the sudo group by updating your package lists and upgrading the system.
+## Downloads
 
-{% hint style="warning" %} Updating Ubuntu is going to take 10 minutes or more unless they update the image used with rpi-imager. {% endhint %}
+* Pi-Pool .img.gz downloads
+  * [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz) \(Base\)
+  * Pi-Relay \(relay\)
+  * Pi-Core \(block producer\)
+  * Pi-Cold \(offline cold keys\)
+* Latest unofficial [static arm binaries](https://ci.zw3rk.com/job/Tools/master/rpi64-musl.tarball/latest-finished/download) & [build overview](https://ci.zw3rk.com/job/Tools/master/rpi64-musl.tarball/latest-finished) 
+  * [Moritz Angermann](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)
+* Raspberry Pi Imager \([rpi-imager](https://github.com/raspberrypi/rpi-imager)\)
+  * update eeprom
+  * flash .img files/install Ubuntu
+* [PiShrink](https://github.com/Drewsif/PiShrink)
+* [cardanocli-js](https://docs.pipool.online/)
+  * node.js library for pool creation/maintenance
+* Latest chain snapshot for quicker sync
+  * wget -r -np -nH -R "index.html\*" -e robots=off [https://db.adamantium.online/db/](https://db.adamantium.online/db/)
 
-```text
-sudo apt update && sudo apt upgrade
-```
+## Links
 
-If that was successful we can delete the default ubuntu user and it's home directory.
-
-```text
-sudo deluser --remove-home ubuntu
-```
-
-### Harden ssh
-
-Edit OpenSSH's configuration file and make the following changes with Nano text editor.
-
-{% hint style="info" %} Check out this [nano cheat sheet](https://www.nano-editor.org/dist/latest/cheatsheet.html) I just found!
-
-All the \# commented out values in sshd\_config are the default values. Remove the pound sign and change the value to match below. They will be loaded the next time systemd restarts ssh. {% endhint %}
-
-```text
-sudo nano /etc/ssh/sshd_config
-```
-
-{% hint style="info" %} You can use ctrl+k to clip lines in nano. From the top of the file you can use it to cut out the whole file and paste this one in with ctrl+v or ctrl+shift+v depending on your system. ctrl+o to save and ctrl+x to exit. {% endhint %}
-
-```text
-#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
-
-# This is the sshd server system-wide configuration file.  See
-# sshd_config(5) for more information.
-
-# This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin
-
-# The strategy used for options in the default sshd_config shipped with
-# OpenSSH is to specify options with their default value where
-# possible, but leave them commented.  Uncommented options override the
-# default value.
-
-Include /etc/ssh/sshd_config.d/*.conf
-
-#Port 22
-#AddressFamily any
-#ListenAddress 0.0.0.0
-#ListenAddress ::
-
-#HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_ecdsa_key
-#HostKey /etc/ssh/ssh_host_ed25519_key
-
-# Ciphers and keying
-#RekeyLimit default none
-
-# Logging
-#SyslogFacility AUTH
-#LogLevel INFO
-
-# Authentication:
-
-#LoginGraceTime 2m
-PermitRootLogin no
-#StrictModes yes
-#MaxAuthTries 2
-#MaxSessions 10
-
-#PubkeyAuthentication yes
-
-# Expect .ssh/authorized_keys2 to be disregarded by default in future.
-#AuthorizedKeysFile	.ssh/authorized_keys .ssh/authorized_keys2
-
-#AuthorizedPrincipalsFile none
-
-#AuthorizedKeysCommand none
-#AuthorizedKeysCommandUser nobody
-
-# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
-#HostbasedAuthentication no
-# Change to yes if you don't trust ~/.ssh/known_hosts for
-# HostbasedAuthentication
-#IgnoreUserKnownHosts no
-# Don't read the user's ~/.rhosts and ~/.shosts files
-#IgnoreRhosts yes
-
-# To disable tunneled clear text passwords, change to no here!
-PasswordAuthentication no
-#PermitEmptyPasswords no
-
-# Change to yes to enable challenge-response passwords (beware issues with
-# some PAM modules and threads)
-ChallengeResponseAuthentication no
-
-# Kerberos options
-#KerberosAuthentication no
-#KerberosOrLocalPasswd yes
-#KerberosTicketCleanup yes
-#KerberosGetAFSToken no
-
-# GSSAPI options
-#GSSAPIAuthentication no
-#GSSAPICleanupCredentials yes
-#GSSAPIStrictAcceptorCheck yes
-#GSSAPIKeyExchange no
-
-# Set this to 'yes' to enable PAM authentication, account processing,
-# and session processing. If this is enabled, PAM authentication will
-# be allowed through the ChallengeResponseAuthentication and
-# PasswordAuthentication.  Depending on your PAM configuration,
-# PAM authentication via ChallengeResponseAuthentication may bypass
-# the setting of "PermitRootLogin without-password".
-# If you just want the PAM account and session checks to run without
-# PAM authentication, then enable this but set PasswordAuthentication
-# and ChallengeResponseAuthentication to 'no'.
-UsePAM yes
-
-AllowAgentForwarding no
-AllowTcpForwarding no
-#GatewayPorts no
-X11Forwarding no
-#X11DisplayOffset 10
-#X11UseLocalhost yes
-#PermitTTY yes
-PrintMotd no
-#PrintLastLog yes
-#TCPKeepAlive yes
-#PermitUserEnvironment no
-#Compression delayed
-#ClientAliveInterval 0
-#ClientAliveCountMax 3
-#UseDNS no
-#PidFile /var/run/sshd.pid
-#MaxStartups 10:30:100
-#PermitTunnel no
-#ChrootDirectory none
-#VersionAddendum none
-
-# no default banner path
-#Banner none
-
-# Allow client to pass locale environment variables
-AcceptEnv LANG LC_*
-
-# override default of no subsystems
-Subsystem sftp	/usr/lib/openssh/sftp-server
-
-# Example of overriding settings on a per-user basis
-#Match User anoncvs
-#	X11Forwarding no
-#	AllowTcpForwarding no
-#	PermitTTY no
-#	ForceCommand cvs server
-```
-
-{% hint style="info" %} I am not a proponent of changing default ports when I don't have to. A strong key pair and fail2ban is enough for me. It is not too hard for an attacker to figure out what port ssh is listening on if they really want to.  
- {% endhint %}
+* [https://cryptsus.com/blog/how-to-secure-your-ssh-server-with-public-key-elliptic-curve-ed25519-crypto.html](https://cryptsus.com/blog/how-to-secure-your-ssh-server-with-public-key-elliptic-curve-ed25519-crypto.html)
+* [https://www.raspberrypi.org/forums/viewtopic.php?t=245931](https://www.raspberrypi.org/forums/viewtopic.php?t=245931)
 

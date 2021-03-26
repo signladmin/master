@@ -20,25 +20,7 @@ _**We would like to thank**_ ✨_**Star Forge Stake Pool**_ ✨_**for providing 
 | ADApools.org  | [![](../../.gitbook/assets/adapools.png)](https://adapools.org/pool/c825168836c5bf850dec38567eb4771c2e03eea28658ff291df768ae)  |
 | Telegram  | [![](../../.gitbook/assets/download-9-.jpeg)](https://t.me/WCatz)  |
 
-| **Description** |
-| :--- |
-| A guide to building a 4 watt per Pi, Cardano Stake Pool. A reference guide for the Pi Pool images. |
 
-## Overview & Credits
-
-
-
-{% hint style="danger" %}
-It is strongly recommended to work through the [Stake Pool School](https://cardano-foundation.gitbook.io/stake-pool-course/) course presented by the Cardano Foundation.
-{% endhint %}
-
-{% hint style="warning" %}
-If you would like to create an .img file of your work that can be flashed for reuse on other Raspberry Pi's you should build on an 8GB sd card. It will take less time to image. See [image creation section](https://pi-pool.adamantium.online/create-.img-file).
-{% endhint %}
-
-### Why this guide?
-
-Consolidate and organize the various guides into a single document that can be followed or referenced _specifically_ for running a pool using two \(or more\) Raspberry Pi 4B \(the 8GB version\) and one offline Pi for cold key operations.
 
 Provide documentation of every step taken while building the Pi-Relay, Pi-Core & Pi-Cold images available for bootstrapping pool creation. A reference & guide.
 

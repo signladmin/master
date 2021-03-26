@@ -20,15 +20,11 @@
 ## Intermediate Guides <a id="intermediate-guide"></a>
 
 * [\[OTG\] Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
-  * [index](intermediate-guide/pi-pool-tutorial/untitled-5.md)
-  * [Part I: Download & Flash image](intermediate-guide/pi-pool-tutorial/part-i-download-and-flash-image.md)
+  * [Overview & Credits](intermediate-guide/pi-pool-tutorial/untitled-3.md)
+  * [Download & Flash image](intermediate-guide/pi-pool-tutorial/part-i-download-and-flash-image.md)
   * [Part 2: Logging in Securely](intermediate-guide/pi-pool-tutorial/untitled-4.md)
-  * [Part 3: User Setup](intermediate-guide/pi-pool-tutorial/untitled-3.md)
   * [Part 4: Server Setup](intermediate-guide/pi-pool-tutorial/untitled-2.md)
-  * [Part 5: Environment Setup](intermediate-guide/pi-pool-tutorial/untitled-1.md)
+  * [User Setup](intermediate-guide/pi-pool-tutorial/untitled-5.md)
+  * [Environment Setup](intermediate-guide/pi-pool-tutorial/untitled-1.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/untitled.md)
-
----
-
-* [index](untitled.md)
 

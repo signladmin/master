@@ -1,4 +1,4 @@
-# Part 5: Environment Setup
+# Environment Setup
 
 | description |
 | :--- |

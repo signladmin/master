@@ -2,7 +2,7 @@
 description: 'Create the ada user, add to group sudo'
 ---
 
-# index
+# User Setup
 
 {% hint style="warning" %}
 If you are using a Pi Pool image you need only reference this material until we start configuring the server.
