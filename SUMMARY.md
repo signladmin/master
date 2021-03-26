@@ -34,5 +34,4 @@
 
 * [Coming Soon...](coming-soon.../README.md)
   * [Raspberry Pi Zero Trezor Wallet](coming-soon.../raspberry-pi-zero-trezor-wallet.md)
-* [Build software better, together](untitled.md)
 
