@@ -4,7 +4,11 @@ description: "Put your ADA to work today \U0001F60E✨"
 
 # How to delegate ADA
 
-* [ ] The first step to delegating your ADA to one of our 
+* [ ] The first step to delegating your ADA is to download one of the official Cardano Wallets
+
+{% hint style="danger" %}
+
+{% endhint %}
 
 {% tabs %}
 {% tab title="Daedulus Wallet" %}
