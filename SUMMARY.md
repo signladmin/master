@@ -2,7 +2,6 @@
 
 * [Home Page](README.md)
 * [Delegate](delegate/README.md)
-  * [What does Delegation even mean?](delegate/what-does-delegation-even-mean.md)
   * [How to delegate ADA](delegate/how-to-delegate-ada.md)
 * [Want to contribute content?](want-to-contribute/README.md)
   * [Contributing Guide](want-to-contribute/untitled-1/README.md)
