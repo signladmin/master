@@ -20,6 +20,7 @@
 ## Intermediate Guides <a id="intermediate-guide"></a>
 
 * [\[OTG\] Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
+  * [index](intermediate-guide/pi-pool-tutorial/untitled-5.md)
   * [Part I: Download & Flash image](intermediate-guide/pi-pool-tutorial/part-i-download-and-flash-image.md)
   * [Part 2: Logging in Securely](intermediate-guide/pi-pool-tutorial/untitled-4.md)
   * [Part 3: User Setup](intermediate-guide/pi-pool-tutorial/untitled-3.md)
@@ -29,5 +30,5 @@
 
 ---
 
-* [Untitled](untitled.md)
+* [index](untitled.md)
 

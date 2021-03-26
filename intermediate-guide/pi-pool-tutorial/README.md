@@ -1,6 +1,12 @@
+---
+description: >-
+  A guide to building a 4 watt per Pi, Cardano Stake Pool. A reference guide for
+  the Pi Pool images.
+---
+
 # \[OTG\] Pi-Pool Tutorial
 
-![](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
+![Star Forge Pool](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
 
 ### 
 
