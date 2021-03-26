@@ -20,4 +20,7 @@ _**We would like to thank**_ ✨_**Star Forge Stake Pool**_ ✨_**for providing 
 | ADApools.org  | [![](../../.gitbook/assets/adapools.png)](https://adapools.org/pool/c825168836c5bf850dec38567eb4771c2e03eea28658ff291df768ae)  |
 | Telegram  | [![](../../.gitbook/assets/download-9-.jpeg)](https://t.me/WCatz)  |
 
+{% hint style="info" %}
+_**If you would like to contribute a guide or have an idea to improve any tutorial go to this**_ [_**page**_](../../want-to-contribute/) _**here and then learn how to get started contributing today**_
+{% endhint %}
 

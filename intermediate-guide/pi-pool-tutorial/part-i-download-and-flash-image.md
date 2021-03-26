@@ -39,15 +39,17 @@ Plug the Pi into a monitor, insert the sd card and power up. Once you see a gree
 {% endtab %}
 
 {% tab title="Fresh Ubuntu 20.10 installation" %}
-
-{% endtab %}
-{% endtabs %}
-
 #### Within Raspberry Pi Imager
 
 #### Select Ubuntu Server 20.10 \(RPI 3/4/400\)
 
 **Choose OS -&gt; Other general purpose OS -&gt; Ubuntu -&gt; Ubuntu Server 20.10 \(RPI 3/4/400\)**. The 64 bit option.
 
-**Locate your target drive & write it to disk.**
+**Locate your target drive & write it to disk**
+
+![](../../.gitbook/assets/ubuntu.png)
+{% endtab %}
+{% endtabs %}
+
+#### **.**
 
