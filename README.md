@@ -4,7 +4,7 @@
 
 ![](.gitbook/assets/download-6-.jpeg)
 
-### Welcome to ADA.Pi's tutorial section, we are here to help the future and or current Raspberry Pi Stake Pool Operators by providing our free educational resources to all. If you would like to know more about the ADA.Pi organization please head on over to our website **and social media listed below:**
+### Welcome to ADA.Pi's tutorial section, we are here to help the future and or current Raspberry Pi Stake Pool Operators by providing our free educational resources to all. If you would like to know more about the ADA.Pi project please head on over to our website **and social media listed below:**
 
 | ADA.Pi Contact Links 🔗 |
 | :--- |
