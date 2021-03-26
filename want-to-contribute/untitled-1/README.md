@@ -20,9 +20,9 @@ What we are looking for
 
 _We appreciate all contributions but we do have aspects of the project that take priority._
 
-* Find and fix inconsistencies in guides
+* Find and fix inconsistencies and errors in guides
 * Translating the guides into different languages
-* Help explain guides to others from different various backgrounds
+* Help explain guides to others from different various backgrounds and knowledge levels
 
 Rules and Expectations
 
