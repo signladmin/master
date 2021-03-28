@@ -296,7 +296,7 @@ Do not attempt this on an ~~8GB~~ sd card. Not enough space and it will quickly 
 
 You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 10 hours and the db folder is about 7GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
 
-I have started taking snapshots of my backup nodes db folder and hosting it in a web directory. With this service it takes around 15 minutes to pull the latest snapshot and maybe another 30 minutes to sync up to the tip of the chain. This service is provided as is. It is up to you. If you wan't to sync the chain on your own simply:
+I have started [taking snapshots](https://db.adamantium.online/) of my backup nodes db folder and hosting it in a web directory. With this service it takes around 15 minutes to pull the latest snapshot and maybe another 30 minutes to sync up to the tip of the chain. This service is provided as is. It is up to you. If you wan't to sync the chain on your own simply:
 
 ```bash
 cardano-service enable
