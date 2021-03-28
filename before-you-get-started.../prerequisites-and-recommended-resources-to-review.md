@@ -42,10 +42,10 @@
 
 | Author | Link to Tutorial |
 | :--- | :--- |
-| Alessandro Konrad | [https://github.com/alessandrokonrad/Pi-Pool](https://github.com/alessandrokonrad/Pi-Pool) |
+| \[Berry\] Pool | [https://github.com/alessandrokonrad/Pi-Pool](https://github.com/alessandrokonrad/Pi-Pool) |
 | Nessus Cardano  | [https://github.com/tdiesler/nessus-cardano](https://github.com/tdiesler/nessus-cardano) |
-|  |  |
-|  |  |
+| \[Easy 1\] Pool | [https://github.com/speedwing/cardano-staking-pool-edu](https://github.com/speedwing/cardano-staking-pool-edu) |
+| \[OTG\] Sun Forge | [https://pi-pool.adamantium.online/pi-node/environment-setup](https://pi-pool.adamantium.online/pi-node/environment-setup) |
 |  |  |
 |  |  |
 |  |  |
