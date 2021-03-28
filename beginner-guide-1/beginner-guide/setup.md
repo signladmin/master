@@ -6,7 +6,7 @@ description: In this tutorial we walk through basic Raspberry Pi and Linux Set U
 
 ## Summary <a id="h.vrhvb96nxxe9"></a>
 
-1. Download an Operating system \(OS\). For this tutorial, we will be using the Raspberry Pi organization's Debian “buster” image.
+1. Download an Operating system \(OS\). For this tutorial, we will be using the Raspberry Pi OS.
 2. Install Raspberry Pi OS using Raspberry Pi Imager 
 3. Flash the OS onto the SD card
 4. Boot up the Pi and configure the settings 
@@ -48,11 +48,11 @@ We are going to now download the latest official release of Raspberry Pi 64bit D
 ### Configuring the Raspberry Pi
 
   
-The first thing that we want to do is get the Raspberry Pi booted up to the RaspiOS desktop screen.
+The first thing that we want to do is get the Raspberry Pi booted up to the main desktop screen
 
- To do this we will need to plug the mini HDMI into the Raspberry Pi 4's mini HDMI slot and the HDMI end our monitor.  
+To do this we will need to plug the mini HDMI into the Raspberry Pi 4's mini HDMI slot and the HDMI end our monitor.  
   
- Then we need to insert the SD Card into the slot on the bottom of the Raspberry Pi, then we should plugin our keyboard and mouse into the Pi. Lastly, we will plug in our USB-C Raspberry Pi 4 power adapter into the Pi and it will begin to boot up.   
+Then we need to insert the SD Card into the slot on the bottom of the Raspberry Pi, then we should plugin our keyboard and mouse into the Pi. Lastly, we will plug in our USB-C Raspberry Pi 4 power adapter into the Pi and it will begin to boot up.   
   
 Once the Raspberry Pi startup screen is finished and you have booted into the RaspianOS desktop screen we can now begin to set up our Raspberry Pi configuration and settings.
 
