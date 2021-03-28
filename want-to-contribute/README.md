@@ -1,2 +1,0 @@
-# Want to contribute content?
-

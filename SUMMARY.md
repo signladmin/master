@@ -3,10 +3,10 @@
 * [Home Page](README.md)
 * [Delegate](delegate/README.md)
   * [How to delegate ADA](delegate/how-to-delegate-ada.md)
-* [Want to contribute content?](want-to-contribute/README.md)
-  * [Contributing Guide](want-to-contribute/untitled-1/README.md)
-    * [Style Guide](want-to-contribute/untitled-1/style-guide.md)
-    * [Code of Conduct](want-to-contribute/untitled-1/untitled.md)
+* [How to contribute](how-to-contribute/README.md)
+  * [Contributing Guide](how-to-contribute/untitled-1/README.md)
+    * [Style Guide](how-to-contribute/untitled-1/style-guide.md)
+    * [Code of Conduct](how-to-contribute/untitled-1/untitled.md)
 
 ## What is required <a id="before-you-get-started..."></a>
 

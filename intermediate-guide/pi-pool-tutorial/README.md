@@ -21,6 +21,6 @@ _**We would like to thank**_ ✨_**Star Forge Stake Pool**_ ✨_**for providing 
 | Telegram  | [![](../../.gitbook/assets/download-9-.jpeg)](https://t.me/WCatz)  |
 
 {% hint style="info" %}
-_**If you would like to contribute a guide or have an idea to improve any tutorial go to this**_ [_**page**_](../../want-to-contribute/) _**here and then learn how to get started contributing today**_
+_**If you would like to contribute a guide or have an idea to improve any tutorial go to this**_ [_**page**_](../../how-to-contribute/) _**here and then learn how to get started contributing today**_
 {% endhint %}
 
