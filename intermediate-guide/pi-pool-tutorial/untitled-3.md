@@ -25,7 +25,7 @@ The most popular guides out there are aimed at x86 architecture and '_knowing wh
 ## Hardware
 
 {% hint style="warning" %}
-The cardano-node & cardano-cli binaries linked to in this guide require aarch64 architecture to run. You **must** use Pi4B 8GB for the Pi-Relay and Pi-Core. For the Pi-Cold img you can use the Pi3B+ or PI4B 4GB or 8GB version with a micro sd card.
+The cardano-node & cardano-cli binaries linked to in this guide require aarch64 architecture to run. You **must** use Pi4B 8GB for the Pi-Relay and Pi-Core. For the Pi-Cold img you can use the Pi3B+ or PI4B 4GB or 8GB version with a micro sd card. Do not attempt to run the cardano-service on an sd card! You will quickly destroy it and it is too slow.
 {% endhint %}
 
 {% hint style="info" %}
