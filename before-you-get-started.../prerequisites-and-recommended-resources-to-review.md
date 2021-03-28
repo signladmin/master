@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"></th>
+      <th style="text-align:left">Documentation</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +15,13 @@
         <p><a href="https://cardano.org/stake-pool-operation/">Stake Pool Operation and General Information</a> 
         </p>
       </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://developers.cardano.org/en/testnets/cardano/overview/">Testnet Documentation</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
     </tr>
   </tbody>
 </table>
