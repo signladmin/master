@@ -291,7 +291,7 @@ If you would like to make an image file you can use to quickly write what you ha
 ## ⛓ Syncing the chain ⛓
 
 {% hint style="danger" %}
-Do not attempt this on an 8GB sd card. Not enough space! Create your image file and flash it to your ssd.
+Do not attempt this on an ~~8GB~~ sd card. Not enough space and it will quickly burn out any sd card! Create your image file and flash it to your ssd.
 {% endhint %}
 
 You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 10 hours and the db folder is about 7GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
