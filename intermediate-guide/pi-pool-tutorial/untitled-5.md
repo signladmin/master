@@ -5,7 +5,7 @@ description: 'Create the ada user, add to group sudo'
 # User Setup
 
 {% hint style="warning" %}
-If you are using a Pi Pool image you need only reference this material until we start configuring the server.
+If you are using a Pi Pool image you need only reference this material until we start the cardano-node service & [sync the chain](https://app.gitbook.com/@ada-pi/s/raspi-spo/intermediate-guide/pi-pool-tutorial/environment-setup#syncing-the-chain).
 {% endhint %}
 
 ## Create the ada user
