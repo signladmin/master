@@ -37,6 +37,21 @@
 | [PowerCert Animated Videos](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q) |
 {% endtab %}
 
+{% tab title="\(Community\) Stake Pool tutorials" %}
+### A Special thank you to all the great community members and their tutorials 
+
+| Author | Link to Tutorial |
+| :--- | :--- |
+| Alessandro Konrad | [https://github.com/alessandrokonrad/Pi-Pool](https://github.com/alessandrokonrad/Pi-Pool) |
+| Nessus Cardano  | [https://github.com/tdiesler/nessus-cardano](https://github.com/tdiesler/nessus-cardano) |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+{% endtab %}
+
 {% tab title="Community Forum" %}
 [https://forum.cardano.org/](https://forum.cardano.org/)
 {% endtab %}
