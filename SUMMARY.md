@@ -28,4 +28,5 @@
   * [User Setup](intermediate-guide/pi-pool-tutorial/untitled-5.md)
   * [Environment Setup](intermediate-guide/pi-pool-tutorial/environment-setup.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/untitled.md)
+* [Basic Stake Pool Networking](intermediate-guide/basic-stake-pool-networking.md)
 
