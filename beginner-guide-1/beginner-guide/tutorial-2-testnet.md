@@ -31,6 +31,12 @@ Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.j
 
 * **We must first update our OS and install needed upgrades if available**
 
+{% hint style="info" %}
+It is highly to update the operating system every time you boot up and login to your **Raspberry Pi** to prevent security vulnerabilities
+{% endhint %}
+
+\*\*\*\*
+
 ```
 # We are using the sudo preffix to run commands as non-root-user  
 
