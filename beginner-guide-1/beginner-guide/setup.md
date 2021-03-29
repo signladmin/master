@@ -19,7 +19,7 @@ description: In this tutorial we walk through basic Raspberry Pi and Linux Set U
 ### DON’T SKIP STEPS
 {% endhint %}
 
-### _**Part One:**_
+### **Part One:**
 
 ### Installing the Raspberry Pi Debian "buster" OS <a id="h.lpv6ciisjqp3"></a>
 
