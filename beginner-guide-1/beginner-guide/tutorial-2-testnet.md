@@ -125,7 +125,7 @@ sudo nano testnet-config.json
 ```
 
 {% hint style="warning" %}
-Due to the size of the blockchain it may take anywhere from 25-40 hours to get your node fully synced.
+Due to the size of the blockchain it may take anywhere from 25 to 40 hours to get your node fully synced.
 {% endhint %}
 
 ## Download a snapshot of the blockchain to speed the sync process
@@ -134,9 +134,8 @@ Due to the size of the blockchain it may take anywhere from 25-40 hours to get y
 Make sure you have not started or have a cardano node already running before proceeding.
 {% endhint %}
 
-Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/). This will dramatically speed up the process.
-
-We will run the following commands and then begin downloading the snapshot.
+* Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/). This will dramatically speed up the process.
+* We will run the following commands and then begin downloading the snapshot.
 
 ```bash
 # make sure you are in testnet-relay/ folder
@@ -145,12 +144,12 @@ wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
 {% hint style="info" %}
-This download will take anywhere from 25 min to 2hrs depending on your internet speeds.
+This download will take anywhere from 25 min to 2 hours depending on your internet speeds.
 {% endhint %}
 
 ## Finish syncing to the blockchain 
 
-* Now we can start the "passive" node/relay to begin syncing to the blockchain 🧱 ⛓ 
+* Now we can start the "passive" node/relay to begin syncing to the blockchain.
 
 ```bash
 pi@raspberrypi:~/cardano-node $ cardano-node run \
@@ -171,7 +170,7 @@ curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operato
 chmod 755 gLiveView.sh
 ```
 
-* [ ] Use nano to edit the env file and change only "**CNODE\_PORT**" to the port you set on your cardano-node, in our case we change it to **3000.**
+* Use nano to edit the env file and change only "**CNODE\_PORT**" to the port you set on your cardano-node, in our case we change it to **3000.**
 
 ```bash
 sudo nano env
@@ -185,7 +184,7 @@ cd cardano-node
 ```
 
 {% hint style="success" %}
-If you want to monitor your raspberry pi performance you can use the following commands
+If you want to monitor your Raspberry Pi performance you can use the following commands.
 {% endhint %}
 
 {% tabs %}
@@ -195,7 +194,7 @@ vcgencmd measure_temp
 ```
 {% endtab %}
 
-{% tab title="Use htop to see CPU and Ram performance" %}
+{% tab title="Use htop for CPU and RAM Performance" %}
 ```bash
 htop
 ```
