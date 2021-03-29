@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Home Page](README.md)
+* [Welcome](README.md)
 * [Delegate](delegate/README.md)
   * [How to delegate ADA](delegate/how-to-delegate-ada.md)
 * [How to contribute](how-to-contribute/README.md)
