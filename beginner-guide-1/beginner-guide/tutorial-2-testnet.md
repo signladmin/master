@@ -69,7 +69,7 @@ wget https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardan
 ```
 
 {% hint style="info" %}
-If you are unsure it the file downloaded or need the name of the folder/files we can use the linux "ls" command to list everything in our current working directory 
+If you are unsure if the file downloaded or need the name of the folder/files, we can use the linux "ls" command to list everything in our current working directory.
 {% endhint %}
 
 * Use "unzip" command on the downloaded zip file...
@@ -78,26 +78,26 @@ If you are unsure it the file downloaded or need the name of the folder/files we
 unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
 ```
 
-* Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present  
+* Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.  
 
 ```text
 ls
 ```
 
-* You should see this in your home directory after running ls command 👇👇👇👇
+* You should see this in your home directory after running ls command:
 
 ![](../../.gitbook/assets/screen-shot-2021-03-21-at-7.29.03-pm%20%281%29.png)
 
-* Now we need to move the cardano-node folder into our local binary directory 
+* Now we need to move the cardano-node folder into our local binary directory.
 
 ```text
 mv cardano-node ~/.local/bin
 ```
 
-* Stay in the Home directory and a new directory/folder to download the Cardano config files and our monitoring service we will be using..
+* Stay in the home directory and add a new directory/folder to download the Cardano config files and monitoring service we will be using.
 
 {% hint style="success" %}
-You can call the folder whatever you would like, but it is recommend to name it according to its use 😎
+You can call the folder whatever you would like, but it is recommend to name it according to its use.
 {% endhint %}
 
 ```text
@@ -105,7 +105,7 @@ mkdir testnet-relay
 cd testnet-relay/
 ```
 
-* Download The four Cardano Node Configuration files we need to actually build from the official [IOHK website](https://hydra.iohk.io/build/5822084/download/1/index.html) and or [documentation](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html), we will be using our CLI "wget" command to download the files.
+* Download the four Cardano node configuration files we need from the official [IOHK website](https://hydra.iohk.io/build/5822084/download/1/index.html) and or [documentation](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html). We will be using our CLI "wget" command to download the files.
 
 ```text
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-config.json
@@ -125,7 +125,7 @@ sudo nano testnet-config.json
 ```
 
 {% hint style="warning" %}
-Due to the size of the blockchain along with interent speed and the limited performance of the Raspberry Pi, it may take anywhere from 25-40 hrs to have your node fully synced 
+Due to the size of the blockchain it may take anywhere from 25-40 hours to get your node fully synced.
 {% endhint %}
 
 ## How to download a Snapshot of the blockchain to speed the Sync process
