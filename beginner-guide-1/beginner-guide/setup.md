@@ -60,15 +60,20 @@ Once the Raspberry Pi startup screen is finished and you have booted into the Ra
 DON'T SKIP STEPS 
 {% endhint %}
 
-* [ ] First you need to change the raspberry pi's Hostname and Password, this will make sure you are not just running the basic login information and it a very good habit.
+* [ ] First, you need to change the raspberry pi's Hostname and Password, this will make sure you are not just running the basic login information, and it is a very good habit.
+* [ ] Next, set your local time zone 
+* [ ] Choose language and keyboard settings
 
-  We need to just simply open the Raspberry Pi
-
-
-
-* [ ] Open Terminal to update the OS \(need to do this **EVERYTIME** on Linux OS whenever you login/bootup\)
+#### Now that we have finished most of the initial 
 
 ```text
-$ sudo apt update
+sudo apt-get update
+sudo apt-get upgrade -y
 ```
+
+{% hint style="info" %}
+It is highly to update the operating system everytime you login to your ****Linux OS to prevent security vulenerabilities
+{% endhint %}
+
+
 
