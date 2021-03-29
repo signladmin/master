@@ -199,7 +199,15 @@ htop
 
 {% tabs %}
 {% tab title="📚" %}
-[\[OTG\] Pi-Pool Tutorial](../../intermediate-guide/pi-pool-tutorial/)
+{% embed url="https://github.com/wcatz/pi-pool" %}
+
+
+
+{% embed url="https://github.com/alessandrokonrad/Pi-Pool" %}
+
+{% embed url="https://github.com/angerman" %}
+
+
 
 {% embed url="https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles\_AND\_Connect.html" %}
 
