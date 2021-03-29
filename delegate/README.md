@@ -8,10 +8,10 @@
 | [Berry Pool](https://pipool.online/) | BERRY | ![](../.gitbook/assets/adapools%20%281%29.png)  |
 | [Star Forge](%20https://adamantium.online/) | OTG | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/c825168836c5bf850dec38567eb4771c2e03eea28658ff291df768ae) |
 | [EASY 1](https://www.easystaking.org/) | EASY1 | ![](../.gitbook/assets/adapools%20%281%29.png) |
-| ZW3RK | ZW3RK | ![](../.gitbook/assets/adapools%20%281%29.png) |
-| NASEC |  | ![](../.gitbook/assets/adapools%20%281%29.png) |
-| QCPOL |  | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/c2b8bff5160dd75149f2cae0955698550e8cf0d390025b26a9508a3e) |
-| AHLNET |  | ![](../.gitbook/assets/adapools%20%281%29.png) |
+| [ZW3RK](https://zw3rk.com/) | ZW3RK | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) |
+| [NASEC](https://nasec.co.uk/cardano/) | NASEC | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/aa8b94010cd3c7199be1d619079c184a59e6f1ad930926bc2bd38579) |
+| QCPOL | QCPOL | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/c2b8bff5160dd75149f2cae0955698550e8cf0d390025b26a9508a3e) |
+|  |  | ![](../.gitbook/assets/adapools%20%281%29.png) |
 |  |  | ![](../.gitbook/assets/adapools%20%281%29.png) |
 
 #### 
