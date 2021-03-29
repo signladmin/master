@@ -7,7 +7,7 @@ description: "Put your ADA to work today \U0001F60E✨"
 * **The first step to delegating your ADA is to download one of the official Cardano Wallets**
 
 {% hint style="danger" %}
-Yoroi wallet is the only wallet available in Google and Apple App Stores, follow directly from link on website to download.
+Yoroi wallet is the only wallet available in Google and Apple App Stores, follow directly from the link on the offical website to download.
 
 ### Beware of SCAMMERS!!
 {% endhint %}
