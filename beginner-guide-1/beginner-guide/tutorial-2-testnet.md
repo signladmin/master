@@ -1,13 +1,13 @@
 ---
 description: >-
-  After completing the setup we are now ready to download the files needed for
-  the testnet
+  After completing the Raspberry Pi setup we are now ready to download the files
+  needed for the testnet.
 ---
 
-# How to make a "passive" relay node on Testnet
+# Setup a relay node on Testnet
 
 {% hint style="danger" %}
-**This tutorial is meant to get a single node syncing to the Cardano ledger/blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a Stake Pool. Please use our** [**intermediate guides**](../../intermediate-guide/pi-pool-tutorial/) **for the creation of a mainnet Stake Pool.**    
+**This tutorial is meant to get a single node syncing to the Cardano blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a mainnet stake pool. Please use our** [**intermediate guides**](../../intermediate-guide/pi-pool-tutorial/) **for the mainnet.**    
 {% endhint %}
 
 {% hint style="danger" %}
