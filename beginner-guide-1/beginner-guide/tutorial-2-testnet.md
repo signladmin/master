@@ -27,7 +27,7 @@ description: >-
 Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.jpeg) 
 {% endhint %}
 
-## Step 1: Download Files
+## Download Files
 
 * **We must first update our OS and install needed upgrades if available**
 
@@ -128,7 +128,7 @@ sudo nano testnet-config.json
 Due to the size of the blockchain it may take anywhere from 25-40 hours to get your node fully synced.
 {% endhint %}
 
-## How to download a Snapshot of the blockchain to speed the Sync process
+## How to download a snapshot of the blockchain to speed the sync process
 
 {% hint style="danger" %}
 Make sure you have not started or have a cardano node already running before proceeding🛑 
