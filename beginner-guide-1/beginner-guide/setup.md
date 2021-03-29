@@ -64,7 +64,7 @@ DON'T SKIP STEPS
 * [ ] Next, set your local time zone 
 * [ ] Choose language and keyboard settings
 
-#### Now that we have finished most of the initial 
+#### Now that we have finished most of the initial set-up we can continue getting the Pi ready to move to the next [tutorial](tutorial-2-testnet.md)
 
 ```text
 sudo apt-get update
@@ -74,6 +74,4 @@ sudo apt-get upgrade -y
 {% hint style="info" %}
 It is highly to update the operating system everytime you login to your ****Linux OS to prevent security vulenerabilities
 {% endhint %}
-
-
 
