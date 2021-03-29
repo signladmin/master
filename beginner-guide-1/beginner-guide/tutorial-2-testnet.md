@@ -128,15 +128,15 @@ sudo nano testnet-config.json
 Due to the size of the blockchain it may take anywhere from 25-40 hours to get your node fully synced.
 {% endhint %}
 
-## How to download a snapshot of the blockchain to speed the sync process
+## Download a snapshot of the blockchain to speed the sync process
 
 {% hint style="danger" %}
-Make sure you have not started or have a cardano node already running before proceeding🛑 
+Make sure you have not started or have a cardano node already running before proceeding.
 {% endhint %}
 
-Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/) 🙏
+Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/). This will dramatically speed up the process.
 
-We will run the following commands and then begin downloading the snapshot
+We will run the following commands and then begin downloading the snapshot.
 
 ```bash
 # make sure you are in testnet-relay/ folder
@@ -145,10 +145,10 @@ wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
 {% hint style="info" %}
-This download will take anywhere from 25 min- 2hrs depending on your internet speeds.
+This download will take anywhere from 25 min to 2hrs depending on your internet speeds.
 {% endhint %}
 
-## Finish Syncing to the blockchain 
+## Finish syncing to the blockchain 
 
 * Now we can start the "passive" node/relay to begin syncing to the blockchain 🧱 ⛓ 
 
