@@ -25,6 +25,8 @@ Yoroi wallet is the only wallet available in Google and Apple App Stores, follow
 {% embed url="https://yoroi-wallet.com/\#/" %}
 
 #### I have included below video walkthrough for using Yoroi Wallet and How to stake/delegate your ADA below:
+
+* \*\*\*\*[**What Is The Best Cardano Wallet To Store & Stake ADA Securely? 🔐**](https://youtu.be/3ypcYjjJNns?t=330)\*\*\*\*
 {% endtab %}
 {% endtabs %}
 
