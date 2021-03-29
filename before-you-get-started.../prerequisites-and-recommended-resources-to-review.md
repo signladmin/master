@@ -28,7 +28,7 @@
 {% endtab %}
 
 {% tab title="Youtube and Video Resources" %}
-| Why read when you can 👀📺 and listen  🎧  |
+|  |
 | :--- |
 | [IOHK Youtube Channel](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w) |
 | [NASEC Pool Youtube Channel](https://www.youtube.com/channel/UCv-eePQ0EpSV-jf-nJUPeeA/featured) |
