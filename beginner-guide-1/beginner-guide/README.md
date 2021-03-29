@@ -22,14 +22,3 @@ description: >-
 | Ethernet Cable \(CAT6\) | 2 |
 | Network Router for ethernet connection | 1 |
 
-### Citations/References
-
-#### I would like to thank all the hardworking members of the Cardano Stake Pool Community  🙏
-
-| Author/Contributor | Link to their GitHub/Work |
-| :--- | :--- |
-| Star Forge \[OTG\] | [https://adamantium.online/](https://adamantium.online/) |
-| Berry Pool \[Berry\] | [https://pipool.online/](https://pipool.online/) |
-| NASEC Pool | [https://nasec.co.uk/](https://nasec.co.uk/) |
-| Cardano-node-Documentaion | [https://docs.cardano.org/projects/cardano-node/en/latest/index.html](https://docs.cardano.org/projects/cardano-node/en/latest/index.html) |
-
