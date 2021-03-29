@@ -29,8 +29,3 @@
   * [Environment Setup](intermediate-guide/pi-pool-tutorial/environment-setup.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/untitled.md)
 
----
-
-* [Coming Soon...](coming-soon.../README.md)
-  * [Raspberry Pi Zero Trezor Wallet](coming-soon.../raspberry-pi-zero-trezor-wallet.md)
-
