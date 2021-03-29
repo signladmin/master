@@ -6,7 +6,7 @@ description: Contributing Guide for participating in this project.
 
 _**What we are looking for in our Contributors.**_
 
-Firstly, we at ADA.Pi would like to thank you for your consideration in contributing to us! We can't wait to hear your ideas and experiences. However, we do have some guidelines that we all must be familiar with and adhere to before submiting your contributions. 😊
+Firstly, we at ADA.Pi would like to thank you for your consideration in contributing to us! We can't wait to hear your ideas and experiences. However, we do have some guidelines that we all must be familiar with and adhere to before submitting your contributions. 😊
 
 ## Table of Contents
 
