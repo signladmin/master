@@ -201,7 +201,7 @@ htop
 {% endtab %}
 {% endtabs %}
 
-## Citations-References:
+## References:
 
 {% tabs %}
 {% tab title="📚" %}
