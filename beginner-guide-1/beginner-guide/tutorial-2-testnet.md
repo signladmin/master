@@ -32,20 +32,20 @@ Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.j
 * **We must first update our OS and install needed upgrades if available**
 
 {% hint style="info" %}
-It is highly to update the operating system every time you boot up and login to your **Raspberry Pi** to prevent security vulnerabilities
+It is highly recommended to update the operating system every time you boot up and login to your **Raspberry Pi** to prevent security vulnerabilities.
 {% endhint %}
 
 \*\*\*\*
 
 ```
-# We are using the sudo preffix to run commands as non-root-user  
+# We are using the sudo prefix to run commands as non-root-user  
 
 sudo apt update
 sudo apt upgrade -y
 
 ```
 
-* **We can now reboot the pi and let the updates take effect by running this command in terminal**
+* **We can now reboot the Pi and let the updates take effect by running this command in a terminal**
 
 ```text
 sudo reboot 
@@ -57,7 +57,8 @@ sudo reboot
 | :--- | :--- |
 | [Moritz Angermann \[ZW3RK\]![](../../.gitbook/assets/git.jpeg)](https://github.com/angerman)  | [https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip](https://ci.zw3rk.com/build/719/download/1/aarch64-unknown-linux-musl-cardano-node-1.25.1.zip) |
 
-* Now we need to simply download the zip file above to our Pi's Home directory and then move it to the right location so we can call on it later to start the node.
+* A static build is one in which all dependencies are included in the final build result which allows you to immediately run it on a compatible system without having to deal with building anything.
+* Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
 
 ```text
 # First change to the home directory
