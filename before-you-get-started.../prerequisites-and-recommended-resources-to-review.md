@@ -37,7 +37,7 @@
 | [PowerCert Animated Videos](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q) |
 {% endtab %}
 
-{% tab title="\(Community\) tutorials" %}
+{% tab title="Community Tutorials" %}
 ### A Special thank you to all the great community members and their tutorials 
 
 | Author | Link to Tutorial |
