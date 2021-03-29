@@ -16,23 +16,23 @@ description: In this tutorial we walk through basic Raspberry Pi and Linux Set U
 
 
 {% hint style="info" %}
-### DON’T SKIP STEPS 😁
+### DON’T SKIP STEPS
 {% endhint %}
 
 ### _**Part One:**_
 
-###  🍓Installing the Raspberry Pi Debian "buster" OS  🥧 <a id="h.lpv6ciisjqp3"></a>
+### Installing the Raspberry Pi Debian "buster" OS <a id="h.lpv6ciisjqp3"></a>
 
-We are going to now download the latest official release of Raspberry Pi 64bit Debian OS. This is the official Linux 64bit OS distribution that is designed for the Raspberry Pi and its arm64 CPU. This makes it stable and very easy to get started with the Raspberry Pi 
+We are going to now download the latest official release of Raspberry Pi 64bit Debian OS. This is the official Linux 64bit OS distribution that is designed for the Raspberry Pi and its ARM64 CPU. This makes it stable and very easy to get started with the Raspberry Pi.
 
-**1. Download the Debian “buster” Raspberry Pi 64bit OS image right -&gt;** [**here**](https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2020-08-24/2020-08-20-raspios-buster-arm64.zip) **and save it in an accessible location for now on your computer.**  
+**1. Download the Debian “buster” Raspberry Pi 64bit OS image** [**here**](https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2020-08-24/2020-08-20-raspios-buster-arm64.zip) **and save it in an accessible location for now on your computer.**  
 
 
-**2. Next, download the raspberry pi imager software that we will use in order to install the OS onto our  Raspberry Pi. This software is located on the** [**Raspberry Pi website**](https://www.raspberrypi.org/software/) **download the correct version for your computer.** 
+**2. Next, download the Raspberry Pi Imager software that we will use in order to install the OS onto our  Raspberry Pi. This software is located on the** [**Raspberry Pi website**](https://www.raspberrypi.org/software/)**. Please download the correct version for your computer.** 
 
 ![](../../.gitbook/assets/screen-shot-2021-03-12-at-5.36.30-pm.png)
 
- **3. Insert the SD card into your computer and open the "Raspberry Pi imager".**
+ **3. Insert the SD card into your computer and open the "Raspberry Pi Imager".**
 
 *  **Click on "CHOOSE OS"  then find the "2020-08-20-raspios-buster-arm64.zip" file you have downloaded in step \(1\) of this tutorial and select it.** 
 * **Next, click on the "CHOOSE SD" and find the SD card you inserted into the computer** 
@@ -40,7 +40,7 @@ We are going to now download the latest official release of Raspberry Pi 64bit D
 * **Finally, once it has finished the writing/verifying process, you will see a pop-up window saying that the OS was successfully written to the SD card, click "CONTINUE" and remove your SD card from the computer.** 
 
 {% hint style="info" %}
-#### **If you still have issues following the written instructions** [**here**](https://www.youtube.com/watch?v=J024soVgEeM) **is a short video of this process 😎**
+#### **If you still have issues following the written instructions,** [**here**](https://www.youtube.com/watch?v=J024soVgEeM) **is a short video of this process.**
 {% endhint %}
 
 ### Part 2:
@@ -48,23 +48,23 @@ We are going to now download the latest official release of Raspberry Pi 64bit D
 ### Configuring the Raspberry Pi
 
   
-The first thing that we want to do is get the Raspberry Pi booted up to the main desktop screen
+The first thing that we want to do is get the Raspberry Pi booted up to the main desktop screen.
 
-To do this we will need to plug the mini HDMI into the Raspberry Pi 4's mini HDMI slot and the HDMI end our monitor.  
+To do this we will need to plug the mini HDMI into the Raspberry Pi 4's mini HDMI slot and the HDMI end to our monitor.  
   
 Then we need to insert the SD Card into the slot on the bottom of the Raspberry Pi, then we should plugin our keyboard and mouse into the Pi. Lastly, we will plug in our USB-C Raspberry Pi 4 power adapter into the Pi and it will begin to boot up.   
   
-Once the Raspberry Pi startup screen is finished and you have booted into the RaspianOS desktop screen we can now begin to set up our Raspberry Pi configuration and settings.
+Once the Raspberry Pi startup screen is finished and you have booted into the Raspberry Pi OS desktop screen we can now begin to set up our Raspberry Pi configuration and settings.
 
 {% hint style="danger" %}
 DON'T SKIP STEPS 
 {% endhint %}
 
-* [ ] First, you need to change the raspberry pi's Hostname and Password, this will make sure you are not just running the basic login information, and it is a very good habit.
-* [ ] Next, set your local time zone 
-* [ ] Choose language and keyboard settings
+* [ ] First, you need to change the Raspberry Pi's Hostname and Password, this will make sure you are not just running the basic login information.
+* [ ] Next, set your local time zone.
+* [ ] Choose language and keyboard settings.
 
-#### Now that we have finished most of the initial set-up we can continue getting the Pi ready and move to the next [tutorial](tutorial-2-testnet.md)
+#### Now that we have finished most of the initial set-up we can continue getting the Pi ready and move to the next [tutorial](tutorial-2-testnet.md).
 
 
 
