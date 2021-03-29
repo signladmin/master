@@ -116,17 +116,21 @@ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-fi
 sudo nano testnet-config.json
 ```
 
-* Get tmux installed before we run the node so we can exit it without terminating the process
+{% hint style="warning" %}
+Due to the size of the blockchain along with interent speed and the limited performance of the Raspberry Pi, it may take anywhere from 25-40 hrs to have your node fully synced 
+{% endhint %}
 
-```bash
-sudo apt-get install tmux
+## How to download a Snapshot of the blockchain to speed the Sync process
 
-# Open new tmux terminal in cardano-node directory
-cd cardano-node
-tmux
-```
+Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/) 🙏
 
-[https://tmuxcheatsheet.com/](https://tmuxcheatsheet.com/) - if you want to know more about tmux commands...
+We will simply 
+
+
+
+
+
+## Finish Syncing to the blockchain 
 
 * Now we can start the "passive" node/relay to begin syncing to the blockchain 🧱 ⛓ 
 
@@ -142,9 +146,6 @@ pi@raspberrypi:~/cardano-node $ cardano-node run \
 
 ## Setting up gLiveView to monitor the node during its syncing process
 
-* First thing we need to do is download the prereq script from guild operators and set a few flags or we can just run it lol and watch it break..
-* I usually just put the gLiveView.sh into the cardano-node folder and change env
-
 ```bash
 cd cardano-node/
 curl -s -o gLiveView.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
@@ -158,15 +159,15 @@ chmod 755 gLiveView.sh
 sudo nano env
 ```
 
-* Finally we can exit the nano editor and just run the gLiveView script 
+* Finally, we can exit the nano editor and just run the gLiveView script from Guild Operators  
 
 ```bash
 cd cardano-node
 ./gLiveView.sh
 ```
 
-{% hint style="info" %}
-If you get this message "" do this...
+{% hint style="success" %}
+If you want to monitor your raspberry pi performance you can use the following commands
 {% endhint %}
 
 {% tabs %}
