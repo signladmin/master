@@ -6,7 +6,7 @@ description: Contributing Guide for participating in this project.
 
 _**What we are looking for in our Contributors.**_
 
-Firstly, we at ADA.Pi would like to thank you for your consdieration in contributing to us! We can't wait to hear your ideas and experences. However, we do have some strict guidelines that we all must adhere to before we begin.
+Firstly, we at ADA.Pi would like to thank you for your consideration in contributing to us! We can't wait to hear your ideas and experiences. However, we do have some guidelines that we all must be familiar with and adhere to before submiting your contributions. 😊
 
 ## Table of Contents
 
@@ -31,20 +31,20 @@ _As an open-source project we expect a certain standard from you:_
 * Be respectful and open-minded to others' opinions and conversations around this project. Understand that as a community we should all be working together. Take into consideration that the way in which another contributor is helping may be different from your own and that it is more productive to help each other out rather than argue about which way is "correct".
 * ADA.Pi's tutorials are released with a Contributors Code of Conduct. Through partaking in this project you agreed to abide by these terms.
 * If you open a pull request, please make sure that your contribution passes all tests, as failures will sunder the project and a fix must be made.
-* Content that is to be added should be relevant to the project and not include self promotion or the promotion of sponsors. Understand that what is submited here will be considered open source and will be shared freely amongst everyone. 
+* Content that is to be added should be relevant to the project and not include self-promotion or the promotion of sponsors. Understand that what is submitted here will be considered open source and will be shared freely amongst everyone. 
 
-How to contribute
+_**How to contribute**_
 
-_First, throughy read through the project and consider what level of contribution yours will be._
+_First, thoroughly read through the project and consider what level of contribution yours will be._
 
-* For a minor contribution, such as a grammer, open a pull request.
-* For a major contribution, such as a new tutorial, start by ordering an issue first. This way the community can assess and discuss your idea, before you start working on it.
+* For a minor contribution, such as grammar, open a pull request.
+* For a major contribution, such as a new tutorial, start by ordering an issue first. This way the community can assess and discuss your idea before you start working on it.
 
-Style Guide
+_**Style Guide**_
 
-_If you are contributing tutorials or guides please check out our_ Style Guide _so that it blends into the project seemlessly._
+_If you are contributing tutorials or guides please check out our_ Style Guide _so that it blends into the project seamlessly._
 
-Community
+_**Community**_
 
 Discussions about the Open Source Guides take place on this repository's Issues and Pull Requests sections. Anybody is welcome to join these conversations.
 
