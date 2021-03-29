@@ -14,14 +14,14 @@ description: >-
  **This tutorial is for only use with Raspberry Pi OS 64bit and is solely for educational purposes to get a cardano-node syncing to the blockchain.** 
 {% endhint %}
 
-## _Summary_ 
+## Summary 
 
-1. Downloading the Binaries needed to build Cardano node relay
-2. Download Configuration files from IOHK/Cardano-node
+1. Downloading the binaries needed to build a Cardano node relay
+2. Download configuration files from IOHK/Cardano-node
 3. Edit the config settings 
-4. Download db snapshot to speed sync process
-5. Run the basic passive relay node to connect to testnet
-6. Monitor Relay Node with gLiveView  
+4. Download a db snapshot to speed up the sync process
+5. Run the basic passive relay node to connect to the testnet
+6. Monitor the relay node with gLiveView  
 
 {% hint style="success" %}
 Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.jpeg) 
