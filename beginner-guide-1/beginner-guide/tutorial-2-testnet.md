@@ -4,14 +4,14 @@ description: >-
   the testnet
 ---
 
-# How to make a "passive" Relay Node on Testnet \(WORK-IN-PROGRESS\)
+# How to make a "passive" Relay Node on Testnet
 
 {% hint style="danger" %}
 **This tutorial is meant only to get a single node syncing to the Cardano ledger/blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible DO NOT USE this tutorial to form a Stake Pool. Please use our** [**intermediate guides**](../../intermediate-guide/pi-pool-tutorial/) **for the creation of a mainnet Stake Pool.**    
 {% endhint %}
 
 {% hint style="danger" %}
- **This tutorial is for only use with raspianOS-64bit and is soley for education purposes for creating a cardano-node and watch it sync to the blockchain** 
+ **This tutorial is for only use with raspianOS-64bit and is solely for education purposes for creating a cardano-node and watch it sync to the blockchain** 
 {% endhint %}
 
 ## _Summary_ 
@@ -19,8 +19,9 @@ description: >-
 1. Downloading the Binaries needed to build Cardano node relay
 2. Download Configuration files from IOHK/Cardano-node
 3. Edit the config settings 
-4. Run the basic passive relay node to connect to testnet
-5. Monitor Relay Node with gLiveView  
+4. Download db snapshot to speed sync process
+5. Run the basic passive relay node to connect to testnet
+6. Monitor Relay Node with gLiveView  
 
 {% hint style="success" %}
 Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.jpeg) 
@@ -194,13 +195,17 @@ htop
 {% endtab %}
 {% endtabs %}
 
-Citations-References:
+## Citations-References:
 
-{% embed url="https://cardano-community.github.io/guild-operators/\#/Scripts/gliveview" %}
+{% tabs %}
+{% tab title="📚" %}
+[\[OTG\] Pi-Pool Tutorial](../../intermediate-guide/pi-pool-tutorial/)
 
 {% embed url="https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles\_AND\_Connect.html" %}
 
-{% embed url="https://tmuxcheatsheet.com/" %}
+{% embed url="https://cardano-community.github.io/guild-operators/\#/Scripts/gliveview" %}
+{% endtab %}
+{% endtabs %}
 
 
 
