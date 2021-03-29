@@ -48,7 +48,7 @@ _**Community**_
 
 Discussions about the Open Source Guides take place on this repository's Issues and Pull Requests sections. Anybody is welcome to join these conversations.
 
-Wherever possible, do not take these conversations to private channels, including contacting the maintainers directly. Keeping communication public means everybody can benefit and learn from the conversation.
+Wherever possible, do not take these conversations to private channels, including contacting the maintainers directly. Keeping communication public means everyone can benefit and learn from the conversation.
 
 Attribution
 

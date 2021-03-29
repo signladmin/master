@@ -14,7 +14,7 @@ _**From the GitHub Manual of Style, which this style guide inherits from:**_
 
 All written content should follow these principles:
 
-* **Approachability:** Don't assume reader has prior knowledge
+* **Approachability:** Don't assume the reader has prior knowledge
 * **Brevity:** Keep it simple, link to outside content for deeper dives
 * **Curation:** Amplify community best practices vs. any individual's point of view
 

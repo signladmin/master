@@ -1,8 +1,8 @@
 # Delegate
 
-#### We would like to give you a list of the Cardano Stake Pools and operators who have helped with their contributions. Please consider delegating to any of them if you enjoy these tutorials and resources! Thank You! ❤️🙏
+#### This is a list of Cardano Stake Pools and operators who have provided contributions for this hub. Please consider delegating to any of them if you enjoy these tutorials and resources. Thank You!
 
-| Stake Pool Website | Stake Pool Ticker | adapool.org Link |
+| Stake Pool Website | Stake Pool Ticker | adapools.org Link |
 | :--- | :--- | :--- |
 | [ADA.Pi Pool](https://ada-pi.io/) | PIADA | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) |
 | [Berry Pool](https://pipool.online/) | BERRY | ![](../.gitbook/assets/adapools%20%281%29.png)  |

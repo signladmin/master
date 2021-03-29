@@ -3,7 +3,7 @@
 * [Welcome](README.md)
 * [Delegate](delegate/README.md)
   * [How to delegate ADA](delegate/how-to-delegate-ada.md)
-* [How to contribute](how-to-contribute/README.md)
+* [Contribute](how-to-contribute/README.md)
   * [Contributing Guide](how-to-contribute/untitled-1/README.md)
     * [Style Guide](how-to-contribute/untitled-1/style-guide.md)
     * [Code of Conduct](how-to-contribute/untitled-1/untitled.md)
@@ -11,7 +11,7 @@
 ## What is required <a id="before-you-get-started..."></a>
 
 * [Stake Pool Operator Resource Library](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
-* [Hardware-Purchase-Links](before-you-get-started.../hardware.md)
+* [Hardware Purchase Links](before-you-get-started.../hardware.md)
 
 ## Beginner Guides <a id="beginner-guide-1"></a>
 
