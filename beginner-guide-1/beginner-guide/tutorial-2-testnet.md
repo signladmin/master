@@ -122,13 +122,23 @@ Due to the size of the blockchain along with interent speed and the limited perf
 
 ## How to download a Snapshot of the blockchain to speed the Sync process
 
+{% hint style="danger" %}
+Make sure you have not started or have a cardano node already running before proceeding🛑 
+{% endhint %}
+
 Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/) 🙏
 
-We will simply 
+We will run the following commands and then begin downloading the snapshot
 
+```bash
+# make sure you are in testnet-relay/ folder
+cd testnet-relay
+wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+```
 
-
-
+{% hint style="info" %}
+This download will take anywhere from 25 min- 2hrs depending on your internet speeds.
+{% endhint %}
 
 ## Finish Syncing to the blockchain 
 
