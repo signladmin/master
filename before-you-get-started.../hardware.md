@@ -20,7 +20,7 @@ description: >-
 | Product Name & Description | Price in USD | Verified by RPI SPOs |  |
 | :--- | :--- | :--- | :--- |
 | NETGEAR 5-Port Gigabit Ethernet PoE+ Switch \(FOR USE WITH A RPi PoE HAT\) | 69.99 | YES | [Amazon](https://www.amazon.com/gp/product/B07WTXHSXC/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) |
-|  |  |  |  |
+| Anker 60W 6 Port USB Charging Station | 25.99 | YES | [Amazon](https://www.amazon.com/Anker-Charger-PowerPort-iPhone-Galaxy/dp/B00P936188/ref=pd_ybh_a_123?_encoding=UTF8&psc=1&refRID=4EM62P8FC7T33A3G7Y9Z) |
 |  |  |  |  |
 {% endtab %}
 
@@ -29,6 +29,8 @@ description: >-
 | :--- | :--- | :--- | :--- |
 | Kingston 120GB A400 SATA 3 2.5" Internal SSD SA400S37/120G | 24.99 | YES | [Amazon](https://www.amazon.com/Kingston-120GB-Solid-SA400S37-120G/dp/B01N6JQS8C/ref=sxts_sxwds-bia-wc-rsf-ajax2_0?crid=2IZ705SDHVNO2&cv_ct_cx=kingston+a400&dchild=1&keywords=kingston+a400&pd_rd_i=B01N6JQS8C&pd_rd_r=cff9c24d-82ba-4471-892a-a23276b8b1db&pd_rd_w=wzQ6v&pd_rd_wg=6jlaB&pf_rd_p=5c711241-c674-4eef-b21c-fe6add670f33&pf_rd_r=MMBZR2DHZVKB3J1QE3HY&psc=1&qid=1615235655&sprefix=kingsto%2Caps%2C254&sr=1-2-e30f047d-8e3c-4340-8179-6a77ce88d756) |
 | PNY CS900 120GB 3D NAND 2.5" SATA III Internal Solid State Drive \(SSD\) - \(SSD7CS900-120-RB\) | 27.99 | YES | [Amazon](https://www.amazon.com/gp/product/B0722XPTL6/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&th=1) |
+| Crucial MX500 250GB | 48.74 | YES | [Amazon](https://www.amazon.com/Crucial-MX500-250GB-NAND-Internal/dp/B0764WCXCV/ref=pd_ybh_a_109?_encoding=UTF8&psc=1&refRID=DFCXCZ7KPJPWES884N8A) |
+|  |  |  |  |
 {% endtab %}
 
 {% tab title="Raspberry Pi HATs" %}
@@ -41,7 +43,7 @@ description: >-
 | Product Name & Description | Price in USD | Verified by RPI SPOs | Purchase links |
 | :--- | :--- | :--- | :--- |
 | StarTech USB 3.0 to 2.5" SSD Cable w/UASP | 10.99 | YES | [Amazon](https://www.amazon.com/StarTech-com-SATA-USB-Cable-USB3S2SAT3CB/dp/B00HJZJI84/ref=sr_1_15?dchild=1&keywords=startech+usb+3.0&qid=1617056177&sr=8-15) |
-| UGREEN Micro HDMI to HDMI Cable Adapter 4K 60Hz Ethernet Audio |  | YES | [Amazon](https://www.amazon.com/gp/product/B06WWQ7KLV/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1) |
+| UGREEN Micro HDMI to HDMI Cable  | 8.99 | YES | [Amazon](https://www.amazon.com/gp/product/B06WWQ7KLV/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1) |
 |  |  |  |  |
 |  |  |  |  |
 {% endtab %}
