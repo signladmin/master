@@ -58,8 +58,18 @@ If this is your first time booting up the Raspberry Pi OS you will have to follo
 {% endhint %}
 
 * [ ] First, you need to change the Raspberry Pi's Hostname and Password, this will make sure you are not just running the basic login information.
-* [ ] Next, set your local time zone.
+* [ ] Enter Wifi login information \(**you** **may** **skip this if you are using Ethernet**\)
+* [ ] Set your local time zone.
 * [ ] Choose language and keyboard settings.
+* [ ] Update Raspberry Pi \(skip this if you want to update via command line\)
+
+{% hint style="success" %}
+#### After you are done with these initial setup steps, it is time to proceed to get the Rasberry Pi to boot from its USB so that way we can use our external SSD. 
+{% endhint %}
+
+### Part 3:
+
+
 
 
 
