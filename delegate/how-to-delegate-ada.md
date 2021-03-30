@@ -8,9 +8,9 @@ description: Put your ADA to work today!
 * **The first step to delegating your ADA is to download one of the official Cardano Wallets**
 
 {% hint style="danger" %}
-Yoroi wallet is the only mobile wallet available in Google and Apple App Stores, follow directly from the link on the official Cardano.org website to download.
+Yoroi wallet is a mobile wallet available for Android and Apple devices. Daedalus is not a mobile wallet!
 
-### Beware of fake wallets!
+### Beware of fake wallets! If you have questions, check [cardano.org](https://cardano.org/stake-pool-delegation#wallets).
 {% endhint %}
 
 {% tabs %}
