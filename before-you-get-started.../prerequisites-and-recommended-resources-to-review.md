@@ -59,6 +59,10 @@ description: Stake pool operator resources.
 {% tab title="Community Forum" %}
 [https://forum.cardano.org/](https://forum.cardano.org/)
 {% endtab %}
+
+{% tab title="" %}
+[https://cardano-community.github.io/guild-operators/\#/basics](https://cardano-community.github.io/guild-operators/#/basics)
+{% endtab %}
 {% endtabs %}
 
 

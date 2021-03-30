@@ -152,13 +152,13 @@ This download will take anywhere from 25 min to 2 hours depending on your intern
 * Now we can start the "passive" node/relay to begin syncing to the blockchain.
 
 ```bash
-pi@raspberrypi:~/cardano-node $ cardano-node run \
->    --topology testnet-topology.json \
->    --database-path db \
->    --socket-path db/socket \
->    --host-addr 0.0.0.0 \
->    --port 3000 \
->    --config testnet-config.json 
+cardano-node run \
+   --topology testnet-topology.json \
+   --database-path db \
+   --socket-path db/socket \
+   --host-addr 0.0.0.0 \
+   --port 3000 \
+   --config testnet-config.json 
 ```
 
 ## Setting up gLiveView to monitor the node during its syncing process
