@@ -16,23 +16,24 @@ description: >-
 
 ## Summary 
 
-1. Downloading the binaries needed to build a Cardano node relay
-2. Download configuration files from IOHK/Cardano-node
-3. Edit the config settings 
-4. Download a db snapshot to speed up the sync process
-5. Run the basic passive relay node to connect to the testnet
-6. Monitor the relay node with gLiveView  
+1. Environment Setup
+2. Downloading the binaries needed to build a Cardano node relay
+3. Download configuration files from IOHK/Cardano-node
+4. Edit the config settings 
+5. Download a db snapshot to speed up the sync process
+6. Run the basic passive relay node to connect to the testnet
+7. Monitor the relay node with gLiveView  
 
 {% hint style="success" %}
 Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.jpeg) 
 {% endhint %}
 
-## Download Files
+## Setting up our environment
 
 * **We must first update our OS and install needed upgrades if available**
 
 {% hint style="info" %}
-It is highly recommended to update the operating system every time you boot up and login to your **Raspberry Pi** to prevent security vulnerabilities.
+It is highly recommended to update the operating system every time you boot up and log in to your **Raspberry Pi** to prevent security vulnerabilities.
 {% endhint %}
 
 \*\*\*\*
@@ -51,7 +52,11 @@ sudo apt upgrade -y
 sudo reboot 
 ```
 
+* Next, we need to continue with a few more tasks to make sure our  is ready
 
+```bash
+
+```
 
 | Provided By | Link to Cardano Static Build  |
 | :--- | :--- |
