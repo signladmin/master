@@ -20,6 +20,7 @@ description: >-
 | Product Name & Description | Price in USD | Verified by RPI SPOs |  |
 | :--- | :--- | :--- | :--- |
 | NETGEAR 5-Port Gigabit Ethernet PoE+ Switch \(FOR USE WITH A RPi PoE HAT\) | 69.99 | YES | [Amazon](https://www.amazon.com/gp/product/B07WTXHSXC/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) |
+|  |  |  |  |
 {% endtab %}
 
 {% tab title="Storage Devices" %}
@@ -35,11 +36,20 @@ description: >-
 | Official Raspberry Pi Power Over Ethernet \(PoE\) HAT for Raspberry Pi 3 B+ and 4 - 802.3af PoE Network | 29.91 | YES | [Amazon](https://www.amazon.com/poe-hat/dp/B07GR9XQJH/ref=sr_1_2?dchild=1&keywords=Official+Raspberry+Pi+Power+Over+Ethernet+%28PoE%29+HAT+for+Raspberry+Pi+3+B%2B+and+802.3af+PoE+Network&qid=1615236400&s=electronics&sr=1-2) |
 {% endtab %}
 
-{% tab title="Cables & Other Accessories" %}
+{% tab title="Cables " %}
 | Product Name & Description | Price in USD | Verified by RPI SPOs | Purchase links |
 | :--- | :--- | :--- | :--- |
 | StarTech USB 3.0 to 2.5" SSD Cable w/UASP | 10.99 | YES | [Amazon](https://www.amazon.com/StarTech-com-SATA-USB-Cable-USB3S2SAT3CB/dp/B00HJZJI84/ref=sr_1_15?dchild=1&keywords=startech+usb+3.0&qid=1617056177&sr=8-15) |
 | UGREEN Micro HDMI to HDMI Cable Adapter 4K 60Hz Ethernet Audio |  | YES | [Amazon](https://www.amazon.com/gp/product/B06WWQ7KLV/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1) |
+|  |  |  |  |
+|  |  |  |  |
+{% endtab %}
+
+{% tab title="Cases" %}
+|  |  |  |  |
+| :--- | :--- | :--- | :--- |
+| C4Labs Cloudlet CASE |  |  | [https://www.amazon.com/Cloudlet-CASE-Raspberry-Computers-Compatible/dp/B0844YSJWB/ref=pd\_ybh\_a\_20?\_encoding=UTF8&psc=1&refRID=VEQSZG23D4B32R00CR67](https://www.amazon.com/Cloudlet-CASE-Raspberry-Computers-Compatible/dp/B0844YSJWB/ref=pd_ybh_a_20?_encoding=UTF8&psc=1&refRID=VEQSZG23D4B32R00CR67) |
+| GeeekPi New Raspberry Pi Cluster Case |  |  | [https://www.amazon.com/GeeekPi-Raspberry-Cluster-Stackable-4-Layers/dp/B083FDHPBH/ref=pd\_ybh\_a\_97?\_encoding=UTF8&psc=1&refRID=YKMBG97KCHQHTR27SNHD](https://www.amazon.com/GeeekPi-Raspberry-Cluster-Stackable-4-Layers/dp/B083FDHPBH/ref=pd_ybh_a_97?_encoding=UTF8&psc=1&refRID=YKMBG97KCHQHTR27SNHD) |
 {% endtab %}
 {% endtabs %}
 
