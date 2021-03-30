@@ -71,13 +71,17 @@ If this is your first time booting up the Raspberry Pi OS you will have to follo
 
 ### Getting the Pi to Boot from USB
 
-This is the final step in this tutorial. We are going to first open the Raspberry Pi applications menu and then click on the **SD Card Copier** application.
+This is the final step in this tutorial. We are going to first insert out external SSD into one of the USB 3.0 slots.  
+
+![](../../.gitbook/assets/pi4.jpeg)
+
+Open the Raspberry Pi applications menu and then click on the **SD Card Copier** application.
 
 ![](../../.gitbook/assets/screen-shot-2021-03-29-at-9.11.39-pm.png)
 
+Then we want to select COPY FROM DEVICE - \(mmcblk0\) SD CARD\) 
 
-
-
+Next, select COPY TO DEVICE - \(sda\) SSD Device
 
 #### Now that we have finished most of the initial set-up we can continue getting the Pi ready and move to the next [tutorial](tutorial-2-testnet.md).
 
