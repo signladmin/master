@@ -1,4 +1,8 @@
-# Stake Pool Operator Resource Library
+---
+description: Stake pool operator resources.
+---
+
+# Resource Library
 
 {% tabs %}
 {% tab title="Official Cardano Foundation" %}

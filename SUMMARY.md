@@ -10,7 +10,7 @@
 
 ## What is required <a id="before-you-get-started..."></a>
 
-* [Stake Pool Operator Resource Library](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
+* [Resource Library](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
 * [Hardware Purchase Links](before-you-get-started.../hardware.md)
 
 ## Beginner Guides <a id="beginner-guide-1"></a>
