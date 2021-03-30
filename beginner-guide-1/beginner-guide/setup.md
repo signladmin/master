@@ -71,7 +71,7 @@ If this is your first time booting up the Raspberry Pi OS you will have to follo
 
 ### Getting the Pi to Boot from USB
 
-This is the final step in this tutorial. We are going to first insert out external SSD into one of the USB 3.0 slots.  
+**This is the final step in this tutorial. We are going to first insert out external SSD into one of the USB 3.0 slots.**  
 
 ![](../../.gitbook/assets/pi4.jpeg)
 
@@ -79,17 +79,33 @@ Open the Raspberry Pi applications menu and then click on the **SD Card Copier**
 
 ![](../../.gitbook/assets/screen-shot-2021-03-29-at-9.11.39-pm.png)
 
-Then we want to select COPY FROM DEVICE - \(mmcblk0\) SD CARD\) 
+Then we want to select **COPY FROM DEVICE** - **\(mmcblk0\) SD CARD\)** 
 
-Next, select COPY TO DEVICE - \(sda\) SSD Device
+Next, select **COPY TO DEVICE - \(sda\) SSD Device**
 
-Once the copy process is complete we can simply open a new terminal window and enter the following command
+Once the copy process is complete open a new terminal window and enter the following command
 
 ```text
 sudo raspi-config
 ```
 
-This will bring you to the Raspberry Pi's system configuration settings where you can access the Advanced Options, then select boot order and choose the USB boot option. Navigate to the finish option to close the system configuration menu and reboot the pi. You should now be able to shutdown the Pi after it boots up, remove the SD Card and power up the Pi. 
+This will bring you to the Raspberry Pi's system configuration settings where you can access the **Advanced Options**
+
+![](../../.gitbook/assets/screen-shot-2021-03-29-at-10.13.19-pm.png)
+
+Next select **boot order**
+
+![](../../.gitbook/assets/screen-shot-2021-03-29-at-10.13.40-pm.png)
+
+\*\*\*\*
+
+Then choose the USB boot option.
+
+![](../../.gitbook/assets/screen-shot-2021-03-29-at-10.14.05-pm.png)
+
+**Now you can select &lt;ok&gt; then &lt;finish&gt; , close the Raspberry Pi system configuration menu, and reboot the Pi.**
+
+**You should now be able to shut down the Pi after it reboots up, remove the SD Card, then you can power up the Pi and it should boot from your external USB storage device.** 
 
 #### Now that we have finished most of the initial set-up we can continue getting the Pi ready and move to the next [tutorial](tutorial-2-testnet.md).
 
