@@ -83,6 +83,14 @@ Then we want to select COPY FROM DEVICE - \(mmcblk0\) SD CARD\)
 
 Next, select COPY TO DEVICE - \(sda\) SSD Device
 
+Once the copy process is complete we can simply open a new terminal window and enter the following command
+
+```text
+sudo raspi-config
+```
+
+This will bring you to the Raspberry Pi's system configuration settings where you can access the Advanced Options, then select boot order and choose the USB boot option. Navigate to the finish option to close the system configuration menu and reboot the pi. You should now be able to shutdown the Pi after it boots up, remove the SD Card and power up the Pi. 
+
 #### Now that we have finished most of the initial set-up we can continue getting the Pi ready and move to the next [tutorial](tutorial-2-testnet.md).
 
 
