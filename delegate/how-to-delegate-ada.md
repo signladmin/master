@@ -5,7 +5,8 @@ description: Put your ADA to work today!
 # How to delegate ADA
 
 * **See this link for an explanation on delegation:**  [**https://cardano.org/stake-pool-delegation/**](https://cardano.org/stake-pool-delegation/)\*\*\*\*
-* **The first step to delegating your ADA is to download one of the official Cardano Wallets**
+* **You always maintain full control of your ADA in your own wallet when you delegate.**
+* **The first step to delegating your ADA is to download one of the official Cardano wallets.**
 
 {% hint style="danger" %}
 Yoroi wallet is a mobile wallet available for Android and Apple devices. Daedalus is not a mobile wallet!
