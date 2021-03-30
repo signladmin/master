@@ -47,20 +47,21 @@ We are going to now download the latest official release of Raspberry Pi 64bit D
 
 ### Configuring the Raspberry Pi
 
-  
-The first thing that we want to do is get the Raspberry Pi booted up to and configured for our use.
+The first thing that we want to do is get the Raspberry Pi booted up and configured for our use.
 
-To do this we will need to insert the SD card we flashed earlier on   with the Raspberry Pi OS  
-  
-Once the Raspberry Pi startup screen is finished and you have booted into the Raspberry Pi OS desktop screen we can now begin to set up our Raspberry Pi configuration and settings.
+To do this we will need to insert the SD card we flashed earlier with the Raspberry Pi OS into the bottom of the Raspberry Pi. Then we can insert our HDMI, Keyboard, Mouse, and power supply.
 
-{% hint style="danger" %}
-DON'T SKIP STEPS 
+Once the Raspberry Pi startup screen is finished and you have booted into the Raspberry Pi OS Desktop screen we can now begin to set up our Raspberry Pi configuration and settings.
+
+{% hint style="info" %}
+If this is your first time booting up the Raspberry Pi OS you will have to follow some initial configurations listed below
 {% endhint %}
 
 * [ ] First, you need to change the Raspberry Pi's Hostname and Password, this will make sure you are not just running the basic login information.
 * [ ] Next, set your local time zone.
 * [ ] Choose language and keyboard settings.
+
+
 
 #### Now that we have finished most of the initial set-up we can continue getting the Pi ready and move to the next [tutorial](tutorial-2-testnet.md).
 
