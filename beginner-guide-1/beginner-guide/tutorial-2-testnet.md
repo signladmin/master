@@ -180,6 +180,7 @@ sudo nano env
 
 ```bash
 cd cardano-node
+touch db/clean
 ./gLiveView.sh
 ```
 
