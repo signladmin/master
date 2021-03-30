@@ -30,7 +30,7 @@ Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.j
 
 ## Setting up our environment
 
-* **We must first update our OS and install needed upgrades if available**
+* We must first update our OS and install needed upgrades if available.
 
 {% hint style="info" %}
 It is highly recommended to update the operating system every time you boot up and log in to your **Raspberry Pi** to prevent security vulnerabilities.
@@ -46,13 +46,13 @@ sudo apt upgrade -y
 
 ```
 
-* **We can now reboot the Pi and let the updates take effect by running this command in a terminal**
+* We can now reboot the Pi and let the updates take effect by running this command in a terminal.
 
 ```text
 sudo reboot 
 ```
 
-* Next, we need to continue with a few more tasks to make sure our  is ready
+* Next, we need to continue with a few more tasks to make sure our  is ready.
 
 ```bash
 
@@ -77,7 +77,7 @@ wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-carda
 If you are unsure if the file downloaded or need the name of the folder/files, we can use the linux "ls" command to list everything in our current working directory.
 {% endhint %}
 
-* Use "unzip" command on the downloaded zip file...
+* Use "unzip" command on the downloaded zip file.
 
 ```text
 unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
@@ -120,7 +120,7 @@ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-fi
 
 ```
 
-* **Use the nano text editor to change a few things in our "testnet-config.json" file**
+* Use the nano text editor to change a few things in our "testnet-config.json" file
 * [ ] Change the **"TraceBlockFetchDecisions"** line from "**false**" to "**true**"
 * [ ] Change the **"hasEKG"** to **12600**
 * [ ] Change  the **"hasPrometheus"** address/port to 12700
@@ -136,7 +136,7 @@ Due to the size of the blockchain it may take anywhere from 25 to 40 hours to ge
 ## Download a snapshot of the blockchain to speed the sync process
 
 {% hint style="danger" %}
-Make sure you have not started or have a cardano node already running before proceeding.
+Make sure you have not started your node before proceeding. Shut it down if so.
 {% endhint %}
 
 * Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/). This will dramatically speed up the process.
@@ -154,7 +154,7 @@ This download will take anywhere from 25 min to 2 hours depending on your intern
 
 ## Finish syncing to the blockchain 
 
-* Now we can start the "passive" node/relay to begin syncing to the blockchain.
+* Now we can start the "passive" relay node to begin syncing to the blockchain.
 
 ```bash
 cardano-node run \
@@ -175,13 +175,13 @@ curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operato
 chmod 755 gLiveView.sh
 ```
 
-* Use nano to edit the env file and change only "**CNODE\_PORT**" to the port you set on your cardano-node, in our case we change it to **3000.**
+* Use nano to edit the env file and change the "**CNODE\_PORT**" to the port you set on your cardano-node, in our case let's change it to **3000.**
 
 ```bash
 sudo nano env
 ```
 
-* Finally, we can exit the nano editor and just run the gLiveView script from Guild Operators  
+* Finally, we can exit the nano editor and just run the gLiveView script.
 
 ```bash
 cd cardano-node
