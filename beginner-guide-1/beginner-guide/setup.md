@@ -48,11 +48,9 @@ We are going to now download the latest official release of Raspberry Pi 64bit D
 ### Configuring the Raspberry Pi
 
   
-The first thing that we want to do is get the Raspberry Pi booted up to the main desktop screen.
+The first thing that we want to do is get the Raspberry Pi booted up to and configured for our use.
 
-To do this we will need to plug the mini HDMI into the Raspberry Pi 4's mini HDMI slot and the HDMI end to our monitor.  
-  
-Then we need to insert the SD Card into the slot on the bottom of the Raspberry Pi, then we should plugin our keyboard and mouse into the Pi. Lastly, we will plug in our USB-C Raspberry Pi 4 power adapter into the Pi and it will begin to boot up.   
+To do this we will need to insert the SD card we flashed earlier on   with the Raspberry Pi OS  
   
 Once the Raspberry Pi startup screen is finished and you have booted into the Raspberry Pi OS desktop screen we can now begin to set up our Raspberry Pi configuration and settings.
 
