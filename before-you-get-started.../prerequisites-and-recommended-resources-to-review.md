@@ -6,29 +6,20 @@ description: Stake pool operator resources.
 
 {% tabs %}
 {% tab title="Official Cardano Foundation" %}
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Documentation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">
-        <p></p>
-        <p><a href="https://cardano.org/stake-pool-operation/">Stake Pool Operation and General Information</a> 
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://developers.cardano.org/en/testnets/cardano/overview/">Testnet Documentation</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>
+| Documentation |
+| :--- |
+
+
+| [Stake Pool Operation and General Information](https://cardano.org/stake-pool-operation/) |
+| :--- |
+
+
+| [Testnet Documentation](https://developers.cardano.org/en/testnets/cardano/overview/) |
+| :--- |
+
+
+|  |
+| :--- |
 {% endtab %}
 
 {% tab title="Youtube and Video Resources" %}
@@ -42,12 +33,12 @@ description: Stake pool operator resources.
 {% endtab %}
 
 {% tab title="Community Tutorials" %}
-### A Special thank you to all the great community members and their tutorials 
+## A Special thank you to all the great community members and their tutorials
 
 | Author | Link to Tutorial |
 | :--- | :--- |
 | \[Berry\] Pool | [https://github.com/alessandrokonrad/Pi-Pool](https://github.com/alessandrokonrad/Pi-Pool) |
-| Nessus Cardano  | [https://github.com/tdiesler/nessus-cardano](https://github.com/tdiesler/nessus-cardano) |
+| Nessus Cardano | [https://github.com/tdiesler/nessus-cardano](https://github.com/tdiesler/nessus-cardano) |
 | \[Easy 1\] Pool | [https://github.com/speedwing/cardano-staking-pool-edu](https://github.com/speedwing/cardano-staking-pool-edu) |
 | \[OTG\] Sun Forge | [https://pi-pool.adamantium.online/pi-node/environment-setup](https://pi-pool.adamantium.online/pi-node/environment-setup) |
 |  |  |
@@ -58,13 +49,12 @@ description: Stake pool operator resources.
 
 {% tab title="Community Forums" %}
 [https://forum.cardano.org/](https://forum.cardano.org/)
-[https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w](Arming Cardano Telegram channel)
+
+[ https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)
 {% endtab %}
 
 {% tab title="" %}
 [https://cardano-community.github.io/guild-operators/\#/basics](https://cardano-community.github.io/guild-operators/#/basics)
 {% endtab %}
 {% endtabs %}
-
-
 
