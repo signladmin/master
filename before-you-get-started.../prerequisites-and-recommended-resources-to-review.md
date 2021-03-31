@@ -56,8 +56,9 @@ description: Stake pool operator resources.
 |  |  |
 {% endtab %}
 
-{% tab title="Community Forum" %}
+{% tab title="Community Forums" %}
 [https://forum.cardano.org/](https://forum.cardano.org/)
+[https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w](Arming Cardano Telegram channel)
 {% endtab %}
 
 {% tab title="" %}
