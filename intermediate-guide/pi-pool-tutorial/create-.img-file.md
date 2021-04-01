@@ -6,7 +6,7 @@ description: This is how you create an image you can flash to other Pi's
 
 ## Make the Pi-Node base .img.gz file for reuse
 
-Put your micro sd card in your local machine and locate what it's called in /dev. For my laptop it is /dev/mmcblk0. Yours will most likely be different.
+Put your micro sd card in your local machine and locate what it's called in /dev. For my laptop it is /dev/mmcblk0. Yours will likely be different.
 
 ```text
 sudo fdisk -l
