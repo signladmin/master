@@ -5,7 +5,7 @@
 ### Create topologyUpdater.sh
 
 ```bash
-nano $HOME/.local/bin
+nano $HOME/.local/bin/topologyUpdater.sh
 ```
 
 {% hint style="warning" %}
