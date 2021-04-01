@@ -33,6 +33,7 @@
   * [Pi-Core & Pi-Cold](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold/README.md)
     * [Stake pool keys](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold/stake-pool-keys.md)
     * [Pool wallet & staking keys](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold/pool-wallet-and-staking-keys.md)
+    * [Register your pool](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold/register-your-pool.md)
     * [Build cardano-address on aarch64](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold/build-cardano-address-on-aarch64.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/create-.img-file.md)
 
