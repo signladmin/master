@@ -6,7 +6,7 @@ description: >-
 
 # Pi-Pool Tutorial
 
-![&#x1F31F; Star Forge &#x26A1;](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
+![&#x1F31F; The Star Forge &#x26A1;](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
 
 {% hint style="danger" %}
 It is strongly recommended to work through the [Stake Pool School](https://cardano-foundation.gitbook.io/stake-pool-course/) course presented by the Cardano Foundation.
