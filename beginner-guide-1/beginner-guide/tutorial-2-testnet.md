@@ -48,25 +48,44 @@ sudo apt upgrade -y
 
 * We can now reboot the Pi and let the updates take effect by running this command in a terminal.
 
-```text
+```bash
 sudo reboot 
 ```
 
-* Next, we need to continue with a few more tasks to make sure our is ready.
+* Next, we need to continue with a few more tasks to make sure our Pi is ready to build the cardano node. This is going to be similar to what we will do later in the intermediate tutorials, but right now we are going to keep it simple. . We need to make a few directories, 
+
+* [ ] Make the needed directories for our cardano-node.
+* [ ] add ~/.local/bin to our $PATH
+* [ ] Create our bash variables. 
+* [ ] Download the static cardano-node, cardano-cli build  
+* [ ] Unzip the files and move them to ~/.local/bin
+* [ ] Create systemd unit file and startup script
+
+
 
 ```bash
-
+mkdir -p $HOME/.local/bin
+mkdir -p $HOME/pi-pool/files
+mkdir $HOME/git
 ```
+
+
+
+
+
+
+
+
+* A static build is one in which all dependencies are included in the final build result which allows you to immediately run it on a compatible system without having to deal with building anything.
 
 | Provided By | Link to Cardano Static Build  |
 | :--- | :--- |
 | [Moritz \[ZW3RK\]](https://zw3rk.com/) | [https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip](https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip) |
 
-* A static build is one in which all dependencies are included in the final build result which allows you to immediately run it on a compatible system without having to deal with building anything.
 * Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
 
-```text
-# First change to the home directory
+```bash
+# First change to our home directory
 cd ~/
 
 # Now we can download the static build 
@@ -79,13 +98,13 @@ If you are unsure if the file downloaded or need the name of the folder/files, w
 
 * Use "unzip" command on the downloaded zip file.
 
-```text
+```bash
 unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
 ```
 
 * Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.  
 
-```text
+```bash
 ls
 ```
 
@@ -95,7 +114,7 @@ ls
 
 * Now we need to move the cardano-node folder into our local binary directory.
 
-```text
+```bash
 mv cardano-node ~/.local/bin
 ```
 
@@ -105,14 +124,14 @@ mv cardano-node ~/.local/bin
 You can call the folder whatever you would like, but it is recommend to name it according to its use.
 {% endhint %}
 
-```text
+```bash
 mkdir testnet-relay
 cd testnet-relay/
 ```
 
 * Download the four Cardano node configuration files we need from the official [IOHK website](https://hydra.iohk.io/build/5822084/download/1/index.html) and or [documentation](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html). We will be using our CLI "wget" command to download the files.
 
-```text
+```bash
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-config.json
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-byron-genesis.json
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-shelley-genesis.json
@@ -120,12 +139,12 @@ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-fi
 
 ```
 
-* Use the nano text editor to change a few things in our "testnet-config.json" file
+* Use the nano bash editor to change a few things in our "testnet-config.json" file
 * [ ] Change the **"TraceBlockFetchDecisions"** line from "**false**" to "**true**"
 * [ ] Change the **"hasEKG"** to **12600**
 * [ ] Change  the **"hasPrometheus"** address/port to 12700
 
-```text
+```bash
 sudo nano testnet-config.json
 ```
 
