@@ -8,7 +8,7 @@ description: This is how you create an image you can flash to other Pi's
 
 Put your micro sd card in your local machine and locate what it's called in /dev. For my laptop it is /dev/mmcblk0. Yours will most likely be different.
 
-```
+```text
 sudo fdisk -l
 ```
 
@@ -21,7 +21,7 @@ sudo cat /dev/<your sd card> > pi-node.img
 ```
 
 {% hint style="info" %}
- cat is better than dd for this. cat will use all of your systems cpu cores, whereas dd uses one core. cat is faster 🙀
+cat is better than dd for this. cat will use all of your systems cpu cores, whereas dd uses one core. cat is faster 🙀
 {% endhint %}
 
 Once that completes we will use [PiShrink.sh](https://github.com/Drewsif/PiShrink) to deflate partitions and compress \(among a few other tricks\).
@@ -43,3 +43,4 @@ sudo pishrink.sh -az pi-node.img Pi-Node.img.gz
 And there you have it! 🧙♂
 
 Download [Pi-Node.img.gz](https://db.adamantium.online/Pi-Node.img.gz)
+

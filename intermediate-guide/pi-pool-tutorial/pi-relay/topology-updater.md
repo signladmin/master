@@ -65,7 +65,7 @@ If successful it will print.
 Schedule topology updater to run once every hour. Open cron and choose nano as your editor if it asks.
 
 ```bash
-crontab -l
+crontab -e
 ```
 
 Paste the following in, save & exit.

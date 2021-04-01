@@ -19,7 +19,7 @@ ssh-keygen -a 64 -t ed25519
 ```
 
 {% hint style="info" %}
-[`-a`](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man1/ssh-keygen.1#a) rounds  When saving a private key, this option specifies the number of KDF \(key derivation function, currently [bcrypt\_pbkdf\(3\)](https://man.openbsd.org/bcrypt_pbkdf.3)\) rounds used. Higher numbers result in slower passphrase verification and increased resistance to brute-force password cracking \(should the keys be stolen\). The default is 16 rounds.
+[`-a`](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man1/ssh-keygen.1#a) rounds When saving a private key, this option specifies the number of KDF \(key derivation function, currently [bcrypt\_pbkdf\(3\)](https://man.openbsd.org/bcrypt_pbkdf.3)\) rounds used. Higher numbers result in slower passphrase verification and increased resistance to brute-force password cracking \(should the keys be stolen\). The default is 16 rounds.
 
 [https://flak.tedunangst.com/post/new-openssh-key-format-and-bcrypt-pbkdf](https://flak.tedunangst.com/post/new-openssh-key-format-and-bcrypt-pbkdf)
 {% endhint %}
@@ -31,7 +31,7 @@ cd $HOME/.ssh
 ls -al
 ```
 
-## Boot your Pi & login 
+## Boot your Pi & login
 
 Plug in a network cable connected to your router and boot your new image.
 
@@ -82,9 +82,9 @@ ssh should return 1 key added and suggest a command for you to try logging into 
 
 > Number of key\(s\) added: 1
 >
-> Now try logging into the machine, with:  **&lt;run this in terminal&gt;**
+> Now try logging into the machine, with: **&lt;run this in terminal&gt;**
 
 ## Log into your server with ssh
 
-Run the suggestion and you should be greeted with your remote shell. Congratulations! 🥳 
+Run the suggestion and you should be greeted with your remote shell. Congratulations! 🥳
 
