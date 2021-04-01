@@ -23,13 +23,13 @@ Take note that Ubuntu stores config.txt in a different location than Raspbian.
 
 #### Write speed
 
-```text
+```bash
 sudo dd if=/dev/zero of=/tmp/output conv=fdatasync bs=384k count=1k; sudo rm -f /tmp/output
 ```
 
 #### Read speed
 
-```text
+```bash
 sudo hdparm -Tt /dev/sda
 ```
 
@@ -41,7 +41,7 @@ Edit /boot/firmware/config.txt. Just paste Pi Pool additions in at the bottom.
 sudo nano /boot/firmware/config.txt
 ```
 
-```text
+```bash
 [pi4]
 max_framebuffers=2
 
@@ -80,7 +80,7 @@ disable-wifi
 disable-bt
 ```
 
-```text
+```bash
 sudo reboot
 ```
 
@@ -88,7 +88,7 @@ sudo reboot
 
 ### Disable the root user
 
-```text
+```bash
 sudo passwd -l root
 ```
 
@@ -96,13 +96,13 @@ sudo passwd -l root
 
 Open /etc/fstab.
 
-```text
+```bash
 sudo nano /etc/fstab
 ```
 
 Add this line at the bottom, save & exit.
 
-```text
+```bash
 tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
@@ -110,13 +110,13 @@ tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 
 Open /etc/security/limits.conf.
 
-```text
+```bash
 sudo nano /etc/security/limits.conf
 ```
 
 Add the following to the bottom, save & exit.
 
-```text
+```bash
 ada soft nofile 800000
 ada hard nofile 1048576
 ```
@@ -133,11 +133,11 @@ Add the following to the bottom of /etc/sysctl.conf. Save and exit.
 I am disabling IPv6 and IPv4 forwarding. You may want these. I have seen claims that IPv6 is slower and get's in the way. &lt;find this later&gt;
 {% endhint %}
 
-```text
+```bash
 sudo nano /etc/sysctl.conf
 ```
 
-```text
+```bash
 ## Pi Pool ##
 
 # swap less                      
@@ -186,11 +186,11 @@ net.ipv4.tcp_congestion_control = bbr
 
 Create a new file. Paste, save & close.
 
-```text
+```bash
 sudo nano /etc/rc.local
 ```
 
-```text
+```bash
 #!/bin/bash
 
 # Give CPU startup routines time to settle.
@@ -211,11 +211,11 @@ You should turn off IRQ Balance to make sure you do not get hardware interrupts 
 
 Open /etc/default/irqbalance and add to the bottom. Save, exit and reboot.
 
-```text
+```bash
 sudo nano /etc/default/irqbalance
 ```
 
-```text
+```bash
 ENABLED="0"
 ```
 
@@ -223,7 +223,7 @@ ENABLED="0"
 
 {% embed url="https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters/" caption="" %}
 
-```text
+```bash
 sudo apt install zram-config
 sudo reboot
 ```
