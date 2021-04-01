@@ -87,10 +87,29 @@ Complete this section after **four hours** when your relay node IP is properly r
 Create `relay-topology_pull.sh` script which fetches your relay node buddies and updates your topology file. **Update with your block producer's private ipv4 address.**
 
 ```bash
+nano $HOME/.local/bin/relay-topology_pull.sh
+```
+
+Add following & add your block producung nodes ip. Save & exit.
+
+```bash
 #!/bin/bash
 BLOCKPRODUCING_IP=<BLOCK PRODUCERS PRIVATE IP ADDRESS>
 BLOCKPRODUCING_PORT=3000
 curl -s -o $NODE_FILES/${NODE_CONFIG}-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=\${BLOCKPRODUCING_IP}:\${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
+```
+
+Make executable.
+
+```bash
+chmod +x $HOME/.local/bin/relay-topology_pull.sh
+```
+
+After waiting at least 4 hours.
+
+```bash
+cd $HOME/.local/bin
+./relay-topology_pull.sh
 ```
 
 Restart the cardano-service for changes to take effect & check that it is running.
