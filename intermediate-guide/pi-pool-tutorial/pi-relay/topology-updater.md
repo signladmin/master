@@ -17,8 +17,8 @@ Change CNODE\_PORT to match the port your relay is running on.
 # shellcheck disable=SC2086,SC2034
  
 USERNAME=ada
-CNODE_PORT=3002 # must match your relay node port as set in the startup command
-CNODE_HOSTNAME=""  # optional. must resolve to the IP you are requesting from
+CNODE_PORT=3002 # must match relay port in /home/ada/.local/bin/cardano-service
+CNODE_HOSTNAME=""  # optional. must resolve to the public IP you are requesting from
 CNODE_BIN="/home/ada/.local/bin"
 CNODE_HOME=/home/ada/pi-pool
 CNODE_LOG_DIR="${CNODE_HOME}/logs"
