@@ -52,12 +52,6 @@ sudo apt upgrade -y
 sudo reboot 
 ```
 
-* Next, we need to continue with a few more tasks to make sure our is ready.
-
-```bash
-
-```
-
 | Provided By | Link to Cardano Static Build  |
 | :--- | :--- |
 | [Moritz \[ZW3RK\]](https://zw3rk.com/) | [https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip](https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip) |
