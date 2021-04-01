@@ -6,7 +6,7 @@ description: Flash image
 
 ## Flash Image
 
-Download,  install & open [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases/latest). Plug in your target USB drive. 
+Download, install & open [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases/latest). Plug in your target USB drive.
 
 {% tabs %}
 {% tab title="Local Machine \(Ubuntu\)" %}
@@ -20,14 +20,14 @@ sudo snap install rpi-imager
 {% endtabs %}
 
 {% hint style="danger" %}
-Older models of the Pi4B 8GB need to have their boot loader updated to boot from USB. If your image won't boot remove the USB3 drive and use rpi-imager to flash Pi 4 EEPROM boot recovery to an sd card. 
+Older models of the Pi4B 8GB need to have their boot loader updated to boot from USB. If your image won't boot remove the USB3 drive and use rpi-imager to flash Pi 4 EEPROM boot recovery to an sd card.
 
 Plug the Pi into a monitor, insert the sd card and power up. Once you see a green screen you should be good to boot from your USB3 drive. Newer versions are shipping with a USB boot capable boot loader. **Feeling lucky?**
 
 **Choose OS -&gt; Misc utility images -&gt; Raspberry Pi 4 EEPROM boot recovery** [https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md](https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md)
 {% endhint %}
 
-![](../.gitbook/assets/image.png)
+![](https://github.com/ADA-Pi/master/tree/704cd2adeea3cb4829504300a66ab7f6d3e302e1/intermediate-guide/.gitbook/assets/image.png)
 
 {% tabs %}
 {% tab title="Pre configured Pi-Pool .img.gz" %}
@@ -45,7 +45,7 @@ Locate the .img.gz file you downloaded & wish to flash.
 
 Locate your target drive & write it to disk.
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](https://github.com/ADA-Pi/master/tree/704cd2adeea3cb4829504300a66ab7f6d3e302e1/intermediate-guide/.gitbook/assets/image%20%282%29.png)
 {% endtab %}
 
 {% tab title="Fresh Ubuntu 20.10 installation" %}
@@ -57,7 +57,7 @@ Locate your target drive & write it to disk.
 
 Locate your target drive & write it to disk.
 
-![Ubuntu Server 20.10 \(RPI 3/4/400\) 64-bit server OS for arm64 architectures](../.gitbook/assets/image%20%281%29.png)
+![Ubuntu Server 20.10 \(RPI 3/4/400\) 64-bit server OS for arm64 architectures](https://github.com/ADA-Pi/master/tree/704cd2adeea3cb4829504300a66ab7f6d3e302e1/intermediate-guide/.gitbook/assets/image%20%281%29.png)
 {% endtab %}
 {% endtabs %}
 

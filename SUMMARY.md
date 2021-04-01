@@ -21,19 +21,22 @@
 
 ## Intermediate Guides <a id="intermediate-guide"></a>
 
-* [\[OTG\] Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/overview.md)
-  * [Pi-Node](intermediate-guide/pi-pool-tutorial/pi-node)
-    * [Download & Flash](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
-    * [Logging in Securely](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
-    * [User Setup](intermediate-guide/pi-pool-tutorial/pi-node/user-setup.md)
-    * [Server Setup](intermediate-guide/pi-pool-tutorial/pi-node/server-setup.md)
-    * [Environment Setup](intermediate-guide/pi-pool-tutorial/pi-node/environment-setup.md)
-  * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay)
-    * [topology Updater](intermediate-guide/pi-pool-tutorial/pi-relay/topology-updater.md)
-  * [Pi-Core & Pi-Cold](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold)
-    * [Stake pool keys](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold/stake-pool-keys.md)
-    * [Pool wallet & staking keys](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold/pool-wallet-and-staking-keys.md)
-    * [Build cardano-address on aarch64](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold/build-cardano-address.md)
-* [Create .img file](intermediate-guide/pi-pool-tutorial/create-.img-file.md)
+* [\[OTG\] Pi-Pool Tutorial](intermediate-guide/overview/README.md)
+  * [Pi-Node](intermediate-guide/overview/pi-node/README.md)
+    * [Download & Flash](intermediate-guide/overview/pi-node/download-and-write-it.md)
+    * [Logging in Securely](intermediate-guide/overview/pi-node/download-and-write-it-1.md)
+    * [User Setup](intermediate-guide/overview/pi-node/user-setup.md)
+    * [Server Setup](intermediate-guide/overview/pi-node/server-setup.md)
+    * [Environment Setup](intermediate-guide/overview/pi-node/environment-setup.md)
+  * [Pi-Relay](intermediate-guide/overview/pi-relay/README.md)
+    * [topology Updater](intermediate-guide/overview/pi-relay/topology-updater.md)
+  * [Pi-Core & Pi-Cold](intermediate-guide/overview/pi-core-and-pi-cold/README.md)
+    * [Stake pool keys](intermediate-guide/overview/pi-core-and-pi-cold/stake-pool-keys.md)
+    * [Pool wallet & staking keys](intermediate-guide/overview/pi-core-and-pi-cold/pool-wallet-and-staking-keys.md)
+    * [Build cardano-address on aarch64](intermediate-guide/overview/pi-core-and-pi-cold/build-cardano-address.md)
+* [Create .img file](intermediate-guide/create-.img-file.md)
+
 ---
-* [Basic Stake Pool Networking](intermediate-guide/basic-stake-pool-networking.md)
+
+* [Basic Stake Pool Networking](basic-stake-pool-networking.md)
+

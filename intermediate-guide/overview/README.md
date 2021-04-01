@@ -4,9 +4,9 @@ description: >-
   the Pi Pool images.
 ---
 
-# Overview & Credits
+# \[OTG\] Pi-Pool Tutorial
 
-![](.gitbook/assets/star-forge.jpg)
+![](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
 
 {% hint style="danger" %}
 It is strongly recommended to work through the [Stake Pool School](https://cardano-foundation.gitbook.io/stake-pool-course/) course presented by the Cardano Foundation.
@@ -72,9 +72,10 @@ The cardano-node & cardano-cli binaries linked to in this guide require aarch64 
 * [cardanocli-js](https://docs.pipool.online/)
   * node.js library for pool creation/maintenance
 * Latest chain snapshot for quicker sync
-  * wget -r -np -nH -R "index.html\*" -e robots=off https://db.adamantium.online/db/
+  * wget -r -np -nH -R "index.html\*" -e robots=off [https://db.adamantium.online/db/](https://db.adamantium.online/db/)
 
 ## Links
 
 * [https://cryptsus.com/blog/how-to-secure-your-ssh-server-with-public-key-elliptic-curve-ed25519-crypto.html](https://cryptsus.com/blog/how-to-secure-your-ssh-server-with-public-key-elliptic-curve-ed25519-crypto.html)
 * [https://www.raspberrypi.org/forums/viewtopic.php?t=245931](https://www.raspberrypi.org/forums/viewtopic.php?t=245931)
+
