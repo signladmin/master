@@ -29,7 +29,7 @@ The block-producer node requires only these 3 files as defined in the [Shelley l
 Generate a KES keypair.
 
 {% hint style="info" %}
-KES \(key evolving signature\) keys are created to secure your stake pool against hackers who might compromise your keys. 
+KES \(key evolving signature\) keys are created to secure your stake pool against hackers who might compromise your keys.
 
 **On mainnet, you will need to regenerate the KES key every 90 days.**
 {% endhint %}
@@ -108,7 +108,7 @@ echo startKesPeriod: ${startKesPeriod}
 {% endtab %}
 {% endtabs %}
 
-Move **kes.vkey** to your **cold environment**. 
+Move **kes.vkey** to your **cold environment**.
 
 {% hint style="warning" %}
 Replace &lt;startKesPeriod&gt; below to match.

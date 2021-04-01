@@ -59,8 +59,8 @@ CCLI=\${CCLI:=\$( which cardano-cli )}
 
 OUT_DIR="\$1"
 [[ -e "\$OUT_DIR"  ]] && {
-       	echo "The \"\$OUT_DIR\" is already exist delete and run again." >&2 
-       	exit 127
+           echo "The \"\$OUT_DIR\" is already exist delete and run again." >&2 
+           exit 127
 } || mkdir -p "\$OUT_DIR" && pushd "\$OUT_DIR" >/dev/null
 
 shift

@@ -4,9 +4,9 @@
 This is a work in progress and note taking. Here be dragons...
 {% endhint %}
 
-![](.gitbook/assets/image%20%283%29.png)
+![](https://github.com/ADA-Pi/master/tree/4b794054b266be8839a8282d9136e8d71f1cda0e/intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold/.gitbook/assets/image%20%283%29.png)
 
-### Install zram
+## Install zram
 
 ```bash
 sudo apt-get install zram-config
@@ -34,7 +34,7 @@ tar -xvf clang+llvm-9.0.1-aarch64-linux-gnu.tar.xz
 mv clang+llvm-9.0.1-aarch64-linux-gnu/bin/* /home/ada/.local/bin
 ```
 
-### Install ghcup
+## Install ghcup
 
 ```text
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
@@ -46,9 +46,9 @@ No need for the Haskel IDE. Type yes for .bashrc additions and source.
 source $HOME/.bashrc
 ```
 
-{% embed url="https://github.com/haskell/cabal/issues/6521\#issuecomment-774306372" %}
+{% embed url="https://github.com/haskell/cabal/issues/6521\#issuecomment-774306372" caption="" %}
 
-{% embed url="https://llvm.org/docs/HowToBuildOnARM.html" %}
+{% embed url="https://llvm.org/docs/HowToBuildOnARM.html" caption="" %}
 
 ```bash
 ghcup install ghc 8.6.5
@@ -65,9 +65,9 @@ echo -e "package cardano-crypto-praos\n  flags: -external-libsodium-vrf" > cabal
 cabal build --ghc-options=-dynamic all
 ```
 
-{% embed url="https://downloads.haskell.org/~ghcup/0.1.13/armv7-linux-ghcup-0.1.13" %}
+{% embed url="https://downloads.haskell.org/~ghcup/0.1.13/armv7-linux-ghcup-0.1.13" caption="" %}
 
-{% embed url="https://github.com/llvm/llvm-project/releases/download/llvmorg-9.0.1/clang+llvm-9.0.1-aarch64-linux-gnu.tar.xz" %}
+{% embed url="https://github.com/llvm/llvm-project/releases/download/llvmorg-9.0.1/clang+llvm-9.0.1-aarch64-linux-gnu.tar.xz" caption="" %}
 
 {% hint style="info" %}
 [https://github.com/input-output-hk/cardano-addresses](https://github.com/input-output-hk/cardano-addresses)[https://gist.github.com/ilap/3fd57e39520c90f084d25b0ef2b96894](https://gist.github.com/ilap/3fd57e39520c90f084d25b0ef2b96894)

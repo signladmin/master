@@ -22,7 +22,7 @@ sudo apt install build-essential libssl-dev tcptraceroute chrony python3-pip \
          zlib1g-dev make g++ wget libncursesw5 libtool autoconf -y
 ```
 
-House cleaning. 🧹 
+House cleaning. 🧹
 
 ```bash
 sudo apt clean
@@ -142,7 +142,7 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-config.json
 ```
 
-Set  TraceBlockFetchDecisions to "true" & TraceMempool to "false".
+Set TraceBlockFetchDecisions to "true" & TraceMempool to "false".
 
 {% hint style="warning" %}
 It is recommended to turn TraceMempool to false for relays as of this writing \(cardano-node version 1.25.1\) as it is using an excessive amount of cpu. A fix will come soon. I keep it running on my core node, it's a valuable metric.
@@ -193,7 +193,7 @@ sudo chmod +x $HOME/.local/bin/cardano-service
 Open /etc/systemd/system/cardano-node.service
 
 ```bash
-sudo nano /etc/systemd/system/cardano-node.service 
+sudo nano /etc/systemd/system/cardano-node.service
 ```
 
 Paste the following, save & exit.
@@ -248,13 +248,13 @@ Save & exit.
 source $HOME/.bashrc
 ```
 
-What we just did there was add a function to control our cardano-service without having to type out 
+What we just did there was add a function to control our cardano-service without having to type out
 
-> > sudo systemctl enable cardano-node.service 
+> > sudo systemctl enable cardano-node.service
 > >
-> > sudo systemctl start cardano-node.service 
+> > sudo systemctl start cardano-node.service
 > >
-> > sudo systemctl stop cardano-node.service 
+> > sudo systemctl stop cardano-node.service
 > >
 > > sudo systemctl status cardano-node.service
 
@@ -287,7 +287,6 @@ sed -i env \
     -e "s/"6000"/"3003"/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/mainnet-config.json\"/g" \
     -e "s/\#SOCKET=\"\${CNODE_HOME}\/sockets\/node0.socket\"/SOCKET=\"\${NODE_HOME}\/db\/socket\"/g"
-    
 ```
 
 ## Congratulations you are now ready to start cardano-node
@@ -296,7 +295,7 @@ sed -i env \
 If you would like to make an image file you can use to quickly write what you have completed thus far to other Raspberry Pi 4's now is the time to do so before you start to sync the chain\(db folder\).
 {% endhint %}
 
-## ⛓ Syncing the chain ⛓ 
+## ⛓ Syncing the chain ⛓
 
 {% hint style="danger" %}
 Do not attempt this on an 8GB sd card. Not enough space! Create your image file and flash it to your ssd.
@@ -335,7 +334,5 @@ rm -r db/
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
-
-
-![Should look something like this once your synced to the tip of the chain.](../.gitbook/assets/pi-node-glive.png)
+![Should look something like this once your synced to the tip of the chain.](https://github.com/ADA-Pi/master/tree/704cd2adeea3cb4829504300a66ab7f6d3e302e1/intermediate-guide/.gitbook/assets/pi-node-glive.png)
 
