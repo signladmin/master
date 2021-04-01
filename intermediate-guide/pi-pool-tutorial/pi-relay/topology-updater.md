@@ -15,46 +15,46 @@ Change CNODE\_PORT to match the port your relay is running on.
 ```bash
 #!/bin/bash
 # shellcheck disable=SC2086,SC2034
-
-USERNAME=$(whoami)
+ 
+USERNAME=ada
 CNODE_PORT=3002 # must match your relay node port as set in the startup command
-CNODE_HOSTNAME="CHANGE ME"  # optional. must resolve to the IP you are requesting from
+CNODE_HOSTNAME=""  # optional. must resolve to the IP you are requesting from
 CNODE_BIN="/home/ada/.local/bin"
-CNODE_HOME=$NODE_HOME
-CNODE_LOG_DIR="\${CNODE_HOME}/logs"
-GENESIS_JSON="\${CNODE_HOME}/files/${NODE_CONFIG}-shelley-genesis.json"
-NETWORKID=\$(jq -r .networkId \$GENESIS_JSON)
+CNODE_HOME=/home/ada/pi-pool
+CNODE_LOG_DIR="${CNODE_HOME}/logs"
+GENESIS_JSON="${CNODE_HOME}/files/mainnet-shelley-genesis.json"
+NETWORKID=$(jq -r .networkId $GENESIS_JSON)
 CNODE_VALENCY=1   # optional for multi-IP hostnames
-NWMAGIC=\$(jq -r .networkMagic < \$GENESIS_JSON)
-[[ "\${NETWORKID}" = "Mainnet" ]] && HASH_IDENTIFIER="--mainnet" || HASH_IDENTIFIER="--testnet-magic \${NWMAGIC}"
-[[ "\${NWMAGIC}" = "764824073" ]] && NETWORK_IDENTIFIER="--mainnet" || NETWORK_IDENTIFIER="--testnet-magic \${NWMAGIC}"
-
-export PATH="\${CNODE_BIN}:\${PATH}"
-export CARDANO_NODE_SOCKET_PATH="\${CNODE_HOME}/db/socket"
-
-blockNo=\$(/home/ada/.local/bin/cardano-cli query tip \${NETWORK_IDENTIFIER} | jq -r .blockNo )
-
+NWMAGIC=$(jq -r .networkMagic < $GENESIS_JSON)
+[[ "${NETWORKID}" = "Mainnet" ]] && HASH_IDENTIFIER="--mainnet" || HASH_IDENTIFIER="--testnet-magic ${NWMAGIC}"
+[[ "${NWMAGIC}" = "764824073" ]] && NETWORK_IDENTIFIER="--mainnet" || NETWORK_IDENTIFIER="--testnet-magic ${NWMAGIC}"
+ 
+export PATH="${CNODE_BIN}:${PATH}"
+export CARDANO_NODE_SOCKET_PATH="${CNODE_HOME}/db/socket"
+ 
+blockNo=$(/home/ada/.local/bin/cardano-cli query tip ${NETWORK_IDENTIFIER} | jq -r .blockNo )
+ 
 # Note:
 # if you run your node in IPv4/IPv6 dual stack network configuration and want announced the
 # IPv4 address only please add the -4 parameter to the curl command below  (curl -4 -s ...)
-if [ "\${CNODE_HOSTNAME}" != "CHANGE ME" ]; then
-  T_HOSTNAME="&hostname=\${CNODE_HOSTNAME}"
+if [ "${CNODE_HOSTNAME}" != "CHANGE ME" ]; then
+  T_HOSTNAME="&hostname=${CNODE_HOSTNAME}"
 else
   T_HOSTNAME=''
 fi
 
-if [ ! -d \${CNODE_LOG_DIR} ]; then
-  mkdir -p \${CNODE_LOG_DIR};
+if [ ! -d ${CNODE_LOG_DIR} ]; then
+  mkdir -p ${CNODE_LOG_DIR};
 fi
-
-curl -4 -s "https://api.clio.one/htopology/v1/?port=\${CNODE_PORT}&blockNo=\${blockNo}&valency=\${CNODE_VALENCY}&magic=\${NWMAGIC}\${T_HOSTNAME}" | tee -a \$CNODE_LOG_DIR/topologyUpdater_lastresult.json
+ 
+curl -4 -s "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a $CNODE_LOG_DIR/topologyUpdater_lastresult.json
 ```
 
 Make it executable & run it once.
 
 ```bash
-cd $HOME
-chmod +x topologyUpdater.sh
+cd $HOME/.local/bin
+chmod +x $HOME/.local/bin/topologyUpdater.sh
 ./topologyUpdater.sh
 ```
 
