@@ -1,3 +1,7 @@
+---
+description: Support Decentralization
+---
+
 # Delegate
 
 #### This is a list of Cardano Stake Pools and operators who have provided contributions for this hub. Please consider delegating to any of them if you enjoy these tutorials and resources. Thank You!
