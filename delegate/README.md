@@ -12,6 +12,7 @@
 | [FAIR](https://fairpool.eu/) | FAIR | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/6b51a5aae5b4b5f07f38acf12816b4f8a558ee2840d0dba69040aeb2) |
 | [QCPOL](%20https://qcpol.stakepool.quebec/en/our-infrastructure) | QCPOL | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/c2b8bff5160dd75149f2cae0955698550e8cf0d390025b26a9508a3e) |
 | [BROTH](https://brothsoup.co.uk/) | BROTH | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/df983a6e50640eab5e840968119614737ed4a9871e87b0b0e2a78813) |
+| [EASY Staking Pool ](https://www.easystaking.org/) | EASY1 | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/20df8645abddf09403ba2656cda7da2cd163973a5e439c6e43dcbea9) |
 
 #### 
 
