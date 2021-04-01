@@ -7,14 +7,14 @@ description: >-
 # Setup a relay node on Testnet
 
 {% hint style="danger" %}
-**This tutorial is meant to get a single node syncing to the Cardano blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a mainnet stake pool. Please use our** [**intermediate guides**](../../intermediate-guide/pi-pool-tutorial/) **for the mainnet.**    
+**This tutorial is meant to get a single node syncing to the Cardano blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a mainnet stake pool. Please use our** [**intermediate guides**](../../intermediate-guide/pi-pool-tutorial/) **for the mainnet.**
 {% endhint %}
 
 {% hint style="danger" %}
- **This tutorial is for only use with Raspberry Pi OS 64bit and is solely for educational purposes to get a cardano-node syncing to the blockchain.** 
+**This tutorial is for only use with Raspberry Pi OS 64bit and is solely for educational purposes to get a cardano-node syncing to the blockchain.**
 {% endhint %}
 
-## Summary 
+## Summary
 
 1. Environment Setup
 2. Downloading the binaries needed to build a Cardano node relay
@@ -25,34 +25,31 @@ description: >-
 7. Monitor the relay node with gLiveView  
 
 {% hint style="success" %}
-Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.jpeg) 
+Please do not skip steps young Padawan ![](../../.gitbook/assets/download-10-.jpeg)
 {% endhint %}
 
 ## Setting up our environment
 
-* We must first update our OS and install needed upgrades if available.
+* **We must first update our OS and install needed upgrades if available.**
 
 {% hint style="info" %}
 It is highly recommended to update the operating system every time you boot up and log in to your **Raspberry Pi** to prevent security vulnerabilities.
 {% endhint %}
 
-\*\*\*\*
-
-```
+```text
 # We are using the sudo prefix to run commands as non-root-user  
 
 sudo apt update
 sudo apt upgrade -y
-
 ```
 
-* We can now reboot the Pi and let the updates take effect by running this command in a terminal.
+* **We can now reboot the Pi and let the updates take effect by running this command in a terminal.**
 
 ```bash
-sudo reboot 
+sudo reboot
 ```
 
-* Next, we need to continue with a few more tasks to make sure our Pi is ready to build the cardano node. This is going to be similar to what we will do later in the intermediate tutorials, but right now we are going to keep it simple. . We need to make a few directories, 
+**Next, we need to continue with a few more tasks to make sure our Pi is ready to build the Cardano node. This is going to be similar to what we will do later in the intermediate tutorials, but right now we are going to keep it simple.**
 
 * [ ] Make the needed directories for our cardano-node.
 * [ ] add ~/.local/bin to our $PATH
@@ -61,7 +58,7 @@ sudo reboot
 * [ ] Unzip the files and move them to ~/.local/bin
 * [ ] Create systemd file and startup script to safely shutdown and restart our RPi relay
 
-### Make our directories 
+### Make our directories
 
 ```bash
 mkdir -p $HOME/.local/bin
@@ -69,16 +66,19 @@ mkdir -p $HOME/testnet-relay/files
 ```
 
 ### Add ~/.locaol/bin to our $PATH
+
 {% hint style="info" %}
-https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/
+[https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/](https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/)
 {% endhint %}
 
 ```bash
 echo PATH="$HOME/.local/bin:$PATH" >> $HOME/.bashrc
 ```
+
 ### Create our bash variables
+
 {% hint style="info" %}
-https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769
+[https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769\#247769](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769)
 {% endhint %}
 
 ```bash
@@ -94,7 +94,7 @@ source $HOME/.bashrc
 
 * A static build is one in which all dependencies are included in the final build result which allows you to immediately run it on a compatible system without having to deal with building anything.
 
-| Provided By | Link to Cardano Static Build  |
+| Provided By | Link to Cardano Static Build |
 | :--- | :--- |
 | [Moritz \[ZW3RK\]](https://zw3rk.com/) | [https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip](https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip) |
 
@@ -115,7 +115,7 @@ If you are unsure if the file downloaded or need the name of the folder/files, w
 * Use "unzip" command on the downloaded zip file.
 
 ```bash
-unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
+unzip aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
 ```
 
 * Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.  
@@ -152,7 +152,6 @@ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-fi
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-byron-genesis.json
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-shelley-genesis.json
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-topology.json
-
 ```
 
 * Use the nano bash editor to change a few things in our "testnet-config.json" file
@@ -187,7 +186,7 @@ wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 This download will take anywhere from 25 min to 2 hours depending on your internet speeds.
 {% endhint %}
 
-## Finish syncing to the blockchain 
+## Finish syncing to the blockchain
 
 * Now we can start the "passive" relay node to begin syncing to the blockchain.
 
@@ -198,7 +197,7 @@ cardano-node run \
    --socket-path db/socket \
    --host-addr 0.0.0.0 \
    --port 3000 \
-   --config testnet-config.json 
+   --config testnet-config.json
 ```
 
 ## Setting up gLiveView to monitor the node during its syncing process
@@ -246,21 +245,15 @@ htop
 
 {% tabs %}
 {% tab title="📚" %}
-{% embed url="https://github.com/wcatz/pi-pool" %}
+{% embed url="https://github.com/wcatz/pi-pool" caption="" %}
 
+{% embed url="https://github.com/alessandrokonrad/Pi-Pool" caption="" %}
 
+{% embed url="https://github.com/angerman" caption="" %}
 
-{% embed url="https://github.com/alessandrokonrad/Pi-Pool" %}
+{% embed url="https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles\_AND\_Connect.html" caption="" %}
 
-{% embed url="https://github.com/angerman" %}
-
-
-
-{% embed url="https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles\_AND\_Connect.html" %}
-
-{% embed url="https://cardano-community.github.io/guild-operators/\#/Scripts/gliveview" %}
+{% embed url="https://cardano-community.github.io/guild-operators/\#/Scripts/gliveview" caption="" %}
 {% endtab %}
 {% endtabs %}
-
-
 
