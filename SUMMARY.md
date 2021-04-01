@@ -21,7 +21,7 @@
 
 ## Intermediate Guides <a id="intermediate-guide"></a>
 
-* [\[OTG\] Pi-Pool Tutorial](intermediate-guide/overview/README.md)
+* [\[OTG\] Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-Node](intermediate-guide/overview/pi-node/README.md)
     * [Download & Flash](intermediate-guide/overview/pi-node/download-and-write-it.md)
     * [Logging in Securely](intermediate-guide/overview/pi-node/download-and-write-it-1.md)
