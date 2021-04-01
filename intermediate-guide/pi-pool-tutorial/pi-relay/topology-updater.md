@@ -138,7 +138,7 @@ Many operators disable icpm ping so you are bound to see some peers in as ---. F
 ![](../../../.gitbook/assets/glive-relay-peers.png)
 
 {% hint style="info" %}
-I usually have a 3 terminals open. glive, my mainnet-topology.json file and a prompt. I use ping to resolve dns names in the topo file to locate them in glive.
+I usually have a 3 terminals open. glive, my mainnet-topology.json file and a prompt. I use ping to resolve dns names in the topo file to locate them in glive. Changes go into affect after node restart.
 {% endhint %}
 
 Once you have the list the way you want it you can restart cardano-service. Periodically pull in new peers just be warned it will over write your mainnet-topology.json.
