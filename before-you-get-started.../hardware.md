@@ -13,14 +13,12 @@ description: >-
 | Product Name & Description | Price in USD | Verified by RPI SPOs | Links to Purchase |
 | :--- | :--- | :--- | :--- |
 | Raspberry Pi 4 Computer Model B 8GB Single Board Computer | 75-85 | YES | [Raspberry Pi Approved Resellers](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb) |
-|  |  |  |  |
 {% endtab %}
 
 {% tab title="Power Supplies" %}
 | Product Name & Description | Price in USD | Verified by RPI SPOs |  |
 | :--- | :--- | :--- | :--- |
 | NETGEAR 5-Port Gigabit Ethernet PoE+ Switch \(FOR USE WITH A RPi PoE HAT\) | 69.99 | YES | [Amazon](https://www.amazon.com/gp/product/B07WTXHSXC/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) |
-| Anker 60W 6 Port USB Charging Station | 25.99 | YES | [Amazon](https://www.amazon.com/Anker-Charger-PowerPort-iPhone-Galaxy/dp/B00P936188/ref=pd_ybh_a_123?_encoding=UTF8&psc=1&refRID=4EM62P8FC7T33A3G7Y9Z) |
 |  |  |  |  |
 {% endtab %}
 
