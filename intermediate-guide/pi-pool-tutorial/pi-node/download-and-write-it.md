@@ -27,7 +27,7 @@ Plug the Pi into a monitor, insert the sd card and power up. Once you see a gree
 **Choose OS -&gt; Misc utility images -&gt; Raspberry Pi 4 EEPROM boot recovery** [https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md](https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md)
 {% endhint %}
 
-![](https://github.com/ADA-Pi/master/tree/704cd2adeea3cb4829504300a66ab7f6d3e302e1/intermediate-guide/.gitbook/assets/image.png)
+![](../../../.gitbook/assets/otgpoltut.png)
 
 {% tabs %}
 {% tab title="Pre configured Pi-Pool .img.gz" %}
@@ -45,7 +45,7 @@ Locate the .img.gz file you downloaded & wish to flash.
 
 Locate your target drive & write it to disk.
 
-![](https://github.com/ADA-Pi/master/tree/704cd2adeea3cb4829504300a66ab7f6d3e302e1/intermediate-guide/.gitbook/assets/image%20%282%29.png)
+![](../../../.gitbook/assets/image-2-.png)
 {% endtab %}
 
 {% tab title="Fresh Ubuntu 20.10 installation" %}
@@ -57,7 +57,7 @@ Locate your target drive & write it to disk.
 
 Locate your target drive & write it to disk.
 
-![Ubuntu Server 20.10 \(RPI 3/4/400\) 64-bit server OS for arm64 architectures](https://github.com/ADA-Pi/master/tree/704cd2adeea3cb4829504300a66ab7f6d3e302e1/intermediate-guide/.gitbook/assets/image%20%281%29.png)
+![](../../../.gitbook/assets/ubuntu.png)
 {% endtab %}
 {% endtabs %}
 
