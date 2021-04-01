@@ -119,10 +119,11 @@ cd $NODE_FILES
 nano mainnet-topology.json
 ```
 
-Restart the cardano-service for changes to take effect & check that it is running.
+Restart the cardano-service for changes to take effect & check that it is running. Start up gLiveView and wait for it to sync up. Then press 'p' to show your connected peers.
 
 ```bash
 cardano-service restart
 cardano-service status
+gLiveView.sh
 ```
 
