@@ -4,7 +4,7 @@ description: >-
   topology.
 ---
 
-# Basic Stake Pool Networking \(Work-in-Progress\)
+# Basic Stake Pool Networking
 
 ## Assumptions
 
