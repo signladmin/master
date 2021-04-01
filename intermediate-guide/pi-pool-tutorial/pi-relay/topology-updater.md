@@ -112,7 +112,7 @@ cd $HOME/.local/bin
 ./relay-topology_pull.sh
 ```
 
-The service does a good job of prioritizing peers. You can see the distance to the peer. In nano use **ctrl+k** to cut out whole lines of peers over 6,000 miles away. That is a good start. Don't forget to remove the comma from the last peer in your list or your relay won't start up.
+You should see your core node & IOHK's relays first followed by the peers that were propagated. The service does a good job of prioritizing peers. You can see the distance to the peer. In nano use **ctrl+k** to cut out whole lines of peers over 6,000 miles away. That is a good start. Don't forget to remove the comma from the last peer in your list or your relay won't start up.
 
 ```bash
 cd $NODE_FILES
