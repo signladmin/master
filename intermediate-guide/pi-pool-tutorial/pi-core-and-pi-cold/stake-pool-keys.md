@@ -223,3 +223,4 @@ Wait for the core node to sync back up to the tip of the chain.
 
 gLiveView.sh
 {% endhint %}
+
