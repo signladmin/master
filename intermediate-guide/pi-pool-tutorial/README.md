@@ -4,7 +4,7 @@ description: >-
   the Pi Pool images.
 ---
 
-# \[OTG\] Pi-Pool Tutorial
+# Pi-Pool Tutorial
 
 ![](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
 
