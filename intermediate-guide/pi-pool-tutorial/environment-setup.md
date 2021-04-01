@@ -22,7 +22,7 @@ sudo apt install build-essential libssl-dev tcptraceroute chrony python3-pip \
          zlib1g-dev make g++ wget libncursesw5 libtool autoconf -y
 ```
 
-House cleaning. 🧹
+House cleaning. 🧹 
 
 ```bash
 sudo apt clean
@@ -112,7 +112,7 @@ source $HOME/.bashrc
 ### Retrieve aarch64 binaries
 
 {% hint style="info" %}
-It is no longer possible to build GHC for arm out of the box. The **unofficial** cardano-node & cardano-cli binaries available to us are being built by an IOHK engineer in his spare time. Please visit the '[Arming Cardano](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)' Telegram group for more information.
+It is no longer possible to build GHC for arm out of the box. The **unofficial** cardano-node & cardano-cli binaries available to us are being built by an IOHK engineer in his **spare time**. Please visit the '[Arming Cardano](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)' Telegram group for more information.
 {% endhint %}
 
 ```bash
@@ -142,7 +142,7 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-config.json
 ```
 
-Set TraceBlockFetchDecisions to "true" & TraceMempool to "false".
+Set  TraceBlockFetchDecisions to "true" & TraceMempool to "false".
 
 {% hint style="warning" %}
 It is recommended to turn TraceMempool to false for relays as of this writing \(cardano-node version 1.25.1\) as it is using an excessive amount of cpu. A fix will come soon. I keep it running on my core node, it's a valuable metric.
@@ -159,7 +159,7 @@ sed -i ${NODE_CONFIG}-config.json \
 Let us now create the systemd unit file and startup script so systemd can manage cardano-node.
 
 ```bash
-sudo nano $HOME/.local/bin/cardano-service
+nano $HOME/.local/bin/cardano-service
 ```
 
 Paste the following, save & exit.
@@ -167,14 +167,21 @@ Paste the following, save & exit.
 ```bash
 #!/bin/bash
 DIRECTORY=/home/ada/pi-pool
-FILES=${DIRECTORY}/files
+FILES=/home/ada/pi-pool/files
 PORT=3003
 HOSTADDR=0.0.0.0
 TOPOLOGY=${FILES}/mainnet-topology.json
 DB_PATH=${DIRECTORY}/db
 SOCKET_PATH=${DIRECTORY}/db/socket
 CONFIG=${FILES}/mainnet-config.json
-cardano-node run +RTS -N4 -RTS --topology ${TOPOLOGY} --database-path ${DB_PATH} --socket-path ${SOCKET_PATH} --host-addr ${HOSTADDR} --port ${PORT} --config ${CONFIG}
+## +RTS -N4 -RTS = Multicore(4)
+cardano-node run +RTS -N4 -RTS \
+  --topology ${TOPOLOGY} \
+  --database-path ${DB_PATH} \
+  --socket-path ${SOCKET_PATH} \
+  --host-addr ${HOSTADDR} \
+  --port ${PORT} \
+  --config ${CONFIG}
 ```
 
 Allow execution of our new startup script.
@@ -186,7 +193,7 @@ sudo chmod +x $HOME/.local/bin/cardano-service
 Open /etc/systemd/system/cardano-node.service
 
 ```bash
-sudo nano /etc/systemd/system/cardano-node.service
+sudo nano /etc/systemd/system/cardano-node.service 
 ```
 
 Paste the following, save & exit.
@@ -241,13 +248,13 @@ Save & exit.
 source $HOME/.bashrc
 ```
 
-What we just did there was add a function to control our cardano-service without having to type out
+What we just did there was add a function to control our cardano-service without having to type out 
 
-> > sudo systemctl enable cardano-node.service
+> > sudo systemctl enable cardano-node.service 
 > >
-> > sudo systemctl start cardano-node.service
+> > sudo systemctl start cardano-node.service 
 > >
-> > sudo systemctl stop cardano-node.service
+> > sudo systemctl stop cardano-node.service 
 > >
 > > sudo systemctl status cardano-node.service
 
@@ -280,23 +287,24 @@ sed -i env \
     -e "s/"6000"/"3003"/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/mainnet-config.json\"/g" \
     -e "s/\#SOCKET=\"\${CNODE_HOME}\/sockets\/node0.socket\"/SOCKET=\"\${NODE_HOME}\/db\/socket\"/g"
+    
 ```
 
 ## Congratulations you are now ready to start cardano-node
 
 {% hint style="danger" %}
-If you would like to make an image file you can use to quickly write what you have completed thus far to other Raspberry Pi 4's **now** is the time to do so before you start to sync the chain\(db folder\).
+If you would like to make an image file you can use to quickly write what you have completed thus far to other Raspberry Pi 4's now is the time to do so before you start to sync the chain\(db folder\).
 {% endhint %}
 
-## ⛓ Syncing the chain ⛓
+## ⛓ Syncing the chain ⛓ 
 
 {% hint style="danger" %}
-Do not attempt this on an ~~8GB~~ sd card. Not enough space and it will quickly burn out any sd card! Create your image file and flash it to your ssd.
+Do not attempt this on an 8GB sd card. Not enough space! Create your image file and flash it to your ssd.
 {% endhint %}
 
-You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 10 hours and the db folder is about 7GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
+You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 30 hours and the db folder is about 7GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
 
-I have started [taking snapshots](https://db.adamantium.online/) of my backup nodes db folder and hosting it in a web directory. With this service it takes around 15 minutes to pull the latest snapshot and maybe another 30 minutes to sync up to the tip of the chain. This service is provided as is. It is up to you. If you wan't to sync the chain on your own simply:
+I have started taking snapshots of my backup nodes db folder and hosting it in a web directory. With this service it takes around 15 minutes to pull the latest snapshot and maybe another 30 minutes to sync up to the tip of the chain. This service is provided as is. It is up to you. If you wan't to sync the chain on your own simply:
 
 ```bash
 cardano-service enable
@@ -306,7 +314,7 @@ cardano-service status
 
 Status should show as enabled & running.
 
-Once your node syncs past epoch 208 \(shelley era\) you can use gLiveView.sh to monitor.
+Once your node syncs past epoch 208\(shelley era\) you can use gLiveView.sh to monitor.
 
 {% hint style="danger" %}
 You will not be able to see transactions being processed due to TraceMempool = false in mainnet-config.json.
@@ -318,9 +326,7 @@ gLiveView.sh
 
 ## Download snapshot
 
-{% hint style="danger" %}
-**Make sure your node is not running &** **you may need to delete the db folder if it exists.**
-{% endhint %}
+Make sure your node is not running & delete the db folder if it exists.
 
 ```bash
 cardano-service stop
@@ -329,5 +335,7 @@ rm -r db/
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
-![Should look something like this once your synced to the tip of the chain.](../../.gitbook/assets/pi-node-glive.png)
+
+
+![Should look something like this once your synced to the tip of the chain.](../.gitbook/assets/pi-node-glive.png)
 
