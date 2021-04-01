@@ -52,7 +52,7 @@ sudo apt upgrade -y
 sudo reboot 
 ```
 
-* Next, we need to continue with a few more tasks to make sure our  is ready.
+* Next, we need to continue with a few more tasks to make sure our is ready.
 
 ```bash
 
@@ -60,7 +60,7 @@ sudo reboot
 
 | Provided By | Link to Cardano Static Build  |
 | :--- | :--- |
-| [Moritz Angermann \[ZW3RK\]![](../../.gitbook/assets/git.jpeg)](https://github.com/angerman)  | [https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip](https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip) |
+| [Moritz \[ZW3RK\]](https://zw3rk.com/) | [https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip](https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip) |
 
 * A static build is one in which all dependencies are included in the final build result which allows you to immediately run it on a compatible system without having to deal with building anything.
 * Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
