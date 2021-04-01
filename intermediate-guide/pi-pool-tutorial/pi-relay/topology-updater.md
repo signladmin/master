@@ -84,13 +84,13 @@ After four hours and four updates, your node IP will be registered in the topolo
 Complete this section after **four hours** when your relay node IP is properly registered.
 {% endhint %}
 
-Create `relay-topology_pull.sh` script which fetches your relay node buddies and updates your topology file. **Update with your block producer's private ipv4 address.**
+Create `relay-topology_pull.sh` script which fetches your relay node peers and updates your topology file.
 
 ```bash
 nano $HOME/.local/bin/relay-topology_pull.sh
 ```
 
-Add following & add your block producung nodes ip. Save & exit.
+Add following & add your block producing nodes ip. Save & exit.
 
 ```bash
 #!/bin/bash
@@ -110,6 +110,13 @@ After waiting at least 4 hours.
 ```bash
 cd $HOME/.local/bin
 ./relay-topology_pull.sh
+```
+
+Let's see what that did.
+
+```bash
+cd $NODE_FILES
+nano mainnet-topology.json
 ```
 
 Restart the cardano-service for changes to take effect & check that it is running.
