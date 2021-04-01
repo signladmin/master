@@ -21,7 +21,7 @@ sudo cat /dev/<your sd card> > pi-node.img
 ```
 
 {% hint style="info" %}
-cat is better than dd for this. cat will use all of your systems cpu cores, whereas dd uses one core. cat is faster 🙀
+cat is better than dd for this. cat will use all of your systems cpu cores, whereas dd uses one core. cat is faster 🙀 
 {% endhint %}
 
 Once that completes we will use [PiShrink.sh](https://github.com/Drewsif/PiShrink) to deflate partitions and compress \(among a few other tricks\).
