@@ -132,7 +132,7 @@ gLiveView.sh
 ```
 
 {% hint style="warning" %}
-Many operators disable icpm ping so you are bound to see some peers in as ---. Focus on out, the ones you are connecting to. This is my \#2 relay connected to ten relays. I wil cut out anything over 100ms or so.
+Many operators disable icmp ping so you are bound to see some peers in as ---. Focus on out, the ones you are connecting to. This is my \#2 relay connected to ten relays. I wil cut out anything over 100ms or so.
 {% endhint %}
 
 ![](../../../.gitbook/assets/glive-relay-peers.png)
