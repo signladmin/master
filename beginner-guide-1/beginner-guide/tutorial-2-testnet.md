@@ -59,22 +59,38 @@ sudo reboot
 * [ ] Create our bash variables. 
 * [ ] Download the static cardano-node, cardano-cli build  
 * [ ] Unzip the files and move them to ~/.local/bin
-* [ ] Create systemd unit file and startup script
+* [ ] Create systemd file and startup script to safely shutdown and restart our RPi relay
 
-
+### Make our directories 
 
 ```bash
 mkdir -p $HOME/.local/bin
-mkdir -p $HOME/pi-pool/files
-mkdir $HOME/git
+mkdir -p $HOME/testnet-relay/files
 ```
 
+### Add ~/.locaol/bin to our $PATH
+{% hint style="info" %}
+https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/
+{% endhint %}
 
+```bash
+echo PATH="$HOME/.local/bin:$PATH" >> $HOME/.bashrc
+```
+### Create our bash variables
+{% hint style="info" %}
+https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769
+{% endhint %}
 
+```bash
+echo export NODE_HOME=$HOME/testnet-relay >> $HOME/.bashrc
+echo export NODE_FILES=$HOME/testnet-relay/files >> $HOME/.bashrc
+echo export NODE_CONFIG=testnet >> $HOME/.bashrc
+echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> $HOME/.bashrc
+echo export CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket" >> $HOME/.bashrc
+source $HOME/.bashrc
+```
 
-
-
-
+### Download the static cardano-node, cardano-cli build
 
 * A static build is one in which all dependencies are included in the final build result which allows you to immediately run it on a compatible system without having to deal with building anything.
 
