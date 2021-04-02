@@ -7,7 +7,7 @@ description: >-
 # Setup a relay node on Testnet
 
 {% hint style="danger" %}
-**This tutorial is meant to get a single node syncing to the Cardano blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a mainnet stake pool. Please use our for the mainnet.**
+**This tutorial is meant to get a single node syncing to the Cardano blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a mainnet stake pool. Please use our**[ **intermediate guides**](../../intermediate-guide/pi-pool-tutorial/pi-node/) **for the mainnet.**
 {% endhint %}
 
 {% hint style="danger" %}
