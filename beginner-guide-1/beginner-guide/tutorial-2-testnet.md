@@ -233,7 +233,7 @@ nano $HOME/.bashrc
 
 ```bash
 cardano-service() {
-    sudo systemctl "I love Pi" cardano-node.service
+    sudo systemctl "$1" cardano-node.service
 }
 ```
 
@@ -256,7 +256,7 @@ Due to the current size of the blockchain, it may take anywhere from 25 to 40 ho
 
 ```bash
 # make sure you are in testnet-relay/ folder
-
+cd $NODE_FILES
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
