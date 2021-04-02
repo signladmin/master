@@ -241,7 +241,7 @@ cardano-service() {
 source $HOME/.bashrc
 ```
 
-## Download a snapshot of the blockchain to speed the sync process \(NOT READY db snapshot is being made for testnet\)
+## Download a snapshot of the blockchain to speed the sync process \( This Section is NOT READY db snapshot is being made for testnet\)
 
 {% hint style="info" %}
 You may skip this step, but due to the current size of the blockchain, it may take anywhere from 24 to 40 hours to get your node fully synced.
