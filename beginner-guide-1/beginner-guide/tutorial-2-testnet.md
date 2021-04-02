@@ -277,7 +277,7 @@ cardano-service status
 ## Setting up gLiveView to monitor the node during its syncing process
 
 ```bash
-cd $HOME/.local/bin
+cd $NODE_Files
 curl -s -o gLiveView.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
 curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/env
 chmod 755 gLiveView.sh
@@ -292,7 +292,6 @@ sudo nano env
 * Finally, we can exit the nano editor and just run the gLiveView script.
 
 ```bash
-cd testnet-relay
 touch db/clean
 ./gLiveView.sh
 ```
