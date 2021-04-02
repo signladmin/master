@@ -206,7 +206,7 @@ After           = network-online.target
 [Service]
 User            = pi
 Type            = simple
-WorkingDirectory= /home/ada/pi-pool
+WorkingDirectory= /home/pi/testnet-relay
 ExecStart       = /bin/bash -c "PATH=/home/pi/.local/bin:$PATH exec /home/pi/.local/bin/cardano-service"
 KillSignal=SIGINT
 RestartKillSignal=SIGINT
