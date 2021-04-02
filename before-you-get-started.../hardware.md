@@ -19,7 +19,7 @@ description: >-
 {% hint style="warning" %}
 You must use a power supply that can output the needed 5V at 3AMPs for the Pi4
 
-Here is the Raspberry Pi's Power Supply Docs
+[**Here**](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md) **is the Raspberry Pi's Power Supply Docs**
 {% endhint %}
 
 | Product Name & Description | Price in USD | Verified by RPI SPOs |  |
