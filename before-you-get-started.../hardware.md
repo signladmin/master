@@ -16,10 +16,16 @@ description: >-
 {% endtab %}
 
 {% tab title="Power Supplies" %}
+{% hint style="warning" %}
+You must use a power supply that can output the needed 5V at 3AMPs for the Pi4
+
+Here is the Raspberry Pi's Power Supply Docs
+{% endhint %}
+
 | Product Name & Description | Price in USD | Verified by RPI SPOs |  |
 | :--- | :--- | :--- | :--- |
 | NETGEAR 5-Port Gigabit Ethernet PoE+ Switch \(FOR USE WITH A RPi PoE HAT\) | 69.99 | YES | [Amazon](https://www.amazon.com/gp/product/B07WTXHSXC/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) |
-|  |  |  |  |
+| Raspberry Pi 15.3W USB-C Power Supply | 8.00 | YES | [Sparkfun](https://www.sparkfun.com/products/15448?src=raspberrypi) |
 {% endtab %}
 
 {% tab title="Storage Devices" %}
