@@ -277,7 +277,7 @@ cardano-service status
 ## Setting up gLiveView to monitor the node during its syncing process
 
 ```bash
-cd testnet-relay/
+cd $HOME/.local/bin
 curl -s -o gLiveView.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
 curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/env
 chmod 755 gLiveView.sh
