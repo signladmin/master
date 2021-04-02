@@ -270,6 +270,7 @@ This download will take anywhere from 25 min to 2 hours depending on your intern
 * Now we can start the "passive" relay node to begin syncing to the blockchain.
 
 ```bash
+cd $NODE_Files
 touch db/clean
 cardano-service enable
 cardano-service start
