@@ -7,14 +7,14 @@ description: >-
 # Setup a relay node on Testnet
 
 {% hint style="danger" %}
-**This tutorial is meant to get a single node syncing to the Cardano blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a mainnet stake pool. Please use our for the mainnet.**    
+**This tutorial is meant to get a single node syncing to the Cardano blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a mainnet stake pool. Please use our for the mainnet.**
 {% endhint %}
 
 {% hint style="danger" %}
- **This tutorial is for only use with Raspberry Pi OS 64bit and is solely for educational purposes to get a cardano-node syncing to the blockchain.** 
+**This tutorial is for only use with Raspberry Pi OS 64bit and is solely for educational purposes to get a cardano-node syncing to the blockchain.**
 {% endhint %}
 
-## Summary 
+## Summary
 
 1. Environment Setup
 2. Downloading the binaries needed to build a Cardano node relay
@@ -25,7 +25,7 @@ description: >-
 7. Monitor the relay node with gLiveView  
 
 {% hint style="success" %}
-Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.jpeg) 
+Please do not skip steps young Padawan ![](../../.gitbook/assets/download-10-.jpeg)
 {% endhint %}
 
 ## Setting up our environment
@@ -36,22 +36,20 @@ Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.j
 It is highly recommended to update the operating system every time you boot up and log in to your **Raspberry Pi** to prevent security vulnerabilities.
 {% endhint %}
 
-
-```
+```text
 # We are using the sudo prefix to run commands as non-root-user  
 
 sudo apt update
 sudo apt upgrade -y
-
 ```
 
 * We can now reboot the Pi and let the updates take effect by running this command in a terminal.
 
 ```text
-sudo reboot 
+sudo reboot
 ```
 
-| Provided By | Link to Cardano Static Build  |
+| Provided By | Link to Cardano Static Build |
 | :--- | :--- |
 | [Moritz \[ZW3RK\]](https://zw3rk.com/) | [https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip](https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip) |
 
@@ -67,6 +65,7 @@ mkdir -p $HOME/testnet-relay/files
 ```
 
 ### Add ~/.local/bin to our $PATH
+
 {% hint style="info" %}
 [https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/](https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/)
 {% endhint %}
@@ -74,6 +73,7 @@ mkdir -p $HOME/testnet-relay/files
 ```bash
 echo PATH="$HOME/.local/bin:$PATH" >> $HOME/.bashrc
 ```
+
 ### Create our bash variables
 
 {% hint style="info" %}
@@ -88,10 +88,14 @@ echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/car
 echo export CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket" >> $HOME/.bashrc
 source $HOME/.bashrc
 ```
+
 ```bash
-sudo reboot 
+sudo reboot
 ```
-| Provided By | Link to Cardano Static Build  |
+
+### Download the cardano-node static build
+
+| Provided By | Link to Cardano Static Build |
 | :--- | :--- |
 | [Moritz \[ZW3RK\]](https://zw3rk.com/) | [https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip](https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip) |
 
@@ -107,34 +111,40 @@ wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-carda
 ```
 
 * Use "unzip" command on the downloaded zip file and extract its contents.
-```bash
-unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
-```
-* Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.  
 
+  ```bash
+  unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
+  ```
+
+* Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.  
 
 {% hint style="info" %}
 If you are unsure if the file downloaded properly or need the name of the folder/files, we can use the linux "ls" command.
 {% endhint %}
+
 ```bash
 ls
 ```
-* You should see the "cardano-node" folder in your home directory after running ls command:
+
+You should see the "cardano-node" folder in your home directory after running ls command:
+
+
+
 ![](../../.gitbook/assets/screen-shot-2021-03-21-at-7.29.03-pm%20%281%29.png)
-* Now we need to move the cardano-node folder into our local binary directory.
 
-
+Now we need to move the cardano-node folder into our local binary directory.
 
 ```bash
 mv cardano-node ~/.local/bin
 ```
-Before we proceed let's make sure the cardano-node and cardano-cli is in our $PATH
 
+Before we proceed let's make sure the cardano-node and cardano-cli is in our $PATH
 
 ```bash
 cardano-node
 cardano-cli
 ```
+
 ```bash
 mkdir testnet-relay
 cd testnet-relay/
@@ -157,7 +167,6 @@ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-fi
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-byron-genesis.json
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-shelley-genesis.json
 wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-topology.json
-
 ```
 
 * Use the nano text editor to change a few things in our "testnet-config.json" file
@@ -168,21 +177,25 @@ wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-fi
 ```text
 sudo nano testnet-config.json
 ```
- 
+
 ### Create the systemd files
 
 We will use the linux systemd service manager to handle the starting, stoping, and restarting of our Cardano node relay.
+
 {% hint style="info" %}
-If you'd like to find out more about Linux systemd go to the Linux manual page.https://www.man7.org/linux/man-pages/man1/systemd.1.html
+If you'd like to find out more about Linux systemd go to the Linux manual page.[https://www.man7.org/linux/man-pages/man1/systemd.1.html](https://www.man7.org/linux/man-pages/man1/systemd.1.html)
 {% endhint %}
 
 ```bash
 sudo nano $HOME/.local/bin/cardano-service
 ```
+
 **Now we need to make the cardano-node startup script**
+
 {% hint style="info" %}
-How to start the cardano-node can be found here on the Cardano documentation.https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html
+How to start the cardano-node can be found here on the Cardano documentation.[https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles\_AND\_Connect.html](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html)
 {% endhint %}
+
 ```bash
 #!/bin/bash
 DIRECTORY=/home/pi/testnet-relay
@@ -204,13 +217,15 @@ cardano-node run \
 ```
 
 **Now we must give access permission to our new systemd service script**
+
 ```bash
 sudo chmod +x $HOME/.local/bin/cardano-service
 ```
+
 ```bash
 sudo nano /etc/systemd/system/cardano-node.service
-
 ```
+
 ```bash
 # The Cardano Node Service (part of systemd)
 # file: /etc/systemd/system/cardano-node.service 
@@ -235,29 +250,34 @@ RestartSec=5
 [Install]
 WantedBy= multi-user.target
 ```
-**We now should reload our systemd service to make sure it picks up our cardano-service
+
+\*\*We now should reload our systemd service to make sure it picks up our cardano-service
+
 ```bash
 sudo systemctl daemon-reload
 ```
-**If we want to not have to call "sudo systemctl" everytime we want to start, stop, or restart the cardano-node service we can create a "function" that will be added into our .bashrc shell script that will do this for us https://www.routerhosting.com/knowledge-base/what-is-linux-bashrc-and-how-to-use-it-full-guide/**
+
+**If we want to not have to call "sudo systemctl" everytime we want to start, stop, or restart the cardano-node service we can create a "function" that will be added into our .bashrc shell script that will do this for us** [https://www.routerhosting.com/knowledge-base/what-is-linux-bashrc-and-how-to-use-it-full-guide/](https://www.routerhosting.com/knowledge-base/what-is-linux-bashrc-and-how-to-use-it-full-guide/)
+
 ```bash
 nano $HOME/.bashrc
 ```
+
 ```bash
 cardano-service() {
-	sudo systemctl "I love Pi" cardano-node.service
+    sudo systemctl "I love Pi" cardano-node.service
 }
 ```
 
 ```bash
 source $HOME/.bashrc
 ```
+
 ## Download a snapshot of the blockchain to speed the sync process
 
 {% hint style="danger" %}
 Make sure you have not started your node before proceeding. Shut it down if so.
 {% endhint %}
-
 
 {% hint style="warning" %}
 Due to the size of the blockchain it may take anywhere from 25 to 40 hours to get your node fully synced.
@@ -276,7 +296,7 @@ wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 This download will take anywhere from 25 min to 2 hours depending on your internet speeds.
 {% endhint %}
 
-## Finish syncing to the blockchain 
+## Finish syncing to the blockchain
 
 * Now we can start the "passive" relay node to begin syncing to the blockchain.
 
@@ -287,7 +307,7 @@ cardano-node run \
    --socket-path db/socket \
    --host-addr 0.0.0.0 \
    --port 3000 \
-   --config testnet-config.json 
+   --config testnet-config.json
 ```
 
 ## Setting up gLiveView to monitor the node during its syncing process
@@ -335,31 +355,15 @@ htop
 
 {% tabs %}
 {% tab title="📚" %}
-{% embed url="https://github.com/wcatz/pi-pool" %}
-<<<<<<< Updated upstream
+{% embed url="https://github.com/wcatz/pi-pool" caption="" %}
 
+{% embed url="https://github.com/alessandrokonrad/Pi-Pool" caption="" %}
 
+{% embed url="https://github.com/angerman" caption="" %}
 
-{% embed url="https://github.com/alessandrokonrad/Pi-Pool" %}
+{% embed url="https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles\_AND\_Connect.html" caption="" %}
 
-{% embed url="https://github.com/angerman" %}
-
-=======
-
-
-
-{% embed url="https://github.com/alessandrokonrad/Pi-Pool" %}
-
-{% embed url="https://github.com/angerman" %}
-
->>>>>>> Stashed changes
-
-
-{% embed url="https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles\_AND\_Connect.html" %}
-
-{% embed url="https://cardano-community.github.io/guild-operators/\#/Scripts/gliveview" %}
+{% embed url="https://cardano-community.github.io/guild-operators/\#/Scripts/gliveview" caption="" %}
 {% endtab %}
 {% endtabs %}
-
-
 
