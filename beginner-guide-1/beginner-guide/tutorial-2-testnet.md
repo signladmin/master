@@ -108,7 +108,7 @@ wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-carda
   unzip aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
   ```
 
-* Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.  
+* Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.
 
 {% hint style="info" %}
 If you are unsure if the file downloaded properly or need the name of the folder/files, we can use the linux "ls" command.
@@ -250,10 +250,10 @@ You may skip this step, but due to the current size of the blockchain, it may ta
 * **Thankfully, we have been provided a "snapshot" of the database folder from the** [**\[OTG\] Star Forge Stake Pool**](https://adamantium.online/)**. This will dramatically speed up the process.**
 
 {% hint style="danger" %}
-**Make sure you have not started a Cardano-node before proceeding.** 🛑 
+**Make sure you have not started a Cardano-node before proceeding.** 🛑
 {% endhint %}
 
-First let's make sure we download the db in our testnet-relay/files, then we will run the following commands to begin our download 
+First let's make sure we download the db in our testnet-relay/files, then we will run the following commands to begin our download
 
 ```bash
 cd $NODE_FILES
@@ -277,7 +277,6 @@ touch db/clean
 * Now we can start the "passive" relay node to begin syncing to the blockchain.
 
 ```bash
-
 cardano-service enable
 cardano-service start
 cardano-service status
