@@ -243,20 +243,21 @@ source $HOME/.bashrc
 
 ## Download a snapshot of the blockchain to speed the sync process
 
-{% hint style="danger" %}
-Make sure you have not started your node before proceeding. Shut it down if so.
-{% endhint %}
-
-{% hint style="warning" %}
-Due to the current size of the blockchain, it may take anywhere from 25 to 40 hours to get your node fully synced. 
+{% hint style="info" %}
+You may skip this step, but due to the current size of the blockchain, it may take anywhere from 24 to 40 hours to get your node fully synced.
 {% endhint %}
 
 * Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/). This will dramatically speed up the process.
 * We will run the following commands and then begin downloading the snapshot.
 
+{% hint style="danger" %}
+**Make sure you have not started a Cardano-node before proceeding.** 🛑 
+{% endhint %}
+
 ```bash
-# make sure you are in testnet-relay/ folder
 cd $NODE_FILES
+# Uncomment and remove db folder if present
+#rm -r db 
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
@@ -269,6 +270,7 @@ This download will take anywhere from 25 min to 2 hours depending on your intern
 * Now we can start the "passive" relay node to begin syncing to the blockchain.
 
 ```bash
+touch db/clean
 cardano-service enable
 cardano-service start
 cardano-service status
@@ -292,7 +294,6 @@ sudo nano env
 * Finally, we can exit the nano editor and just run the gLiveView script.
 
 ```bash
-touch db/clean
 ./gLiveView.sh
 ```
 
