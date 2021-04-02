@@ -5,6 +5,16 @@ description: Stake pool operator resources.
 # Resource Library
 
 {% tabs %}
+{% tab title="Youtube and Video Resources" %}
+| \*\*\*\* |
+| :--- |
+| \*\*\*\*[**\[Easy 1\] Raspberry Pi Stake Pool Tutorial Youtube Videos**](https://www.youtube.com/watch?v=tZykFS5D-jk&list=PLBhbLwOuj0DfTnneuG3vyoDHY7Dv_aiyq)\*\*\*\* |
+| \*\*\*\*[**IOHK Youtube Channel**](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w)\*\*\*\* |
+| \*\*\*\*[**NASEC Pool Youtube Channel**](https://www.youtube.com/channel/UCv-eePQ0EpSV-jf-nJUPeeA/featured)\*\*\*\* |
+| \*\*\*\*[**Jeff Geerling Youtube Channel**](https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg)\*\*\*\* |
+| \*\*\*\*[**PowerCert Animated Videos**](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)\*\*\*\* |
+{% endtab %}
+
 {% tab title="Official Cardano Foundation" %}
 | Documentation |
 | :--- |
@@ -20,16 +30,6 @@ description: Stake pool operator resources.
 
 |  |
 | :--- |
-{% endtab %}
-
-{% tab title="Youtube and Video Resources" %}
-|  |
-| :--- |
-| \*\*\*\*[**IOHK Youtube Channel**](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w)\*\*\*\* |
-| \*\*\*\*[**NASEC Pool Youtube Channel**](https://www.youtube.com/channel/UCv-eePQ0EpSV-jf-nJUPeeA/featured)\*\*\*\* |
-| \*\*\*\*[**Easy 1 Raspberry Pi Stake Pool Tutorial Youtube Videos** ](https://www.youtube.com/channel/UCLHorSv3uqGTgkX-OsBLwAg/featured)\*\*\*\* |
-| \*\*\*\*[**Jeff Geerling Youtube Channel**](https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg)\*\*\*\* |
-| \*\*\*\*[**PowerCert Animated Videos**](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)\*\*\*\* |
 {% endtab %}
 
 {% tab title="Community Tutorials" %}
@@ -50,7 +50,7 @@ description: Stake pool operator resources.
 {% tab title="Community Forums" %}
 [https://forum.cardano.org/](https://forum.cardano.org/)
 
-[ https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)
+[ ](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)[Arming Cardano Telegram ](%20https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w%20)
 {% endtab %}
 
 {% tab title="" %}
