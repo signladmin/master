@@ -301,25 +301,21 @@ This download will take anywhere from 25 min to 2 hours depending on your intern
 * Now we can start the "passive" relay node to begin syncing to the blockchain.
 
 ```bash
-cardano-node run \
-   --topology testnet-topology.json \
-   --database-path db \
-   --socket-path db/socket \
-   --host-addr 0.0.0.0 \
-   --port 3000 \
-   --config testnet-config.json
+cardano-service enable
+cardano-service start
+cardano-service status
 ```
 
 ## Setting up gLiveView to monitor the node during its syncing process
 
 ```bash
-cd cardano-node/
+cd testnet-relay/
 curl -s -o gLiveView.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
 curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/env
 chmod 755 gLiveView.sh
 ```
 
-* Use nano to edit the env file and change the "**CNODE\_PORT**" to the port you set on your cardano-node, in our case let's change it to **3000.**
+* Use nano to edit the env file and change the "**CNODE\_PORT**" to the port you set on your cardano-node, in our case let's change it to **3001.**
 
 ```bash
 sudo nano env
@@ -328,7 +324,7 @@ sudo nano env
 * Finally, we can exit the nano editor and just run the gLiveView script.
 
 ```bash
-cd cardano-node
+cd testnet-relay
 touch db/clean
 ./gLiveView.sh
 ```
