@@ -36,7 +36,6 @@ Please do not skip steps young Padawan  ![](../../.gitbook/assets/download-10-.j
 It is highly recommended to update the operating system every time you boot up and log in to your **Raspberry Pi** to prevent security vulnerabilities.
 {% endhint %}
 
-\*\*\*\*
 
 ```
 # We are using the sudo prefix to run commands as non-root-user  
@@ -48,7 +47,6 @@ sudo apt upgrade -y
 
 * We can now reboot the Pi and let the updates take effect by running this command in a terminal.
 
-<<<<<<< Updated upstream
 ```text
 sudo reboot 
 ```
@@ -61,8 +59,6 @@ sudo reboot
 * Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
 
 ```text
-=======
-<<<<<<< HEAD
 ### Make our directories
 
 ```bash
@@ -74,13 +70,16 @@ mkdir -p $HOME/testnet-relay/files
 {% hint style="info" %}
 [https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/](https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/)
 {% endhint %}
+
 ```bash
 echo PATH="$HOME/.local/bin:$PATH" >> $HOME/.bashrc
 ```
 ### Create our bash variables
+
 {% hint style="info" %}
 [https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769\#247769](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769)
 {% endhint %}
+
 ```bash
 echo export NODE_HOME=$HOME/testnet-relay >> $HOME/.bashrc
 echo export NODE_FILES=$HOME/testnet-relay/files >> $HOME/.bashrc
@@ -95,66 +94,48 @@ sudo reboot
 | Provided By | Link to Cardano Static Build  |
 | :--- | :--- |
 | [Moritz \[ZW3RK\]](https://zw3rk.com/) | [https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip](https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip) |
+
 * A static build is one in which all dependencies are included in the final build result which allows you to immediately run it on a compatible system without having to deal with building anything.
 * Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
+
 ```bash
->>>>>>> Stashed changes
 # First change to the home directory
 cd ~/
 
 # Now we can download the static build 
 wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
 ```
-<<<<<<< Updated upstream
 
-{% hint style="info" %}
-If you are unsure if the file downloaded or need the name of the folder/files, we can use the linux "ls" command to list everything in our current working directory.
-{% endhint %}
-
-* Use "unzip" command on the downloaded zip file.
-
-```text
-=======
 * Use "unzip" command on the downloaded zip file and extract its contents.
 ```bash
->>>>>>> Stashed changes
 unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
 ```
 * Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.  
-<<<<<<< Updated upstream
 
-```text
-=======
-<<<<<<< HEAD
+
 {% hint style="info" %}
 If you are unsure if the file downloaded properly or need the name of the folder/files, we can use the linux "ls" command.
 {% endhint %}
 ```bash
->>>>>>> Stashed changes
 ls
 ```
 * You should see the "cardano-node" folder in your home directory after running ls command:
 ![](../../.gitbook/assets/screen-shot-2021-03-21-at-7.29.03-pm%20%281%29.png)
 * Now we need to move the cardano-node folder into our local binary directory.
-<<<<<<< Updated upstream
 
-```text
-=======
+
+
 ```bash
->>>>>>> Stashed changes
 mv cardano-node ~/.local/bin
 ```
 Before we proceed let's make sure the cardano-node and cardano-cli is in our $PATH
 
-<<<<<<< Updated upstream
-```text
-=======
+
 ```bash
 cardano-node
 cardano-cli
 ```
 ```bash
->>>>>>> Stashed changes
 mkdir testnet-relay
 cd testnet-relay/
 ```
