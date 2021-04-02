@@ -247,12 +247,13 @@ source $HOME/.bashrc
 You may skip this step, but due to the current size of the blockchain, it may take anywhere from 24 to 40 hours to get your node fully synced.
 {% endhint %}
 
-* Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/). This will dramatically speed up the process.
-* We will run the following commands and then begin downloading the snapshot.
+* **Thankfully, we have been provided a "snapshot" of the database folder from the** [**\[OTG\] Star Forge Stake Pool**](https://adamantium.online/)**. This will dramatically speed up the process.**
 
 {% hint style="danger" %}
 **Make sure you have not started a Cardano-node before proceeding.** 🛑 
 {% endhint %}
+
+First let's make sure we download the db in our testnet-relay/files, then we will run the following commands to begin our download 
 
 ```bash
 cd $NODE_FILES
@@ -265,13 +266,18 @@ wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 This download will take anywhere from 25 min to 2 hours depending on your internet speeds.
 {% endhint %}
 
+* After the db has finished downloading it is a good idea to add a clean file to it before we start to finish syncing the blockchain. Copy/paste the following command.
+
+```bash
+touch db/clean
+```
+
 ## Finish syncing to the blockchain
 
 * Now we can start the "passive" relay node to begin syncing to the blockchain.
 
 ```bash
-cd $NODE_Files
-touch db/clean
+
 cardano-service enable
 cardano-service start
 cardano-service status
