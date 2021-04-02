@@ -56,7 +56,6 @@ sudo reboot
 * A static build is one in which all dependencies are included in the final build result which allows you to immediately run it on a compatible system without having to deal with building anything.
 * Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
 
-```text
 ### Make our directories
 
 ```bash
@@ -113,7 +112,7 @@ wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-carda
 * Use "unzip" command on the downloaded zip file and extract its contents.
 
   ```bash
-  unzip aarch64-unknown-linux-musl-cardano-node-1.25.1.zip
+  unzip aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
   ```
 
 * Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.  
@@ -122,32 +121,17 @@ wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-carda
 If you are unsure if the file downloaded properly or need the name of the folder/files, we can use the linux "ls" command.
 {% endhint %}
 
-```bash
-ls
-```
-
-You should see the "cardano-node" folder in your home directory after running ls command:
-
-
-
-![](../../.gitbook/assets/screen-shot-2021-03-21-at-7.29.03-pm%20%281%29.png)
-
 Now we need to move the cardano-node folder into our local binary directory.
 
 ```bash
-mv cardano-node ~/.local/bin
+mv cardano-node/* ~/.local/bin
 ```
 
 Before we proceed let's make sure the cardano-node and cardano-cli is in our $PATH
 
 ```bash
-cardano-node
-cardano-cli
-```
-
-```bash
-mkdir testnet-relay
-cd testnet-relay/
+cardano-node version
+cardano-cli version
 ```
 
 Now we can move in to our files folder, and download the four Cardano node configuration files we need from the official [IOHK website](https://hydra.iohk.io/build/5822084/download/1/index.html) and or [documentation](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html). We will be using our "wget" command to download the files.
@@ -161,15 +145,6 @@ wget https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-con
 ```
 
 * **Use the nano bash editor to change a few things in our "testnet-config.json" file**
-
-```text
-wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-config.json
-wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-byron-genesis.json
-wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-shelley-genesis.json
-wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/testnet-topology.json
-```
-
-* Use the nano text editor to change a few things in our "testnet-config.json" file
 * [ ] Change the **"TraceBlockFetchDecisions"** line from "**false**" to "**true**"
 * [ ] Change the **"hasEKG"** to **12600**
 * [ ] Change  the **"hasPrometheus"** address/port to 12700
@@ -288,7 +263,7 @@ Due to the current size of the blockchain, it may take anywhere from 25 to 40 ho
 
 ```bash
 # make sure you are in testnet-relay/ folder
-cd testnet-relay
+
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
