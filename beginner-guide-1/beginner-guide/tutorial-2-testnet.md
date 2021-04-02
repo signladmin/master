@@ -241,7 +241,7 @@ cardano-service() {
 source $HOME/.bashrc
 ```
 
-## Download a snapshot of the blockchain to speed the sync process
+## Download a snapshot of the blockchain to speed the sync process \(NOT READY db snapshot is being made for testnet\)
 
 {% hint style="info" %}
 You may skip this step, but due to the current size of the blockchain, it may take anywhere from 24 to 40 hours to get your node fully synced.
@@ -256,10 +256,10 @@ You may skip this step, but due to the current size of the blockchain, it may ta
 First let's make sure we download the db in our testnet-relay/files, then we will run the following commands to begin our download
 
 ```bash
-cd $NODE_FILES
+#cd $NODE_FILES
 # Uncomment and remove db folder if present
 #rm -r db 
-wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+#wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
 {% hint style="info" %}
