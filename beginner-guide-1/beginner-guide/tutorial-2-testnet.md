@@ -266,7 +266,7 @@ wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 This download will take anywhere from 25 min to 2 hours depending on your internet speeds.
 {% endhint %}
 
-* After the db has finished downloading it is a good idea to add a clean file to it before we start to finish syncing the blockchain. Copy/paste the following command.
+* After the db has finished downloading it is a good idea to add a clean file to it before we start the relay. Copy/paste the following command.
 
 ```bash
 touch db/clean
@@ -292,7 +292,7 @@ curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operato
 chmod 755 gLiveView.sh
 ```
 
-* Use nano to edit the env file and change the "**CNODE\_PORT**" to the port you set on your cardano-node, in our case let's change it to **3001.**
+* Need to change the "**CNODE\_PORT**" to the port you set on your cardano-node, in our case let's change it to **3001.**
 
 ```bash
 sudo nano env
