@@ -280,7 +280,7 @@ Make sure you have not started your node before proceeding. Shut it down if so.
 {% endhint %}
 
 {% hint style="warning" %}
-Due to the size of the blockchain it may take anywhere from 25 to 40 hours to get your node fully synced.
+Due to the current size of the blockchain, it may take anywhere from 25 to 40 hours to get your node fully synced. 
 {% endhint %}
 
 * Thankfully, we have been provided a "snapshot" of the database folder from the [\[OTG\] Star Forge Stake Pool](https://adamantium.online/). This will dramatically speed up the process.
