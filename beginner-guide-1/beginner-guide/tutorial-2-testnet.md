@@ -11,7 +11,7 @@ description: >-
 {% endhint %}
 
 {% hint style="danger" %}
-**This tutorial is for only use with Raspberry Pi OS 64bit and is solely for educational purposes to get a cardano-node syncing to the blockchain.**
+**This tutorial is for only use with Raspberry Pi OS 64bit and is solely for educational purposes to get a Cardano node syncing to the blockchain.**
 {% endhint %}
 
 ## Summary
@@ -20,13 +20,15 @@ description: >-
 2. Downloading the binaries needed to build a Cardano node relay
 3. Download configuration files from IOHK/Cardano-node
 4. Edit the config settings 
-5. Download a db snapshot to speed up the sync process
+5. Download a database snapshot to speed up the sync process
 6. Run the basic passive relay node to connect to the testnet
-7. Monitor the relay node with gLiveView  
+7. Monitor the relay node with [**Guild Operators gLiveView** ](https://cardano-community.github.io/guild-operators/#/) ****
 
 {% hint style="success" %}
-Please do not skip steps young Padawan ![](../../.gitbook/assets/download-10-.jpeg)
+Please do not skip steps young Padawan 
 {% endhint %}
+
+![](../../.gitbook/assets/download-10-%20%281%29.jpeg)
 
 ## Setting up our environment
 
@@ -85,24 +87,31 @@ source $HOME/.bashrc
 sudo reboot
 ```
 
-### Download the cardano-node static build
+### Download the Cardano-node static build
+
+
+
+{% hint style="warning" %}
+This is an **unofficial static build of** cardano-node & cardano-cli binaries made available to us by an IOHK engineer in his **spare time**. Although, the community has trust in this build and its safety, we recommend you read through the build used ****[**here**](https://ci.zw3rk.com/build/1753#tabs-build-deps) ****and if have more questions consider joining the ****[**Arming Cardano**](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w) telegram group. Use this at **your own** risk, we nor ANYONE are responsible for any problems, warranties, and fiscal loss.
+{% endhint %}
 
 | Provided By | Link to Cardano Static Build |
 | :--- | :--- |
-| [Moritz \[ZW3RK\]](https://zw3rk.com/) | [https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip](https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip) |
+| \*\*\*\*[**ZW3RK**](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) **1PCT Haskell CI Support Pool** | \_\_[_https://ci.zw3rk.com/build/1753\#tabs-summary_](https://ci.zw3rk.com/build/1753#tabs-summary)\_\_ |
 
-* A static build is one in which all dependencies are included in the final build result which allows you to immediately run it on a compatible system without having to deal with building anything.
-* Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
+* A[ **static build**](https://en.wikipedia.org/wiki/Static_build) is a ****[**compiled**](https://en.wikipedia.org/wiki/Compiler) ****version of a program that has been **statically** linked against libraries.
+
+Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
 
 ```bash
 # First change to the home directory
-cd ~/
+cd $HOME
 
-# Now we can download the static build 
+# Now we can download the cardano-node 
 wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
 ```
 
-* Use "unzip" command on the downloaded zip file and extract its contents.
+* Use [**unzip**](https://linux.die.net/man/1/unzip) ****command on the downloaded zip file and extract its contents.
 
   ```bash
   unzip aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
@@ -111,7 +120,7 @@ wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-carda
 * Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.
 
 {% hint style="info" %}
-If you are unsure if the file downloaded properly or need the name of the folder/files, we can use the linux "ls" command.
+If you are unsure if the file downloaded properly or need the name of the folder/files, we can use the Linux [**ls**](https://www.man7.org/linux/man-pages/man1/ls.1.html) command.
 {% endhint %}
 
 Now we need to move the cardano-node folder into our local binary directory.
