@@ -243,14 +243,12 @@ source $HOME/.bashrc
 
 ## Download a snapshot of the blockchain to speed the sync process \( This Section is NOT READY db snapshot is being made for testnet\)
 
-{% hint style="info" %}
-You may skip this step, but due to the current size of the blockchain, it may take anywhere from 24 to 40 hours to get your node fully synced.
-{% endhint %}
-
-* **Thankfully, we have been provided a "snapshot" of the database folder from the** [**\[OTG\] Star Forge Stake Pool**](https://adamantium.online/)**. This will dramatically speed up the process.**
-
 {% hint style="danger" %}
 **Make sure you have not started a Cardano-node before proceeding.** 🛑
+{% endhint %}
+
+{% hint style="info" %}
+You may skip this step, but due to the current size of the blockchain, it may take anywhere from 24 to 40 hours to get your node fully synced.
 {% endhint %}
 
 First let's make sure we download the db in our testnet-relay/files, then we will run the following commands to begin our download
