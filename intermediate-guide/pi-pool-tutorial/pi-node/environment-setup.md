@@ -334,5 +334,5 @@ rm -r db/
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
-![Should look something like this once your synced to the tip of the chain.](https://github.com/ADA-Pi/master/tree/704cd2adeea3cb4829504300a66ab7f6d3e302e1/intermediate-guide/.gitbook/assets/pi-node-glive.png)
+![](../../../.gitbook/assets/glive-relay-peers.png)
 
