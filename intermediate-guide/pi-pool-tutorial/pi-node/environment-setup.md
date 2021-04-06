@@ -4,7 +4,7 @@ description: Install packages needed to run cardano-node and configure our envir
 
 # Environment Setup
 
-## Install packages
+## Install packages 📦 
 
 Enable automatic updates.
 
@@ -30,9 +30,9 @@ sudo apt autoremove
 sudo apt autoclean
 ```
 
-## Environment
+## Environment 🏠 
 
-### Chrony
+### Chrony ⏲ 
 
 We need to get our time synchronization as accurate as possible. Open /etc/chrony/chrony.conf
 
@@ -85,7 +85,7 @@ local stratum 10
 sudo service chrony restart
 ```
 
-### Create a few directories
+### Create a few directories 📂 
 
 ```bash
 mkdir -p $HOME/.local/bin
@@ -93,7 +93,7 @@ mkdir -p $HOME/pi-pool/files
 mkdir $HOME/git
 ```
 
-### Create bash variables & add ~/.local/bin to our $PATH
+### Create bash variables & add ~/.local/bin to our $PATH 🏃♀ 
 
 {% hint style="info" %}
 [Environment Variables in Linux/Unix](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769).
