@@ -23,7 +23,7 @@
 
 * [Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-Node](intermediate-guide/pi-pool-tutorial/pi-node/README.md)
-    * [Download & Flash](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
+    * [Download & Flash \(NOT-READY\)](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
     * [Logging in Securely](intermediate-guide/pi-pool-tutorial/pi-node/logging-in-securely.md)
     * [User Setup](intermediate-guide/pi-pool-tutorial/pi-node/user-setup.md)
     * [Server Setup](intermediate-guide/pi-pool-tutorial/pi-node/server-setup.md)
