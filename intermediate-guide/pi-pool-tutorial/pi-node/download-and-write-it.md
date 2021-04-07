@@ -2,7 +2,7 @@
 description: Flash image
 ---
 
-# Download & Flash \(NOT-READY\)
+# Download & Flash \(COMING-SOON\)
 
 ## Flash Image
 

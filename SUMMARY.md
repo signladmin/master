@@ -23,13 +23,13 @@
 
 * [Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-Node](intermediate-guide/pi-pool-tutorial/pi-node/README.md)
-    * [Download & Flash \(NOT-READY\)](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
+    * [Download & Flash \(COMING-SOON\)](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
     * [Logging in Securely](intermediate-guide/pi-pool-tutorial/pi-node/logging-in-securely.md)
     * [User Setup](intermediate-guide/pi-pool-tutorial/pi-node/user-setup.md)
     * [Server Setup](intermediate-guide/pi-pool-tutorial/pi-node/server-setup.md)
     * [Environment Setup](intermediate-guide/pi-pool-tutorial/pi-node/environment-setup.md)
-  * [Pi-Relay \(NOT-READY\)](intermediate-guide/pi-pool-tutorial/pi-relay.md)
-  * [Pi-Core & Pi-Cold \(NOT-READY\)](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
+  * [Pi-Relay \(COMING-SOON\)](intermediate-guide/pi-pool-tutorial/pi-relay.md)
+  * [Pi-Core & Pi-Cold \(COMING-SOON\)](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/create-.img-file.md)
 
 ---
