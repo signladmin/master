@@ -13,6 +13,7 @@ description: List of various common questions of Stake Pool Operation
 * What is the difference between Mainnet and Testnet?
 * Should I start with testnet or mainnet first?
 * If I only want to make native tokens do I need a stake pool?
+* need more...
 
 ## **Raspberry Pi based Stake Pool FAQ**
 
