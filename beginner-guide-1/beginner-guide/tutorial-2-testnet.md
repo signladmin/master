@@ -250,7 +250,7 @@ cardano-service() {
 source $HOME/.bashrc
 ```
 
-## ~~Download a snapshot of the blockchain to speed the sync process~~ \( This Section is NOT READY db snapshot is being made for testnet\)
+## Download a snapshot of the blockchain to speed the sync process 
 
 {% hint style="danger" %}
 **Make sure you have not started a Cardano-node before proceeding.** 🛑
@@ -263,10 +263,13 @@ You may skip this step, but due to the current size of the blockchain, it may ta
 First let's make sure we download the db in our testnet-relay/files, then we will run the following commands to begin our download
 
 ```bash
-#cardano-service stop
-#cd $NODE_HOME
-#rm -r db/ 
-#wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
+# Make sure you do not have the cardano-node running in the background
+cardano-service stop
+cd $NODE_HOME
+# Remove old db and its contents if present
+rm -r db/ 
+#Download testnet db snapshot
+wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
 ```
 
 {% hint style="info" %}
