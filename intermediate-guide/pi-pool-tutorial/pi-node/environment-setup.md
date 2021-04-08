@@ -118,7 +118,7 @@ It is no longer possible to build GHC for arm out of the box. The **unofficial**
 ```bash
 mkdir $HOME/tmp
 cd $HOME/tmp
-wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/job/Tools/master/rpi64-musl.tarball/latest-finished/download
+wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/job/Tools/master/aarch64-unknown-linux-musl-cardano-node-musl.tarball/latest-finished/download
 unzip *.zip
 mv cardano-node/* $HOME/.local/bin
 cd $HOME
