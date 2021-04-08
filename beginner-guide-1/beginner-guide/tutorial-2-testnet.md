@@ -263,10 +263,10 @@ You may skip this step, but due to the current size of the blockchain, it may ta
 First let's make sure we download the db in our testnet-relay/files, then we will run the following commands to begin our download
 
 ```bash
-#cd $NODE_FILES
-# Uncomment and remove db folder if present
-#rm -r db 
-#
+cardano-service stop
+cd $NODE_HOME
+rm -r db/ 
+wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
 ```
 
 {% hint style="info" %}
