@@ -22,10 +22,10 @@ description: >-
 4. Edit the config settings 
 5. Download a database snapshot to speed up the sync process
 6. Run the basic passive relay node to connect to the testnet
-7. Monitor the relay node with [**Guild Operators gLiveView** ](https://cardano-community.github.io/guild-operators/#/) ****
+7. Monitor the relay node with [**Guild Operators gLiveView** ](https://cardano-community.github.io/guild-operators/#/) _\*\*_
 
 {% hint style="success" %}
-Please do not skip steps young Padawan 
+Please do not skip steps young Padawan
 {% endhint %}
 
 ![](../../.gitbook/assets/download-10-%20%281%29.jpeg)
@@ -89,17 +89,15 @@ sudo reboot
 
 ### Download the Cardano-node static build
 
-
-
 {% hint style="warning" %}
-This is an **unofficial static build of** cardano-node & cardano-cli binaries made available to us by an IOHK engineer in his **spare time**. Although, the community has trust in this build and its safety, we recommend you read through the build used ****[**here**](https://ci.zw3rk.com/build/1753#tabs-build-deps) ****and if have more questions consider joining the ****[**Arming Cardano**](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w) telegram group. Use this at **your own** risk, we nor ANYONE are responsible for any problems, warranties, and fiscal loss.
+This is an **unofficial static build of** cardano-node & cardano-cli binaries made available to us by an IOHK engineer in his **spare time**. Although, the community has trust in this build and its safety, we recommend you read through the build used **\*\*\[**here**\]\(**[https://ci.zw3rk.com/build/1753\#tabs-build-deps](https://ci.zw3rk.com/build/1753#tabs-build-deps)**\) \*\***and if have more questions consider joining the **\*\*\[**Arming Cardano**\]\(**[https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)**\) telegram group. Use this at** your own\*\* risk, we nor ANYONE are responsible for any problems, warranties, and fiscal loss.
 {% endhint %}
 
 | Provided By | Link to Cardano Static Build |
 | :--- | :--- |
 | \*\*\*\*[**ZW3RK**](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) **1PCT Haskell CI Support Pool** | \_\_[_https://ci.zw3rk.com/build/1753\#tabs-summary_](https://ci.zw3rk.com/build/1753#tabs-summary)\_\_ |
 
-* A[ **static build**](https://en.wikipedia.org/wiki/Static_build) is a ****[**compiled**](https://en.wikipedia.org/wiki/Compiler) ****version of a program that has been **statically** linked against libraries.
+* A[ **static build**](https://en.wikipedia.org/wiki/Static_build) is a **\*\*\[**compiled**\]\(**[https://en.wikipedia.org/wiki/Compiler](https://en.wikipedia.org/wiki/Compiler)**\) \*\***version of a program that has been **statically** linked against libraries.
 
 Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
 
@@ -111,7 +109,7 @@ cd $HOME
 wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
 ```
 
-* Use [**unzip**](https://linux.die.net/man/1/unzip) ****command on the downloaded zip file and extract its contents.
+* Use [**unzip**](https://linux.die.net/man/1/unzip) _\*\*_command on the downloaded zip file and extract its contents.
 
   ```bash
   unzip aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
@@ -250,17 +248,17 @@ cardano-service() {
 source $HOME/.bashrc
 ```
 
-## Download a snapshot of the blockchain to speed the sync process 
-
-{% hint style="danger" %}
-**Make sure you have not started a Cardano-node before proceeding.** 🛑
-{% endhint %}
+## Download a snapshot of the blockchain to speed the sync process
 
 {% hint style="info" %}
-You may skip this step, but due to the current size of the blockchain, it may take anywhere from 24 to 40 hours to get your node fully synced.
+We have been provided a snapshot of the testnet database thanks to Star Forge Pool \[OTG\]. If you don't want to download a database, **you may skip this step**. Beware, due to the size of the blockchain, it may take up to 8 hours to get the node fully synced.
 {% endhint %}
 
-First let's make sure we download the db in our testnet-relay/files, then we will run the following commands to begin our download
+{% hint style="danger" %}
+**Make sure you have not started a Cardano node before proceeding.** 🛑
+{% endhint %}
+
+First, make sure the cardano-service we created earlier is stopped, then we download the database in our testnet-relay/files. You can run the following commands to begin our download. 
 
 ```bash
 # Make sure you do not have the cardano-node running in the background
