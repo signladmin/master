@@ -143,14 +143,9 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-
 
 Set TraceBlockFetchDecisions to "true" & TraceMempool to "false".
 
-{% hint style="warning" %}
-It is recommended to turn TraceMempool to false for relays as of this writing \(cardano-node version 1.25.1\) as it is using an excessive amount of cpu. A fix will come soon. I keep it running on my core node, it's a valuable metric.
-{% endhint %}
-
 ```bash
 sed -i ${NODE_CONFIG}-config.json \
-    -e "s/TraceBlockFetchDecisions\": false/TraceBlockFetchDecisions\": true/g" \
-    -e "s/TraceMempool\": true/TraceMempool\": false/g"
+    -e "s/TraceBlockFetchDecisions\": false/TraceBlockFetchDecisions\": true/g"
 ```
 
 ### Systemd unit files
