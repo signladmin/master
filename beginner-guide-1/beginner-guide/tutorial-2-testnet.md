@@ -273,7 +273,7 @@ First let's make sure we download the db in our testnet-relay/files, then we wil
 This download will take anywhere from 25 min to 2 hours depending on your internet speeds.
 {% endhint %}
 
-* After the db has finished downloading it is a good idea to add a clean file to it before we start the relay. Copy/paste the following command.
+* After the database has finished downloading, it is a good idea to add a clean file to it before we start the relay. Copy/paste the following command into your terminal window.
 
 ```bash
 touch db/clean
