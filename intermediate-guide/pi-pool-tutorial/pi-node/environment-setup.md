@@ -122,7 +122,6 @@ wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/job/Tools/mast
 unzip *.zip
 mv cardano-node/* $HOME/.local/bin
 cd $HOME
-rm -r $HOME/tmp
 ```
 
 Confirm binaries are in ada $PATH.
