@@ -90,14 +90,14 @@ sudo reboot
 ### Download the Cardano-node static build
 
 {% hint style="warning" %}
-This is an **unofficial static build of** cardano-node & cardano-cli binaries made available to us by an IOHK engineer in his **spare time**. Although, the community has trust in this build and its safety, we recommend you read through the build used **\*\*\[**here**\]\(**[https://ci.zw3rk.com/build/1753\#tabs-build-deps](https://ci.zw3rk.com/build/1753#tabs-build-deps)**\) \*\***and if have more questions consider joining the **\*\*\[**Arming Cardano**\]\(**[https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)**\) telegram group. Use this at** your own\*\* risk, we nor ANYONE are responsible for any problems, warranties, and fiscal loss.
+This is an **unofficial static build of** cardano-node & cardano-cli binaries made available to us by an IOHK engineer in his **spare time**. Although, the community has trust in this build and its safety, we recommend you read through the build used ****[**here**](https://ci.zw3rk.com/build/1753#tabs-build-deps) and if have more questions consider joining the ****[**Arming Cardano**](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w) **telegram group. Use this at your own** risk, we nor ANYONE are responsible for any problems, warranties, and fiscal loss.
 {% endhint %}
 
 | Provided By | Link to Cardano Static Build |
 | :--- | :--- |
-| \*\*\*\*[**ZW3RK**](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) **1PCT Haskell CI Support Pool** | \_\_[_https://ci.zw3rk.com/build/1753\#tabs-summary_](https://ci.zw3rk.com/build/1753#tabs-summary)\_\_ |
+| [**ZW3RK**](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) **1PCT Haskell CI Support Pool** | \*\*\*\*[**https://ci.zw3rk.com/build/1753\#tabs-summary**](https://ci.zw3rk.com/build/1753#tabs-summary)\*\*\*\* |
 
-* A[ **static build**](https://en.wikipedia.org/wiki/Static_build) is a **\*\*\[**compiled**\]\(**[https://en.wikipedia.org/wiki/Compiler](https://en.wikipedia.org/wiki/Compiler)**\) \*\***version of a program that has been **statically** linked against libraries.
+* A[ **static build**](https://en.wikipedia.org/wiki/Static_build) is a ****[**compiled**](https://en.wikipedia.org/wiki/Compiler) ****version of a program that has been **statically** linked against libraries.
 
 Now we need to simply download the zip file above to our Pi's home directory and then move it to the right location so we can call on it later to start the node.
 
@@ -109,7 +109,7 @@ cd $HOME
 wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
 ```
 
-* Use [**unzip**](https://linux.die.net/man/1/unzip) _\*\*_command on the downloaded zip file and extract its contents.
+* Use [**unzip**](https://linux.die.net/man/1/unzip) command on the downloaded zip file and extract its contents.
 
   ```bash
   unzip aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
