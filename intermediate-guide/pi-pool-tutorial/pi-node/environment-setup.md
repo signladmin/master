@@ -120,6 +120,7 @@ mkdir $HOME/tmp
 cd $HOME/tmp
 wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/job/Tools/master/aarch64-unknown-linux-musl-cardano-node-musl.tarball/latest-finished/download
 unzip *.zip
+rm *.zip
 mv cardano-node/* $HOME/.local/bin
 ```
 
