@@ -15,7 +15,6 @@ description: Support Decentralization
 | [SBLYR](https://pool.sublayer.io/) | SBLYR | [![](../.gitbook/assets/image.png)](https://adapools.org/pool/8264de3cdb1798dd8758e24cda5101184b44543e7c4421c7815f9ed8)  |
 | [NASEC](https://nasec.co.uk/cardano/) | NASEC | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/aa8b94010cd3c7199be1d619079c184a59e6f1ad930926bc2bd38579) |
 | [EASY Staking Pool ](https://www.easystaking.org/) | EASY1 | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/20df8645abddf09403ba2656cda7da2cd163973a5e439c6e43dcbea9) |
-| [FAIR](https://fairpool.eu/) | FAIR | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/6b51a5aae5b4b5f07f38acf12816b4f8a558ee2840d0dba69040aeb2) |
 
 #### 
 
