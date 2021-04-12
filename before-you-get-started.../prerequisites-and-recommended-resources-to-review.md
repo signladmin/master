@@ -14,6 +14,7 @@ description: Stake pool operator resources.
 {% tab title="Youtube and Video Resources" %}
 | \*\*\*\* |
 | :--- |
+| \*\*\*\*[**ADA.Pi Community Tutorials**](https://www.youtube.com/channel/UCligunhcmbMYaBUMvONsKwg) |
 | \*\*\*\*[**\[Easy 1\] Raspberry Pi Stake Pool Tutorial Youtube Videos**](https://www.youtube.com/watch?v=tZykFS5D-jk&list=PLBhbLwOuj0DfTnneuG3vyoDHY7Dv_aiyq)\*\*\*\* |
 | \*\*\*\*[**NASEC Pool Youtube Channel**](https://www.youtube.com/channel/UCv-eePQ0EpSV-jf-nJUPeeA/featured)\*\*\*\* |
 | \*\*\*\*[**Jeff Geerling Youtube Channel**](https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg)\*\*\*\* |

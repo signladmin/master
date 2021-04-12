@@ -12,7 +12,6 @@
 
 * [Resource Library](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
 * [Hardware Purchase Links](before-you-get-started.../hardware.md)
-* [FAQ \(COMING-SOON\)](before-you-get-started.../faq-coming-soon.md)
 
 ## Beginner Guides <a id="beginner-guide-1"></a>
 
