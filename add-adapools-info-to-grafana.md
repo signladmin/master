@@ -6,7 +6,7 @@ description: How to add adapools.org summary.json info to your Grafana instance.
 
 ## Assumptions
 
-You have setup a node using one of the tutorials provided here. If so, you should have the necessary dependencies installed that the steps below utilize. If not, see the [Environment Setup](intermediate-guide/pi-pool-tutorial/pi-node/environment-setup.md#install-packages) section of the Pi-Pool Tutorial.
+You have setup a node using one of the tutorials provided here. If so, you should have the necessary dependencies installed that the steps below utilize. If not, see the apt install [Environment Setup](intermediate-guide/pi-pool-tutorial/pi-node/environment-setup.md#install-packages) section of the Pi-Pool Tutorial.
 
 Lets go!
 
@@ -68,7 +68,7 @@ The following line **runs the script we created every 5 minutes**. Add the line,
 
 ## Run node exporter Command
 
-Now that we are generating the adapools.prom file, we need to tell the node exporter where to find our custom text files. Depending on how you are running your node exporter instance, you'll need to add the following command line parameters. This might be found in the **startMonitor** script included with the pi-pool default build.
+Now that we are generating the **adapools.prom** file, we need to tell the node exporter where to find our custom text file. Depending on how you are running your node exporter instance, you'll need to add the following command line parameters. This might be found in the **startMonitor** script included with the pi-pool default build.
 
 ```text
 > node_exporter --collector.textfile.directory=$HOME/.local/bin/customStats --collector.textfile
@@ -81,7 +81,7 @@ http://<YOUR GRAFANA NODE IP>:9100/metrics
 ```
 
 {% hint style="info" %}
-There are other methods you could use to implement this approach. Basically, if you can create a text file and put it into this new directory, the node exporter should pull the data into Grafana. It opens up a vast array of possibilities. Just ensure you prefix the label names with a unique value \(the **adapools\_** __part in the adapools.prom file above\) per file.
+There are other methods you could use to implement this approach. Basically, if you can create a text file with key/value pairs and put it into this new directory, the node exporter should pull the data into Grafana. It opens up a vast array of possibilities. Just ensure you prefix the label names with a unique value \(the **adapools\_** __part in the adapools.prom file above\) per file.
 {% endhint %}
 
 Was this information helpful? Earn rewards with us! [Consider delegating some ADA](delegate/).
