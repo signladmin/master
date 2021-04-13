@@ -12,7 +12,7 @@ Lets go!
 
 ## Make New Directory
 
-To start, pick a location on your system that is running Grafana where you will create a new folder for the node exporter to use. The node exporter is likely located in /opt/cardano/monitoring/**node\_exporter** given the pi-pool default location. __If not, see if you can find it using the "which node\_exporter" command. If that doesn't find it, the directory where it's located is not on your $PATH and you'll need to dig deeper. [Check this git](https://github.com/prometheus/node_exporter) for more information.
+To start, pick a location on the machine that is running Grafana where you will create a new directory for the node exporter to use. The node exporter is likely located in /opt/cardano/monitoring/**node\_exporter** given the pi-pool default location. __If not, see if you can find it using the "which node\_exporter" command. If that doesn't find it, the directory where it's located is not on your $PATH and you'll need to dig deeper. [Check this git](https://github.com/prometheus/node_exporter) for more information.
 
 Change to the location for the new directory, here I'm selecting the local bin for my user.
 
@@ -34,7 +34,7 @@ The adapools.org site provides a **summary.json** file for every registered pool
 > nano getAdaPoolsSummary.sh
 ```
 
-Add this content below, replace **YOUR POOL ID** with your pool's ID, save and exit. Essentially this pulls a copy of the **summary.json** file for your pool, removes some things that the node exporter cannot parse \(non-float values\) and saves a copy in our new directory.
+Add this content below, replace **YOUR POOL ID** with your pool's ID, save and exit. Essentially this pulls a copy of the **summary.json** file for your pool, removes some things that the node exporter cannot parse \(string values\) and saves a copy in our new directory.
 
 ```text
 curl https://js.adapools.org/pools/<YOUR POOL ID>/summary.json 2>/dev/null \
@@ -44,9 +44,13 @@ curl https://js.adapools.org/pools/<YOUR POOL ID>/summary.json 2>/dev/null \
 | sed -e 's/^[ \t]*/adapools_/' > $HOME/.local/bin/customStats/adapools.prom
 ```
 
-Now when the **getAdaPoolsSummary.sh** is run it'll create a new file called adapools.prom in our new directory. This file will contain metrics that start with **adapools** and will be visible in the Grafana query builder metrics section as such. It's important that the results in the file do not include string values. The node exporter will throw an error and you won't see the adapools metrics. If you discover string values, you can remove them by adding a new key to the "del" section in the script above.
+Now when the **getAdaPoolsSummary.sh** is run it'll create a new file called adapools.prom in our new directory. This file will contain metrics that start with **adapools** and will be visible in the Grafana query builder metrics section as such.
 
-For example, to remove the **adapools\_db\_description** metric \(has a string value\), you'd add **.db\_description** to the **del\( \)** section.
+{% hint style="warning" %}
+It's important that the results in the file do not include string values. The node exporter will throw an error and you won't see the adapools metrics.
+{% endhint %}
+
+If you discover string values, you can remove them by adding a new key to the "del" section in the script above. For example, to remove the **adapools\_db\_description** metric \(has a string value\), you'd add **.db\_description** to the **del\( \)** section.
 
 ## Create crontab Entry
 
