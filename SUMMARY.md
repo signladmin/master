@@ -21,6 +21,7 @@
 
 ## Intermediate Guides <a id="intermediate-guide"></a>
 
+* [Basic Stake Pool Networking](intermediate-guide/basic-stake-pool-networking.md)
 * [Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-Node](intermediate-guide/pi-pool-tutorial/pi-node/README.md)
     * [Download & Flash](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
@@ -34,6 +35,6 @@
 
 ---
 
-* [Basic Stake Pool Networking](basic-stake-pool-networking.md)
+* [Untitled](untitled.md)
 * [Add adapools Metrics to Grafana](add-adapools-info-to-grafana.md)
 

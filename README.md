@@ -4,7 +4,9 @@
 
 ![](.gitbook/assets/download-6-.jpeg)
 
-### Welcome to ADA.Pi's tutorial section. We are here to help future and current Raspberry Pi Stake Pool Operators by providing our free educational resources. If you would like to know more about the ADA.Pi project and our goals, please see our Fund4 proposal on Project Catalyst for details.
+### **Welcome to the ADA.Pi project's information and tutorials section.** We are a community of RPi-ARM Cardano Stake Pool Operators who aim to provide support and free educational resources to future Stake Pool Operators. 
+
+###  Although our focus is RPi-ARM stake pool operations, we will provide a wide range of information, tutorials, and resources for developing on Cardano. If you would like to know more about the ADA.Pi project and our goals, please see our Fund4 proposal on _Project Catalyst_ for details or join our _Discord_.
 
 | ADA.Pi Contact Links |
 | :--- |
