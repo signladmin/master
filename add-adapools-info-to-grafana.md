@@ -64,3 +64,15 @@ The following line **runs the script we created every 5 minutes**. Add the line,
 
 ## Run node exporter Command
 
+Now that we are generating the adapools.prom file, we need to tell the node exporter where to find our custom text files. Depending on how you are running your node exporter instance, you'll need to add the following command line parameters.
+
+```text
+> node_exporter --collector.textfile.directory=$HOME/.local/bin/customStats --collector.textfile
+```
+
+If all goes as planned, you should be able to pull up this URL in your browser and see the new **adapools** metrics.
+
+```text
+http://<your node IP>:9100/metrics
+```
+
