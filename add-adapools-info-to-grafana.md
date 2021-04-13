@@ -44,7 +44,7 @@ curl https://js.adapools.org/pools/<YOUR POOL ID>/summary.json 2>/dev/null \
 | sed -e 's/^[ \t]*/adapools_/' > $HOME/.local/bin/customStats/adapools.prom
 ```
 
-Now when the **getAdaPoolsSummary.sh** is run it'll create a new file called adapools.prom in our new directory. This file will contain metrics that start with **adapools** and will be visible in the Grafana query builder metrics section as such.
+Now when the **getAdaPoolsSummary.sh** is run it'll refresh a file called **adapools.prom** in our new directory. This file will contain metrics that start with the term **adapools** and will be visible in the Grafana query builder metrics section as such.
 
 {% hint style="warning" %}
 It's important that the results in the file do not include string values. The node exporter will throw an error and you won't see the adapools metrics.
@@ -54,7 +54,7 @@ If you discover string values, you can remove them by adding a new key to the "d
 
 ## Create crontab Entry
 
-Depending on how often you want to refresh a copy of these stats, you can create a crontab entry to pull a fresh copy of the adapools.prom file.
+Depending on how often you want to refresh a copy of these stats, you can create a local crontab entry to pull a fresh copy of the adapools.prom file.
 
 ```text
 > crontab -e
@@ -68,7 +68,7 @@ The following line **runs the script we created every 5 minutes**. Add the line,
 
 ## Run node exporter Command
 
-Now that we are generating the adapools.prom file, we need to tell the node exporter where to find our custom text files. Depending on how you are running your node exporter instance, you'll need to add the following command line parameters.
+Now that we are generating the adapools.prom file, we need to tell the node exporter where to find our custom text files. Depending on how you are running your node exporter instance, you'll need to add the following command line parameters. This might be found in the **startMonitor** script included with the pi-pool default build.
 
 ```text
 > node_exporter --collector.textfile.directory=$HOME/.local/bin/customStats --collector.textfile
