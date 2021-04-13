@@ -35,4 +35,5 @@
 ---
 
 * [Basic Stake Pool Networking](basic-stake-pool-networking.md)
+* [Add adapools Info to Grafana](add-adapools-info-to-grafana.md)
 
