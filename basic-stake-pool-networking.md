@@ -116,5 +116,5 @@ When you create your stake pool's **pool.json** metadata file you will notice a 
 ```
 {% endcode %}
 
-A typical home network will only expose a single external IP address to the world, dynamically assigned by your ISP \(Internet Service Provider\). Dynamically assigned external IP leases can be relatively static for a good long period, but this is not guaranteed and you should consider registering a domain name so you can use dns entries in the pool.json instead.
+A typical home network will only expose a single external IP address to the world, dynamically assigned by your ISP \(Internet Service Provider\). Dynamically assigned external IP leases can be relatively static for a good long period, but this is not guaranteed and you should consider registering a domain name so you can use dns entries in the pool.json instead. Otherwise, each time your external IP address changes you'll have to re-register your pool with a new IP for your relays.
 

@@ -81,6 +81,8 @@ http://<YOUR GRAFANA NODE IP>:9100/metrics
 ```
 
 {% hint style="info" %}
-There are other methods you could use to implement this approach. Furthermore, if your savvy you can essentially create any file with stats and put it into this new directory and the node exporter should pull the data into Grafana. It opens up a vast array of possibilities.
+There are other methods you could use to implement this approach. Basically, if you can create a text file and put it into this new directory, the node exporter should pull the data into Grafana. It opens up a vast array of possibilities. Just ensure you prefix the label names with a unique value \(the **adapools\_** __part in the adapools.prom file above\) per file.
 {% endhint %}
+
+Is this information helpful? Reward us for your time saved! [Consider delegating some ADA](delegate/).
 
