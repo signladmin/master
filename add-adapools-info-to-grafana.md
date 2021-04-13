@@ -74,9 +74,13 @@ Now that we are generating the adapools.prom file, we need to tell the node expo
 > node_exporter --collector.textfile.directory=$HOME/.local/bin/customStats --collector.textfile
 ```
 
-If all goes as planned, you should be able to pull up this URL in your browser and see the new **adapools** metrics.
+If all goes as planned, you should be able to pull up this URL in your browser and see the new **adapools** metrics. If this worked, your new metrics should be visible in the Grafana query builder.
 
 ```text
-http://<your node IP>:9100/metrics
+http://<YOUR GRAFANA NODE IP>:9100/metrics
 ```
+
+{% hint style="info" %}
+There are other methods you could use to implement this approach. Furthermore, if your savvy you can essentially create any file with stats and put it into this new directory and the node exporter should pull the data into Grafana. It opens up a vast array of possibilities.
+{% endhint %}
 
