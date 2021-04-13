@@ -2,7 +2,7 @@
 description: How to add adapools json info to your Grafana instance.
 ---
 
-# Add adapools Info to Grafana
+# Add adapools Metrics to Grafana
 
 ## Assumptions
 
