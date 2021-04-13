@@ -4,22 +4,22 @@ description: Let's make some native assets on Cardano ❤️✨
 
 # Cardano Native Asset and NFT Tutorial
 
-### Who is this guide for?
+## Who is this guide for?
 
 * For people who want to make NFT's
-* For people who perhaps know Cardano
+* For people who know about Cardano 
 
-### Benefits of NFT's on Cardano
+## Benefits of NFT's on Cardano
 
 * Low transaction fees
-* Native on the blockchain \(perhaps compare with Ethereum, eth is smart contract based\)
+* Native on the blockchain 
 
-### Prerequisites
+## Prerequisites
 
 * cardano-node / cardano-cli set up on local machine
 * node.js installed
 
-```bash
+```text
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
@@ -62,27 +62,26 @@ node -v
 v14.16.0
 ```
 
-### Overview of this tutorial
+## Overview of this tutorial
 
 1. verify env
 2. create project and inital setup
 
-   \`\`\`bash
+```text
+#make sure our db is in our $PATH
+CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket"
 
-   **make sure our db is in our $PATH**
+mkdir minter
+cd minter 
+npm init -y #creates package.json)
+npm install cardanocli-js --save
+```
 
-   CARDANO\_NODE\_SOCKET\_PATH="$NODE\_HOME/db/socket"
-
-mkdir minter cd minter npm init -y \#creates package.json\) npm install cardanocli-js --save
+1. Copy the Cardano node genesis latest build number from IOHK hydra website
+   * [https://hydra.iohk.io/build/5367762/download/1/index.html](https://hydra.iohk.io/build/5367762/download/1/index.html)
+2. Download Genesis config file needed for shelly-era
 
 ```text
-3. Copy the Cardano node genesis latest build number from IOHK hydra website
-
-   - https://hydra.iohk.io/build/5367762/download/1/index.html
-
-4. Download Genesis config file needed for shelly-era
-
-```bash
 sudo nano fetch-config.sh
 ```
 
@@ -91,19 +90,19 @@ NODE_BUILD_NUM=5822084
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/mainnet-shelley-genesis.json
 ```
 
-```bash
+```text
 sudo chmod +x fetch-config.sh
 ./fetch-config.sh
 ```
 
 1. make src folder/directory and then create cardano client
 
-   ```bash
-   mkdir src; cd src
-   sudo nano cardano.js
-   ```
+```text
+mkdir src; cd src
+sudo nano cardano.js
+```
 
-```javascript
+```text
 const Cardano = require("cardanocli-js");
 
 const cardano = new Cardano({
@@ -117,20 +116,25 @@ module.exports = cardano;
 
 1. create wallet
 
-   ```text
-   sudo nano create-wallet.js
-   ```
-
-   \`\`\`js
-
-   const cardano = require\('./cardano'\)
-
-const createWallet = \(account\) =&gt; { cardano.addressKeyGen\(account\); cardano.stakeAddressKeyGen\(account\); cardano.stakeAddressBuild\(account\); cardano.addressBuild\(account\); return cardano.wallet\(account\); };
-
-createWallet\("ADAPI"\)
+```text
+sudo nano create-wallet.js
+```
 
 ```text
-```bash
+const cardano = require('./cardano')
+
+const createWallet = (account) => {
+  cardano.addressKeyGen(account);
+  cardano.stakeAddressKeyGen(account);
+  cardano.stakeAddressBuild(account);
+  cardano.addressBuild(account);
+  return cardano.wallet(account);
+};
+
+createWallet("ADAPI")
+```
+
+```text
 cd minter
 node src/create-wallet.js
 ```
@@ -138,12 +142,12 @@ node src/create-wallet.js
 1. Verify balance wallet balance is Zero, then we fund the wallet
    * First we need to create a get-balance.js script
 
-```bash
+```text
 # open text editor
 cd minter/src; sudo nano get-balance.js
 ```
 
-```javascript
+```text
 // create get-balance.js
 const cardano = require('./cardano')
 
@@ -156,20 +160,22 @@ console.log(
 
 1. check the balance \(utxo\)
 
-```bash
+```text
 cd ..
 node src/get-balance.js
 ```
 
 1. Download IPFS
 2. Upload your files to IPFS
-3. image - ipfs://QmQqzMTavQgT4f4T5v6PWBp7XNKtoPmC9jvn12WPT3gkSE
-4. src - ipfs://Qmaou5UzxPmPKVVTM9GzXPrDufP55EDZCtQmpy3T64ab9N
-5. Generate policy id
-6. Define your meta data
-7. create mint transaction
 
-```javascript
+* image - ipfs://QmQqzMTavQgT4f4T5v6PWBp7XNKtoPmC9jvn12WPT3gkSE
+* src - ipfs://Qmaou5UzxPmPKVVTM9GzXPrDufP55EDZCtQmpy3T64ab9N
+
+1. Generate policy id
+2. Define your meta data
+3. create mint transaction
+
+```text
 const fs = require("fs");
 const cardano = require("./cardano");
 
@@ -249,19 +255,15 @@ console.log(txHash);
 
 1. Run the minting script, then wait a few moments to check the balance \(utxo\)
 
-```bash
+```text
 cd ..
 node src/mint-asset.js
-```
-
-```bash
-node src/get-balance.js
 ```
 
 1. send your nft back to your wallet
    * Create anew script to send nft to wallet
 
-```javascript
+```text
 const cardano = require("./cardano");
 
 // 1. get the wallet
