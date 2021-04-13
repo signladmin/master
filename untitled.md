@@ -57,12 +57,9 @@ node -v
 v14.16.0
 ```
 
-## Overview of this tutorial
+## Create our project directory and initial setup
 
-1. verify env
-2. create project and inital setup
-
-```text
+```bash
 #make sure our db is in our $PATH
 CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket"
 
@@ -72,32 +69,35 @@ npm init -y #creates package.json)
 npm install cardanocli-js --save
 ```
 
-1. Copy the Cardano node genesis latest build number from IOHK hydra website
-   * [https://hydra.iohk.io/build/5367762/download/1/index.html](https://hydra.iohk.io/build/5367762/download/1/index.html)
-2. Download Genesis config file needed for shelly-era
+1. **Copy the Cardano node genesis latest build number from the IOHK hydra website**
+   * [https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html](https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html) 
+2. **Create a bash shell script to Download the latest Genesis config file needed**
 
-```text
+```bash
 sudo nano fetch-config.sh
 ```
 
-```text
+```bash
+#NODE_BUILD_NUM may be different
 NODE_BUILD_NUM=5822084
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/mainnet-shelley-genesis.json
 ```
 
-```text
+**Now we need to give permissions to our new script to execute then we will run our script and download the genesis files.** 
+
+```bash
 sudo chmod +x fetch-config.sh
 ./fetch-config.sh
 ```
 
-1. make src folder/directory and then create cardano client
+### Next, we make our src folder/directory and then create the Cardano client.
 
-```text
+```bash
 mkdir src; cd src
 sudo nano cardano.js
 ```
 
-```text
+```javascript
 const Cardano = require("cardanocli-js");
 
 const cardano = new Cardano({
@@ -109,13 +109,13 @@ const cardano = new Cardano({
 module.exports = cardano;
 ```
 
-1. create wallet
+## Create a wallet
 
-```text
+```bash
 sudo nano create-wallet.js
 ```
 
-```text
+```javascript
 const cardano = require('./cardano')
 
 const createWallet = (account) => {
@@ -129,20 +129,20 @@ const createWallet = (account) => {
 createWallet("ADAPI")
 ```
 
-```text
+```bash
 cd minter
 node src/create-wallet.js
 ```
 
-1. Verify balance wallet balance is Zero, then we fund the wallet
-   * First we need to create a get-balance.js script
+#### Verify balance wallet balance is Zero, then we fund the wallet
 
-```text
-# open text editor
+* **First, we need to create a get-balance.js script**
+
+```bash
 cd minter/src; sudo nano get-balance.js
 ```
 
-```text
+```javascript
 // create get-balance.js
 const cardano = require('./cardano')
 
