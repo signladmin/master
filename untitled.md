@@ -17,48 +17,43 @@ description: Let's make some native assets on Cardano ❤️✨
 ## Prerequisites
 
 * cardano-node / cardano-cli set up on local machine
-* node.js installed
+* Make sure you have a Cardano node running and fully synced to database
+* Make sure node.js installed
 
-```text
+```bash
+#Copy/Paste this into your terminal if node.js is not intsalled
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-1. Verify everything is set up properly
+{% hint style="warning" %}
+We made this tutorial on Rasberry-Pi-ARM machines so make sure to download the **correct** node.js for your **local machine/CPU and OS**.
+{% endhint %}
 
-cardano-cli
+### Verify everything is set up properly on our machine ⚙️
 
-```text
-cardano-cli version
+```bash
+#Copy/paste into terminal window
+cardano-cli version; cardano-node version
 ```
 
-output should be similar:
+ Your output should look like this 👇 
 
-```text
+```bash
 cardano-cli 1.26.1 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
-```
-
-cardano-node
-
-```text
-cardano-node version
-```
-
-output should be similar:
-
-```text
 cardano-node 1.26.1 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
-node.js
+#### Verify our node.js version is correct and is on v14.16.0
 
-```text
+```bash
+#Copy/paste into terminal window
 node -v
 ```
 
-```text
+```bash
 v14.16.0
 ```
 
@@ -175,7 +170,7 @@ node src/get-balance.js
 2. Define your meta data
 3. create mint transaction
 
-```text
+```javascript
 const fs = require("fs");
 const cardano = require("./cardano");
 
