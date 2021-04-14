@@ -198,11 +198,11 @@ node src/get-balance.js
 
 
 
-## Mint our Native Asset on Cardano
+## Mint our Native-Asset/NFT on Cardano
 
 Before we proceed to mint our Native Asset we must have a few things taken care of. We need to first get our "asset" onto our [IPFS](https://ipfs.io/#install) node and generate the IPFS link. If you do not know about IPFS or what it actually does we recommend having a read through the documentation [here](https://docs.ipfs.io/) or watching this [video](https://www.youtube.com/watch?v=5Uj6uR3fp-U). 
 
-Since we are using an image file to be our asset we should upload a smaller thumbnail-sized version of our image \(ideally less than 1MB\) that will be used on sites like [pool.pm](https://pool.pm) to display our assets nicely in our wallets. We then upload the full-size image as our source image.
+Since we are using an image file to be our asset we should upload a smaller thumbnail-sized version of our image \(ideally less than 1MB\). This will be used on sites like [pool.pm](https://pool.pm) to display our assets nicely in our wallets. We then upload the full-size image as our source image.
 
 * [ ] Download [IPFS](https://ipfs.io/#install)
 * [ ] Upload your asset's files to IPFS 
@@ -314,20 +314,30 @@ node src/mint-asset.js
 {% endtab %}
 {% endtabs %}
 
-1. send your nft back to your wallet
-   * Create anew script to send nft to wallet
+## Sending your NFT back to Daedulus or Yoroi wallet
 
-```text
+
+
+Now we must create a new script to send our newly minted NFT to a wallet. 
+
+```javascript
+cd minter/src
+sudo nano send-back-asset-to-wallet.js
+```
+
+There are few main parts we have to this script in order to send the asset:
+
+1. Get the wallet
+2. Define the transaction
+3. Build the transaction
+4. Calculate the fee
+5. Pay the fee by subtracting it from the sender's utxo
+6. Build the final transaction
+7. Sign the transaction
+8. Submit the transaction
+
+```javascript
 const cardano = require("./cardano");
-
-// 1. get the wallet
-// 2. define the transaction
-// 3. build the transaction
-// 4. calculate the fee
-// 5. pay the fee by subtracting it from the sender utxo
-// 6. build the final transaction
-// 7. sign the transaction
-// 8. submit the transaction
 
 const sender = cardano.wallet("ADAPI");
 
@@ -384,9 +394,22 @@ const txHash = cardano.transactionSubmit(txSigned);
 console.log("TxHash: " + txHash);
 ```
 
-1. view your nft in your wallet
+```javascript
+cd ..
+node src/send-back-asset-to-wallet.js
+```
+
+### Final Steps to view your NFT 
+
+1. View your nft in your wallet
 2. View your asset on cardanoassets.com
 3. View your asset on pool.pm \(see the actual picture\)
 4. Show the original minting metadata
-5. open the src ipfs to prove that it work
+5. Open the src and image ipfs links in your browser to prove that it worked
+
+#### _Video Walk-through:_
+
+{% embed url="https://youtu.be/awxVkFbWoKM" %}
+
+
 
