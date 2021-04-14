@@ -4,7 +4,7 @@ description: >-
   needed for the testnet.
 ---
 
-# Setup a relay node on Testnet
+# Set up a relay node on Testnet
 
 {% hint style="danger" %}
 **This tutorial is meant to get a single node syncing to the Cardano blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a mainnet stake pool. Please use our**[ **intermediate guides**](../../intermediate-guide/pi-pool-tutorial/pi-node/) **for the mainnet.**
@@ -90,7 +90,7 @@ sudo reboot
 ### Download the Cardano-node static build
 
 {% hint style="warning" %}
-This is an **unofficial static build of** cardano-node & cardano-cli binaries made available to us by an IOHK engineer in his **spare time**. Although, the community has trust in this build and its safety, we recommend you read through the build used ****[**here**](https://ci.zw3rk.com/build/1753#tabs-build-deps) and if have more questions consider joining the ****[**Arming Cardano**](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w) **telegram group. Use this at your own** risk, we nor ANYONE are responsible for any problems, warranties, and fiscal loss.
+This is an **unofficial static build of** cardano-node & cardano-cli binaries made available to us by an IOHK engineer in his **spare time**. Although the community has trust in this build and its safety, we recommend you read through the build used ****[**here**](https://ci.zw3rk.com/build/1753#tabs-build-deps) and if have more questions consider joining the ****[**Arming Cardano**](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w) **telegram group. Use this at your own** risk, we nor ANYONE are responsible for any problems, warranties, and fiscal loss.
 {% endhint %}
 
 | Provided By | Link to Cardano Static Build |
