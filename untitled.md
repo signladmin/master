@@ -198,21 +198,32 @@ node src/get-balance.js
 
 
 
+## Mint our Native Asset on Cardano
 
+Before we proceed to mint our Native Asset we must have a few things taken care of. We need to first get our "asset" onto our [IPFS](https://ipfs.io/#install) node and generate the IPFS link. If you do not know about IPFS or what it actually does we recommend having a read through the documentation [here](https://docs.ipfs.io/) or watching this [video](https://www.youtube.com/watch?v=5Uj6uR3fp-U). 
 
+Since we are using an image file to be our asset we should upload a smaller thumbnail-sized version of our image \(ideally less than 1MB\) that will be used on sites like [pool.pm](https://pool.pm) to display our assets nicely in our wallets. We then upload the full-size image as our source image.
 
+* [ ] Download [IPFS](https://ipfs.io/#install)
+* [ ] Upload your asset's files to IPFS 
+* [ ] Get our image thumbnail IPFS link
+* [ ] Get the src IPFS link
 
-1. Download IPFS
-2. Upload your files to IPFS
+#### For reference:
 
-* image - ipfs://QmQqzMTavQgT4f4T5v6PWBp7XNKtoPmC9jvn12WPT3gkSE
-* src - ipfs://Qmaou5UzxPmPKVVTM9GzXPrDufP55EDZCtQmpy3T64ab9N
+* **image \(thumbnail version\) - ipfs://QmQqzMTavQgT4f4T5v6PWBp7XNKtoPmC9jvn12WPT3gkSE**
+* **src \(full-size version\) - ipfs://Qmaou5UzxPmPKVVTM9GzXPrDufP55EDZCtQmpy3T64ab9N**
 
-1. Generate policy id
-2. Define your meta data
-3. create mint transaction
+### Create our mint-asset.js script
+
+This script has three main components:
+
+1. **Generate policy id**
+2. **Define your metadata**
+3. **Create mint transaction**
 
 ```javascript
+
 const fs = require("fs");
 const cardano = require("./cardano");
 
@@ -290,12 +301,18 @@ const txHash = cardano.transactionSubmit(signed);
 console.log(txHash);
 ```
 
-1. Run the minting script, then wait a few moments to check the balance \(utxo\)
+* **Run the minting script, then wait a few moments to check the balance in our wallet**
 
 ```text
 cd ..
 node src/mint-asset.js
 ```
+
+{% tabs %}
+{% tab title="Mint asset" %}
+{% embed url="https://youtu.be/qTzLgMyJC7s" %}
+{% endtab %}
+{% endtabs %}
 
 1. send your nft back to your wallet
    * Create anew script to send nft to wallet
