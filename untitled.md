@@ -131,7 +131,7 @@ module.exports = cardano;
 {% endtab %}
 {% endtabs %}
 
-## Create a wallet
+## Create a local wallet
 
 ```bash
 sudo nano create-wallet.js
