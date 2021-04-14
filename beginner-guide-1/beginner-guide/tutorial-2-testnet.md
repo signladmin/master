@@ -293,6 +293,11 @@ cardano-service status
 ## Setting up gLiveView to monitor the node during its syncing process
 
 ```bash
+cd $HOME
+sudo apt install jq
+```
+
+```bash
 cd $NODE_Files
 curl -s -o gLiveView.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
 curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/env
