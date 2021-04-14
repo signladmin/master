@@ -21,13 +21,13 @@ description: Let's make some native assets on Cardano ❤️✨
 * Make sure node.js installed
 
 ```bash
-#Copy/Paste this into your terminal if node.js is not intsalled
+#Copy/Paste this into your terminal if node.js is not installed
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
 {% hint style="warning" %}
-We made this tutorial on Rasberry-Pi-ARM machines so make sure to download the **correct** node.js for your **local machine/CPU and OS**.
+We made this tutorial on Raspberry-Pi ARM machines so make sure to download the **correct** node.js for your **local machine/CPU and OS**.
 {% endhint %}
 
 ### Verify everything is set up properly on our machine ⚙️
