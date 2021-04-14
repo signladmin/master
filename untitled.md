@@ -57,6 +57,12 @@ node -v
 v14.16.0
 ```
 
+#### Video Walk-through:
+
+{% embed url="https://youtu.be/oP3jZyPxB-I" %}
+
+
+
 ## Create our project directory and initial setup
 
 ```bash
@@ -108,6 +114,24 @@ const cardano = new Cardano({
 
 module.exports = cardano;
 ```
+
+#### Video Walk-through:
+
+{% tabs %}
+{% tab title="Project\'s Initial Setup" %}
+{% embed url="https://youtu.be/Xkx9vdibbq0" %}
+{% endtab %}
+
+{% tab title="Fetching the genesis files" %}
+{% embed url="https://youtu.be/X5cRGA0qyQE" %}
+{% endtab %}
+
+{% tab title="Create the Cardano client" %}
+{% embed url="https://youtu.be/-fnaF3FWL3k" %}
+{% endtab %}
+{% endtabs %}
+
+
 
 ## Create a wallet
 
