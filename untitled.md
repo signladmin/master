@@ -115,7 +115,7 @@ const cardano = new Cardano({
 module.exports = cardano;
 ```
 
-#### Video Walk-through:
+#### _Video Walk-through_ :
 
 {% tabs %}
 {% tab title="Project\'s Initial Setup" %}
@@ -130,8 +130,6 @@ module.exports = cardano;
 {% embed url="https://youtu.be/-fnaF3FWL3k" %}
 {% endtab %}
 {% endtabs %}
-
-
 
 ## Create a wallet
 
@@ -177,12 +175,32 @@ console.log(
 )
 ```
 
-1. check the balance \(utxo\)
+* **Now, Check the balance of our wallet.**
 
 ```text
 cd ..
 node src/get-balance.js
 ```
+
+* We can go ahead and send some funds \(ADA\) into our wallet we created, wait a few minutes, and then check the balance again to make sure the transaction was successfull. 
+
+#### _Video Walk-through_ :
+
+{% tabs %}
+{% tab title="Create local wallet" %}
+{% embed url="https://youtu.be/a8uWUc0O3DE" %}
+{% endtab %}
+
+{% tab title="Sending funds to our wallet" %}
+{% embed url="https://youtu.be/Mm1ZOciiNaE" %}
+{% endtab %}
+{% endtabs %}
+
+
+
+
+
+
 
 1. Download IPFS
 2. Upload your files to IPFS
