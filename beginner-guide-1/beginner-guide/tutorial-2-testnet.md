@@ -22,7 +22,7 @@ description: >-
 4. Edit the config settings 
 5. Download a database snapshot to speed up the sync process
 6. Run the basic passive relay node to connect to the testnet
-7. Monitor the relay node with [**Guild Operators gLiveView** ](https://cardano-community.github.io/guild-operators/#/) _\*\*_
+7. Monitor the relay node with [**Guild Operators gLiveView** ](https://cardano-community.github.io/guild-operators/#/) 
 
 {% hint style="success" %}
 Please do not skip steps young Padawan
