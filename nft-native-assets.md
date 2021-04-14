@@ -66,8 +66,17 @@ v14.16.0
 ## Create our project directory and initial setup
 
 ```bash
-#make sure our db is in our $PATH
-CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket"
+# check for $NODE_HOME
+echo $NODE_HOME
+
+# if the above echo didn't return anything, you need to set a $NODE_HOME
+# or use a static path for the CARDANO_NODE_SOCKET_PATH location
+
+# change this to match where your cardano-node socket is located
+export NODE_HOME="/home/ada/pi-node"
+
+# make sure our db is in our $PATH
+export CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket"
 
 mkdir minter
 cd minter 
