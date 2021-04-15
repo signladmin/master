@@ -61,7 +61,7 @@ mkdir -p $HOME/testnet-relay/files
 ### Add ~/.local/bin to our $PATH
 
 {% hint style="info" %}
-[https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/](https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/)
+[How to Add a Directory to Your $PATH in Linux](https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/)
 {% endhint %}
 
 ```bash
@@ -69,10 +69,6 @@ echo PATH="$HOME/.local/bin:$PATH" >> $HOME/.bashrc
 ```
 
 ### Create our bash variables
-
-{% hint style="info" %}
-[https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769\#247769](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769)
-{% endhint %}
 
 ```bash
 echo export NODE_HOME=$HOME/testnet-relay >> $HOME/.bashrc
