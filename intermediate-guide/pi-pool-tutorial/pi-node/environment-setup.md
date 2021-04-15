@@ -90,6 +90,7 @@ sudo service chrony restart
 ```bash
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/pi-pool/files
+mkdir -p $HOME/pi-pool/scripts
 mkdir $HOME/git
 ```
 
