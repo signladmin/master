@@ -38,7 +38,7 @@ Add this content below, replace **YOUR POOL ID** with your pool's ID, save and e
 
 ```text
 curl https://js.adapools.org/pools/<YOUR POOL ID>/summary.json 2>/dev/null \
-| jq '.data | del(.direct, .hist_bpe, .handles, .hist_roa, .db_ticker, .db_name, .db_description, .db_url, .ticker_orig, .pool_id, .pool_id_bech32, .group_basic)' \
+| jq '.data | del(.direct, .hist_bpe, .handles, .hist_roa, .db_ticker, .db_name, .db_description, .db_url, .ticker_orig, .pool_id, .pool_id_bech32, .group_basic, .tax_ratio_old, .tax_fix_old)' \
 | tr -d \"{},: \
 | awk NF \
 | sed -e 's/^[ \t]*/adapools_/' > $HOME/.local/bin/customStats/adapools.prom
