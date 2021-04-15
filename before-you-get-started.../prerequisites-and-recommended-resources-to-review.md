@@ -74,10 +74,10 @@ description: Stake pool operator resources.
 {% endtab %}
 
 {% tab title="Cardano Forum" %}
-|  |  |
-| :--- | :--- |
+|  |
+| :--- |
 | [https://forum.cardano.org/](https://forum.cardano.org/
-) |  |
+) |
 {% endtab %}
 {% endtabs %}
 
