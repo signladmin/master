@@ -6,7 +6,7 @@ description: Let's make some native assets on Cardano ❤️✨
 
 ## Who is this guide for?
 
-* For people who want to make NFT's
+* For people who want to make NFT's or Native Assets on Cardano
 * For people who know about Cardano 
 
 ## Benefits of NFT's on Cardano
@@ -17,7 +17,7 @@ description: Let's make some native assets on Cardano ❤️✨
 ## Prerequisites
 
 * cardano-node / cardano-cli set up on local machine
-* Make sure you have a Cardano node running and fully synced to database
+* Make sure you have a Cardano node running and fully synced to the database
 * Make sure node.js installed
 
 ```bash
