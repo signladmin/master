@@ -411,7 +411,7 @@ cd $NODE_HOME/scripts
 ./gLiveView.sh
 ```
 
-![Should look something like this once your synced to the tip of the chain.](https://github.com/ADA-Pi/master/tree/d7d7745de239afa74c8d3fb07aad4719d7171da2/intermediate-guide/pi-pool-tutorial/.gitbook/assets/pi-node-glive.png)
+![](../../../.gitbook/assets/glive-relay-peers.png)
 
 ## Prometheus, Node Exporter & Grafana
 
@@ -423,7 +423,7 @@ You can connect a Telegram bot to Grafana which can alert you of problems with t
 
 {% embed url="https://github.com/prometheus" caption="" %}
 
-![](https://github.com/ADA-Pi/master/tree/d7d7745de239afa74c8d3fb07aad4719d7171da2/intermediate-guide/pi-pool-tutorial/.gitbook/assets/pi-pool-grafana.png)
+![](../../../.gitbook/assets/pi-pool-grafana.png)
 
 ### Install Prometheus & Node Exporter.
 
@@ -570,8 +570,6 @@ Save the dashboard json file hosted on my server to your local machine.
 {% embed url="https://db.adamantium.online/pi-pool-dash.json" caption="" %}
 
 In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
-
-![](https://github.com/ADA-Pi/master/tree/d7d7745de239afa74c8d3fb07aad4719d7171da2/intermediate-guide/pi-pool-tutorial/.gitbook/assets/pi-pool-grafana.png)
 
 ## ⛓ Syncing the chain ⛓
 
