@@ -611,6 +611,6 @@ cardano-service status
 ## Grafana, Nginx proxy\_pass & ssl
 
 {% hint style="info" %}
-Coming soon, put Grafana behind tls with a self signed certificate to prevent users passing passwords over LAN in clear.
+Coming soon, put Grafana behind TLS with a self signed certificate to prevent users passing passwords over LAN in clear.
 {% endhint %}
 
