@@ -118,3 +118,12 @@ When you create your stake pool's **pool.json** metadata file you will notice a 
 
 A typical home network will only expose a single external IP address to the world, dynamically assigned by your ISP \(Internet Service Provider\). Dynamically assigned external IP leases can be relatively static for a good long period, but this is not guaranteed and you should consider registering a domain name so you can use dns entries in the pool.json instead. Otherwise, each time your external IP address changes you'll have to re-register your pool with a new IP for your relays.
 
+## DNS Client
+
+Unless you have a static IP address assigned by your ISP, at some point you're going to have to consider setting up a DNS client that runs on your internal network and broadcasts your ISP's external IP address to your domain provider. Then whenever your ISP changes your external dynamic IP address your DNS client will see that, pump the new IP address to your domain provider and there should be next to no impact to your domain addresses.
+
+#### DNS Client Options
+
+* ddclient
+* no-ip
+
