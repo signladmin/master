@@ -93,6 +93,7 @@ sudo passwd -l root
 ```
 
 ### Secure shared memory
+Protect your system from in memory attack vectors by making tmpfs read only and disallowing execution.
 
 Open /etc/fstab.
 
