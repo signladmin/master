@@ -30,6 +30,10 @@ Please do not skip steps young Padawan
 
 ![](../../.gitbook/assets/download-10-%20%281%29.jpeg)
 
+{% hint style="warning" %}
+This tutorial can be used for mainnet if you want. Just replace all instances of "testnet" with "mainnet".
+{% endhint %}
+
 ## Setting up our environment
 
 * We must first update our OS and install needed upgrades if available.
