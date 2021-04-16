@@ -35,13 +35,13 @@ sudo hdparm -Tt /dev/sda
 
 ### Overclock, memory & radios
 
-Edit  /boot/firmware/config.txt. Just paste Pi Pool additions in at the bottom.
+Edit /boot/firmware/config.txt. Just paste Pi Pool additions in at the bottom.
 
 ```bash
 sudo nano /boot/firmware/config.txt
 ```
 
-```
+```text
 [pi4]
 max_framebuffers=2
 
@@ -93,6 +93,7 @@ sudo passwd -l root
 ```
 
 ### Secure shared memory
+
 Protect your system from in memory attack vectors by making tmpfs read only and disallowing execution.
 
 Open /etc/fstab.
@@ -104,7 +105,7 @@ sudo nano /etc/fstab
 Add this line at the bottom, save & exit.
 
 ```text
-tmpfs	/run/shm	tmpfs	ro,noexec,nosuid	0 0
+tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
 ### Increase open file limit
@@ -139,7 +140,6 @@ sudo nano /etc/sysctl.conf
 ```
 
 ```text
-
 ## Pi Pool ##
 
 # swap less                      
@@ -282,7 +282,7 @@ sudo service chrony restart
 
 Swapping to disk is slow, swapping to compressed ram space is faster and gives us some overhead before out of memory \(oom\).
 
-{% embed url="https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters/" %}
+{% embed url="https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters/" caption="" %}
 
 ```text
 sudo apt install zram-config
@@ -307,3 +307,4 @@ sudo apt-get install rng-tools
 ```text
 sudo reboot
 ```
+
