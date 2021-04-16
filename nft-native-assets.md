@@ -17,6 +17,11 @@ description: Let's make some native assets on Cardano ❤️✨
 ## Prerequisites
 
 * cardano-node / cardano-cli set up on local machine
+
+{% hint style="info" %}
+[Here](beginner-guide-1/beginner-guide/tutorial-2-testnet.md) is an easy to follow tutorial we made to get a Cardano node up on testnet
+{% endhint %}
+
 * Make sure you have a Cardano node running and fully synced to the database
 * Make sure node.js installed
 
