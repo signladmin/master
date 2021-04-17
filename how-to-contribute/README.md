@@ -1,3 +1,7 @@
+---
+description: How to Contribute to this guide
+---
+
 # Contribute
 
 ## Great to see you here!
