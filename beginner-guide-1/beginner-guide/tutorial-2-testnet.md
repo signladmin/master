@@ -30,8 +30,8 @@ Please do not skip steps young Padawan
 
 ![](../../.gitbook/assets/download-10-%20%281%29.jpeg)
 
-{% hint style="warning" %}
-This tutorial can be used for mainnet if you want. Just replace all instances of "testnet" with "mainnet".
+{% hint style="info" %}
+This tutorial can be used for mainnet if you would like. Just replace all instances of "testnet" with "mainnet" throughout this tutorial. 
 {% endhint %}
 
 ## Setting up our environment
@@ -90,7 +90,7 @@ sudo reboot
 ### Download the Cardano-node static build
 
 {% hint style="warning" %}
-This is an **unofficial static build of** cardano-node & cardano-cli binaries made available to us by an IOHK engineer in his **spare time**. Although the community has trust in this build and its safety, we recommend you read through the build used ****[**here**](https://ci.zw3rk.com/build/1753#tabs-build-deps) and if have more questions consider joining the ****[**Arming Cardano**](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w) **telegram group. Use this at your own** risk, we nor ANYONE are responsible for any problems, warranties, and fiscal loss.
+This is an **unofficial static build of** cardano-node & cardano-cli binaries made available to us by an IOHK engineer in his **spare time**. Although the community has trust in this build and many of us use it, we recommend you read through the build used ****[**here**](https://ci.zw3rk.com/build/1753#tabs-build-deps) before downloading it and if have more questions consider joining the ****[**Arming Cardano**](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w) **telegram group.**
 {% endhint %}
 
 | Provided By | Link to Cardano Static Build |
