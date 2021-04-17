@@ -23,25 +23,25 @@ Take note that Ubuntu stores config.txt in a different location than Raspbian.
 
 #### Write speed
 
-```bash
+```text
 sudo dd if=/dev/zero of=/tmp/output conv=fdatasync bs=384k count=1k; sudo rm -f /tmp/output
 ```
 
 #### Read speed
 
-```bash
+```text
 sudo hdparm -Tt /dev/sda
 ```
 
 ### Overclock, memory & radios
 
-Edit /boot/firmware/config.txt. Just paste Pi Pool additions in at the bottom.
+Edit  /boot/firmware/config.txt. Just paste Pi Pool additions in at the bottom.
 
 ```bash
 sudo nano /boot/firmware/config.txt
 ```
 
-```bash
+```
 [pi4]
 max_framebuffers=2
 
@@ -80,7 +80,7 @@ disable-wifi
 disable-bt
 ```
 
-```bash
+```text
 sudo reboot
 ```
 
@@ -88,7 +88,7 @@ sudo reboot
 
 ### Disable the root user
 
-```bash
+```text
 sudo passwd -l root
 ```
 
@@ -96,27 +96,27 @@ sudo passwd -l root
 
 Open /etc/fstab.
 
-```bash
+```text
 sudo nano /etc/fstab
 ```
 
 Add this line at the bottom, save & exit.
 
-```bash
-tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
+```text
+tmpfs	/run/shm	tmpfs	ro,noexec,nosuid	0 0
 ```
 
 ### Increase open file limit
 
 Open /etc/security/limits.conf.
 
-```bash
+```text
 sudo nano /etc/security/limits.conf
 ```
 
 Add the following to the bottom, save & exit.
 
-```bash
+```text
 ada soft nofile 800000
 ada hard nofile 1048576
 ```
@@ -133,11 +133,12 @@ Add the following to the bottom of /etc/sysctl.conf. Save and exit.
 I am disabling IPv6 and IPv4 forwarding. You may want these. I have seen claims that IPv6 is slower and get's in the way. &lt;find this later&gt;
 {% endhint %}
 
-```bash
+```text
 sudo nano /etc/sysctl.conf
 ```
 
-```bash
+```text
+
 ## Pi Pool ##
 
 # swap less                      
@@ -186,11 +187,11 @@ net.ipv4.tcp_congestion_control = bbr
 
 Create a new file. Paste, save & close.
 
-```bash
+```text
 sudo nano /etc/rc.local
 ```
 
-```bash
+```text
 #!/bin/bash
 
 # Give CPU startup routines time to settle.
@@ -211,20 +212,97 @@ You should turn off IRQ Balance to make sure you do not get hardware interrupts 
 
 Open /etc/default/irqbalance and add to the bottom. Save, exit and reboot.
 
-```bash
+```text
 sudo nano /etc/default/irqbalance
 ```
 
-```bash
+```text
 ENABLED="0"
+```
+
+### Chrony
+
+We need to get our time synchronization as accurate as possible. Open /etc/chrony/chrony.conf
+
+```text
+sudo apt install chrony
+```
+
+```bash
+sudo nano /etc/chrony/chrony.conf
+```
+
+Replace the contents of the file with below, Save and exit.
+
+```bash
+pool time.google.com       iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
+#pool time.facebook.com     iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
+pool time.euro.apple.com   iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
+pool time.apple.com        iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
+pool ntp.ubuntu.com        iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
+
+# This directive specify the location of the file containing ID/key pairs for
+# NTP authentication.
+keyfile /etc/chrony/chrony.keys
+
+# This directive specify the file into which chronyd will store the rate
+# information.
+driftfile /var/lib/chrony/chrony.drift
+
+# Uncomment the following line to turn logging on.
+#log tracking measurements statistics
+
+# Log files location.
+logdir /var/log/chrony
+
+# Stop bad estimates upsetting machine clock.
+maxupdateskew 5.0
+
+# This directive enables kernel synchronisation (every 11 minutes) of the
+# real-time clock. Note that it can’t be used along with the 'rtcfile' directive.
+rtcsync
+
+# Step the system clock instead of slewing it if the adjustment is larger than
+# one second, but only in the first three clock updates.
+makestep 0.1 -1
+
+# Get TAI-UTC offset and leap seconds from the system tz database
+leapsectz right/UTC
+
+# Serve time even if not synchronized to a time source.
+local stratum 10
+```
+
+```bash
+sudo service chrony restart
 ```
 
 ### Zram swap
 
-{% embed url="https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters/" caption="" %}
+Swapping to disk is slow, swapping to compressed ram space is faster and gives us some overhead before out of memory \(oom\).
 
-```bash
+{% embed url="https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters/" %}
+
+```text
 sudo apt install zram-config
-sudo reboot
 ```
 
+### Raspberry Pi & entropy
+
+Before we start generating keys with a headless server we should have a safe amount of entropy.
+
+{% hint style="info" %}
+[https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/](https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/)
+
+[https://github.com/nhorman/rng-tools](https://github.com/nhorman/rng-tools)
+{% endhint %}
+
+> But consider the fate of a standalone, headless server \(or a micro controller for that matter\) with no human typing or mousing around, and no spinning iron drive providing mechanical irregularity. Where does _it_ get entropy after it starts up? What if an attacker, or bad luck, forces periodic reboots? This is a [real problem](http://www.theregister.co.uk/2015/12/02/raspberry_pi_weak_ssh_keys/).
+
+```text
+sudo apt-get install rng-tools
+```
+
+```text
+sudo reboot
+```
