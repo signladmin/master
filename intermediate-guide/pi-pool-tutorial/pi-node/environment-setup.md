@@ -24,7 +24,7 @@ sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
 
 Install nodejs & cardanoclijs
 
-{% embed url="https://github.com/Berry-Pool/cardanocli-js" %}
+{% embed url="https://github.com/Berry-Pool/cardanocli-js" caption="" %}
 
 ```bash
 sudo snap install node --classic
@@ -36,7 +36,7 @@ npm install cardanocli-js
 
 Install Certbot.
 
-{% embed url="https://certbot.eff.org/lets-encrypt/snap-nginx" %}
+{% embed url="https://certbot.eff.org/lets-encrypt/snap-nginx" caption="" %}
 
 ```bash
 sudo snap install --classic certbot
@@ -232,7 +232,7 @@ Now we just have to:
 
 Guild operators scripts has a couple useful tools for operating a pool. We do not want the project as a whole, though there are a couple scripts we are going to use.
 
-{% embed url="https://github.com/cardano-community/guild-operators/tree/master/scripts/cnode-helper-scripts" %}
+{% embed url="https://github.com/cardano-community/guild-operators/tree/master/scripts/cnode-helper-scripts" caption="" %}
 
 ```bash
 cd $NODE_HOME/scripts
@@ -251,7 +251,6 @@ sed -i env \
     -e "s/"6000"/"3003"/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/mainnet-config.json\"/g" \
     -e "s/\#SOCKET=\"\${CNODE_HOME}\/sockets\/node0.socket\"/SOCKET=\"\${NODE_HOME}\/db\/socket\"/g"
-
 ```
 
 Allow execution of gLiveView.sh.
@@ -412,9 +411,7 @@ cd $NODE_HOME/scripts
 ./gLiveView.sh
 ```
 
-![Should look something like this once your synced to the tip of the chain.](../.gitbook/assets/pi-node-glive.png)
-
-
+![](../../../.gitbook/assets/pi-node-glive.png)
 
 ## Prometheus, Node Exporter & Grafana
 
@@ -424,9 +421,9 @@ Prometheus connects to cardano-nodes backend and serves metrics over http. Grafa
 You can connect a Telegram bot to Grafana which can alert you of problems with the server. Much easier than trying to configure email alerts.
 {% endhint %}
 
-{% embed url="https://github.com/prometheus" %}
+{% embed url="https://github.com/prometheus" caption="" %}
 
-![](../.gitbook/assets/pi-pool-grafana.png)
+![](../../../.gitbook/assets/pi-pool-grafana.png)
 
 ### Install Prometheus & Node Exporter.
 
@@ -485,12 +482,12 @@ Edit mainnet-config.json so cardano-node exports traces on all interfaces.
 
 ```bash
 cd $NODE_FILES
-sed -i ${NODE_CONFIG}-config.json -e "s/127.0.0.1/0.0.0.0/g"  
+sed -i ${NODE_CONFIG}-config.json -e "s/127.0.0.1/0.0.0.0/g"
 ```
 
 ### Install Grafana
 
-{% embed url="https://github.com/grafana/grafana" %}
+{% embed url="https://github.com/grafana/grafana" caption="" %}
 
 Add Grafana's gpg key to Ubuntu.
 
@@ -558,7 +555,7 @@ At this point you may want to start cardano-service and get synced up before we 
 
 ### Configure Grafana
 
-On your local machine open your browser and got to http://&lt;Pi-Node's private ip&gt;:5000
+On your local machine open your browser and got to [http://&lt;Pi-Node's](http://<Pi-Node's) private ip&gt;:5000
 
 Log in and set a new password. Default username and password is **admin:admin**.
 
@@ -570,11 +567,11 @@ In the left hand vertical menu go to **Configure** &gt; **Datasources** and clic
 
 Save the dashboard json file hosted on my server to your local machine.
 
-{% embed url="https://db.adamantium.online/pi-pool-dash.json" %}
+{% embed url="https://db.adamantium.online/pi-pool-dash.json" caption="" %}
 
 In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
 
-![](../.gitbook/assets/pi-pool-grafana.png)
+![](https://github.com/ADA-Pi/master/tree/329d62f6b791530bf6b07819c773275742468610/intermediate-guide/pi-pool-tutorial/.gitbook/assets/pi-pool-grafana.png)
 
 ## ⛓ Syncing the chain ⛓
 
@@ -612,3 +609,4 @@ cardano-service status
 ```
 
 ## Grafana, Nginx proxy\_pass & ssl
+
