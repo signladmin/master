@@ -13,7 +13,7 @@ It is strongly recommended to work through the [Stake Pool School](https://carda
 {% endhint %}
 
 {% hint style="warning" %}
-If you would like to create an .img file of your work that can be flashed for reuse on other Raspberry Pi's you should build on an 8GB sd card. It will take less time to image. See [image creation section](https://app.gitbook.com/@ada-pi/s/raspi-spo/intermediate-guide/pi-pool-tutorial/create-.img-file).
+If you would like to create a .img file of your work that can be flashed for reuse on other Raspberry Pi's you should build on an 8GB sd card. It will take less time to make an image. See [image creation section](https://app.gitbook.com/@ada-pi/s/raspi-spo/intermediate-guide/pi-pool-tutorial/create-.img-file).
 {% endhint %}
 
 ## Why this guide?
