@@ -120,7 +120,7 @@ A typical home network will only expose a single external IP address to the worl
 
 ## DNS Client
 
-Unless you have a static IP address assigned by your ISP, at some point you're going to have to consider setting up a DNS client that runs on your internal network and broadcasts your external IP address assigned by your ISP to your domain provider, such as Google domains. Then whenever your ISP changes your external dynamic IP address, your DNS client will see that, push the new IP address to your domain provider and there should be next to no impact to your domain addresses.
+Unless you have a static IP address assigned by your ISP, at some point you're going to have to consider setting up a dynamic DNS client that runs on your internal network and broadcasts your external IP address assigned by your ISP to your dynamic dns domain provider, such as Google domains. Then whenever your ISP changes your external dynamic IP address, your DNS client will see that, push the new IP address to your domain provider and there should be next to no impact to your domain addresses.
 
 #### DNS Client Examples 
 
