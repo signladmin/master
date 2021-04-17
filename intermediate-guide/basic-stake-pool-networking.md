@@ -126,4 +126,5 @@ Unless you have a static IP address assigned by your ISP, at some point you're g
 
 * ddclient
 * no-ip
+* namecheap.com openwrt ddns-scripts
 
