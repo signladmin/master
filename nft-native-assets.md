@@ -19,7 +19,7 @@ description: Let's make some native assets on Cardano ❤️✨
 * cardano-node / cardano-cli set up on local machine
 
 {% hint style="info" %}
-[Here](intermediate-guide/pi-pool-tutorial/pi-node/) is an easy to follow tutorial we made to get a Cardano-node running on mainnet
+[Here](intermediate-guide/pi-pool-tutorial/pi-node/) is an easy to follow tutorial we made to get a Cardano-node/cli running on mainnet
 {% endhint %}
 
 * Make sure you have a Cardano node running and fully synced to the database
