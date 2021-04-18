@@ -97,11 +97,22 @@ npm install cardanocli-js --save
 sudo nano fetch-config.sh
 ```
 
+{% tabs %}
+{% tab title="MAINNET" %}
 ```bash
 #NODE_BUILD_NUM may be different
 NODE_BUILD_NUM=5822084
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/mainnet-shelley-genesis.json
 ```
+{% endtab %}
+
+{% tab title="TESTNET" %}
+```javascript
+NODE_BUILD_NUM=5822084
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/testnet-shelley-genesis.json
+```
+{% endtab %}
+{% endtabs %}
 
 **Now we need to give permissions to our new script to execute then we will run our script and download the genesis files.** 
 
@@ -116,6 +127,16 @@ sudo chmod +x fetch-config.sh
 mkdir src; cd src
 sudo nano cardano.js
 ```
+
+{% tabs %}
+{% tab title="First Tab" %}
+
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
 
 ```javascript
 const Cardano = require("cardanocli-js");
