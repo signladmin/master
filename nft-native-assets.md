@@ -107,7 +107,7 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/mainnet-shelley
 {% endtab %}
 
 {% tab title="TESTNET" %}
-```javascript
+```bash
 NODE_BUILD_NUM=5822084
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/testnet-shelley-genesis.json
 ```
@@ -157,7 +157,7 @@ const cardano = new Cardano({
     shelleyGenesisPath: __dirname + "/../testnet-shelley-genesis.json"
 });
 
-module.exports = cardano
+module.exports = cardano;
 ```
 {% endtab %}
 {% endtabs %}
