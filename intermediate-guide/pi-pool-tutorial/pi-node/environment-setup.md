@@ -99,7 +99,7 @@ The **unofficial** cardano-node & cardano-cli binaries available to us are being
 
 ```bash
 cd $HOME/tmp
-wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/job/Tools/master/aarch64-unknown-linux-musl-cardano-node-musl.tarball/latest-finished/download
+wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/build/1755/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.2.zip
 unzip *.zip
 mv cardano-node/* $HOME/.local/bin
 rm -r cardano-node
