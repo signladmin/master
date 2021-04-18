@@ -128,27 +128,39 @@ mkdir src; cd src
 sudo nano cardano.js
 ```
 
+{% hint style="info" %}
+If you are using testnet make sure you have the correct testnet-magic version number. You can find the current testnet version [here](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html).
+{% endhint %}
+
 {% tabs %}
-{% tab title="First Tab" %}
-
-{% endtab %}
-
-{% tab title="Second Tab" %}
-
-{% endtab %}
-{% endtabs %}
-
+{% tab title="MAINNET" %}
 ```javascript
 const Cardano = require("cardanocli-js");
 
 const cardano = new Cardano({
-  network: "mainnet",
-  dir: __dirname + "/../",
-  shelleyGenesisPath: __dirname + "/../mainnet-shelley-genesis.json",
+    network: "mainnet",
+    dir: __dirname + "/../",
+    shelleyGenesisPath: __dirname + "/../mainnet-shelley-genesis.json",
 });
 
 module.exports = cardano;
 ```
+{% endtab %}
+
+{% tab title="TESTNET" %}
+```javascript
+const Cardano = require("cardanocli-js")
+
+const cardano = new Cardano({
+    network: "testnet-magic 1097911063",
+    dir: __dirname + "/../",
+    shelleyGenesisPath: __dirname + "/../testnet-shelley-genesis.json"
+});
+
+module.exports = cardano
+```
+{% endtab %}
+{% endtabs %}
 
 #### _Video Walk-through_ :
 
@@ -217,7 +229,11 @@ cd ..
 node src/get-balance.js
 ```
 
-* We can go ahead and send some funds \(ADA\) into our wallet we created, wait a few minutes, and then check the balance again to make sure the transaction was successfull. 
+* We can go ahead and send some funds \(ADA\) into our wallet we created, wait a few minutes, and then check the balance again to make sure the transaction was successful. 
+
+{% hint style="info" %}
+If you are using testnet you must get your tADA from the testnet faucet [here](https://developers.cardano.org/en/testnets/cardano/tools/faucet/).
+{% endhint %}
 
 #### _Video Walk-through_ :
 
