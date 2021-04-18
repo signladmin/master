@@ -31,7 +31,7 @@ Please do not skip steps young Padawan
 ![](../../.gitbook/assets/download-10-%20%281%29.jpeg)
 
 {% hint style="info" %}
-This tutorial can be used for mainnet if you would like. Just replace all instances of "testnet" with "mainnet" throughout this tutorial. 
+This tutorial can be used for **mainnet** if you would like. Just replace all instances of the word "**testnet**" with "**mainne**t" throughout this tutorial. 
 {% endhint %}
 
 ## Setting up our environment
@@ -95,7 +95,7 @@ This is an **unofficial static build of** cardano-node & cardano-cli binaries ma
 
 | Provided By | Link to Cardano Static Build |
 | :--- | :--- |
-| [**ZW3RK**](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) **1PCT Haskell CI Support Pool** | \*\*\*\*[**https://ci.zw3rk.com/build/1753\#tabs-summary**](https://ci.zw3rk.com/build/1753#tabs-summary)\*\*\*\* |
+| [**ZW3RK**](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) **1PCT Haskell CI Support Pool** | \*\*\*\*[**https://ci.zw3rk.com/build/1755**](https://ci.zw3rk.com/build/1755)\*\*\*\* |
 
 * A[ **static build**](https://en.wikipedia.org/wiki/Static_build) is a ****[**compiled**](https://en.wikipedia.org/wiki/Compiler) ****version of a program that has been statically linked against libraries.
 
@@ -106,7 +106,7 @@ Now we need to simply download the zip file above to our Pi's home directory and
 cd $HOME
 
 # Now we can download the cardano-node 
-wget https://ci.zw3rk.com/build/1753/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.1.zip
+wget https://ci.zw3rk.com/build/1755/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.2.zip
 ```
 
 * Use [**unzip**](https://linux.die.net/man/1/unzip) command on the downloaded zip file and extract its contents.
