@@ -336,17 +336,7 @@ Save, exit and make it executable.
 chmod +x topologyUpdater.sh
 ```
 
-Now you can run the script once to ensure it is working.
-
-```bash
-./topologyUpdater.sh
-```
-
-Successful execution will result in a message similar to..
-
-> `{ "resultcode": "201", "datetime":"2021-03-29 01:23:45", "clientIp": "1.2.3.4", "iptype": 4, "msg": "nice to meet you" }`
-
-Now that it's working we can create a cron job that will run the script every hour.
+Create a cron job that will run the script every hour.
 
 ```bash
 crontab -e
