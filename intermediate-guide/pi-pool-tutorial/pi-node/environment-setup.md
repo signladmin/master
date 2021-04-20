@@ -327,7 +327,7 @@ if [ ! -d ${CNODE_LOG_DIR} ]; then
   mkdir -p ${CNODE_LOG_DIR};
 fi
 
-curl -s -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTN>
+curl -s "https://api.clio.one/htopology/v1/?port=\${CNODE_PORT}&blockNo=\${blockNo}&valency=\${CNODE_VALENCY}&magic=\${NWMAGIC}\${T_HOSTNAME}" | tee -a \$CNODE_LOG_DIR/topologyUpdater_lastresult.json
 ```
 
 Save, exit and make it executable.
