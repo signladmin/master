@@ -581,7 +581,7 @@ Save the dashboard json file hosted on my server to your local machine.
 
 In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
 
-![](https://github.com/ADA-Pi/master/tree/329d62f6b791530bf6b07819c773275742468610/intermediate-guide/pi-pool-tutorial/.gitbook/assets/pi-pool-grafana.png)
+![](../../../.gitbook/assets/pi-pool-grafana.png)
 
 ## ⛓ Syncing the chain ⛓
 
