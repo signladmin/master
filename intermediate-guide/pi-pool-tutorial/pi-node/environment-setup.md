@@ -89,7 +89,7 @@ nano $HOME/.pienv
 
 ```bash
 # testnet or mainnet
-echo export NODE_CONFIG='mainnet' >> $HOME/.bashrc
+NODE_CONFIG=mainnet
 ```
 
 Save and exit.
