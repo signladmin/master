@@ -303,6 +303,7 @@ CNODE_HOSTNAME="CHANGE ME"  # optional. must resolve to the IP you are requestin
 CNODE_BIN="/home/ada/.local/bin"
 CNODE_HOME="/home/ada/pi-pool"
 CNODE_LOG_DIR="${CNODE_HOME}/logs"
+LOG_DIR="${CNODE_HOME}/logs"
 GENESIS_JSON="${CNODE_HOME}/files/mainnet-shelley-genesis.json"
 NETWORKID=$(jq -r .networkId $GENESIS_JSON)
 CNODE_VALENCY=1   # optional for multi-IP hostnames
@@ -328,7 +329,8 @@ if [ ! -d ${CNODE_LOG_DIR} ]; then
   mkdir -p ${CNODE_LOG_DIR};
 fi
 
-curl -s "https://api.clio.one/htopology/v1/?port=\${CNODE_PORT}&blockNo=\${blockNo}&valency=\${CNODE_VALENCY}&magic=\${NWMAGIC}\${T_HOSTNAME}" | tee -a \$CNODE_LOG_DIR/topologyUpdater_lastresult.json
+curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
+
 ```
 
 Save, exit and make it executable.
