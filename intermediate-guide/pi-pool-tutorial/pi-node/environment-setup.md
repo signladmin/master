@@ -258,6 +258,7 @@ You can change the port cardano-node runs on in /home/ada/.local/bin/cardano-ser
 
 ```bash
 sed -i env \
+    -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/CNODE_HOME=\"\home\/ada\/pi-pool\"/g" \
     -e "s/"6000"/"3003"/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/mainnet-config.json\"/g" \
     -e "s/\#SOCKET=\"\${CNODE_HOME}\/sockets\/node0.socket\"/SOCKET=\"\${NODE_HOME}\/db\/socket\"/g"
@@ -606,6 +607,12 @@ Once wget completes enable & start cardano-node.
 cardano-service enable
 cardano-service start
 cardano-service status
+```
+
+Follow log output to journal.
+
+```bash
+journalctl --unit=cardano-node --follow
 ```
 
 ## Grafana, Nginx proxy\_pass & ssl
