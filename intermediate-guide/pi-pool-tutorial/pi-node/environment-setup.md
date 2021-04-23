@@ -302,7 +302,6 @@ CNODE_PORT=3003 # must match your relay node port as set in the startup command
 CNODE_HOSTNAME="CHANGE ME"  # optional. must resolve to the IP you are requesting from
 CNODE_BIN="/home/ada/.local/bin"
 CNODE_HOME="/home/ada/pi-pool"
-CNODE_LOG_DIR="${CNODE_HOME}/logs"
 LOG_DIR="${CNODE_HOME}/logs"
 GENESIS_JSON="${CNODE_HOME}/files/mainnet-shelley-genesis.json"
 NETWORKID=$(jq -r .networkId $GENESIS_JSON)
@@ -325,8 +324,8 @@ else
   T_HOSTNAME=''
 fi
 
-if [ ! -d ${CNODE_LOG_DIR} ]; then
-  mkdir -p ${CNODE_LOG_DIR};
+if [ ! -d ${LOG_DIR} ]; then
+  mkdir -p ${LOG_DIR};
 fi
 
 curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
