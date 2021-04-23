@@ -339,6 +339,10 @@ Save, exit and make it executable.
 chmod +x topologyUpdater.sh
 ```
 
+{% hint style="warning" %}
+You will not be able to successfully execute ./topologyUpdater.sh until you are fully synced up to the tip of the chain. 
+{% endhint %}
+
 Create a cron job that will run the script every hour.
 
 ```bash
