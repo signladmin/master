@@ -611,13 +611,28 @@ cardano-service start
 cardano-service status
 ```
 
-Make sure your node is **not** running & delete the db folder if it exists.
+Make sure your node is **not** running & delete the db folder if it exists. 
+
+{% hint style="warning" %}
+Download either the mainnet db folder or testnet. Not Both!!
+{% endhint %}
 
 ```bash
 cardano-service stop
 cd $NODE_HOME
 rm -r db/
+```
+
+For mainnet chain use.
+
+```bash
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+```
+
+For testnet.
+
+```bash
+wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
 ```
 
 Once wget completes enable & start cardano-node.
