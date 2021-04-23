@@ -17,7 +17,7 @@ Install necessities.
 
 ```bash
 sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
-         jq make automake unzip net-tools nginx pkg-config \
+         jq make automake unzip net-tools nginx ssl-cert pkg-config \
          libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev \
          zlib1g-dev make g++ libncursesw5 libtool autoconf -y
 ```
