@@ -634,11 +634,11 @@ Follow log output to journal.
 journalctl --unit=cardano-node --follow
 ```
 
-## Grafana, Nginx proxy\_pass & ssl
+## Grafana, Nginx proxy\_pass & snakeoil
 
 Let's put Grafana behind Nginx with self signed\(snakeoil\) certificate. The certificate was generated when we installed the ssl-cert package. 
 
-You will get a warning from your browser. This is because ca-certificates cannot follow certificate chain to a trusted source. The connection is however encrypted and will protect your passwords flying around in plain text.
+You will get a warning from your browser. This is because ca-certificates cannot follow a trust chain to a trusted \(centralized\) source. The connection is however encrypted and will protect your passwords flying around in plain text.
 
 ```bash
 sudo nano /etc/nginx/sites-available/default
@@ -686,5 +686,5 @@ sudo nginx -t
 sudo service nginx restart
 ```
 
-You can now visit your pi-nodes ip address without any port specification, the connection will be upgraded to ssl/TLS and you will get a scary message\(not really scary at all\). Continue through to your dashboard.
+You can now visit your pi-nodes ip address without any port specification, the connection will be upgraded to SSL/TLS and you will get a scary message\(not really scary at all\). Continue through to your dashboard.
 
