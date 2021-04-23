@@ -46,7 +46,6 @@ sudo nano /boot/firmware/config.txt
 max_framebuffers=2
 
 [all]
-arm_64bit=1
 kernel=vmlinuz
 cmdline=cmdline.txt
 initramfs initrd.img followkernel
@@ -72,9 +71,13 @@ disable_overscan=1
 # on the IO board (assuming your CM4 is plugged into such a board)
 #dtoverlay=dwc2,dr_mode=host
 
+# Config settings specific to arm64
+arm_64bit=1
+dtoverlay=dwc2
+
 ## Pi Pool ##
-over_voltage=2
-arm_freq=1750
+over_voltage=6
+arm_freq=2000
 gpu_mem=16
 disable-wifi
 disable-bt

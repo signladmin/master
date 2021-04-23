@@ -48,16 +48,16 @@ Locate your target drive & write it to disk.
 ![](../../../.gitbook/assets/image-2-.png)
 {% endtab %}
 
-{% tab title="Fresh Ubuntu 20.10 installation" %}
+{% tab title="Fresh Ubuntu 21.04 installation" %}
 ### Within Raspberry Pi Imager
 
-### Select  Ubuntu Server 20.10 \(RPI 3/4/400\)
+### Select  Ubuntu Server 21.04 \(RPI 3/4/400\)
 
-**Choose OS -&gt; Other general purpose OS -&gt; Ubuntu -&gt; Ubuntu Server 20.10 \(RPI 3/4/400\)**. The 64 bit option.
+**Choose OS -&gt; Other general purpose OS -&gt; Ubuntu -&gt; Ubuntu Server 21.04 \(RPI 3/4/400\)**. The 64 bit server option.
 
 Locate your target drive & write it to disk.
 
-![](../../../.gitbook/assets/ubuntu.png)
+![](../../../.gitbook/assets/21.04-rpi-imager.png)
 {% endtab %}
 {% endtabs %}
 
