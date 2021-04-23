@@ -81,11 +81,24 @@ mkdir $HOME/tmp
 [Environment Variables in Linux/Unix](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769).
 {% endhint %}
 
+Create a .pienv file and choose which network you want to connect to.
+
+```bash
+nano $HOME/.pienv
+```
+
+```bash
+# testnet or mainnet
+echo export NODE_CONFIG='mainnet' >> $HOME/.bashrc
+```
+
+Save and exit.
+
 ```bash
 echo PATH="$HOME/.local/bin:$PATH" >> $HOME/.bashrc
+source $HOME/.pienv
 echo export NODE_HOME=$HOME/pi-pool >> $HOME/.bashrc
 echo export NODE_FILES=$HOME/pi-pool/files >> $HOME/.bashrc
-echo export NODE_CONFIG=mainnet>> $HOME/.bashrc
 echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> $HOME/.bashrc
 echo export CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket" >> $HOME/.bashrc
 source $HOME/.bashrc
@@ -160,7 +173,7 @@ cardano-node run +RTS -N4 -RTS \
 Allow execution of our new startup script.
 
 ```bash
-sudo chmod +x $HOME/.local/bin/cardano-service
+chmod +x $HOME/.local/bin/cardano-service
 ```
 
 Open /etc/systemd/system/cardano-node.service
@@ -191,6 +204,7 @@ TimeoutStopSec=3
 LimitNOFILE=32768
 Restart=always
 RestartSec=5
+EnvironmentFile=-/home/ada/.pienv
 
 [Install]
 WantedBy= multi-user.target
