@@ -75,7 +75,7 @@ mkdir $HOME/git
 mkdir $HOME/tmp
 ```
 
-### Create bash variables & add ~/.local/bin to our $PATH 🏃♀
+### Create bash variables & add ~/.local/bin to our $PATH 🏃
 
 {% hint style="info" %}
 [Environment Variables in Linux/Unix](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769).
