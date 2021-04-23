@@ -678,3 +678,11 @@ server {
 }
 ```
 
+Check that Nginx is happy with your changes and restart it.
+
+```bash
+sudo nginx -t
+## if ok do
+sudo service nginx restart
+```
+
