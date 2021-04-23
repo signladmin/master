@@ -613,15 +613,15 @@ cardano-service status
 
 Make sure your node is **not** running & delete the db folder if it exists. 
 
-{% hint style="warning" %}
-Download either the mainnet db folder or testnet. Not Both!!
-{% endhint %}
-
 ```bash
 cardano-service stop
 cd $NODE_HOME
 rm -r db/
 ```
+
+{% hint style="danger" %}
+Download either the mainnet db folder or testnet. Not Both!!
+{% endhint %}
 
 For mainnet chain use.
 
