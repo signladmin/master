@@ -678,7 +678,7 @@ server {
 }
 ```
 
-Check that Nginx is happy with your changes and restart it.
+Check that Nginx is happy with our changes and restart it.
 
 ```bash
 sudo nginx -t
