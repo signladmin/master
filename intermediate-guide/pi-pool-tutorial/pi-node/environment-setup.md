@@ -583,11 +583,17 @@ Log in and set a new password. Default username and password is **admin:admin**.
 
 In the left hand vertical menu go to **Configure** &gt; **Datasources** and click to **Add data source**. Choose Prometheus. Everything can be left default.  At the bottom save & test. You should get the green "Data source is working" if cardano-monitor has been started.
 
-#### Import dashboard
+#### Import dashboards
 
-Save the dashboard json file hosted on my server to your local machine.
+Save the dashboard json file to your local machine.
 
-{% embed url="https://db.adamantium.online/pi-pool-dash.json" caption="" %}
+```bash
+wget https://raw.githubusercontent.com/wcatz/OTG-Star-Forge/main/Grafana-Dashboards/Berry.json
+```
+
+```bash
+wget https://raw.githubusercontent.com/wcatz/OTG-Star-Forge/main/Grafana-Dashboards/Pi-Pool.json
+```
 
 In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
 
