@@ -9,7 +9,7 @@ description: 'optimize hardware, optimize Ubuntu'
 Lets save some power, raise the governor on the cpu a bit and set gpu ram as low as we can.
 
 {% hint style="warning" %}
-Here are some links for overclocking and testing your drive speeds. If you have a fan and heat sinks you can safely go to 2000. It's up to you. Just pay attention to over volt recommendations to go with your chosen clock speed.
+Here are some links for overclocking and testing your drive speeds. If you have heat sinks you can safely go to 2000. Just pay attention to over volt recommendations to go with your chosen clock speed.
 
 * [https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md](https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md)
 * [https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/](https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/)
