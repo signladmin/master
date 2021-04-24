@@ -13,10 +13,6 @@
 * [Resource Library](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
 * [Hardware Purchase Links](before-you-get-started.../hardware.md)
 
----
-
-* [Developer Guides](developer-guides.md)
-
 ## Beginner Guides <a id="beginner-guide-1"></a>
 
 * [Tutorials](beginner-guide-1/beginner-guide/README.md)
