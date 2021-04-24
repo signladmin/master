@@ -243,7 +243,7 @@ source $HOME/.bashrc
 ## Download a snapshot of the blockchain to speed the sync process
 
 {% hint style="info" %}
-We have been provided a snapshot of the testnet database thanks to Star Forge Pool \[OTG\]. If you don't want to download a database, **you may skip this step**. Beware, due to the size of the blockchain, it may take up to 8 hours to get the node fully synced.
+We have been provided a snapshot of the testnet database thanks to Star Forge Pool \[OTG\]. If you don't want to download a database, **you may skip this step**. Beware, if you skip downloading our snapshot it may take up to 8 hours to get the node fully synced.
 {% endhint %}
 
 {% hint style="danger" %}
