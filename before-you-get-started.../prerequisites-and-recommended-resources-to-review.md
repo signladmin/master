@@ -21,10 +21,6 @@ description: Stake pool operator resources.
 | \*\*\*\*[**PowerCert Animated Videos**](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)\*\*\*\* |
 {% endtab %}
 
-{% tab title="Documentation" %}
-
-{% endtab %}
-
 {% tab title="Community Tutorials/GitHubs" %}
 | Author | Link to Tutorial |
 | :--- | :--- |
