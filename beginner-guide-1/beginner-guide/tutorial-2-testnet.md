@@ -24,6 +24,12 @@ description: >-
 6. Run the basic passive relay node to connect to the testnet
 7. Monitor the relay node with [**Guild Operators gLiveView** ](https://cardano-community.github.io/guild-operators/#/) 
 
+{% hint style="success" %}
+Please do not skip steps young Padawan
+{% endhint %}
+
+![](../../.gitbook/assets/download-10-%20%281%29.jpeg)
+
 {% hint style="info" %}
 This tutorial can be used for **mainnet** if you would like. Just replace all instances of the word "**testnet**" with "**mainne**t" throughout this tutorial. 
 {% endhint %}
