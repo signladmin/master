@@ -24,10 +24,6 @@ description: >-
 6. Run the basic passive relay node to connect to the testnet
 7. Monitor the relay node with [**Guild Operators gLiveView** ](https://cardano-community.github.io/guild-operators/#/) 
 
-{% hint style="success" %}
-Please do not skip steps young Padawan
-{% endhint %}
-
 ![](../../.gitbook/assets/download-10-%20%281%29.jpeg)
 
 {% hint style="info" %}
