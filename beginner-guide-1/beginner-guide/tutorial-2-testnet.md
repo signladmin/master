@@ -284,10 +284,23 @@ cardano-service status
 
 ## Setting up gLiveView to monitor the node during its syncing process
 
+#### We need to download the [guild operators pre-r**equisites**](https://cardano-community.github.io/guild-operators/#/basics?id=pre-requisites) **script and then run it to get our needed dependencies.** 
+
 ```bash
-cd $HOME
-sudo apt install jq
+mkdir "$HOME/tmp";cd "$HOME/tmp"
+# Install curl
+# CentOS / RedHat - sudo dnf -y install curl
+# Ubuntu / Debian - sudo apt -y install curl
+curl -sS -o prereqs.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/prereqs.sh
+chmod 755 prereqs.sh
+./prereqs.sh
 ```
+
+{% hint style="info" %}
+Running the prereqs scripts on your Pi will result in some errors due to some dependencies not able to build, just ignore the messages. 
+{% endhint %}
+
+#### Now you can change to the $NODE\_FILES folder and then download gLiveView monitor service
 
 ```bash
 cd $NODE_Files

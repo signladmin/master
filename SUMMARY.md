@@ -15,12 +15,11 @@
 
 ---
 
-* [Cardano Native Asset and NFT Tutorial](nft-native-assets.md)
+* [Developer Guides](developer-guides.md)
 
 ## Beginner Guides <a id="beginner-guide-1"></a>
 
 * [Tutorials](beginner-guide-1/beginner-guide/README.md)
-  * [Untitled](beginner-guide-1/beginner-guide/untitled.md)
   * [Setting up the Raspberry Pi](beginner-guide-1/beginner-guide/setup.md)
   * [Set up a Node on Testnet](beginner-guide-1/beginner-guide/tutorial-2-testnet.md)
 
@@ -38,4 +37,10 @@
   * [Pi-Relay \(COMING-SOON\)](intermediate-guide/pi-pool-tutorial/pi-relay.md)
   * [Pi-Core & Pi-Cold \(COMING-SOON\)](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/create-.img-file.md)
+
+## Cardano Developer Guides
+
+* [Native Tokens and NFTs](cardano-developer-guides/native-tokens-and-nfts/README.md)
+  * [Cardano Native Asset and NFT Tutorial](cardano-developer-guides/native-tokens-and-nfts/nft-native-assets.md)
+  * [Cardano NFT Collection Tutorial](cardano-developer-guides/native-tokens-and-nfts/cardano-nft-collection-tutorial.md)
 
