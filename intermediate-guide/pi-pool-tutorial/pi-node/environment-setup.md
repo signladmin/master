@@ -649,6 +649,10 @@ cardano-service start
 cardano-service status
 ```
 
+{% hint style="warning" %}
+It can take up to an hour for cardano-node to sync to the tip of the chain. Use ./gliveView.sh, htop and log outputs to view process. Be patient it will come up.
+{% endhint %}
+
 Follow log output to journal.
 
 ```bash
