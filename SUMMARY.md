@@ -38,5 +38,5 @@
 
 * [Native Tokens and NFTs](cardano-developer-guides/native-tokens-and-nfts/README.md)
   * [Cardano Native Asset and NFT Tutorial](cardano-developer-guides/native-tokens-and-nfts/nft-native-assets.md)
-  * [Cardano NFT Collection Tutorial](cardano-developer-guides/native-tokens-and-nfts/cardano-nft-collection-tutorial.md)
+  * [Cardano NFT Collection Tutorial \(COMING SOON\)](cardano-developer-guides/native-tokens-and-nfts/cardano-nft-collection-tutorial.md)
 
