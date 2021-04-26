@@ -659,6 +659,12 @@ Follow log output to journal.
 journalctl --unit=cardano-node --follow
 ```
 
+Follow log output to stdout.
+
+```bash
+sudo tail -f /var/log/syslog
+```
+
 ## Grafana, Nginx proxy\_pass & snakeoil
 
 Let's put Grafana behind Nginx with self signed\(snakeoil\) certificate. The certificate was generated when we installed the ssl-cert package. 
