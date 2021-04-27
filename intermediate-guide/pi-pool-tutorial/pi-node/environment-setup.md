@@ -336,9 +336,8 @@ Allow execution of gLiveView.sh.
 
 ```bash
 chmod +x gLiveView.sh
+./gLiveView.sh
 ```
-
-We will have a look at gLiveView.sh once we are ready to start cardano-node. But first some more configuring..
 
 ## topologyUpdater.sh
 
