@@ -104,7 +104,7 @@ echo export CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket" >> $HOME/.bashrc
 source $HOME/.bashrc
 ```
 
-### Retrieve node files 
+### Retrieve node files
 
 ```bash
 cd $NODE_FILES
@@ -252,6 +252,56 @@ Now we just have to:
 * cardano-service stop       \(stops cardano-node.service\)
 * cardano-service status    \(shows the status of cardano-node.service\)
 
+## ⛓ Syncing the chain ⛓
+
+You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 30 hours and the db folder is about 8.5GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
+
+### Download snapshot
+
+{% hint style="danger" %}
+Do not attempt this on an 8GB sd card. Not enough space! [Create your image file](https://app.gitbook.com/@wcatz/s/pi-pool-guide/create-.img-file) and flash it to your ssd.
+{% endhint %}
+
+I have started taking snapshots of my backup nodes db folder and hosting it in a web directory. With this service it takes around 15 minutes to pull the latest snapshot and maybe another 30 minutes to sync up to the tip of the chain. This service is provided as is. It is up to you. If you wan't to sync the chain on your own simply:
+
+```bash
+cardano-service enable
+cardano-service start
+cardano-service status
+```
+
+Make sure your node is **not** running & delete the db folder if it exists.
+
+```bash
+cardano-service stop
+cd $NODE_HOME
+rm -r db/
+```
+
+{% hint style="danger" %}
+Download either the mainnet db folder or testnet. Not Both!!
+{% endhint %}
+
+For mainnet chain use.
+
+```bash
+wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+```
+
+For testnet.
+
+```bash
+wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
+```
+
+Once wget completes enable & start cardano-node.
+
+```bash
+cardano-service enable
+cardano-service start
+cardano-service status
+```
+
 ## gLiveView.sh
 
 Guild operators scripts has a couple useful tools for operating a pool. We do not want the project as a whole, though there are a couple scripts we are going to use.
@@ -353,7 +403,7 @@ chmod +x topologyUpdater.sh
 ```
 
 {% hint style="warning" %}
-You will not be able to successfully execute ./topologyUpdater.sh until you are fully synced up to the tip of the chain. 
+You will not be able to successfully execute ./topologyUpdater.sh until you are fully synced up to the tip of the chain.
 {% endhint %}
 
 Create a cron job that will run the script every hour.
@@ -599,55 +649,6 @@ In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on
 
 ![](../../../.gitbook/assets/pi-pool-grafana.png)
 
-## ⛓ Syncing the chain ⛓
-
-You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 30 hours and the db folder is about 8.5GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
-
-### Download snapshot
-
-{% hint style="danger" %}
-Do not attempt this on an 8GB sd card. Not enough space! [Create your image file](https://app.gitbook.com/@wcatz/s/pi-pool-guide/create-.img-file) and flash it to your ssd.
-{% endhint %}
-
-I have started taking snapshots of my backup nodes db folder and hosting it in a web directory. With this service it takes around 15 minutes to pull the latest snapshot and maybe another 30 minutes to sync up to the tip of the chain. This service is provided as is. It is up to you. If you wan't to sync the chain on your own simply:
-
-```bash
-cardano-service enable
-cardano-service start
-cardano-service status
-```
-
-Make sure your node is **not** running & delete the db folder if it exists. 
-
-```bash
-cardano-service stop
-cd $NODE_HOME
-rm -r db/
-```
-
-{% hint style="danger" %}
-Download either the mainnet db folder or testnet. Not Both!!
-{% endhint %}
-
-For mainnet chain use.
-
-```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
-```
-
-For testnet.
-
-```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
-```
-
-Once wget completes enable & start cardano-node.
-
-```bash
-cardano-service enable
-cardano-service start
-cardano-service status
-```
 
 {% hint style="warning" %}
 It can take up to an hour for cardano-node to sync to the tip of the chain. Use ./gliveView.sh, htop and log outputs to view process. Be patient it will come up.
@@ -667,7 +668,7 @@ sudo tail -f /var/log/syslog
 
 ## Grafana, Nginx proxy\_pass & snakeoil
 
-Let's put Grafana behind Nginx with self signed\(snakeoil\) certificate. The certificate was generated when we installed the ssl-cert package. 
+Let's put Grafana behind Nginx with self signed\(snakeoil\) certificate. The certificate was generated when we installed the ssl-cert package.
 
 You will get a warning from your browser. This is because ca-certificates cannot follow a trust chain to a trusted \(centralized\) source. The connection is however encrypted and will protect your passwords flying around in plain text.
 
@@ -718,4 +719,3 @@ sudo service nginx restart
 ```
 
 You can now visit your pi-nodes ip address without any port specification, the connection will be upgraded to SSL/TLS and you will get a scary message\(not really scary at all\). Continue through to your dashboard.
-
