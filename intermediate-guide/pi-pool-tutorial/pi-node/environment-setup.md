@@ -274,7 +274,7 @@ cardano-service start
 cardano-service status
 ```
 
-Make sure your node is **not** running & delete the db folder if it exists.
+Otherwise be sure your node is **not** running & delete the db folder if it exists and download db/.
 
 ```bash
 cardano-service stop
