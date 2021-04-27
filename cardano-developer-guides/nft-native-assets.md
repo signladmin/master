@@ -19,7 +19,7 @@ description: Let's make some native assets on Cardano ❤️✨
 * cardano-node / cardano-cli set up on local machine
 
 {% hint style="info" %}
-[Here](../../intermediate-guide/pi-pool-tutorial/pi-node/) is an easy to follow tutorial we made to get a Cardano-node/cli running on mainnet
+[Here](../intermediate-guide/pi-pool-tutorial/pi-node/) is an easy to follow tutorial we made to get a Cardano-node/cli running on mainnet
 {% endhint %}
 
 * Make sure you have a Cardano node running and fully synced to the database
@@ -460,5 +460,9 @@ node src/send-back-asset-to-wallet.js
 
 {% embed url="https://youtu.be/awxVkFbWoKM" %}
 
+{% hint style="success" %}
+**If you liked this tutorial and want to see more like it please consider staking your ADA with our** [**PIADA**](https://adapools.org/pool/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) **Stake Pool.**
+{% endhint %}
 
+\*\*\*\*
 
