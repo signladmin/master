@@ -87,6 +87,10 @@ Create a .pienv file and choose which network you want to connect to.
 nano $HOME/.pienv
 ```
 
+{% hint style="warning" %}
+Changes to this file require reloading .bashrc or logging out then back in.
+{% endhint %}
+
 ```bash
 # testnet or mainnet
 NODE_CONFIG=mainnet
@@ -393,7 +397,6 @@ if [ ! -d ${LOG_DIR} ]; then
 fi
 
 curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
-
 ```
 
 Save, exit and make it executable.
@@ -625,13 +628,13 @@ At this point you may want to start cardano-service and get synced up before we 
 
 ### Configure Grafana
 
-On your local machine open your browser and got to [http://&lt;Pi-Node's](http://<Pi-Node's) private ip&gt;:5000
+On your local machine open your browser and got to \[[http://&lt;Pi-Node's\]\(http://](http://<Pi-Node's]%28http://)&lt;Pi-Node's\) private ip&gt;:5000
 
 Log in and set a new password. Default username and password is **admin:admin**.
 
 #### Configure data source
 
-In the left hand vertical menu go to **Configure** &gt; **Datasources** and click to **Add data source**. Choose Prometheus. Everything can be left default.  At the bottom save & test. You should get the green "Data source is working" if cardano-monitor has been started.
+In the left hand vertical menu go to **Configure** &gt; **Datasources** and click to **Add data source**. Choose Prometheus. Everything can be left default. At the bottom save & test. You should get the green "Data source is working" if cardano-monitor has been started.
 
 #### Import dashboards
 
@@ -648,7 +651,6 @@ wget https://raw.githubusercontent.com/wcatz/OTG-Star-Forge/main/Grafana-Dashboa
 In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
 
 ![](../../../.gitbook/assets/pi-pool-grafana.png)
-
 
 {% hint style="warning" %}
 It can take up to an hour for cardano-node to sync to the tip of the chain. Use ./gliveView.sh, htop and log outputs to view process. Be patient it will come up.
@@ -719,3 +721,4 @@ sudo service nginx restart
 ```
 
 You can now visit your pi-nodes ip address without any port specification, the connection will be upgraded to SSL/TLS and you will get a scary message\(not really scary at all\). Continue through to your dashboard.
+
