@@ -247,8 +247,6 @@ If you are using testnet you must get your tADA from the testnet faucet [here](h
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Mint our Native-Asset/NFT on Cardano
 
 Before we proceed to mint our Native Asset we must have a few things taken care of. We need to first get our "asset" onto our [IPFS](https://ipfs.io/#install) node and generate the IPFS link. If you do not know about IPFS or what it actually does we recommend having a read through the documentation [here](https://docs.ipfs.io/) or watching this [video](https://www.youtube.com/watch?v=5Uj6uR3fp-U). 
