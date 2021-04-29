@@ -16,5 +16,7 @@ description: Support Decentralization
 | [NASEC](https://nasec.co.uk/cardano/) | NASEC | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/aa8b94010cd3c7199be1d619079c184a59e6f1ad930926bc2bd38579) |
 | [EASY Staking Pool ](https://www.easystaking.org/) | EASY1 | [![](../.gitbook/assets/adapools%20%281%29.png)](https://adapools.org/pool/20df8645abddf09403ba2656cda7da2cd163973a5e439c6e43dcbea9) |
 
-#### 
+{% hint style="success" %}
+**We also take donations** [**https://cointr.ee/adapiorg**](https://cointr.ee/adapiorg)**, thank you for your support!**
+{% endhint %}
 
