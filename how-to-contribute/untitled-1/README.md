@@ -6,7 +6,7 @@ description: Contributing Guide for participating in this project.
 
 _**What we are looking for in our Contributors.**_
 
-Firstly, we at ADA.Pi would like to thank you for your consideration in contributing to us! We can't wait to hear your ideas and experiences. However, we do have some guidelines that we all must be familiar with and adhere to before submitting your contributions.
+Firstly, we at Armada-Alliance would like to thank you for your consideration in contributing to us! We can't wait to hear your ideas and experiences. However, we do have some guidelines that we all must be familiar with and adhere to before submitting your contributions.
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ Rules and Expectations
 _As an open-source project we expect a certain standard from you:_
 
 * Be respectful and open-minded to others' opinions and conversations around this project. Understand that as a community we should all be working together. Take into consideration that the way in which another contributor is helping may be different from your own and that it is more productive to help each other out rather than argue about which way is "correct".
-* ADA.Pi's tutorials are released with a Contributors Code of Conduct. Through partaking in this project you agreed to abide by these terms.
+* Armada-Alliance's tutorials are released with a Contributors Code of Conduct. Through partaking in this project you agreed to abide by these terms.
 * If you open a pull request, please make sure that your contribution passes all tests, as failures will sunder the project and a fix must be made.
 * Content that is to be added should be relevant to the project and not include self-promotion or the promotion of sponsors. Understand that what is submitted here will be considered open source and will be shared freely amongst everyone. 
 
