@@ -45,9 +45,9 @@ cardano-cli version; cardano-node version
  Your output should look like this 👇 
 
 ```bash
-cardano-cli 1.26.1 - linux-aarch64 - ghc-8.10
+cardano-cli 1.26.2 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
-cardano-node 1.26.1 - linux-aarch64 - ghc-8.10
+cardano-node 1.26.2 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
