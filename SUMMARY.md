@@ -17,7 +17,7 @@
 
 * [Tutorials](beginner-guide-1/beginner-guide/README.md)
   * [Setting up the Raspberry Pi](beginner-guide-1/beginner-guide/setup.md)
-  * [Set up a Node on Testnet](beginner-guide-1/beginner-guide/tutorial-2-testnet.md)
+  * [Set up a Relay Node](beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)
 
 ## Intermediate Guides <a id="intermediate-guide"></a>
 

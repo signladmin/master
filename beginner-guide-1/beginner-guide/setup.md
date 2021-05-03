@@ -108,7 +108,7 @@ Now you can select **&lt;Ok&gt;** then **&lt;Finish&gt;**, close the Raspberry P
 You should now be able to shut down the Pi after it reboots up, remove the SD Card, then you can power up the Pi and it should boot from your external USB storage device.
 
 {% hint style="success" %}
-#### Now that we have finished most of the initial set-up we can continue getting the Pi ready and move to the next [tutorial](tutorial-2-testnet.md).
+#### Now that we have finished most of the initial set-up we can continue getting the Pi ready and move to the next [tutorial](tutorial-2-relaynode.md).
 {% endhint %}
 
 #### 
