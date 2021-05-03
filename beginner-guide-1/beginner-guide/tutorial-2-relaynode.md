@@ -11,7 +11,7 @@ description: >-
 {% endhint %}
 
 {% hint style="warning" %}
-**This tutorial is for only use with Raspberry Pi OS 64bit and is solely for development educational purposes to get a Cardano node syncing to the blockchain.**
+**This tutorial is for use with the official Raspberry Pi 64-bit OS and is solely for development educational purposes to get a Raspberry Pi Cardano node syncing to the blockchain.**
 {% endhint %}
 
 ## Summary
