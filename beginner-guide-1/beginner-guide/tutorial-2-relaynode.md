@@ -185,6 +185,8 @@ sudo nano $HOME/.local/bin/cardano-service
 How to start the cardano-node can be found here on the Cardano documentation.[https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles\_AND\_Connect.html](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html)
 {% endhint %}
 
+{% tabs %}
+{% tab title="Testnet" %}
 ```bash
 #!/bin/bash
 DIRECTORY=/home/pi/testnet-relay
@@ -204,6 +206,30 @@ cardano-node run \
   --port ${PORT} \
   --config ${CONFIG}
 ```
+{% endtab %}
+
+{% tab title="Mainnet" %}
+```bash
+#!/bin/bash
+DIRECTORY=/home/pi/mainnet-relay
+FILES=/home/pi/mainnet-relay/files
+PORT=3001
+HOSTADDR=0.0.0.0
+TOPOLOGY=${FILES}/mainnet-topology.json
+DB_PATH=${DIRECTORY}/db
+SOCKET_PATH=${DIRECTORY}/db/socket
+CONFIG=${FILES}/mainnet-config.json
+
+cardano-node run \
+  --topology ${TOPOLOGY} \
+  --database-path ${DB_PATH} \
+  --socket-path ${SOCKET_PATH} \
+  --host-addr ${HOSTADDR} \
+  --port ${PORT} \
+  --config ${CONFIG}
+```
+{% endtab %}
+{% endtabs %}
 
 **Now we must give access permission to our new systemd service script**
 
@@ -215,6 +241,8 @@ sudo chmod +x $HOME/.local/bin/cardano-service
 sudo nano /etc/systemd/system/cardano-node.service
 ```
 
+{% tabs %}
+{% tab title="Testnet" %}
 ```bash
 # The Cardano Node Service (part of systemd)
 # file: /etc/systemd/system/cardano-node.service 
@@ -239,6 +267,35 @@ RestartSec=5
 [Install]
 WantedBy= multi-user.target
 ```
+{% endtab %}
+
+{% tab title="Mainnet" %}
+```bash
+# The Cardano Node Service (part of systemd)
+# file: /etc/systemd/system/cardano-node.service 
+
+[Unit]
+Description     = Cardano node service
+Wants           = network-online.target
+After           = network-online.target
+
+[Service]
+User            = pi
+Type            = simple
+WorkingDirectory= /home/pi/mainnet-relay
+ExecStart       = /bin/bash -c "PATH=/home/pi/.local/bin:$PATH exec /home/pi/.local/bin/cardano-service"
+KillSignal=SIGINT
+RestartKillSignal=SIGINT
+TimeoutStopSec=3
+LimitNOFILE=32768
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy= multi-user.target
+```
+{% endtab %}
+{% endtabs %}
 
 We now should reload our systemd service to make sure it picks up our cardano-service
 
