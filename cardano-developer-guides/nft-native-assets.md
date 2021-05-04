@@ -16,12 +16,15 @@ description: Let's make some native assets on Cardano ❤️✨
 
 ## Prerequisites
 
-* cardano-node / cardano-cli set up on local machine
-
-{% hint style="info" %}
-[Here](../intermediate-guide/pi-pool-tutorial/pi-node/) is an easy to follow tutorial we made to get a Cardano-node/cli running on mainnet
+{% hint style="danger" %}
+We made this tutorial for use with **Raspberry-Pi-ARM** machines running on **Linux OS** so make sure to download the **correct** node.js for your **local machine/CPU and OS**. Currently, the Cardano-node and Cardano-cli are meant to be built from source on Linux machines. Any other OS will have its own build complexities, and we do not cover them in any of our tutorials as of right now. [How to build Cardano Node from source](https://docs.cardano.org/projects/cardano-node/en/latest/getting-started/install.html)
 {% endhint %}
 
+{% hint style="info" %}
+If you are using a Raspberry Pi machine [h](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)[ere](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md) is an easy-to-follow tutorial we made to get a Cardano Relay Node running. 
+{% endhint %}
+
+* cardano-node / cardano-cli set up on local machine
 * Make sure you have a Cardano node running and fully synced to the database
 * Make sure node.js installed
 
@@ -30,10 +33,6 @@ description: Let's make some native assets on Cardano ❤️✨
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
-
-{% hint style="warning" %}
-We made this tutorial on Raspberry-Pi ARM machines so make sure to download the **correct** node.js for your **local machine/CPU and OS**.
-{% endhint %}
 
 ### Verify everything is set up properly on our machine ⚙️
 
