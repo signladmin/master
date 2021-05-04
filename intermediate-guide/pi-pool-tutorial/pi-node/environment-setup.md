@@ -9,8 +9,7 @@ description: Install packages needed to run cardano-node and configure our envir
 Enable automatic updates.
 
 ```bash
-sudo apt update && sudo apt install unattended-upgrades
-sudo dpkg-reconfigure -plow unattended-upgrades
+sudo apt install unattended-upgrades && sudo dpkg-reconfigure -plow unattended-upgrades
 ```
 
 Install necessities.
