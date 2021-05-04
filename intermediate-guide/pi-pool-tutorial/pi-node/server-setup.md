@@ -15,9 +15,9 @@ Here are some links for overclocking and testing your drive speeds. If you have 
 * [https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/](https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/)
 * [https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/](https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/)
 * [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
+
+Take note that Ubuntu stores config.txt in a different location than Raspbian.
 {% endhint %}
-
-
 
 ### Test drive speed
 
@@ -33,22 +33,12 @@ sudo dd if=/dev/zero of=/tmp/output conv=fdatasync bs=384k count=1k; sudo rm -f 
 sudo hdparm -Tt /dev/sda
 ```
 
-{% hint style="warning" %}
-Take note that Ubuntu stores config.txt in a different location than Raspbian.
-{% endhint %}
-
 ### Overclock, memory & radios
 
 Edit /boot/firmware/config.txt. Just paste Pi Pool additions in at the bottom.
 
 ```bash
-## Ubuntu
 sudo nano /boot/firmware/config.txt
-```
-
-```bash
-## Raspbian
-sudo nano /boot/config.txt
 ```
 
 ```text
@@ -92,10 +82,6 @@ gpu_mem=16
 disable-wifi
 disable-bt
 ```
-
-{% hint style="info" %}
-If you need wifi, don't disable it.
-{% endhint %}
 
 ```text
 sudo reboot
@@ -220,10 +206,6 @@ exit 0
 
 ### Disable IRQ balance
 
-{% hint style="warning" %}
-Skip this on Raspbian.
-{% endhint %}
-
 {% hint style="info" %}
 [**http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/**](http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/)
 {% endhint %}
@@ -298,10 +280,6 @@ sudo service chrony restart
 ```
 
 ### Zram swap
-
-{% hint style="warning" %}
-Skip on Raspbian.
-{% endhint %}
 
 Swapping to disk is slow, swapping to compressed ram space is faster and gives us some overhead before out of memory \(oom\).
 
