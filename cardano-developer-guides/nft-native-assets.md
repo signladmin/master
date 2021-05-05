@@ -58,7 +58,7 @@ node -v
 ```
 
 ```bash
-v14.16.0
+v14.16.1
 ```
 
 #### Video Walk-through:
