@@ -12,7 +12,7 @@ To turn Pi-Node into a passive relay we have to.
 4. Configure port forwarding on router.
 5. Update port in env file.
 6. Enable cron job.
-7. Wait for service onboarding\(4 hours\)
+7. Wait for service onboarding\(4 hours\).
 8. Pull in new list of peers.
 9. Prune list of best peers.
 
