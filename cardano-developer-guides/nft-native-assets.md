@@ -198,7 +198,7 @@ createWallet("ADAPI")
 ```
 
 ```bash
-cd minter
+cd ..
 node src/create-wallet.js
 ```
 
