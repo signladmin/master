@@ -207,7 +207,8 @@ node src/create-wallet.js
 * **First, we need to create a get-balance.js script**
 
 ```bash
-cd minter/src; sudo nano get-balance.js
+cd src
+sudo nano get-balance.js
 ```
 
 ```javascript
