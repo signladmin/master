@@ -345,7 +345,7 @@ wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online
 This download will take anywhere from 25 min to 2 hours depending on your internet speeds.
 {% endhint %}
 
-* After the database has finished downloading, it is a good idea to add a clean file to it before we start the relay. Copy/paste the following command into your terminal window.
+* After the database has finished downloading add a clean file to it before we start the relay. Copy/paste the following command into your terminal window.
 
 ```bash
 touch db/clean
