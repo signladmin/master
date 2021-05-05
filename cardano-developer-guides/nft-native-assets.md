@@ -100,14 +100,14 @@ sudo nano fetch-config.sh
 {% tab title="MAINNET" %}
 ```bash
 #NODE_BUILD_NUM may be different
-NODE_BUILD_NUM=5822084
+NODE_BUILD_NUM=6198010
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/mainnet-shelley-genesis.json
 ```
 {% endtab %}
 
 {% tab title="TESTNET" %}
 ```bash
-NODE_BUILD_NUM=5822084
+NODE_BUILD_NUM=6198010
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/testnet-shelley-genesis.json
 ```
 {% endtab %}
