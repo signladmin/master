@@ -356,6 +356,7 @@ touch db/clean
 * Now we can start the "passive" relay node to begin syncing to the blockchain.
 
 ```bash
+cd $HOME
 cardano-service enable
 cardano-service start
 cardano-service status
@@ -366,6 +367,7 @@ cardano-service status
 #### Now you can change to the $NODE\_FILES folder and then download the gLiveView monitor service
 
 ```bash
+sudo apt-get install jq
 cd $NODE_Files
 curl -s -o gLiveView.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
 curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/env

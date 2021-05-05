@@ -50,7 +50,7 @@ cardano-node 1.26.2 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
-#### Verify our node.js version is correct and is on v14.16.0
+#### Verify our node.js version is correct and is on v14.16.1
 
 ```bash
 #Copy/paste into terminal window
