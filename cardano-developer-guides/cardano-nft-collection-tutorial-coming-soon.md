@@ -447,15 +447,207 @@ node src/get-policy-id.js
 4. sign
 5. submit
 
-```text
+```bash
+cd src
+nano mint-multiple-assets.js
+```
+
+```javascript
+const cardano = require("./cardano")
+const getPolicyId = require("./get-policy-id")
+const assets = require("./assets.json")
+
+const wallet = cardano.wallet("PIADA")
+
+const { policyId: POLICY_ID, mintScript } = getPolicyId()
+
+const metadata_assets = assets.reduce((result, asset) => {
+
+    const ASSET_ID = asset.id // PIADA0
+
+    // remove id property from the asset metadata
+    const asset_metadata = {
+        ...asset
+    }
+
+    delete asset_metadata.id
+
+    return {
+        ...result,
+        [ASSET_ID]: asset_metadata
+    }
+}, {})
+
+const metadata = {
+    721: {
+        [POLICY_ID]: {
+            ...metadata_assets
+        }
+    }
+}
+
+const txOut_amount = assets.reduce((result, asset) => {
+
+    const ASSET_ID = POLICY_ID + "." + asset.id
+    result[ASSET_ID] = 1
+    return result
+
+}, {
+    ...wallet.balance().amount
+})
+
+const mint_actions = assets.map(asset => ({ action: "mint", amount: 1, token: POLICY_ID + "." + asset.id }))
+
+const tx = {
+    txIn: wallet.balance().utxo,
+    txOut: [
+        {
+            address: wallet.paymentAddr,
+            amount: txOut_amount
+        }
+    ],
+    mint: mint_actions,
+    metadata,
+    witnessCount: 2
+}
+
+const buildTransaction = (tx) => {
+
+    const raw = cardano.transactionBuildRaw(tx)
+    const fee = cardano.transactionCalculateMinFee({
+        ...tx,
+        txBody: raw
+    })
+
+    tx.txOut[0].amount.lovelace -= fee
+
+    return cardano.transactionBuildRaw({ ...tx, fee })
+}
+
+const raw = buildTransaction(tx)
+
+// 9. Sign transaction
+
+const signTransaction = (wallet, tx, script) => {
+
+    return cardano.transactionSign({
+        signingKeys: [wallet.payment.skey, wallet.payment.skey],
+        scriptFile: script,
+        txBody: tx
+    })
+}
+
+const signed = signTransaction(wallet, raw, mintScript)
+
+// 10. Submit transaction
+
+const txHash = cardano.transactionSubmit(signed)
+
+console.log(txHash)
+```
+
+```bash
 node src/mint-multiple-assets.js
 ```
 
 ### 10. Send assets back to wallet
 
--Make a script to send multiple assets back to a wallet in a single transaction.
+* Make a script to send multiple assets back to a wallet in a single transaction.
 
-```text
+```bash
+cd src
+nano send-multiple-assets-back-to-wallet.js
+```
+
+```javascript
+const cardano = require("./cardano")
+const assets = require("./assets.json")
+const getPolicyId = require('./get-policy-id')
+
+const sender = cardano.wallet("PIADA")
+
+console.log(
+    "Balance of Sender address" +
+    cardano.toAda(sender.balance().amount.lovelace) + " ADA"
+)
+
+const { policyId: POLICY_ID } = getPolicyId()
+
+function sendAssets({ receiver, assets }) {
+
+    const txOut_amount_sender = assets.reduce((result, asset) => {
+
+        const ASSET_ID = POLICY_ID + "." + asset
+        delete result[ASSET_ID]
+        return result
+    }, {
+        ...sender.balance().amount
+    })
+
+    const txOut_amount_receiver = assets.reduce((result, asset) => {
+
+        const ASSET_ID = POLICY_ID + "." + asset
+        result[ASSET_ID] = 1
+        return result
+    }, {})
+
+    // This is depedent at the network, try to increase this amount of ADA
+    // if you get an error saying: OutputTooSmallUTxO
+    const MIN_ADA = 3
+
+    const txInfo = {
+        txIn: cardano.queryUtxo(sender.paymentAddr),
+        txOut: [
+            {
+                address: sender.paymentAddr,
+                amount: {
+                    ...txOut_amount_sender,
+                    lovelace: txOut_amount_sender.lovelace - cardano.toLovelace(MIN_ADA)
+                }
+            },
+            {
+                address: receiver,
+                amount: {
+                    lovelace: cardano.toLovelace(MIN_ADA),
+                    ...txOut_amount_receiver
+                }
+            }
+        ]
+    }
+
+    const raw = cardano.transactionBuildRaw(txInfo)
+
+    const fee = cardano.transactionCalculateMinFee({
+        ...txInfo,
+        txBody: raw,
+        witnessCount: 1
+    })
+
+    txInfo.txOut[0].amount.lovelace -= fee
+
+    const tx = cardano.transactionBuildRaw({ ...txInfo, fee })
+
+    const txSigned = cardano.transactionSign({
+        txBody: tx,
+        signingKeys: [sender.payment.skey]
+    })
+
+    const txHash = cardano.transactionSubmit(txSigned)
+
+    console.log(txHash)
+}
+
+sendAssets({
+    receiver: "addr1qylm539axczhyvdh90f6c09ptrz8asa4hgq8u5shkw3v9vjae9ftypmc8tmd2rrwngdxm4sr3tpzmxw4zyg3z7vttpwsl0alww",
+    assets: assets.map(asset => asset.id)
+})
+```
+
+```bash
 node src/send-multiple-assets-back-to-wallet.js
 ```
+
+{% hint style="success" %}
+**If you liked this tutorial and want to see more like it please consider staking ADA with our** [**PIADA**](https://adapools.org/pool/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) **Stake Pool, or giving a one-time donation to our Alliance** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**.** 
+{% endhint %}
 
