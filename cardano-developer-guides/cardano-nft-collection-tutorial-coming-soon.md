@@ -415,12 +415,24 @@ node src/create-time-locked-mint-policy.js
 
 * We want to make a script that can get our Policy ID to be used in other parts of our program
 
-```text
-
+```bash
+cd src
+nano get-policy-id.js
 ```
 
-```text
+```javascript
+const cardano = require("./cardano")
+const mintScript = require("./mint-policy.json")
 
+module.exports = () => {
+
+    const policyId = cardano.transactionPolicyid(mintScript)
+
+    return {
+        policyId,
+        mintScript
+    }
+}
 ```
 
 ```text
