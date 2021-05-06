@@ -7,12 +7,12 @@ description: Let's make some native assets on Cardano ❤️✨
 ## Who is this guide for?
 
 * For people who want to make NFT's or Native Assets on Cardano
-* For people who know about Cardano 
+* For people who know about Cardano
 
 ## Benefits of NFT's on Cardano
 
 * Low transaction fees
-* Native on the blockchain 
+* Native on the blockchain
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ We made this tutorial on Raspberry-Pi ARM machines so make sure to download the 
 cardano-cli version; cardano-node version
 ```
 
- Your output should look like this 👇 
+ Your output should look like this 👇
 
 ```bash
 cardano-cli 1.26.1 - linux-aarch64 - ghc-8.10
@@ -77,24 +77,23 @@ echo $NODE_HOME
 # if the above echo didn't return anything, you need to set a $NODE_HOME
 # or use a static path for the CARDANO_NODE_SOCKET_PATH location
 
-# change this to match where your cardano-node socket is located
-export NODE_HOME="/home/ada/pi-node"
+export NODE_HOME="/home/ada/pi-pool"
 
-# make sure our db is in our $PATH
+# change this to match where your cardano-node socket is located
 export CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket"
 
-mkdir minter
-cd minter 
+mkdir cardano-minter
+cd cardano-minter
 npm init -y #creates package.json)
 npm install cardanocli-js --save
 ```
 
 1. **Copy the Cardano node genesis latest build number from the IOHK hydra website**
-   * [https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html](https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html) 
+   * [https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html](https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html)
 2. **Create a bash shell script to Download the latest Genesis config file needed**
 
 ```bash
-sudo nano fetch-config.sh
+nano fetch-config.sh
 ```
 
 {% tabs %}
@@ -114,10 +113,10 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/testnet-shelley
 {% endtab %}
 {% endtabs %}
 
-**Now we need to give permissions to our new script to execute then we will run our script and download the genesis files.** 
+**Now we need to give permissions to our new script to execute then we will run our script and download the genesis files.**
 
 ```bash
-sudo chmod +x fetch-config.sh
+chmod +x fetch-config.sh
 ./fetch-config.sh
 ```
 
@@ -125,7 +124,7 @@ sudo chmod +x fetch-config.sh
 
 ```bash
 mkdir src; cd src
-sudo nano cardano.js
+nano cardano.js
 ```
 
 {% hint style="info" %}
@@ -181,7 +180,7 @@ module.exports = cardano;
 ## Create a local wallet
 
 ```bash
-sudo nano create-wallet.js
+nano create-wallet.js
 ```
 
 ```javascript
@@ -199,7 +198,7 @@ createWallet("ADAPI")
 ```
 
 ```bash
-cd minter
+cd cardano-minter
 node src/create-wallet.js
 ```
 
@@ -208,7 +207,7 @@ node src/create-wallet.js
 * **First, we need to create a get-balance.js script**
 
 ```bash
-cd minter/src; sudo nano get-balance.js
+cd cardano-minter/src; nano get-balance.js
 ```
 
 ```javascript
@@ -229,7 +228,7 @@ cd ..
 node src/get-balance.js
 ```
 
-* We can go ahead and send some funds \(ADA\) into our wallet we created, wait a few minutes, and then check the balance again to make sure the transaction was successful. 
+* We can go ahead and send some funds \(ADA\) into our wallet we created, wait a few minutes, and then check the balance again to make sure the transaction was successful.
 
 {% hint style="info" %}
 If you are using testnet you must get your tADA from the testnet faucet [here](https://developers.cardano.org/en/testnets/cardano/tools/faucet/).
@@ -251,12 +250,12 @@ If you are using testnet you must get your tADA from the testnet faucet [here](h
 
 ## Mint our Native-Asset/NFT on Cardano
 
-Before we proceed to mint our Native Asset we must have a few things taken care of. We need to first get our "asset" onto our [IPFS](https://ipfs.io/#install) node and generate the IPFS link. If you do not know about IPFS or what it actually does we recommend having a read through the documentation [here](https://docs.ipfs.io/) or watching this [video](https://www.youtube.com/watch?v=5Uj6uR3fp-U). 
+Before we proceed to mint our Native Asset we must have a few things taken care of. We need to first get our "asset" onto our [IPFS](https://ipfs.io/#install) node and generate the IPFS link. If you do not know about IPFS or what it actually does we recommend having a read through the documentation [here](https://docs.ipfs.io/) or watching this [video](https://www.youtube.com/watch?v=5Uj6uR3fp-U).
 
 Since we are using an image file to be our asset we should upload a smaller thumbnail-sized version of our image \(ideally less than 1MB\). This will be used on sites like [pool.pm](https://pool.pm) to display our assets nicely in our wallets. We then upload the full-size image as our source image.
 
 * [ ] Download [IPFS](https://ipfs.io/#install)
-* [ ] Upload your asset's files to IPFS 
+* [ ] Upload your asset's files to IPFS
 * [ ] Get our image thumbnail IPFS link
 * [ ] Get the src IPFS link
 
@@ -369,11 +368,11 @@ node src/mint-asset.js
 
 
 
-Now we must create a new script to send our newly minted NFT to a wallet. 
+Now we must create a new script to send our newly minted NFT to a wallet.
 
 ```javascript
-cd minter/src
-sudo nano send-back-asset-to-wallet.js
+cd cardano-minter/src
+nano send-back-asset-to-wallet.js
 ```
 
 There are few main parts we have to this script in order to send the asset:
@@ -450,7 +449,7 @@ cd ..
 node src/send-back-asset-to-wallet.js
 ```
 
-### Final Steps to view your NFT 
+### Final Steps to view your NFT
 
 1. View your nft in your wallet
 2. View your asset on cardanoassets.com
@@ -461,6 +460,3 @@ node src/send-back-asset-to-wallet.js
 #### _Video Walk-through:_
 
 {% embed url="https://youtu.be/awxVkFbWoKM" %}
-
-
-
