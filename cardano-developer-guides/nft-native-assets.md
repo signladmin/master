@@ -7,12 +7,12 @@ description: Let's make some native assets on Cardano ❤️✨
 ## Who is this guide for?
 
 * For people who want to make NFT's or Native Assets on Cardano
-* For people who know about Cardano
+* For people who know about Cardano 
 
 ## Benefits of NFT's on Cardano
 
 * Low transaction fees
-* Native on the blockchain
+* Native on the blockchain 
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ We made this tutorial for use with **Raspberry-Pi-ARM** machines running on **Li
 {% endhint %}
 
 {% hint style="info" %}
-If you are using a Raspberry Pi machine [h](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)[ere](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md) is an easy-to-follow tutorial we made to get a Cardano Relay Node running.
+If you are using a Raspberry Pi machine [h](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)[ere](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md) is an easy-to-follow tutorial we made to get a Cardano Relay Node running. 
 {% endhint %}
 
 * cardano-node / cardano-cli set up on local machine
@@ -41,7 +41,7 @@ sudo apt-get install -y nodejs
 cardano-cli version; cardano-node version
 ```
 
- Your output should look like this 👇
+ Your output should look like this 👇 
 
 ```bash
 cardano-cli 1.26.2 - linux-aarch64 - ghc-8.10
@@ -81,13 +81,13 @@ export NODE_HOME="/home/ada/pi-pool"
 export CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket"
 
 mkdir cardano-minter
-cd cardano-minter
+cd cardano-minter 
 npm init -y #creates package.json)
 npm install cardanocli-js --save
 ```
 
 1. **Copy the Cardano node genesis latest build number from the IOHK hydra website**
-   * [https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html](https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html)
+   * [https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html](https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html) 
 2. **Create a bash shell script to Download the latest Genesis config file needed**
 
 ```bash
@@ -105,13 +105,13 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/mainnet-shelley
 
 {% tab title="TESTNET" %}
 ```bash
-echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> $HOME/.bashrc
+NODE_BUILD_NUM=6198010
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/testnet-shelley-genesis.json
 ```
 {% endtab %}
 {% endtabs %}
 
-**Now we need to give permissions to our new script to execute then we will run our script and download the genesis files.**
+**Now we need to give permissions to our new script to execute then we will run our script and download the genesis files.** 
 
 ```bash
 sudo chmod +x fetch-config.sh
@@ -228,7 +228,7 @@ cd ..
 node src/get-balance.js
 ```
 
-* We can go ahead and send some funds \(ADA\) into our wallet we created, wait a few minutes, and then check the balance again to make sure the transaction was successful.
+* We can go ahead and send some funds \(ADA\) into our wallet we created, wait a few minutes, and then check the balance again to make sure the transaction was successful. 
 
 {% hint style="info" %}
 If you are using testnet you must get your tADA from the testnet faucet [here](https://developers.cardano.org/en/testnets/cardano/tools/faucet/).
@@ -248,12 +248,12 @@ If you are using testnet you must get your tADA from the testnet faucet [here](h
 
 ## Mint our Native-Asset/NFT on Cardano
 
-Before we proceed to mint our Native Asset we must have a few things taken care of. We need to first get our "asset" onto our [IPFS](https://ipfs.io/#install) node and generate the IPFS link. If you do not know about IPFS or what it actually does we recommend having a read through the documentation [here](https://docs.ipfs.io/) or watching this [video](https://www.youtube.com/watch?v=5Uj6uR3fp-U).
+Before we proceed to mint our Native Asset we must have a few things taken care of. We need to first get our "asset" onto our [IPFS](https://ipfs.io/#install) node and generate the IPFS link. If you do not know about IPFS or what it actually does we recommend having a read through the documentation [here](https://docs.ipfs.io/) or watching this [video](https://www.youtube.com/watch?v=5Uj6uR3fp-U). 
 
 Since we are using an image file to be our asset we should upload a smaller thumbnail-sized version of our image \(ideally less than 1MB\). This will be used on sites like [pool.pm](https://pool.pm) to display our assets nicely in our wallets. We then upload the full-size image as our source image.
 
 * [ ] Download [IPFS](https://ipfs.io/#install)
-* [ ] Upload your asset's files to IPFS
+* [ ] Upload your asset's files to IPFS 
 * [ ] Get our image thumbnail IPFS link
 * [ ] Get the src IPFS link
 
@@ -370,7 +370,7 @@ node src/mint-asset.js
 
 
 
-Now we must create a new script to send our newly minted NFT to a wallet.
+Now we must create a new script to send our newly minted NFT to a wallet. 
 
 ```javascript
 cd cardaon-minter/src
@@ -451,7 +451,7 @@ cd ..
 node src/send-back-asset-to-wallet.js
 ```
 
-### Final Steps to view your NFT
+### Final Steps to view your NFT 
 
 1. View your nft in your wallet
 2. View your asset on cardanoassets.com
@@ -464,7 +464,8 @@ node src/send-back-asset-to-wallet.js
 {% embed url="https://youtu.be/awxVkFbWoKM" %}
 
 {% hint style="success" %}
-**If you liked this tutorial and want to see more like it please consider staking your ADA with our** [**PIADA**](https://adapools.org/pool/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) **Stake Pool, or giving a one-time donation to our Alliance** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**.**
+**If you liked this tutorial and want to see more like it please consider staking your ADA with our** [**PIADA**](https://adapools.org/pool/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) **Stake Pool, or giving a one-time donation to our Alliance** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**.** 
 {% endhint %}
 
 \*\*\*\*
+
