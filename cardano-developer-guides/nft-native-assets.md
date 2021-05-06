@@ -93,7 +93,7 @@ npm install cardanocli-js --save
 2. **Create a bash shell script to Download the latest Genesis config file needed**
 
 ```bash
-sudo nano fetch-config.sh
+nano fetch-config.sh
 ```
 
 {% tabs %}
@@ -123,8 +123,9 @@ sudo chmod +x fetch-config.sh
 ### Next, we make our src folder/directory and then create the Cardano client.
 
 ```bash
-mkdir src; cd src
-sudo nano cardano.js
+mkdir src
+cd src
+nano cardano.js
 ```
 
 {% hint style="info" %}
@@ -180,7 +181,7 @@ module.exports = cardano;
 ## Create a local wallet
 
 ```bash
-sudo nano create-wallet.js
+nano create-wallet.js
 ```
 
 ```javascript
@@ -208,7 +209,7 @@ node src/create-wallet.js
 
 ```bash
 cd src
-sudo nano get-balance.js
+nano get-balance.js
 ```
 
 ```javascript
@@ -270,6 +271,10 @@ This script has three main components:
 1. **Generate policy id**
 2. **Define your metadata**
 3. **Create mint transaction**
+
+```javascript
+nano mint-asset.js
+```
 
 ```javascript
 
@@ -371,7 +376,7 @@ Now we must create a new script to send our newly minted NFT to a wallet.
 
 ```javascript
 cd minter/src
-sudo nano send-back-asset-to-wallet.js
+nano send-back-asset-to-wallet.js
 ```
 
 There are few main parts we have to this script in order to send the asset:
