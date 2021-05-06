@@ -76,14 +76,12 @@ echo $NODE_HOME
 # if the above echo didn't return anything, you need to set a $NODE_HOME
 # or use a static path for the CARDANO_NODE_SOCKET_PATH location
 
-# change this to match where your cardano-node socket is located
 export NODE_HOME="/home/ada/pi-pool"
-
-# make sure our db is in our $PATH
+# Change this to where cardano-node creates socket
 export CARDANO_NODE_SOCKET_PATH="$NODE_HOME/db/socket"
 
-mkdir minter
-cd minter 
+mkdir cardano-minter
+cd cardano-minter 
 npm init -y #creates package.json)
 npm install cardanocli-js --save
 ```
@@ -375,7 +373,7 @@ node src/mint-asset.js
 Now we must create a new script to send our newly minted NFT to a wallet. 
 
 ```javascript
-cd minter/src
+cd cardaon-minter/src
 nano send-back-asset-to-wallet.js
 ```
 
