@@ -1,4 +1,4 @@
-# Cardano NFT Collection Tutorial \(COMING-SOON\)
+# Cardano NFT Collection Tutorial
 
 ## Prerequisites
 
