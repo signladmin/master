@@ -8,10 +8,12 @@
 * cardano-minter repo from the previous tutorial
 
 {% hint style="info" %}
-**If you haven't already, please watch our video for the previous NFT tutorial 😎**
+**If you haven't already, please watch our video from the previous NFT tutorial 😎**
 {% endhint %}
 
-{% embed url="https://youtu.be/6Ao98KdBACI" %}
+{% embed url="https://youtu.be/OeOliguGn7Y" %}
+
+
 
 ### Clone the cardano-minter repo if you haven't already...
 
