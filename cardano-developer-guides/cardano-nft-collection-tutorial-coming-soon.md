@@ -204,6 +204,8 @@ Read [this article ](https://docs.ipfs.io/how-to/pin-files/#three-kinds-of-pins)
 
 * **First, we need to make a script called pin-to-ipfs.js, this script will "upload" and Pin our images to IPFS using the pinata.cloud API.**
 
+
+
 ```text
 nano pin-to-ipfs.js
 ```
@@ -340,17 +342,25 @@ node src/pin-images-to-ipfs.js
 
 
 
-### 7. Create an "open" or "unlocked" minting policy and script
+### 7. Create an "open" or "unlocked" minting policy and script \(Optional\)
 
 * We will create an open minting policy script and export it in JSON and TXT format.
+
+```text
+
+```
+
+```text
+
+```
 
 ```text
 node src/create-mint-policy.js
 ```
 
-### 8. Create an "time-locked" minting policy and script
+### 8. Create a "time-locked" minting policy and script
 
-* Create a "time-locked" minting policy script and export it in a JSON and TXT format.
+* Create a "time-locked" minting policy script and export it in JSON and TXT format.
 
 ```text
 node src/create-time-locked-mint-policy.js
