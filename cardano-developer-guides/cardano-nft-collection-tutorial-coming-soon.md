@@ -346,29 +346,82 @@ node src/pin-images-to-ipfs.js
 
 * We will create an open minting policy script and export it in JSON and TXT format.
 
-```text
-
+```bash
+cd src
+nano create-mint-policy.js
 ```
 
-```text
+```javascript
+const fs = require("fs")
+const cardano = require("./cardano")
 
+const wallet = cardano.wallet("PIADA")
+
+const mintScript = {
+    keyHash: cardano.addressKeyHash(wallet.name),
+    type: "sig"
+}
+
+fs.writeFileSync(__dirname + "/mint-policy.json", JSON.stringify(mintScript, null, 2))
+fs.writeFileSync(__dirname + "/mint-policy-id.txt", cardano.transactionPolicyid(mintScript))
 ```
 
 ```text
 node src/create-mint-policy.js
 ```
 
-### 8. Create a "time-locked" minting policy and script
+### 8. Create a "time-locked" minting policy and script \(Recommended\)
 
 * Create a "time-locked" minting policy script and export it in JSON and TXT format.
+
+```text
+cd src
+nano create-time-locked-mint-policy.js
+```
+
+```javascript
+const fs = require("fs")
+const cardano = require("./cardano")
+
+const wallet = cardano.wallet("PIADA")
+
+const { slot } = cardano.queryTip()
+
+const SLOTS_PER_EPOCH = 5 * 24 * 60 * 60 // 432000
+
+const mintScript = {
+    type: "all",
+    scripts: [
+        {
+            slot: slot + (SLOTS_PER_EPOCH * 5),
+            type: "before"
+        },
+        {
+            keyHash: cardano.addressKeyHash(wallet.name),
+            type: "sig"
+        }
+    ]
+}
+
+fs.writeFileSync(__dirname + "/mint-policy.json", JSON.stringify(mintScript, null, 2))
+fs.writeFileSync(__dirname + "/mint-policy-id.txt", cardano.transactionPolicyid(mintScript))
+```
 
 ```text
 node src/create-time-locked-mint-policy.js
 ```
 
-### 9. Create a a script to get our policy ID
+### 9. Create a script to get our policy ID
 
 * We want to make a script that can get our Policy ID to be used in other parts of our program
+
+```text
+
+```
+
+```text
+
+```
 
 ```text
 node src/get-policy-id.js
