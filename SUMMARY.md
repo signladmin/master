@@ -37,4 +37,5 @@
 ## Cardano Developer Guides
 
 * [Cardano Native Asset and NFT Tutorial](cardano-developer-guides/nft-native-assets.md)
+* [Cardano NFT Collection Tutorial \(COMING-SOON\)](cardano-developer-guides/cardano-nft-collection-tutorial-coming-soon.md)
 
