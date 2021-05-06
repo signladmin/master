@@ -16,6 +16,12 @@ To turn Pi-Node into a passive relay we have to.
 8. Pull in new list of peers.
 9. Prune list of best peers.
 
+## Hostname
+
+To set a fully qualified domain name for our relay edit /etc/hostname & /etc/hosts.
+
+
+
 ## Network
 
 
