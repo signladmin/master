@@ -41,7 +41,7 @@ sudo apt-get install -y nodejs
 cardano-cli version; cardano-node version
 ```
 
- Your output should look like this 👇
+Your output should look like this 👇
 
 ```bash
 cardano-cli 1.26.2 - linux-aarch64 - ghc-8.10
@@ -63,9 +63,7 @@ v14.16.1
 
 #### Video Walk-through:
 
-{% embed url="https://youtu.be/oP3jZyPxB-I" %}
-
-
+{% embed url="https://youtu.be/oP3jZyPxB-I" caption="" %}
 
 ## Create our project directory and initial setup
 
@@ -163,18 +161,16 @@ module.exports = cardano;
 #### _Video Walk-through_ :
 
 {% tabs %}
-{% tab title="Project\'s Initial Setup" %}
-{% embed url="https://youtu.be/Xkx9vdibbq0" %}
-{% endtab %}
 
-{% tab title="Fetching the genesis files" %}
-{% embed url="https://youtu.be/X5cRGA0qyQE" %}
-{% endtab %}
 
-{% tab title="Create the Cardano client" %}
-{% embed url="https://youtu.be/-fnaF3FWL3k" %}
-{% endtab %}
-{% endtabs %}
+
+{% embed url="https://youtu.be/Xkx9vdibbq0" caption="" %}
+
+
+
+{% embed url="https://youtu.be/X5cRGA0qyQE" caption="" %}
+
+{% embed url="https://youtu.be/-fnaF3FWL3k" caption="" %}
 
 ## Create a local wallet
 
@@ -237,12 +233,8 @@ If you are using testnet you must get your tADA from the testnet faucet [here](h
 #### _Video Walk-through_ :
 
 {% tabs %}
-{% tab title="Create local wallet" %}
-{% embed url="https://youtu.be/a8uWUc0O3DE" %}
-{% endtab %}
+{% tab %}
 
-{% tab title="Sending funds to our wallet" %}
-{% embed url="https://youtu.be/Mm1ZOciiNaE" %}
 {% endtab %}
 {% endtabs %}
 
@@ -275,7 +267,6 @@ nano mint-asset.js
 ```
 
 ```javascript
-
 const fs = require("fs");
 const cardano = require("./cardano");
 
@@ -361,14 +352,10 @@ node src/mint-asset.js
 ```
 
 {% tabs %}
-{% tab title="Mint asset" %}
-{% embed url="https://youtu.be/qTzLgMyJC7s" %}
-{% endtab %}
-{% endtabs %}
+
+{% embed url="https://youtu.be/qTzLgMyJC7s" caption="" %}
 
 ## Sending your NFT back to Daedulus or Yoroi wallet
-
-
 
 Now we must create a new script to send our newly minted NFT to a wallet.
 
@@ -461,10 +448,11 @@ node src/send-back-asset-to-wallet.js
 
 #### _Video Walk-through:_
 
-{% embed url="https://youtu.be/awxVkFbWoKM" %}
+{% embed url="https://youtu.be/awxVkFbWoKM" caption="" %}
 
 {% hint style="success" %}
 **If you liked this tutorial and want to see more like it please consider staking your ADA with our** [**PIADA**](https://adapools.org/pool/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) **Stake Pool, or giving a one-time donation to our Alliance** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**.**
 {% endhint %}
 
 \*\*\*\*
+
