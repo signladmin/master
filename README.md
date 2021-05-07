@@ -8,7 +8,7 @@
 
 ###  Although our focus is RPi-ARM stake pool operations, we will provide a wide range of information, tutorials, and resources for developing on Cardano. If you would like to know more about the project and our goals, please see our Fund4 proposal on _Project Catalyst_ for details or join our _Discord_.
 
-| Armada Alliance Contact Links |
+| Contact Us |
 | :--- |
 | [Website](https://armada-alliance.com) |
 | [Discord](https://discord.com/channels/815680220827746364/815680224460931074) |
