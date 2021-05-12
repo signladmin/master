@@ -124,7 +124,7 @@ Unless you have a static IP address assigned by your ISP, at some point you're g
 
 #### DNS Client Examples 
 
-* ddclient
+* [ddclient](https://support.google.com/domains/answer/6147083?hl=en)
 * no-ip
 * namecheap.com openwrt ddns-scripts
 
