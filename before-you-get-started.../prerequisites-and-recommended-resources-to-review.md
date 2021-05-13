@@ -73,5 +73,3 @@ description: Stake pool operator resources.
 {% endtab %}
 {% endtabs %}
 
-
-
