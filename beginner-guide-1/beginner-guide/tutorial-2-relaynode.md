@@ -120,13 +120,13 @@ Now we need to simply download the zip file above to our Pi's home directory and
 cd $HOME
 
 # Now we can download the cardano-node 
-wget https://ci.zw3rk.com/build/1755/download/1/aarch64-unknown-linux-musl-cardano-node-1.26.2.zip
+wget https://ci.zw3rk.com/build/1758/download/1/aarch64-unknown-linux-musl-cardano-node-1.27.0.zip
 ```
 
 * Use [**unzip**](https://linux.die.net/man/1/unzip) command on the downloaded zip file and extract its contents.
 
   ```bash
-  unzip aarch64-unknown-linux-musl-cardano-node-1.26.2.zip
+  unzip aarch64-unknown-linux-musl-cardano-node-1.27.0.zip
   ```
 
 * Next, we need to make sure the newly downloaded "cardano-node" folder and its contents are present.
