@@ -6,7 +6,7 @@ description: 'optimize hardware, optimize Ubuntu'
 
 ## Configure Hardware
 
-Lets save some power, raise the governor on the cpu a bit and set gpu ram as low as we can.
+Let's save some power, raise the governor on the CPU a bit, and set GPU ram as low as we can.
 
 {% hint style="warning" %}
 Here are some links for overclocking and testing your drive speeds. If you have heat sinks you can safely go to 2000. Just pay attention to over volt recommendations to go with your chosen clock speed.
@@ -133,7 +133,7 @@ Add the following to the bottom of /etc/sysctl.conf. Save and exit.
 {% endhint %}
 
 {% hint style="warning" %}
-I am disabling IPv6 and IPv4 forwarding. You may want these. I have seen claims that IPv6 is slower and get's in the way. &lt;find this later&gt;
+I am disabling IPv6 and IPv4 forwarding. You may want these. I have seen claims that IPv6 is slower and gets in the way. &lt;find this later&gt;
 {% endhint %}
 
 ```text
@@ -210,7 +210,7 @@ exit 0
 [**http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/**](http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/)
 {% endhint %}
 
-You should turn off IRQ Balance to make sure you do not get hardware interrupts in your threads. Turning off IRQ Balance, will optimize the balance between power savings and performance through distribution of hardware interrupts across multiple processors.
+You should turn off IRQ Balance to make sure you do not get hardware interrupts in your threads. Turning off IRQ Balance will optimize the balance between power savings and performance through the distribution of hardware interrupts across multiple processors.
 
 Open /etc/default/irqbalance and add to the bottom. Save, exit and reboot.
 
