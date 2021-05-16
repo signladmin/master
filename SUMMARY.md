@@ -15,7 +15,7 @@
 
 ## Beginner Guides <a id="beginner-guide-1"></a>
 
-* [Tutorials](beginner-guide-1/beginner-guide/README.md)
+* [Raspberry Pi OS Tutorials](beginner-guide-1/beginner-guide/README.md)
   * [Setting up the Raspberry Pi](beginner-guide-1/beginner-guide/setup.md)
   * [Set up a Relay Node](beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)
 
