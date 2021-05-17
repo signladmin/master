@@ -185,17 +185,18 @@ nano create-wallet.js
 ```
 
 ```javascript
-const cardano = require('./cardano')
+const cardano = require("./cardano");
 
 const createWallet = (account) => {
-  cardano.addressKeyGen(account);
-  cardano.stakeAddressKeyGen(account);
-  cardano.stakeAddressBuild(account);
-  cardano.addressBuild(account);
-  return cardano.wallet(account);
-};
-
-createWallet("ADAPI")
+    const payment = cardano.addressKeyGen(account);
+    const stake = cardano.stakeAddressKeyGen(account);
+    cardano.stakeAddressBuild(account);
+    cardano.addressBuild(account, {
+      paymentVkey: payment.vkey,
+      stakeVkey: stake.vkey,
+    });
+    return cardano.wallet("PIADA1");
+  };
 ```
 
 ```bash
