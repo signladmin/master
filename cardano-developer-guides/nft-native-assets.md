@@ -163,16 +163,20 @@ module.exports = cardano;
 #### _Video Walk-through_ :
 
 {% tabs %}
+{% tab title="Create Project" %}
+{% embed url="https://youtu.be/Xkx9vdibbq0" %}
+{% endtab %}
+
+{% tab title="Fetch Genesis File" %}
+{% embed url="https://youtu.be/X5cRGA0qyQE" %}
+{% endtab %}
+
+{% tab title="Create Cardano Client" %}
+{% embed url="https://youtu.be/-fnaF3FWL3k" %}
+{% endtab %}
+{% endtabs %}
 
 
-
-{% embed url="https://youtu.be/Xkx9vdibbq0" caption="" %}
-
-
-
-{% embed url="https://youtu.be/X5cRGA0qyQE" caption="" %}
-
-{% embed url="https://youtu.be/-fnaF3FWL3k" caption="" %}
 
 ## Create a local wallet
 
@@ -352,10 +356,6 @@ console.log(txHash);
 cd ..
 node src/mint-asset.js
 ```
-
-{% tabs %}
-
-{% embed url="https://youtu.be/qTzLgMyJC7s" caption="" %}
 
 ## Sending your NFT back to Daedulus or Yoroi wallet
 
