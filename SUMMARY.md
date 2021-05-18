@@ -30,8 +30,8 @@
     * [User Setup](intermediate-guide/pi-pool-tutorial/pi-node/user-setup.md)
     * [Server Setup](intermediate-guide/pi-pool-tutorial/pi-node/server-setup.md)
     * [Environment Setup](intermediate-guide/pi-pool-tutorial/pi-node/environment-setup.md)
-  * [Pi-Relay \(COMING-SOON\)](intermediate-guide/pi-pool-tutorial/pi-relay.md)
-  * [Pi-Core & Pi-Cold \(COMING-SOON\)](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
+  * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay.md)
+  * [Pi-Core](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/create-.img-file.md)
 
 ## Cardano Developer Guides

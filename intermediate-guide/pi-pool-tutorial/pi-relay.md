@@ -2,7 +2,7 @@
 description: Pi-Node to Pi-Relay
 ---
 
-# Pi-Relay \(COMING-SOON\)
+# Pi-Relay
 
 To turn Pi-Node into a passive relay we have to.
 
@@ -19,8 +19,6 @@ To turn Pi-Node into a passive relay we have to.
 ## Hostname
 
 To set a fully qualified domain name for our relay edit /etc/hostname & /etc/hosts.
-
-
 
 ## Network
 

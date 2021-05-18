@@ -1,2 +1,2 @@
-# Pi-Core & Pi-Cold \(COMING-SOON\)
+# Pi-Core
 
