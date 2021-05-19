@@ -74,7 +74,7 @@ Write down startKesPeriod value down & copy the kes.vkey to your cold offline ma
 
 Move kes.vkey to Cold offline machine.
 
-Replace **&lt;startKesPeriod&gt;** with the value you wrote down. 
+Replace **&lt;startKesPeriod&gt;** with the value you wrote down.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -258,7 +258,7 @@ cardano-cli query utxo \
 {% endtab %}
 {% endtabs %}
 
-## Register stake address 🥩 
+## Register stake address 🥩
 
 ### Create a staking certificate
 
@@ -289,7 +289,7 @@ echo slotNo: ${slotNo}
 cardano-cli query utxo \
   --address $(cat payment.addr) \
   --mainnet > fullUtxo.out
-    
+
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out   
 cat balance.out   
 tx_in=""
@@ -328,7 +328,7 @@ Stake address registration is 2,000,000 lovelace or 2 ada.
 {% endhint %}
 
 {% hint style="warning" %}
-Take note of the invalid-hereafter input. We are taking the current slot number\(tip of the chain\) and adding 1,000 slots. If we do not issue the signed transaction before the chain reaches this slot number the tx will be invalidated. A slot is one second so you have 16.666666667 minutes to get this done. 🐌 
+Take note of the invalid-hereafter input. We are taking the current slot number\(tip of the chain\) and adding 1,000 slots. If we do not issue the signed transaction before the chain reaches this slot number the tx will be invalidated. A slot is one second so you have 16.666666667 minutes to get this done. 🐌
 {% endhint %}
 
 Build tx.tmp
@@ -421,11 +421,11 @@ cardano-cli transaction submit \
 {% endtab %}
 {% endtabs %}
 
-## Register the pool 🏊♂ 
+## Register the pool 🏊♂
 
 Create a poolMetaData.json file. It will contain important information about your pool. You will need to host this file somewhere online. [https://pages.github.com/](https://pages.github.com/) is a popular solution. I say host it on your Pi with NGINX.
 
-{% embed url="https://www.coincashew.com/coins/overview-ada/guide-how-to-build-a-haskell-stakepool-node/how-to-upload-poolmetadata.json-to-github​" %}
+{% embed url="https://www.coincashew.com/coins/overview-ada/guide-how-to-build-a-haskell-stakepool-node/how-to-upload-poolmetadata.json-to-github​" caption="" %}
 
 {% tabs %}
 {% tab title="Core" %}
@@ -459,7 +459,6 @@ Add the following and customize to your metadata.
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-
 cardano-cli stake-pool metadata-hash \
   --pool-metadata-file poolMetaData.json > poolMetaDataHash.txt
 ```
@@ -469,7 +468,7 @@ cardano-cli stake-pool metadata-hash \
 Copy poolMetaData.json to [https://pages.github.io](https://pages.github.io) or host it yourself along with your website.
 
 {% hint style="info" %}
-Here is my poolMetaData.json & extendedPoolMetaData.json as a reference and shameless links back to my site. 😰 
+Here is my poolMetaData.json & extendedPoolMetaData.json as a reference and shameless links back to my site. 😰
 
 [https://adamantium.online/poolMetaData.json](https://adamantium.online/poolMetaData.json)
 
@@ -488,8 +487,6 @@ echo minPoolCost: ${minPoolCost}
 {% hint style="danger" %}
 If you do not have a domain and do not plan on having dns based relays change line 10.
 {% endhint %}
-
-
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -534,7 +531,7 @@ cat stakePoolId.txt
 {% endtab %}
 {% endtabs %}
 
-Move **pool.cert**,  **deleg.cert** & **stakePoolId.txt** to your online core machine.
+Move **pool.cert**, **deleg.cert** & **stakePoolId.txt** to your online core machine.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -551,7 +548,7 @@ echo slotNo: ${slotNo}
 cardano-cli query utxo \
   --address $(cat payment.addr) \
   --mainnet > fullUtxo.out
-    
+
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
 cat balance.out    
 tx_in=""
