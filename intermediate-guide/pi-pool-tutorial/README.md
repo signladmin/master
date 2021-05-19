@@ -51,7 +51,7 @@ The cardano-node & cardano-cli binaries linked to in this guide require aarch64 
 * [Alessandro konrad](https://github.com/alessandrokonrad) \|[ Berry](https://adapools.org/pool/2a748e3885f6f73320ad16a8331247b81fe01b8d39f57eec9caa5091) \(@berry\_ales\)
 * Moritz Angermann \| [zw3rk](https://adapools.org/pool/e2c17915148f698723cb234f3cd89e9325f40b89af9fd6e1f9d1701a) \(@zw3rk\)
 * [CoinCashew: guide-how-to-build-a-haskell-stakepool-node](https://www.coincashew.com/coins/overview-ada/guide-how-to-build-a-haskell-stakepool-node)
-* \*\*\*\*[Chris-Graffagnino](https://github.com/Chris-Graffagnino)/[Setup Cardano Shelley staking node](https://github.com/Chris-Graffagnino/Jormungandr-for-Newbs/blob/master/docs/jormungandr_node_setup_guide.md)
+* [Chris-Graffagnino](https://github.com/Chris-Graffagnino)/[Setup Cardano Shelley staking node](https://github.com/Chris-Graffagnino/Jormungandr-for-Newbs/blob/master/docs/jormungandr_node_setup_guide.md)
 * [Arming Cardano](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w) Telegram Group
 * [Berry Pool](https://t.me/berry_pool) Telegram group
 * [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
