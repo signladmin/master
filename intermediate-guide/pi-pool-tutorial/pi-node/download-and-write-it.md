@@ -31,10 +31,10 @@ Plug the Pi into a monitor, insert the sd card and power up. Once you see a gree
 
 {% tabs %}
 {% tab title="Pre configured Pi-Pool .img.gz" %}
-### Obtain Pi-Pool .img.gz files
+### Obtain Pi-Pool .img.gz file
 
-| [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz)  | Pi-Relay \(NOT-READY\) | Pi-Core \(NOT-READY\) | Pi-Cold \(NOT-READY\) |
-| :--- | :--- | :--- | :--- |
+| [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz)  |
+| :--- |
 
 
 ### Within Raspberry Pi Imager
