@@ -368,7 +368,7 @@ cardano-service status
 
 ```bash
 sudo apt-get install jq
-cd $NODE_Files
+cd $NODE_FILES
 curl -s -o gLiveView.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
 curl -s -o env https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/env
 chmod 755 gLiveView.sh
