@@ -274,6 +274,8 @@ cardano-cli stake-address registration-certificate \
 
 Copy **stake.cert** to your core node's pi-pool folder.
 
+Query current slot number or tip of the chain.
+
 {% tabs %}
 {% tab title="Core" %}
 ```bash
@@ -282,6 +284,8 @@ echo slotNo: ${slotNo}
 ```
 {% endtab %}
 {% endtabs %}
+
+Get the utxo or balance of the wallet.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -331,7 +335,7 @@ Stake address registration is 2,000,000 lovelace or 2 ada.
 Take note of the invalid-hereafter input. We are taking the current slot number\(tip of the chain\) and adding 1,000 slots. If we do not issue the signed transaction before the chain reaches this slot number the tx will be invalidated. A slot is one second so you have 16.666666667 minutes to get this done. 🐌
 {% endhint %}
 
-Build tx.tmp
+Build tx.tmp file to hold some information.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -407,7 +411,7 @@ cardano-cli transaction sign \
 {% endtab %}
 {% endtabs %}
 
-Move the signed transaction back to the Core.
+Move the signed transaction back to the Core pi-pool folder.
 
 Submit the transaction to the blockchain.
 
@@ -423,7 +427,9 @@ cardano-cli transaction submit \
 
 ## Register the pool 🏊
 
-Create a poolMetaData.json file. It will contain important information about your pool. You will need to host this file somewhere online. [https://pages.github.com/](https://pages.github.com/) is a popular solution. I say host it on your Pi with NGINX.
+Create a **poolMetaData.json** file. It will contain important information about your pool. You will need to host this file somewhere online forevermore. It must be online and you cannot edit it without resubmitting/updating your pool.cert. In the next couple steps we will hash 
+
+ [https://pages.github.com/](https://pages.github.com/) is a popular solution. I say host it on your Pi with NGINX.
 
 {% embed url="https://www.coincashew.com/coins/overview-ada/guide-how-to-build-a-haskell-stakepool-node/how-to-upload-poolmetadata.json-to-github​" caption="" %}
 
