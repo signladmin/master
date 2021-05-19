@@ -21,8 +21,6 @@
 
 ## Intermediate Guides <a id="intermediate-guide"></a>
 
-* [Add adapools Metrics to Grafana](intermediate-guide/add-adapools-info-to-grafana.md)
-* [Basic Stake Pool Networking](intermediate-guide/basic-stake-pool-networking.md)
 * [Pi-Pool Tutorial](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-Node](intermediate-guide/pi-pool-tutorial/pi-node/README.md)
     * [Download & Flash](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
@@ -33,6 +31,8 @@
   * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay.md)
   * [Pi-Core/Cold](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/create-.img-file.md)
+* [Add adapools Metrics to Grafana](intermediate-guide/add-adapools-info-to-grafana.md)
+* [Basic Stake Pool Networking](intermediate-guide/basic-stake-pool-networking.md)
 
 ## Cardano Developer Guides
 
