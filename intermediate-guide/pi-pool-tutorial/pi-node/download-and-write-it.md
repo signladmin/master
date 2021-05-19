@@ -30,7 +30,7 @@ Plug the Pi into a monitor, insert the sd card and power up. Once you see a gree
 ![](../../../.gitbook/assets/otgpoltut.png)
 
 {% tabs %}
-{% tab title="Pre configured Pi-Pool .img.gz" %}
+{% tab title="Pre configured Pi-Node.img.gz" %}
 ### Obtain Pi-Pool .img.gz file
 
 | [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz)  |
