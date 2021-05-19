@@ -60,9 +60,6 @@ The cardano-node & cardano-cli binaries linked to in this guide require aarch64 
 
 * Pi-Pool .img.gz downloads
   * [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz) \(Base\)
-  * Pi-Relay \(relay\)
-  * Pi-Core \(block producer\)
-  * Pi-Cold \(offline cold keys\)
 * Latest unofficial [static arm binaries](https://ci.zw3rk.com/job/Tools/master/rpi64-musl.tarball/latest-finished/download) & [build overview](https://ci.zw3rk.com/job/Tools/master/rpi64-musl.tarball/latest-finished)
   * [Moritz Angermann](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)
 * Raspberry Pi Imager \([rpi-imager](https://github.com/raspberrypi/rpi-imager)\)
