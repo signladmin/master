@@ -24,9 +24,13 @@ Cardano-wallet will not build on arm due to dependency failure. @ZW3RK tried to 
 
 ## Generate core and cold key requirements
 
-#### Key Evolving Signature keypair
+#### Key evolving signature key pair
 
-KES keys expire after 90 days and you will have to create a new pair as part of pool operations before they expire.
+{% hint style="warning" %}
+
+{% endhint %}
+
+Generate a KES key pair: **kes.vkey** & **kes.skey**
 
 {% tabs %}
 {% tab title="Core" %}
@@ -38,6 +42,8 @@ cardano-cli node key-gen-KES \
 ```
 {% endtab %}
 {% endtabs %}
+
+Generate a node cold key pair: **node.vkey**, **node.skey** and **node.counter** file.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -76,11 +82,9 @@ echo startKesPeriod: ${startKesPeriod}
 {% endtab %}
 {% endtabs %}
 
-Write down startKesPeriod value down & copy the kes.vkey to your cold offline machine.
+Write down **startKesPeriod** value down & copy the **kes.vkey** to your cold offline machine.
 
-### Generate node.cert operational certificate
-
-Move kes.vkey to Cold offline machine.
+Issue a **node.cert** certificate using: **kes.vkey**, **node.skey**, **node.counter** and **startKesPeriod** value.
 
 Replace **&lt;startKesPeriod&gt;** with the value you wrote down.
 
@@ -97,7 +101,9 @@ cardano-cli node issue-op-cert \
 {% endtab %}
 {% endtabs %}
 
-Copy node.cert to your Core machine and create a VRF key pair.
+Copy **node.cert** to your Core machine.
+
+ Generate a VRF key pair.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -109,7 +115,7 @@ cardano-cli node key-gen-VRF \
 {% endtab %}
 {% endtabs %}
 
-For security purposes the vrf.skey **needs** be read only or cardano-node will not start.
+For security purposes the **vrf.skey** **needs** read only permissions or cardano-node will not start.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -118,6 +124,10 @@ chmod 400 vrf.skey
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+
+{% endhint %}
 
 Edit the cardano-service startup script by adding **kes.skey**, **vrf.skey** and **node.cert** to the cardano-node run command and changing the port it listens on.
 
@@ -128,10 +138,6 @@ nano $HOME/.local/bin/cardano-service
 ```
 {% endtab %}
 {% endtabs %}
-
-{% hint style="info" %}
-
-{% endhint %}
 
 {% tabs %}
 {% tab title="Core" %}
@@ -324,7 +330,7 @@ echo Number of UTXOs: ${txcnt}
 {% endtab %}
 {% endtabs %}
 
-Retrieve stakeAddressDeposit value from params.json.
+Retrieve stakeAddressDeposit value from **params.json**.
 
 {% tabs %}
 {% tab title="Core" %}
