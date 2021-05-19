@@ -22,16 +22,10 @@ sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
          zlib1g-dev g++ libncursesw5 libtool autoconf -y
 ```
 
-Install nodejs & cardanoclijs
-
-{% embed url="https://github.com/Berry-Pool/cardanocli-js" caption="" %}
+Install nodejs.
 
 ```bash
 sudo snap install node --classic
-```
-
-```bash
-npm install cardanocli-js
 ```
 
 Install Certbot.
