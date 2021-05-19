@@ -5,7 +5,9 @@ description: Create operational keys & certificates. Create wallet & register st
 # Pi-Core/Cold
 
 {% hint style="danger" %}
-You need to have a Pi-Node configured with a new static ip address. A fully qulified domain name and cardano-service file set to start on port 3000. You also should update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
+You need to have a Pi-Node configured with a new static ip address. A fully qualified domain name and cardano-service file set to start on port 3000. You also should update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
+
+You do not enable the topology updater service on a core node so feel free to delete those two scripts and remove the commented out cron job.
 {% endhint %}
 
 {% hint style="warning" %}
