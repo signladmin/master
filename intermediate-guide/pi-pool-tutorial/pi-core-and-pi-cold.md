@@ -24,8 +24,6 @@ Cardano-wallet will not build on arm due to dependency failure. @ZW3RK tried to 
 
 ## Generate Keys & Issue Opperational Certificate
 
-#### Key evolving signature key pair
-
 {% hint style="warning" %}
 #### Rotating the KES keys
 
@@ -126,10 +124,6 @@ chmod 400 vrf.skey
 ```
 {% endtab %}
 {% endtabs %}
-
-{% hint style="info" %}
-
-{% endhint %}
 
 Edit the cardano-service startup script by adding **kes.skey**, **vrf.skey** and **node.cert** to the cardano-node run command and changing the port it listens on.
 
@@ -276,7 +270,7 @@ cardano-cli query utxo \
 
 ## Register stake address 🥩
 
-Create a staking certificate.
+Issue a staking registration certificate: **stake.cert**
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -351,7 +345,7 @@ Stake address registration is 2,000,000 lovelace or 2 ada.
 Take note of the invalid-hereafter input. We are taking the current slot number\(tip of the chain\) and adding 1,000 slots. If we do not issue the signed transaction before the chain reaches this slot number the tx will be invalidated. A slot is one second so you have 16.666666667 minutes to get this done. 🐌
 {% endhint %}
 
-Build tx.tmp file to hold some information.
+Build **tx.tmp** file to hold some information.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -412,7 +406,7 @@ cardano-cli transaction build-raw \
 {% endtab %}
 {% endtabs %}
 
-Transfer tx.raw to your Cold offline machine and sign the transaction with the **payment.skey** and **stake.skey**.
+Transfer **tx.raw** to your Cold offline machine and sign the transaction with the **payment.skey** and **stake.skey**.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -427,7 +421,7 @@ cardano-cli transaction sign \
 {% endtab %}
 {% endtabs %}
 
-Move the signed transaction back to the Core pi-pool folder.
+Move **tx.signed** transaction back to the Core's pi-pool folder.
 
 Submit the transaction to the blockchain.
 
