@@ -260,7 +260,7 @@ cardano-cli query utxo \
 
 ## Register stake address 🥩
 
-### Create a staking certificate
+Create a staking certificate.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
