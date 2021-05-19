@@ -5,7 +5,7 @@ description: 'Create the ada user, add to group sudo'
 # User Setup
 
 {% hint style="warning" %}
-If you are using a Pi Pool image you need only reference this material until we start configuring the server.
+If you are using a Pi-Node image you need only reference this material until we start configuring the Relay & Core.
 {% endhint %}
 
 ## Create the ada user

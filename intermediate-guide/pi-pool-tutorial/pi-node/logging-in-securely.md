@@ -37,7 +37,7 @@ Plug in a network cable connected to your router and boot your new image.
 
 ### Login credentials
 
-| 🍓 Default Pi-Pool Credentials | 🦍 Default Ubuntu Credentials |
+| 🍓 Default Pi-Node Credentials | 🦍 Default Ubuntu Credentials |
 | :--- | :--- |
 | username = ada | username = ubuntu |
 | password = lovelace | password = ubuntu |
