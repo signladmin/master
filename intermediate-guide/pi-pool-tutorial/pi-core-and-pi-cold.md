@@ -22,12 +22,14 @@ Cardano-wallet will not build on arm due to dependency failure. @ZW3RK tried to 
 [https://hydra.iohk.io/build/3770189](https://hydra.iohk.io/build/3770189)
 {% endhint %}
 
-## Generate core and cold key requirements
+## Generate Keys & Issue Opperational Certificate
 
 #### Key evolving signature key pair
 
 {% hint style="warning" %}
+#### Rotating the KES keys
 
+KES keys need to be regenerated and a new **node.cert** needs to be issued and submitted to the chain every 90 days. The **node.counter** file keeps track of how many times this has been done.
 {% endhint %}
 
 Generate a KES key pair: **kes.vkey** & **kes.skey**
