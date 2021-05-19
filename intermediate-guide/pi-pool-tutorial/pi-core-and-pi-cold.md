@@ -484,8 +484,26 @@ echo minPoolCost: ${minPoolCost}
 {% endtab %}
 {% endtabs %}
 
-{% hint style="danger" %}
-If you do not have a domain and do not plan on having dns based relays change line 10.
+{% hint style="info" %}
+#### How to configure multiple relay nodes
+
+**DNS based relays, 1 entry per DNS record**
+
+```bash
+    --single-host-pool-relay r1.example.com \
+    --pool-relay-port 3001 \
+    --single-host-pool-relay r2.example.com \
+    --pool-relay-port 3002 \
+```
+
+**IP based relays, 1 entry per IP address**
+
+```bash
+    --pool-relay-ipv4 <your first relay node public IP address> \
+    --pool-relay-port 3001 \
+    --pool-relay-ipv4 <your second relay node public IP address> \
+    --pool-relay-port 3002 \
+```
 {% endhint %}
 
 {% tabs %}
@@ -502,7 +520,7 @@ cardano-cli stake-pool registration-certificate \
   --mainnet \
   --single-host-pool-relay <r1.example.com> \
   --pool-relay-port 3000 \
-  --metadata-url <https://example.com/poolMetaData.json> 
+  --metadata-url <https://example.com/poolMetaData.json>
   --metadata-hash $(cat poolMetaDataHash.txt) \
   --out-file pool.cert
 ```
@@ -657,4 +675,3 @@ cardano-cli transaction submit \
 ```
 {% endtab %}
 {% endtabs %}
-
