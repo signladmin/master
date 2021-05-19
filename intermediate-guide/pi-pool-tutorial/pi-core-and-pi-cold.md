@@ -17,7 +17,7 @@ There exists a way to create your pools wallet by creating it in Yoroi and using
 
 [https://gist.github.com/ilap/3fd57e39520c90f084d25b0ef2b96894​](https://gist.github.com/ilap/3fd57e39520c90f084d25b0ef2b96894)
 
-Cardano-wallet will not build on arm due to dependency failure. @zwerk tried to build it for us and failed. You may want to install cardano-wallet on an offline x86 machine and go through this process. That is how I did it. You can get cardano-wallet binary below.
+Cardano-wallet will not build on arm due to dependency failure. @zwerk tried to build it for us and it would not. You may want to install cardano-wallet on an offline x86 machine and go through this process. That is how I did it. You can get cardano-wallet binary below.
 
 [https://hydra.iohk.io/build/3770189](https://hydra.iohk.io/build/3770189)
 {% endhint %}
