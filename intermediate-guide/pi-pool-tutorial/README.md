@@ -4,7 +4,7 @@ description: >-
   the Pi-Node.img.gz.
 ---
 
-# Pi-Pool Tutorial
+# Pi-Pool Image & Guides
 
 ![&#x1F31F; The Star Forge &#x26A1;](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
 
