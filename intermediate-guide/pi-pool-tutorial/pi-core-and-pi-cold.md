@@ -4,6 +4,10 @@ description: Create operational keys & certificates. Create wallet & register st
 
 # Pi-Core/Cold
 
+{% hint style="danger" %}
+You need to have a Pi-Node configured with a new static ip address. A fully qulified domain name and cardano-service file set to start on port 3000. You also should update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
+{% endhint %}
+
 {% hint style="warning" %}
 There exists a way to create your pools wallet by creating it in Yoroi and using cardano-wallet to extract the key pair from the mnemonic seed. This allows you to have a seed backup of the wallet and to also easily extract rewards or send funds elsewhere.
 
