@@ -20,14 +20,14 @@ If you would like to create a .img file of your work that can be flashed for reu
 
 Consolidate and organize the various guides into a single document that can be followed or referenced _specifically_ for running a pool using two \(or more\) Raspberry Pi 4B \(the 8GB version\) and one offline Pi for cold key operations.
 
-Provide documentation of every step taken while building the Pi-Relay, Pi-Core & Pi-Cold images available for bootstrapping pool creation. A reference & guide.
+Provide documentation of every step taken while building the Pi-Node image available for bootstrapping pool creation. A reference & guide.
 
 The most popular guides out there are aimed at x86 architecture and '_knowing what to throw away and knowing what to keep_' is not always clear. I aim to change that '_with a little help from my friends_'. 🎸
 
 ## Hardware
 
 {% hint style="warning" %}
-The cardano-node & cardano-cli binaries linked to in this guide require aarch64 architecture to run. You **must** use Pi4B 8GB for the Pi-Relay and Pi-Core. For the Pi-Cold img you can use the Pi3B+ or PI4B 4GB or 8GB version with a micro sd card.
+The cardano-node & cardano-cli binaries linked to in this guide require aarch64 architecture to run. You **must** use Pi4B 8GB for the Core & Relays, you can use the Pi3B+ or PI4B 4GB or 8GB version with a micro sd card for your cold offline machine.
 {% endhint %}
 
 {% hint style="info" %}
@@ -39,8 +39,8 @@ The cardano-node & cardano-cli binaries linked to in this guide require aarch64 
 * 2 [Pi4B 8GB](https://thepihut.com/products/raspberry-pi-4-model-b?variant=31994565689406) version.
 * 2 Drives : \(NVMe **low power**, form & speed\).
 * M.2 key to USB3.1 adapter or whatever works with your drive.
-* A 3'rd 64bit capable Pi as an offline machine\(Pi-Cold\).
-* Class 10 micro sd card 8GB or larger. Pi-Cold has a desktop and a copy of this guide available in the browser.
+* A 3'rd 64bit capable Pi as an offline machine\(Cold\).
+* Class 10 micro sd card 8GB or larger. 
 * Extra USB flash drives for backing up keys and configurations.
 * Consider a single 50+ watt power supply
 * Consider a 5 volt gigabit switch
