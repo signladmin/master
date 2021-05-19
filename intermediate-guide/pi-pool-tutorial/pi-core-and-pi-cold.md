@@ -111,7 +111,7 @@ chmod 400 vrf.skey
 {% endtab %}
 {% endtabs %}
 
-Edit the cardano-service startup script by adding kes.skey, vrf.skey and node.cert to the cardano-node run command and changing the port it listens on.
+Edit the cardano-service startup script by adding **kes.skey**, **vrf.skey** and **node.cert** to the cardano-node run command and changing the port it listens on.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -155,7 +155,7 @@ cardano-node run +RTS -N4 -RTS \
 {% endtab %}
 {% endtabs %}
 
-Restart your node with new directives.
+Restart and your node is now running as a core.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -392,7 +392,7 @@ cardano-cli transaction build-raw \
 {% endtab %}
 {% endtabs %}
 
-Transfer tx.raw to your Cold offline machine and sign the transaction with the payment.skey and stake.skey.
+Transfer tx.raw to your Cold offline machine and sign the transaction with the **payment.skey** and **stake.skey**.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -421,7 +421,7 @@ cardano-cli transaction submit \
 {% endtab %}
 {% endtabs %}
 
-## Register the pool 🏊♂
+## Register the pool 🏊
 
 Create a poolMetaData.json file. It will contain important information about your pool. You will need to host this file somewhere online. [https://pages.github.com/](https://pages.github.com/) is a popular solution. I say host it on your Pi with NGINX.
 
@@ -484,27 +484,15 @@ echo minPoolCost: ${minPoolCost}
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
-#### How to configure multiple relay nodes
+{% tabs %}
+{% tab title="DNS Relay\(s\)" %}
 
-**DNS based relays, 1 entry per DNS record**
+{% endtab %}
 
-```bash
-    --single-host-pool-relay r1.example.com \
-    --pool-relay-port 3001 \
-    --single-host-pool-relay r2.example.com \
-    --pool-relay-port 3002 \
-```
+{% tab title="IPv4 Relay\(s\)" %}
 
-**IP based relays, 1 entry per IP address**
-
-```bash
-    --pool-relay-ipv4 <your first relay node public IP address> \
-    --pool-relay-port 3001 \
-    --pool-relay-ipv4 <your second relay node public IP address> \
-    --pool-relay-port 3002 \
-```
-{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -675,3 +663,4 @@ cardano-cli transaction submit \
 ```
 {% endtab %}
 {% endtabs %}
+
