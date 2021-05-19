@@ -13,7 +13,7 @@ Make sure your core node is synced to the tip of the blockchain.
 {% endhint %}
 
 {% hint style="warning" %}
-There exists a way to create your pools wallet by creating it in Yoroi and using cardano-wallet to extract the key pair from the mnemonic seed. This allows you to have a seed backup of the wallet and to also easily extract rewards or send funds elsewhere.
+There exists a way to create your pool wallets **payment keypair** by creating a wallet in Yoroi and using cardano-wallet to extract the key pair from the mnemonic seed from Yoroi. This allows you to have a seed backup of the wallet and to also easily extract rewards or send funds elsewhere. You can do this with any shelley era mnemonic seed. I prefer Yoroi becuause it is quick.
 
 [https://gist.github.com/ilap/3fd57e39520c90f084d25b0ef2b96894​](https://gist.github.com/ilap/3fd57e39520c90f084d25b0ef2b96894)
 
