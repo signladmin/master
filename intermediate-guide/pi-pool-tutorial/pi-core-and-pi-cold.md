@@ -5,7 +5,7 @@ description: Create operational keys & certificates. Create wallet & register st
 # Pi-Core/Cold
 
 {% hint style="danger" %}
-You need to have a Pi-Node configured with a new static ip address. A fully qualified domain name and cardano-service file set to start on port 3000. You also need to update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
+You need to have a Pi-Node configured with a new static ip address on your LAN. A fully qualified domain name and cardano-service file set to start on port 3000. You also need to update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
 
 You do not enable the topology updater service on a core node so feel free to delete those two scripts and remove the commented out cron job.
 
@@ -13,7 +13,7 @@ Make sure your core node is synced to the tip of the blockchain.
 {% endhint %}
 
 {% hint style="warning" %}
-There exists a way to create your pool wallets **payment keypair** by creating a wallet in Yoroi and using cardano-wallet to extract the key pair from the mnemonic seed from Yoroi. This allows you to have a seed backup of the wallet and to also easily extract rewards or send funds elsewhere. You can do this with any shelley era mnemonic seed. I prefer Yoroi becuause it is quick.
+There exists a way to create your pool wallets **payment keypair** by creating a wallet in Yoroi and using cardano-wallet to extract the key pair from the mnemonic seed from Yoroi. This allows you to have a seed backup of the wallet and to also easily extract rewards or send funds elsewhere. You can do this with any shelley era mnemonic seed. I prefer Yoroi because it is quick.
 
 [https://gist.github.com/ilap/3fd57e39520c90f084d25b0ef2b96894​](https://gist.github.com/ilap/3fd57e39520c90f084d25b0ef2b96894)
 
@@ -22,7 +22,7 @@ Cardano-wallet will not build on arm due to dependency failure. @ZW3RK tried to 
 [https://hydra.iohk.io/build/3770189](https://hydra.iohk.io/build/3770189)
 {% endhint %}
 
-## Generate Keys & Issue Opperational Certificate
+## Generate Keys & Issue Operational Certificate
 
 {% hint style="warning" %}
 #### Rotating the KES keys
@@ -71,7 +71,7 @@ echo slotNo: ${slotNo}
 {% endtab %}
 {% endtabs %}
 
-Set the startKesPeriod variable by dividing ${slotNo} / ${slotsPerKESPeriod}.
+Set the **startKesPeriod** variable by dividing **slotNo** / **slotsPerKESPeriod**.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -82,7 +82,7 @@ echo startKesPeriod: ${startKesPeriod}
 {% endtab %}
 {% endtabs %}
 
-Write down **startKesPeriod** value down & copy the **kes.vkey** to your cold offline machine.
+Write **startKesPeriod** value down & copy the **kes.vkey** to your cold offline machine.
 
 Issue a **node.cert** certificate using: **kes.vkey**, **node.skey**, **node.counter** and **startKesPeriod** value.
 
@@ -161,6 +161,88 @@ cardano-node run +RTS -N4 -RTS \
   --shelley-kes-key ${KES} \
   --shelley-vrf-key ${VRF} \
   --shelley-operational-certifcate ${CERT}
+```
+{% endtab %}
+{% endtabs %}
+
+Add your relay\(s\) to mainnet-topolgy.json.
+
+{% tabs %}
+{% tab title="Core" %}
+```bash
+nano $NODE_FILES/mainnet-topology.json
+```
+{% endtab %}
+{% endtabs %}
+
+Use your LAN IPv4 for addr value if not using domain DNS. Be sure to have proper records set with your registrar or DNS service. Below are some examples. 
+
+Valency greater than one is only used with DNS round robin srv records.
+
+{% tabs %}
+{% tab title="1 Relay DNS" %}
+```
+{
+  "Producers": [
+    {
+      "addr": "r1.example.com",
+      "port": 3001,
+      "valency": 1
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="2 Relays DNS" %}
+```text
+{
+  "Producers": [
+    {
+      "addr": "r1.example.com",
+      "port": 3001,
+      "valency": 1
+    },
+    {
+      "addr": "r2.example.com",
+      "port": 3002,
+      "valency": 1
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="1 Relay IPv4" %}
+```
+{
+  "Producers": [
+    {
+      "addr": "192.168.1.151",
+      "port": 3001,
+      "valency": 1
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="2 Relays IPv4" %}
+```
+{
+  "Producers": [
+    {
+      "addr": "192.168.1.151",
+      "port": 3001,
+      "valency": 1
+    },
+    {
+      "addr": "192.168.1.152",
+      "port": 3002,
+      "valency": 1
+    }
+  ]
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -328,7 +410,7 @@ echo Number of UTXOs: ${txcnt}
 {% endtab %}
 {% endtabs %}
 
-Retrieve stakeAddressDeposit value from **params.json**.
+Retrieve **stakeAddressDeposit** value from **params.json**.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -423,7 +505,7 @@ cardano-cli transaction sign \
 {% endtab %}
 {% endtabs %}
 
-Move **tx.signed** transaction back to the Core's pi-pool folder.
+Move **tx.signed** transaction file back to the core nodes pi-pool folder.
 
 Submit the transaction to the blockchain.
 
@@ -709,4 +791,30 @@ cardano-cli transaction submit \
 ```
 {% endtab %}
 {% endtabs %}
+
+## Confirm successful registration
+
+### pool.vet
+
+pool.vet is a website for pool operators to check the validity of their stake pools on chain data. You can check this site for problems and clues as to how to fix them.
+
+{% embed url="https://pool.vet/" %}
+
+### adapools.org
+
+You should create an account and claim your pool here.
+
+{% embed url="https://adapools.org/" %}
+
+### pooltool.io
+
+You should create an account and claim your pool here.
+
+{% embed url="https://pooltool.io/" %}
+
+## Backups
+
+Get a couple small usb sticks and backup all your files and folders\(except the db/ folder\). Backup your online Core first then the Cold offline files and folders. **Do it now**, not worth the risk! **Do not plug the USB stick into anything online after Cold files are on it!**
+
+![https://twitter.com/insaladaPool/status/1380087586509709312?s=19](../../.gitbook/assets/insalada.png)
 

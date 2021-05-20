@@ -8,13 +8,15 @@ To turn Pi-Node into a active relay we have to.
 
 1. Configure hostname.
 2. Configure static IP.
-3. Configure port for cardano-node.
+3. Configure port for cardano-service.
 4. Configure port forwarding on router.
 5. Update port in env file.
 6. Enable cron job.
-7. Wait for service onboarding\(4 hours\).
-8. Pull in new list of peers.
-9. Prune list of best peers.
+7. Configure both topology scripts.
+8. Wait for service onboarding\(4 hours\).
+9. Pull in new list of peers.
+10. Prune list of best peers.
+11. Restart cardano-service
 
 ## Hostname
 
@@ -182,7 +184,7 @@ curl -4 -s -o /home/ada/pi-pool/files/${NODE_CONFIG}-topology.json "https://api.
 
 Save and exit.
 
-After four hours of onboarding your information will start to be available to other relays in the network. topolgyUpdater.sh will create a list in $NODE\_HOME/logs. relay-topology\_pull.sh will add that list to your mainnet-topology file.
+After four hours of on boarding your information will start to be available to other relays in the network. topologyUpdater.sh will create a list in $NODE\_HOME/logs. relay-topology\_pull.sh will add that list to your mainnet-topology file.
 
 ```bash
 ./relay-topology_pull.sh
