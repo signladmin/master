@@ -22,7 +22,7 @@ Cardano-wallet will not build on arm due to dependency failure. @ZW3RK tried to 
 [https://hydra.iohk.io/build/3770189](https://hydra.iohk.io/build/3770189)
 {% endhint %}
 
-## Generate Keys & Issue Opperational Certificate
+## Generate Keys & Issue Operational Certificate
 
 {% hint style="warning" %}
 #### Rotating the KES keys
@@ -196,20 +196,20 @@ Valency greater than one is only used with DNS round robin srv records.
 
 {% tab title="2 Relays DNS" %}
 ```text
- {
-    "Producers": [
-      {
-        "addr": "r1.example.com",
-        "port": 3001,
-        "valency": 1
-      },
-      {
-        "addr": "r2.example.com",
-        "port": 3002,
-        "valency": 1
-      }
-    ]
-  }
+{
+  "Producers": [
+    {
+      "addr": "r1.example.com",
+      "port": 3001,
+      "valency": 1
+    },
+    {
+      "addr": "r2.example.com",
+      "port": 3002,
+      "valency": 1
+    }
+  ]
+}
 ```
 {% endtab %}
 
