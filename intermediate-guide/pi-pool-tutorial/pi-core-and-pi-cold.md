@@ -606,7 +606,7 @@ echo Number of UTXOs: ${txcnt}
 {% endtab %}
 {% endtabs %}
 
-Parse **params.json** for stake pool registration deposit value.
+Parse **params.json** for stake pool registration deposit value. Spoiler: it's 500 ada but that could change in the future.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -709,4 +709,26 @@ cardano-cli transaction submit \
 ```
 {% endtab %}
 {% endtabs %}
+
+## Confirm successful registration
+
+### pool.vet
+
+pool.vet is a website for pool operators to check the validity of their stake pools on chain data. You can check this site for problems and clues as to how to fix them.
+
+{% embed url="https://pool.vet/" %}
+
+### adapools.org
+
+You should create an account and claim your pool here.
+
+{% embed url="https://adapools.org/" %}
+
+### pooltool.io
+
+You should create an account and claim your pool here.
+
+{% embed url="https://pooltool.io/" %}
+
+
 
