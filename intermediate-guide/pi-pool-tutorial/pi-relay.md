@@ -51,7 +51,7 @@ ff02::3 ip6-allhosts
 
 ```
 
-Reboot to take affect.
+Reboot.
 
 ## Network
 
@@ -79,6 +79,14 @@ network:
       nameservers:
 # Home router IP & QUAD9 https://quad9.net/
           addresses: [192.168.1.1, 9.9.9.9, 149.112.112.112]
+```
+
+```bash
+sudo nano /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+```
+
+```bash
+network: {config: disabled}
 ```
 
 ```text
@@ -112,7 +120,16 @@ cardano-node run \
 
 ```
 
+```bash
+cardano-service restart
+cardano-service status
+```
+
 ## Forward port on router
+
+{% hint style="danger" %}
+Do not forward a port to your Core machine it only connects to the relay\(s\) on your LAN
+{% endhint %}
 
 Log into your router and forward port 3001 to your relay nodes LAN IPv4 address port 3001. Second relay forward port 3002 to LAN IPv4 address for relay 2 to port 3002.
 
