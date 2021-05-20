@@ -175,10 +175,24 @@ nano $NODE_FILES/mainnet-topology.json
 {% endtab %}
 {% endtabs %}
 
-Use IPv4  for addr value if not using domain DNS. Be sure to have proper records set with your registrar or DNS service.
+Use your LAN IPv4 for addr value if not using domain DNS. Be sure to have proper records set with your registrar or DNS service.
 
 {% tabs %}
-{% tab title="Core" %}
+{% tab title="1 Relay DNS" %}
+```
+{
+  "Producers": [
+    {
+      "addr": "r1.example.com",
+      "port": 3001,
+      "valency": 1
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="2 Relays DNS" %}
 ```text
  {
     "Producers": [
@@ -194,6 +208,39 @@ Use IPv4  for addr value if not using domain DNS. Be sure to have proper records
       }
     ]
   }
+```
+{% endtab %}
+
+{% tab title="1 Relay IPv4" %}
+```
+{
+  "Producers": [
+    {
+      "addr": "192.168.1.151",
+      "port": 3001,
+      "valency": 1
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="2 Relays IPv4" %}
+```
+{
+  "Producers": [
+    {
+      "addr": "192.168.1.151",
+      "port": 3001,
+      "valency": 1
+    },
+    {
+      "addr": "192.168.1.152",
+      "port": 3002,
+      "valency": 1
+    }
+  ]
+}
 ```
 {% endtab %}
 {% endtabs %}
