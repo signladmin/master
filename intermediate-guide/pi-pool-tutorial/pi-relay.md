@@ -135,5 +135,56 @@ Log into your router and forward port 3001 to your relay nodes LAN IPv4 address 
 
 ## Topology Updater
 
-## 
+```bash
+cd $NODE_HOME/scripts
+```
+
+Configure the script to match your environment.
+
+{% hint style="warning" %}
+If you are using IPv4 leave CNODE\_HOSTNAME the way it is. The service will pick up your public IP address on it's own. I repeat only change the port to 3001. For DNS change only the variable value. Do not edit "CHANGE ME" further down in the file.
+{% endhint %}
+
+```bash
+nano topologyUpdater.sh
+```
+
+Run the updater once to confirm it is working.
+
+```bash
+./topologyUpdater.sh
+```
+
+Should look similar to this.
+
+> `{ "resultcode": "201", "datetime":"2021-05-20 10:13:40", "clientIp": "1.2.3.4", "iptype": 4, "msg": "nice to meet you" }`
+
+Enable the cron job by removing the \# character from crontab.
+
+```bash
+crontab -e
+```
+
+```bash
+33 * * * * /home/ada/pi-pool/scripts/topologyUpdater.sh
+```
+
+Wait four hours or so and run the relay-topology\_pull.sh
+
+Open relay-topology\_pull.sh and configure it for your environment.
+
+```bash
+#!/bin/bash
+BLOCKPRODUCING_IP=<core nodes private IPv4 address>
+BLOCKPRODUCING_PORT=3000
+curl -4 -s -o /home/ada/pi-pool/files/${NODE_CONFIG}-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
+```
+
+Save and exit.
+
+After four hours of onboarding your information will start to be available to other relays in the network. topolgyUpdater.sh will create a list in $NODE\_HOME/logs. relay-topology\_pull.sh will add that list to your mainnet-topology file.
+
+```bash
+./relay-topology_pull.sh
+```
 
