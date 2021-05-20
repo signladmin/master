@@ -4,7 +4,7 @@ description: Pi-Node to Pi-Relay
 
 # Pi-Relay
 
-To turn Pi-Node into a passive relay we have to.
+To turn Pi-Node into a active relay we have to.
 
 1. Configure hostname.
 2. Configure static IP.
