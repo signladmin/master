@@ -441,9 +441,9 @@ cardano-cli transaction submit \
 
 Create a **poolMetaData.json** file. It will contain important information about your pool. You will need to host this file somewhere online forevermore. It must be online and you cannot edit it without resubmitting/updating your pool.cert. In the next couple steps we will hash 
 
- [https://pages.github.com/](https://pages.github.com/) is a popular solution. I say host it on your Pi with NGINX.
+{% embed url="https://pages.github.com/" caption="Hosting your poolMetaData.json on github is popular choice" %}
 
-{% embed url="https://www.coincashew.com/coins/overview-ada/guide-how-to-build-a-haskell-stakepool-node/how-to-upload-poolmetadata.json-to-github​" caption="" %}
+ I say host it on your Pi with NGINX.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -455,7 +455,7 @@ nano poolMetaData.json
 {% endtabs %}
 
 {% hint style="warning" %}
-The **extendedPoolMetaData.json** file is used by adapools and others to scrape information like where to find your pool logo and social media links. Unlike the **poolMetaData.json** this files hash is not stored in your registration certificate and can be edited without having to rehash and resubmit pool.cert.
+The **extendedPoolMetaData.json** file is used by adapools and others to scrape information like where to find your pool logo and social media links. Unlike the **poolMetaData.json** this files hash is not stored in your registration certificate and can be edited without having to rehash and resubmit **pool.cert**.
 {% endhint %}
 
 Add the following and customize to your metadata.
@@ -652,6 +652,8 @@ fee=$(cardano-cli transaction calculate-min-fee \
 {% endtab %}
 {% endtabs %}
 
+Calculate your change output.
+
 {% tabs %}
 {% tab title="Core" %}
 ```bash
@@ -660,6 +662,8 @@ echo txOut: ${txOut}
 ```
 {% endtab %}
 {% endtabs %}
+
+Build your **tx.raw** \(unsigned\) transaction file.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -676,6 +680,10 @@ cardano-cli transaction build-raw \
 {% endtab %}
 {% endtabs %}
 
+Move **tx.raw** to your cold offline machine.
+
+Sign the transaction with your **payment.skey**, **node.skey** & **stake.skey**.
+
 {% tabs %}
 {% tab title="Cold Offline" %}
 ```bash
@@ -689,6 +697,8 @@ cardano-cli transaction sign \
 ```
 {% endtab %}
 {% endtabs %}
+
+Move **tx.signed** back to your core node & submit the transaction to the blockchain.
 
 {% tabs %}
 {% tab title="Core" %}
