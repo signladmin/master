@@ -5,7 +5,7 @@ description: Create operational keys & certificates. Create wallet & register st
 # Pi-Core/Cold
 
 {% hint style="danger" %}
-You need to have a Pi-Node configured with a new static ip address. A fully qualified domain name and cardano-service file set to start on port 3000. You also should update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
+You need to have a Pi-Node configured with a new static ip address. A fully qualified domain name and cardano-service file set to start on port 3000. You also need to update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
 
 You do not enable the topology updater service on a core node so feel free to delete those two scripts and remove the commented out cron job.
 
@@ -182,13 +182,13 @@ cardano-service restart
 
 1. _**Generate**_ a wallet key pair named payment. = **payment.vkey** & **payment.skey**
 2. _**Generate**_ staking key pair. = **stake.vkey** & **stake.skey**
-3. _**Build**_ a stake address from the newly created stake.vkey. = **stake.addr**
-4. _**Build**_ a wallet address from the payment.vkey & delegate to it with stake.vkey. = **payment.addr**
-5. Add funds to the wallet by sending ada to payment.addr
+3. _**Build**_ a stake address from the newly created **stake.vkey**. = **stake.addr**
+4. _**Build**_ a wallet address from the **payment.vkey** & delegate with **stake.vkey**. = **payment.addr**
+5. Add funds to the wallet by sending ada to **payment.addr**
 6. Check balance.
 {% endhint %}
 
-### Generate wallet key pair
+### 1. Generate wallet key pair
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -201,7 +201,7 @@ cardano-cli address key-gen \
 {% endtab %}
 {% endtabs %}
 
-### Generate staking key pair
+### 2. Generate staking key pair
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -213,7 +213,7 @@ cardano-cli stake-address key-gen \
 {% endtab %}
 {% endtabs %}
 
-### Build stake address
+### 3. Build stake address
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -226,7 +226,7 @@ cardano-cli stake-address build \
 {% endtab %}
 {% endtabs %}
 
-### Build payment address
+### 4. Build payment address
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -240,7 +240,7 @@ cardano-cli address build \
 {% endtab %}
 {% endtabs %}
 
-### Fund wallet
+### 5. Fund wallet
 
 ```text
 cat payment.addr
@@ -257,6 +257,8 @@ Test the wallet by sending a small amount waiting a few minutes and querying it'
 {% hint style="danger" %}
 Core node needs to be synced to the tip of the blockchain.
 {% endhint %}
+
+### 6. Check balance
 
 {% tabs %}
 {% tab title="Core" %}
@@ -453,7 +455,7 @@ nano poolMetaData.json
 {% endtabs %}
 
 {% hint style="warning" %}
-The extendedPoolMetaData.json file is used by adapools and others to scrape information like where to find your pool logo and social media links. Unlike the poolMetaData.json this files hash is not stored in your registration certificate and can be edited without having to rehash and resubmit pool.cert.
+The **extendedPoolMetaData.json** file is used by adapools and others to scrape information like where to find your pool logo and social media links. Unlike the **poolMetaData.json** this files hash is not stored in your registration certificate and can be edited without having to rehash and resubmit pool.cert.
 {% endhint %}
 
 Add the following and customize to your metadata.
@@ -484,7 +486,7 @@ cardano-cli stake-pool metadata-hash \
 Copy poolMetaData.json to [https://pages.github.io](https://pages.github.io) or host it yourself along with your website.
 
 {% hint style="info" %}
-Here is my poolMetaData.json & extendedPoolMetaData.json as a reference and shameless links back to my site. 😰
+Here is my **poolMetaData.json** & **extendedPoolMetaData.json** as a reference and shameless links back to my site. 😰
 
 [https://adamantium.online/poolMetaData.json](https://adamantium.online/poolMetaData.json)
 
@@ -510,6 +512,12 @@ echo minPoolCost: ${minPoolCost}
 {% endtab %}
 {% endtabs %}
 
+{% hint style="danger" %}
+Edit the information below to match your pools desired configuration.
+{% endhint %}
+
+Issue a stake pool registration certificate.
+
 {% tabs %}
 {% tab title="Cold Offline" %}
 ```bash
@@ -531,6 +539,8 @@ cardano-cli stake-pool registration-certificate \
 {% endtab %}
 {% endtabs %}
 
+Issue a delegation certificate from **stake.skey** & **node.vkey**.
+
 {% tabs %}
 {% tab title="Cold Offline" %}
 ```bash
@@ -542,7 +552,7 @@ cardano-cli stake-address delegation-certificate \
 {% endtab %}
 {% endtabs %}
 
-Retrieve your stake pool id
+Retrieve your stake pool id.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -555,6 +565,8 @@ cat stakePoolId.txt
 
 Move **pool.cert**, **deleg.cert** & **stakePoolId.txt** to your online core machine.
 
+Query the current slot number or tip of the chain.
+
 {% tabs %}
 {% tab title="Core" %}
 ```bash
@@ -563,6 +575,8 @@ echo slotNo: ${slotNo}
 ```
 {% endtab %}
 {% endtabs %}
+
+Get the utxo or balance of the wallet.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -592,6 +606,8 @@ echo Number of UTXOs: ${txcnt}
 {% endtab %}
 {% endtabs %}
 
+Parse **params.json** for stake pool registration deposit value.
+
 {% tabs %}
 {% tab title="Core" %}
 ```bash
@@ -600,6 +616,8 @@ echo stakePoolDeposit: ${stakePoolDeposit}
 ```
 {% endtab %}
 {% endtabs %}
+
+Build temporary **tx.tmp** to hold information while we build our raw transaction file.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -615,6 +633,8 @@ cardano-cli transaction build-raw \
 ```
 {% endtab %}
 {% endtabs %}
+
+Calculate the transaction fee.
 
 {% tabs %}
 {% tab title="Core" %}
