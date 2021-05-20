@@ -20,11 +20,69 @@ To turn Pi-Node into a passive relay we have to.
 
 To set a fully qualified domain name for our relay edit /etc/hostname & /etc/hosts.
 
+```text
+sudo nano /etc/hostname
+```
+
+```text
+r1.example.com
+```
+
+```text
+sudo nano /etc/hosts
+```
+
+```text
+127.0.0.1 localhost
+127.0.1.1 r1.example.com r1
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+## optional entries overide online dns settings
+192.168.1.150 c1.example.com
+#192.168.1.151 r1.example.com
+192.168.1.152 r2.example.com
+
+```
+
+Reboot to take affect.
+
 ## Network
 
-
-
 ### Static IP
+
+```text
+sudo nano /etc/netplan/50-cloud-init.yaml
+```
+
+```text
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses:
+        - 192.168.1.151/24
+      gateway4: 192.168.1.1
+      nameservers:
+          addresses: [192.168.1.1, 9.9.9.9, 149.112.112.112]
+```
+
+```text
+sudo netplan apply
+```
 
 ## Topology Updater
 
