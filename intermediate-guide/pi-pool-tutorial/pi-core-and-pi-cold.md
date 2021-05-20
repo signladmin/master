@@ -5,7 +5,7 @@ description: Create operational keys & certificates. Create wallet & register st
 # Pi-Core/Cold
 
 {% hint style="danger" %}
-You need to have a Pi-Node configured with a new static ip address. A fully qualified domain name and cardano-service file set to start on port 3000. You also need to update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
+You need to have a Pi-Node configured with a new static ip address on your LAN. A fully qualified domain name and cardano-service file set to start on port 3000. You also need to update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
 
 You do not enable the topology updater service on a core node so feel free to delete those two scripts and remove the commented out cron job.
 
@@ -71,7 +71,7 @@ echo slotNo: ${slotNo}
 {% endtab %}
 {% endtabs %}
 
-Set the startKesPeriod variable by dividing ${slotNo} / ${slotsPerKESPeriod}.
+Set the **startKesPeriod** variable by dividing **slotNo** / **slotsPerKESPeriod**.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -82,7 +82,7 @@ echo startKesPeriod: ${startKesPeriod}
 {% endtab %}
 {% endtabs %}
 
-Write down **startKesPeriod** value down & copy the **kes.vkey** to your cold offline machine.
+Write **startKesPeriod** value down & copy the **kes.vkey** to your cold offline machine.
 
 Issue a **node.cert** certificate using: **kes.vkey**, **node.skey**, **node.counter** and **startKesPeriod** value.
 
@@ -161,6 +161,39 @@ cardano-node run +RTS -N4 -RTS \
   --shelley-kes-key ${KES} \
   --shelley-vrf-key ${VRF} \
   --shelley-operational-certifcate ${CERT}
+```
+{% endtab %}
+{% endtabs %}
+
+Add your relay\(s\) to mainnet-topolgy.json.
+
+{% tabs %}
+{% tab title="Core" %}
+```bash
+nano $NODE_FILES/mainnet-topology.json
+```
+{% endtab %}
+{% endtabs %}
+
+Use IPv4  for addr value if not using domain DNS. Be sure to have proper records set with your registrar or DNS service.
+
+{% tabs %}
+{% tab title="Core" %}
+```text
+ {
+    "Producers": [
+      {
+        "addr": "r1.example.com",
+        "port": 3001,
+        "valency": 1
+      },
+      {
+        "addr": "r2.example.com",
+        "port": 3002,
+        "valency": 1
+      }
+    ]
+  }
 ```
 {% endtab %}
 {% endtabs %}
