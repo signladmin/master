@@ -175,7 +175,9 @@ nano $NODE_FILES/mainnet-topology.json
 {% endtab %}
 {% endtabs %}
 
-Use your LAN IPv4 for addr value if not using domain DNS. Be sure to have proper records set with your registrar or DNS service.
+Use your LAN IPv4 for addr value if not using domain DNS. Be sure to have proper records set with your registrar or DNS service. Below are some examples. 
+
+Valency greater than one is only used with DNS round robin srv records.
 
 {% tabs %}
 {% tab title="1 Relay DNS" %}
