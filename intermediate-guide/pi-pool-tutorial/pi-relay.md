@@ -18,7 +18,7 @@ To turn Pi-Node into a passive relay we have to.
 
 ## Hostname
 
-To set a fully qualified domain name for our relay edit /etc/hostname & /etc/hosts.
+To set a fully qualified domain name \(FQDN\) for our relay edit /etc/hostname & /etc/hosts.
 
 ```text
 sudo nano /etc/hostname
@@ -77,6 +77,7 @@ network:
         - 192.168.1.151/24
       gateway4: 192.168.1.1
       nameservers:
+# Home router IP & QUAD9 https://quad9.net/
           addresses: [192.168.1.1, 9.9.9.9, 149.112.112.112]
 ```
 
