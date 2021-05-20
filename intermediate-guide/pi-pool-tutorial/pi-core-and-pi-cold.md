@@ -410,7 +410,7 @@ echo Number of UTXOs: ${txcnt}
 {% endtab %}
 {% endtabs %}
 
-Retrieve stakeAddressDeposit value from **params.json**.
+Retrieve **stakeAddressDeposit** value from **params.json**.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -505,7 +505,7 @@ cardano-cli transaction sign \
 {% endtab %}
 {% endtabs %}
 
-Move **tx.signed** transaction back to the Core's pi-pool folder.
+Move **tx.signed** transaction file back to the core nodes pi-pool folder.
 
 Submit the transaction to the blockchain.
 
