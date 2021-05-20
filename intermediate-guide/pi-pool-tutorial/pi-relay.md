@@ -32,7 +32,7 @@ r1.example.com
 sudo nano /etc/hosts
 ```
 
-```text
+```bash
 127.0.0.1 localhost
 127.0.1.1 r1.example.com r1
 
@@ -57,11 +57,11 @@ Reboot to take affect.
 
 ### Static IP
 
-```text
+```bash
 sudo nano /etc/netplan/50-cloud-init.yaml
 ```
 
-```text
+```yaml
 # This file is generated from information provided by the datasource.  Changes
 # to it will not persist across an instance reboot.  To disable cloud-init's
 # network configuration capabilities, write a file
@@ -84,6 +84,37 @@ network:
 ```text
 sudo netplan apply
 ```
+
+## Configure service port
+
+```bash
+nano /home/ada/.local/bin/cardano-service
+```
+
+```bash
+#!/bin/bash
+DIRECTORY=/home/ada/pi-pool
+FILES=/home/ada/pi-pool/files
+PORT=3001
+HOSTADDR=0.0.0.0
+TOPOLOGY=${FILES}/mainnet-topology.json
+DB_PATH=${DIRECTORY}/db
+SOCKET_PATH=${DIRECTORY}/db/socket
+CONFIG=${FILES}/mainnet-config.json
+## +RTS -N4 -RTS = Multicore(4)
+cardano-node run \
+  --topology ${TOPOLOGY} \
+  --database-path ${DB_PATH} \
+  --socket-path ${SOCKET_PATH} \
+  --host-addr ${HOSTADDR} \
+  --port ${PORT} \
+  --config ${CONFIG}
+
+```
+
+## Forward port on router
+
+Log into your router and forward port 3001 to your relay nodes LAN IPv4 address port 3001. Second relay forward port 3002 to LAN IPv4 address for relay 2 to port 3002.
 
 ## Topology Updater
 
