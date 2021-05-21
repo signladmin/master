@@ -84,6 +84,20 @@ disable-wifi
 disable-bt
 ```
 
+Enable memory accounting \(cgroups\).
+
+```text
+sudo nano /boot/firmware/cmdline.txt
+```
+
+Replace contents with below.
+
+```text
+cgroup_enable=memory cgroup_memory=1 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=LABEL=writable rootfstype=ext4 elevator=deadline rootwait fixrtc quiet splash
+```
+
+Save and reboot.
+
 ```text
 sudo reboot
 ```
@@ -145,8 +159,8 @@ sudo nano /etc/sysctl.conf
 ## Pi Pool ##
 
 # swap less                      
-vm.swappiness=10
-vm.vfs_cache_pressure=50
+#vm.swappiness=10
+#vm.vfs_cache_pressure=50
 
 fs.file-max = 10000000
 fs.nr_open = 10000000
