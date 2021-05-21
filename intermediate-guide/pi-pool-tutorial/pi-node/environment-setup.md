@@ -686,7 +686,7 @@ Replace contents of the file with below.
 #
 server {
         listen 80 default_server;
-        return 301 https://$server_name$request_uri;
+        return 301 https://$host$request_uri;
 }
 
 server {
