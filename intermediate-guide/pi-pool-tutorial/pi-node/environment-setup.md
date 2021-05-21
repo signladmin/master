@@ -635,7 +635,7 @@ Log in and set a new password. Default username and password is **admin:admin**.
 
 #### Configure data source
 
-In the left hand vertical menu go to **Configure** &gt; **Datasources** and click to **Add data source**. Choose Prometheus. Everything can be left default. At the bottom save & test. You should get the green "Data source is working" if cardano-monitor has been started.
+In the left hand vertical menu go to **Configure** &gt; **Datasources** and click to **Add data source**. Choose Prometheus. Enter **http://localhost:9090** where it is grayed out, everything can be left default. At the bottom save & test. You should get the green "Data source is working" if cardano-monitor has been started. If for some reason those services failed to start issue **cardano-service restart**.
 
 #### Import dashboards
 
