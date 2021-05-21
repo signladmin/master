@@ -35,7 +35,7 @@ Install Certbot.
 sudo snap install --classic certbot
 ```
 
-Dynamically link certbot binary into our path.
+Dynamically link Certbot binary into our path.
 
 ```bash
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
