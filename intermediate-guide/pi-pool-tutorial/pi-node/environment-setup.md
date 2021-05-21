@@ -6,10 +6,9 @@ description: Install packages needed to run cardano-node and configure our envir
 
 ## Install packages
 
-Enable automatic updates.
+Enable automatic security updates.
 
 ```bash
-sudo apt update && sudo apt install unattended-upgrades
 sudo dpkg-reconfigure -plow unattended-upgrades
 ```
 
@@ -22,7 +21,7 @@ sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
          zlib1g-dev g++ libncursesw5 libtool autoconf -y
 ```
 
-Install nodejs.
+Install NodeJS.
 
 ```bash
 sudo snap install node --classic
@@ -40,12 +39,6 @@ Dynamically link binary into our path.
 
 ```bash
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
-```
-
-Install node process manager globally.
-
-```bash
- sudo npm install pm2 -g
 ```
 
 House cleaning. 🧹
@@ -330,7 +323,6 @@ Allow execution of gLiveView.sh.
 
 ```bash
 chmod +x gLiveView.sh
-./gLiveView.sh
 ```
 
 ## topologyUpdater.sh
