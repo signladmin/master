@@ -63,7 +63,7 @@ Create variables with the number of slots per KES period from the genesis file a
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-slotsPerKesPeriod=$(cat $NODE_FILES/${NODE_CONFIG}-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
+slotsPerKesPeriod=$(cat $NODE_FILES/mainnet-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
 slotNo=$(cardano-cli query tip --mainnet | jq -r '.slot')
 echo slotsPerKesPeriod: ${slotsPerKesPeriod}
 echo slotNo: ${slotNo}
