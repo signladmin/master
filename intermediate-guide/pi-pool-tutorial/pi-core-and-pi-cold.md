@@ -410,6 +410,16 @@ echo Number of UTXOs: ${txcnt}
 {% endtab %}
 {% endtabs %}
 
+{% hint style="danger" %}
+If you get
+
+`cardano-cli: Network.Socket.connect: : does not exist (No such file or directory)`
+
+ It is because the core has not finished syncing to the tip of the blockchain. This can take a long time after a reboot. If you look in the db/ folder after cardano-service stop you will see a file named 'clean'. That is confirmation file of a clean database shutdown. It usually takes 5 to 10 minutes to sync back to the tip of the chain on Raspberry Pi as of epoch 267.
+
+If however the cardano-node does not shutdown 'cleanly' it can take up to an hour to verify the database\(chain\) and create the socket file. Socket file is created once your synced.
+{% endhint %}
+
 Query mainnet for protocol parameters.
 
 ```text
