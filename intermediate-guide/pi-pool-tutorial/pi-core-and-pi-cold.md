@@ -160,7 +160,7 @@ cardano-node run +RTS -N4 -RTS \
   --config ${CONFIG} \
   --shelley-kes-key ${KES} \
   --shelley-vrf-key ${VRF} \
-  --shelley-operational-certifcate ${CERT}
+  --shelley-operational-certificate ${CERT}
 ```
 {% endtab %}
 {% endtabs %}
@@ -175,7 +175,7 @@ nano $NODE_FILES/mainnet-topology.json
 {% endtab %}
 {% endtabs %}
 
-Use your LAN IPv4 for addr value if not using domain DNS. Be sure to have proper records set with your registrar or DNS service. Below are some examples. 
+Use your LAN IPv4 for addr field if you are not using domain DNS. Be sure to have proper records set with your registrar or DNS service. Below are some examples. 
 
 Valency greater than one is only used with DNS round robin srv records.
 
