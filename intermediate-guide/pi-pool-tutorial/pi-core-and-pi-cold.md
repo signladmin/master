@@ -302,7 +302,7 @@ cardano-cli stake-address key-gen \
 ```bash
 cardano-cli stake-address build \
   --stake-verification-key-file stake.vkey \
-  --out-file stake.addr
+  --out-file stake.addr \
   --mainnet
 ```
 {% endtab %}
