@@ -277,7 +277,7 @@ cardano-service restart
 ```bash
 cd $NODE_HOME
 cardano-cli address key-gen \
-  --verification-key-file payment.vkey
+  --verification-key-file payment.vkey \
   --signing-key-file payment.skey
 ```
 {% endtab %}
