@@ -147,15 +147,19 @@ Configure the script to match your environment.
 If you are using IPv4 leave CNODE\_HOSTNAME the way it is. The service will pick up your public IP address on it's own. I repeat only change the port to 3001. For DNS change only the variable value. Do not edit "CHANGE ME" further down in the file.
 {% endhint %}
 
+{% code title="/home/ada/pi-pool/scripts/topologyUpdater.sh" %}
 ```bash
 nano topologyUpdater.sh
 ```
+{% endcode %}
 
 Run the updater once to confirm it is working.
 
+{% code title="/home/ada/pi-pool/scripts/topologyUpdater.sh" %}
 ```bash
 ./topologyUpdater.sh
 ```
+{% endcode %}
 
 Should look similar to this.
 
@@ -175,18 +179,22 @@ Wait four hours or so and run the relay-topology\_pull.sh
 
 Open relay-topology\_pull.sh and configure it for your environment.
 
+{% code title="/home/ada/pi-pool/scripts/relay-topology\_pull.sh" %}
 ```bash
 #!/bin/bash
 BLOCKPRODUCING_IP=<core nodes private IPv4 address>
 BLOCKPRODUCING_PORT=3000
 curl -4 -s -o /home/ada/pi-pool/files/${NODE_CONFIG}-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
 ```
+{% endcode %}
 
 Save and exit.
 
 After four hours of on boarding your information will start to be available to other relays in the network. topologyUpdater.sh will create a list in $NODE\_HOME/logs. relay-topology\_pull.sh will add that list to your mainnet-topology file.
 
+{% code title="/home/ada/pi-pool/scripts/relay-topology\_pull.sh" %}
 ```bash
 ./relay-topology_pull.sh
 ```
+{% endcode %}
 
