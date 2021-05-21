@@ -12,7 +12,7 @@ Enable automatic security updates.
 sudo dpkg-reconfigure -plow unattended-upgrades
 ```
 
-Install necessities.
+Install the packages we will need.
 
 ```bash
 sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
@@ -35,18 +35,10 @@ Install Certbot.
 sudo snap install --classic certbot
 ```
 
-Dynamically link binary into our path.
+Dynamically link certbot binary into our path.
 
 ```bash
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
-```
-
-House cleaning. 🧹
-
-```bash
-sudo apt clean
-sudo apt autoremove
-sudo apt autoclean
 ```
 
 ## Environment
