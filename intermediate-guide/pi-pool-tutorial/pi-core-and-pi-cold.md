@@ -410,13 +410,15 @@ echo Number of UTXOs: ${txcnt}
 {% endtab %}
 {% endtabs %}
 
-Retrieve **stakeAddressDeposit** value from **params.json**.
+Query mainnet for protocol parameters.
 
 ```text
 cardano-cli query protocol-parameters \
     --mainnet \
     --out-file params.json
 ```
+
+Retrieve **stakeAddressDeposit** value from **params.json**.
 
 {% tabs %}
 {% tab title="Core" %}
