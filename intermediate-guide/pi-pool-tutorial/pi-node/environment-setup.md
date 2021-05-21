@@ -509,7 +509,7 @@ Indentation must be correct YAML format or Prometheus will fail to start.
 
 ```yaml
 global:
-  scrape_interval:     5s # By default, scrape targets every 15 seconds.
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
 
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
@@ -520,18 +520,34 @@ global:
 # Here it's Prometheus itself.
 scrape_configs:
   # The job name is added as a label job=<job_name> to any timeseries scraped from this config.
-  - job_name: 'cardano-node'
-
-    static_configs:
+      - job_name: 'Prometheus' # To scrape data from the cardano node
+        scrape_interval: 5s
+        static_configs:
+#      - targets: ['<CORE PRIVATE IP>:12798']
+#        labels:
+#          alias: 'C1'
+#          type:  'cardano-node'
+#      - targets: ['<RELAY PRIVATE IP>:12798']
+#        labels:
+#          alias: 'R1'
+#          type:  'cardano-node'
       - targets: ['localhost:12798']
         labels:
           alias: 'N1'
           type:  'cardano-node'
-
+######
+#      - targets: ['<CORE PRIVATE IP>:9100']
+#        labels:
+#          alias: 'C1'
+#          type:  'node'
+#      - targets: ['<RELAY PRIVATE IP>:9100']
+#        labels:
+#          alias: 'R1'
+#          type:  'node'
       - targets: ['localhost:9100']
         labels:
           alias: 'N1'
-          type: 'node'
+          type:  'node'
 ```
 
 Save & exit.
@@ -662,6 +678,8 @@ You will get a warning from your browser. This is because ca-certificates cannot
 ```bash
 sudo nano /etc/nginx/sites-available/default
 ```
+
+Replace contents of the file with below.
 
 ```bash
 # Default server configuration
