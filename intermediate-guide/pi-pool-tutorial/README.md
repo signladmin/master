@@ -6,7 +6,7 @@ description: >-
 
 # Pi-Node Image & Guides
 
-The Pi-Node.img.gz is a pre configured Cardano node that can be used for minting NFT's, submitting transactions and can be further configured into a relay or core node for stake pool creation. It is configured with everything you need to quickly bootstrap a synced node with Nginx secure proxy of Grafana, working topology updater and gLiveView.
+The [Pi-Node.img.gz](https://db.adamantium.online/Pi-Node.img.gz) is a pre configured Cardano node that can be used for minting NFT's, submitting transactions and can be further configured into a relay or core node for stake pool creation. It is configured with everything you need to quickly bootstrap a synced node with Nginx proxypass of Grafana for TLS encryption, working topology updater and gLiveView.
 
 ![&#x1F31F; Star Forge &#x26A1;](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
 
