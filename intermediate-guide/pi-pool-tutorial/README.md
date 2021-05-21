@@ -6,6 +6,8 @@ description: >-
 
 # Pi-Pool Image & Guides
 
+The Pi-Node.img.gz is a pre configured Cardano node that can be used for minting NFT's, submitting transactions and can be further configured into a relay or core node for stake pool creation.
+
 ![&#x1F31F; Star Forge &#x26A1;](../../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
 
 {% hint style="danger" %}
@@ -58,16 +60,14 @@ The cardano-node & cardano-cli binaries linked to in this guide require aarch64 
 
 ## Downloads
 
-* Pi-Pool .img.gz downloads
-  * [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz) \(Base\)
-* Latest unofficial [static arm binaries](https://ci.zw3rk.com/job/Tools/master/rpi64-musl.tarball/latest-finished/download) & [build overview](https://ci.zw3rk.com/job/Tools/master/rpi64-musl.tarball/latest-finished)
+* [Pi-Node.img.gz](https://db.adamantium.online/Pi-Node.img.gz)
+* Latest unofficial [static arm binaries](https://ci.zw3rk.com/build/1758)
   * [Moritz Angermann](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)
 * Raspberry Pi Imager \([rpi-imager](https://github.com/raspberrypi/rpi-imager)\)
   * update eeprom
   * flash .img files/install Ubuntu
 * [PiShrink](https://github.com/Drewsif/PiShrink)
 * [cardanocli-js](https://docs.pipool.online/)
-  * node.js library for pool creation/maintenance
 * Latest chain snapshot for quicker sync
   * wget -r -np -nH -R "index.html\*" -e robots=off [https://db.adamantium.online/db/](https://db.adamantium.online/db/)
 
