@@ -27,7 +27,7 @@ It is best to just leave it running.
 6. Enable & start the cardano-monitor. **cardano-monitor enable** **cardano-monitor start**
 7. Confirm services are running. **cardano-service status** **cardano-monitor status**
 8. gLiveView.sh. **cd $NODE\_HOME/scripts** **./gLiveView.sh**
-9. Grafana. Enter your Node's IPv4 address in your browser. default credentials = **admin:admin** 
+9. Grafana. Enter your Node's IPv4 address in your browser. default credentials = **admin:admin**
 
 {% hint style="info" %}
 The following guide builds out the image, use it as a reference and please feel free to ask for clarification in our Telegram channel. [https://t.me/armada\_alli](https://t.me/armada_alli)
