@@ -22,7 +22,7 @@
 ## Intermediate Guides <a id="intermediate-guide"></a>
 
 * [Pi-Node Image & Guides](intermediate-guide/pi-pool-tutorial/README.md)
-  * [Pi-Node](intermediate-guide/pi-pool-tutorial/pi-node/README.md)
+  * [Pi-Node \(quick start\)](intermediate-guide/pi-pool-tutorial/pi-node/README.md)
     * [Download & Flash](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
     * [Logging in Securely](intermediate-guide/pi-pool-tutorial/pi-node/logging-in-securely.md)
     * [User Setup](intermediate-guide/pi-pool-tutorial/pi-node/user-setup.md)
