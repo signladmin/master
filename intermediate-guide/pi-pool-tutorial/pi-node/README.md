@@ -33,8 +33,6 @@ It is best to just leave it running.
 
 {% embed url="https://github.com/wcatz/OTG-Star-Forge/tree/main/Grafana-Dashboards" %}
 
-
-
 {% hint style="info" %}
 The following guide builds out the image, use it as a reference and please feel free to ask for clarification in our Telegram channel. [https://t.me/armada\_alli](https://t.me/armada_alli)
 {% endhint %}
