@@ -27,7 +27,7 @@ Cardano-wallet will not build on arm due to dependency failure. @ZW3RK tried to 
 {% hint style="warning" %}
 #### Rotating the KES keys
 
-KES keys need to be regenerated and a new **node.cert** needs to be issued and submitted to the chain every 90 days. The **node.counter** file keeps track of how many times this has been done.
+KES keys need to be regenerated and a new **pool.cert** needs to be issued and submitted to the chain every 90 days. The **node.counter** file keeps track of how many times this has been done.
 {% endhint %}
 
 Generate a KES key pair: **kes.vkey** & **kes.skey**
