@@ -21,7 +21,7 @@ It is best to just leave it running.
    default credentials = **ada:lovelace**  
    Set new password and log back in.
 
-3. Enter the pi-pool folder. **cd /home/ada/pi-pool**
+3. Enter the pi-pool\($NODE\_HOME\) folder. **cd /home/ada/pi-pool**
 4. Download database snapshot. **wget -r -np -nH -R "index.html\*" -e robots=off** [**https://db.adamantium.online/db/**](https://db.adamantium.online/db/)\*\*\*\*
 5. Enable & start the cardano-service. **cardano-service enable** **cardano-service start**
 6. Enable & start the cardano-monitor **cardano-monitor enable** **cardano-monitor start**
