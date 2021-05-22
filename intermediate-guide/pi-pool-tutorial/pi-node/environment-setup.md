@@ -456,6 +456,10 @@ Status should show as enabled & running.
 
 Once your node syncs past epoch 208\(shelley era\) you can use gLiveView.sh to monitor.
 
+{% hint style="danger" %}
+It can take up to an hour for cardano-node to sync to the tip of the chain. Use ./gliveView.sh, htop and log outputs to view process. Be patient it will come up.
+{% endhint %}
+
 ```bash
 cd $NODE_HOME/scripts
 ./gLiveView.sh
@@ -645,9 +649,13 @@ In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on
 
 ![](../../../.gitbook/assets/pi-pool-grafana.png)
 
-{% hint style="warning" %}
-It can take up to an hour for cardano-node to sync to the tip of the chain. Use ./gliveView.sh, htop and log outputs to view process. Be patient it will come up.
-{% endhint %}
+### Configure poolDataLive
+
+Here you can use the poolData api to bring your pools data into Grafana.
+
+{% embed url="https://api.pooldata.live/dashboard" %}
+
+Follow the instructions to install the Grafana plugin, configure your datasource and import the dashboard.
 
 Follow log output to journal.
 
