@@ -24,7 +24,7 @@ It is best to just leave it running.
 3. Enter the pi-pool\($NODE\_HOME\) folder. **cd /home/ada/pi-pool**
 4. Download database snapshot. **wget -r -np -nH -R "index.html\*" -e robots=off** [**https://db.adamantium.online/db/**](https://db.adamantium.online/db/)\*\*\*\*
 5. Enable & start the cardano-service. **cardano-service enable** **cardano-service start**
-6. Enable & start the cardano-monitor **cardano-monitor enable** **cardano-monitor start**
+6. Enable & start the cardano-monitor. **cardano-monitor enable** **cardano-monitor start**
 7. Confirm services are running. **cardano-service status** **cardano-monitor status**
 8. gLiveView.sh. **cd $NODE\_HOME/scripts** **./gLiveView.sh**
 9. Grafana. Enter your Node's IPv4 address in your browser. default credentials = **admin:admin** 
