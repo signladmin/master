@@ -83,13 +83,19 @@ network:
           addresses: [192.168.1.1, 9.9.9.9, 149.112.112.112]
 ```
 
+Create a file named **99-disable-network-config.cfg** to disable cloud -init.
+
 ```bash
 sudo nano /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
 ```
 
+Add the following, save and exit.
+
 ```bash
 network: {config: disabled}
 ```
+
+Apply your changes.
 
 ```text
 sudo netplan apply
