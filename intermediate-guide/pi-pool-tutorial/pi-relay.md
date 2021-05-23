@@ -13,10 +13,10 @@ To turn Pi-Node into a active relay we have to.
 5. Update port in env file.
 6. Enable cron job.
 7. Configure both topology scripts.
-8. Wait for service onboarding\(4 hours\).
+8. Wait for service on boarding\(4 hours\).
 9. Pull in new list of peers.
 10. Prune list of best peers.
-11. Update gLiveView env file.
+11. Update gLiveView's env file.
 12. Reboot.
 
 ## Hostname
@@ -27,13 +27,19 @@ To set a fully qualified domain name \(FQDN\) for our relay edit /etc/hostname &
 sudo nano /etc/hostname
 ```
 
+Replace ubuntu with your desired FQDN.
+
 ```text
 r1.example.com
 ```
 
+Save and exit.
+
 ```text
 sudo nano /etc/hosts
 ```
+
+Edit the file accordingly, take note that you may not be using the 192.168.1.xxx IP range.
 
 ```bash
 127.0.0.1 localhost
@@ -53,6 +59,8 @@ ff02::3 ip6-allhosts
 192.168.1.152 r2.example.com
 
 ```
+
+Save and exit.
 
 ## Network
 
