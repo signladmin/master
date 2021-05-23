@@ -333,5 +333,5 @@ scrape_configs:
           type:  'node'
 ```
 
-Reboot the server and give it a while to sync back up.
+Reboot the server and give it a while to sync back up. That is just about it. Please feel free to join our Telegram channel for support. [https://t.me/armada\_alli](https://t.me/armada_alli) 
 
