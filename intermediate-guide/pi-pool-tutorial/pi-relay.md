@@ -16,7 +16,8 @@ To turn Pi-Node into a active relay we have to.
 8. Wait for service onboarding\(4 hours\).
 9. Pull in new list of peers.
 10. Prune list of best peers.
-11. Restart cardano-service
+11. Update gLiveView env file.
+12. Restart cardano-service
 
 ## Hostname
 
