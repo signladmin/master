@@ -25,23 +25,23 @@ Your **relay nodes** should be pointed to other remote relay nodes and your bloc
 {
   "Producers": [
     {
-      "addr": "10.20.30.3",
-      "port": 6000,
+      "addr": "block producers private IPv4",
+      "port": 3000,
       "valency": 1
     },
     {
       "addr": "138.197.71.216",
-      "port": 6000,
+      "port": 3001,
       "valency": 1
     },
     {
       "addr": "107.23.17.23",
-      "port": 6000,
+      "port": 3001,
       "valency": 1
     },
     {
       "addr": "3.140.154.176",
-      "port": 6000,
+      "port": 6002,
       "valency": 1
     }
   ]
@@ -57,12 +57,12 @@ Your **relay nodes** should be pointed to other remote relay nodes and your bloc
   "Producers": [
     {
       "addr": "10.20.30.1",
-      "port": 6001,
+      "port": 3001,
       "valency": 1
     },
     {
       "addr": "10.20.30.2",
-      "port": 6002,
+      "port": 3002,
       "valency": 1
     }
   ]

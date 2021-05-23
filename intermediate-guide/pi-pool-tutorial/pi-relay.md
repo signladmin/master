@@ -66,10 +66,10 @@ Save and exit.
 
 ### Static IP
 
-Open 50-cloud-init.yaml and replace the contents of the file with below.
+Open **50-cloud-init.yaml** and replace the contents of the file with below.
 
 {% hint style="warning" %}
-Be sure to use an address on your LAN subnet. In this example I am using 192.168.1.xxx. Your network very well be using a different private range.
+Be sure to use an address on your LAN subnet. In this example I am using **192.168.1.xxx**. Your network may very well be using a different private range.
 {% endhint %}
 
 ```bash
@@ -96,7 +96,7 @@ network:
           addresses: [192.168.1.1, 9.9.9.9, 149.112.112.112]
 ```
 
-Create a file named **99-disable-network-config.cfg** to disable cloud -init.
+Create a file named **99-disable-network-config.cfg** to disable cloud-init.
 
 ```bash
 sudo nano /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
@@ -168,7 +168,7 @@ cd $NODE_HOME/scripts
 Configure the script to match your environment.
 
 {% hint style="warning" %}
-If you are using IPv4 leave CNODE\_HOSTNAME the way it is. The service will pick up your public IP address on it's own. I repeat only change the port to 3001. For DNS change only the variable value. Do not edit "CHANGE ME" further down in the file.
+If you are using IPv4 leave CNODE\_HOSTNAME the way it is. The service will pick up your public IP address on it's own. I repeat only change the port to 3001. For DNS change only the first instance. Do not edit "CHANGE ME" further down in the file.
 {% endhint %}
 
 {% code title="/home/ada/pi-pool/scripts/topologyUpdater.sh" %}
