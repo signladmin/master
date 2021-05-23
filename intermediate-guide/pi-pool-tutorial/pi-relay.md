@@ -190,7 +190,7 @@ crontab -e
 
 Save and exit.
 
-### Pull in your list of relays
+### Pull in your list of peers
 
 Wait four hours or so and run the relay-topology\_pull.sh
 
@@ -207,11 +207,23 @@ curl -4 -s -o /home/ada/pi-pool/files/mainnet-topology.json "https://api.clio.on
 
 Save and exit.
 
-After four hours of on boarding your information will start to be available to other relays in the network. topologyUpdater.sh will create a list in $NODE\_HOME/logs. relay-topology\_pull.sh will add that list to your mainnet-topology file.
+After four hours of on boarding your relay\(s\) will start to be available to other peers on the network. **topologyUpdater.sh** will create a list in /home/ada/pi-pool/logs. relay-topology\_pull.sh will add that list to your mainnet-topology file.
 
 {% code title="/home/ada/pi-pool/scripts/relay-topology\_pull.sh" %}
 ```bash
 ./relay-topology_pull.sh
 ```
 {% endcode %}
+
+### Prune the list
+
+Open your topolgy file and use **ctrl+k** to cut the entire line of any peer over 5,000 miles away.
+
+{% hint style="warning" %}
+Remember to remove the last entries comma in your list or cardano-node will fail to start.
+{% endhint %}
+
+```bash
+nano /home/ada/pi-pool/files/mainnet-topology.json
+```
 
