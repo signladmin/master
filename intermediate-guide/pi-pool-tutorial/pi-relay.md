@@ -194,7 +194,7 @@ Save and exit.
 
 ### Pull in your list of peers
 
-Wait four hours or so and run the relay-topology\_pull.sh to replace your topolgy file with the list created in the log directory.
+Wait four hours or so and run the relay-topology\_pull.sh to replace your mainnet-topology file with the list created in the log directory.
 
 Open relay-topology\_pull.sh and configure it for your environment.
 
