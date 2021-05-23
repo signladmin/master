@@ -31,6 +31,8 @@ It is best to just leave it running.
 
 #### Dashboards can be found here.
 
+{% embed url="https://api.pooldata.live/" %}
+
 {% embed url="https://github.com/wcatz/OTG-Star-Forge/tree/main/Grafana-Dashboards" %}
 
 {% hint style="info" %}
