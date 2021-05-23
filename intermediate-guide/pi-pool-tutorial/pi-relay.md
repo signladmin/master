@@ -53,11 +53,11 @@ ff02::3 ip6-allhosts
 
 ```
 
-Reboot.
-
 ## Network
 
 ### Static IP
+
+Open 50-cloud-init.yaml and replace the contents of the file with below.
 
 ```bash
 sudo nano /etc/netplan/50-cloud-init.yaml
@@ -103,9 +103,13 @@ sudo netplan apply
 
 ## Configure service port
 
+Open the cardano service file and change the port it listens on.
+
 ```bash
 nano /home/ada/.local/bin/cardano-service
 ```
+
+Save and exit. **ctrl+x then y**.
 
 ```bash
 #!/bin/bash
@@ -129,9 +133,12 @@ cardano-node run \
 ```
 
 ```bash
-cardano-service restart
-cardano-service status
+cardano-service enable
 ```
+
+Enable cardano-service at boot.
+
+Reboot.
 
 ## Forward port on router
 
@@ -181,6 +188,10 @@ crontab -e
 33 * * * * /home/ada/pi-pool/scripts/topologyUpdater.sh
 ```
 
+Save and exit.
+
+### Pull in your list of relays
+
 Wait four hours or so and run the relay-topology\_pull.sh
 
 Open relay-topology\_pull.sh and configure it for your environment.
@@ -190,7 +201,7 @@ Open relay-topology\_pull.sh and configure it for your environment.
 #!/bin/bash
 BLOCKPRODUCING_IP=<core nodes private IPv4 address>
 BLOCKPRODUCING_PORT=3000
-curl -4 -s -o /home/ada/pi-pool/files/${NODE_CONFIG}-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
+curl -4 -s -o /home/ada/pi-pool/files/mainnet-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
 ```
 {% endcode %}
 
