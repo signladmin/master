@@ -264,3 +264,11 @@ Many operators block icmp syn packets\(ping\) because of a security flaw that wa
 
 More incoming connections is generally a good thing, it increases the odds that you will get network data sooner. Though you may want to put a limit on how many connect.  The only way to stop incoming connections would be to block the IPv4 address with ufw.
 
+## Prometheus
+
+Last thing we should do is change the {{alias}} name Prometheus is serving to Grafana.
+
+```bash
+sudo nano /etc/prometheus/prometheus.yml
+```
+
