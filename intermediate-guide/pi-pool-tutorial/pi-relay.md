@@ -272,3 +272,66 @@ Last thing we should do is change the {{alias}} name Prometheus is serving to Gr
 sudo nano /etc/prometheus/prometheus.yml
 ```
 
+{% hint style="warning" %}
+You can change.
+
+```bash
+alias: 'N1'
+```
+
+to
+
+```bash
+alias: 'R1'
+```
+
+In an upcoming guide I will show how to have Prometheus running on a separate Pi scraping data from the pool instead of having Prometheus using system resources on those machines.
+{% endhint %}
+
+Update, save and exit.
+
+```bash
+global:
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+
+  # Attach these labels to any time series or alerts when communicating with
+  # external systems (federation, remote storage, Alertmanager).
+  external_labels:
+    monitor: 'codelab-monitor'
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label job=<job_name> to any timeseries scraped from this config.
+  - job_name: 'Prometheus' # To scrape data from the cardano node
+    scrape_interval: 5s
+    static_configs:
+#      - targets: ['<CORE PRIVATE IP>:12798']
+#        labels:
+#          alias: 'C1'
+#          type:  'cardano-node'
+#      - targets: ['<RELAY PRIVATE IP>:12798']
+#        labels:
+#          alias: 'R1'
+#          type:  'cardano-node'
+      - targets: ['localhost:12798']
+        labels:
+          alias: 'R1'
+          type:  'cardano-node'
+
+#      - targets: ['<CORE PRIVATE IP>:9100']
+#        labels:
+#          alias: 'C1'
+#          type:  'node'
+#      - targets: ['<RELAY PRIVATE IP>:9100']
+#        labels:
+#          alias: 'R1'
+#          type:  'node'
+      - targets: ['localhost:9100']
+        labels:
+          alias: 'R1'
+          type:  'node'
+```
+
+Reboot the server and give it a while to sync back up.
+
