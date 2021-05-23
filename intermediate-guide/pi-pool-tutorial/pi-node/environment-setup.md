@@ -635,15 +635,9 @@ In the left hand vertical menu go to **Configure** &gt; **Datasources** and clic
 
 #### Import dashboards
 
-Save the dashboard json file to your local machine.
+Save the dashboard json files to your local machine.
 
-```bash
-wget https://raw.githubusercontent.com/wcatz/OTG-Star-Forge/main/Grafana-Dashboards/Berry.json
-```
-
-```bash
-wget https://raw.githubusercontent.com/wcatz/OTG-Star-Forge/main/Grafana-Dashboards/Pi-Pool.json
-```
+{% embed url="https://github.com/armada-alliance/dashboards" %}
 
 In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
 
