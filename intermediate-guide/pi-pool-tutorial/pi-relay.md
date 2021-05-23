@@ -260,5 +260,7 @@ cd /home/ada/pi-pool/scripts
 ./gLiveView.sh
 ```
 
-Many operators block icmp syn packets\(ping\).
+Many operators block icmp syn packets\(ping\) because of a security flaw that was patched a decade ago. So expect to see --- for RTT because we are not receiving a response from that server.  
+
+More incoming connections is generally a good thing, it increases the odds that you will get network data sooner. Though you may want to put a limit on how many connect.  The only way to stop incoming connections would be to block the IPv4 address with ufw.
 
