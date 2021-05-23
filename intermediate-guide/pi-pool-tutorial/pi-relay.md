@@ -132,13 +132,11 @@ cardano-node run \
 
 ```
 
+Enable cardano-service at boot.
+
 ```bash
 cardano-service enable
 ```
-
-Enable cardano-service at boot.
-
-Reboot.
 
 ## Forward port on router
 
@@ -192,28 +190,31 @@ Save and exit.
 
 ### Pull in your list of peers
 
-Wait four hours or so and run the relay-topology\_pull.sh
+Wait four hours or so and run the relay-topology\_pull.sh to replace your topolgy file with the list created in the log directory.
 
 Open relay-topology\_pull.sh and configure it for your environment.
 
-{% code title="/home/ada/pi-pool/scripts/relay-topology\_pull.sh" %}
+```bash
+nano /home/ada/pi-pool/scripts/relay-topology_pull.sh
+```
+
 ```bash
 #!/bin/bash
 BLOCKPRODUCING_IP=<core nodes private IPv4 address>
 BLOCKPRODUCING_PORT=3000
 curl -4 -s -o /home/ada/pi-pool/files/mainnet-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
 ```
-{% endcode %}
 
 Save and exit.
 
-After four hours of on boarding your relay\(s\) will start to be available to other peers on the network. **topologyUpdater.sh** will create a list in /home/ada/pi-pool/logs. relay-topology\_pull.sh will add that list to your mainnet-topology file.
+After four hours of on boarding your relay\(s\) will start to be available to other peers on the network. **topologyUpdater.sh** will create a list in /home/ada/pi-pool/logs. 
 
-{% code title="/home/ada/pi-pool/scripts/relay-topology\_pull.sh" %}
+relay-topology\_pull.sh will replace the contents of your relays mainnet-topology file.
+
 ```bash
+cd /home/ada/pi-pool/scripts/relay-topology_pull.sh
 ./relay-topology_pull.sh
 ```
-{% endcode %}
 
 ### Prune the list
 
@@ -226,4 +227,25 @@ Remember to remove the last entries comma in your list or cardano-node will fail
 ```bash
 nano /home/ada/pi-pool/files/mainnet-topology.json
 ```
+
+## Update gLiveView port
+
+Open the env file in the scripts directory.
+
+```bash
+nano /home/ada/pi-pool/scripts/env
+```
+
+Update the port number to match the one set in the cardano-service file. 3001 in this guide.
+
+Reboot your new relay and let it sync back to the tip of the chain.
+
+Use gLiveView.sh to view peer info. 
+
+```bash
+cd /home/ada/pi-pool/scripts
+./gLiveView.sh
+```
+
+Many operators block icmp syn packets\(ping\).
 
