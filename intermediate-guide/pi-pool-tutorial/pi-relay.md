@@ -59,6 +59,10 @@ ff02::3 ip6-allhosts
 
 Open 50-cloud-init.yaml and replace the contents of the file with below.
 
+{% hint style="warning" %}
+Be sure to use an address on your LAN subnet. In this example I am using 192.168.1.xxx. Your network very well be using a different private range.
+{% endhint %}
+
 ```bash
 sudo nano /etc/netplan/50-cloud-init.yaml
 ```
