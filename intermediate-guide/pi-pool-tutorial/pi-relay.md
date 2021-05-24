@@ -17,7 +17,8 @@ To turn Pi-Node into a active relay we have to.
 9. Pull in new list of peers.
 10. Prune list of best peers.
 11. Update gLiveView's env file.
-12. Reboot.
+12. Edit the alias name for Prometheus.
+13. Reboot.
 
 ## Hostname
 
