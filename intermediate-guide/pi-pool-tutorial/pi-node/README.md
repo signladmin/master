@@ -14,20 +14,54 @@ It is best to just leave it running.
 
 ## Quick Start
 
-1. Download and flash the [Pi-Node.img.gz](https://db.adamantium.online/Pi-Node.img.gz).
-2. SSH into server.
+### **1. Download and flash the** [**Pi-Node.img.gz**](https://db.adamantium.online/Pi-Node.img.gz)**.**
 
-   **ssh ada@&lt;pi-node private IPv4&gt;**  
-   default credentials = **ada:lovelace**  
-   Set new password and log back in.
+### 2. ssh into the server.
 
-3. Enter the pi-pool\($NODE\_HOME\) folder. **cd /home/ada/pi-pool**
-4. Download database snapshot. **wget -r -np -nH -R "index.html\*" -e robots=off** [**https://db.adamantium.online/db/**](https://db.adamantium.online/db/)\*\*\*\*
-5. Enable & start the cardano-service. **cardano-service enable** **cardano-service start**
-6. Enable & start the cardano-monitor. **cardano-monitor enable** **cardano-monitor start**
-7. Confirm services are running. **cardano-service status** **cardano-monitor status**
-8. gLiveView.sh. **cd $NODE\_HOME/scripts** **./gLiveView.sh**
-9. Grafana. Enter your Node's IPv4 address in your browser. default credentials = **admin:admin**
+```bash
+ssh ada@<pi-node private IPv4>
+```
+
+Default credentials = **ada:lovelace**
+
+### 3. Enter the pi-pool folder.
+
+```bash
+cd /home/ada/pi-pool
+```
+
+### 4. Download database snapshot.
+
+```bash
+wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+```
+
+### 5. Enable & start the cardano-service.
+
+```bash
+cardano-service enable
+cardano-service start
+```
+
+### 6. Enable & start the cardano-monitor.
+
+```bash
+cardano-service status
+cardano-monitor status
+```
+
+### 7. gliveview.sh
+
+```bash
+cd $NODE_HOME/scripts
+./gLiveView.sh
+```
+
+### 8. Grafana.
+
+Enter your Node's IPv4 address in your browser.
+
+Default credentials = **admin:admin**
 
 #### Dashboards can be found here.
 
