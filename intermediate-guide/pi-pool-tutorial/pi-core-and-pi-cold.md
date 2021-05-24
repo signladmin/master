@@ -352,7 +352,7 @@ cardano-cli query utxo \
 {% endtab %}
 {% endtabs %}
 
-## Register stake address 🥩
+## Register stake address
 
 Issue a staking registration certificate: **stake.cert**
 
