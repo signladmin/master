@@ -630,7 +630,7 @@ cardano-cli stake-pool registration-certificate \
   --pool-owner-stake-verification-key-file stake.vkey \
   --mainnet \
   --single-host-pool-relay <r1.example.com> \
-  --pool-relay-port 3000 \
+  --pool-relay-port 3001 \
   --metadata-url <https://example.com/poolMetaData.json> \
   --metadata-hash $(cat poolMetaDataHash.txt) \
   --out-file pool.cert
