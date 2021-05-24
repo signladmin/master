@@ -46,18 +46,25 @@ cardano-service start
 ### 6. Enable & start the cardano-monitor.
 
 ```bash
+cardano-monitor enable
+cardano-monitor start
+```
+
+### 7. Confirm they are running.
+
+```bash
 cardano-service status
 cardano-monitor status
 ```
 
-### 7. gliveview.sh
+### 8. gliveview.sh
 
 ```bash
 cd $NODE_HOME/scripts
 ./gLiveView.sh
 ```
 
-### 8. Grafana.
+### 9. Grafana.
 
 Enter your Node's IPv4 address in your browser.
 
