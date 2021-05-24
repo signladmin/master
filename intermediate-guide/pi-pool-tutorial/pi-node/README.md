@@ -1,5 +1,5 @@
 ---
-description: Quick bootstrap a synced configured node in a hour!
+description: Quickly bootstrap a synced configured node in a hour!
 ---
 
 # Pi-Node \(quick start\)
