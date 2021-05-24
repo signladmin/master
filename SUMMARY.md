@@ -31,8 +31,8 @@
   * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay.md)
   * [Pi-Core/Cold](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
   * [Create .img file](intermediate-guide/pi-pool-tutorial/create-.img-file.md)
-* [Add adapools Metrics to Grafana](intermediate-guide/add-adapools-info-to-grafana.md)
 * [Basic Stake Pool Networking](intermediate-guide/basic-stake-pool-networking.md)
+* [Add adapools Metrics to Grafana](intermediate-guide/add-adapools-info-to-grafana.md)
 
 ## Cardano Developer Guides
 
