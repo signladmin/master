@@ -9,7 +9,7 @@ It will take about 15 minutes to download the chain and another 45 to sync to th
 
 It can take anywhere from 5 to 50 minutes to sync after a reboot depending how the node was shut down or restarted. Check if process is running with htop. If it is use gLiveView.sh or go for walk. It will sync and the socket will be created.
 
-It is best to just leave it running.
+It is best to just leave it running. 🏃♀ 
 {% endhint %}
 
 ## Quick Start
