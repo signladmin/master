@@ -155,7 +155,7 @@ cardano-service enable
 ## Forward port on router
 
 {% hint style="danger" %}
-Do not forward a port to your Core machine it only connects to the relay\(s\) on your LAN
+Do not forward a port to your Core machine it only connects to your relay\(s\) on your LAN
 {% endhint %}
 
 Log into your router and forward port 3001 to your relay nodes LAN IPv4 address port 3001. Second relay forward port 3002 to LAN IPv4 address for relay 2 to port 3002.
