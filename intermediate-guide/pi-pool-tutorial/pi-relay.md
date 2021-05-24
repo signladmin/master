@@ -172,19 +172,19 @@ Configure the script to match your environment.
 If you are using IPv4 leave CNODE\_HOSTNAME the way it is. The service will pick up your public IP address on it's own. I repeat only change the port to 3001. For DNS change only the first instance. Do not edit "CHANGE ME" further down in the file.
 {% endhint %}
 
-{% code title="/home/ada/pi-pool/scripts/topologyUpdater.sh" %}
+```bash
+cd /home/ada/pi-pool/scripts/topologyUpdater.sh
+```
+
 ```bash
 nano topologyUpdater.sh
 ```
-{% endcode %}
 
 Run the updater once to confirm it is working.
 
-{% code title="/home/ada/pi-pool/scripts/topologyUpdater.sh" %}
 ```bash
 ./topologyUpdater.sh
 ```
-{% endcode %}
 
 Should look similar to this.
 
