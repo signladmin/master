@@ -603,11 +603,17 @@ echo minPoolCost: ${minPoolCost}
 
 {% tabs %}
 {% tab title="DNS Relay\(s\)" %}
-
+```text
+--single-host-pool-relay <DOMAIN_NAME>
+--pool-relay-port <RELAY NODE PORT> \
+```
 {% endtab %}
 
 {% tab title="IPv4 Relay\(s\)" %}
-
+```text
+--pool-relay-ipv4 <RELAY NODE PUBLIC IP> \
+--pool-relay-port <RELAY NODE PORT> \
+```
 {% endtab %}
 {% endtabs %}
 
