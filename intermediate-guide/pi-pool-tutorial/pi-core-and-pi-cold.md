@@ -601,6 +601,8 @@ echo minPoolCost: ${minPoolCost}
 {% endtab %}
 {% endtabs %}
 
+Use the format below to register single or multiple relays.
+
 {% tabs %}
 {% tab title="DNS Relay\(1\)" %}
 ```text
