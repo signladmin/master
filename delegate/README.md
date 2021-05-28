@@ -6,7 +6,11 @@ description: Support Decentralization
 
 #### Please consider delegating to any of our alliance members if you enjoy these tutorials and resources. Thank You! 🙏 😊 
 
+{% embed url="https://armada-alliance.com" %}
+
 {% embed url="https://armada-alliance.com/" %}
+
+
 
 {% hint style="success" %}
 **We also take donations** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**, thank you for your support!**
