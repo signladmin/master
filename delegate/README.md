@@ -8,8 +8,6 @@ description: Support Decentralization
 
 {% embed url="https://armada-alliance.com" %}
 
-{% embed url="https://armada-alliance.com/" %}
-
 
 
 {% hint style="success" %}
