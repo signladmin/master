@@ -173,7 +173,7 @@ If you are using IPv4 leave CNODE\_HOSTNAME the way it is. The service will pick
 {% endhint %}
 
 ```bash
-cd /home/ada/pi-pool/scripts/topologyUpdater.sh
+cd /home/ada/pi-pool/scripts/
 ```
 
 ```bash
