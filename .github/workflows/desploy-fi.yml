@@ -1,0 +1,30 @@
+# This workflow creates a branch from the translations/fi folder
+env:
+  # **CHANGE THIS** for other languages
+  LANG_CODE: fi
+
+name: Suomeksi [FI] Translations
+
+# Runs on push to master, only when files under `translations/fi` are modified
+on:
+  push:
+    branches: [ master ]
+    paths:
+      # **CHANGE THIS** for other languages
+      - 'translations/fi/**'
+
+jobs:
+  build:
+    name: Build [${ env.LANG_CODE }]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # Create branch from translations/es folder
+    - name: Create branch from language
+      run: |
+        git config --global user.email "dani@kedarastudios.com"
+        git config --global user.name "GH Translation BOT"
+        ./scripts/create-translated-branch.sh $LANG_CODE
+        git push -f origin translations-$LANG_CODE:translations-$LANG_CODE
