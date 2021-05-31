@@ -540,6 +540,10 @@ cardano-cli transaction submit \
 
 Create a **poolMetaData.json** file. It will contain important information about your pool. You will need to host this file somewhere online forevermore. It must be online and you cannot edit it without resubmitting/updating your pool.cert. In the next couple steps we will hash 
 
+{% hint style="warning" %}
+metadata-url must be less than 64 characters.
+{% endhint %}
+
 {% embed url="https://pages.github.com/" caption="Hosting your poolMetaData.json on github is popular choice" %}
 
  I say host it on your Pi with NGINX.
