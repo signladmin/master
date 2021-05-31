@@ -16,5 +16,3 @@
 | [GitHub](https://github.com/armada-alliance)                                                           |
 | [Telegram](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)                                               |
 
-
-
