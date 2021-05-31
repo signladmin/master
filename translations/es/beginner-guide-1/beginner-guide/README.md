@@ -5,7 +5,7 @@ description: >-
 
 # Raspberry Pi OS Tutorials
 
-### What hardware you'll need for these lessons
+## What hardware you'll need for these lessons
 
 | Required Item                                                | Quantity |
 |:------------------------------------------------------------ |:-------- |
