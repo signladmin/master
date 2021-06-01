@@ -240,7 +240,7 @@ Remember to remove the last entries comma in your list or cardano-node will fail
 nano /home/ada/pi-pool/files/mainnet-topology.json
 ```
 
-### Enable blockfetch
+### Enable blockfetch tracing
 
 ```bash
 sed -i ${NODE_FILES}/mainnet-config.json \
