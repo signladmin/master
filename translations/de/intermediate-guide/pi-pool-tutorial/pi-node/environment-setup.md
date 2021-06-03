@@ -368,6 +368,17 @@ if [ ! -d ${LOG_DIR} ]; then
 fi
 
 curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
+if [ "${CNODE_HOSTNAME}" != "CHANGE ME" ]; then
+  T_HOSTNAME="&hostname=${CNODE_HOSTNAME}"
+else
+  T_HOSTNAME=''
+fi
+
+if [ ! -d ${LOG_DIR} ]; then
+  mkdir -p ${LOG_DIR};
+fi
+
+curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
 ```
 
 Save, exit and make it executable.
@@ -619,7 +630,7 @@ At this point you may want to start cardano-service and get synced up before we 
 
 ### Configure Grafana
 
-On your local machine open your browser and got to \[\[[http://&lt;Pi-Node's\]\(http://\]\(http://](http://<Pi-Node's]%28http://]%28http://){\[--lt--]}Pi-Node's\]%28[http://\)&lt;Pi-Node's\\](http://%29<Pi-Node's\)\) private ip&gt;:5000
+On your local machine open your browser and got to \[\[[http://&lt;Pi-Node's\]\(http://\]\(http://](http://<Pi-Node's]%28http://]%28http://){\[--lt--]}Pi-Node's\]%28\[http://\)&lt;Pi-Node's\\\](http://%29<Pi-Node's\)\) private ip&gt;:5000
 
 Log in and set a new password. Default username and password is **admin:admin**.
 

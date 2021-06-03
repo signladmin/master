@@ -44,6 +44,13 @@ nano create-initial-assets-json.js
  * You can define:
  * 1. amount of assets
  * 2. whether you want to start the collection with either 1 or 0
+ * 3. /**
+ * This script is responsible for generating the initial
+ * assets.json that can later be adjusted to fit your specific needs
+ *
+ * You can define:
+ * 1. amount of assets
+ * 2. whether you want to start the collection with either 1 or 0
  * 3. what the mimeType is (jpeg, png or gif)
  */
 

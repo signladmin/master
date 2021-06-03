@@ -16,7 +16,7 @@ It is best to just leave it running. 🏃♀
 
 ### **1. Download and flash the** [**Pi-Node.img.gz**](https://db.adamantium.online/Pi-Node.img.gz)**.**
 
-### 2. ssh into the server.
+### 2. 2. ssh into the server.
 
 ```bash
 ssh ada@<pi-node private IPv4>
@@ -66,7 +66,7 @@ cardano-service status
 cardano-monitor status
 ```
 
-### 8. gliveview.sh
+### 8. 8. gliveview.sh
 
 ```bash
 cd $NODE_HOME/scripts

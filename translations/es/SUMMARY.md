@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome Pi Operators](README.md)
+* [Bienvenidos Operadores Pi](README.md)
 * [Delegate](delegate/README.md)
   * [How to delegate ADA](delegate/how-to-delegate-ada.md)
 * [Contribute](how-to-contribute/README.md)

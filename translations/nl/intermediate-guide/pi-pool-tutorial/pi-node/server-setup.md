@@ -141,7 +141,7 @@ ada hard nofile 1048576
 
 ### Optimize performance & security
 
-Add the following to the bottom of /etc/sysctl.conf. Save and exit.
+Open /etc/default/irqbalance and add to the bottom. Save and exit.
 
 {% hint style="info" %}
 [https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3](https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3)

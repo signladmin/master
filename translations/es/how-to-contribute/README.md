@@ -2,7 +2,7 @@
 description: Cómo contribuir con esta guía
 ---
 
-# Contribuir
+# Contribute
 
 ## ¡Qué bien verte aquí!
 
