@@ -1,17 +1,17 @@
-# This workflow creates a branch from the translations/es folder
+# This workflow creates a branch from the translations/${ env.LANG_CODE } folder
 env:
   # **CHANGE THIS** for other languages
   LANG_CODE: es
+  LANGUAGE_NAME: Spanish
 
-name: Spanish [ES] Translations
+name: ${ env.LANGUAGE_NAME } [${ env.LANG_CODE }] Translations
 
-# Runs on push to master, only when files under `translations/es` are modified
+# Runs on push to master, only when files under `translations/${ env.LANG_CODE }` are modified
 on:
   push:
     branches: [ master ]
     paths:
-      # **CHANGE THIS** for other languages
-      - 'translations/es/**'
+      - 'translations/${ env.LANG_CODE }/**'
 
 jobs:
   build:
@@ -21,8 +21,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # Create branch from translations/es folder
-    - name: Create branch from language
+    # Create branch from translations/${ env.LANG_CODE } folder
+    - name: Create branch from ${ env.LANGUAGE_NAME } language
       run: |
         git config --global user.email "dani@kedarastudios.com"
         git config --global user.name "GH Translation BOT"
