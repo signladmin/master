@@ -2,7 +2,7 @@
 description: Guía de Contribución para participar en este proyecto
 ---
 
-# Guía de Contribución
+# Contributing Guide
 
 _**Lo que estamos buscando en nuestros Colaboradores.**_
 
