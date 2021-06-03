@@ -57,3 +57,11 @@ git config --global user.email "yourgithubemail@email.com"
 ## Step 4: Make a translation change in a file in Crowdin for the language you have just configured.
 
 And wait until it syncs, or sync it manually under Settings->Integrations->Sync now in Crowdin project settings.
+
+## Step 5: Merge the translation Pull Request created by Crowdin
+Crowdin will make a PR to master to update the translations, this workflow will fire after the merge is done.
+
+## Step 6: Check that a Github action is fired 
+A new branch will be created on the repository named translation-xx
+
+## Step 7: Gitbook will sync automatically the new variant, if not force the sync there.
