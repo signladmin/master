@@ -52,5 +52,5 @@ Wherever possible, do not take these conversations to private channels, includin
 
 Attribution
 
-This contributing guide is adapted from the [open-source guide](https://github.com/github/opensource.guide).
+This contributing guide is adapted from the opensource.guide
 
