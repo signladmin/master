@@ -36,7 +36,7 @@ jobs:
     # Create branch from translations/${ env.LANG_CODE } folder
     - name: Create branch from language
       run: |
-        git config --global user.email "dani@kedarastudios.com"
+        git config --global user.email "yourgithubemail@email.com"
         git config --global user.name "GH Translation BOT"
         ./scripts/create-translated-branch.sh $LANG_CODE
         git push -f origin translations-$LANG_CODE:translations-$LANG_CODE
@@ -45,6 +45,14 @@ jobs:
 ## Step 3: Change LANG_CODE, workflow and job name.
 
 Change the LANG_CODE variable to the string that matches the language under /translations/xx folder.
+
+Change also the workflow name and job name to suit the new language.
+
+Replace the email in this line to match your github's email:
+
+```
+git config --global user.email "yourgithubemail@email.com"
+```
 
 ## Step 4: Make a translation change in a file in Crowdin for the language you have just configured.
 
