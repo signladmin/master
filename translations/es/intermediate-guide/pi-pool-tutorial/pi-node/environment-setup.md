@@ -4,7 +4,7 @@ description: Install packages needed to run cardano-node and configure our envir
 
 # Environment Setup
 
-## Install packages
+## Instalar paquetes
 
 Enable automatic security updates.
 
