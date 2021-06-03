@@ -164,6 +164,7 @@ module.exports = cardano;
 
 {% tabs %}
 {% tab title="Create Project" %}
+<<<<<<< HEAD
 
 {% tab title="Fetch Genesis File" %}
 
@@ -172,6 +173,22 @@ module.exports = cardano;
 {% endtab %}
 {% endtabs %}
 
+=======
+{% embed url="https://youtu.be/Xkx9vdibbq0" %}
+{% endtab %}
+
+{% tab title="Fetch Genesis File" %}
+{% embed url="https://youtu.be/X5cRGA0qyQE" %}
+{% endtab %}
+
+{% tab title="Create Cardano Client" %}
+{% embed url="https://youtu.be/-fnaF3FWL3k" %}
+{% endtab %}
+{% endtabs %}
+
+
+
+>>>>>>> master
 ## Create a local wallet
 
 ```bash
