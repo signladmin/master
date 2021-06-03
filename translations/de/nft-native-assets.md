@@ -225,6 +225,7 @@ console.log(
 
 ```text
 cd ..
+cd ..
 node src/get-balance.js
 ```
 
@@ -355,6 +356,7 @@ console.log(txHash);
 
 ```text
 cd ..
+cd ..
 node src/mint-asset.js
 ```
 
@@ -445,6 +447,7 @@ console.log("TxHash: " + txHash);
 ```
 
 ```javascript
+cd ..
 cd ..
 node src/send-back-asset-to-wallet.js
 ```
