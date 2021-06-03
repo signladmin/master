@@ -1,4 +1,4 @@
-# Código de Conducta
+# Code of Conduct
 
 ## Our Pledge
 
