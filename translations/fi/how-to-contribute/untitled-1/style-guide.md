@@ -2,7 +2,7 @@
 description: Materiaalin tyyliohje ohjeistusten laatimiseen.
 ---
 
-# Tyyliohje
+# Style Guide
 
 _**Ote GitHub Manual of Style dokumentaatiosta, jonka pohjalta tämä ohje on laadittu:**_
 
