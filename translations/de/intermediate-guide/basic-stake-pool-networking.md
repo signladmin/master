@@ -74,7 +74,7 @@ The **addr** and **port** entries above should be the IP addresses of your relay
 {% code title="> sudo ufw status" %}
 ```text
 To                         Action      From
---                         ------      ----
+-- ------      ----
 6000/tcp                   ALLOW       10.20.30.1
 6000/tcp                   ALLOW       10.20.30.2
 ```
