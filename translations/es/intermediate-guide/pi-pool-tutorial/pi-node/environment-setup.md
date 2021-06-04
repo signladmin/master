@@ -493,7 +493,7 @@ You can connect a Telegram bot to Grafana which can alert you of problems with t
 
 {% embed url="https://github.com/prometheus" caption="" %}
 
-![](../../../.gitbook/assets/pi-pool-grafana%20%281%29.png)
+![](../../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29.png)
 
 ### Install Prometheus & Node Exporter.
 
@@ -641,7 +641,7 @@ At this point you may want to start cardano-service and get synced up before we 
 
 ### Configure Grafana
 
-On your local machine open your browser and got to \[\[[http://&lt;Pi-Node's\]\(http://\]\(http://](http://<Pi-Node's]%28http://]%28http://){\[--lt--]}Pi-Node's\]%28\[http://\)&lt;Pi-Node's\\\](http://%29<Pi-Node's\)\) private ip&gt;:5000
+On your local machine open your browser and got to \[\[\[[http://&lt;Pi-Node's\]\(http://\]\(http://\]\(http://](http://<Pi-Node's]%28http://]%28http://]%28http://)&lt;Pi-Node's\]%28[http://\]%28http://\)&lt;Pi-Node's\]%28\[http://\)&lt;Pi-Node's\]\(http://%29](http://]%28http://%29<Pi-Node's]%28[http://%29<Pi-Node's]%28http://%29)&lt;Pi-Node's\)\) private ip&gt;:5000
 
 Log in and set a new password. Default username and password is **admin:admin**.
 
@@ -657,7 +657,7 @@ Save the dashboard json files to your local machine.
 
 In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
 
-![](../../../.gitbook/assets/pi-pool-grafana%20%281%29.png)
+![](../../../.gitbook/assets/pi-pool-grafana%20%282%29.png)
 
 ### Configure poolDataLive
 
