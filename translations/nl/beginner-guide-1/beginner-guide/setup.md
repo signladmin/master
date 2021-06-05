@@ -74,7 +74,7 @@ If this is your first time booting up the Raspberry Pi OS you will have to follo
 
 Open the Raspberry Pi applications menu and then click on the **SD Card Copier** application.
 
-![](../../.gitbook/assets/screen-shot-2021-03-29-at-9.11.39-pm.png)
+![](../../.gitbook/assets/screen-shot-2021-03-29-at-9.11.39-pm%20%281%29.png)
 
 Then we want to select **COPY FROM DEVICE** - **\(mmcblk0\) SD CARD.**
 
@@ -92,13 +92,13 @@ This will bring you to the Raspberry Pi's system configuration settings where yo
 
 Next select **Boot Order.**
 
-![](../../.gitbook/assets/screen-shot-2021-03-29-at-10.13.40-pm.png)
+![](../../.gitbook/assets/screen-shot-2021-03-29-at-10.13.40-pm%20%281%29.png)
 
 \*\*\*\*
 
 Then choose the **USB Boot**.
 
-![](../../.gitbook/assets/screen-shot-2021-03-29-at-10.14.05-pm.png)
+![](../../.gitbook/assets/screen-shot-2021-03-29-at-10.14.05-pm%20%281%29.png)
 
 Now you can select **&lt;Ok&gt;** then **&lt;Finish&gt;**, close the Raspberry Pi system configuration menu, and reboot the Pi.
 

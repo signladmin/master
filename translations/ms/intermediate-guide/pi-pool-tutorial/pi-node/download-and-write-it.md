@@ -27,7 +27,7 @@ Plug the Pi into a monitor, insert the sd card and power up. Once you see a gree
 **Choose OS -&gt; Misc utility images -&gt; Raspberry Pi 4 EEPROM boot recovery** [https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md](https://www.raspberrypi.org/documentation/hardware/raspberrypi/booteeprom.md)
 {% endhint %}
 
-![](../../../.gitbook/assets/otgpoltut.png)
+![](../../../.gitbook/assets/otgpoltut%20%281%29%20%281%29.png)
 
 {% tabs %}
 {% tab title="Pre configured Pi-Node.img.gz" %}
