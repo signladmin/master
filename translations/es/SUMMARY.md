@@ -1,22 +1,22 @@
-# Table of contents
+# Sumario
 
 * [Bienvenidos Operadores Pi](README.md)
-* [Delegate](delegate/README.md)
-  * [How to delegate ADA](delegate/how-to-delegate-ada.md)
-* [Contribute](how-to-contribute/README.md)
-  * [Contributing Guide](how-to-contribute/untitled-1/README.md)
-    * [Style Guide](how-to-contribute/untitled-1/style-guide.md)
-    * [Code of Conduct](how-to-contribute/untitled-1/untitled.md)
+* [Delegar](delegate/README.md)
+  * [Cómo delegar ADA](delegate/how-to-delegate-ada.md)
+* [Contribuir](how-to-contribute/README.md)
+  * [Guía de Contribución](how-to-contribute/untitled-1/README.md)
+    * [Guía de Estilo](how-to-contribute/untitled-1/style-guide.md)
+    * [Código de conducta](how-to-contribute/untitled-1/code-of-conduct.md)
 
-## What is required <a id="before-you-get-started..."></a>
+## Qué se necesita <a id="before-you-get-started..."></a>
 
-* [Resource Library](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
-* [Hardware Purchase Links](before-you-get-started.../hardware.md)
+* [Biblioteca de recursos](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
+* [Enlaces de compra de hardware](before-you-get-started.../hardware.md)
 
-## Beginner Guides <a id="beginner-guide-1"></a>
+## Guías de principiantes <a id="beginner-guide-1"></a>
 
 * [Raspberry Pi OS Tutorials](beginner-guide-1/beginner-guide/README.md)
-  * [Setting up the Raspberry Pi](beginner-guide-1/beginner-guide/setup.md)
+  * [Configurando el Raspberry Pi](beginner-guide-1/beginner-guide/setup.md)
   * [Set up a Relay Node](beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)
 
 ## Intermediate Guides <a id="intermediate-guide"></a>
