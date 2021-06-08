@@ -1,9 +1,9 @@
-# Table of contents
+# Sumario
 
 * [Bienvenidos Operadores Pi](README.md)
-* [Delegate](delegate/README.md)
-  * [How to delegate ADA](delegate/how-to-delegate-ada.md)
-* [Contribute](how-to-contribute/README.md)
+* [Delegar](delegate/README.md)
+  * [Cómo delegar ADA](delegate/how-to-delegate-ada.md)
+* [Contribuir](how-to-contribute/README.md)
   * [Contributing Guide](how-to-contribute/untitled-1/README.md)
     * [Style Guide](how-to-contribute/untitled-1/style-guide.md)
     * [Code of Conduct](how-to-contribute/untitled-1/code-of-conduct.md)
