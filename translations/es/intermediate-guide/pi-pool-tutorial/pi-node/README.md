@@ -2,7 +2,7 @@
 description: Quickly bootstrap a synced configured node in a hour!
 ---
 
-# Pi-Node \(quick start\)
+# Pi-Node \(inicio rápido\)
 
 {% hint style="info" %}
 It will take about 15 minutes to download the chain and another 45 to sync to the tip. You will not be able to do much until your node has synced with the tip of the block chain.

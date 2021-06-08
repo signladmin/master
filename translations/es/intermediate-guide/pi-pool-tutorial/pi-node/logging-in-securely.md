@@ -3,7 +3,7 @@ description: >-
   Generate a strong ssh keypair, boot your Raspberry Pi, copy ssh pub key and login
 ---
 
-# Logging in Securely
+# Iniciando sesión de forma segura
 
 {% hint style="warning" %}
 It is assumed that you are using a Linux or Mac operating system with native support for ssh as your local machine. Or, if using Windows have a tool set that will work with this guide. Perhaps now is the time to switch to Linux and not look back. [https://elementary.io/](https://elementary.io/).
