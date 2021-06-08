@@ -2,7 +2,7 @@
 description: Create operational keys & certificates. Create wallet & register stake pool
 ---
 
-# Pi-Core/Cold
+# Pi-Core/Frío
 
 {% hint style="danger" %}
 You need to have a Pi-Node configured with a new static ip address on your LAN. A fully qualified domain name and cardano-service file set to start on port 3000. You also need to update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
