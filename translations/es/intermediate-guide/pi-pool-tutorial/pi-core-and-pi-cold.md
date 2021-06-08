@@ -868,7 +868,7 @@ You should create an account and claim your pool here.
 
 ## Backups
 
-Get a couple small usb sticks and backup all your files and folders\(except the db/ folder\). Backup your online Core first then the Cold offline files and folders. **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do not plug the USB stick into anything online after Cold files are on it!**
+Get a couple small usb sticks and backup all your files and folders\(except the db/ folder\). Backup your online Core first then the Cold offline files and folders. **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do not plug the USB stick into anything online after Cold files are on it!**
 
 ![https://twitter.com/insaladaPool/status/1380087586509709312?s=19](../../.gitbook/assets/insalada.png)
 
