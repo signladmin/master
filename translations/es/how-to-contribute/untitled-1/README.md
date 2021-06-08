@@ -2,7 +2,7 @@
 description: Guía de Contribución para participar en este proyecto
 ---
 
-# Contributing Guide
+# Guía de Contribución
 
 _**Lo que estamos buscando en nuestros Colaboradores.**_
 
@@ -13,7 +13,7 @@ Firstly, we at Armada-Alliance would like to thank you for your consideration in
 1. What we are looking for
 2. Rules and Expectations
 3. How to contribute
-4. Style Guide
+4. Guía de Estilo
 5. Community
 
 **What we are looking for**
@@ -40,7 +40,7 @@ _First, thoroughly read through the project and consider what level of contribut
 * For a minor contribution, such as grammar, open a pull request.
 * For a major contribution, such as a new tutorial, start by ordering an issue first. This way the community can assess and discuss your idea before you start working on it.
 
-_**Style Guide**_
+_**Guía de Estilo**_
 
 _If you are contributing tutorials or guides please check out our_ Style Guide _so that it blends into the project seamlessly._
 

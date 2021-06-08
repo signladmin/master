@@ -2,7 +2,7 @@
 description: Style Guide for participating in this project.
 ---
 
-# Style Guide
+# Guía de Estilo
 
 _**From the GitHub Manual of Style, which this style guide inherits from:**_
 
