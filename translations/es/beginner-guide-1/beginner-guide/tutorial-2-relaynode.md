@@ -3,7 +3,7 @@ description: >-
   After completing the Raspberry Pi setup we are now ready to download the files needed for the testnet.
 ---
 
-# Set up a Relay Node
+# Configurar nodo Relay
 
 {% hint style="warning" %}
 **This tutorial is meant to get a single node syncing to the Cardano blockchain! We have skipped certain steps and security in order to make this tutorial as easy as possible - DO NOT USE this tutorial to form a mainnet stake pool. Please use our**[ **intermediate guides**](../../intermediate-guide/pi-pool-tutorial/pi-node/) **for the mainnet.**
@@ -15,7 +15,7 @@ description: >-
 
 ## Summary
 
-1. Environment Setup
+1. Configuracion de entorno
 2. Downloading the binaries needed to build a Cardano node relay
 3. Download configuration files from IOHK/Cardano-node
 4. Edit the config settings
