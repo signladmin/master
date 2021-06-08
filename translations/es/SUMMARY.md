@@ -17,30 +17,30 @@
 
 * [Raspberry Pi OS Tutorials](beginner-guide-1/beginner-guide/README.md)
   * [Configurando el Raspberry Pi](beginner-guide-1/beginner-guide/setup.md)
-  * [Set up a Relay Node](beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)
+  * [Configurar nodo Relay](beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)
 
-## Intermediate Guides <a id="intermediate-guide"></a>
+## Guías Intermedias <a id="intermediate-guide"></a>
 
-* [Pi-Node Image & Guides](intermediate-guide/pi-pool-tutorial/README.md)
-  * [Pi-Node \(quick start\)](intermediate-guide/pi-pool-tutorial/pi-node/README.md)
-    * [Download & Flash](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
-    * [Logging in Securely](intermediate-guide/pi-pool-tutorial/pi-node/logging-in-securely.md)
-    * [User Setup](intermediate-guide/pi-pool-tutorial/pi-node/user-setup.md)
-    * [Server Setup](intermediate-guide/pi-pool-tutorial/pi-node/server-setup.md)
-    * [Environment Setup](intermediate-guide/pi-pool-tutorial/pi-node/environment-setup.md)
+* [Imagen del Pi-Node & Guías](intermediate-guide/pi-pool-tutorial/README.md)
+  * [Pi-Node \(inicio rápido\)](intermediate-guide/pi-pool-tutorial/pi-node/README.md)
+    * [Descargar & Flash](intermediate-guide/pi-pool-tutorial/pi-node/download-and-write-it.md)
+    * [Iniciando sesión de forma segura](intermediate-guide/pi-pool-tutorial/pi-node/logging-in-securely.md)
+    * [Configuración usuarios](intermediate-guide/pi-pool-tutorial/pi-node/user-setup.md)
+    * [Configuración del servidor](intermediate-guide/pi-pool-tutorial/pi-node/server-setup.md)
+    * [Configuracion de entorno](intermediate-guide/pi-pool-tutorial/pi-node/environment-setup.md)
   * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay.md)
-  * [Pi-Core/Cold](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
+  * [Pi-Core/Frío](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
   * [Rotate KES](intermediate-guide/pi-pool-tutorial/rotate-kes.md)
-  * [Create .img file](intermediate-guide/pi-pool-tutorial/create-.img-file.md)
+  * [Crear archivo .img](intermediate-guide/pi-pool-tutorial/create-.img-file.md)
 * [Basic Stake Pool Networking](intermediate-guide/basic-stake-pool-networking.md)
 * [Add adapools Metrics to Grafana](intermediate-guide/add-adapools-info-to-grafana.md)
 
-## Cardano Developer Guides
+## Guías de desarrolladores de Cardano
 
 * [Cardano Native Asset and NFT Tutorial](cardano-developer-guides/nft-native-assets.md)
 * [Cardano NFT Collection Tutorial](cardano-developer-guides/cardano-nft-collection-tutorial-coming-soon.md)
 
-## ADVANCED GUIDES
+## Guías avanzadas
 
 * [Alpine Linux OS](advanced-guides/alpine-linux-os.md)
 
