@@ -2,7 +2,7 @@
 description: This is how you create an image you can flash to other Pi's
 ---
 
-# Create .img file
+# Crear archivo .img
 
 ## Make the Pi-Node base .img.gz file for reuse
 
