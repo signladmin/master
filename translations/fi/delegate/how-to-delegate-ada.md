@@ -4,7 +4,7 @@ description: Laita ADAsi työskentelemään sinulle jo tänään!
 
 # How to delegate ADA
 
-* **See this link for an explanation on delegation:**  [**https://cardano.org/stake-pool-delegation/**](https://cardano.org/stake-pool-delegation/)
+* **Tästä linkistä pääset lukemaan lisää delegoinnista:**  [**https://cardano.org/stake-pool-delegation/**](https://cardano.org/stake-pool-delegation/)\*\*\*\*
 * **ADAsi täysi hallinta pysyy aina sinulla eikä valuutta siirry pois lompakostasi delegoidessasi.**
 * **Ensimmäinen askel ADAn delegoimiseen on virallisen Cardano lompakon lataaminen, ellet ole jo sellaista ladannut.**
 
