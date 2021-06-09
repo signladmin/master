@@ -4,9 +4,6 @@
 * [Delegar](delegate/README.md)
   * [Cómo delegar ADA](delegate/how-to-delegate-ada.md)
 * [Contribuir](how-to-contribute/README.md)
-  * [Contributing Guide](how-to-contribute/untitled-1/README.md)
-    * [Style Guide](how-to-contribute/untitled-1/style-guide.md)
-    * [Code of Conduct](how-to-contribute/untitled-1/untitled.md)
   * [Guía de Contribución](how-to-contribute/untitled-1/README.md)
     * [Guía de Estilo](how-to-contribute/untitled-1/style-guide.md)
     * [Código de conducta](how-to-contribute/untitled-1/code-of-conduct.md)
@@ -45,16 +42,5 @@
 
 ## Guías avanzadas
 
-* [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/README.md)
-  * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/armada-alliance-alpine-rpi-os.md)
-  * [alpine\_cnode\_scripts\_and\_services](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/README.md)
-    * [etc](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/etc/README.md)
-      * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/etc/armada-alliance-alpine-rpi-os.md)
-    * [home](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/README.md)
-      * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/armada-alliance-alpine-rpi-os.md)
-      * [cardano](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/README.md)
-        * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/armada-alliance-alpine-rpi-os.md)
-        * [cnode](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/cnode/README.md)
-          * [files](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/cnode/files/README.md)
-            * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/cnode/files/armada-alliance-alpine-rpi-os.md)
+* [Alpine Linux OS](advanced-guides/alpine-linux-os.md)
 
