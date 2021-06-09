@@ -1,4 +1,4 @@
-# Alpine Linux OS
+# Alpine Linux OS \(COMING-SOON\)
 
 ## Why use AlpineOS on the Raspberry Pi? Here are some reasons:
 
@@ -12,7 +12,7 @@
 1. Download the AlpineOS for RPi 4 aarch64 here: [https://dl-cdn.alpinelinux.org/alpine/v3.13/releases/aarch64/alpine-rpi-3.13.5-aarch64.tar.gz](https://dl-cdn.alpinelinux.org/alpine/v3.13/releases/aarch64/alpine-rpi-3.13.5-aarch64.tar.gz)
 2. Decompress the .tar.gz file and copy its contents into an SSD/SD card
 3. Plug in a keyboard and monitor.
-4. Login with username 'root'. It should prompt you for a new password on the first login.
+4. ~~Login with username 'root'. It should prompt you for a new password on the first login.~~
 5. Run the command `setup-disk` and create the partition. You may have to retry and erase the entire disk.
 6. Run the command `setup-alpine` and follow the instructions.
 7. Add a new user called cardano via the command `adduser cardano` and its password as instructed.
