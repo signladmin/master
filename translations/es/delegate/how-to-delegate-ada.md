@@ -4,7 +4,7 @@ description: '¡Pon tus ADA a trabajar ahora!'
 
 # Cómo delegar ADA
 
-* **See this link for an explanation on delegation:**  [**https://cardano.org/stake-pool-delegation/**](https://cardano.org/stake-pool-delegation/)
+* **See this link for an explanation on delegation:**  [**https://cardano.org/stake-pool-delegation/**](https://cardano.org/stake-pool-delegation/)\*\*\*\*
 * **You always maintain full control of your ADA in your own wallet when you delegate.**
 * **The first step to delegating your ADA is to download one of the official Cardano wallets.**
 
