@@ -42,5 +42,16 @@
 
 ## Guías avanzadas
 
-* [Alpine Linux OS](advanced-guides/alpine-linux-os.md)
+* [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/README.md)
+  * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/armada-alliance-alpine-rpi-os.md)
+  * [alpine\_cnode\_scripts\_and\_services](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/README.md)
+    * [etc](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/etc/README.md)
+      * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/etc/armada-alliance-alpine-rpi-os.md)
+    * [home](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/README.md)
+      * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/armada-alliance-alpine-rpi-os.md)
+      * [cardano](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/README.md)
+        * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/armada-alliance-alpine-rpi-os.md)
+        * [cnode](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/cnode/README.md)
+          * [files](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/cnode/files/README.md)
+            * [armada-alliance/alpine-rpi-os](advanced-guides/alpine-linux-os/alpine_cnode_scripts_and_services/home/cardano/cnode/files/armada-alliance-alpine-rpi-os.md)
 
