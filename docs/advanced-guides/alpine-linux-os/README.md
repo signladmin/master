@@ -2,7 +2,7 @@
 
 ## Why use AlpineOS on the Raspberry Pi? Here are some reasons:
 
-1. Very low memory consumption \(~50MB utilised during idle vs ~350MB for Ubuntu 20.04\).
+1. Very low memory consumption \(~50MB utilized during idle vs ~350MB for Ubuntu 20.04\).
 2. Lower CPU overhead \(27 tasks/ 31 threads active for Alpine vs 57 tasks / 111 threads for Ubuntu when cardano-node is running\).
 3. Cooler Pi😎 \(Literally, CPU runs cooler because of the lower CPU overhead\).
 4. And finally, why not? If you're gonna use static binaries, might as well take advantage of AlpineOS😜
@@ -10,9 +10,9 @@
 ### Initial Setup for AlpineOS on Raspberry Pi 4B 8GB:
 
 1. Download the AlpineOS for RPi 4 aarch64 here: [https://dl-cdn.alpinelinux.org/alpine/v3.13/releases/aarch64/alpine-rpi-3.13.5-aarch64.tar.gz](https://dl-cdn.alpinelinux.org/alpine/v3.13/releases/aarch64/alpine-rpi-3.13.5-aarch64.tar.gz)
-2. Decompress the .tar.gz file and copy it's contents into an SSD/SD card
+2. Decompress the .tar.gz file and copy its contents into an SSD/SD card
 3. Plug in a keyboard and monitor.
-4. Login with username 'root'. It should prompt you for a new password on first log in.
+4. Login with username 'root'. It should prompt you for a new password on the first login.
 5. Run the command `setup-disk` and create the partition. You may have to retry and erase the entire disk.
 6. Run the command `setup-alpine` and follow the instructions.
 7. Add a new user called cardano via the command `adduser cardano` and its password as instructed.
@@ -36,7 +36,7 @@ addgroup cardano video
 
 1. Either exit root via the command `exit` or reboot and login to cardano
 2. Install bash to ensure bash script compatibility
-3. Also install git, we will need it later.
+3. Also, install git, we will need it later.
 
 ## Installing the 'cardano-node' and 'cardano-cli' static binaries \(AlpineOS uses static binaries almost exclusively so you should avoid non-static builds\)
 
@@ -111,4 +111,10 @@ addgroup cardano video
    ```
 
 3. Follow the guide written in README.txt contained in the $HOME directory after installing cnode, scripts and services to start the services accordingly.
+
+{% hint style="success" %}
+We would like to give a special shoutout to our [alliance member](https://armada-alliance.com) \[SRN\] Pool for providing this tutorial 🏴‍☠️ 🙏 😎 
+{% endhint %}
+
+
 
