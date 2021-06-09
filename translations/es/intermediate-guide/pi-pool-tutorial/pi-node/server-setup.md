@@ -2,7 +2,7 @@
 description: 'optimize hardware, optimize Ubuntu'
 ---
 
-# Server Setup
+# Configuración del servidor
 
 ## Configure Hardware
 

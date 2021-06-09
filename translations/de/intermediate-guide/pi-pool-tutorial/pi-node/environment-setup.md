@@ -379,6 +379,17 @@ if [ ! -d ${LOG_DIR} ]; then
 fi
 
 curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
+if [ "${CNODE_HOSTNAME}" != "CHANGE ME" ]; then
+  T_HOSTNAME="&hostname=${CNODE_HOSTNAME}"
+else
+  T_HOSTNAME=''
+fi
+
+if [ ! -d ${LOG_DIR} ]; then
+  mkdir -p ${LOG_DIR};
+fi
+
+curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
 ```
 
 Save, exit and make it executable.
@@ -482,7 +493,7 @@ You can connect a Telegram bot to Grafana which can alert you of problems with t
 
 {% embed url="https://github.com/prometheus" caption="" %}
 
-![](../../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29.png)
 
 ### Install Prometheus & Node Exporter.
 
@@ -646,7 +657,7 @@ Save the dashboard json files to your local machine.
 
 In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
 
-![](../../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 ### Configure poolDataLive
 

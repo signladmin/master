@@ -2,7 +2,7 @@
 description: Flash image
 ---
 
-# Download & Flash
+# Descargar & Flash
 
 ## Flash Image
 

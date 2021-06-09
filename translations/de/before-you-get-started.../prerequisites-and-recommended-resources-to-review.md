@@ -19,6 +19,13 @@ description: Stake pool operator resources.
 | [**NASEC Pool Youtube Channel**](https://www.youtube.com/channel/UCv-eePQ0EpSV-jf-nJUPeeA/featured)                                                     |
 | [**Jeff Geerling Youtube Channel**](https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg)                                                           |
 | [**PowerCert Animated Videos**](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)                                                               |
+|                                                                                                                                                                                                                                                                                    |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**\*\*\*\*[**Armada Alliance Community Tutorials**](https://www.youtube.com/channel/UCligunhcmbMYaBUMvONsKwg)**](https://www.youtube.com/channel/UCligunhcmbMYaBUMvONsKwg)                                                                                                |
+| [**\*\*\*\*[**\[Easy 1\] Raspberry Pi Stake Pool Tutorial Youtube Videos**](https://www.youtube.com/watch?v=tZykFS5D-jk&list=PLBhbLwOuj0DfTnneuG3vyoDHY7Dv_aiyq)\*\*\*\***](https://www.youtube.com/watch?v=tZykFS5D-jk&list=PLBhbLwOuj0DfTnneuG3vyoDHY7Dv_aiyq) |
+| [**\*\*\*\*[**NASEC Pool Youtube Channel**](https://www.youtube.com/channel/UCv-eePQ0EpSV-jf-nJUPeeA/featured)\*\*\*\***](https://www.youtube.com/channel/UCv-eePQ0EpSV-jf-nJUPeeA/featured)                                                                       |
+| [**\*\*\*\*[**Jeff Geerling Youtube Channel**](https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg)\*\*\*\***](https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg)                                                                                      |
+| [**\*\*\*\*[**PowerCert Animated Videos**](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)\*\*\*\***](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)                                                                                          |
 {% endtab %}
 
 {% tab title="Community Tutorials/GitHubs" %}

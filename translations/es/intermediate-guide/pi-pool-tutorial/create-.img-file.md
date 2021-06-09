@@ -2,7 +2,7 @@
 description: This is how you create an image you can flash to other Pi's
 ---
 
-# Create .img file
+# Crear archivo .img
 
 ## Make the Pi-Node base .img.gz file for reuse
 
@@ -40,7 +40,7 @@ sudo pishrink.sh -az pi-node.img Pi-Node.img.gz
 
 > pishrink.sh: Shrunk Pi-Node.img.gz from 7.5G to 1.3G ...
 
-And there you have it! 🧙♂ 🧙♂ 🧙♂
+And there you have it! 🧙♂ 🧙♂ 🧙♂ 🧙♂
 
 Download [Pi-Node.img.gz](https://db.adamantium.online/Pi-Node.img.gz)
 

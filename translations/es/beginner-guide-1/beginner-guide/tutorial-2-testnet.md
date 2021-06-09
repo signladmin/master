@@ -15,7 +15,7 @@ description: >-
 
 ## Summary
 
-1. Environment Setup
+1. Configuracion de entorno
 2. Downloading the binaries needed to build a Cardano node relay
 3. Download configuration files from IOHK/Cardano-node
 4. Edit the config settings

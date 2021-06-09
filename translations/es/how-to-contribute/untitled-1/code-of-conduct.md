@@ -1,6 +1,6 @@
-# Code of Conduct
+# Código de conducta
 
-## Code of Conduct
+## Código de conducta
 
 ### Our Pledge
 
