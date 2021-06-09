@@ -1,4 +1,0 @@
-# Alpine Linux OS
-
-jhgjh
-
