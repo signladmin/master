@@ -113,7 +113,7 @@ addgroup cardano video
 3. Follow the guide written in README.txt contained in the $HOME directory after installing cnode, scripts and services to start the services accordingly.
 
 {% hint style="success" %}
-We would like to give a special shoutout to our [alliance member](https://armada-alliance.com) \[SRN\] Pool for providing this tutorial 🏴‍☠️ 🙏 😎 
+We would like to give a special shoutout to our [alliance member](https://armada-alliance.com) and operator of [\[SRN\] Pool](https://www.adasrn.com/) for providing this tutorial 🏴‍☠️ 🙏 😎 
 {% endhint %}
 
 
