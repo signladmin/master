@@ -1,4 +1,4 @@
-# armada-alliance/alpine-rpi-os
+# Alpine Linux OS
 
 ## Why use AlpineOS on the Raspberry Pi? Here are some reasons:
 
