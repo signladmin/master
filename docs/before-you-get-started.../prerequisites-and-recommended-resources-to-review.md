@@ -57,7 +57,7 @@ description: Stake pool operator resources.
 | :--- |
 
 
-|  |
+| [https://roadmap.cardano.org/en/goguen/](https://roadmap.cardano.org/en/goguen/) |
 | :--- |
 {% endtab %}
 
@@ -70,9 +70,8 @@ description: Stake pool operator resources.
 {% tab title="Cardano Forum" %}
 |  |  |
 | :--- | :--- |
-| \[[https://forum.cardano.org/\]\(https://forum.cardano.org/](https://forum.cardano.org/]%28https://forum.cardano.org/) |  |
-
-\) \| \|
+| [https://forum.cardano.org/t/staking-and-delegating-for-beginners-a-step-by-step-guide/36681](https://forum.cardano.org/t/staking-and-delegating-for-beginners-a-step-by-step-guide/36681) |  |
+|  |  |
 {% endtab %}
 {% endtabs %}
 
