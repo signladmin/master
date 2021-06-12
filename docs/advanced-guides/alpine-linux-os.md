@@ -167,7 +167,7 @@ addgroup cardano video
 
 ## General Troubleshooting
 
-1\) If you happen to use a \ other than cardano, do use the following commands and replace \ with your chosen username.
+* If you happen to use another than username other than cardano, do use the following commands and replace `username` with your chosen username.
 
 ```text
     sed -i 's@/home/cardano@/home/<username>@g' ~/cnode_env
