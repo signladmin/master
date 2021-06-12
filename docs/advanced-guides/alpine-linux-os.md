@@ -1,4 +1,4 @@
-# Alpine Linux OS 🏴‍☠️
+# Alpine Linux OS 🗻
 
 ![](../.gitbook/assets/image%20%281%29.png)
 

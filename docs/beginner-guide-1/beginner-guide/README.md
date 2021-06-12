@@ -4,7 +4,7 @@ description: >-
   Operator
 ---
 
-# Raspberry Pi OS Tutorials
+# Raspberry Pi OS Tutorials🍓
 
 ## What hardware you'll need for these lessons
 
