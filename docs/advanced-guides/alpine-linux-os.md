@@ -21,7 +21,7 @@
 
 5\) Run the command `setup-alpine` and follow the instructions.
 
-6\) Run the command `setup-disk` and create the partition. You may have to retry and erase the entire disk.
+6\) Run the command and `setup-disk` and create the partition. You may have to retry and erase the entire disk.
 
 7\) Reboot.
 
@@ -142,11 +142,11 @@ addgroup cardano video
 2\) Extract the tarballs
 
 ```text
-    tar -xzvf prometheus-2.27.1.linux-arm64.tar.gz
+tar -xzvf prometheus.tar.gz
 ```
 
 ```text
-    tar -xzvf node_exporter-1.1.2.linux-arm64.tar.gz
+tar -xzvf node_exporter.tar.gz
 ```
 
 3\) Rename the folders with the following commands
@@ -184,6 +184,18 @@ addgroup cardano video
 ```text
     sudo sed -i 's@/home/cardano@/home/<username>@g' /etc/init.d/node-export
 ```
+
+* If you have trouble with port forwarding via SSH, run the following command
+
+```text
+sudo nano /etc/ssh/sshd_config
+```
+
+* Edit the line `AllowTcpForwarding no` to `AllowTcpForwarding yes`
+
+{% hint style="info" %}
+  Make sure this line is not commented out with a`#` 
+{% endhint %}
 
 {% hint style="success" %}
 We would like to give a special shoutout to our [alliance member](https://armada-alliance.com) Sayshar, operator of [\[SRN\] Pool](https://www.adasrn.com/), for providing this tutorial 🏴‍☠️ 🙏 😎 
