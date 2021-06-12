@@ -21,13 +21,17 @@
 
 5\) Run the command `setup-alpine` and follow the instructions.
 
-6\) Run the command and `setup-disk` and create the partition. You may have to retry and erase the entire disk.
+{% hint style="info" %}
+When you are in `setup-alpine`  you will be prompted to choose the system disk. Once you are at this point, enter, `y`, to setup disk and create the partition for `sys`. 
+{% endhint %}
 
-7\) Reboot.
 
-8\) Add a new user called cardano via the command `adduser cardano` and its password as instructed. \(For username other than **cardano**, refer to **General Troubleshooting**\)
 
-9\) Run the following commands to grant the new user root privileges
+6\) Reboot.
+
+7\) Add a new user called cardano via the command `adduser cardano` and its password as instructed. \(For username other than **cardano**, refer to **General Troubleshooting**\)
+
+8\) Run the following commands to grant the new user root privileges
 
 ```text
 apk add sudo
@@ -45,9 +49,9 @@ addgroup cardano tape
 addgroup cardano video
 ```
 
-10\) Either exit root via the command `exit` or reboot and login to cardano
+9\) Either exit root via the command `exit` or reboot and login to cardano
 
-11\) Install bash to ensure bash script compatibility
+10\) Install bash to ensure bash script compatibility
 
 ```text
     sudo apk add bash
