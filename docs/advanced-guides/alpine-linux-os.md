@@ -1,8 +1,4 @@
----
-description: "\U0001F3F4‍☠️^_^"
----
-
-# Alpine Linux OS
+# Alpine Linux OS 🏴‍☠️
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
