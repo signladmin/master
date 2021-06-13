@@ -10,8 +10,8 @@
 
 ## Resources <a id="before-you-get-started..."></a>
 
-* [Resource Library](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
-* [Hardware Purchase Links](before-you-get-started.../hardware.md)
+* [Resource Library🏫](before-you-get-started.../prerequisites-and-recommended-resources-to-review.md)
+* [Hardware Purchase Links🏪](before-you-get-started.../hardware.md)
 
 ## Cardano Node <a id="beginner-guide-1"></a>
 
