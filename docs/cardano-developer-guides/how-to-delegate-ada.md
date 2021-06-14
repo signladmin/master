@@ -16,7 +16,7 @@ Yoroi wallet is a mobile wallet available for Android and Apple devices. Daedalu
 
 {% tabs %}
 {% tab title="Daedulus Wallet" %}
-### I have included some video walkthroughs for using Daedulus Wallet and how to delegate/stake your ADA below:
+### We have included some video walkthroughs for using Daedulus Wallet and how to delegate/stake your ADA below:
 
 {% embed url="https://youtu.be/mVr0bvBouaw" %}
 {% endtab %}
