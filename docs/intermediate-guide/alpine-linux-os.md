@@ -22,10 +22,8 @@
 5\) Run the command `setup-alpine` and follow the instructions.
 
 {% hint style="info" %}
-When you are in `setup-alpine`  you will be prompted to choose the system disk. Once you are at this point, enter, `y`, to setup disk and create the partition for `sys`. 
+When you are in `setup-alpine` you will be prompted to choose the system disk. Once you are at this point, enter, `y`, to setup disk and create the partition for `sys`.
 {% endhint %}
-
-
 
 6\) Reboot.
 
@@ -68,32 +66,33 @@ addgroup cardano video
 ```text
     cd ~
 ```
-    
+
 ```text
     git clone https://github.com/armada-alliance/alpine-rpi-os
 ```
-    
+
 ```text
     cd alpine-rpi-os
 ```
-    
+
 ```text
     sudo cp alpine-rpi-os/alpine_cnode_scripts_and_services/etc/local.d/cpufreq.start /etc/local.d/
 ```
-    
+
 ```text
     sudo chmod +x /etc/local.d/cpufreq.start
 ```
-    
+
 ```text
     sudo rc-update add local default
 ```
+
 Then reboot the system.
 
 ### Installing the 'cardano-node' and 'cardano-cli' static binaries \(AlpineOS uses static binaries almost exclusively so you should avoid non-static builds\)
 
 {% hint style="info" %}
-**You can obtain the static binaries for version 1.27.0 via this** [**link**](https://ci.zw3rk.com/build/1758) **courtesy of Moritz Angermann, the SPO of ZW3RK pool 🙏** 
+**You can obtain the static binaries for version 1.27.0 via this** [**link**](https://ci.zw3rk.com/build/1758) **courtesy of Moritz Angermann, the SPO of ZW3RK pool 🙏**
 {% endhint %}
 
 **Run the following commands to install the binaries and place them into the correct directory.**
@@ -123,7 +122,7 @@ Then reboot the system.
 {% endhint %}
 
 1\) Clone this repo to obtain the neccessary folder and scripts to quickly start your cardano node. You may skip this step if you have already clonned this repo from step 12 when setting up AlpineOS.
-    
+
 ```text
     cd ~
 ```
@@ -233,12 +232,10 @@ sudo nano /etc/ssh/sshd_config
 * Edit the line `AllowTcpForwarding no` to `AllowTcpForwarding yes`
 
 {% hint style="info" %}
-  Make sure this line is not commented out with a`#` 
+Make sure this line is not commented out with a`#`
 {% endhint %}
 
 {% hint style="success" %}
-We would like to give a special shoutout to our [alliance member](https://armada-alliance.com) Sayshar, operator of [\[SRN\] Pool](https://www.adasrn.com/), for providing this tutorial 🏴‍☠️ 🙏 😎 
+We would like to give a special shoutout to our [alliance member](https://armada-alliance.com) Sayshar, operator of [\[SRN\] Pool](https://www.adasrn.com/), for providing this tutorial 🏴‍☠️ 🙏 😎
 {% endhint %}
-
-
 
