@@ -22,7 +22,7 @@ git fetch --recurse-submodules --tags --all
 ```text
 git tag
 ```
-3) Replace <tag> in this step with the latest tag such as `v1.1.0`.
+3) Replace `<tag>` in this step with the latest tag such as `v1.1.0`.
 ```text
 git checkout tags/<tag>
 ```
@@ -92,7 +92,7 @@ addgroup cardano video
 ```text
     git tag
 ```
-Replace \<tag\> with the latest tag in the next command.
+Replace `<tag>` with the latest tag in the next command.
 
 ```text
     git checkout tags/<tag>
@@ -196,7 +196,7 @@ Replace \<tag\> with the latest tag in the next command.
 ```text
     git tag
 ```
-Replace \<tag\> with the latest tag in the next command.
+Replace `<tag>` with the latest tag in the next command.
 
 ```text
     git checkout tags/<tag>
