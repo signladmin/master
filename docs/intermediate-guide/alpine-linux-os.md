@@ -90,6 +90,15 @@ addgroup cardano video
 ```
 
 ```text
+    git tag
+```
+Replace \<tag\> with the latest tag in the next command.
+
+```text
+    git checkout tags/<tag>
+```
+
+```text
     sudo cp alpine-rpi-os/alpine_cnode_scripts_and_services/etc/local.d/cpufreq.start /etc/local.d/
 ```
 
@@ -182,6 +191,15 @@ addgroup cardano video
 
 ```text
     git clone https://github.com/armada-alliance/alpine-rpi-os
+```
+
+```text
+    git tag
+```
+Replace \<tag\> with the latest tag in the next command.
+
+```text
+    git checkout tags/<tag>
 ```
 
 2\) Run the following commands to then install the **cnode** folder, scripts, and services into the correct folders. The **cnode** folder contains everything a **Cardano node** needs to start as a functional relay node.
