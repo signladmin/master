@@ -64,6 +64,8 @@ You must use a power supply that can output the needed 5V at 3AMPs for the Pi4
 
 ## Star Forge parts list.
 
+![](../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
+
 {% embed url="https://www.amazon.com/gp/product/B07VPL4B7K/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
 
 {% embed url="https://www.amazon.com/gp/product/B089K47QDN/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
