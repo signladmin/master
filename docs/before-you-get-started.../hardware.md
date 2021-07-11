@@ -4,7 +4,7 @@ description: >-
   Pi stake pool, not including a separate laptop or PC for administration.
 ---
 
-# Hardware Purchase Links🏪
+# Hardware Purchase Links 🏪
 
 ![GeeekPi Cluster Case](../.gitbook/assets/photo_2021-03-09-13.42.42.jpeg)
 
