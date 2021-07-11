@@ -286,6 +286,10 @@ sudo service chrony restart
 
 ### Zram swap
 
+{% hint style="info" %}
+We have found that cardano-node can safely use this compressed swap in ram essentially giving us around 20gb of ram. We already set kernel parameters for zram in /etc/sysctl.conf
+{% endhint %}
+
 Swapping to disk is slow, swapping to compressed ram space is faster and gives us some overhead before out of memory \(oom\).
 
 {% embed url="https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters/" caption="" %}
