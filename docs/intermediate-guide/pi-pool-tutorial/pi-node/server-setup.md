@@ -331,6 +331,8 @@ for i in $(seq ${NRDEVICES}); do
 done
 ```
 
+### Raspberry Pi & entropy
+
 Before we start generating keys with a headless server we should have a safe amount of entropy.
 
 {% hint style="info" %}
