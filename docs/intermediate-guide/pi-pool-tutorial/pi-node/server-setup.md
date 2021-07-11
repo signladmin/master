@@ -136,7 +136,7 @@ Add the following to the bottom of /etc/sysctl.conf. Save and exit.
 {% endhint %}
 
 {% hint style="warning" %}
-I am disabling IPv6 and IPv4 forwarding. You may want these. I have seen claims that IPv6 is slower and gets in the way. &lt;find this later&gt;
+I am disabling IPv6 and IPv4 forwarding. You may want these. I have seen claims that IPv6 is slower and gets in the way.
 {% endhint %}
 
 ```text
@@ -146,7 +146,7 @@ sudo nano /etc/sysctl.conf
 ```text
 ## Pi Pool ##
 
-# swap more                      
+# swap more to zram                     
 vm.vfs_cache_pressure=500
 vm.swappiness=100
 vm.dirty_background_ratio=1
