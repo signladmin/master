@@ -70,6 +70,8 @@ You must use a power supply that can output the needed 5V at 3AMPs for the Pi4
 
 {% embed url="https://www.amazon.com/gp/product/B0828R25XD/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
 
+{% embed url="https://www.amazon.com/gp/product/B0863M7C1L/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
 {% embed url="https://www.amazon.com/gp/product/B07864V6CK/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
 
 {% embed url="https://www.amazon.com/gp/product/B086KTGRH1/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
