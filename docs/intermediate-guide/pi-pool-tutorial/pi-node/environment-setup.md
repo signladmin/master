@@ -693,3 +693,5 @@ You can now visit your pi-nodes ip address without any port specification, the c
 
 ![](../../../.gitbook/assets/snakeoil.png)
 
+From here you have a pi-node with tools to build a stake pool from the following pages. Best of Luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! 
+
