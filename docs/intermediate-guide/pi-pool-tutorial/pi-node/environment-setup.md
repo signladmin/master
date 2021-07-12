@@ -691,3 +691,5 @@ sudo service nginx restart
 
 You can now visit your pi-nodes ip address without any port specification, the connection will be upgraded to SSL/TLS and you will get a scary message\(not really scary at all\). Continue through to your dashboard.
 
+![](../../../.gitbook/assets/snakeoil.png)
+
