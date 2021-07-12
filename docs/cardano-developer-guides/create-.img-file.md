@@ -35,7 +35,7 @@ sudo mv pishrink.sh /usr/local/bin
 {% endcode %}
 
 ```bash
-sudo pishrink.sh -apZ pi-node.img Pi-Node.img.gz
+sudo pishrink.sh -aZ pi-node.img Pi-Node.img.gz
 ```
 
 > pishrink.sh: Shrunk Pi-Node.img.gz from 7.5G to 1.3G ...
