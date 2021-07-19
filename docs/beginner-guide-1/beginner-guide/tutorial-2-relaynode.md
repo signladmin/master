@@ -198,7 +198,7 @@ DB_PATH=${DIRECTORY}/db
 SOCKET_PATH=${DIRECTORY}/db/socket
 CONFIG=${FILES}/testnet-config.json
 
-cardano-node run \
+cardano-node +RTS -N4 --disable-delayed-os-memory-return -qg -qb -c -RTS run \
   --topology ${TOPOLOGY} \
   --database-path ${DB_PATH} \
   --socket-path ${SOCKET_PATH} \
@@ -220,7 +220,7 @@ DB_PATH=${DIRECTORY}/db
 SOCKET_PATH=${DIRECTORY}/db/socket
 CONFIG=${FILES}/mainnet-config.json
 
-cardano-node run \
+cardano-node +RTS -N4 --disable-delayed-os-memory-return -qg -qb -c -RTS run \
   --topology ${TOPOLOGY} \
   --database-path ${DB_PATH} \
   --socket-path ${SOCKET_PATH} \
