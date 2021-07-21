@@ -1,7 +1,5 @@
 ---
-description: >-
-  Collection of tutorials focused for the beginner Raspberry Pi Stake Pool
-  Operator
+description: This Tutorial is for those who may want to use the Raspberry Pi OS
 ---
 
 # Raspberry Pi OS 🍓
