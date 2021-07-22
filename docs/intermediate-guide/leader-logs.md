@@ -2,7 +2,7 @@
 description: How to get your Stake Pools Slot Assignments for every Epoch
 ---
 
-# Leader Logs
+# Leader Logs📑
 
 
 
