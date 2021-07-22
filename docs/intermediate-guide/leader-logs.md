@@ -4,8 +4,6 @@ description: How to get your Stake Pools Slot Assignments for every Epoch
 
 # Leader Logs📑
 
-
-
 ## Build CNCLI \(thanks to @AndrewWestberg\)
 
 {% hint style="warning" %}
