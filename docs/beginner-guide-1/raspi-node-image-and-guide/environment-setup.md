@@ -6,12 +6,6 @@ description: Install packages needed to run cardano-node and configure our envir
 
 ## Install packages
 
-Enable automatic security updates.
-
-```bash
-sudo dpkg-reconfigure -plow unattended-upgrades
-```
-
 Install the packages we will need.
 
 ```bash
@@ -47,7 +41,7 @@ Changes to this file require reloading .bashrc or logging out then back in.
 ```bash
 echo PATH="$HOME/.local/bin:$PATH" >> $HOME/.bashrc
 echo export NODE_HOME=$HOME/pi-pool >> $HOME/.bashrc
-echo export NODE_CONFIG=mainnet >> $HOME/.bashrc
+echo export NODE_CONFIG=testnet >> $HOME/.bashrc
 echo export NODE_FILES=$HOME/pi-pool/files >> $HOME/.bashrc
 echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> $HOME/.bashrc
 echo export CARDANO_NODE_SOCKET_PATH="$HOME/pi-pool/db/socket" >> $HOME/.bashrc
@@ -64,7 +58,7 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-config.json
 ```
 
-Run the following to modify mainnet-config.json and update TraceBlockFetchDecisions to "true"
+Run the following to modify testnet-config.json and update TraceBlockFetchDecisions to "true"
 
 ```bash
 sed -i ${NODE_CONFIG}-config.json \
@@ -117,7 +111,7 @@ DIRECTORY=/home/ada/pi-pool
 FILES=/home/ada/pi-pool/files
 PORT=3003
 HOSTADDR=0.0.0.0
-TOPOLOGY=${FILES}/mainnet-topology.json
+TOPOLOGY=${FILES}/testnet-topology.json
 DB_PATH=${DIRECTORY}/db
 SOCKET_PATH=${DIRECTORY}/db/socket
 CONFIG=${FILES}/mainnet-config.json
@@ -165,7 +159,7 @@ TimeoutStopSec=3
 LimitNOFILE=32768
 Restart=always
 RestartSec=5
-EnvironmentFile=-/home/ada/.pienv
+#EnvironmentFile=-/home/ada/.pienv
 
 [Install]
 WantedBy= multi-user.target
@@ -275,7 +269,7 @@ You can change the port cardano-node runs on in /home/ada/.local/bin/cardano-ser
 sed -i env \
     -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/CNODE_HOME=\"\home\/ada\/pi-pool\"/g" \
     -e "s/"6000"/"3003"/g" \
-    -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/mainnet-config.json\"/g" \
+    -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/${NODE_CONFIG}-config.json\"/g" \
     -e "s/\#SOCKET=\"\${CNODE_HOME}\/sockets\/node0.socket\"/SOCKET=\"\${NODE_HOME}\/db\/socket\"/g"
 ```
 
@@ -316,7 +310,7 @@ CNODE_HOSTNAME="CHANGE ME"  # optional. must resolve to the IP you are requestin
 CNODE_BIN="/home/ada/.local/bin"
 CNODE_HOME="/home/ada/pi-pool"
 LOG_DIR="${CNODE_HOME}/logs"
-GENESIS_JSON="${CNODE_HOME}/files/mainnet-shelley-genesis.json"
+GENESIS_JSON="${CNODE_HOME}/files/testnet-shelley-genesis.json"
 NETWORKID=$(jq -r .networkId $GENESIS_JSON)
 CNODE_VALENCY=1   # optional for multi-IP hostnames
 NWMAGIC=$(jq -r .networkMagic < $GENESIS_JSON)
@@ -386,7 +380,7 @@ nano relay-topology_pull.sh
 #!/bin/bash
 BLOCKPRODUCING_IP=<BLOCK PRODUCERS PRIVATE IP>
 BLOCKPRODUCING_PORT=3000
-curl -4 -s -o /home/ada/pi-pool/files/mainnet-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
+curl -4 -s -o /home/ada/pi-pool/files/testnet-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
 ```
 
 Save, exit and make it executable.
