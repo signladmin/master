@@ -79,9 +79,9 @@ dtoverlay=dwc2
 ## Pi Pool ##
 over_voltage=6
 arm_freq=2000
-gpu_mem=16
+#gpu_mem=16
 disable-wifi
-disable-bt
+#disable-bt
 ```
 
 Save and reboot.
@@ -297,11 +297,11 @@ Swapping to disk is slow, swapping to compressed ram space is faster and gives u
 {% embed url="https://lists.ubuntu.com/archives/lubuntu-users/2013-October/005831.html" %}
 
 ```text
-sudo apt install zram-config
+sudo apt install zram-tools
 ```
 
 ```bash
-sudo nano /usr/bin/init-zram-swapping
+sudo nano /etc/default/zramswap
 ```
 
 Multiply default config by 3. This will give you 12.5GB of virtual compressed swap in ram.
