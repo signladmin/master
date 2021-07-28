@@ -633,7 +633,7 @@ Follow the instructions to install the Grafana plugin, configure your datasource
 Follow log output to journal.
 
 ```bash
-journalctl --unit=cardano-node --follow
+sudo journalctl --unit=cardano-node --follow
 ```
 
 Follow log output to stdout.
