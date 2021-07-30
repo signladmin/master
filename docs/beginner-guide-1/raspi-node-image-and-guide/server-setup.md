@@ -106,6 +106,8 @@ sudo passwd -l root
 
 ### Secure shared memory
 
+Mount tmpfs as read only.
+
 Open /etc/fstab.
 
 ```text
