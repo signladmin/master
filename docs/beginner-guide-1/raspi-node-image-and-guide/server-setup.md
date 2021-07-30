@@ -378,23 +378,3 @@ grep --color VmSwap /proc/$CNZRAM/status
 ```
 {% endhint %}
 
-### Raspberry Pi & entropy
-
-Before we start generating keys with a headless server we should have a safe amount of entropy.
-
-{% hint style="info" %}
-[https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/](https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/)
-
-[https://github.com/nhorman/rng-tools](https://github.com/nhorman/rng-tools)
-{% endhint %}
-
-> But consider the fate of a standalone, headless server \(or a micro controller for that matter\) with no human typing or mousing around, and no spinning iron drive providing mechanical irregularity. Where does _it_ get entropy after it starts up? What if an attacker, or bad luck, forces periodic reboots? This is a [real problem](http://www.theregister.co.uk/2015/12/02/raspberry_pi_weak_ssh_keys/).
-
-```text
-sudo apt-get install rng-tools
-```
-
-```text
-sudo reboot
-```
-
