@@ -144,10 +144,11 @@ cardano-node run \
   --config ${CONFIG}
 ```
 
-Enable cardano-service at boot.
+Enable cardano-service at boot & restart the service to load changes.
 
 ```bash
 cardano-service enable
+cardano-service restart
 ```
 
 ## Forward port on router
