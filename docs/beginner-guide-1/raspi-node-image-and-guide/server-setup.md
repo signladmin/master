@@ -90,6 +90,12 @@ sudo reboot
 
 ## Configure Ubuntu
 
+### Update The System
+
+```text
+sudo apt update && sudo apt upgrade
+```
+
 ### Delete the Pi user
 
 ```text
