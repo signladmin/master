@@ -96,10 +96,10 @@ sudo reboot
 sudo apt update && sudo apt upgrade
 ```
 
-### Delete the Pi user
+### Disable the Pi user
 
 ```text
-sudo deluser --remove-home pi
+sudo passwd -l pi
 ```
 
 ### Disable the root user
