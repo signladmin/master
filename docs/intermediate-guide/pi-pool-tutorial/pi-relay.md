@@ -224,7 +224,7 @@ After four hours of on boarding your relay\(s\) will start to be available to ot
 relay-topology\_pull.sh will replace the contents of your relays mainnet-topology file.
 
 ```bash
-cd /home/ada/pi-pool/scripts/relay-topology_pull.sh
+cd /home/ada/pi-pool/scripts
 ./relay-topology_pull.sh
 ```
 
