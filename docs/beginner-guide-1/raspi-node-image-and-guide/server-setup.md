@@ -92,6 +92,12 @@ sudo reboot
 
 ## Configure Ubuntu
 
+### Delete the Pi user
+
+```text
+sudo deluser --remove-home pi
+```
+
 ### Disable the root user
 
 ```text
