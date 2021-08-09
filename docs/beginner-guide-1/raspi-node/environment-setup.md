@@ -4,6 +4,8 @@ description: Install packages needed to run cardano-node and configure our envir
 
 # Environment Setup
 
+![](../../.gitbook/assets/download-10-%20%282%29.jpeg)
+
 ## Install packages
 
 Install the packages we will need.
