@@ -4,7 +4,7 @@ description: >-
   OS(Raspbian) with a desktop environment.
 ---
 
-# RasPi-Node🍓 \(NOT READY\)
+# RasPi-Node🍓
 
 {% hint style="warning" %}
 **This tutorial is meant to get a single node syncing to the Cardano Testnet! If you wish to build a stake pool on mainnet. Please use our**[ **intermediate guides**](../../intermediate-guide/pi-pool-tutorial/pi-node/) **for mainnet.**

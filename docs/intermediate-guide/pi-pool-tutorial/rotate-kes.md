@@ -54,7 +54,7 @@ chmod a-rwx $HOME/cold-keys
 {% endtabs %}
 
 {% hint style="warning" %}
-The cold.counter in your cold-keys folder keeps track of how many times you have rotated your kes pair. 
+The cold.counter in your cold-keys folder keeps track of how many times you have rotated your kes pair.
 {% endhint %}
 
 Move **node.cert** back to Core & restart the cardano-service.
