@@ -40,7 +40,7 @@ Edit /boot/firmware/config.txt. Just paste Pi Pool additions in at the bottom.
 sudo nano /boot/config.txt
 ```
 
-```text
+```bash
 [pi4]
 max_framebuffers=2
 
