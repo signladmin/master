@@ -600,7 +600,7 @@ cardano-monitor start
 ```
 
 {% hint style="warning" %}
-At this point you may want to start cardano-service and get synced up before we continue to configure Grafana. Go to the [syncing the chain section](https://app.gitbook.com/@wcatz/s/pi-pool-guide/~/drafts/-MYFtFDZp-rTlybgAO71/pi-node/environment-setup/@drafts#syncing-the-chain). Choose whether you want to wait 30 hours or download the latest chain snapshot. Return here once gLiveView.sh shows you are at the tip of the chain.
+At this point you may want to start cardano-service and get synced up before we continue to configure Grafana. Go to the [syncing the chain section](https://app.gitbook.com/@armada-alliance/s/learn/intermediate-guide/pi-pool-tutorial/pi-node/environment-setup#syncing-the-chain). Choose whether you want to wait 30 hours or download the latest chain snapshot. Return here once gLiveView.sh shows you are at the tip of the chain.
 {% endhint %}
 
 ## Grafana, Nginx proxy\_pass & snakeoil
