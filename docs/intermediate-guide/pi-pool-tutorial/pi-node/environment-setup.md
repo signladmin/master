@@ -701,5 +701,5 @@ Follow log output to stdout.
 sudo tail -f /var/log/syslog
 ```
 
-From here you have a pi-node with tools to build a stake pool from the following pages. Best of Luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger!
+From here you have a pi-node with tools to build a stake pool from the following pages. Best of Luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! 💪 
 
