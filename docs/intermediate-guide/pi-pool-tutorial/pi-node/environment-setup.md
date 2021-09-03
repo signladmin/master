@@ -663,7 +663,7 @@ You can now visit your pi-nodes ip address without any port specification, the c
 
 ### Configure Grafana
 
-On your local machine open your browser and got to [http://&lt;Pi-Node's](http://<Pi-Node's) private ip&gt;
+On your local machine open your browser and enter your nodes private ip address.
 
 Log in and set a new password. Default username and password is **admin:admin**.
 
