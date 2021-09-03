@@ -593,8 +593,7 @@ cardano-cli stake-pool metadata-hash \
 {% endtab %}
 {% endtabs %}
 
-Copy poolMetaData.json to [https://pages.github.io](https://pages.github.io) or host it yourself along with your website.
-Be careful not to accidentally insert a space or a new line, which would result in a different hash.
+Copy poolMetaData.json to [https://pages.github.io](https://pages.github.io) or host it yourself along with your website. Be careful not to accidentally insert a space or a new line, which would result in a different hash.
 
 {% hint style="info" %}
 Here is my **poolMetaData.json** & **extendedPoolMetaData.json** as a reference and shameless links back to my site. 😰
