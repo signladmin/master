@@ -2,7 +2,7 @@
 
 ![](../../.gitbook/assets/download-10-%20%281%29%20%282%29.jpeg)
 
-### Install packages
+## Install packages
 
 Install the packages we will need.
 
@@ -13,7 +13,7 @@ sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
          zlib1g-dev g++ libncursesw5 libtool autoconf -y
 ```
 
-### Environment
+## Environment
 
 Make some directories.
 
@@ -26,7 +26,7 @@ mkdir $HOME/git
 mkdir $HOME/tmp
 ```
 
-#### Create bash variables & add ~/.local/bin to our $PATH 🏃
+### Create bash variables & add ~/.local/bin to our $PATH 🏃
 
 {% hint style="info" %}
 [Environment Variables in Linux/Unix](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769).
@@ -62,7 +62,7 @@ source $HOME/.bashrc
 {% endtab %}
 {% endtabs %}
 
-#### Retrieve node files
+### Retrieve node files
 
 ```bash
 cd $NODE_FILES
@@ -84,7 +84,7 @@ sed -i ${NODE_CONFIG}-config.json \
 **Tip for relay nodes**: It's possible to reduce memory and cpu usage by setting "TraceMemPool" to "false" in **mainnet-config.json.** This will turn off mempool data in Grafana and gLiveView.sh.
 {% endhint %}
 
-#### Retrieve aarch64 binaries
+### Retrieve aarch64 binaries
 
 {% hint style="info" %}
 The **unofficial** cardano-node & cardano-cli binaries available to us are being built by an IOHK engineer in his **spare time**. Please visit the '[Arming Cardano](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)' Telegram group for more information.
@@ -110,7 +110,7 @@ cardano-node version
 cardano-cli version
 ```
 
-#### Systemd unit files
+### Systemd unit files
 
 Let us now create the systemd unit file and startup script so systemd can manage cardano-node.
 
@@ -248,11 +248,11 @@ Now we just have to:
 * cardano-service stop       \(stops cardano-node.service\)
 * cardano-service status    \(shows the status of cardano-node.service\)
 
-### ⛓ Syncing the chain ⛓
+## ⛓ Syncing the chain ⛓
 
 You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 30 hours and the db folder is about 8.5GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
 
-#### Download snapshot
+### Download snapshot
 
 {% hint style="danger" %}
 Do not attempt this on an 8GB sd card. Not enough space! [Create your image file](https://app.gitbook.com/@wcatz/s/pi-pool-guide/create-.img-file) and flash it to your ssd.
@@ -389,7 +389,7 @@ fi
 curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
 ```
 
-Save, exit and make it executable.
+Save, exit, and make it executable.
 
 ```bash
 chmod +x topologyUpdater.sh
@@ -484,7 +484,7 @@ cd $NODE_HOME/scripts
 
 ![](../../.gitbook/assets/pi-node-glive%20%282%29.png)
 
-### Prometheus, Node Exporter & Grafana
+## Prometheus, Node Exporter & Grafana
 
 Prometheus connects to cardano-nodes backend and serves metrics over http. Grafana in turn can use that data to display graphs and create alerts. Our Grafana dashboard will be made up of data from our Ubuntu system & cardano-node. Grafana can display data from other sources as well, like [adapools.org](https://adapools.org/).
 
@@ -496,7 +496,7 @@ You can connect a Telegram bot to Grafana which can alert you of problems with t
 
 ![](../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29.png)
 
-#### Install Prometheus & Node Exporter.
+### Install Prometheus & Node Exporter.
 
 {% hint style="info" %}
 Prometheus can scrape the http endpoints of other servers running node exporter. Meaning Grafana and Prometheus does not have to be installed on your core and relays. Only the package prometheus-node-exporter is required if you would like to build a central Grafana dashboard for the pool, freeing up resources.
@@ -513,7 +513,7 @@ sudo systemctl disable prometheus.service
 sudo systemctl disable prometheus-node-exporter.service
 ```
 
-#### Configure Prometheus
+### Configure Prometheus
 
 Open prometheus.yml.
 
@@ -579,7 +579,7 @@ cd $NODE_FILES
 sed -i ${NODE_CONFIG}-config.json -e "s/127.0.0.1/0.0.0.0/g"
 ```
 
-#### Install Grafana
+### Install Grafana
 
 {% embed url="https://github.com/grafana/grafana" caption="" %}
 
@@ -610,7 +610,7 @@ sudo sed -i /etc/grafana/grafana.ini \
 -e "s/3000/5000/"
 ```
 
-#### cardano-monitor bash function
+### cardano-monitor bash function
 
 Open .bashrc.
 
@@ -647,7 +647,7 @@ cardano-monitor start
 At this point you may want to start cardano-service and get synced up before we continue to configure Grafana. Skip ahead to [syncing the chain section](https://app.gitbook.com/@wcatz/s/pi-pool-guide/~/drafts/-MYFtFDZp-rTlybgAO71/pi-node/environment-setup/@drafts#syncing-the-chain). Choose whether you want to wait 30 hours or download my latest chain snapshot. Return here once gLiveView.sh shows you are at the tip of the chain.
 {% endhint %}
 
-#### Configure Grafana
+### Configure Grafana
 
 On your local machine open your browser and got to \[[http://&lt;Pi-Node's\]\(http://](http://<Pi-Node's]%28http://)&lt;Pi-Node's\) private ip&gt;:5000
 
@@ -657,11 +657,11 @@ Do not change the default password yet, there is no encryption on the wire. Choo
 
 Log in and set a new password. Default username and password is **admin:admin**.
 
-**Configure data source**
+### **Configure data source**
 
 In the left hand vertical menu go to **Configure** &gt; **Datasources** and click to **Add data source**. Choose Prometheus. Enter [http://localhost:9090](http://localhost:9090) where it is grayed out, everything can be left default. At the bottom save & test. You should get the green "Data source is working" if cardano-monitor has been started. If for some reason those services failed to start issue **cardano-service restart**.
 
-**Import dashboards**
+### **Import dashboards**
 
 Save the dashboard json files to your local machine.
 
@@ -671,7 +671,7 @@ In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on
 
 ![](../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
-#### Configure poolDataLive
+### Configure poolDataLive
 
 Here you can use the poolData api to bring your pools data into Grafana.
 

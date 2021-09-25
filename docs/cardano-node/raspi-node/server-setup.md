@@ -14,7 +14,7 @@ Here are some links for overclocking and testing your drive speeds. If you have 
 * [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
 {% endhint %}
 
-#### Test drive speed
+### Test drive speed
 
 **Write speed**
 
@@ -84,7 +84,7 @@ Save and reboot.
 sudo reboot
 ```
 
-### Configure Raspberry Pi OS
+## Configure Raspberry Pi OS
 
 #### Update The System
 
@@ -92,19 +92,19 @@ sudo reboot
 sudo apt update && sudo apt upgrade
 ```
 
-#### Disable the Pi user
+### Disable the Pi user
 
 ```text
 sudo passwd -l pi
 ```
 
-#### Disable the root user
+### Disable the root user
 
 ```text
 sudo passwd -l root
 ```
 
-#### Secure shared memory
+### Secure shared memory
 
 Mount tmpfs as read only.
 
@@ -120,7 +120,7 @@ Add this line at the bottom, save & exit.
 tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
-#### Increase open file limit
+### Increase open file limit
 
 Open /etc/security/limits.conf.
 
@@ -135,7 +135,7 @@ ada soft nofile 800000
 ada hard nofile 1048576
 ```
 
-#### Optimize performance & security
+### Optimize performance & security
 
 Add the following to the bottom of /etc/sysctl.conf. Save and exit.
 
@@ -198,7 +198,7 @@ net.core.default_qdisc = fq
 net.ipv4.tcp_congestion_control = bbr
 ```
 
-**Load our changes after boot**
+### **Load our changes after boot**
 
 Create a new file. Paste, save & close.
 
@@ -233,7 +233,7 @@ sysctl -p /etc/sysctl.conf
 exit 0
 ```
 
-#### Disable IRQ balance
+### Disable IRQ balance
 
 {% hint style="info" %}
 [**http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/**](http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/)
@@ -251,7 +251,7 @@ sudo nano /etc/default/irqbalance
 ENABLED="0"
 ```
 
-#### Chrony
+### Chrony
 
 We need to get our time synchronization as accurate as possible. Open /etc/chrony/chrony.conf
 
@@ -308,7 +308,7 @@ local stratum 10
 sudo service chrony restart
 ```
 
-#### Zram swap
+### Zram swap
 
 {% hint style="info" %}
 We have found that cardano-node can safely use this compressed swap in ram essentially giving us around 20gb of ram. We already set kernel parameters for zram in /etc/sysctl.conf
