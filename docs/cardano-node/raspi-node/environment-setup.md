@@ -747,7 +747,7 @@ sudo service nginx restart
 
 You can now visit your pi-nodes ip address without any port specification, the connection will be upgraded to SSL/TLS and you will get a scary message\(not really scary at all\). Continue through to your dashboard.
 
-![](../../.gitbook/assets/snakeoil.png)
+![](../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29.png)
 
 From here you have a pi-node with tools to build a stake pool from the following pages. Best of Luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger!
 
