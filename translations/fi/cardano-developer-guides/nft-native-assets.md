@@ -1,47 +1,47 @@
 ---
-description: Let's make some native assets on Cardano ❤️✨
+description: Tehdään uusia Cardano alkuperäisresursseja ❤️✨
 ---
 
-# Cardano Native Asset and NFT Tutorial
+# Cardano alkuperäisresurssit (Native Assets) \(NFT\) 💰
 
-## Who is this guide for?
+## Kenelle tämä opas on tarkoitettu?
 
-* For people who want to make NFT's or Native Assets on Cardano
-* For people who know about Cardano
+* Ihmisille, jotka haluavat tehdä NFT:n tai alkuperäisresursseja (native assets/tokens) Cardano lohkoketjuun
+* Ihmisille, jotka tietävät Cardanosta
 
-## Benefits of NFT's on Cardano
+## NFT:n edut Cardanossa lohkoketjussa
 
-* Low transaction fees
-* Native on the blockchain
+* Alhaiset käsittelymaksut
+* Alkuperäinen lohkoketjussa
 
-## Prerequisites
+## Edellytykset
 
 {% hint style="danger" %}
-We made this tutorial for use with **Raspberry-Pi-ARM** machines running on **Linux OS** so make sure to download the **correct** node.js for your **local machine/CPU and OS**. Currently, the Cardano-node and Cardano-cli are meant to be built from source on Linux machines. Any other OS will have its own build complexities, and we do not cover them in any of our tutorials as of right now. [How to build Cardano Node from source](https://docs.cardano.org/projects/cardano-node/en/latest/getting-started/install.html)
+Teimme tämän tutoriaalin käytettäväksi **Raspberry-Pi-ARM** koneiden kanssa, jotka toimivat **Linux käyttöjärjestelmällä** joten muista ladata **oikea** node.js **paikalliseen koneeseen/suorittimeen ja OS**. Tällä hetkellä Cardano-node ja Cardano-cli on tarkoitus rakentaa lähteestä Linux-koneilla. Missä tahansa muussa käyttöjärjestelmässä on omat monimuotoisuutensa, emmekä kata niitä toistaiseksi missään meidän tutoriaaleissamme. [Kuinka rakentaa Cardano node lähteestä](https://docs.cardano.org/projects/cardano-node/en/latest/getting-started/install.html)
 {% endhint %}
 
 {% hint style="info" %}
-If you are using a Raspberry Pi machine [h](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)[ere](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md) is an easy-to-follow tutorial we made to get a Cardano Relay Node running.
+Jos käytät Raspberry Pi konetta h[tässä](https://docs.armada-alliance.com/learn/beginner-guide-1/raspi-node) on helposti seurattava tutoriaali, jonka teimme Cardano Relay Node:n rakentamiseen ja käynnistämiseen.
 {% endhint %}
 
-* cardano-node / cardano-cli set up on local machine
-* Make sure you have a Cardano node running and fully synced to the database
-* Make sure node.js installed
+* cardano-node / cardano-cli perustettu paikalliseen koneeseen
+* Varmista, että sinulla on Cardano node käynnissä ja täysin synkronoitu tietokantaan
+* Varmista, että node.js asennettu
 
 ```bash
-#Copy/Paste this into your terminal if node.js is not installed
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+#Kopioi/Liitä tämä päätelaitteeseesi, jos node.js ei ole vielä asennettu
+curl -sL https://deb.nodesource.com/setup_14.x ·sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-### Verify everything is set up properly on our machine ⚙️
+### Varmista, että kaikki on asennettu oikein koneellemme ⚙️
 
 ```bash
-#Copy/paste into terminal window
-cardano-cli version; cardano-node version
+#Kopioi/liitä pääteikkunaan
+cardano-cli versio; cardano-node versio
 ```
 
-Your output should look like this 👇
+Tulostesi pitäisi näyttää tältä 👇
 
 ```bash
 cardano-cli 1.26.2 - linux-aarch64 - ghc-8.10
@@ -50,11 +50,11 @@ cardano-node 1.26.2 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
-#### Verify our node.js version is correct and is on v14.16.1
+#### Varmista että node.js versio on oikein ja on v14.16.1
 
 ```bash
-#Copy/paste into terminal window
-node -v
+#Kopioi/liitä pääteikkunaan
+palvelin -v
 ```
 
 ```bash
@@ -65,7 +65,7 @@ v14.16.1
 
 {% embed url="https://youtu.be/oP3jZyPxB-I" caption="" %}
 
-## Create our project directory and initial setup
+## Luo projektihakemisto ja aloitusasetukset
 
 ```bash
 # check for $NODE_HOME
@@ -84,9 +84,9 @@ npm init -y #creates package.json)
 npm install cardanocli-js --save
 ```
 
-1. **Copy the Cardano node genesis latest build number from the IOHK hydra website**
+1. **Kopioi Cardano noden genesis uusin versio numero IOHK hydra verkkosivuilla**
    * [https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html](https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html)
-2. **Create a bash shell script to Download the latest Genesis config file needed**
+2. **Luo bash komentosarja lataamaan tarvittava uusin Genesis config tiedosto**
 
 ```bash
 nano fetch-config.sh
@@ -95,7 +95,7 @@ nano fetch-config.sh
 {% tabs %}
 {% tab title="MAINNET" %}
 ```bash
-#NODE_BUILD_NUM may be different
+#NODE_BUILD_NUM voi olla eri
 NODE_BUILD_NUM=6198010
 echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> $HOME/.bashrc
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/mainnet-shelley-genesis.json
@@ -111,14 +111,14 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/testnet-shelley
 {% endtab %}
 {% endtabs %}
 
-**Now we need to give permissions to our new script to execute then we will run our script and download the genesis files.**
+**Nyt meidän täytyy antaa käyttöoikeudet meidän uudelle skriptille ja sitten ajamme skriptin ja lataamme genesis tiedostot.**
 
 ```bash
 sudo chmod +x fetch-config.sh
 ./fetch-config.sh
 ```
 
-### Next, we make our src folder/directory and then create the Cardano client.
+### Seuraavaksi teemme src kansion / hakemiston ja sitten luomme Cardano tilauksen.
 
 ```bash
 mkdir src
@@ -127,7 +127,7 @@ nano cardano.js
 ```
 
 {% hint style="info" %}
-If you are using testnet make sure you have the correct testnet-magic version number. You can find the current testnet version [here](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html).
+Jos käytät testiverkkoa varmista, että sinulla on oikea testnet-magic versionumero. Löydät nykyisen testnet-version [täältä](https://docs.cardano.org/projects/cardano-node/en/latest/stake-pool-operations/getConfigFiles_AND_Connect.html).
 {% endhint %}
 
 {% tabs %}
@@ -163,16 +163,18 @@ module.exports = cardano;
 #### _Video Walk-through_ :
 
 {% tabs %}
-{% tab title="Create Project" %}
 
-{% tab title="Fetch Genesis File" %}
 
-{% tab title="Create Cardano Client" %}
+
+{% embed url="https://youtu.be/Xkx9vdibbq0" caption="" %}
+
+
+
+{% embed url="https://www.youtube.com/watch?v=X5cRGA0qyQE" caption="" %}
+
 {% embed url="https://youtu.be/-fnaF3FWL3k" caption="" %}
-{% endtab %}
-{% endtabs %}
 
-## Create a local wallet
+## Luo uusi lompakko
 
 ```bash
 nano create-wallet.js
@@ -193,13 +195,13 @@ createWallet("ADAPI")
 ```
 
 ```bash
-cd ..
+$ cd ..
 node src/create-wallet.js
 ```
 
-#### Verify balance wallet balance is Zero, then we fund the wallet
+#### Vahvista lompakon saldo, saldo on nolla, sitten rahoitamme lompakon
 
-* **First, we need to create a get-balance.js script**
+* **Ensinnäkin meidän on luotava get-balance.js skripti**
 
 ```bash
 cd src
@@ -217,17 +219,17 @@ console.log(
 )
 ```
 
-* **Now, Check the balance of our wallet.**
+* **Tarkista nyt lompakon saldo.**
 
 ```text
-cd ..
+$ cd ..
 node src/get-balance.js
 ```
 
-* We can go ahead and send some funds \(ADA\) into our wallet we created, wait a few minutes, and then check the balance again to make sure the transaction was successful.
+* Voimme nyt lähettää joitakin varoja \(ADA\) luomaamme lompakkoon, odota muutama minuutti, ja sitten tarkista saldo uudelleen varmistaaksesi, että tapahtuma onnistui.
 
 {% hint style="info" %}
-If you are using testnet you must get your tADA from the testnet faucet [here](https://developers.cardano.org/en/testnets/cardano/tools/faucet/).
+Jos käytät testnetiä, sinun täytyy saada tADA testnet-hanasta [täältä](https://developers.cardano.org/en/testnets/cardano/tools/faucet/).
 {% endhint %}
 
 #### _Video Walk-through_ :
@@ -238,29 +240,29 @@ If you are using testnet you must get your tADA from the testnet faucet [here](h
 {% endtab %}
 {% endtabs %}
 
-## Mint our Native-Asset/NFT on Cardano
+## Paina (Mint) uudet Native-Assetit/NFT:t Cardano lohkoketjuun
 
-Before we proceed to mint our Native Asset we must have a few things taken care of. We need to first get our "asset" onto our [IPFS](https://ipfs.io/#install) node and generate the IPFS link. If you do not know about IPFS or what it actually does we recommend having a read through the documentation [here](https://docs.ipfs.io/) or watching this [video](https://www.youtube.com/watch?v=5Uj6uR3fp-U).
+Ennen kuin ryhdymme lyömään meidän alkuperäis (native) assetteja, meillä on oltava muutamia asioita hoidettu. Meidän täytyy ensin siirtää "asset" [IPFS](https://ipfs.io/#install) node:en ja luoda IPFS linkki. Jos et tiedä IPFS-järjestelmästä tai mitä se todella tekee, suosittelemme lukemaan dokumentaation [täällä](https://docs.ipfs.io/) tai katsomaan tämän [videon](https://www.youtube.com/watch?v=5Uj6uR3fp-U).
 
-Since we are using an image file to be our asset we should upload a smaller thumbnail-sized version of our image \(ideally less than 1MB\). This will be used on sites like [pool.pm](https://pool.pm) to display our assets nicely in our wallets. We then upload the full-size image as our source image.
+Koska käytämme kuvatiedostoa assettinamme, meidän pitää ladata pienempi kuvake-kokoinen versio kuvastamme \(mieluiten alle 1MB\). Tätä käytetään nättiin visualisointiin sivustoilla, kuten [pool.pm](https://pool.pm) ja lompakoissamme. Sitten lataamme koko lähdekuvan NFT assetistamme.
 
-* [ ] Download [IPFS](https://ipfs.io/#install)
-* [ ] Upload your asset's files to IPFS
-* [ ] Get our image thumbnail IPFS link
-* [ ] Get the src IPFS link
+* [ ] Lataa [IPFS](https://ipfs.io/#install)
+* [ ] Lataa assetisi tiedostot IPFS:ään
+* [ ] Hae meidän kuvakkeen IPFS linkki
+* [ ] Hae src IPFS-linkki
 
-#### For reference:
+#### Viitteeksi:
 
 * **image \(thumbnail version\) - ipfs://QmQqzMTavQgT4f4T5v6PWBp7XNKtoPmC9jvn12WPT3gkSE**
 * **src \(full-size version\) - ipfs://Qmaou5UzxPmPKVVTM9GzXPrDufP55EDZCtQmpy3T64ab9N**
 
-### Create our mint-asset.js script
+### Luo mint-asset.js skripti
 
-This script has three main components:
+Tässä skriptissä on kolme pääosaa:
 
-1. **Generate policy id**
-2. **Define your metadata**
-3. **Create mint transaction**
+1. **Luo policy id**
+2. **Määrittele metatiedot**
+3. **Määritä painatustapahtuma**
 
 ```javascript
 nano mint-asset.js
@@ -344,32 +346,38 @@ const txHash = cardano.transactionSubmit(signed);
 console.log(txHash);
 ```
 
-* **Run the minting script, then wait a few moments to check the balance in our wallet**
+* **Suorita minting script, odota hetki ja tarkista lompakkomme saldo**
 
 ```text
-cd ..
+$ cd ..
 node src/mint-asset.js
 ```
 
-## Sending your NFT back to Daedulus or Yoroi wallet
+_**Video Walk-through:**_
 
-Now we must create a new script to send our newly minted NFT to a wallet.
+{% tabs %}
+
+{% embed url="https://youtu.be/qTzLgMyJC7s" caption="" %}
+
+## NFT:n lähettäminen takaisin Daedalus tai Yoroi lompakkoon
+
+Nyt meidän on luotava uusi skripti, jotta voimme lähettää juuri painetun NFT:n lompakkoomme.
 
 ```javascript
 cd cardaon-minter/src
 nano send-back-asset-to-wallet.js
 ```
 
-There are few main parts we have to this script in order to send the asset:
+Tässä skriptissä on muutamia päävaiheita, joiden kautta voimme lähettää NFT:n eteenpäin:
 
-1. Get the wallet
-2. Define the transaction
-3. Build the transaction
-4. Calculate the fee
-5. Pay the fee by subtracting it from the sender's utxo
-6. Build the final transaction
-7. Sign the transaction
-8. Submit the transaction
+1. Hae lompakko
+2. Määrittele tapahtuma
+3. Rakenna tapahtuma
+4. Laske käsittelymaksu
+5. Maksa käsittelymaksu vähentämällä se lähettäjän utxosta
+6. Rakenna lopullinen tapahtuma
+7. Allekirjoita tapahtuma
+8. Lähetä tapahtuma
 
 ```javascript
 const cardano = require("./cardano");
@@ -430,25 +438,23 @@ console.log("TxHash: " + txHash);
 ```
 
 ```javascript
-cd ..
+$ cd ..
 node src/send-back-asset-to-wallet.js
 ```
 
-### Final Steps to view your NFT
+### Lopulliset vaiheet NFT:n katseluun
 
-1. View your nft in your wallet
-2. View your asset on cardanoassets.com
-3. View your asset on pool.pm \(see the actual picture\)
-4. Show the original minting metadata
-5. Open the src and image ipfs links in your browser to prove that it worked
+1. Tarkastele NFT:tä lompakossasi
+2. Tarkastele assettiasi cardanoassets.com -palvelussa
+3. Tarkastele assettiasi pool.pm -sivuilla \(Katso todellinen kuva\)
+4. Näytä alkuperäinen mintingin metatiedot
+5. Avaa src ja kuvan ipfs linkit selaimessasi varmistaaksesi, että prosessi toimi
 
 #### _Video Walk-through:_
 
 {% embed url="https://youtu.be/awxVkFbWoKM" caption="" %}
 
 {% hint style="success" %}
-**If you liked this tutorial and want to see more like it please consider staking your ADA with our** [**PIADA**](https://adapools.org/pool/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) **Stake Pool, or giving a one-time donation to our Alliance** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**.**
+**Jos pidit tästä oppitunnista ja haluat nähdä enemmän sen kaltaista, harkitse ADAn delegoimista johonkin Allianssimme** [**Stake Pooleista**](https://armada-alliance.com/stake-pools)**, tai kertalahjoituksen antaminen liittoutumallemme** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**.**
 {% endhint %}
-
-\*\*\*\*
 
