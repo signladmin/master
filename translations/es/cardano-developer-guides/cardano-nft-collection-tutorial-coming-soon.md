@@ -1,36 +1,36 @@
 # Colección de Tutoriales NFT en Cardano
 
-## Prerequisites
+## Prerrequisitos
 
-* cardano-node / cardano-cli set up on local machine \([https://docs.cardano.org/projects/cardano-node/en/latest](https://docs.cardano.org/projects/cardano-node/en/latest)\)
-* Node.js installed version 14
-* cardano-cli-js package installed
-* cardano-minter repo from the previous tutorial
+* cardano-node / cardano-cli configurado en una máquina local \([https://docs.cardano.org/projects/cardano-node/en/latest](https://docs.cardano.org/projects/cardano-node/en/latest)\)
+* Node.js instalado versión 14
+* paquete cardano-cli-js instalado
+* cardano-minter repo del anterior tutorial
 
 {% hint style="info" %}
-**If you haven't already, please watch our video from the previous NFT tutorial 😎**
+**Si aún no lo has hecho, por favor mira nuestro vídeo del tutorial anterior de NFT 😎**
 {% endhint %}
 
 {% embed url="https://youtu.be/OeOliguGn7Y" caption="" %}
 
-### Clone the cardano-minter repo if you haven't already...
+### Clona el repositorio de cardano-minter repo si todavía no lo has hecho...
 
 ```text
 git clone https://github.com/armada-alliance/cardano-minter
 cd cardano-minter
 ```
 
-### Install additional dependencies
+### Instalación de dependencias adicionales
 
 ```text
 npm install form-data dotenv axios lodash sharp promise-parallel-throttle --save
 ```
 
-## Now, let's start with the tutorial 😊
+## Ahora, empecemos con el tutorial 😊
 
-### 1. Create our initial assets
+### 1. Crear nuestros activos iniciales
 
-* While in the "cardano-minter" directory create a script that will generate our assets in a nicely formatted JSON file called "assets.json".
+* Mientras que en el directorio "cardano-minter" crea un script que generará nuestros activos en un archivo JSON bien estructurado llamado "assets.json".
 
 ```text
 nano create-initial-assets-json.js
@@ -69,39 +69,6 @@ async function main() {
             // description: "", 
             image: `images/${id}_thumbnail.${extension}`, // images/PIADA0_thumbnail.png
             src: `images/${id}.${extension}`, // images/PIADA0.png
-            type: i : i + 1
-        const id = `PIADA${number}` // PIADA0
-
-        const [extension] = MIME_TYPE.split("/").reverse() // png
-
-        return {
-            id,
-            name: `PIADA #${number}`,
-            // description: "", 
-            image: `images/${id}_thumbnail.${extension}`, // images/PIADA0_thumbnail.png
-            src: `images/${id}.${extension}`, // images/PIADA0.png
-            type: i : i + 1
-        const id = `PIADA${number}` // PIADA0
-
-        const [extension] = MIME_TYPE.split("/").reverse() // png
-
-        return {
-            id,
-            name: `PIADA #${number}`,
-            // description: "", 
-            image: `images/${id}_thumbnail.${extension}`, // images/PIADA0_thumbnail.png
-            src: `images/${id}.${extension}`, // images/PIADA0.png
-            type: i : i + 1
-        const id = `PIADA${number}` // PIADA0
-
-        const [extension] = MIME_TYPE.split("/").reverse() // png
-
-        return {
-            id,
-            name: `PIADA #${number}`,
-            // description: "", 
-            image: `images/${id}_thumbnail.${extension}`, // images/PIADA0_thumbnail.png
-            src: `images/${id}.${extension}`, // images/PIADA0.png
             type: MIME_TYPE,
             // add whatever like below
             authors: ["PIADA", "SBLYR"],
@@ -119,12 +86,12 @@ main()
 node src/create-initial-assets-json.js
 ```
 
-* Your assets.json file should look like [this](https://github.com/armada-alliance/cardano-minter-collection/blob/master/src/assets.json).
+* Tu archivo assets.json debería verse como [este](https://github.com/armada-alliance/cardano-minter-collection/blob/master/src/assets.json).
 
-### 2. Download random images for testing
+### 2. Descargar imágenes aleatorias para probar
 
-* Make a folder called images to download the test images into
-* Create a script that will go and grab the images from the internet and download them into the images folder
+* Crea una carpeta llamada images en la que descargar las imágenes de prueba
+* Crear un script que vaya y tome las imágenes de Internet y las descargue en la carpeta de images
 
 ```text
 cd src
@@ -165,9 +132,9 @@ main()
 node src/download-test-images.js
 ```
 
-### 3. Extend metadata.json with thumbnails \(optional\)
+### 3. metadata.json extendido con miniaturas \(opcional\)
 
-* generate thumbnails based on images from the metadata.json and give them the same name with `_thumbnail` tag added to the name
+* generar miniaturas basadas en imágenes del metadata.json y darles el mismo nombre con la etiqueta `_thumbnail` añadida al nombre
 
 ```text
 cd src
@@ -207,17 +174,17 @@ main()
 node src/generate-thumbnails.js
 ```
 
-### 4. Create our [pinata.cloud](https://pinata.cloud/) account to get our API keys
+### 4. Crea una cuenta en [pinata.cloud](https://pinata.cloud/) para obtener nuestras claves API
 
-1. Create an account
-2. Create API keys
+1. Crea una cuenta
+2. Crea una clave API
 
-### 5. Need to safely store our API keys
+### 5. Necesitas almacenar con seguridad las claves API
 
-* create .env file and paste in our keys
+* crear archivo .env y pegar en él nuestras claves
 
 {% hint style="info" %}
-Make sure the **.env** file is in the **cardano-minter** directory but **not in** **the** **src** folder
+Asegúrate de que **. nv** archivo está en el directorio **cardano-minter** pero **no en** **la carpeta** **src**
 {% endhint %}
 
 ```text
