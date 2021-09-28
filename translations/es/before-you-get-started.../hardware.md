@@ -1,24 +1,24 @@
 ---
 description: >-
-  Esta es la lista actual de hardware que puede ser usada para construir el grupo de apuestas Raspberry Pi, no incluye un ordenador portátil o PC independiente para administración.
+  Esta es la lista actual de hardware que puede ser usada para construir el stake pool basado Raspberry Pi, no incluye un ordenador portátil o PC independiente para administración.
 ---
 
-# Enlaces de compra de hardware
+# Enlaces de compra de hardware 🏪
 
 ![GeeekPi Cluster Case](../.gitbook/assets/photo_2021-03-09-13.42.42.jpeg)
 
 {% tabs %}
 {% tab title="Raspberry Pi Computers" %}
-| Nombre del producto & Descripción                         | Precio en USD | Verificado por RPI SPOs | Enlaces para comprar                                                                                                             |
-|:--------------------------------------------------------- |:------------- |:----------------------- |:-------------------------------------------------------------------------------------------------------------------------------- |
-| Raspberry Pi 4 Computer Model B 8GB Single Board Computer | 75-85         | SÍ                      | [Raspberry Pi Aprobado Rescate](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb) |
+| Nombre del producto & Descripción                         | Precio en USD | Verificado por RPI SPOs | Enlaces para comprar                                                                                                                    |
+|:--------------------------------------------------------- |:------------- |:----------------------- |:--------------------------------------------------------------------------------------------------------------------------------------- |
+| Raspberry Pi 4 Computer Model B 8GB Single Board Computer | 75-85         | SÍ                      | [Revendedor aprobado por Raspberry Pi](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb) |
 {% endtab %}
 
 {% tab title="Power Supplies" %}
 {% hint style="warning" %}
 Debes usar una fuente de alimentación que pueda producir los 5V necesarios en 3 AMPs para el Pi4
 
-[**Here**](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md) **is the Raspberry Pi's Power Supply Docs**
+[**Aquí**](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md) **está la documentación sobre la fuente de alimentación para Raspberry Pi**
 {% endhint %}
 
 | Nombre del producto & Descripción                                            | Precio en USD | Verificado por RPI SPOs |                                                                                                         |
@@ -30,8 +30,8 @@ Debes usar una fuente de alimentación que pueda producir los 5V necesarios en 3
 {% tab title="Storage Devices" %}
 | Nombre del producto & Descripción                                                                   | Precio en USD | Verificado por RPI SPOs | Enlaces para comprar                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |:--------------------------------------------------------------------------------------------------- |:------------- |:----------------------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Kingston 120GB A400 SATA 3 2.5" Internal SSD SA400S37/120G                                          | 24.99         | SÍ                      | [Amazon](https://www.amazon.com/Kingston-120GB-Solid-SA400S37-120G/dp/B01N6JQS8C/ref=sxts_sxwds-bia-wc-rsf-ajax2_0?crid=2IZ705SDHVNO2&cv_ct_cx=kingston+a400&dchild=1&keywords=kingston+a400&pd_rd_i=B01N6JQS8C&pd_rd_r=cff9c24d-82ba-4471-892a-a23276b8b1db&pd_rd_w=wzQ6v&pd_rd_wg=6jlaB&pf_rd_p=5c711241-c674-4eef-b21c-fe6add670f33&pf_rd_r=MMBZR2DHZVKB3J1QE3HY&psc=1&qid=1615235655&sprefix=kingsto%2Caps%2C254&sr=1-2-e30f047d-8e3c-4340-8179-6a77ce88d756) |
-| PNY CS900 120GB 3D NAND 2.5" SATA III Internal Solid State Drive \(SSD\) - \(SSD7CS900-120-RB\) | 27.99         | SÍ                      | [Amazon](https://www.amazon.com/gp/product/B0722XPTL6/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&th=1)                                                                                                                                                                                                                                                                                                                                                            |
+| Kingston 120GB A400 SATA 3 2.5" Internal SSD SA400S37/120G                                          | 24.99         | YES                     | [Amazon](https://www.amazon.com/Kingston-120GB-Solid-SA400S37-120G/dp/B01N6JQS8C/ref=sxts_sxwds-bia-wc-rsf-ajax2_0?crid=2IZ705SDHVNO2&cv_ct_cx=kingston+a400&dchild=1&keywords=kingston+a400&pd_rd_i=B01N6JQS8C&pd_rd_r=cff9c24d-82ba-4471-892a-a23276b8b1db&pd_rd_w=wzQ6v&pd_rd_wg=6jlaB&pf_rd_p=5c711241-c674-4eef-b21c-fe6add670f33&pf_rd_r=MMBZR2DHZVKB3J1QE3HY&psc=1&qid=1615235655&sprefix=kingsto%2Caps%2C254&sr=1-2-e30f047d-8e3c-4340-8179-6a77ce88d756) |
+| PNY CS900 120GB 3D NAND 2.5" SATA III Internal Solid State Drive \(SSD\) - \(SSD7CS900-120-RB\) | 27.99         | YES                     | [Amazon](https://www.amazon.com/gp/product/B0722XPTL6/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&th=1)                                                                                                                                                                                                                                                                                                                                                            |
 | Crucial MX500 250GB                                                                                 | 48.74         | SÍ                      | [Amazon](https://www.amazon.com/Crucial-MX500-250GB-NAND-Internal/dp/B0764WCXCV/ref=pd_ybh_a_109?_encoding=UTF8&psc=1&refRID=DFCXCZ7KPJPWES884N8A)                                                                                                                                                                                                                                                                                                                |
 |                                                                                                     |               |                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 {% endtab %}
@@ -39,7 +39,7 @@ Debes usar una fuente de alimentación que pueda producir los 5V necesarios en 3
 {% tab title="Raspberry Pi HATs" %}
 | Nombre del producto & Descripción                                                                         | Precio en USD | Verificado por RPI SPOs | Enlaces para comprar                                                                                                                                                                                                            |
 |:--------------------------------------------------------------------------------------------------------- |:------------- |:----------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Official Raspberry Pi Power Over Ethernet \(PoE\) HAT for Raspberry Pi 3 B+ and 4 - 802.3af PoE Network | 29.91         | SÍ                      | [Amazon](https://www.amazon.com/poe-hat/dp/B07GR9XQJH/ref=sr_1_2?dchild=1&keywords=Official+Raspberry+Pi+Power+Over+Ethernet+%28PoE%29+HAT+for+Raspberry+Pi+3+B%2B+and+802.3af+PoE+Network&qid=1615236400&s=electronics&sr=1-2) |
+| Official Raspberry Pi Power Over Ethernet \(PoE\) HAT for Raspberry Pi 3 B+ and 4 - 802.3af PoE Network | 29.91         | YES                     | [Amazon](https://www.amazon.com/poe-hat/dp/B07GR9XQJH/ref=sr_1_2?dchild=1&keywords=Official+Raspberry+Pi+Power+Over+Ethernet+%28PoE%29+HAT+for+Raspberry+Pi+3+B%2B+and+802.3af+PoE+Network&qid=1615236400&s=electronics&sr=1-2) |
 {% endtab %}
 
 {% tab title="Cables " %}
@@ -60,4 +60,28 @@ Debes usar una fuente de alimentación que pueda producir los 5V necesarios en 3
 | GeeekPi New Raspberry Pi Cluster Case |  |  | [https://www.amazon.com/GeeekPi-Raspberry-Cluster-Stackable-4-Layers/dp/B083FDHPBH/ref=pd\_ybh\_a\_97?\_encoding=UTF8&psc=1&refRID=YKMBG97KCHQHTR27SNHD](https://www.amazon.com/GeeekPi-Raspberry-Cluster-Stackable-4-Layers/dp/B083FDHPBH/ref=pd_ybh_a_97?_encoding=UTF8&psc=1&refRID=YKMBG97KCHQHTR27SNHD) |
 {% endtab %}
 {% endtabs %}
+
+## Lista de partes de Star Forge.
+
+![](../.gitbook/assets/photo_2021-03-09-13.40.29.jpeg)
+
+{% embed url="https://www.amazon.com/gp/product/B07VPL4B7K/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
+{% embed url="https://www.amazon.com/gp/product/B089K47QDN/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
+{% embed url="https://www.amazon.com/gp/product/B0828R25XD/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
+{% embed url="https://www.amazon.com/gp/product/B07864V6CK/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
+{% embed url="https://www.amazon.com/gp/product/B08KY27W6C/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
+{% embed url="https://www.amazon.com/gp/product/B0863M7C1L/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
+{% embed url="https://www.amazon.com/gp/product/B01IUTIUEA/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
+{% embed url="https://www.amazon.com/gp/product/B086KTGRH1/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
+{% embed url="https://www.amazon.com/gp/product/B07WMFNHFM/ref=ppx\_yo\_dt\_b\_search\_asin\_title?ie=UTF8&psc=1" %}
+
+
 
