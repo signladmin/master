@@ -3,7 +3,7 @@ description: >-
   This section will help with understanding the relay and block producer topology.
 ---
 
-# Basic Stake Pool Networking
+# Basic Stake Pool Networking 💫
 
 ## Assumptions
 
@@ -125,5 +125,5 @@ Unless you have a static IP address assigned by your ISP, at some point you're g
 * no-ip
 * namecheap.com openwrt ddns-scripts
 
-Was this information helpful? Earn rewards with us! [Consider delegating some ADA](../delegate/).
+Was this information helpful? Earn rewards with us! [Consider delegating some ADA](../cardano-developer-guides/delegate.md).
 
