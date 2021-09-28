@@ -1,4 +1,4 @@
-# Cardano NFT Collection Tutorial
+# Colección de Tutoriales NFT en Cardano
 
 ## Prerequisites
 
@@ -512,14 +512,14 @@ const metadata = {
     }
 }
 
-const txOut_amount = assets.reduce((result, asset) => {
+const txOut_value = assets.reduce((result, asset) => {
 
     const ASSET_ID = POLICY_ID + "." + asset.id
     result[ASSET_ID] = 1
     return result
 
 }, {
-    ...wallet.balance().amount
+    ...wallet.balance().value
 })
 
 const mint_actions = assets.map(asset => ({ action: "mint", amount: 1, token: POLICY_ID + "." + asset.id }))
@@ -529,10 +529,13 @@ const tx = {
     txOut: [
         {
             address: wallet.paymentAddr,
-            amount: txOut_amount
+            amount: txOut_value
         }
     ],
-    mint: mint_actions,
+     mint: {
+        actions: mint_actions,
+        script: [mintScript]
+    },
     metadata,
     witnessCount: 2
 }
@@ -545,7 +548,7 @@ const buildTransaction = (tx) => {
         txBody: raw
     })
 
-    tx.txOut[0].amount.lovelace -= fee
+    tx.txOut[0].value.lovelace -= fee
 
     return cardano.transactionBuildRaw({ ...tx, fee })
 }
@@ -556,9 +559,8 @@ const raw = buildTransaction(tx)
 
 const signTransaction = (wallet, tx, script) => {
 
-    return cardano.transactionSign({
+     return cardano.transactionSign({
         signingKeys: [wallet.payment.skey, wallet.payment.skey],
-        scriptFile: script,
         txBody: tx
     })
 }
@@ -672,8 +674,4 @@ sendAssets({
 ```bash
 node src/send-multiple-assets-back-to-wallet.js
 ```
-
-{% hint style="success" %}
-**If you liked this tutorial and want to see more like it please consider staking ADA with our** [**PIADA**](https://adapools.org/pool/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) **Stake Pool, or giving a one-time donation to our Alliance** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**.**
-{% endhint %}
 
