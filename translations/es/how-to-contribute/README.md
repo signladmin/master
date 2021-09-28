@@ -2,11 +2,11 @@
 description: Cómo contribuir con esta guía
 ---
 
-# Contribuir
+# Contribuye🐱‍🚀
 
-## ¡Qué bien verte aquí!
+## ¡Qué alegría verte aquí!
 
-### We appreciate all community members that help us improve our educational resources with their contribution.
+### Apreciamos a todos los miembros de la Comunidad que nos ayuden a mejorar nuestro contenido educativo con sus propias contribuciones.
 
-### If you would like to contribute to this project, we have linked a [contributing guide](untitled-1/) where you can get started. 
+### Si quieres contribuir a este proyecto, te dejamos el enlace [Guía de Contribución](untitled-1/) para que sepas por donde puedes empezar. 
 
