@@ -2,7 +2,7 @@
 description: Let's make some native assets on Cardano ❤️✨
 ---
 
-# Cardano Native Asset and NFT Tutorial
+# Cardano Native Asset \(NFT\) 💰
 
 ## Who is this guide for?
 
@@ -21,7 +21,7 @@ We made this tutorial for use with **Raspberry-Pi-ARM** machines running on **Li
 {% endhint %}
 
 {% hint style="info" %}
-If you are using a Raspberry Pi machine [h](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md)[ere](../beginner-guide-1/beginner-guide/tutorial-2-relaynode.md) is an easy-to-follow tutorial we made to get a Cardano Relay Node running.
+If you are using a Raspberry Pi machine [here](https://docs.armada-alliance.com/learn/beginner-guide-1/raspi-node) is an easy-to-follow tutorial we made to get a Cardano Relay Node running.
 {% endhint %}
 
 * cardano-node / cardano-cli set up on local machine
@@ -163,14 +163,16 @@ module.exports = cardano;
 #### _Video Walk-through_ :
 
 {% tabs %}
-{% tab title="Create Project" %}
 
-{% tab title="Fetch Genesis File" %}
 
-{% tab title="Create Cardano Client" %}
+
+{% embed url="https://youtu.be/Xkx9vdibbq0" caption="" %}
+
+
+
+{% embed url="https://www.youtube.com/watch?v=X5cRGA0qyQE" caption="" %}
+
 {% embed url="https://youtu.be/-fnaF3FWL3k" caption="" %}
-{% endtab %}
-{% endtabs %}
 
 ## Create a local wallet
 
@@ -351,6 +353,12 @@ cd ..
 node src/mint-asset.js
 ```
 
+_**Video Walk-through:**_
+
+{% tabs %}
+
+{% embed url="https://youtu.be/qTzLgMyJC7s" caption="" %}
+
 ## Sending your NFT back to Daedulus or Yoroi wallet
 
 Now we must create a new script to send our newly minted NFT to a wallet.
@@ -447,8 +455,6 @@ node src/send-back-asset-to-wallet.js
 {% embed url="https://youtu.be/awxVkFbWoKM" caption="" %}
 
 {% hint style="success" %}
-**If you liked this tutorial and want to see more like it please consider staking your ADA with our** [**PIADA**](https://adapools.org/pool/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) **Stake Pool, or giving a one-time donation to our Alliance** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**.**
+**If you liked this tutorial and want to see more like it please consider staking your ADA with any of our Alliance's** [**Stake Pools**](https://armada-alliance.com/stake-pools)**, or giving a one-time donation to our Alliance** [**https://cointr.ee/armada-alliance**](https://cointr.ee/armada-alliance)**.**
 {% endhint %}
-
-\*\*\*\*
 
