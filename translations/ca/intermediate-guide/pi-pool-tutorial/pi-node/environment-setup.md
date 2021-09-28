@@ -21,26 +21,6 @@ sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
          zlib1g-dev g++ libncursesw5 libtool autoconf -y
 ```
 
-Install NodeJS.
-
-```bash
-sudo snap install node --classic
-```
-
-Install Certbot.
-
-{% embed url="https://certbot.eff.org/lets-encrypt/snap-nginx" caption="" %}
-
-```bash
-sudo snap install --classic certbot
-```
-
-Dynamically link Certbot binary into our path.
-
-```bash
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
-```
-
 ## Environment
 
 Make some directories.
@@ -60,27 +40,14 @@ mkdir $HOME/tmp
 [Environment Variables in Linux/Unix](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769).
 {% endhint %}
 
-Create a .pienv file and choose which network you want to connect to.
-
-```bash
-nano $HOME/.pienv
-```
-
 {% hint style="warning" %}
 Changes to this file require reloading .bashrc or logging out then back in.
 {% endhint %}
 
 ```bash
-# testnet or mainnet
-NODE_CONFIG=mainnet
-```
-
-Save and exit.
-
-```bash
 echo PATH="$HOME/.local/bin:$PATH" >> $HOME/.bashrc
-source $HOME/.pienv
 echo export NODE_HOME=$HOME/pi-pool >> $HOME/.bashrc
+echo export NODE_CONFIG=mainnet >> $HOME/.bashrc
 echo export NODE_FILES=$HOME/pi-pool/files >> $HOME/.bashrc
 echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> $HOME/.bashrc
 echo export CARDANO_NODE_SOCKET_PATH="$HOME/pi-pool/db/socket" >> $HOME/.bashrc
@@ -91,11 +58,23 @@ source $HOME/.bashrc
 
 ```bash
 cd $NODE_FILES
-wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-byron-genesis.json
-wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
-wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-shelley-genesis.json
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-config.json
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-byron-genesis.json
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-shelley-genesis.json
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-alonzo-genesis.json
+wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
 ```
+
+Run the following to modify mainnet-config.json and update TraceBlockFetchDecisions to "true"
+
+```bash
+sed -i ${NODE_CONFIG}-config.json \
+    -e "s/TraceBlockFetchDecisions\": false/TraceBlockFetchDecisions\": true/g"
+```
+
+{% hint style="info" %}
+**Tip for relay nodes**: It's possible to reduce memory and cpu usage by setting "TraceMemPool" to "false" in **mainnet-config.json.** This will turn off mempool data in Grafana and gLiveView.sh.
+{% endhint %}
 
 ### Retrieve aarch64 binaries
 
@@ -105,7 +84,7 @@ The **unofficial** cardano-node & cardano-cli binaries available to us are being
 
 ```bash
 cd $HOME/tmp
-wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/build/1758/download/1/aarch64-unknown-linux-musl-cardano-node-1.27.0.zip
+wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/build/1771/download/1/aarch64-unknown-linux-musl-cardano-node-1.29.0.zip
 unzip *.zip
 mv cardano-node/* $HOME/.local/bin
 rm -r cardano*
@@ -159,7 +138,7 @@ Allow execution of our new startup script.
 chmod +x $HOME/.local/bin/cardano-service
 ```
 
-Open /etc/systemd/system/cardano-node.service
+Open /etc/systemd/system/cardano-node.service.
 
 ```bash
 sudo nano /etc/systemd/system/cardano-node.service
@@ -231,7 +210,7 @@ Now we just have to:
 
 ## ⛓ Syncing the chain ⛓
 
-You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 30 hours and the db folder is about 8.5GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
+You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 30 hours and the db folder is about 10GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
 
 ### Download snapshot
 
@@ -255,20 +234,10 @@ cd $NODE_HOME
 rm -r db/
 ```
 
-{% hint style="danger" %}
-Download either the mainnet db folder or testnet. Not Both!!
-{% endhint %}
-
 For mainnet chain use.
 
 ```bash
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
-```
-
-For testnet.
-
-```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
 ```
 
 Once wget completes enable & start cardano-node.
@@ -380,6 +349,10 @@ chmod +x topologyUpdater.sh
 You will not be able to successfully execute ./topologyUpdater.sh until you are fully synced up to the tip of the chain.
 {% endhint %}
 
+{% hint style="info" %}
+Choose nano when prompted for editor.
+{% endhint %}
+
 Create a cron job that will run the script every hour.
 
 ```bash
@@ -459,7 +432,7 @@ cd $NODE_HOME/scripts
 ./gLiveView.sh
 ```
 
-![](../../../.gitbook/assets/pi-node-glive.png)
+![](../../../.gitbook/assets/pi-node-glive%20%283%29.png)
 
 ## Prometheus, Node Exporter & Grafana
 
@@ -471,7 +444,7 @@ You can connect a Telegram bot to Grafana which can alert you of problems with t
 
 {% embed url="https://github.com/prometheus" caption="" %}
 
-![](../../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29.png)
+![](../../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%283%29.png)
 
 ### Install Prometheus & Node Exporter.
 
@@ -481,6 +454,13 @@ Prometheus can scrape the http endpoints of other servers running node exporter.
 
 ```bash
 sudo apt-get install -y prometheus prometheus-node-exporter
+```
+
+Disable them in systemd for now.
+
+```bash
+sudo systemctl disable prometheus.service
+sudo systemctl disable prometheus-node-exporter.service
 ```
 
 ### Configure Prometheus
@@ -614,48 +594,8 @@ cardano-monitor start
 ```
 
 {% hint style="warning" %}
-At this point you may want to start cardano-service and get synced up before we continue to configure Grafana. Skip ahead to [syncing the chain section](https://app.gitbook.com/@wcatz/s/pi-pool-guide/~/drafts/-MYFtFDZp-rTlybgAO71/pi-node/environment-setup/@drafts#syncing-the-chain). Choose whether you want to wait 30 hours or download my latest chain snapshot. Return here once gLiveView.sh shows you are at the tip of the chain.
+At this point you may want to start cardano-service and get synced up before we continue to configure Grafana. Go to the syncing the chain section. Choose whether you want to wait 30 hours or download the latest chain snapshot. Return here once gLiveView.sh shows you are at the tip of the chain.
 {% endhint %}
-
-### Configure Grafana
-
-On your local machine open your browser and got to \[\[\[[http://&lt;Pi-Node's\]\(http://\]\(http://\]\(http://](http://<Pi-Node's]%28http://]%28http://]%28http://)&lt;Pi-Node's\]%28[http://\]%28http://\)&lt;Pi-Node's\]%28\[http://\)&lt;Pi-Node's\]\(http://%29](http://]%28http://%29<Pi-Node's]%28[http://%29<Pi-Node's]%28http://%29)&lt;Pi-Node's\)\) private ip&gt;:5000
-
-Log in and set a new password. Default username and password is **admin:admin**.
-
-#### Configure data source
-
-In the left hand vertical menu go to **Configure** &gt; **Datasources** and click to **Add data source**. Choose Prometheus. Enter [http://localhost:9090](http://localhost:9090) where it is grayed out, everything can be left default. At the bottom save & test. You should get the green "Data source is working" if cardano-monitor has been started. If for some reason those services failed to start issue **cardano-service restart**.
-
-#### Import dashboards
-
-Save the dashboard json files to your local machine.
-
-{% embed url="https://github.com/armada-alliance/dashboards" caption="" %}
-
-In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
-
-![](../../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
-
-### Configure poolDataLive
-
-Here you can use the poolData api to bring your pools data into Grafana.
-
-{% embed url="https://api.pooldata.live/dashboard" caption="" %}
-
-Follow the instructions to install the Grafana plugin, configure your datasource and import the dashboard.
-
-Follow log output to journal.
-
-```bash
-journalctl --unit=cardano-node --follow
-```
-
-Follow log output to stdout.
-
-```bash
-sudo tail -f /var/log/syslog
-```
 
 ## Grafana, Nginx proxy\_pass & snakeoil
 
@@ -712,4 +652,56 @@ sudo service nginx restart
 ```
 
 You can now visit your pi-nodes ip address without any port specification, the connection will be upgraded to SSL/TLS and you will get a scary message\(not really scary at all\). Continue through to your dashboard.
+
+![](../../../.gitbook/assets/snakeoil.png)
+
+### Configure Grafana
+
+On your local machine open your browser and enter your nodes private ip address.
+
+Log in and set a new password. Default username and password is **admin:admin**.
+
+#### Configure data source
+
+In the left hand vertical menu go to **Configure** &gt; **Datasources** and click to **Add data source**. Choose Prometheus. Enter [http://localhost:9090](http://localhost:9090) where it is grayed out, everything can be left default. At the bottom save & test. You should get the green "Data source is working" if cardano-monitor has been started. If for some reason those services failed to start issue **cardano-service restart**.
+
+#### Import dashboards
+
+Save the dashboard json files to your local machine.
+
+{% embed url="https://github.com/armada-alliance/dashboards" caption="" %}
+
+In the left hand vertical menu go to **Dashboards** &gt; **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** &gt; **Manage** and click on your new dashboard.
+
+![](../../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%281%29.png)
+
+### Configure poolDataLive
+
+Here you can use the poolData api to bring your pools data into Grafana.
+
+{% embed url="https://api.pooldata.live/dashboard" caption="" %}
+
+Follow the instructions to install the Grafana plugin, configure your datasource and import the dashboard.
+
+## Useful Commands
+
+Follow log output to journal.
+
+```bash
+sudo journalctl --unit=cardano-node --follow
+```
+
+Follow log output to stdout.
+
+```bash
+sudo tail -f /var/log/syslog
+```
+
+View network connections with netstat.
+
+```bash
+sudo netstat -puntw
+```
+
+From here you have a pi-node with tools to build a stake pool from the following pages. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! 💪 
 
