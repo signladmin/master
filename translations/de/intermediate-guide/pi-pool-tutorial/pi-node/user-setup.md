@@ -65,7 +65,7 @@ If that was successful we can delete the default ubuntu user and it's home direc
 sudo deluser --remove-home ubuntu
 ```
 
-## Harden ssh
+## ssh
 
 Edit OpenSSH's configuration file and make the following changes with Nano text editor.
 
@@ -79,8 +79,8 @@ All the \# commented out values in sshd\_config are the default values. Remove t
 sudo nano /etc/ssh/sshd_config
 ```
 
-{% hint style="info" %}
-You can use ctrl+k to clip lines in nano. From the top of the file you can use it to cut out the whole file and paste this one in with ctrl+v or ctrl+shift+v depending on your system. ctrl+o to save and ctrl+x to exit.
+{% hint style="warning" %}
+Turn off password authentication.
 {% endhint %}
 
 ```bash
@@ -117,7 +117,7 @@ Include /etc/ssh/sshd_config.d/*.conf
 # Authentication:
 
 #LoginGraceTime 2m
-PermitRootLogin no
+#PermitRootLogin prohibit-password
 #StrictModes yes
 #MaxAuthTries 2
 #MaxSessions 10
@@ -171,10 +171,10 @@ ChallengeResponseAuthentication no
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 
-AllowAgentForwarding no
-AllowTcpForwarding no
+#AllowAgentForwarding yes
+#AllowTcpForwarding yes
 #GatewayPorts no
-X11Forwarding no
+X11Forwarding yes
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
@@ -199,14 +199,14 @@ PrintMotd no
 AcceptEnv LANG LC_*
 
 # override default of no subsystems
-Subsystem sftp    /usr/lib/openssh/sftp-server
+Subsystem sftp  /usr/lib/openssh/sftp-server
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
-#    X11Forwarding no
-#    AllowTcpForwarding no
-#    PermitTTY no
-#    ForceCommand cvs server
+#       X11Forwarding no
+#       AllowTcpForwarding no
+#       PermitTTY no
+#       ForceCommand cvs server
 ```
 
 {% hint style="info" %}
