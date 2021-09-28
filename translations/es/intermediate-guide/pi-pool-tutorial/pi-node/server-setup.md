@@ -1,5 +1,5 @@
 ---
-description: 'optimize hardware, optimize Ubuntu'
+description: 'optimizar hardware, securizar Ubuntu'
 ---
 
 # Configuración del servidor
@@ -84,18 +84,6 @@ disable-wifi
 disable-bt
 ```
 
-Enable memory accounting \(cgroups\).
-
-```text
-sudo nano /boot/firmware/cmdline.txt
-```
-
-Replace contents with below.
-
-```text
-cgroup_enable=memory cgroup_memory=1 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=LABEL=writable rootfstype=ext4 elevator=deadline rootwait fixrtc quiet splash
-```
-
 Save and reboot.
 
 ```text
@@ -148,7 +136,7 @@ Add the following to the bottom of /etc/sysctl.conf. Save and exit.
 {% endhint %}
 
 {% hint style="warning" %}
-I am disabling IPv6 and IPv4 forwarding. You may want these. I have seen claims that IPv6 is slower and gets in the way. &lt;find this later&gt;
+I am disabling IPv6 and IPv4 forwarding. You may want these. I have seen claims that IPv6 is slower and gets in the way.
 {% endhint %}
 
 ```text
@@ -158,9 +146,11 @@ sudo nano /etc/sysctl.conf
 ```text
 ## Pi Pool ##
 
-# swap less                      
-#vm.swappiness=10
-#vm.vfs_cache_pressure=50
+# swap more to zram                     
+vm.vfs_cache_pressure=500
+vm.swappiness=100
+vm.dirty_background_ratio=1
+vm.dirty_ratio=50
 
 fs.file-max = 10000000
 fs.nr_open = 10000000
@@ -296,13 +286,63 @@ sudo service chrony restart
 
 ### Zram swap
 
+{% hint style="info" %}
+We have found that cardano-node can safely use this compressed swap in ram essentially giving us around 20gb of ram. We already set kernel parameters for zram in /etc/sysctl.conf
+{% endhint %}
+
 Swapping to disk is slow, swapping to compressed ram space is faster and gives us some overhead before out of memory \(oom\).
 
 {% embed url="https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters/" caption="" %}
 
+{% embed url="https://lists.ubuntu.com/archives/lubuntu-users/2013-October/005831.html" caption="" %}
+
 ```text
 sudo apt install zram-config
 ```
+
+```bash
+sudo nano /usr/bin/init-zram-swapping
+```
+
+Multiply default config by 3. This will give you 12.5GB of virtual compressed swap in ram.
+
+{% hint style="info" %}
+mem=$\(\(\(totalmem / 2 / ${NRDEVICES}\) \* 1024 \* 3\)\)
+{% endhint %}
+
+```bash
+#!/bin/sh
+# load dependency modules
+NRDEVICES=$(grep -c ^processor /proc/cpuinfo | sed 's/^0$/1/')
+if modinfo zram | grep -q ' zram_num_devices:' 2>/dev/null; then
+  MODPROBE_ARGS="zram_num_devices=${NRDEVICES}"
+elif modinfo zram | grep -q ' num_devices:' 2>/dev/null; then
+  MODPROBE_ARGS="num_devices=${NRDEVICES}"
+else
+  exit 1
+fi
+modprobe zram $MODPROBE_ARGS
+# Calculate memory to use for zram (1/2 of ram)
+totalmem=`LC_ALL=C free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
+mem=$(((totalmem / 2 / ${NRDEVICES}) * 1024 * 3))
+# initialize the devices
+for i in $(seq ${NRDEVICES}); do
+  DEVNUMBER=$((i - 1))
+  echo zstd > /sys/block/zram${DEVNUMBER}/comp_algorithm
+  echo $mem > /sys/block/zram${DEVNUMBER}/disksize
+  mkswap /dev/zram${DEVNUMBER}
+  swapon -p 5 /dev/zram${DEVNUMBER}
+done
+```
+
+{% hint style="info" %}
+View how much zram swap cardano-node is using.
+
+```text
+CNZRAM=$(pidof cardano-node)
+grep --color VmSwap /proc/$CNZRAM/status
+```
+{% endhint %}
 
 ### Raspberry Pi & entropy
 

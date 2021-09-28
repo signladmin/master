@@ -1,45 +1,46 @@
 ---
-description: Quickly bootstrap a synced configured node in a hour!
+description: >-
+  Rakenna synkronoitu node noin tunnissa (ei enää tuntia 1.29)!
 ---
 
-# Pi-Node \(quick start\)
+# Pi-Node \(pikaopas\)
 
 {% hint style="info" %}
-It will take about 15 minutes to download the chain and another 45 to sync to the tip. You will not be able to do much until your node has synced with the tip of the block chain.
+Ketjun lataaminen kestää noin 25 minuuttia ja noin tunti että se on synkronoitu kärkeen saakka. Et voi tehdä paljoakaan ennen kuin node on synkronoitu lohkoketjun kärkeen asti.
 
-It can take anywhere from 5 to 50 minutes to sync after a reboot depending how the node was shut down or restarted. Check if process is running with htop. If it is, use gLiveView.sh or go for walk. It will sync and the socket will be created.
+Uudelleenkäynnistyksen jälkeen voi kestää 5-50 minuuttia synkronoida ketju uudlleen riippuen siitä, miten node suljettiin tai käynnistettiin uudelleen. Tarkista htopilla, onko prosessi käynnissä. Jos se on, käytä gLiveView.sh -skriptiä monitorointiin tai mene kävelylle. Node synkronoituu ja socket luodaan.
 
-It is best to just leave it running. 🏃♀
+On parasta vain jättää se käyntiin. 🏃♀
 {% endhint %}
 
-## Quick Start
+## Pikaohje
 
-### **1. Download and flash the** [**Pi-Node.img.gz**](https://db.adamantium.online/Pi-Node.img.gz)**.**
+### **1. Lataa ja asenna** [**Pi-Node.img.gz**](https://db.adamantium.online/Pi-Node.img.gz)**.**
 
-### 2. ssh into the server.
+### 2. Ota ssh-yhteys palvelimeen.
 
 ```bash
 ssh ada@<pi-node private IPv4>
 ```
 
-Default credentials = **ada:lovelace**
+Oletustiedot = **ada:lovelace**
 
-### 3. Enter the pi-pool folder.
+### 3. Mene pi-poolin kansioon.
 
 ```bash
 cd /home/ada/pi-pool
 ```
 
-### 4. Download database snapshot.
+### 4. Lataa tietokannan tilannekuva.
 
 ```bash
 wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 ```
 
-### 5. Enable & start the cardano-service.
+### 5. Ota käyttöön & aloita cardano-palvelu.
 
-{% hint style="warning" %}
-Wait for wget to finish downloading the chain before starting the cardano-service. While you are waiting update Ubuntu by entering the server from another terminal.
+{% hint style="Huomaa" %}
+Odota, että wget saa ketjun lataamisen loppuun ennen cardano-servicen aloittamista. Odottaessasi, voit päivittää Ubuntun avaamalla palvelimeen toisen pääteikkunan.
 
 ```bash
 sudo apt update
@@ -52,21 +53,21 @@ cardano-service enable
 cardano-service start
 ```
 
-### 6. Enable & start the cardano-monitor.
+### 6. Ota käyttöön & aloita cardano-monitor.
 
 ```bash
 cardano-monitor enable
 cardano-monitor start
 ```
 
-### 7. Confirm they are running.
+### 7. Vahvista että palvelut ovat käynnissä.
 
 ```bash
 cardano-service status
 cardano-monitor status
 ```
 
-### 8. gliveview.sh
+### 8. gLiveView.sh
 
 ```bash
 cd $NODE_HOME/scripts
@@ -75,17 +76,17 @@ cd $NODE_HOME/scripts
 
 ### 9. Grafana.
 
-Enter your Node's IPv4 address in your browser.
+Syötä Node:n IPv4 -osoite selaimesi osoitekenttään.
 
-Default credentials = **admin:admin**
+Oletus käyttäjätunnus ja salasana = **admin:admin**
 
-#### Dashboards can be found here.
+#### Kojelaudat löytyvät täältä.
 
 {% embed url="https://github.com/armada-alliance/dashboards" caption="" %}
 
 {% embed url="https://api.pooldata.live/" caption="" %}
 
 {% hint style="info" %}
-The following guide builds out the image, use it as a reference and please feel free to ask for clarification in our Telegram channel. [https://t.me/armada\_alli](https://t.me/armada_alli)
+Seuraava opas rakentaa imagen, käytä sitä viitteenä ja voit vapaasti pyytää selvennystä Telegram kanavassamme. [https://t.me/armada\_alli](https://t.me/armada_alli)
 {% endhint %}
 
