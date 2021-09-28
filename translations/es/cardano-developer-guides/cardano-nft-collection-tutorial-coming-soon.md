@@ -196,13 +196,13 @@ PINATA_API_KEY='Enter Your API Key'
 PINATA_API_SECRET='Enter Your API Secret Key'
 ```
 
-### 6. Upload and pin our data to IPFS
+### 6. Sube y fija tus archivos en el IPFS
 
 {% hint style="info" %}
-Read [this article ](https://docs.ipfs.io/how-to/pin-files/#three-kinds-of-pins)to learn more about why we want to Pin our NFTs to IPFS.
+Lee [este artículo ](https://docs.ipfs.io/how-to/pin-files/#three-kinds-of-pins)para saber más sobre por qué queremos anclar nuestros NFT a IPFS.
 {% endhint %}
 
-* **First, we need to make a script called pin-to-ipfs.js, this script will "upload" and Pin our images to IPFS using the pinata.cloud API.**
+* **Primero, necesitamos hacer un script llamado pin-to-ipfs.js, este script "subirá" y anclar nuestras imágenes a IPFS usando la API pinata.cloud.**
 
 ```text
 nano pin-to-ipfs.js
@@ -328,10 +328,10 @@ node src/pin-images-to-ipfs.js
 ```
 
 {% hint style="warning" %}
-### Before you continue to the minting process, please understand the importance of minting policies and their scripts!
+### Antes de continuar con el proceso de minting, por favor comprende la importancia que tienen las políticas de minting y sus scripts!
 {% endhint %}
 
-**Read the Cardano Documentation on "**[**Scripts**](https://docs.cardano.org/projects/cardano-node/en/latest/reference/simple-scripts.html#Step-1---construct-the-tx-body)**" and/or watch a video we made discussing the subject:**
+**Lee la Documentación de Cardano en "**[**Scripts**](https://docs.cardano.org/projects/cardano-node/en/latest/reference/simple-scripts.html#Step-1---construct-the-tx-body)**" y/o visualiza el vídeo que hicimos discutiendo sobre el tema:**
 
 {% embed url="https://youtu.be/v6q66zcFqew" caption="" %}
 
