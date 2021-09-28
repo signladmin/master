@@ -85,7 +85,7 @@ Yhteisön johtajat seuraavat näitä ohjeita päättäessään ohjesäännön ri
 
 ### Lähde
 
-Tämä ohjesääntö on muokattu lähteestä: [ [Contributor Covenant](https://www.contributor-covenant.org), version 2.0, available at [https://www.contributor-covenant.org/version/2/0/code\_of\_conduct.html](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html).
+Tämä ohjesääntö on muokattu lähteestä: \[ [Contributor Covenant](https://www.contributor-covenant.org), version 2.0, available at [https://www.contributor-covenant.org/version/2/0/code\_of\_conduct.html](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html).
 
 Valvonnan ohjeistuksen pohjana toimi: [Mozilla's code of conduct enforcement ladder](https://github.com/mozilla/diversity).
 

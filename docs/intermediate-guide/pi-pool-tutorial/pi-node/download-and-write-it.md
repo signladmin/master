@@ -9,7 +9,7 @@ description: Flash image
 Lataa, asenna & avaa [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases/latest). Kytke USB-asema laittteeseen.
 
 {% tabs %}
-{% välilehden otsikko="Paikallinen kone \(Ubuntu\)" %}
+{% tab %}
 ```bash
 # Ubuntu users can download and install with snapd
 sudo apt update
@@ -34,9 +34,8 @@ Kytke Pi monitoriin, aseta SD-kortti paikoilleen ja laita virta päälle. Kun n�
 ### Hanki Pi-Pool .img.gz tiedosto
 
 | [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz) |
-|:------------------------------------------------------ |
-|                                                        |
-
+| :--- |
+|  |
 
 ### Raspberry Pi Imager -ohjelmassa
 
@@ -46,7 +45,7 @@ Locate the .img.gz file you downloaded & wish to flash.
 
 Locate your target drive & write it to disk.
 
-![](../../../.gitbook/assets/image-2-.png)
+![](../../../.gitbook/assets/image-2-%20%282%29.png)
 {% endtab %}
 
 {% tab title="Fresh Ubuntu 21.04 installation" %}

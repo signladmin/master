@@ -2,11 +2,11 @@
 description: Tehdään uusia Cardano alkuperäisresursseja ❤️✨
 ---
 
-# Cardano alkuperäisresurssit (Native Assets) \(NFT\) 💰
+# Cardano Native Asset \(NFT\) 💰
 
 ## Kenelle tämä opas on tarkoitettu?
 
-* Ihmisille, jotka haluavat tehdä NFT:n tai alkuperäisresursseja (native assets/tokens) Cardano lohkoketjuun
+* Ihmisille, jotka haluavat tehdä NFT:n tai alkuperäisresursseja \(native assets/tokens\) Cardano lohkoketjuun
 * Ihmisille, jotka tietävät Cardanosta
 
 ## NFT:n edut Cardanossa lohkoketjussa
@@ -164,11 +164,7 @@ module.exports = cardano;
 
 {% tabs %}
 
-
-
 {% embed url="https://youtu.be/Xkx9vdibbq0" caption="" %}
-
-
 
 {% embed url="https://www.youtube.com/watch?v=X5cRGA0qyQE" caption="" %}
 
@@ -240,9 +236,9 @@ Jos käytät testnetiä, sinun täytyy saada tADA testnet-hanasta [täältä](ht
 {% endtab %}
 {% endtabs %}
 
-## Paina (Mint) uudet Native-Assetit/NFT:t Cardano lohkoketjuun
+## Paina \(Mint\) uudet Native-Assetit/NFT:t Cardano lohkoketjuun
 
-Ennen kuin ryhdymme lyömään meidän alkuperäis (native) assetteja, meillä on oltava muutamia asioita hoidettu. Meidän täytyy ensin siirtää "asset" [IPFS](https://ipfs.io/#install) node:en ja luoda IPFS linkki. Jos et tiedä IPFS-järjestelmästä tai mitä se todella tekee, suosittelemme lukemaan dokumentaation [täällä](https://docs.ipfs.io/) tai katsomaan tämän [videon](https://www.youtube.com/watch?v=5Uj6uR3fp-U).
+Ennen kuin ryhdymme lyömään meidän alkuperäis \(native\) assetteja, meillä on oltava muutamia asioita hoidettu. Meidän täytyy ensin siirtää "asset" [IPFS](https://ipfs.io/#install) node:en ja luoda IPFS linkki. Jos et tiedä IPFS-järjestelmästä tai mitä se todella tekee, suosittelemme lukemaan dokumentaation [täällä](https://docs.ipfs.io/) tai katsomaan tämän [videon](https://www.youtube.com/watch?v=5Uj6uR3fp-U).
 
 Koska käytämme kuvatiedostoa assettinamme, meidän pitää ladata pienempi kuvake-kokoinen versio kuvastamme \(mieluiten alle 1MB\). Tätä käytetään nättiin visualisointiin sivustoilla, kuten [pool.pm](https://pool.pm) ja lompakoissamme. Sitten lataamme koko lähdekuvan NFT assetistamme.
 

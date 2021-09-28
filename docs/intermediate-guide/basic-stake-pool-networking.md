@@ -1,6 +1,5 @@
 ---
-description: >-
-  Tämä osio auttaa ymmärtämään relayn ja block producer noden topologioita.
+description: Tämä osio auttaa ymmärtämään relayn ja block producer noden topologioita.
 ---
 
 # Stake Pool -verkosto: Perusteita

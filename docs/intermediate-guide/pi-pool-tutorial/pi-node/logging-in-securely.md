@@ -1,12 +1,13 @@
 ---
 description: >-
-  Luo vahva ssh avainpari, käynnistä Raspberry Pi, kopioi ssh pub-avain ja kirjaudu sisään
+  Luo vahva ssh avainpari, käynnistä Raspberry Pi, kopioi ssh pub-avain ja
+  kirjaudu sisään
 ---
 
 # Suojattu kirjautuminen
 
-{% hint style="Huomaa" %}
-Oletuksena on, että käytät Linux- tai Mac-käyttöjärjestelmää, joka lähtökohtaisesti tukee ssh:ta ja toimii paikallisena koneena. Tai jos käytät Windowsia, sinulla on työkalu, joka toimii tämän oppaan kanssa. Tai ehkä nyt onkin aika siirtyä Linuxiin eikä katsoa taaksepäin. [](https://elementary.io/)https://elementary.io.
+{% hint style="info" %}
+Oletuksena on, että käytät Linux- tai Mac-käyttöjärjestelmää, joka lähtökohtaisesti tukee ssh:ta ja toimii paikallisena koneena. Tai jos käytät Windowsia, sinulla on työkalu, joka toimii tämän oppaan kanssa. Tai ehkä nyt onkin aika siirtyä Linuxiin eikä katsoa taaksepäin. [https://elementary.io](https://elementary.io).
 {% endhint %}
 
 ## Luo uusi ssh avainpari
@@ -37,11 +38,11 @@ Kytke verkkokaapeli, joka on kytketty reitittimeesi ja käynnistä uusi image.
 ### Sisäänkirjautumistiedot
 
 | 🍓 Pi-Noden Oletustunnisteet | 🦍 Ubuntun Oletustunnukset |
-|:--------------------------- |:------------------------- |
-| käyttäjätunnus = ada        | käyttäjätunnus = ubuntu   |
-| salasana = lovelace         | salasana = ubuntu         |
+| :--- | :--- |
+| käyttäjätunnus = ada | käyttäjätunnus = ubuntu |
+| salasana = lovelace | salasana = ubuntu |
 
-{% hint style="Huomaa" %}
+{% hint style="info" %}
 Onnistuneen kirjautumisen yhteydessä sinua pyydetään vaihtamaan salasanasi & kirjautumaan uusilla tunnuksilla.
 {% endhint %}
 
@@ -80,7 +81,7 @@ ssh-copy-id -i <ed25519-keyname.pub> ubuntu@<server-ip>
 ssh:n pitäisi palauttaa "1 key added" ja ehdottaa komentoa, jonka avulla voit yrittää kirjautua uudelle palvelimellesi.
 
 > Number of key\(s\) added: 1
-> 
+>
 > Now try logging into the machine, with: **&lt;run this in terminal&gt;**
 
 ## Kirjaudu palvelimellesi ssh:n avulla
