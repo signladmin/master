@@ -396,7 +396,7 @@ cardano-cli query utxo \
   --mainnet > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
-cat balance.out    
+cat balance.out
 tx_in=""
 total_balance=0
 
@@ -461,7 +461,7 @@ Build **tx.tmp** file to hold some information.
 cardano-cli transaction build-raw \
   ${tx_in} \
   --tx-out $(cat payment.addr)+0 \
-  --invalid-hereafter $(( ${slotNo} + 10000)) \
+  --invalid-hereafter $(( ${slotNo} + 1000)) \
   --fee 0 \
   --certificate stake.cert \
   --out-file tx.tmp
@@ -506,7 +506,7 @@ Build the full transaction to register your staking address.
 cardano-cli transaction build-raw \
   ${tx_in} \
   --tx-out $(cat payment.addr)+${txOut} \
-  --invalid-hereafter $(( ${currentSlot} + 10000)) \
+  --invalid-hereafter $(( ${slotNo} + 10000)) \
   --fee ${fee} \
   --certificate-file stake.cert \
   --out-file tx.raw
@@ -593,7 +593,7 @@ cardano-cli stake-pool metadata-hash \
 {% endtab %}
 {% endtabs %}
 
-Copy poolMetaData.json to [https://pages.github.io](https://pages.github.io) or host it yourself along with your website.
+Copy poolMetaData.json to [https://pages.github.io](https://pages.github.io) or host it yourself along with your website. Be careful not to accidentally insert a space or a new line, which would result in a different hash.
 
 {% hint style="info" %}
 Here is my **poolMetaData.json** & **extendedPoolMetaData.json** as a reference and shameless links back to my site. 😰
@@ -652,7 +652,7 @@ Use the format below to register single or multiple relays.
 Edit the information below to match your pools desired configuration.
 {% endhint %}
 
-Issue a stake pool registration certificate.
+Copy vrf.vkey and poolMetaDataHash.txt to your cold machine and issue a stake pool registration certificate.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -722,7 +722,7 @@ cardano-cli query utxo \
   --mainnet > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
-cat balance.out    
+cat balance.out
 tx_in=""
 total_balance=0
 
@@ -870,5 +870,5 @@ You should create an account and claim your pool here.
 
 Get a couple small usb sticks and backup all your files and folders\(except the db/ folder\). Backup your online Core first then the Cold offline files and folders. **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do not plug the USB stick into anything online after Cold files are on it!**
 
-![https://twitter.com/insaladaPool/status/1380087586509709312?s=19](../../.gitbook/assets/insalada.png)
+![https://twitter.com/insaladaPool/status/1380087586509709312?s=19](../../.gitbook/assets/insalada%20%281%29.png)
 
