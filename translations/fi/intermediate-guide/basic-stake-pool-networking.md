@@ -11,11 +11,11 @@ Tässä tutoriaalissa oletamme, että Raspberry Pi nodesi pyörivät kotonasi, l
 
 Jos sinulla on core node käynnissä, vähimmäis palomuurisäännöt ovat sellaiset, joissa portti on määritettynä auki vain relayden IP-osoitteille ja lisäksi yksi avoin portti ssh:n käyttöön. Jos haluat seurata lohkon tuottajan metriikkaa Grafanan avulla, sinun täytyy avata myös Grafanan portti. Sama juttu, jos haluat seurata relaytasi.
 
-Muistathan, että emme ole verkostoasiantuntijoita. This is only provided as a point of general understanding of how the node topology and network interact. For more advanced network discussions, feel free to use the NASEC discord channel.
+Muistathan, että emme ole verkostoasiantuntijoita. Edellä mainittu on tarkoitettu antamaan yleiskäsitys siitä, miten noden topologia ja verkko ovat vuorovaikutuksessa keskenään. Edistyneempiä verkkokeskusteluja varten voit käyttää NASEC discord kanavaa.
 
-## Overview
+## Yleiskatsaus
 
-Your **relay nodes** should be pointed to other remote relay nodes and your block producer. Your **block producer** should only be pointing to your relay nodes.
+Sinun **relay nodesi** tulisi saavuttaa muilta relay nodeja sekä oma lohkon tuottajasi. Sinun **lohkon tuottajasi** pitäisi olla yhteydessä vain omiin relay nodeihisi.
 
 {% tabs %}
 {% tab title="Relay Node" %}
@@ -69,7 +69,7 @@ Your **relay nodes** should be pointed to other remote relay nodes and your bloc
 ```
 {% endcode %}
 
-The **addr** and **port** entries above should be the IP addresses of your relay nodes. That's it. Your block producer should have firewall entries restricting access to only these IP addresses on the port you are running your block producer on. Example ufw firewall status below running the block producer on port 6000.
+Yllä olevat **addr** ja **port** -merkintöjen pitäisi olla relay nodiesi IP-osoitteita. Se on siinä. Lohkon tuottajasi palomuuriasetusten pitäisi rajoittaa pääsy muuaalle kuin näihin IP-osoitteisiin portissa, jossa käytät lohkon tuottajaa. Alla on esimerkki palomuurin tilasta lohkon tuottajassa joka kuuntelee porttia 6000.
 
 {% code title="> sudo ufw status" %}
 ```text
