@@ -9,9 +9,9 @@ description: >-
 
 Tässä tutoriaalissa oletamme, että Raspberry Pi nodesi pyörivät kotonasi, liitettyinä routeriin ja ovat yhteydessä internetiin jonkin palveluntuottajalta ostetun yhteyden kautta. Nodien pitäisi olla määritetyn palomuurin takana, ja avoimia portteja tulisi olla mahdollisimman vähän. Lisäksi palomuuriasetusten tulisi olla mahdollisimman speifisiä. Lisäksi ISP:n internetreitittimessä tulee olla palomuuriasetukset määritettynä. Jos et tunne palomuuriasetuksia, niiden jättäminen ISP:n määrittämiin oletusarvoihin on yleisesti ottaen OK.
 
-If you have a block producer running, at a minimum it's firewall rules should have it's node port available only to your configured relay IPs and then the port you use for ssh. If you want to monitor your block producer metrics using Grafana, you'll also need to provide access to the Grafana port. Same thing if you want to monitor your relays.
+Jos sinulla on core node käynnissä, vähimmäis palomuurisäännöt ovat sellaiset, joissa portti on määritettynä auki vain relayden IP-osoitteille ja lisäksi yksi avoin portti ssh:n käyttöön. Jos haluat seurata lohkon tuottajan metriikkaa Grafanan avulla, sinun täytyy avata myös Grafanan portti. Sama juttu, jos haluat seurata relaytasi.
 
-We are not network experts here. This is only provided as a point of general understanding of how the node topology and network interact. For more advanced network discussions, feel free to use the NASEC discord channel.
+Muistathan, että emme ole verkostoasiantuntijoita. This is only provided as a point of general understanding of how the node topology and network interact. For more advanced network discussions, feel free to use the NASEC discord channel.
 
 ## Overview
 
