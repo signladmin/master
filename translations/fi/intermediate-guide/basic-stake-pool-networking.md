@@ -9,13 +9,13 @@ description: >-
 
 Tässä tutoriaalissa oletamme, että Raspberry Pi nodesi pyörivät kotonasi, liitettyinä routeriin ja ovat yhteydessä internetiin jonkin palveluntuottajalta ostetun yhteyden kautta. Nodien pitäisi olla määritetyn palomuurin takana, ja avoimia portteja tulisi olla mahdollisimman vähän. Lisäksi palomuuriasetusten tulisi olla mahdollisimman speifisiä. Lisäksi ISP:n internetreitittimessä tulee olla palomuuriasetukset määritettynä. Jos et tunne palomuuriasetuksia, niiden jättäminen ISP:n määrittämiin oletusarvoihin on yleisesti ottaen OK.
 
-If you have a block producer running, at a minimum it's firewall rules should have it's node port available only to your configured relay IPs and then the port you use for ssh. If you want to monitor your block producer metrics using Grafana, you'll also need to provide access to the Grafana port. Same thing if you want to monitor your relays.
+Jos sinulla on core node käynnissä, vähimmäis palomuurisäännöt ovat sellaiset, joissa portti on määritettynä auki vain relayden IP-osoitteille ja lisäksi yksi avoin portti ssh:n käyttöön. Jos haluat seurata lohkon tuottajan metriikkaa Grafanan avulla, sinun täytyy avata myös Grafanan portti. Sama juttu, jos haluat seurata relaytasi.
 
-We are not network experts here. This is only provided as a point of general understanding of how the node topology and network interact. For more advanced network discussions, feel free to use the NASEC discord channel.
+Muistathan, että emme ole verkostoasiantuntijoita. Edellä mainittu on tarkoitettu antamaan yleiskäsitys siitä, miten noden topologia ja verkko ovat vuorovaikutuksessa keskenään. Edistyneempiä verkkokeskusteluja varten voit käyttää NASEC discord kanavaa.
 
-## Overview
+## Yleiskatsaus
 
-Your **relay nodes** should be pointed to other remote relay nodes and your block producer. Your **block producer** should only be pointing to your relay nodes.
+Sinun **relay nodesi** tulisi saavuttaa muilta relay nodeja sekä oma lohkon tuottajasi. Sinun **lohkon tuottajasi** pitäisi olla yhteydessä vain omiin relay nodeihisi.
 
 {% tabs %}
 {% tab title="Relay Node" %}
@@ -69,7 +69,7 @@ Your **relay nodes** should be pointed to other remote relay nodes and your bloc
 ```
 {% endcode %}
 
-The **addr** and **port** entries above should be the IP addresses of your relay nodes. That's it. Your block producer should have firewall entries restricting access to only these IP addresses on the port you are running your block producer on. Example ufw firewall status below running the block producer on port 6000.
+Yllä olevat **addr** ja **port** -merkintöjen pitäisi olla relay nodiesi IP-osoitteita. Se on siinä. Lohkon tuottajasi palomuuriasetusten pitäisi rajoittaa pääsy muuaalle kuin näihin IP-osoitteisiin portissa, jossa käytät lohkon tuottajaa. Alla on esimerkki palomuurin tilasta lohkon tuottajassa joka kuuntelee porttia 6000.
 
 {% code title="> sudo ufw status" %}
 ```text
@@ -82,19 +82,19 @@ To                         Action      From
 {% endtab %}
 {% endtabs %}
 
-The first example **addr** line above **10.20.30.3** is your block producer's IP address and **port 6000** is the port you are running your block producer on. This object should be the exact same on your other relays.
+Esimerkin ensimmäinen **addr** rivi  **10.20.30.** on lohkon tuottajan IP-osoite ja **port 6000** on portti, jonka olet määrittänyt lohkon tuottajalle. Tämän kohdan pitäisi olla täsmälleen sama kaikissa relay nodeissasi.
 
-The other three objects are remote peers. You can set those manually or you can use the **topologyUpdater.sh** script from Guild operators. If you choose to use the topologyUpdater.sh be sure you set the **CUSTOM\_PEERS** line in the script correctly before you run it. This is a pipe-delimited set of addr:port:valency pairs of peers that you want the script to add to your final topology.json file. This line should include your block producer. Default valency is 1 \(one\) if not specified. Example showing the first two objects from the mainnet-topology.json file above:
+Muut kolme objektia ovat verkoston muiten käyttäjien osoitteita. Voit asettaa ne manuaalisesti tai voit käyttää **topologyUpdater.sh** skriptiä Guild-operaattoreilta. Jos päätät käyttää topologyUpdater.sh skriptiä varmista, että asetat **CUSTOM\_PEERS** -rivin oikein ennen kuin suoritat sen. Tämä on pipe-erotettu joukko addr:port:valency pareja vertaisnodeista, joita haluat komentosarjan lisävän lopulliseen topology.json tiedostoon. Tämän rivin pitää sisältää myös oma lohkon tuottajasi. Valenssin oletusarvo on 1 \(yksi\), jos sitä ei ole määritelty. Tässä esimerkki, jossa kaksi ensimmäistä objektia yllä olevasta mainnet-topology.json tiedostosta:
 
 CUSTOM\_PEERS="10.20.30.3**:**6000**\|**138.197.71.216**:**6000"
 
 {% hint style="info" %}
-Set **valency** to 0 \(zero\) to disable a remote peer if you do not wish to delete the peer entirely from the file.
+Aseta **valenssi** arvoon 0 \(nolla\) poistaaksesi etäkäyttäjän käytöstä, jos et halua poistaa käyttäjää kokonaan tiedostosta.
 {% endhint %}
 
-## Pool Registration
+## Poolin Rekisteröinti
 
-When you create your stake pool's **pool.json** metadata file you will notice a section called **poolRelays**. This is where you would add **public** relays, visible to others. You can add them as static IPs or as a domain name, such as **north.acme.com**. If you are running more than one relay on your internal network you will need to have them assigned to different ports, such as 6001 and 6002.
+Kun luot stake poolisi **pool.json** metadatatiedoston huomaat osion nimeltä **poolRelays**. This is where you would add **public** relays, visible to others. You can add them as static IPs or as a domain name, such as **north.acme.com**. If you are running more than one relay on your internal network you will need to have them assigned to different ports, such as 6001 and 6002.
 
 {% code title="pool.json" %}
 ```bash

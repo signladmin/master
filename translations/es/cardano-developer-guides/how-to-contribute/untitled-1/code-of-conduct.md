@@ -61,7 +61,7 @@ Los líderes de la Comunidad seguirán estas Directrices de Orden Comunitario pa
 
 #### 1. Corrección
 
-**Impacto de la Comunidad**: Uso de un lenguaje inapropiado u otro comportamiento considerado no profesional o no bienvenido en la comunidad.
+**Impacto Comunitario**: Uso de un lenguaje inapropiado u otro comportamiento considerado no profesional o no bienvenido en la comunidad.
 
 **Consecuencia**: Una advertencia privada y escrita de los líderes de la comunidad, proporcionar claridad acerca de la naturaleza de la violación y una explicación de por qué el comportamiento fue inapropiado. Se puede solicitar una disculpa pública.
 
@@ -69,25 +69,25 @@ Los líderes de la Comunidad seguirán estas Directrices de Orden Comunitario pa
 
 **Impacto Comunitario**: Una violación a través de un solo incidente o serie de acciones.
 
-**Consecuencia**: Una advertencia con consecuencias para el comportamiento continuo. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+**Consecuencia**: Una advertencia con consecuencias para el comportamiento continuo. Ninguna interacción con las personas involucradas, incluyendo la no interacción con aquellas personas que han aplicado el Código de Conducta, durante un período de tiempo determinado. Esto incluye evitar interacciones tanto en espacios comunitarios como en canales externos como en medios sociales. La violación de estos términos puede llevar a una prohibición temporal o permanente.
 
-#### 3. Temporary Ban
+#### 3. Expulsión temporal
 
-**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+**Impacto de la comunidad**: Una violación grave de los estándares de la comunidad, incluyendo un comportamiento inapropiado recurrente.
 
-**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+**Consecuencia**: una prohibición temporal de cualquier tipo de interacción o comunicación pública con la comunidad durante un periodo de tiempo determinado. No habrá ninguna interacción, ni pública ni privada, con las personas involucradas, incluyendo la no interacción con aquellas personas que han aplicado el Código de Conducta, durante un período de tiempo determinado. La violación de estos términos puede llevar a una prohibición temporal o permanente.
 
-#### 4. Permanent Ban
+#### 4. Expulsion permanent
 
-**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+**Impacto Comunitario**: Demostrar un patrón de violación de los estándares de la comunidad. incluyendo conductas inapropiadas sostenidas, acoso a un individuo, o agresión hacia o diseminación de clases de individuos.
 
-**Consequence**: A permanent ban from any sort of public interaction within the community.
+**Consecuencia**: prohibición permanente de cualquier tipo de interacción pública dentro de la comunidad.
 
-### Attribution
+### Atribución
 
-This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.0, available at [https://www.contributor-covenant.org/version/2/0/code\_of\_conduct.html](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html).
+Este Código de Conducta es una adaptación del [Pacto de colaborador](http://contributor-covenant.org), versión 1.4, disponible en [http://contributor-covenant.org/version/1/4](http://contributor-covenant.org/version/1/4/)
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder](https://github.com/mozilla/diversity).
+Las Directrices de Impacto Comunitario se inspiraron en [escalera de conducta de Mozilla](https://github.com/mozilla/diversity).
 
-For answers to common questions about this code of conduct, see the FAQ at [https://www.contributor-covenant.org/faq](https://www.contributor-covenant.org/faq). Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).
+Para obtener respuesta a preguntas comunes sobre este código de conducta, consulte las preguntas frecuentes en [https://www.contributor-covenant.org/faq](https://www.contributor-covenant.org/faq). Las traducciones están disponibles en [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).
 

@@ -35,7 +35,7 @@ Todo lo que realmente necesitamos hacer aquí es desactivar el inicio de sesión
 
 ![](../../.gitbook/assets/disable-auto-login.png)
 
-## Create the ada user
+## Crear el usuario ada
 
 ```text
 sudo adduser ada && sudo adduser ada sudo
