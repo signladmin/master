@@ -8,10 +8,10 @@
 
 ### Vaikka keskiössämme on RPi-ARM pohjaisten stake poolien toiminta ja ylläpito, tarjoamme myös laajan kattauksen tietoa, oppaita ja resursseja Cardanon kehittämiseen.
 
-| Ota yhteyttä: |
-| :--- |
-| [Verkkosivu](https://armada-alliance.com) |
-| [Discord](https://discord.com/invite/EEcB8eb2) |
+| Ota yhteyttä:                                                                                          |
+|:------------------------------------------------------------------------------------------------------ |
+| [Verkkosivu](https://armada-alliance.com)                                                              |
+| [Discord](https://discord.com/invite/EEcB8eb2)                                                         |
 | [Project Catalyst ](https://cardano.ideascale.com/a/dtd/ARMing-Cardano/340480-48088#idea-tab-comments) |
-| [GitHub](https://github.com/armada-alliance) |
+| [GitHub](https://github.com/armada-alliance)                                                           |
 

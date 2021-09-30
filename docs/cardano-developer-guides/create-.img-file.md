@@ -1,5 +1,5 @@
 ---
-description: 'Näin voit luoda imagen, jonka voit siirtää uuteen Raspberry Pi:hin'
+description: Näin voit luoda imagen, jonka voit siirtää uuteen Raspberry Pi:hin
 ---
 
 # Luo .img-tiedosto

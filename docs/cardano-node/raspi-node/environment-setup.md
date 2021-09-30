@@ -1,7 +1,5 @@
 ---
-description: >-
-  Asenna tarvittavat paketit, joita tarvitaan cardano-noden ylläpitämiseen ja
-  määritetään ympäristömme
+description: Asenna tarvittavat paketit, joita tarvitaan cardano-noden ylläpitämiseen ja määritetään ympäristömme
 ---
 
 # Ympäristön Asetukset
@@ -38,7 +36,7 @@ mkdir $HOME/tmp
 [Ympäristömuuttujat Linux/Unix](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769).
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Muutokset tähän tiedostoon vaativat .bashrc:n uudelleenlataamista tai uloskirjautumista ja sitten uuden sisäänkirjautumisen.
 {% endhint %}
 
@@ -105,7 +103,7 @@ rm -r cardano*
 cd $HOME
 ```
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Jos binäärit ovat jo olemassa, sinun on vahvistettava vanhojen binäärien ylikirjoittaminen.
 {% endhint %}
 
@@ -347,7 +345,7 @@ nano topologyUpdater.sh
 
 Liitä seuraavat, tallenna & sulje nano.
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Porttinumero on päivitettävä, jotta se vastaa oman cardano-nodemme porttia. Jos käytät dns-tietueita, voit lisätä FQDN:n, joka vastaa riviä 6\(vain rivi 6 \). Jätä se niin kuin on, jos et käytä dns:ää. Palvelu hakee julkisen IP-osoitteen ja käyttää sitä.
 {% endhint %}
 
@@ -395,7 +393,7 @@ Tallenna, sulje ja tee se suoritettavaksi.
 chmod +x topologyUpdater.sh
 ```
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Et pysty suorittamaan ./topologyUpdater.sh onnistuneesti ennen kuin nodesi on täysin synkronoitu ketjun kärkeen.
 {% endhint %}
 
@@ -465,7 +463,7 @@ Voit käyttää gLiveView.sh -sovellusta tarkastellaksesi ping-aikoja suhteessa 
 
 Muutokset tässä tiedostossa tulevat käyttöön vasta kun cardano-service käynnistetään uudelleen.
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Älä unohda poistaa viimeistä pilkkua topologiatiedostosta!
 {% endhint %}
 
@@ -523,7 +521,7 @@ sudo nano /etc/prometheus/prometheus.yml
 
 Korvaa tiedoston sisältö alla olevan kanssa.
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Sisennyksen on oltava oikea YAML muoto tai Prometheus ei käynnisty.
 {% endhint %}
 
@@ -643,13 +641,13 @@ cardano-monitor enable
 cardano-monitor start
 ```
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Tässä vaiheessa saatat haluta käynnistää cardano-servicen ja synkronoida nodesi lohkoketjun kanssa ennen kuin jatkamme Grafanan konfigurointia. Hyppää eteenpäin [synkronoidaan ketju jaksoon](https://app.gitbook.com/@wcatz/s/pi-pool-guide/~/drafts/-MYFtFDZp-rTlybgAO71/pi-node/environment-setup/@drafts#syncing-the-chain). Valitse haluatko odottaa 30 tuntia tai ladata viimeisimmän tilannekuvani tietokannasta. Palaa tähän kun gLiveView.sh näyttää, että olet ketjun kärjessä.
 {% endhint %}
 
 ### Määritä Grafana
 
-Avaa paikallisessa koneessasi selaimesi ja mene osoitteeseen [http://&lt;Pi-Node's](http://<Pi-Node's) private ip&gt;:5000
+Avaa paikallisessa koneessasi selaimesi ja mene osoitteeseen http://&lt;Pi-Node's private ip&gt;:5000
 
 {% hint style="danger" %}
 Älä muuta oletussalasanaa vielä, johdolla ei ole salausta. Valitse ohita kun kysytään. Seuraavan kerran kun käymme Grafana se on itse allekirjoitettu TLS sertifikaatti, jonka hoitaa Nginx webservers proxy\_pass ja salasanat ovat turvassa kaikelta sisäinen verkon kuuntelulta.

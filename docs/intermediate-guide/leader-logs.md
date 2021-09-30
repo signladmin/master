@@ -6,7 +6,7 @@ description: Miten saada tietää Stake Poolin Slot varaukset seuraavalle Epochi
 
 ## Rakenna CNCLI \(kiitos [@AndrewWestberg](https://github.com/AndrewWestberg)\)
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Cncli:n suorittaminen lohko-tuotanto/Core nodella on kätevä tapa, mutta resurssien säästämiseksi voit rakentaa ja ajaa cncli:n myös toisella \(monitorointi\) laitteella. Siksi sinun täytyy saada stake-snapshot.json yhdestä käynnissä nodestasi ja kopioida genesis tiedostot ja vrf.skey Core nodestasi monitoroivaan laitteeseen.
 {% endhint %}
 

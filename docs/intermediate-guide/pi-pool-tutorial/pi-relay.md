@@ -68,7 +68,7 @@ Tallenna ja sulje.
 
 Avaa **50-pilvi-init.yaml** ja korvaa tiedoston sisältö alla olevalla.
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Muista käyttää LAN aliverkon osoitetta. Tässä esimerkissä käytän **192.168.1.xxx**. Verkostosi voi hyvinkin käyttää erilaista yksityistä aluetta.
 {% endhint %}
 
@@ -167,7 +167,7 @@ cd $NODE_HOME/scripts
 
 Määritä skripti vastaamaan ympäristöäsi.
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Jos käytät IPv4:ää, jätä CNODE\_HOSTNAME niin kuin se on. Palvelu hakee julkisen IP-osoitteen ja käyttää sitä. Toistan, muuta vain portti arvoon 3001 DNS:llä muuta vain ensimmäinen ilmentymä. Älä muokkaa "CHANGE ME" tiedoston alemmilla riveillä.
 {% endhint %}
 

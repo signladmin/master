@@ -1,8 +1,6 @@
 ---
 description: >-
-  Tämän oppaan avulla voit rakentaa Cardano Stake Pool, joka kuluttaa vain 4
-  wattia per Pi. Pi-Node.img.gz:n referenssiopas (reference guide for the
-  Pi-Node.img.gz).
+  Tämän oppaan avulla voit rakentaa Cardano Stake Pool, joka kuluttaa vain 4 wattia per Pi. Pi-Node.img.gz:n referenssiopas (reference guide for the Pi-Node.img.gz).
 ---
 
 # Pi-Node Image & Ohjeet
@@ -15,7 +13,7 @@ description: >-
 On erittäin suositeltavaa käydä läpi Cardano Foundationin [Stake Pool School](https://cardano-foundation.gitbook.io/stake-pool-course/) -kurssi.
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Jos haluat luoda .img tiedoston työstäsi, joka voidaan ottaa uudelleenkäyttöön muissa Raspberry Pi:ssäsi sinun kannattaa rakentaa se 8GB sd-kortille. Kuvan tekemiseen kuluu näin vähemmän aikaa. Katso [kuvan luontiosio](https://app.gitbook.com/@ada-pi/s/raspi-spo/intermediate-guide/pi-pool-tutorial/create-.img-file).
 {% endhint %}
 
@@ -29,7 +27,7 @@ Suosituimmat oppaat on tarkoitettu x86-arkkitehtuuriin ja '_tiedostaa se, mitä 
 
 ## Laitteisto
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Cardano-node ja cardano-cli, joihin tässä oppaassa viitataan, tarvitsevat toimiakseen aarch64 arkkitehtuurin taakseen. Sinun **täytyy** käyttää Pi4B 8GB Core & Relay laitteina, voit käyttää Pi3B+ tai PI4B 4GB tai 8GB versiota mikro sd-kortilla kylmänä offline koneenasi.
 {% endhint %}
 

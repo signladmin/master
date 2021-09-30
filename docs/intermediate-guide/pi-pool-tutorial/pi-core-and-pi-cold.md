@@ -1,7 +1,5 @@
 ---
-description: >-
-  Luo toiminnalliset avaimet & sertifikaatit. Luo lompakko & rekisteröi
-  stakepool
+description: Luo toiminnalliset avaimet & sertifikaatit. Luo lompakko & rekisteröi stakepool
 ---
 
 # Pi-Core/Kylmä kone
@@ -341,7 +339,7 @@ Kopioi **payment.addr** Usb-asemaan ja siirrä se core-noden pi-pool kansioon.
 
 Lisää varoja lompakkoon. Tämä on ainoa lompakko, jota stake poolisi käyttää, joten pledge summa menee myös tänne. On 2 ada:n staking rekisteröintimaksu ja 500 ada:n poolin rekisteröinti talletukset. Nämä ovat pantteja, jotka saat takaisin, kun lopetat poolisi.
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Testaa lompakko lähettämällä pieni määrä adaa, odota muutama minuutti ja tarkasta lompakkosi saldo.
 {% endhint %}
 
@@ -423,7 +421,7 @@ Jos sinulle tulee
 
 `cardano-cli: Network.Socket.connect: : does not exist (No such file or directory)`
 
-Se johtuu siitä, että ydin ei ole lopettanut synkronointia lohkoketjun kärkeen. Tämä voi kestää pitkän aikaa uudelleenkäynnistyksen jälkeen. Jos katsot db/ kansioon cardano-palvelun pysähdyksen jälkeen, näet tiedoston nimeltä 'puhdas'. Se on vahvistustiedosto tietokannan puhtaasta sammutuksesta. Kestää yleensä 5-10 minuuttia synkronoida takaisin ketjun kärkeen Raspberry Pi :lla \(näin ainakin epochin 267 kohdalla\).
+Se johtuu siitä, että ydin ei ole lopettanut synkronointia lohkoketjun kärkeen. Tämä voi kestää pitkän aikaa uudelleenkäynnistyksen jälkeen. Jos katsot db/ kansioon cardano-palvelun pysähdyksen jälkeen, näet tiedoston nimeltä 'puhdas'. Se on vahvistustiedosto tietokannan puhtaasta sammutuksesta. Kestää yleensä 5-10 minuuttia synkronoida takaisin ketjun kärkeen Raspberry Pi :lla (näin ainakin epochin 267 kohdalla).
 
 Jos cardano-nodea ei kuitenkaan sammutettu 'puhtaasti', mistä tahansa syystä, voi kestää jopa tunnin tarkistaa tietokanta \(ketju \) ja luoda uusi socket tiedosto. Socket tiedosto luodaan, kun synkronointi on valmis.
 {% endhint %}
@@ -451,7 +449,7 @@ echo stakeAddressDeposit : ${stakeAddressDeposit}
 Staking osoitteen rekisteröinti on 2000 000 lovelacea tai 2 adaa.
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Huomaa, invalid-hereafter syöte. Otamme nykyisen slotin numeron\(ketjun kärki\) ja lisäämme siihen 10000 paikkaa. Jos emme anna allekirjoitettua tapahtumaa ennen kuin ketju saavuttaa tämän syötetyn slotin numeron, tx mitätöidään. Slotti on yksi sekunti, joten sinulla on 166.666667 minuuttia aikaa saada tämä valmiiksi. 🐌
 {% endhint %}
 
@@ -549,7 +547,7 @@ cardano-cli transaction submit \
 
 Luo **poolMetaData.json** tiedosto. Se sisältää tärkeitä tietoja poolistasi. Sinun täytyy isännöidä tätä tiedostoa jossakin verkossa ikuisesti. Sen on oltava online-tilassa ja sitä ei voi muokata ilman pool.certin uudelleenlähettämistä/päivitystä. Parin seuraavan askeleen aikana teemme hashin
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 metadata-url must be less than 64 characters.
 {% endhint %}
 
@@ -566,8 +564,8 @@ nano poolMetaData.json
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
-Laajennettua **PoolMetaData.json** tiedostoa käyttävät adapoolit ja muut hakeakseen tietoja, kuten mistä löytyy poolisi logo ja sosiaalisen median linkkejä. Toisin kuin **poolMetaData.json** tämän tiedoston hash ei ole tallennettu rekisteröintitodistukseesi ja sitä voidaan muokata ilman poolin rekisterin  **pool.cert**  uudelleenlähettämistä.
+{% hint style="Huomaa" %}
+Laajennettua **PoolMetaData.json** tiedostoa käyttävät adapoolit ja muut hakeakseen tietoja, kuten mistä löytyy poolisi logo ja sosiaalisen median linkkejä. Toisin kuin **poolMetaData.json** tämän tiedoston hash ei ole tallennettu rekisteröintitodistukseesi ja sitä voidaan muokata ilman poolin rekisterin ** pool.cert ** uudelleenlähettämistä.
 {% endhint %}
 
 Lisää seuraavat ja muokkaa metatietojasi.

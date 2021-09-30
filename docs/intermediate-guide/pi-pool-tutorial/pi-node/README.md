@@ -1,5 +1,6 @@
 ---
-description: Rakenna synkronoitu node noin tunnissa (ei enää tuntia 1.29)!
+description: >-
+  Rakenna synkronoitu node noin tunnissa (ei enää tuntia 1.29)!
 ---
 
 # Pi-Node \(pikaopas\)
@@ -38,7 +39,7 @@ wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
 
 ### 5. Ota käyttöön & aloita cardano-palvelu.
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Odota, että wget saa ketjun lataamisen loppuun ennen cardano-servicen aloittamista. Odottaessasi, voit päivittää Ubuntun avaamalla palvelimeen toisen pääteikkunan.
 
 ```bash

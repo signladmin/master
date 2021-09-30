@@ -1,4 +1,4 @@
-# Table of contents
+# Sisällys
 
 * [Tervetuloa ARM-operaattorit](README.md)
 

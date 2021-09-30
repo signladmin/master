@@ -1,4 +1,4 @@
-# Cardano NFT Collection Tutorial
+# Cardano NFT-kokoelma opas
 
 ## Edellytykset
 
@@ -184,7 +184,7 @@ node src/generate-thumbnails.js
 * luo .env tiedosto ja liitä siihen avaimet
 
 {% hint style="info" %}
-Varmista, että **.env** tiedosto on **cardano-minter** hakemistossa, **eikä** **\*\*** src\*\* kansiossa
+Varmista, että **.env** tiedosto on **cardano-minter** hakemistossa, **eikä** **** **src** kansiossa
 {% endhint %}
 
 ```text
@@ -327,8 +327,8 @@ main()
 node src/pin-images-to-ipfs.js
 ```
 
-{% hint style="info" %}
-### Ennen kuin jatkat painoprosessia \(minting process\), on hyvä ymmärtää painotoiminnan säännösten ja niiden skriptien tärkeys!
+{% hint style="Huomaa" %}
+### Ennen kuin jatkat painoprosessia (minting process), on hyvä ymmärtää painotoiminnan säännösten ja niiden skriptien tärkeys!
 {% endhint %}
 
 **Lue Cardano Dokumentaatio osoitteesta "**[**Skriptit**](https://docs.cardano.org/projects/cardano-node/en/latest/reference/simple-scripts.html#Step-1---construct-the-tx-body)**" ja/tai katso video, jonka teimme aiheesta:**
@@ -337,7 +337,7 @@ node src/pin-images-to-ipfs.js
 
 ### 7. Luo "open" tai "unlocked" minting käytäntö ja skripti \(Valinnainen\)
 
-* Luomme avoimen painatussääntö \(minting policy\) -skriptin ja tallennamme sen JSON ja TXT muodossa.
+* Luomme avoimen painatussääntö (minting policy) -skriptin ja tallennamme sen JSON ja TXT muodossa.
 
 ```bash
 cd src

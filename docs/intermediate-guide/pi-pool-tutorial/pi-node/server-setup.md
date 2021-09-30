@@ -135,7 +135,7 @@ Lisää seuraava /etc/sysctl.conf tiedoston loppuun. Tallenna ja sulje.
 [https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3](https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3)
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="Huomaa" %}
 Olen poistamassa IPv6 ja IPv4 siirtoa käytöstä. Saatat haluta pitää nämä. Olen nähnyt väitteitä, että IPv6 on hitaampi ja saattaa häiritä toimintaa.
 {% endhint %}
 
