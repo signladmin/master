@@ -9,6 +9,8 @@ name: Finnish [FI] Translations
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'translations/${ env.LANG_CODE }/**'
   pull_request:
     branches: [ master ]
     paths:
