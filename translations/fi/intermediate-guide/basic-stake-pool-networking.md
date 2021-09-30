@@ -84,12 +84,12 @@ To                         Action      From
 
 Esimerkin ensimmäinen **addr** rivi  **10.20.30.** on lohkon tuottajan IP-osoite ja **port 6000** on portti, jonka olet määrittänyt lohkon tuottajalle. Tämän kohdan pitäisi olla täsmälleen sama kaikissa relay nodeissasi.
 
-Muut kolme objektia ovat verkoston muiten käyttäjien osoitteita. Voit asettaa ne manuaalisesti tai voit käyttää **topologyUpdater.sh** skriptiä Guild-operaattoreilta. If you choose to use the topologyUpdater.sh be sure you set the **CUSTOM\_PEERS** line in the script correctly before you run it. This is a pipe-delimited set of addr:port:valency pairs of peers that you want the script to add to your final topology.json file. This line should include your block producer. Default valency is 1 \(one\) if not specified. Example showing the first two objects from the mainnet-topology.json file above:
+Muut kolme objektia ovat verkoston muiten käyttäjien osoitteita. Voit asettaa ne manuaalisesti tai voit käyttää **topologyUpdater.sh** skriptiä Guild-operaattoreilta. Jos päätät käyttää topologyUpdater.sh skriptiä varmista, että asetat **CUSTOM\_PEERS** -rivin oikein ennen kuin suoritat sen. Tämä on pipe-erotettu joukko addr:port:valency pareja vertaisnodeista, joita haluat komentosarjan lisävän lopulliseen topology.json tiedostoon. Tämän rivin pitää sisältää myös oma lohkon tuottajasi. Valenssin oletusarvo on 1 \(yksi\), jos sitä ei ole määritelty. Tässä esimerkki, jossa kaksi ensimmäistä objektia yllä olevasta mainnet-topology.json tiedostosta:
 
 CUSTOM\_PEERS="10.20.30.3**:**6000**\|**138.197.71.216**:**6000"
 
 {% hint style="info" %}
-Set **valency** to 0 \(zero\) to disable a remote peer if you do not wish to delete the peer entirely from the file.
+Aseta **valenssi** arvoon 0 \(nolla\) poistaaksesi etäkäyttäjän käytöstä, jos et halua poistaa käyttäjää kokonaan tiedostosta.
 {% endhint %}
 
 ## Pool Registration
