@@ -82,9 +82,9 @@ To                         Action      From
 {% endtab %}
 {% endtabs %}
 
-The first example **addr** line above **10.20.30.3** is your block producer's IP address and **port 6000** is the port you are running your block producer on. This object should be the exact same on your other relays.
+Esimerkin ensimmäinen **addr** rivi  **10.20.30.** on lohkon tuottajan IP-osoite ja **port 6000** on portti, jonka olet määrittänyt lohkon tuottajalle. Tämän kohdan pitäisi olla täsmälleen sama kaikissa relay nodeissasi.
 
-The other three objects are remote peers. You can set those manually or you can use the **topologyUpdater.sh** script from Guild operators. If you choose to use the topologyUpdater.sh be sure you set the **CUSTOM\_PEERS** line in the script correctly before you run it. This is a pipe-delimited set of addr:port:valency pairs of peers that you want the script to add to your final topology.json file. This line should include your block producer. Default valency is 1 \(one\) if not specified. Example showing the first two objects from the mainnet-topology.json file above:
+Muut kolme objektia ovat verkoston muiten käyttäjien osoitteita. Voit asettaa ne manuaalisesti tai voit käyttää **topologyUpdater.sh** skriptiä Guild-operaattoreilta. If you choose to use the topologyUpdater.sh be sure you set the **CUSTOM\_PEERS** line in the script correctly before you run it. This is a pipe-delimited set of addr:port:valency pairs of peers that you want the script to add to your final topology.json file. This line should include your block producer. Default valency is 1 \(one\) if not specified. Example showing the first two objects from the mainnet-topology.json file above:
 
 CUSTOM\_PEERS="10.20.30.3**:**6000**\|**138.197.71.216**:**6000"
 
