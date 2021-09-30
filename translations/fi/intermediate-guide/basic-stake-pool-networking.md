@@ -92,9 +92,9 @@ CUSTOM\_PEERS="10.20.30.3**:**6000**\|**138.197.71.216**:**6000"
 Aseta **valenssi** arvoon 0 \(nolla\) poistaaksesi etäkäyttäjän käytöstä, jos et halua poistaa käyttäjää kokonaan tiedostosta.
 {% endhint %}
 
-## Pool Registration
+## Poolin Rekisteröinti
 
-When you create your stake pool's **pool.json** metadata file you will notice a section called **poolRelays**. This is where you would add **public** relays, visible to others. You can add them as static IPs or as a domain name, such as **north.acme.com**. If you are running more than one relay on your internal network you will need to have them assigned to different ports, such as 6001 and 6002.
+Kun luot stake poolisi **pool.json** metadatatiedoston huomaat osion nimeltä **poolRelays**. This is where you would add **public** relays, visible to others. You can add them as static IPs or as a domain name, such as **north.acme.com**. If you are running more than one relay on your internal network you will need to have them assigned to different ports, such as 6001 and 6002.
 
 {% code title="pool.json" %}
 ```bash
