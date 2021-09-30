@@ -8,6 +8,7 @@ name: Finnish [FI] Translations
 # Runs on push to master, only when files under `translations/fi` are modified
 on:
   push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
     paths:
