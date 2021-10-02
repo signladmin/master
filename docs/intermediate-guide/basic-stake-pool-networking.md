@@ -1,6 +1,5 @@
 ---
-description: >-
-  Tämä osio auttaa ymmärtämään relayn ja block producer noden topologioita.
+description: Tämä osio auttaa ymmärtämään relayn ja block producer noden topologioita.
 ---
 
 # Stake Pool -verkosto: Perusteita
@@ -82,7 +81,7 @@ To                         Action      From
 {% endtab %}
 {% endtabs %}
 
-Esimerkin ensimmäinen **addr** rivi  **10.20.30.** on lohkon tuottajan IP-osoite ja **port 6000** on portti, jonka olet määrittänyt lohkon tuottajalle. Tämän kohdan pitäisi olla täsmälleen sama kaikissa relay nodeissasi.
+Esimerkin ensimmäinen **addr** rivi **10.20.30.** on lohkon tuottajan IP-osoite ja **port 6000** on portti, jonka olet määrittänyt lohkon tuottajalle. Tämän kohdan pitäisi olla täsmälleen sama kaikissa relay nodeissasi.
 
 Muut kolme objektia ovat verkoston muiten käyttäjien osoitteita. Voit asettaa ne manuaalisesti tai voit käyttää **topologyUpdater.sh** skriptiä Guild-operaattoreilta. Jos päätät käyttää topologyUpdater.sh skriptiä varmista, että asetat **CUSTOM\_PEERS** -rivin oikein ennen kuin suoritat sen. Tämä on pipe-erotettu joukko addr:port:valency pareja vertaisnodeista, joita haluat komentosarjan lisävän lopulliseen topology.json tiedostoon. Tämän rivin pitää sisältää myös oma lohkon tuottajasi. Valenssin oletusarvo on 1 \(yksi\), jos sitä ei ole määritelty. Tässä esimerkki, jossa kaksi ensimmäistä objektia yllä olevasta mainnet-topology.json tiedostosta:
 

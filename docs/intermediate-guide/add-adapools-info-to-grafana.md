@@ -10,7 +10,7 @@ Olet rakentanut Cardano noden käyttäen yhtä tutoriaaleistamme [täällä](pi-
 
 ## Luo uusi hakemisto
 
-Aloittaaksesi, valitse sijainti koneessa, jossa on Grafana. Täällä voit luoda uuden hakemiston node exporterin käyttöön. Solmun viejä sijaitsee todennäköisesti /opt/cardano/monitoring/**node\_exporter** pi-poolin oletussijainnin vuoksi. __Jos tämä ei pidä paikkansa, koita löydätkö sen käyttämällä komentoa "which node\_exporter". Jos tämä ei löydä sitä, hakemisto, jossa se sijaitsee, ei ole sinun $PATH ja sinun täytyy kaivaa syvemmälle. [Tarkista tämä git](https://github.com/prometheus/node_exporter) saadaksesi lisätietoja.
+Aloittaaksesi, valitse sijainti koneessa, jossa on Grafana. Täällä voit luoda uuden hakemiston node exporterin käyttöön. Solmun viejä sijaitsee todennäköisesti /opt/cardano/monitoring/**node\_exporter** pi-poolin oletussijainnin vuoksi. \_\_Jos tämä ei pidä paikkansa, koita löydätkö sen käyttämällä komentoa "which node\_exporter". Jos tämä ei löydä sitä, hakemisto, jossa se sijaitsee, ei ole sinun $PATH ja sinun täytyy kaivaa syvemmälle. [Tarkista tämä git](https://github.com/prometheus/node_exporter) saadaksesi lisätietoja.
 
 Muuta uuden hakemiston sijaintia, tässä olen valinnut paikallisen bin käyttäjälleni.
 
@@ -44,7 +44,7 @@ curl https://js.adapools.org/pools/<YOUR POOL ID>/summary.json 2>/dev/null \
 
 Nyt kun **getAdaPoolsSummary.sh** on suoritettu, se päivittää tiedoston nimeltä **adapools.prom** uudessa hakemistossamme. Tämä tiedosto sisältää mittareita, jotka alkavat termillä **adapools** ja näkyvät Grafana kyselyn rakentajan mittariosiossa sellaisenaan.
 
-{% hint style="Huomaa" %}
+{% hint style="info" %}
 On tärkeää, että tiedoston tulokset eivät sisällä merkkijonon arvoja. Node exporter ilmoittaa virheestä etkä näe adapoolsin metriikkaa.
 {% endhint %}
 
@@ -79,7 +79,7 @@ http://<YOUR GRAFANA NODE IP>:9100/metrics
 ```
 
 {% hint style="info" %}
-On olemassa muitakin menetelmiä, joita voit käyttää tämän lähestymistavan toteuttamiseen. Periaatteessa, jos luot tekstitiedoston avaimen/arvon pareilla ja laitat sen tähän uuteen kansioon, node exporterin pitäisi vetää tiedot Grafanaan. Se avaa laajan valikoiman mahdollisuuksia. Varmista vain, että lisäät yksilöllisen etuliitteen tunnisteen nimeen \( **adapools\_** __part in the adapools.prom file above\) per tiedosto.
+On olemassa muitakin menetelmiä, joita voit käyttää tämän lähestymistavan toteuttamiseen. Periaatteessa, jos luot tekstitiedoston avaimen/arvon pareilla ja laitat sen tähän uuteen kansioon, node exporterin pitäisi vetää tiedot Grafanaan. Se avaa laajan valikoiman mahdollisuuksia. Varmista vain, että lisäät yksilöllisen etuliitteen tunnisteen nimeen \( **adapools\_** \_\_part in the adapools.prom file above\) per tiedosto.
 {% endhint %}
 
 Oliko tämä tieto hyödyllistä? Ansaitse palkintoja kanssamme! [Harkitse ADA: n delegoimista pooleihimme](../cardano-developer-guides/delegate.md).

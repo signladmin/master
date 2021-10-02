@@ -9,7 +9,7 @@ description: Flash image
 Lataa, asenna & avaa [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases/latest). Kytke USB-asema laittteeseen.
 
 {% tabs %}
-{% välilehden otsikko="Paikallinen kone \(Ubuntu\)" %}
+{% tab %}
 ```bash
 # Ubuntu users can download and install with snapd
 sudo apt update
@@ -34,9 +34,8 @@ Kytke Pi monitoriin, aseta SD-kortti paikoilleen ja laita virta päälle. Kun n�
 ### Hanki Pi-Pool .img.gz tiedosto
 
 | [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz) |
-|:------------------------------------------------------ |
-|                                                        |
-
+| :--- |
+|  |
 
 ### Raspberry Pi Imager -ohjelmassa
 

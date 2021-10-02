@@ -7,7 +7,7 @@ description: Materiaalin tyyliohje ohjeistusten laatimiseen.
 _**Ote GitHub Manual of Style dokumentaatiosta, jonka pohjalta tämäkin ohje on laadittu:**_
 
 > Sanat ovat tärkeä osa sitä, miten ohjelmistot toimivat. Aivan kuten meillä on tyyliopas meidän koodille, meillä on tyyliopas sisällön sävyyn ja ääneen. Vaikka tuotetta voi syntyä kymmeniä ihmisiä, sen pitäisi silti kuulostaa siltä, että puhumme yhdellä johdonmukaisella äänellä.
-> 
+>
 > Toisin sanoen tapa, jolla kirjoitamme, on aivan yhtä tärkeä kuin tapa, jolla suunnittelemme. Ota nämä asiat huomioon kopioita kirjoitettaessasi.
 
 ## Sisältöperiaatteet

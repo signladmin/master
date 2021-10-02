@@ -320,7 +320,7 @@ Vaihto levylle on hidasta, vaihtaminen pakattuun ram tilaan on nopeampaa ja anta
 
 {% embed url="https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters" caption="" %}
 
-{% embed url="https://lists.ubuntu.com/archives/lubuntu-users/2013-October/005831.html" %}
+{% embed url="https://lists.ubuntu.com/archives/lubuntu-users/2013-October/005831.html" caption="" %}
 
 Poista Raspbian swapfile käytöstä.
 

@@ -4,7 +4,7 @@ description: 'Luo ada käyttäjä, lisää ryhmään sudo'
 
 # Käyttäjän Asetukset
 
-{% hint style="Huomaa" %}
+{% hint style="info" %}
 Jos käytät Pi-Node -imagea, tarvitset tätä aineistoa vain antamaan osviittaa, kunnes aloitamme Relay & Coren asetusten määrittämisen.
 {% endhint %}
 
@@ -24,7 +24,7 @@ Voit vaihtaa ada käyttäjien salasanaa milloin tahansa.
 passwd
 ```
 
-{% hint style="Huomaa" %}
+{% hint style="info" %}
 Ole huolellinen milloin käytät sudo-komentoa. Esimerkiksi 'sudo passwd' muuttaisi root -käyttäjän salasanan. Tämä tuntuu olevan kohta, jossa uudet käyttäjät hämmentyvät helposti.
 {% endhint %}
 
@@ -51,7 +51,7 @@ ssh ada@<server-ip>
 
 Testaa, että ada on sudo-ryhmässä päivittämällä pakettiluettelot ja päivittämällä järjestelmä.
 
-{% hint style="Huomaa" %}
+{% hint style="info" %}
 Ubuntun päivittäminen kestää 10 minuuttia tai enemmän, ellei rpi-imagerilla käytettyä kuvaa ole päivitetty.
 {% endhint %}
 
@@ -79,7 +79,7 @@ Kaikki \# kommentoidut arvot sshd\_config tiedostossa ovat oletusarvoja. Poista 
 sudo nano /etc/ssh/sshd_config
 ```
 
-{% hint style="Huomaa" %}
+{% hint style="info" %}
 Poista salasanan todennus käytöstä.
 {% endhint %}
 

@@ -38,7 +38,7 @@ _**Kuinka osallistua**_
 _Ensiksi, lue projekti huolella läpi ja mieti millä tasolla haluat projektiin osallistua._
 
 * Pieni työ, kuten tekstien kielentarkastus, avaa vetopyyntö \(pull request\).
-* Suuremmille sisällöntuotto ideoille, kuten uusille tutoriaaleille, aloita avaamalla ensin kysymys (issue) aiheesta. Tällä tavoin koko yhteisö voi arvioida ja keskustella aiheesta, ennen kuin aloitat työn.
+* Suuremmille sisällöntuotto ideoille, kuten uusille tutoriaaleille, aloita avaamalla ensin kysymys \(issue\) aiheesta. Tällä tavoin koko yhteisö voi arvioida ja keskustella aiheesta, ennen kuin aloitat työn.
 
 _**Tyyliohjeet**_
 

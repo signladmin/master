@@ -1,5 +1,7 @@
 ---
-description: Asenna tarvittavat paketit, joita tarvitaan cardano-noden ylläpitämiseen ja määritetään ympäristömme
+description: >-
+  Asenna tarvittavat paketit, joita tarvitaan cardano-noden ylläpitämiseen ja
+  määritetään ympäristömme
 ---
 
 # Ympäristön Asetukset
@@ -703,5 +705,5 @@ Tarkastele verkkoyhteyksiä netstatilla.
 sudo netstat -puntw
 ```
 
-Nyt sinulla on pi-node, jossa on työkaluja, joilla voit rakentaa stake poolin seuraavien sivujen ohjeiden ja tutoriaalien avulla. Onnea projektiisi ja liity [armada-allianssiin](https://armada-alliance.com), yhdessä olemme vahvempi! 💪 
+Nyt sinulla on pi-node, jossa on työkaluja, joilla voit rakentaa stake poolin seuraavien sivujen ohjeiden ja tutoriaalien avulla. Onnea projektiisi ja liity [armada-allianssiin](https://armada-alliance.com), yhdessä olemme vahvempi! 💪
 
