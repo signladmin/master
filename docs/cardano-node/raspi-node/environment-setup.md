@@ -1,6 +1,6 @@
 # Environment Setup
 
-![](../../.gitbook/assets/download-10-%20%281%29%20%281%29%20%283%29.jpeg)
+![](../../.gitbook/assets/download-10-%20%281%29%20%284%29.jpeg)
 
 ## Install packages
 
@@ -482,7 +482,7 @@ cd $NODE_HOME/scripts
 ./gLiveView.sh
 ```
 
-![](../../.gitbook/assets/pi-node-glive%20%284%29%20%284%29.png)
+![](../../.gitbook/assets/pi-node-glive%20%285%29.png)
 
 ## Prometheus, Node Exporter & Grafana
 
@@ -494,7 +494,7 @@ You can connect a Telegram bot to Grafana which can alert you of problems with t
 
 {% embed url="https://github.com/prometheus" caption="" %}
 
-![](../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%287%29.png)
+![](../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%286%29.png)
 
 ### Install Prometheus & Node Exporter.
 
@@ -747,7 +747,7 @@ sudo service nginx restart
 
 You can now visit your pi-nodes ip address without any port specification, the connection will be upgraded to SSL/TLS and you will get a scary message\(not really scary at all\). Continue through to your dashboard.
 
-![](../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%287%29.png)
+![](../../.gitbook/assets/pi-pool-grafana%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%286%29.png)
 
 From here you have a pi-node with tools to build a stake pool from the following pages. Best of Luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger!
 

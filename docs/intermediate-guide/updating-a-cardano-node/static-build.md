@@ -8,7 +8,7 @@ This guide follows the same setup as our [Pi-Node guide and image](../pi-pool-tu
 ### Current Official Cardano Node Version: 1.30.1
 {% endhint %}
 
-### Overview 🗒 
+### Overview 🗒
 
 * [ ] Download Cardano Node Dynamic build & configuration file
 * [ ] Extract the file's content
@@ -19,8 +19,6 @@ This guide follows the same setup as our [Pi-Node guide and image](../pi-pool-tu
 * [ ] Replace old configuration files with new ones \(if needed\)
 * [ ] Restart your Cardano Node
 * [ ] Check that node has started properly
-
-
 
 ## Download the cardano-node & cli
 
@@ -42,7 +40,7 @@ unzip 1_30_1.zip
 **Now we need to make sure we do not have a cardano-node already running. If we do we must shut it down before proceeding.**
 {% endhint %}
 
-You can check if you have a cardano-node process already running a few ways like using`htop` or by checking your systemd service. 
+You can check if you have a cardano-node process already running a few ways like using`htop` or by checking your systemd service.
 
 If you have been following our [Pi-Node guide](../pi-pool-tutorial/) you can check your cardano-node status and stop it using the following commands.
 
