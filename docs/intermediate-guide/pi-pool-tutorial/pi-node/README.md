@@ -4,7 +4,7 @@ description: >-
   1.29)!
 ---
 
-# Pi-Node \(quick start\)
+# Pi-Node (quick start)
 
 {% hint style="info" %}
 It will take about 25 minutes to download the chain and another hour or so to sync to the tip. You will not be able to do much until your node has synced with the tip of the block chain.
@@ -68,6 +68,13 @@ cardano-service status
 cardano-monitor status
 ```
 
+Follow journal output or syslog
+
+```
+sudo journalctl --unit=cardano-node --follow
+sudo tail -f /var/log/syslog
+```
+
 ### 8. gliveview.sh
 
 ```bash
@@ -83,11 +90,10 @@ Default credentials = **admin:admin**
 
 #### Dashboards can be found here.
 
-{% embed url="https://github.com/armada-alliance/dashboards" caption="" %}
+{% embed url="https://github.com/armada-alliance/dashboards" %}
 
-{% embed url="https://api.pooldata.live/" caption="" %}
+{% embed url="https://api.pooldata.live/" %}
 
 {% hint style="info" %}
-The following guide builds out the image, use it as a reference and please feel free to ask for clarification in our Telegram channel. [https://t.me/armada\_alli](https://t.me/armada_alli)
+The following guide builds out the image, use it as a reference and please feel free to ask for clarification in our Telegram channel. [https://t.me/armada_alli](https://t.me/armada_alli)
 {% endhint %}
-
