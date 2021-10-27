@@ -279,13 +279,13 @@ Download the DB snapshot.
 {% tabs %}
 {% tab title="Testnet" %}
 ```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://testnet.adamantium.online/db/
 ```
 {% endtab %}
 
 {% tab title="Mainnet" %}
 ```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/
 ```
 {% endtab %}
 {% endtabs %}
@@ -332,7 +332,7 @@ chmod +x gLiveView.sh
 
 ### topologyUpdater.sh
 
-Until peer to peer is enabled on the network operators need a way to get a list of relays/peers to connect to. The topology updater service runs in the background with cron. Every hour the script will run and tell the service you are a relay and want to be a part of the network. It will add your relay to it's directory after four hours and start generating a list of relays in a json file in the $NODE_HOME/logs directory. A second script, relay-topology_pull.sh can then be used manually to generate a mainnet-topolgy file with relays/peers that are aware of you and you of them.
+Until peer to peer is enabled on the network operators need a way to get a list of relays/peers to connect to. The topology updater service runs in the background with cron. Every hour the script will run and tell the service you are a relay and want to be a part of the network. It will add your relay to it's directory after four hours and start generating a list of relays in a json file in the $NODE\_HOME/logs directory. A second script, relay-topology\_pull.sh can then be used manually to generate a mainnet-topolgy file with relays/peers that are aware of you and you of them.
 
 {% hint style="info" %}
 The list generated will show you the distance in miles & a clue as to where the relay is located.
@@ -421,7 +421,7 @@ The Pi-Node image has this cron entry disabled by default. You can enable it by 
 
 After 4 hours of on boarding you will be added to the service and can pull your new list of peers into the mainnet-topology file.
 
-Create another file relay-topology_pull.sh and paste in the following.
+Create another file relay-topology\_pull.sh and paste in the following.
 
 ```bash
 nano relay-topology_pull.sh
@@ -452,7 +452,7 @@ cd $NODE_HOME/scripts
 ```
 
 {% hint style="info" %}
-relay-topology_pull.sh will add 15 peers to your mainnet-topology file. I usually remove the furthest 5 relays and use the closest 10.
+relay-topology\_pull.sh will add 15 peers to your mainnet-topology file. I usually remove the furthest 5 relays and use the closest 10.
 {% endhint %}
 
 ```bash
@@ -652,7 +652,7 @@ At this point you may want to start cardano-service and get synced up before we 
 On your local machine open your browser and got to \[http://\<Pi-Node's]\(http://\<Pi-Node's) private ip>:5000
 
 {% hint style="danger" %}
-Do not change the default password yet, there is no encryption on the wire. Choose skip when it asks. The next time we visit Grafana it will be with a self signed TLS certificate handled by Nginx webservers proxy_pass and your passwords will be safe from anything listening on your internal network.
+Do not change the default password yet, there is no encryption on the wire. Choose skip when it asks. The next time we visit Grafana it will be with a self signed TLS certificate handled by Nginx webservers proxy\_pass and your passwords will be safe from anything listening on your internal network.
 {% endhint %}
 
 Log in and set a new password. Default username and password is **admin:admin**.
@@ -691,7 +691,7 @@ Follow log output to stdout.
 sudo tail -f /var/log/syslog
 ```
 
-### Grafana, Nginx proxy_pass & snakeoil
+### Grafana, Nginx proxy\_pass & snakeoil
 
 Let's put Grafana behind Nginx with self signed(snakeoil) certificate. The certificate was generated when we installed the ssl-cert package.
 
