@@ -16,7 +16,7 @@ It is best to just leave it running. 🏃♀
 
 ## Quick Start
 
-### **1. Download and flash the** [**Pi-Node.img.gz**](https://db.adamantium.online/Pi-Node.img.gz)**.**
+### **1. Download and flash the** [**Pi-Node.img.gz**](https://mainnet.adamantium.online/Pi-Node.img.gz)**.**
 
 ### 2. ssh into the server.
 
