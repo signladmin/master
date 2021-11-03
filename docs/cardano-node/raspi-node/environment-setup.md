@@ -92,7 +92,7 @@ The **unofficial** cardano-node & cardano-cli binaries available to us are being
 
 ```bash
 cd $HOME/tmp
-wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/build/1771/download/1/aarch64-unknown-linux-musl-cardano-node-1.29.0.zip
+wget -O cardano_node_$(date +"%m-%d-%y").zip https://ci.zw3rk.com/build/1771/download/1/aarch64-unknown-linux-musl-cardano-node-1.30.1.zip
 unzip *.zip
 mv cardano-node/* $HOME/.local/bin
 rm -r cardano*
@@ -351,6 +351,13 @@ Paste in the following, save & exit.
 The port number here must match the port cardano-node is running on. If you are using dns records you can add the FQDN that matches on line 6(line 6 only). Leave it as is if you are not using dns. The service will pick up the public IP and use that.
 {% endhint %}
 
+{% hint style="warning" %}
+Don't forget to update User and Paths to your user, unless you used 'ada'
+{% endhint %}
+
+{% tabs %}
+{% tab title="Testnet" %}
+
 ```bash
 #!/bin/bash
 # shellcheck disable=SC2086,SC2034
@@ -388,6 +395,50 @@ fi
 
 curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
 ```
+{% endtab %}
+
+{% tab title="Mainnet" %}
+
+```bash
+#!/bin/bash
+# shellcheck disable=SC2086,SC2034
+
+USERNAME=ada
+CNODE_PORT=3003 # must match your relay node port as set in the startup command
+CNODE_HOSTNAME="CHANGE ME"  # optional. must resolve to the IP you are requesting from
+CNODE_BIN="/home/ada/.local/bin"
+CNODE_HOME="/home/ada/pi-pool"
+LOG_DIR="${CNODE_HOME}/logs"
+GENESIS_JSON="${CNODE_HOME}/files/mainnet-shelley-genesis.json"
+NETWORKID=$(jq -r .networkId $GENESIS_JSON)
+CNODE_VALENCY=1   # optional for multi-IP hostnames
+NWMAGIC=$(jq -r .networkMagic < $GENESIS_JSON)
+[[ "${NETWORKID}" = "Mainnet" ]] && HASH_IDENTIFIER="--mainnet" || HASH_IDENTIFIER="--testnet-magic ${NWMAGIC}"
+[[ "${NWMAGIC}" = "764824073" ]] && NETWORK_IDENTIFIER="--mainnet" || NETWORK_IDENTIFIER="--testnet-magic ${NWMAGIC}"
+
+export PATH="${CNODE_BIN}:${PATH}"
+export CARDANO_NODE_SOCKET_PATH="${CNODE_HOME}/db/socket"
+
+blockNo=$(/home/ada/.local/bin/cardano-cli query tip ${NETWORK_IDENTIFIER} | jq -r .block )
+
+# Note:
+# if you run your node in IPv4/IPv6 dual stack network configuration and want announced the
+# IPv4 address only please add the -4 parameter to the curl command below  (curl -4 -s ...)
+if [ "${CNODE_HOSTNAME}" != "CHANGE ME" ]; then
+  T_HOSTNAME="&hostname=${CNODE_HOSTNAME}"
+else
+  T_HOSTNAME=''
+fi
+
+if [ ! -d ${LOG_DIR} ]; then
+  mkdir -p ${LOG_DIR};
+fi
+
+curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
+```
+
+{% endtab %}
+{% endtabs %}
 
 Save, exit, and make it executable.
 
@@ -427,12 +478,29 @@ Create another file relay-topology\_pull.sh and paste in the following.
 nano relay-topology_pull.sh
 ```
 
+{% tabs %}
+{% tab title="Testnet" %}
+
 ```bash
 #!/bin/bash
 BLOCKPRODUCING_IP=<BLOCK PRODUCERS PRIVATE IP>
 BLOCKPRODUCING_PORT=3000
 curl -4 -s -o /home/ada/pi-pool/files/testnet-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&magic=1097911063&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1"
 ```
+
+{% endtab %}
+
+{% tab title="Mainnet" %}
+
+```bash
+#!/bin/bash
+BLOCKPRODUCING_IP=<BLOCK PRODUCERS PRIVATE IP>
+BLOCKPRODUCING_PORT=3000
+curl -4 -s -o /home/ada/pi-pool/files/mainnet-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&magic=764824073&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1"
+```
+
+{% endtab %}
+{% endtabs %}
 
 Save, exit and make it executable.
 
