@@ -27,7 +27,7 @@ ssh ada@<pi-node private IPv4>
 Default credentials = **ada:lovelace**
 
 {% hint style="warning" %}
-Check which version of cardano-node is on the image. Follow the static build upgrade instructions to upgrade. [static-build.md](../../updating-a-cardano-node/static-build.md "mention")
+Check which version of cardano-node is on the image. Follow the static build upgrade instructions to upgrade. [static-build.md](../updating-a-cardano-node/static-build.md "mention")
 
 ```bash
 cardano-node version

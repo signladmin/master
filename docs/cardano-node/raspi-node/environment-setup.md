@@ -243,10 +243,10 @@ What we just did there was add a function to control our cardano-service without
 
 Now we just have to:
 
-* cardano-service enable  (enables cardano-node.service auto start at boot)
-* cardano-service start      (starts cardano-node.service)
-* cardano-service stop       (stops cardano-node.service)
-* cardano-service status    (shows the status of cardano-node.service)
+* cardano-service enable (enables cardano-node.service auto start at boot)
+* cardano-service start (starts cardano-node.service)
+* cardano-service stop (stops cardano-node.service)
+* cardano-service status (shows the status of cardano-node.service)
 
 ## ⛓ Syncing the chain ⛓
 
@@ -255,7 +255,7 @@ You are now ready to start cardano-node. Doing so will start the process of 'syn
 ### Download snapshot
 
 {% hint style="danger" %}
-Do not attempt this on an 8GB sd card. Not enough space! [Create your image file](https://app.gitbook.com/@wcatz/s/pi-pool-guide/create-.img-file) and flash it to your ssd.
+Do not attempt this on an 8GB sd card. Not enough space! [Create your image file](https://app.gitbook.com/s/-MVFzwtnGyycav4A2zJu/create-.img-file) and flash it to your ssd.
 {% endhint %}
 
 I have started taking snapshots of my backup nodes db folder and hosting it in a web directory. With this service it takes around 15 minutes to pull the latest snapshot and maybe another 30 minutes to sync up to the tip of the chain. This service is provided as is. It is up to you. If you want to sync the chain on your own simply:
@@ -357,7 +357,6 @@ Don't forget to update User and Paths to your user, unless you used 'ada'
 
 {% tabs %}
 {% tab title="Testnet" %}
-
 ```bash
 #!/bin/bash
 # shellcheck disable=SC2086,SC2034
@@ -398,7 +397,6 @@ curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${b
 {% endtab %}
 
 {% tab title="Mainnet" %}
-
 ```bash
 #!/bin/bash
 # shellcheck disable=SC2086,SC2034
@@ -436,7 +434,6 @@ fi
 
 curl -s -f -4 "https://api.clio.one/htopology/v1/?port=${CNODE_PORT}&blockNo=${blockNo}&valency=${CNODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -480,25 +477,21 @@ nano relay-topology_pull.sh
 
 {% tabs %}
 {% tab title="Testnet" %}
-
 ```bash
 #!/bin/bash
 BLOCKPRODUCING_IP=<BLOCK PRODUCERS PRIVATE IP>
 BLOCKPRODUCING_PORT=3000
 curl -4 -s -o /home/ada/pi-pool/files/testnet-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&magic=1097911063&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1"
 ```
-
 {% endtab %}
 
 {% tab title="Mainnet" %}
-
 ```bash
 #!/bin/bash
 BLOCKPRODUCING_IP=<BLOCK PRODUCERS PRIVATE IP>
 BLOCKPRODUCING_PORT=3000
 curl -4 -s -o /home/ada/pi-pool/files/mainnet-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&magic=764824073&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1"
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -712,7 +705,7 @@ cardano-monitor start
 ```
 
 {% hint style="warning" %}
-At this point you may want to start cardano-service and get synced up before we continue to configure Grafana. Skip ahead to [syncing the chain section](https://app.gitbook.com/@wcatz/s/pi-pool-guide/\~/drafts/-MYFtFDZp-rTlybgAO71/pi-node/environment-setup/@drafts#syncing-the-chain). Choose whether you want to wait 30 hours or download my latest chain snapshot. Return here once gLiveView.sh shows you are at the tip of the chain.
+At this point you may want to start cardano-service and get synced up before we continue to configure Grafana. Skip ahead to [syncing the chain section](https://app.gitbook.com/s/-MVFzwtnGyycav4A2zJu/pi-node/environment-setup). Choose whether you want to wait 30 hours or download my latest chain snapshot. Return here once gLiveView.sh shows you are at the tip of the chain.
 {% endhint %}
 
 ### Configure Grafana
