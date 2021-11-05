@@ -317,7 +317,6 @@ The port number here must match the port cardano-node is running on. If you are 
 ```bash
 #!/bin/bash
 # shellcheck disable=SC2086,SC2034
-
 USERNAME=ada
 NODE_CONFIG=$(grep NODE_CONFIG /home/ada/.adaenv | cut -d '=' -f2)
 CNODE_PORT=3003 # must match your relay node port as set in the startup command
@@ -393,6 +392,7 @@ nano relay-topology_pull.sh
 
 ```bash
 #!/bin/bash
+NODE_CONFIG=$(grep NODE_CONFIG /home/ada/.adaenv | cut -d '=' -f2)
 BLOCKPRODUCING_IP=<BLOCK PRODUCERS PRIVATE IP>
 BLOCKPRODUCING_PORT=3000
 curl -4 -s -o /home/ada/pi-pool/files/{${NODE_CONFIG}-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-${NODE_CONFIG}.iohk.io:3001:2"
