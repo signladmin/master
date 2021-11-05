@@ -305,7 +305,7 @@ sudo apt install zram-config
 sudo nano /usr/bin/init-zram-swapping
 ```
 
-Multiply default config by 3. This will give you 12.5GB of virtual compressed swap in ram.
+Multiply default config by 3. This will give you 11.5GB of virtual compressed swap in ram.
 
 {% hint style="info" %}
 mem=$(((totalmem / 2 / ${NRDEVICES}) \* 1024 \* 3))
