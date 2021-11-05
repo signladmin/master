@@ -263,8 +263,7 @@ Swapping to disk is slow, swapping to compressed ram space is faster and gives u
 {% embed url="https://lists.ubuntu.com/archives/lubuntu-users/2013-October/005831.html" %}
 
 ```
-sudo apt install linux-modules-extra-raspi
-sudo apt install zram-config
+sudo apt install linux-modules-extra-raspi zram-config
 ```
 
 ```bash
