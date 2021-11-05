@@ -55,6 +55,7 @@ Changes to this file require reloading .bashrc & .adaenv or logging out then bac
 
 ```bash
 echo PATH="$HOME/.local/bin:$PATH" >> $HOME/.bashrc
+echo . ~/.adaenv >> $HOME/.bashrc
 echo export NODE_HOME=$HOME/pi-pool >> $HOME/.adaenv
 echo export NODE_FILES=$HOME/pi-pool/files >> $HOME/.adaenv
 echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> $HOME/.adaenv
@@ -81,7 +82,7 @@ sed -i ${NODE_CONFIG}-config.json \
 ```
 
 {% hint style="info" %}
-**Tip for relay nodes**: It's possible to reduce memory and cpu usage by setting "TraceMemPool" to "false" in **mainnet-config.json.** This will turn off mempool data in Grafana and gLiveView.sh.
+**Tip for relay nodes**: It's possible to reduce memory and cpu usage by setting "TraceMemPool" to "false" in **{NODE_CONFIG}-config.json.** This will turn off mempool data in Grafana and gLiveView.sh.
 {% endhint %}
 
 ### Retrieve aarch64 binaries
