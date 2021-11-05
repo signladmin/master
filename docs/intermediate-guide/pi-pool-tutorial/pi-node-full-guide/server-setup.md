@@ -167,8 +167,8 @@ net.ipv4.conf.default.accept_redirects = 0
 net.ipv4.icmp_ignore_bogus_error_responses = 1
 
 # disable IPv6
-net.ipv6.conf.all.disable_ipv6 = 1
-net.ipv6.conf.default.disable_ipv6 = 1
+#net.ipv6.conf.all.disable_ipv6 = 1
+#net.ipv6.conf.default.disable_ipv6 = 1
 
 # block SYN attacks
 net.ipv4.tcp_syncookies = 1
