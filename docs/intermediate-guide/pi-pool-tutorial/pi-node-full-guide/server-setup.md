@@ -243,7 +243,6 @@ Replace the contents of the file with below, Save and exit.
 
 ```bash
 pool time.google.com       iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
-#pool time.facebook.com     iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
 pool time.euro.apple.com   iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
 pool time.apple.com        iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
 pool ntp.ubuntu.com        iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
