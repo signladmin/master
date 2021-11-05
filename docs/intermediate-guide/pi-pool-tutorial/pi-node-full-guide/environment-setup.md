@@ -1,29 +1,10 @@
 ---
-description: Install packages needed to run cardano-node and configure our environment
+description: Configure the environment for Cardano Node
 ---
 
 # Environment Setup
 
-## Install packages
-
-Enable automatic security updates.
-
-```bash
-sudo dpkg-reconfigure -plow unattended-upgrades
-```
-
-Install the packages we will need.
-
-```bash
-sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
-         jq make automake unzip net-tools nginx ssl-cert pkg-config \
-         libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev \
-         zlib1g-dev g++ libncursesw5 libtool autoconf bc -y
-```
-
-## Environment
-
-### Choose mainnet or testnet.
+## Choose mainnet or testnet.
 
 Create a .adaenv file, choose which network you want to be on and source the file.
 
