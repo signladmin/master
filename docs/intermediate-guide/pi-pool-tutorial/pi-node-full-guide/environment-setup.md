@@ -318,6 +318,7 @@ The port number here must match the port cardano-node is running on. If you are 
 # shellcheck disable=SC2086,SC2034
 
 USERNAME=ada
+NODE_CONFIG=$(grep NODE_CONFIG /home/ada/.adaenv | cut -d '=' -f2)
 CNODE_PORT=3003 # must match your relay node port as set in the startup command
 CNODE_HOSTNAME="CHANGE ME"  # optional. must resolve to the IP you are requesting from
 CNODE_BIN="/home/ada/.local/bin"
