@@ -4,7 +4,12 @@ description: Configure the environment for Cardano Node
 
 # Environment Setup
 
-## Choose mainnet or testnet.
+## Choose testnet or mainnet.
+
+{% hint style="alert" %}
+There is a 500 ₳ Registration deposit and another 5 ₳ in registration costs.
+First time users are strongly reccomended to use testnet. You can get tada (test ada) from the testnet faucet or ask Alliance members in Telegram. Try not to lose it please.
+{% endhint %}
 
 Create a .adaenv file, choose which network you want to be on and source the file.
 
