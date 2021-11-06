@@ -6,7 +6,7 @@ description: Configure the environment for Cardano Node
 
 ## Choose testnet or mainnet.
 
-{% hint style="alert" %}
+{% hint style="danger" %}
 There is a 500 ₳ Registration deposit and another 5 ₳ in registration costs.
 First time users are strongly reccomended to use testnet. You can get tada (test ada) from the testnet faucet or ask Alliance members in Telegram. Try not to lose it please.
 {% endhint %}
@@ -292,11 +292,7 @@ cd $NODE_HOME/scripts
 nano topologyUpdater.sh
 ```
 
-Paste in the following, save & exit.
-
-{% hint style="warning" %}
-The port number here must match the port cardano-node is running on. If you are using dns records you can add the FQDN that matches on line 6(line 6 only). Leave it as is if you are not using dns. The service will pick up the public IP and use that.
-{% endhint %}
+Download the topologyUpdater script.
 
 ```bash
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/topologyUpdater.sh
@@ -340,6 +336,10 @@ Create another file relay-topology\_pull.sh and paste in the following.
 ```bash
 nano relay-topology_pull.sh
 ```
+{% hint style="warning" %}
+If your running just an active relay you can add a random ip and port. Just remove it from
+the topology file after you pull and restart node.
+{% endhint %}
 
 ```bash
 #!/bin/bash
