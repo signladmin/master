@@ -100,7 +100,7 @@ cardano-cli version
 
 ### Systemd unit files
 
-Let us now create the systemd unit file and startup script so systemd can manage cardano-node.
+Create the systemd unit file and startup script so systemd can manage cardano-node.
 
 ```bash
 nano ${HOME}/.local/bin/cardano-service
@@ -170,7 +170,7 @@ Reload systemd so it picks up our new service file.
 sudo systemctl daemon-reload
 ```
 
-Let's add a function to the bottom of our .pienv file to make life a little easier.
+Let's add a function to the bottom of our .adaenv file to make life a little easier.
 
 ```bash
 nano ${HOME}/.adaenv
@@ -208,13 +208,9 @@ Now we just have to:
 
 ## ⛓ Syncing the chain ⛓
 
-You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 48 hours and the db folder is about 13GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time.
+You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 48 hours and the db folder is about 13GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time. However...
 
 ### Download snapshot
-
-{% hint style="danger" %}
-Do not attempt this on an 8GB sd card. Not enough space! [Create your image file](https://app.gitbook.com/@wcatz/s/pi-pool-guide/create-.img-file) and flash it to your ssd.
-{% endhint %}
 
 I have started taking snapshots of my backup nodes db folder and hosting it in a web directory. With this service it takes around 20 minutes to pull the latest snapshot and maybe another hour to sync up to the tip of the chain. This service is provided as is. It is up to you. If you want to sync the chain on your own simply:
 
