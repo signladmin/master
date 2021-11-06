@@ -14,8 +14,7 @@ First time users are strongly reccomended to use testnet. You can get tada (test
 Create a .adaenv file, choose which network you want to be on and source the file.
 
 ```shell
-echo -e NODE_CONFIG=mainnet >> ${HOME}/.adaenv
-source ${HOME}/.adaenv
+echo -e NODE_CONFIG=mainnet >> ${HOME}/.adaenv && source ${HOME}/.adaenv
 ```
 
 Make some directories.
