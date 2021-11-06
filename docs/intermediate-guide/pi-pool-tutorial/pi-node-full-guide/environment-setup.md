@@ -35,7 +35,7 @@ mkdir ${HOME}/tmp
 {% endhint %}
 
 {% hint style="warning" %}
-You must reload environment files after updating them. Same goes for cardano-node, chamges to the topology or config files require a cardano-service restart.
+You must reload environment files after updating them. Same goes for cardano-node, changes to the topology or config files require a cardano-service restart.
 {% endhint %}
 
 ```bash
