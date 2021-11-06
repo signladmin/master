@@ -61,11 +61,12 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
 ```
 
-Run the following to modify mainnet-config.json and update TraceBlockFetchDecisions to "true"
+Run the following to modify mainnet-config.json and update TraceBlockFetchDecisions to "true" & listen on all interfaces with Prometheus Node Exporter.
 
 ```bash
 sed -i ${NODE_CONFIG}-config.json \
-    -e "s/TraceBlockFetchDecisions\": false/TraceBlockFetchDecisions\": true/g"
+    -e "s/TraceBlockFetchDecisions\": false/TraceBlockFetchDecisions\": true/g" \
+    -e "s/127.0.0.1/0.0.0.0/g"
 ```
 
 {% hint style="info" %}
@@ -486,13 +487,6 @@ scrape_configs:
 ```
 
 Save & exit.
-
-Edit {NODE_CONFIG}-config.json so cardano-node exports traces on all interfaces.
-
-```bash
-cd $NODE_FILES
-sed -i ${NODE_CONFIG}-config.json -e "s/127.0.0.1/0.0.0.0/g"
-```
 
 ### Install Grafana
 
