@@ -11,8 +11,7 @@ There is a 500 ₳ Registration deposit and another 5 ₳ in registration costs.
 First time users are strongly reccomended to use testnet. You can get tada (test ada) from the testnet faucet or ask Alliance members in Telegram. Try not to lose it please.
 {% endhint %}
 
-Create an .adaenv file, choose which network you want to be on and source the file. This folder will hold
-the variables for operating a Pi-Node.
+Create an .adaenv file, choose which network you want to be on and source the file. This file will hold the variables for operating a Pi-Node.
 
 ```shell
 echo -e NODE_CONFIG=testnet >> ${HOME}/.adaenv && source ${HOME}/.adaenv
