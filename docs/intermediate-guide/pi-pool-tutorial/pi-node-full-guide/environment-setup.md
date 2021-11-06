@@ -88,7 +88,7 @@ cd ${HOME}
 ```
 
 {% hint style="warning" %}
-If binaries already exist you will have to confirm overwriting the old ones.
+If binaries already exist (if updating) you will have to confirm overwriting the old ones.
 {% endhint %}
 
 Confirm binaries are in $USER's $PATH.
