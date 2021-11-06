@@ -266,7 +266,7 @@ You can change the port cardano-node runs on in the .adaenv file in your home di
 
 ```bash
 sed -i env \
-    -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/NODE_HOME=\"\home\/${USER}\/pi-pool\"/g" \
+    -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/NODE_HOME=\"\/home\/${USER}\/pi-pool\"/g" \
     -e "s/"6000"/"3003"/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/${NODE_CONFIG}-config.json\"/g"
 ```
@@ -299,39 +299,7 @@ The port number here must match the port cardano-node is running on. If you are 
 {% endhint %}
 
 ```bash
-#!/bin/bash
-# shellcheck disable=SC2086,SC2034
-NODE_HOSTNAME="CHANGE ME"  # optional. must resolve to the IP you are requesting from
-NODE_PORT=$(grep NODE_PORT /home/${USER}/.adaenv | cut -d '=' -f2)
-NODE_CONFIG=$(grep NODE_CONFIG /home/${USER}/.adaenv | cut -d '=' -f2)
-NODE_BIN="/home/${USER}/.local/bin"
-LOG_DIR="${NODE_HOME}/scripts/topo-logs"
-GENESIS_JSON="${NODE_HOME}/files/${NODE_CONFIG}-shelley-genesis.json"
-NETWORKID=$(jq -r .networkId $GENESIS_JSON)
-NODE_VALENCY=1   # optional for multi-IP hostnames
-NWMAGIC=$(jq -r .networkMagic < $GENESIS_JSON)
-[[ "${NETWORKID}" = "Mainnet" ]] && HASH_IDENTIFIER="--mainnet" || HASH_IDENTIFIER="--testnet-magic ${NWMAGIC}"
-[[ "${NWMAGIC}" = "1097911063" ]] && NETWORK_IDENTIFIER="--mainnet" || NETWORK_IDENTIFIER="--testnet-magic ${NWMAGIC}"
-
-export PATH="${NODE_BIN}:${PATH}"
-export CARDANO_NODE_SOCKET_PATH="${NODE_HOME}/db/socket"
-
-blockNo=$(/home/${USER}/.local/bin/cardano-cli query tip ${NETWORK_IDENTIFIER} | jq -r .block )
-
-# Note:
-# if you run your node in IPv4/IPv6 dual stack network configuration and want announced the
-# IPv4 address only please add the -4 parameter to the curl command below  (curl -4 -s ...)
-if [ "${NODE_HOSTNAME}" != "CHANGE ME" ]; then # Do not edit this leave as "CHANGE ME"
-  T_HOSTNAME="&hostname=${NODE_HOSTNAME}"
-else
-  T_HOSTNAME=''
-fi
-
-if [ ! -d ${LOG_DIR} ]; then
-  mkdir -p ${LOG_DIR};
-fi
-
-curl -s -f "https://api.clio.one/htopology/v1/?port=${NODE_PORT}&blockNo=${blockNo}&valency=${NODE_VALENCY}&magic=${NWMAGIC}${T_HOSTNAME}" | tee -a "${LOG_DIR}"/topologyUpdater_lastresult.json
+wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/topologyUpdater.sh
 
 ```
 
