@@ -285,11 +285,7 @@ Replace `<tag>` with the latest tag in the next command.
 
 3\) Para una sincronización más rápida, considere este comando opcional para descargar la última carpeta db alojada por uno de nuestros miembros.
 
-<<<<<<< HEAD
 ```
-=======
-```text
->>>>>>> master
     wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/ -P ~/cnode
 ```
 
