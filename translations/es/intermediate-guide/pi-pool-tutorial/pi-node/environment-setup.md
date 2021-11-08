@@ -237,7 +237,7 @@ rm -r db/
 For mainnet chain use.
 
 ```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/
 ```
 
 Once wget completes enable & start cardano-node.

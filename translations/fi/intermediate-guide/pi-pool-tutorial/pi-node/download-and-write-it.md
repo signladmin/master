@@ -33,7 +33,7 @@ Kytke Pi monitoriin, aseta SD-kortti paikoilleen ja laita virta päälle. Kun n�
 {% tab title="Pre configured Pi-Node.img.gz" %}
 ### Hanki Pi-Pool .img.gz tiedosto
 
-| [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz) |
+| [Pi-Node](https://mainnet.adamantium.online/Pi-Node.img.gz) |
 |:------------------------------------------------------ |
 |                                                        |
 

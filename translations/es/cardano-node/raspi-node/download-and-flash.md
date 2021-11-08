@@ -2,7 +2,7 @@
 
 ## Instalar el sistema operativo RaspiNode
 
-**1. Descarga la imagen Raspbian del nodo Cardano-node de 64 bits de la Armada Alliance** [**aquí**](https://db.adamantium.online/RasPi-Node.img.gz) **y guárdalo en una ubicación accesible de tu ordenador.**
+**1. Descarga la imagen Raspbian del nodo Cardano-node de 64 bits de la Armada Alliance** [**aquí**](https://mainnet.adamantium.online/RasPi-Node.img.gz) **y guárdalo en una ubicación accesible de tu ordenador.**
 
 **2. A continuación, descarga el software de Raspberry Pi Imager que utilizaremos para grabar la imagen del sistema operativo en nuestro disco de destino. Este software se encuentra en el sitio web** [**Raspberry Pi**](https://www.raspberrypi.org/software/)**. Por favor, descargue la versión correcta para su computadora.**
 

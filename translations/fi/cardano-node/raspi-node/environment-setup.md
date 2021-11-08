@@ -277,13 +277,13 @@ Lataa tietokannan tilannekuva.
 {% tabs %}
 {% tab title="Testnet" %}
 ```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://testnet.adamantium.online/db/
 ```
 {% endtab %}
 
 {% tab title="Mainnet" %}
 ```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/
 ```
 {% endtab %}
 {% endtabs %}

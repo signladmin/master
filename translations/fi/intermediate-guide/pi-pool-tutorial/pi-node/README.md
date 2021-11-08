@@ -15,7 +15,7 @@ On parasta vain jättää se käyntiin. 🏃♀
 
 ## Pikaohje
 
-### **1. Lataa ja asenna** [**Pi-Node.img.gz**](https://db.adamantium.online/Pi-Node.img.gz)**.**
+### **1. Lataa ja asenna** [**Pi-Node.img.gz**](https://mainnet.adamantium.online/Pi-Node.img.gz)**.**
 
 ### 2. Ota ssh-yhteys palvelimeen.
 
@@ -34,7 +34,7 @@ cd /home/ada/pi-pool
 ### 4. Lataa tietokannan tilannekuva.
 
 ```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/
 ```
 
 ### 5. Ota käyttöön & aloita cardano-palvelu.

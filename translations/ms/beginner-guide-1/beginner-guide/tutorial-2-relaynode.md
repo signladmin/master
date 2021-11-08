@@ -337,7 +337,7 @@ cd $NODE_HOME
 # Remove old db and its contents if present
 rm -r db/ 
 #Download testnet db snapshot
-wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://test-mainnet.adamantium.online/db/
 ```
 
 {% hint style="info" %}

@@ -15,7 +15,7 @@ It is best to just leave it running. 🏃♀
 
 ## Quick Start
 
-### **1. Download and flash the** [**Pi-Node.img.gz**](https://db.adamantium.online/Pi-Node.img.gz)**.**
+### **1. Download and flash the** [**Pi-Node.img.gz**](https://mainnet.adamantium.online/Pi-Node.img.gz)**.**
 
 ### 2. 2. ssh into the server.
 
@@ -34,7 +34,7 @@ cd /home/ada/pi-pool
 ### 4. Download database snapshot.
 
 ```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/
 ```
 
 ### 5. Enable & start the cardano-service.

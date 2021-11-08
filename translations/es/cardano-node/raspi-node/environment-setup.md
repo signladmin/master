@@ -277,13 +277,13 @@ Descargar la instantánea de la base de datos.
 {% tabs %}
 {% tab title="Testnet" %}
 ```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://test-db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://test-mainnet.adamantium.online/db/
 ```
 {% endtab %}
 
 {% tab title="Mainnet" %}
 ```bash
-wget -r -np -nH -R "index.html*" -e robots=off https://db.adamantium.online/db/
+wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/
 ```
 {% endtab %}
 {% endtabs %}

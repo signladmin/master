@@ -33,7 +33,7 @@ Conecta el Pi a un monitor, inserta la tarjeta SD y enciéndela. Una vez que vea
 {% tab title="Pre configured Pi-Node.img.gz" %}
 ### Obtén el archivo Pi-Pool .img.gz
 
-| [Pi-Node](https://db.adamantium.online/Pi-Node.img.gz) |
+| [Pi-Node](https://mainnet.adamantium.online/Pi-Node.img.gz) |
 |:------------------------------------------------------ |
 |                                                        |
 
