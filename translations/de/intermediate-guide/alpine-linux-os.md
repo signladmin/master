@@ -285,11 +285,7 @@ Replace `<tag>` with the latest tag in the next command.
 
 3\) Um die Synchronisierung zu beschleunigen, sollten Sie diesen optionalen Befehl zum Herunterladen des neuesten db Ordners, der von einem unserer Alliance-Mitglieder gehostet wird, in Betracht ziehen.
 
-<<<<<<< HEAD
 ```
-=======
-```text
->>>>>>> master
     wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/ -P ~/cnode
 ```
 

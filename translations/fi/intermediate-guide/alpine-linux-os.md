@@ -285,11 +285,7 @@ Korvaa `<tag>` uusimmalla tunnisteella seuraavassa komennossa.
 
 3) Nopeampaa synkronointia varten, harkitse tätä valinnaista komentoa uusimman db-kansion lataamiseen yhden Alliance-jäsenemme ylläpitämältä serveriltä.
 
-<<<<<<< HEAD
 ```
-=======
-```text
->>>>>>> master
     wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/ -P ~/cnode
 ```
 
