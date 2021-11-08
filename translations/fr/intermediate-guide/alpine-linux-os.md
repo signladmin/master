@@ -285,11 +285,7 @@ Replace `<tag>` with the latest tag in the next command.
 
 3\) Pour une synchronisation plus rapide, considérez cette commande optionnelle pour télécharger la dernière base de données hébergée par l'un des membres de l'Alliance.
 
-<<<<<<< HEAD
 ```
-=======
-```text
->>>>>>> master
     wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/ -P ~/cnode
 ```
 
