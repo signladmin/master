@@ -285,11 +285,7 @@ Replace `<tag>` with the latest tag in the next command.
 
 3\) For faster syncing, consider this optional command for downloading the latest db folder hosted by one of our Alliance members.
 
-<<<<<<< HEAD
 ```
-=======
-```text
->>>>>>> master
     wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/ -P ~/cnode
 ```
 
