@@ -5,7 +5,7 @@ description: Luo toiminnalliset avaimet & sertifikaatit. Luo lompakko & rekister
 # Pi-Core/Kylmä kone
 
 {% hint style="danger" %}
-Tarvitset Pi-Noden, joka on konfiguroitu uudella staattisella IP-osoitteella omassa lähiverkossasi. Täysin pätevä verkkotunnus ja cardano-service tiedosto on asetettu käyttämään porttia 3000. Sinun täytyy myös päivittää env-tiedosto, jota gLiveView.sh käyttää osoitteessa $NODE\_HOME/skripts.
+Tarvitset Pi-Noden, joka on konfiguroitu uudella staattisella IP-osoitteella omassa lähiverkossasi. Täysin pätevä verkkotunnus ja cardano-service tiedosto on asetettu käyttämään porttia 3000. Sinun täytyy myös päivittää env-tiedosto, jota gLiveView.sh käyttää osoitteessa $NODE_HOME/skripts.
 
 Et ota käyttöön topologian päivityspalvelua core nodessa, joten voit poistaa nämä kaksi komentosarjaa ja poistaa kommentoidun cron työn cron-taulukosta.
 
@@ -24,8 +24,8 @@ Cardano-lompakko ei rakennu Arm koneisiin riippuvuuden epäonnistumisen vuoksi. 
 
 ### Ota blockfetch seuranta käyttöön
 
-```text
-sed -i ${NODE_FILES}-mainnet-config.json \
+```
+sed -i ${NODE_FILES}/${NODE_CONFIG}-config.json \
     -e "s/TraceBlockFetchDecisions\": false/TraceBlockFetchDecisions\": true/g"
 ```
 
@@ -70,8 +70,8 @@ Luo muuttujat, joissa on KES-jakson slottien määrä. Tämä määritetään ge
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-slotsPerKesPeriod=$(cat $NODE_FILES/mainnet-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
-slotNo=$(cardano-cli query tip --mainnet | jq -r '.slot')
+slotsPerKesPeriod=$(cat $NODE_FILES/${NODE_CONFIG}-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
+slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotsPerKesPeriod: ${slotsPerKesPeriod}
 echo slotNo: ${slotNo}
 ```
@@ -93,7 +93,7 @@ Kirjoita **startKesPeriod** arvo ylös & kopioi **kes.vkey** kylmään offline k
 
 Myönnä **node.cert** sertifikaatti käyttäen: **kes.vkey**, **node.skey**, **node.counter** ja **startKesPeriod** arvoa.
 
-Korvaa **&lt;startKesPeriod&gt;** arvolla, jonka kirjoitit ylös.
+Korvaa **\<startKesPeriod>** arvolla, jonka kirjoitit ylös.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -149,11 +149,10 @@ nano $HOME/.local/bin/cardano-service
 DIRECTORY=/home/ada/pi-pool
 FILES=/home/ada/pi-pool/files
 PORT=3000
-HOSTADDR=0.0.0.0
-TOPOLOGY=${FILES}/mainnet-topology.json
+TOPOLOGY=${FILES}/${NODE_CONFIG}-topology.json
 DB_PATH=${DIRECTORY}/db
 SOCKET_PATH=${DIRECTORY}/db/socket
-CONFIG=${FILES}/mainnet-config.json
+CONFIG=${FILES}/${NODE_CONFIG}-config.json
 KES=${DIRECTORY}/kes.skey
 VRF=${DIRECTORY}/vrf.skey
 CERT=${DIRECTORY}/node.cert
@@ -162,7 +161,6 @@ cardano-node run +RTS -N4 -RTS \
   --topology ${TOPOLOGY} \
   --database-path ${DB_PATH} \
   --socket-path ${SOCKET_PATH} \
-  --host-addr ${HOSTADDR} \
   --port ${PORT} \
   --config ${CONFIG} \
   --shelley-kes-key ${KES} \
@@ -172,12 +170,12 @@ cardano-node run +RTS -N4 -RTS \
 {% endtab %}
 {% endtabs %}
 
-Lisää relaysi mainnet-topolgy.jsoniin.
+Add your relay(s) to ${NODE_CONFIG}-topolgy.json.
 
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-nano $NODE_FILES/mainnet-topology.json
+nano $NODE_FILES/${NODE_CONFIG}-topology.json
 ```
 {% endtab %}
 {% endtabs %}
@@ -188,7 +186,7 @@ Valency suurempi kuin yksi käytetään vain DNS round robin srv tietueiden kans
 
 {% tabs %}
 {% tab title="1 Relay DNS" %}
-```text
+```
 {
   "Producers": [
     {
@@ -202,7 +200,7 @@ Valency suurempi kuin yksi käytetään vain DNS round robin srv tietueiden kans
 {% endtab %}
 
 {% tab title="2 Relays DNS" %}
-```text
+```
 {
   "Producers": [
     {
@@ -221,7 +219,7 @@ Valency suurempi kuin yksi käytetään vain DNS round robin srv tietueiden kans
 {% endtab %}
 
 {% tab title="1 Relay IPv4" %}
-```text
+```
 {
   "Producers": [
     {
@@ -235,7 +233,7 @@ Valency suurempi kuin yksi käytetään vain DNS round robin srv tietueiden kans
 {% endtab %}
 
 {% tab title="2 Relays IPv4" %}
-```text
+```
 {
   "Producers": [
     {
@@ -310,7 +308,7 @@ cardano-cli stake-address key-gen \
 cardano-cli stake-address build \
   --stake-verification-key-file stake.vkey \
   --out-file stake.addr \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
@@ -324,14 +322,14 @@ cardano-cli address build \
   --payment-verification-key-file payment.vkey \
   --stake-verification-key-file stake.vkey \
   --out-file payment.addr \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
 
 ### 5. Siirrä varoja lompakkoon
 
-```text
+```
 cat payment.addr
 ```
 
@@ -354,7 +352,7 @@ Core noden on oltava synkronoitu lohkoketjun kärjen kanssa.
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
@@ -380,7 +378,7 @@ Kysy ketjun nykyinen slotti eli kärki.
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-slotNo=$(cardano-cli query tip --mainnet | jq -r '.slotNo')
+slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotNo: ${slotNo}
 ```
 {% endtab %}
@@ -393,7 +391,7 @@ Hae lompakon utxo tai saldo.
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
-  --mainnet > fullUtxo.out
+  --${NODE_CONFIG} > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
 cat balance.out
@@ -423,14 +421,14 @@ Jos sinulle tulee
 
 Se johtuu siitä, että ydin ei ole lopettanut synkronointia lohkoketjun kärkeen. Tämä voi kestää pitkän aikaa uudelleenkäynnistyksen jälkeen. Jos katsot db/ kansioon cardano-palvelun pysähdyksen jälkeen, näet tiedoston nimeltä 'puhdas'. Se on vahvistustiedosto tietokannan puhtaasta sammutuksesta. Kestää yleensä 5-10 minuuttia synkronoida takaisin ketjun kärkeen Raspberry Pi :lla (näin ainakin epochin 267 kohdalla).
 
-Jos cardano-nodea ei kuitenkaan sammutettu 'puhtaasti', mistä tahansa syystä, voi kestää jopa tunnin tarkistaa tietokanta \(ketju \) ja luoda uusi socket tiedosto. Socket tiedosto luodaan, kun synkronointi on valmis.
+Jos cardano-nodea ei kuitenkaan sammutettu 'puhtaasti', mistä tahansa syystä, voi kestää jopa tunnin tarkistaa tietokanta (ketju) ja luoda uusi socket tiedosto. Socket tiedosto luodaan, kun synkronointi on valmis.
 {% endhint %}
 
-Kysy mainnet protokollan parametrit.
+Query ${NODE_CONFIG} for protocol parameters.
 
-```text
+```
 cardano-cli query protocol-parameters \
-    --mainnet \
+    --${NODE_CONFIG} \
     --out-file params.json
 ```
 
@@ -450,7 +448,7 @@ Staking osoitteen rekisteröinti on 2000 000 lovelacea tai 2 adaa.
 {% endhint %}
 
 {% hint style="Huomaa" %}
-Huomaa, invalid-hereafter syöte. Otamme nykyisen slotin numeron\(ketjun kärki\) ja lisäämme siihen 10000 paikkaa. Jos emme anna allekirjoitettua tapahtumaa ennen kuin ketju saavuttaa tämän syötetyn slotin numeron, tx mitätöidään. Slotti on yksi sekunti, joten sinulla on 166.666667 minuuttia aikaa saada tämä valmiiksi. 🐌
+Huomaa, invalid-hereafter syöte. Otamme nykyisen slotin numeron (ketjun kärki) ja lisäämme siihen 10000 paikkaa. Jos emme anna allekirjoitettua tapahtumaa ennen kuin ketju saavuttaa tämän syötetyn slotin numeron, tx mitätöidään. Slotti on yksi sekunti, joten sinulla on 166.666667 minuuttia aikaa saada tämä valmiiksi. 🐌
 {% endhint %}
 
 Rakenna **tx.tmp** tiedosto, jossa on jo joitakin tx tietoja.
@@ -478,7 +476,7 @@ fee=$(cardano-cli transaction calculate-min-fee \
   --tx-body-file tx.tmp \
   --tx-in-count ${txcnt} \
   --tx-out-count 1 \
-  --mainnet \
+  --${NODE_CONFIG} \
   --witness-count 2 \
   --byron-witness-count 0 \
   --protocol-params-file params.json | awk '{ print $1 }')
@@ -523,7 +521,7 @@ cardano-cli transaction sign \
   --tx-body-file tx.raw \
   --signing-key-file payment.skey \
   --signing-key-file stake.skey \
-  --mainnet \
+  --${NODE_CONFIG} \
   --out-file tx.signed
 ```
 {% endtab %}
@@ -538,7 +536,7 @@ Lähetä tapahtuma lohkoketjuun.
 ```bash
 cardano-cli transaction submit \
   --tx-file tx.signed \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
@@ -551,7 +549,9 @@ Luo **poolMetaData.json** tiedosto. Se sisältää tärkeitä tietoja poolistasi
 metadata-url must be less than 64 characters.
 {% endhint %}
 
-{% embed url="https://pages.github.com/" caption="Hosting your poolMetaData.json on github is popular choice" %}
+{% embed url="https://pages.github.com/" %}
+poolMetaData.json tiedoston ylläpitäminen githubissa on suosittu tapa.
+{% endembed %}
 
 Kannatan tiedoston hostaamista Pi:ssä NGINX:in kanssa.
 
@@ -565,14 +565,14 @@ nano poolMetaData.json
 {% endtabs %}
 
 {% hint style="Huomaa" %}
-Laajennettua **PoolMetaData.json** tiedostoa käyttävät adapoolit ja muut hakeakseen tietoja, kuten mistä löytyy poolisi logo ja sosiaalisen median linkkejä. Toisin kuin **poolMetaData.json** tämän tiedoston hash ei ole tallennettu rekisteröintitodistukseesi ja sitä voidaan muokata ilman poolin rekisterin ** pool.cert ** uudelleenlähettämistä.
+Laajennettua **PoolMetaData.json** tiedostoa käyttävät adapools ja muut palvelut hakeakseen tietoja, kuten mistä löytyy poolisi logo ja sosiaalisen median linkkejä. Toisin kuin **poolMetaData.json** tämän tiedoston hash ei ole tallennettu rekisteröintitodistukseesi ja sitä voidaan muokata ilman poolin rekisterin ** pool.cert ** uudelleenlähettämistä.
 {% endhint %}
 
-Lisää seuraavat ja muokkaa metatietojasi.
+Lisää seuraavat muokataksesi metatietojasi.
 
 {% tabs %}
 {% tab title="Core" %}
-```text
+```
 {
 "name": "Pool Name",
 "description": "Pool description, no longer than 255 characters.",
@@ -612,25 +612,25 @@ echo minPoolCost: ${minPoolCost}
 {% endtab %}
 {% endtabs %}
 
-Käytä alla olevaa muotoa rekisteröityäksesi yhden tai useamman releen.
+Käytä alla olevaa muotoa rekisteröityäksesi yhden tai useamman relayn.
 
 {% tabs %}
-{% tab title="DNS Relay\(1\)" %}
-```text
+{% tab title="DNS Relay(1)" %}
+```
 --single-host-pool-relay <r1.example.com> \
 --pool-relay-port <R1 NODE PORT> \
 ```
 {% endtab %}
 
-{% tab title="IPv4 Relay\(1\)" %}
-```text
+{% tab title="IPv4 Relay(1)" %}
+```
 --pool-relay-ipv4 <RELAY NODE PUBLIC IP> \
 --pool-relay-port <R1 NODE PORT> \
 ```
 {% endtab %}
 
-{% tab title="DNS Relay\(2\)" %}
-```text
+{% tab title="DNS Relay(2)" %}
+```
 --single-host-pool-relay <r1.example.com> \
 --pool-relay-port <R1 NODE PORT> \
 --single-host-pool-relay <r2.example.com> \
@@ -638,8 +638,8 @@ Käytä alla olevaa muotoa rekisteröityäksesi yhden tai useamman releen.
 ```
 {% endtab %}
 
-{% tab title="IPv4 Relay\(2\)" %}
-```text
+{% tab title="IPv4 Relay(2)" %}
+```
 --pool-relay-ipv4 <R1 NODE PUBLIC IP> \
 --pool-relay-port <R1 NODE PORT> \
 --pool-relay-ipv4 <R2 NODE PUBLIC IP> \
@@ -665,7 +665,7 @@ cardano-cli stake-pool registration-certificate \
   --pool-margin 0.01 \
   --pool-reward-account-verification-key-file stake.vkey \
   --pool-owner-stake-verification-key-file stake.vkey \
-  --mainnet \
+  --${NODE_CONFIG} \
   --single-host-pool-relay <r1.example.com> \
   --pool-relay-port 3001 \
   --metadata-url <https://example.com/poolMetaData.json> \
@@ -675,7 +675,7 @@ cardano-cli stake-pool registration-certificate \
 {% endtab %}
 {% endtabs %}
 
-Anna delegointitodistus **stake.skey** & **node.vkey**.
+Anna delegointitodistus **stake.skey** & **node.vkey** avainten avulla.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -706,7 +706,7 @@ Kysy ketjun nykyinen slotti eli kärki.
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-slotNo=$(cardano-cli query tip --mainnet | jq -r '.slotNo')
+slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotNo: ${slotNo}
 ```
 {% endtab %}
@@ -719,7 +719,7 @@ Hae lompakon utxo tai saldo.
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
-  --mainnet > fullUtxo.out
+  --${NODE_CONFIG} > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
 cat balance.out
@@ -753,7 +753,7 @@ echo stakePoolDeposit: ${stakePoolDeposit}
 {% endtab %}
 {% endtabs %}
 
-Rakenna väliaikainen **tx.tmp** pitääksesi tietoja samalla kun rakennamme raakatapahtumatiedostomme.
+Rakenna väliaikainen **tx.tmp** säilyttämään tietoja samalla kun rakennamme raakatapahtumatiedostomme.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -770,7 +770,7 @@ cardano-cli transaction build-raw \
 {% endtab %}
 {% endtabs %}
 
-Laske tapahtumamaksu.
+Laske tapahtumapalkkio.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -779,7 +779,7 @@ fee=$(cardano-cli transaction calculate-min-fee \
   --tx-body-file tx.tmp \
   --tx-in-count ${txcnt} \
   --tx-out-count 1 \
-  --mainnet \
+  --${NODE_CONFIG} \
   --witness-count 3 \
   --byron-witness-count 0 \
   --protocol-params-file params.json | awk '{ print $1 }')
@@ -799,7 +799,7 @@ echo txOut: ${txOut}
 {% endtab %}
 {% endtabs %}
 
-Rakenna **tx.raw** \(allekirjoittamaton\) tapahtumatiedosto.
+Rakenna **tx.raw** (allekirjoittamaton) tapahtumatiedosto.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -818,7 +818,7 @@ cardano-cli transaction build-raw \
 
 Siirrä **tx.raw** kylmään offline-koneeseen.
 
-Allekirjoita tapahtuma **payment.skey**, **node.skey** & **stake.skey**.
+Allekirjoita tapahtuma **payment.skey**, **node.skey** & **stake.skey** avainten avulla.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -828,7 +828,7 @@ cardano-cli transaction sign \
   --signing-key-file payment.skey \
   --signing-key-file $HOME/cold-keys/node.skey \
   --signing-key-file stake.skey \
-  --mainnet \
+  --${NODE_CONFIG} \
   --out-file tx.signed
 ```
 {% endtab %}
@@ -841,7 +841,7 @@ Siirrä **tx.signed** takaisin core palvelimellesi & lähetä tapahtuma lohkoket
 ```bash
 cardano-cli transaction submit \
   --tx-file tx.signed \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
@@ -850,25 +850,24 @@ cardano-cli transaction submit \
 
 ### pool.vet
 
-pool.vet on verkkosivusto, jossa poolin operaattorit voivat tarkistaa poolinsa ketjuun lähtetetyt tiedot. Voit tarkistaa tämän sivuston löytääksesi ongelmia ja vihjeitä siitä, miten korjata ne.
+pool.vet on verkkosivusto, jossa stake pool operaattorit voivat tarkistaa omasta poolistaan ketjuun lähtetetyt tiedot. Voit tarkistaa tämän sivuston löytääksesi mahdollisia ongelmia ja saat vihjeitä siitä miten korjata ne.
 
-{% embed url="https://pool.vet/" caption="" %}
+{% embed url="https://pool.vet/" %}
 
 ### adapools.org
 
 Sinun pitäisi luoda tili ja lunastaa poolisi täällä.
 
-{% embed url="https://adapools.org/" caption="" %}
+{% embed url="https://adapools.org/" %}
 
 ### pooltool.io
 
 Sinun pitäisi luoda tili ja lunastaa poolisi täällä.
 
-{% embed url="https://pooltool.io/" caption="" %}
+{% embed url="https://pooltool.io/" %}
 
 ## Varmuuskopiointi
 
-Hanki pari pientä usb-tikkua ja varmuuskopioi kaikki tiedostot ja kansiot\(lukuun ottamatta db/ kansiota\). Varmuuskopioi online Core ensin ja sitten kylmän offline koneen tiedostot ja kansiot. **Tee se nyt**, odottaminen ei ole riskin arvoista! **Älä kytke USB-tikkua mihinkään mikä on verkkossa sen jälkeen, kun kylmät tiedostot ovat siellä!**
+Hanki pari pientä usb-tikkua ja varmuuskopioi kaikki tiedostot ja kansiot (lukuun ottamatta db/ kansiota). Varmuuskopioi online Core ensin ja sitten kylmän offline koneen tiedostot ja kansiot. **Tee se nyt**, odottaminen ei ole riskin arvoista! **Älä kytke USB-tikkua mihinkään mikä on verkkossa sen jälkeen, kun kylmät tiedostot ovat siellä!**
 
-![https://twitter.com/insaladaPool/status/1380087586509709312?s=19](../../.gitbook/assets/insalada%20%281%29.png)
-
+![https://twitter.com/insaladaPool/status/1380087586509709312?s=19](../../../.gitbook/assets/insalada (2).png)

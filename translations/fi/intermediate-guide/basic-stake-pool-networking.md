@@ -94,7 +94,7 @@ Aseta **valenssi** arvoon 0 \(nolla\) poistaaksesi etäkäyttäjän käytöstä,
 
 ## Poolin Rekisteröinti
 
-Kun luot stake poolisi **pool.json** metadatatiedoston huomaat osion nimeltä **poolRelays**. This is where you would add **public** relays, visible to others. You can add them as static IPs or as a domain name, such as **north.acme.com**. If you are running more than one relay on your internal network you will need to have them assigned to different ports, such as 6001 and 6002.
+Kun luot stake poolisi **pool.json** metadatatiedoston huomaat osion nimeltä **poolRelays**. Tässä kohtaa voit lisätä **julkiset** relayt, jotka näkyvät muille. Voit lisätä ne staattisina IP-osoitteina tai verkkotunnuksena, kuten **north.acme.com**. Jos sinulla on käynnissä useampi kuin yksi relay sisäisessä verkossasi, sinun täytyy määrittää niille eri portit, kuten 6001 ja 6002.
 
 {% code title="pool.json" %}
 ```bash
@@ -113,13 +113,13 @@ Kun luot stake poolisi **pool.json** metadatatiedoston huomaat osion nimeltä **
 ```
 {% endcode %}
 
-A typical home network will only expose a single external IP address to the world, dynamically assigned by your ISP \(Internet Service Provider\). Dynamically assigned external IP leases can be relatively static for a good long period, but this is not guaranteed and you should consider registering a domain name so you can use dns entries in the pool.json instead. Otherwise, each time your external IP address changes you'll have to re-register your pool with a new IP for your relays.
+Tyypillinen kotiverkko altistaa maailmalle vain yhden ulkoisen IP-osoitteen, joka on dynaamisesti määritetty Internet-palveluntarjoajasi kautta \(Internet Service Provider\). Dynaamisesti määritetyt ulkoiset IP-osoitteet voivat olla suhteellisen staattisia pitkäänkin, mutta tämä ei ole taattu ja sinun kannattaa harkita DNS tunnuksen rekisteröimistä, jotta voit käyttää dns merkintöjä pool.json tiedostossa. Muuten, joka kerta kun ulkoinen IP-osoitteesi muuttuu sinun täytyy uudelleen rekisteröidä poolisi ja päivittää uudet relay IP-osoitteet.
 
 ## DNS Client
 
-Unless you have a static IP address assigned by your ISP, at some point you're going to have to consider setting up a dynamic DNS client that runs on your internal network and broadcasts your external IP address assigned by your ISP to your dynamic dns domain provider, such as Google domains. Then whenever your ISP changes your external dynamic IP address, your DNS client will see that, push the new IP address to your domain provider and there should be next to no impact to your domain addresses.
+Ellei sinulla ole ISP:n osoittamaa staattista IP-osoitetta, jossain vaiheessa sinun täytyy harkita dynaamisen DNS:n rekisteröimistä. DNS palvelu toimii sisäisessä verkossa ja lähettää ulkoisen,ISP:n määrittämän, IP-osoitteesi dynaamisen DNS verkkotunnuksen tarjoajalle, kuten Google domains. Siten, aina kun ISP muuttaa ulkoisen dynaaminen IP-osoitteesi, DNS palvelu näkee sen ja välittää uuden IP-osoitteen verkkotunnuksen tarjoajalle. Tällä prosessilla ei ole juuri mitään vaikutusta verkkotunnusosoitteisiin.
 
-### DNS Client Examples
+### DNS Client Esimerkkejä
 
 * [ddclient](https://support.google.com/domains/answer/6147083?hl=en)
 * no-ip

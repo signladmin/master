@@ -1,111 +1,111 @@
 # Alpine Linux OS
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../../.gitbook/assets/image (1).png)
 
-## Why use AlpineOS on the Raspberry Pi? Here are some reasons:
+## Miksi käyttää AlpineOS Raspberry Pi:ssä? Tässä muutamia syitä:
 
-* **Very low memory consumption \(~50MB utilized during idle vs ~350MB for Ubuntu 20.04\).**
-* **Lower CPU overhead** **\(27 tasks/ 31 threads active for Alpine vs 57 tasks / 111 threads for Ubuntu when cardano-node is running\).**
-* **Cooler Pi 😎 \(Literally, CPU runs cooler because of the lower CPU overhead\).**
-* **And finally, why not? If you're gonna use static binaries, might as well take advantage of AlpineOS 😜**
+* **Erittäin alhainen muistinkulutus (~50MB käytetään idle vs ~350MB Ubuntu 20.04).**
+* **Alempi suorittimen kuormitus** **(27 tehtävää / 31 threadiä aktiivisena Alpinessa vs 57 tehtävää / 111 threadiä Ubuntussa, kun cardano-node on käynnissä).**
+* **Viileämpi Pi 😎 (kirjaimellisesti, CPU toimii viileämpänä alemman suorittimen kuormituksen ansiosta).**
+* **Ja lopuksi, miksi ei? Jos tulet käyttämään staattisia binäärejä, voit yhtä hyvin hyödyntää AlpineOS:ää 😜**
 
-## If you have previously used this guide and intend to update the scripts. Follow these steps. Then follow the rest of the steps outlined in this guide accordingly 🙂.
+## Jos olet aiemmin käyttänyt tätä opasta ja aiot päivittää komentosarjoja, seuraa näitä ohjeita. Seuraa sitten muita tässä oppaassa hahmoteltuja vaiheita vastaavasti 🙂.
 
-1\) Update the git local repo.
+1) Päivitä paikallinen git repo.
 
-```text
+```
 cd ~/alpine-rpi-os
 ```
 
-```text
+```
 git fetch --recurse-submodules --tags --all
 ```
 
-2\) Identify the latest tag.
+2) Tunnista viimeisin tagi.
 
-```text
+```
 git tag
 ```
 
-3\) Replace `<tag>` in this step with the latest tag such as `v1.2.1`.
+3) Korvaa `<tag>` tässä vaiheessa uusimmalla tunnisteella kuten `v1.2.1`.
 
-```text
+```
 git checkout tags/<tag>
 ```
 
-## Upgrading to Alpine v3.14 from Alpine v3.13:
+## Alpine v3.13:n päivittäminen Alpine v3.14:ään:
 
-1\) Update your current version of AlpineOS.
+1) Päivitä nykyinen AlpineOS-versio.
 
-```text
+```
 sudo apk update
 ```
 
-```text
+```
 sudo apk upgrade
 ```
 
-2\) Edit the repository to reflect Alpine v3.14.
+2) Muokkaa versiovarastoa vastaamaan Alpine v3.14 -versiota.
 
-```text
+```
 sudo sed -i 's@v3.13@v3.14@g' /etc/apk/repositories
 ```
 
-3\) Update the package list.
+3) Päivitä pakettiluettelo.
 
-```text
+```
 sudo apk update
 ```
 
-4\) Upgrading packages to v3.14
+4) Pakettien päivittäminen versioon 3.14
 
-```text
+```
 sudo apk add --upgrade apk-tools
 ```
 
-```text
+```
 sudo apk upgrade --available
 ```
 
-```text
+```
 sudo sync
 ```
 
-```text
+```
 sudo reboot now
 ```
 
-5\) Now you should have AlpineOS upgraded to v3.14 🍷.
+5) Nyt AlpineOS pitäisi olla päivitetty versioon 3.14 🍷.
 
-```text
+```
 cat /etc/alpine-release
 ```
 
-6\) To troubleshoot the upgrade, refer to the link: [https://wiki.alpinelinux.org/wiki/Upgrading\_Alpine](https://wiki.alpinelinux.org/wiki/Upgrading_Alpine)
+6) Ongelmatilanteissa tutustu linkkiin: [https://wiki.alpinelinux.org/wiki/Upgrading_Alpine](https://wiki.alpinelinux.org/wiki/Upgrading_Alpine)
 
-## Initial Setup for AlpineOS on Raspberry Pi 4B 8GB:
+## AlpineOS: ensiasennus Raspberry Pi 4B 8GB koneeseen:
 
-1\) Download the AlpineOS for RPi 4 aarch64 here: [https://dl-cdn.alpinelinux.org/alpine/v3.14/releases/aarch64/alpine-rpi-3.14.2-aarch64.tar.gz](https://dl-cdn.alpinelinux.org/alpine/v3.14/releases/aarch64/alpine-rpi-3.14.2-aarch64.tar.gz)
+1) Lataa AlpineOS RPi 4 aarch64 täältä: [https://dl-cdn.alpinelinux.org/alpine/v3.14/releases/aarch64/alpine-rpi-3.14.2-aarch64.tar.gz](https://dl-cdn.alpinelinux.org/alpine/v3.14/releases/aarch64/alpine-rpi-3.14.2-aarch64.tar.gz)
 
-2\) Decompress the .tar.gz file and copy it's contents into an SSD/SD card
+2) Pura .tar.gz tiedosto ja kopioi sen sisältö SSD/SD kortille
 
-3\) Plug in a keyboard and monitor.
+3) Kytke näppäimistö ja monitori.
 
-4\) Login with username 'root'.
+4) Kirjaudu sisään käyttäjätunnuksella 'root'.
 
-5\) Run the command `setup-alpine` and follow the instructions.
+5) Suorita komento `setup-alpine` ja noudata ohjeita.
 
 {% hint style="info" %}
-When you are in `setup-alpine` you will be prompted to choose the system disk. Once you are at this point, enter, `y`, to setup disk and create the partition for `sys`.
+Kun olet `setup-alpinessa`, sinua kehotetaan valitsemaan järjestelmälevy. Kun olet tässä vaiheessa, syötä, `y`, määrittääksesi levyn ja luodaksesi osion `sys`:lle.
 {% endhint %}
 
-6\) Reboot.
+6) Käynnistä kone uudelleen.
 
-7\) Add a new user called cardano via the command `adduser cardano` and its password as instructed.
+7) Lisää uusi käyttäjä nimeltä cardano käyttämällä komentoa `adduser cardano` ja sille salasana ohjeiden mukaisesti.
 
-8\) Run the following commands to grant the new user root privileges
+8) Suorita seuraavat komennot myöntääksesi uudelle käyttäjälle root-oikeudet
 
-```text
+```
 apk add sudo
 echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
 addgroup cardano wheel
@@ -121,233 +121,236 @@ addgroup cardano tape
 addgroup cardano video
 ```
 
-9\) Either exit root via the command `exit` or reboot and login to cardano
+9) Joko poistu root roolista `exit` komennon avulla tai käynnistä uudelleen ja kirjaudu sisään käyttäjänä cardano
 
-10\) Install bash to ensure bash script compatibility
+10) Asenna bash varmistaaksesi bash skriptien yhteensopivuus
 
-```text
+```
     sudo apk add bash
 ```
 
-11\) Also install git and wget, we will need it later.
+11) Asenna myös git ja wget, tarvitsemme niitä myöhemmin.
 
-```text
+```
     sudo apk add git wget
 ```
 
-12\) By default, AlpineOS uses the powersave governor which sets CPU frequency at the lowest. To use the ondemand governor which scales CPU frequency according to system load, `cpufreq.start` is included in this repo which should be added to /etc/local.d/. You may run the following commands to do this for you.
+12) Oletuksena AlpineOS käyttää virransäästön hallintaa, joka asettaa suorittimen taajuuden alhaisimmille mahdolliselle. Käyttääksesi ondemand säätöä, joka skaalaa suorittimen taajuutta järjestelmän kuormituksen mukaan, `cpufreq.start` sisältyy tähän repositoryyn, joka tulee lisätä kansioon /etc/local.d/. Voit käyttää seuraavia komentoja tehdäksesi tämän.
 
-```text
+```
     cd ~
 ```
 
-```text
+```
     git clone https://github.com/armada-alliance/alpine-rpi-os
 ```
 
-```text
+```
     git tag
 ```
 
-Replace `<tag>` with the latest tag in the next command.
+Korvaa `<tag>` uusimmalla tunnisteella seuraavassa komennossa.
 
-```text
+```
     git checkout tags/<tag>
 ```
 
-```text
+```
     sudo cp alpine-rpi-os/alpine_cnode_scripts_and_services/etc/local.d/cpufreq.start /etc/local.d/
 ```
 
-```text
+```
     sudo chmod +x /etc/local.d/cpufreq.start
 ```
 
-```text
+```
     sudo rc-update add local default
 ```
 
-12\) **\[CPU Governor - Optional\]** By default, AlpineOS uses the powersave governor which sets CPU frequency at the lowest. To use the ondemand governor which scales CPU frequency according to system load, `cpufreq.start` is included in this repo which should be added to /etc/local.d/. You may run the following commands to do this for you.
+12) **[CPU Governor - Optional]** AlpineOS käyttää oletuksena powersave säädintä, joka asettaa suorittimen taajuuden alhaisimmille. Käyttääksesi ondemand säätöä, joka skaalaa suorittimen taajuutta järjestelmän kuormituksen mukaan, `cpufreq.start` sisältyy tähän repositoryyn, joka tulee lisätä kansioon /etc/local.d/. Voit käyttää seuraavia komentoja tehdäksesi tämän.
 
-```text
+```
     cd ~
 ```
 
-```text
+```
     git clone https://github.com/armada-alliance/alpine-rpi-os
 ```
 
-```text
+```
     cd alpine-rpi-os
 ```
 
-```text
+```
     sudo cp alpine-rpi-os/alpine_cnode_scripts_and_services/etc/local.d/cpufreq.start /etc/local.d/
 ```
 
-```text
+```
     sudo chmod +x /etc/local.d/cpufreq.start
 ```
 
-```text
+```
     sudo rc-update add local default
 ```
 
-13\) **\[ZRAM - Optional\]** To alleviate RAM limitation on RPi, ZRAM is recommended to enable RAM compression. Use the following steps to install zram-init and install the scripts. The scripts provided will enable a 50% boost in useable RAM capacity. This step assumes you have followed step 12.
+13) **[ZRAM - Valinnainen]** RPin RAM-muistin rajallisuuden helpottamiseksi ZRAM:n käyttöönotto on suositeltavaa jotta saat RAM-kompression käyttöön. Käytä seuraavia vaiheita zram-initin ja skriptien asentamiseen. Annetut skriptit mahdollistavat 50 %: n lisäyksen käytettävissä olevaan RAM-kapasiteettiin. Tämä kohta olettaa, että olet seurannut vaihetta 12.
 
-```text
+```
     sudo apk add zram-init
 ```
 
-```text
+```
     sudo cp alpine-rpi-os/alpine_cnode_scripts_and_services/etc/local.d/zram.* /etc/local.d/
 ```
 
-```text
+```
     sudo chmod +x /etc/local.d/zram.*
 ```
 
-14\) Reboot the system. For the Raspberry Pi 4B 8GB, you should expect around 3.81GB of swap via ZRAM when checking with `htop` \(`sudo apk add htop` if htop is unavailable\).
+14) Käynnistä järjestelmä uudelleen. Raspberry Pi 4B 8GB koneella, voit odottaa noin 3.81 Gt swapia ZRAMin kautta kun tarkastelet sitä `htop` -käskyn kautta (`sudo apk add htop` jos htop ei ole käytettävissä).
 
-## Installing the 'cardano-node' and 'cardano-cli' static binaries \(AlpineOS uses static binaries almost exclusively so you should avoid non-static builds\)
+## 'cardano-node' ja 'cardano-cli' staattisten binäärien Asentaminen/päivittäminen (AlpineOS käyttää lähes yksinomaan staattisia binäärejä, joten vältä ei-staattiset rakennelmia)
 
 {% hint style="info" %}
-**You can obtain the static binaries for version 1.29.0 via this** [**link**](https://ci.zw3rk.com/build/1758) **courtesy of Moritz Angermann, the SPO of ZW3RK pool 🙏**
+**Saat staattiset binäärit versiolle 1.30.1 tästä ** [**linkistä**](https://ci.zw3rk.com/build/409517) **kiitokset Moritz Angermanille, ZW3RK poolin SPO 🙏**
 {% endhint %}
 
-**Run the following commands to install the binaries and place them into the correct directory.**
+**Suorita seuraavat komennot ladataksesi ja asentaaksesi binäärit oikeaan kansioon.**
 
-* Download the binaries
+* Lataa binäärit
 
-```text
-    wget -O ~/aarch64-unknown-linux-musl-cardano-node-1.29.0.zip https://ci.zw3rk.com/build/1771/download/1/aarch64-unknown-linux-musl-cardano-node-1.29.0.zip
+```
+    wget -O ~/aarch64-unknown-linux-musl-cardano-node-1.30.1.zip https://ci.zw3rk.com/build/409517/download/1/aarch64-unknown-linux-musl-cardano-node-1.30.1.zip
 ```
 
-* Unzip and install the binaries via the commands
+* Pura ja asenna binäärit komentojen kautta
 
-```text
-    unzip -d ~/ aarch64-unknown-linux-musl-cardano-node-1.29.0.zip
+```
+    unzip -d ~/ aarch64-unknown-linux-musl-cardano-node-1.30.1.zip
 
     sudo mv ~/cardano-node/* /usr/local/bin/
 ```
 
-## Install the Armada Alliance Alpine Linux Cardano node service
+## Asenna Armada Alliancen Alpine Linux Cardano node -palvelu
 
 {% hint style="success" %}
-### If you have decided to use AlpineOS for your Cardano stake pool operations, you may find this collection of scripts and services useful.
+### Jos olet päättänyt käyttää AlpineOS käyttöjärjestelmää Cardano stake poolissasi, voit löytää tästä skripti ja palvelu kokoelmasta hyödyllisiä työkaluja.
 {% endhint %}
 
 {% hint style="info" %}
-### To install the scripts and services correctly don't skip steps 🏴‍☠️😎
+### Asentaaksesi skriptit ja palvelut oikein, älä ohita vaiheita 🏴‍☠️😎
 {% endhint %}
 
-1\) Clone this repo to obtain the neccessary folder and scripts to quickly start your cardano node. You may skip this step if you have already clonned this repo from step 12 when setting up AlpineOS.
+1) Kloonaa tämä repo saadaksesi tarvittavat kansiot ja skriptit cardano noden nopeaan käynnistämiseen. Voit ohittaa tämän vaiheen, jos olet jo kloonannut tämän repon vaiheesta 12 AlpineOS:n perustamisen yhteydessä.
 
-```text
+```
     cd ~
 ```
 
-```text
+```
     git clone https://github.com/armada-alliance/alpine-rpi-os
 ```
 
-```text
+```
     git tag
 ```
 
-Replace `<tag>` with the latest tag in the next command.
+Korvaa `<tag>` uusimmalla tunnisteella seuraavassa komennossa.
 
-```text
+```
     git checkout tags/<tag>
 ```
 
-2\) Run the following commands to then install the **cnode** folder, scripts, and services into the correct folders. The **cnode** folder contains everything a **Cardano node** needs to start as a functional relay node.
+2) Suorita seuraavat komennot ja asenna sitten **cnode** -kansio, skriptit ja palvelut oikeisiin kansioihin. **cnode** kansio sisältää kaiken mitä **Cardano node** tarvitsee käynnistyäkseen toiminnallisena relay nodena.
 
-```text
+```
     cd ~
 ```
 
-```text
+```
     cp -r alpine-rpi-os/alpine_cnode_scripts_and_services/home/cardano/* ~/
 ```
 
-```text
+```
     sudo cp alpine-rpi-os/alpine_cnode_scripts_and_services/etc/init.d/* /etc/init.d/
 ```
 
-```text
+```
     chmod +x ~/start_stop_cnode_service.sh ~/cnode/autorestart_cnode.sh
 ```
 
-```text
+```
     sudo chmod +x /etc/init.d/cardano-node /etc/init.d/prometheus /etc/init.d/node-exporter
 ```
 
-3\) For faster syncing, consider this optional command for downloading the latest db folder hosted by one of our Alliance members.
+3) Nopeampaa synkronointia varten, harkitse tätä valinnaista komentoa uusimman db-kansion lataamiseen yhden Alliance-jäsenemme ylläpitämältä serveriltä.
 
+<<<<<<< HEAD
+```
+=======
 ```text
+>>>>>>> master
     wget -r -np -nH -R "index.html*" -e robots=off https://mainnet.adamantium.online/db/ -P ~/cnode
 ```
 
-4\) Follow the guide written in **README.txt** contained in the **$HOME** directory after installing **cnode**, scripts, and services.
+4) Asennettuasi **cnode**, skriptit ja palvelut, noudata **$HOME** hakemiston **README.txt** tiedoston sisältämää opasta.
 
-```text
+```
     more ~/README.txt
 ```
 
-## Setup prometheus and node exporter
+## Asenna prometheus ja node exporter
 
-1\) Download Prometheus and node-exporter into the home directory
+1) Lataa Prometheus ja node exporter kotihakemistoon
 
-```text
+```
     wget -O ~/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v2.29.2/prometheus-2.29.2.linux-arm64.tar.gz
 ```
 
-```text
+```
     wget -O ~/node_exporter.tar.gz https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-arm64.tar.gz
 ```
 
-2\) Extract the tarballs
+2) Pura tarballit
 
-```text
+```
 tar -xzvf prometheus.tar.gz
 ```
 
-```text
+```
 tar -xzvf node_exporter.tar.gz
 ```
 
-3\) Rename the folders with the following commands
+3) Nimeä kansiot uudelleen seuraavilla komennoilla
 
-```text
+```
     mv prometheus-2.29.2.linux-arm64 prometheus
 ```
 
-```text
+```
     mv node_exporter-1.2.2.linux-arm64 node_exporter
 ```
 
-4\) Follow the guide written in README.txt contained in the $HOME directory after installing cnode, scripts and services to start the services accordingly.
+4) Käynnistääksesi palvelut asianmukaisesti, seuraa $HOME hakemistossa olevan **README.txt** tiedoston ohjeita asennettuasi cnoden, skriptit ja palvelut.
 
-```text
+```
     more ~/README.txt
 ```
 
-## General Troubleshooting
+## Yleinen Vianmääritys
 
-* If you have trouble with port forwarding via SSH, run the following command
+* Jos sinulla on vaikeuksia siirtää porttia SSH:n kautta, suorita seuraava komento
 
-```text
+```
 sudo nano /etc/ssh/sshd_config
 ```
 
-* Edit the line `AllowTcpForwarding no` to `AllowTcpForwarding yes`
+* Muokkaa riviä `AllowTcpForwarding no` vastaamaan `AllowTcpForwarding yes`
 
 {% hint style="info" %}
-Make sure this line is not commented out with a`#`
+Varmista, ettei tätä riviä ole kommentoitu pois `#` -merkillä
 {% endhint %}
 
 {% hint style="success" %}
-We would like to give a special shoutout to our [alliance member](https://armada-alliance.com) Sayshar, operator of [\[SRN\] Pool](https://www.adasrn.com/), for providing this tutorial 🏴‍☠️ 🙏 😎
+Haluamme antaa erityiset kiitokset [allianssimme jäsenelle](https://armada-alliance.com), [Sayshar](https://armada-alliance.com/identities/sayshar-srn), [\[SRN\] Poolin](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0) operaattorille, tämän oppaan tuottamisesta 🏴‍☠️ 🙏 😎
 {% endhint %}
-

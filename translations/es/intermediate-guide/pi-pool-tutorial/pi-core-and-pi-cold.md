@@ -5,7 +5,7 @@ description: Create operational keys & certificates. Create wallet & register st
 # Pi-Core/Frío
 
 {% hint style="danger" %}
-You need to have a Pi-Node configured with a new static ip address on your LAN. A fully qualified domain name and cardano-service file set to start on port 3000. You also need to update the env file used by gLiveView.sh located in $NODE\_HOME/scripts.
+You need to have a Pi-Node configured with a new static ip address on your LAN. A fully qualified domain name and cardano-service file set to start on port 3000. You also need to update the env file used by gLiveView.sh located in $NODE_HOME/scripts.
 
 You do not enable the topology updater service on a core node so feel free to delete those two scripts and remove the commented out cron job.
 
@@ -24,8 +24,8 @@ Cardano-wallet will not build on arm due to dependency failure. @ZW3RK tried to 
 
 ### Enable blockfetch tracing
 
-```text
-sed -i ${NODE_FILES}/mainnet-config.json \
+```
+sed -i ${NODE_FILES}/${NODE_CONFIG}-config.json \
     -e "s/TraceBlockFetchDecisions\": false/TraceBlockFetchDecisions\": true/g"
 ```
 
@@ -70,8 +70,8 @@ Create variables with the number of slots per KES period from the genesis file a
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-slotsPerKesPeriod=$(cat $NODE_FILES/mainnet-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
-slotNo=$(cardano-cli query tip --mainnet | jq -r '.slot')
+slotsPerKesPeriod=$(cat $NODE_FILES/${NODE_CONFIG}-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
+slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotsPerKesPeriod: ${slotsPerKesPeriod}
 echo slotNo: ${slotNo}
 ```
@@ -93,7 +93,7 @@ Write **startKesPeriod** value down & copy the **kes.vkey** to your cold offline
 
 Issue a **node.cert** certificate using: **kes.vkey**, **node.skey**, **node.counter** and **startKesPeriod** value.
 
-Replace **&lt;startKesPeriod&gt;** with the value you wrote down.
+Replace **\<startKesPeriod>** with the value you wrote down.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
@@ -149,11 +149,10 @@ nano $HOME/.local/bin/cardano-service
 DIRECTORY=/home/ada/pi-pool
 FILES=/home/ada/pi-pool/files
 PORT=3000
-HOSTADDR=0.0.0.0
-TOPOLOGY=${FILES}/mainnet-topology.json
+TOPOLOGY=${FILES}/${NODE_CONFIG}-topology.json
 DB_PATH=${DIRECTORY}/db
 SOCKET_PATH=${DIRECTORY}/db/socket
-CONFIG=${FILES}/mainnet-config.json
+CONFIG=${FILES}/${NODE_CONFIG}-config.json
 KES=${DIRECTORY}/kes.skey
 VRF=${DIRECTORY}/vrf.skey
 CERT=${DIRECTORY}/node.cert
@@ -162,7 +161,6 @@ cardano-node run +RTS -N4 -RTS \
   --topology ${TOPOLOGY} \
   --database-path ${DB_PATH} \
   --socket-path ${SOCKET_PATH} \
-  --host-addr ${HOSTADDR} \
   --port ${PORT} \
   --config ${CONFIG} \
   --shelley-kes-key ${KES} \
@@ -172,12 +170,12 @@ cardano-node run +RTS -N4 -RTS \
 {% endtab %}
 {% endtabs %}
 
-Add your relay\(s\) to mainnet-topolgy.json.
+Add your relay(s) to ${NODE_CONFIG}-topolgy.json.
 
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-nano $NODE_FILES/mainnet-topology.json
+nano $NODE_FILES/${NODE_CONFIG}-topology.json
 ```
 {% endtab %}
 {% endtabs %}
@@ -188,7 +186,7 @@ Valency greater than one is only used with DNS round robin srv records.
 
 {% tabs %}
 {% tab title="1 Relay DNS" %}
-```text
+```
 {
   "Producers": [
     {
@@ -202,7 +200,7 @@ Valency greater than one is only used with DNS round robin srv records.
 {% endtab %}
 
 {% tab title="2 Relays DNS" %}
-```text
+```
 {
   "Producers": [
     {
@@ -221,7 +219,7 @@ Valency greater than one is only used with DNS round robin srv records.
 {% endtab %}
 
 {% tab title="1 Relay IPv4" %}
-```text
+```
 {
   "Producers": [
     {
@@ -235,7 +233,7 @@ Valency greater than one is only used with DNS round robin srv records.
 {% endtab %}
 
 {% tab title="2 Relays IPv4" %}
-```text
+```
 {
   "Producers": [
     {
@@ -310,7 +308,7 @@ cardano-cli stake-address key-gen \
 cardano-cli stake-address build \
   --stake-verification-key-file stake.vkey \
   --out-file stake.addr \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
@@ -324,14 +322,14 @@ cardano-cli address build \
   --payment-verification-key-file payment.vkey \
   --stake-verification-key-file stake.vkey \
   --out-file payment.addr \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
 
 ### 5. Fund wallet
 
-```text
+```
 cat payment.addr
 ```
 
@@ -354,7 +352,7 @@ Core node needs to be synced to the tip of the blockchain.
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
@@ -380,7 +378,7 @@ Query current slot number or tip of the chain.
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-slotNo=$(cardano-cli query tip --mainnet | jq -r '.slot')
+slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotNo: ${slotNo}
 ```
 {% endtab %}
@@ -393,7 +391,7 @@ Get the utxo or balance of the wallet.
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
-  --mainnet > fullUtxo.out
+  --${NODE_CONFIG} > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
 cat balance.out
@@ -423,14 +421,14 @@ If you get
 
 It is because the core has not finished syncing to the tip of the blockchain. This can take a long time after a reboot. If you look in the db/ folder after cardano-service stop you will see a file named 'clean'. That is confirmation file of a clean database shutdown. It usually takes 5 to 10 minutes to sync back to the tip of the chain on Raspberry Pi as of epoch 267.
 
-If however the cardano-node does not shutdown 'cleanly' for whatever reason it can take up to an hour to verify the database\(chain\) and create the socket file. Socket file is created once your synced.
+If however the cardano-node does not shutdown 'cleanly' for whatever reason it can take up to an hour to verify the database(chain) and create the socket file. Socket file is created once your synced.
 {% endhint %}
 
-Query mainnet for protocol parameters.
+Query ${NODE_CONFIG} for protocol parameters.
 
-```text
+```
 cardano-cli query protocol-parameters \
-    --mainnet \
+    --${NODE_CONFIG} \
     --out-file params.json
 ```
 
@@ -450,7 +448,7 @@ Stake address registration is 2,000,000 lovelace or 2 ada.
 {% endhint %}
 
 {% hint style="warning" %}
-Take note of the invalid-hereafter input. We are taking the current slot number\(tip of the chain\) and adding 1,000 slots. If we do not issue the signed transaction before the chain reaches this slot number the tx will be invalidated. A slot is one second so you have 16.666666667 minutes to get this done. 🐌
+Take note of the invalid-hereafter input. We are taking the current slot number(tip of the chain) and adding 1,000 slots. If we do not issue the signed transaction before the chain reaches this slot number the tx will be invalidated. A slot is one second so you have 16.666666667 minutes to get this done. 🐌
 {% endhint %}
 
 Build **tx.tmp** file to hold some information.
@@ -478,7 +476,7 @@ fee=$(cardano-cli transaction calculate-min-fee \
   --tx-body-file tx.tmp \
   --tx-in-count ${txcnt} \
   --tx-out-count 1 \
-  --mainnet \
+  --${NODE_CONFIG} \
   --witness-count 2 \
   --byron-witness-count 0 \
   --protocol-params-file params.json | awk '{ print $1 }')
@@ -523,7 +521,7 @@ cardano-cli transaction sign \
   --tx-body-file tx.raw \
   --signing-key-file payment.skey \
   --signing-key-file stake.skey \
-  --mainnet \
+  --${NODE_CONFIG} \
   --out-file tx.signed
 ```
 {% endtab %}
@@ -538,7 +536,7 @@ Submit the transaction to the blockchain.
 ```bash
 cardano-cli transaction submit \
   --tx-file tx.signed \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
@@ -551,7 +549,9 @@ Create a **poolMetaData.json** file. It will contain important information about
 metadata-url must be less than 64 characters.
 {% endhint %}
 
-{% embed url="https://pages.github.com/" caption="Hosting your poolMetaData.json on github is popular choice" %}
+{% embed url="https://pages.github.com/" %}
+Hosting your poolMetaData.json on github is popular choice
+{% endembed %}
 
 I say host it on your Pi with NGINX.
 
@@ -572,7 +572,7 @@ Add the following and customize to your metadata.
 
 {% tabs %}
 {% tab title="Core" %}
-```text
+```
 {
 "name": "Pool Name",
 "description": "Pool description, no longer than 255 characters.",
@@ -615,22 +615,22 @@ echo minPoolCost: ${minPoolCost}
 Use the format below to register single or multiple relays.
 
 {% tabs %}
-{% tab title="DNS Relay\(1\)" %}
-```text
+{% tab title="DNS Relay(1)" %}
+```
 --single-host-pool-relay <r1.example.com> \
 --pool-relay-port <R1 NODE PORT> \
 ```
 {% endtab %}
 
-{% tab title="IPv4 Relay\(1\)" %}
-```text
+{% tab title="IPv4 Relay(1)" %}
+```
 --pool-relay-ipv4 <RELAY NODE PUBLIC IP> \
 --pool-relay-port <R1 NODE PORT> \
 ```
 {% endtab %}
 
-{% tab title="DNS Relay\(2\)" %}
-```text
+{% tab title="DNS Relay(2)" %}
+```
 --single-host-pool-relay <r1.example.com> \
 --pool-relay-port <R1 NODE PORT> \
 --single-host-pool-relay <r2.example.com> \
@@ -638,8 +638,8 @@ Use the format below to register single or multiple relays.
 ```
 {% endtab %}
 
-{% tab title="IPv4 Relay\(2\)" %}
-```text
+{% tab title="IPv4 Relay(2)" %}
+```
 --pool-relay-ipv4 <R1 NODE PUBLIC IP> \
 --pool-relay-port <R1 NODE PORT> \
 --pool-relay-ipv4 <R2 NODE PUBLIC IP> \
@@ -665,7 +665,7 @@ cardano-cli stake-pool registration-certificate \
   --pool-margin 0.01 \
   --pool-reward-account-verification-key-file stake.vkey \
   --pool-owner-stake-verification-key-file stake.vkey \
-  --mainnet \
+  --${NODE_CONFIG} \
   --single-host-pool-relay <r1.example.com> \
   --pool-relay-port 3001 \
   --metadata-url <https://example.com/poolMetaData.json> \
@@ -706,7 +706,7 @@ Query the current slot number or tip of the chain.
 {% tabs %}
 {% tab title="Core" %}
 ```bash
-slotNo=$(cardano-cli query tip --mainnet | jq -r '.slot')
+slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotNo: ${slotNo}
 ```
 {% endtab %}
@@ -719,7 +719,7 @@ Get the utxo or balance of the wallet.
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
-  --mainnet > fullUtxo.out
+  --${NODE_CONFIG} > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
 cat balance.out
@@ -779,7 +779,7 @@ fee=$(cardano-cli transaction calculate-min-fee \
   --tx-body-file tx.tmp \
   --tx-in-count ${txcnt} \
   --tx-out-count 1 \
-  --mainnet \
+  --${NODE_CONFIG} \
   --witness-count 3 \
   --byron-witness-count 0 \
   --protocol-params-file params.json | awk '{ print $1 }')
@@ -799,7 +799,7 @@ echo txOut: ${txOut}
 {% endtab %}
 {% endtabs %}
 
-Build your **tx.raw** \(unsigned\) transaction file.
+Build your **tx.raw** (unsigned) transaction file.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -828,7 +828,7 @@ cardano-cli transaction sign \
   --signing-key-file payment.skey \
   --signing-key-file $HOME/cold-keys/node.skey \
   --signing-key-file stake.skey \
-  --mainnet \
+  --${NODE_CONFIG} \
   --out-file tx.signed
 ```
 {% endtab %}
@@ -841,7 +841,7 @@ Move **tx.signed** back to your core node & submit the transaction to the blockc
 ```bash
 cardano-cli transaction submit \
   --tx-file tx.signed \
-  --mainnet
+  --${NODE_CONFIG}
 ```
 {% endtab %}
 {% endtabs %}
@@ -852,23 +852,22 @@ cardano-cli transaction submit \
 
 pool.vet is a website for pool operators to check the validity of their stake pools on chain data. You can check this site for problems and clues as to how to fix them.
 
-{% embed url="https://pool.vet/" caption="" %}
+{% embed url="https://pool.vet/" %}
 
 ### adapools.org
 
 You should create an account and claim your pool here.
 
-{% embed url="https://adapools.org/" caption="" %}
+{% embed url="https://adapools.org/" %}
 
 ### pooltool.io
 
 You should create an account and claim your pool here.
 
-{% embed url="https://pooltool.io/" caption="" %}
+{% embed url="https://pooltool.io/" %}
 
 ## Backups
 
-Get a couple small usb sticks and backup all your files and folders\(except the db/ folder\). Backup your online Core first then the Cold offline files and folders. **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do it now**, not worth the risk! **Do not plug the USB stick into anything online after Cold files are on it!**
+Get a couple small usb sticks and backup all your files and folders(except the db/ folder). Backup your online Core first then the Cold offline files and folders. **Do it now**, not worth the risk! **Do not plug the USB stick into anything online after Cold files are on it!**
 
-![https://twitter.com/insaladaPool/status/1380087586509709312?s=19](../../.gitbook/assets/insalada%20%281%29.png)
-
+![https://twitter.com/insaladaPool/status/1380087586509709312?s=19](../../../.gitbook/assets/insalada (2).png)
