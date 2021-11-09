@@ -4,9 +4,9 @@
 
 ## Why use AlpineOS on the Raspberry Pi? Here are some reasons:
 
-* **Very low memory consumption (\~50MB utilized during idle vs \~350MB for Ubuntu 20.04).** 
-* **Lower CPU overhead** **(27 tasks/ 31 threads active for Alpine vs 57 tasks / 111 threads for Ubuntu when cardano-node is running).** 
-* **Cooler Pi 😎 (Literally, CPU runs cooler because of the lower CPU overhead).** 
+* **Very low memory consumption (\~50MB utilized during idle vs \~350MB for Ubuntu 20.04).**
+* **Lower CPU overhead** **(27 tasks/ 31 threads active for Alpine vs 57 tasks / 111 threads for Ubuntu when cardano-node is running).**
+* **Cooler Pi 😎 (Literally, CPU runs cooler because of the lower CPU overhead).**
 * **And finally, why not? If you're gonna use static binaries, might as well take advantage of AlpineOS 😜**
 
 ## If you have previously used this guide and intend to update the scripts. Follow these steps. Then follow the rest of the steps outlined in this guide accordingly 🙂.
@@ -81,7 +81,7 @@ sudo reboot now
 cat /etc/alpine-release
 ```
 
-6\) To troubleshoot the upgrade, refer to the link: [https://wiki.alpinelinux.org/wiki/Upgrading_Alpine](https://wiki.alpinelinux.org/wiki/Upgrading_Alpine)
+6\) To troubleshoot the upgrade, refer to the link: [https://wiki.alpinelinux.org/wiki/Upgrading\_Alpine](https://wiki.alpinelinux.org/wiki/Upgrading\_Alpine)
 
 ## Initial Setup for AlpineOS on Raspberry Pi 4B 8GB:
 
@@ -234,11 +234,11 @@ Replace `<tag>` with the latest tag in the next command.
 ## Install the Armada Alliance Alpine Linux Cardano node service
 
 {% hint style="success" %}
-### If you have decided to use AlpineOS for your Cardano stake pool operations, you may find this collection of scripts and services useful.
+#### If you have decided to use AlpineOS for your Cardano stake pool operations, you may find this collection of scripts and services useful.
 {% endhint %}
 
 {% hint style="info" %}
-### To install the scripts and services correctly don't skip steps 🏴‍☠️😎
+#### To install the scripts and services correctly don't skip steps 🏴‍☠️😎
 {% endhint %}
 
 1\) Clone this repo to obtain the neccessary folder and scripts to quickly start your cardano node. You may skip this step if you have already clonned this repo from step 12 when setting up AlpineOS.

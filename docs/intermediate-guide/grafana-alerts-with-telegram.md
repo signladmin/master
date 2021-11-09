@@ -6,9 +6,9 @@ description: >-
 
 # Grafana Alerts with Telegram
 
-## Prerequisites&#x20;
+## Prerequisites
 
-Prometheus data source working in Grafana & a Telegram account. To get alerts it is best to have Grafana on a Pi in another location or on a vps. This way if your internet goes down you will still be alerted.&#x20;
+Prometheus data source working in Grafana & a Telegram account. To get alerts it is best to have Grafana on a Pi in another location or on a vps. This way if your internet goes down you will still be alerted.
 
 What I do is connect Grafana to a Prometheus endpoint through a Wireguard VPN on my core. I have a local Grafana and a remote Grafana using the same data source. One dashboard on the remote Grafana has alerts that use Telegram.
 
@@ -20,7 +20,7 @@ Go to [https://t.me/botfather](https://t.me/botfather) in Telegram and create a 
 >
 > Grafana\_Alerts
 >
-> my\__pool\__bot
+> my\_\_pool\_\_bot
 
 Something like that. Get creative.
 
@@ -44,11 +44,11 @@ Open botfather Follow the t.me link to your bot. Start to enable the bot and cli
 You may have to post in your new group if you cannot find the chat.id that starts with a - sign. Also Firefox displays the json returned in an easier to read format than Chrome.
 {% endhint %}
 
-Paste your bots API token into the url below.  Determine your Chat ID. Starts with - sign like below.
+Paste your bots API token into the url below. Determine your Chat ID. Starts with - sign like below.
 
 https://api.telegram.org/bot\<YOUR BOT API TOKEN>/getUpdates
 
-![ID will start with a - sign like above](<.gitbook/assets/Screen Shot 2021-10-21 at 11.06.02 AM.png>)
+![ID will start with a - sign like above](../.gitbook/assets/alert.chat.id.png)
 
 ## Create a notification channel in Grafana
 
