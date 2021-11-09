@@ -31,13 +31,13 @@ Conecta el Pi a un monitor, inserta la tarjeta SD y enciéndela. Una vez que vea
 
 {% tabs %}
 {% tab title="Pre configured Pi-Node.img.gz" %}
-### Obtain Pi-Node.img.gz file
+#### Obtain Pi-Node.img.gz file
 
 | [Pi-Node](https://mainnet.adamantium.online/Pi-Node.img.gz) |
 | ----------------------------------------------------------- |
 |                                                             |
 
-### Dentro de Raspberry Pi Imager
+#### Within Raspberry Pi Imager
 
 **Choose OS -> Use custom**
 
@@ -45,17 +45,16 @@ Localiza el archivo .img.gz que descargaste & y flashealo.
 
 Localiza tu unidad de destino & y grábala al disco.
 
-![](../../../.gitbook/assets/custom_os.png)
+![](../../../.gitbook/assets/custom\_os.png)
 {% endtab %}
 
 {% tab title="Fresh Ubuntu 21.10 installation" %}
-### Dentro de Raspberry Pi Imager
+#### Within Raspberry Pi Imager
 
-### Select  Ubuntu Server 21.10 (RPI 3/4/400)
+#### Select Ubuntu Server 21.10 (RPI 3/4/400)
 
 **Choose OS -> Other general purpose OS -> Ubuntu -> Ubuntu Server 21.10 (RPI 3/4/400)**. Opción de servidor de 64 bits.
 
 Localiza tu unidad de destino & y grábala al disco.
-
 {% endtab %}
 {% endtabs %}
