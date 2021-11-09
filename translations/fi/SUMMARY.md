@@ -30,6 +30,7 @@
   * [Staattinen Versio](intermediate-guide/updating-a-cardano-node/static-build.md)
 * [CNCLI Leader Lokit📑](intermediate-guide/leader-logs.md)
 * [Wireguard Ohje](intermediate-guide/wireguard-guide.md)
+* [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
 
 ## Muuita Cardano Oppaita <a href="cardano-developer-guides" id="cardano-developer-guides"></a>
 
