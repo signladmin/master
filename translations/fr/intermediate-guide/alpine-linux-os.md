@@ -81,7 +81,7 @@ sudo reboot now
 cat /etc/alpine-release
 ```
 
-6\) To troubleshoot the upgrade, refer to the link: [https://wiki.alpinelinux.org/wiki/Upgrading_Alpine](https://wiki.alpinelinux.org/wiki/Upgrading_Alpine)
+6\) To troubleshoot the upgrade, refer to the link: [https://wiki.alpinelinux.org/wiki/Upgrading\_Alpine](https://wiki.alpinelinux.org/wiki/Upgrading\_Alpine)
 
 ## Configuration initiale pour AlpineOS sur Raspberry Pi 4B 8GB :
 
@@ -234,11 +234,11 @@ Replace `<tag>` with the latest tag in the next command.
 ## Installer le service de l'Alliance Armada pour Alpine Linux Cardano Node
 
 {% hint style="success" %}
-### Si vous avez décidé d'utiliser AlpineOS pour vos opérations de stake pool Cardano, vous trouverez peut-être cette collection de scripts et de services utiles.
+#### Si vous avez décidé d'utiliser AlpineOS pour vos opérations de stake pool Cardano, vous trouverez peut-être cette collection de scripts et de services utiles.
 {% endhint %}
 
 {% hint style="info" %}
-### Pour installer correctement les scripts et les services, ne sautez pas les étapes 🏴‍☠️😎
+#### Pour installer correctement les scripts et les services, ne sautez pas les étapes 🏴‍☠️😎
 {% endhint %}
 
 1\) Clone this repo to obtain the neccessary folder and scripts to quickly start your cardano node. You may skip this step if you have already clonned this repo from step 12 when setting up AlpineOS.
