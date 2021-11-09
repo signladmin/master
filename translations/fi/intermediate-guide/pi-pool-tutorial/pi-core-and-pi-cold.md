@@ -32,6 +32,7 @@ sed -i ${NODE_FILES}/${NODE_CONFIG}-config.json \
 ## Luo avaimet & Myönnä käyttötodistus
 
 {% hint style="warning" %}
+
 #### KES-avainten kierrätys
 
 KES avaimet on uudistettava ja uusi **pool.cert** on myönnettävä ja toimitettava ketjulle 90 päivän välein. Tiedosto **node.counter** pitää kirjaa siitä, kuinka monta kertaa tämä on tehty.
@@ -41,12 +42,14 @@ Luo a KES avainpari: **kes.vkey** & **kes.skey**
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cd $NODE_HOME
 cardano-cli node key-gen-KES \
   --verification-key-file kes.vkey \
   --signing-key-file kes.skey
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -54,6 +57,7 @@ Luo noden kylmä avainpari: **node.vkey**, **node.skey** ja **node.counter** tal
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 mkdir $HOME/cold-keys
 cd cold-keys
@@ -62,6 +66,7 @@ cardano-cli node key-gen \
   --cold-signing-key-file node.skey \
   --operational-certificate-issue-counter node.counter
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -69,12 +74,14 @@ Luo muuttujat, joissa on KES-jakson slottien määrä. Tämä määritetään ge
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 slotsPerKesPeriod=$(cat $NODE_FILES/${NODE_CONFIG}-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
 slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotsPerKesPeriod: ${slotsPerKesPeriod}
 echo slotNo: ${slotNo}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -82,10 +89,12 @@ Aseta **startKesPeriod** muuttuja jakamalla **slotNo** / **slotsPerKESPeriod**.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 startKesPeriod=$((${slotNo} / ${slotsPerKesPeriod}))
 echo startKesPeriod: ${startKesPeriod}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -97,6 +106,7 @@ Korvaa **\<startKesPeriod>** arvolla, jonka kirjoitit ylös.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli node issue-op-cert \
   --kes-verification-key-file kes.vkey \
@@ -105,6 +115,7 @@ cardano-cli node issue-op-cert \
   --kes-period <startKesPeriod> \
   --out-file node.cert
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -114,11 +125,13 @@ Luo VRF avainpari.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli node key-gen-VRF \
   --verification-key-file vrf.vkey \
   --signing-key-file vrf.skey
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -126,9 +139,11 @@ Turvallisuussyistä **vrf.skey** **tarvitsee** vain lukuoikeudet muuten cardano-
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 chmod 400 vrf.skey
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -136,14 +151,17 @@ Muokkaa cardano-service startup skriptiä lisäämällä **kes.skey**, **vrf. av
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 nano $HOME/.local/bin/cardano-service
 ```
+
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 #!/bin/bash
 DIRECTORY=/home/ada/pi-pool
@@ -167,6 +185,7 @@ cardano-node run +RTS -N4 -RTS \
   --shelley-vrf-key ${VRF} \
   --shelley-operational-certificate ${CERT}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -174,9 +193,11 @@ Add your relay(s) to ${NODE_CONFIG}-topolgy.json.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 nano $NODE_FILES/${NODE_CONFIG}-topology.json
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -186,6 +207,7 @@ Valency suurempi kuin yksi käytetään vain DNS round robin srv tietueiden kans
 
 {% tabs %}
 {% tab title="1 Relay DNS" %}
+
 ```
 {
   "Producers": [
@@ -197,9 +219,11 @@ Valency suurempi kuin yksi käytetään vain DNS round robin srv tietueiden kans
   ]
 }
 ```
+
 {% endtab %}
 
 {% tab title="2 Relays DNS" %}
+
 ```
 {
   "Producers": [
@@ -216,9 +240,11 @@ Valency suurempi kuin yksi käytetään vain DNS round robin srv tietueiden kans
   ]
 }
 ```
+
 {% endtab %}
 
 {% tab title="1 Relay IPv4" %}
+
 ```
 {
   "Producers": [
@@ -230,9 +256,11 @@ Valency suurempi kuin yksi käytetään vain DNS round robin srv tietueiden kans
   ]
 }
 ```
+
 {% endtab %}
 
 {% tab title="2 Relays IPv4" %}
+
 ```
 {
   "Producers": [
@@ -249,6 +277,7 @@ Valency suurempi kuin yksi käytetään vain DNS round robin srv tietueiden kans
   ]
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -256,9 +285,11 @@ Käynnistä uudelleen ja node on nyt core eikä relay.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-service restart
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -273,18 +304,20 @@ cardano-service restart
 4. _**Rakenna**_ lompakon osoite **payment.vkey** & delegoi **stake.vkey**. = **payment.addr**
 5. Lisää varoja lompakkoon lähettämällä ada **payment.addr**
 6. Tarkista saldo.
-{% endhint %}
+   {% endhint %}
 
 ### 1. Luo lompakon avainpari
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cd $NODE_HOME
 cardano-cli address key-gen \
   --verification-key-file payment.vkey \
   --signing-key-file payment.skey
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -292,11 +325,13 @@ cardano-cli address key-gen \
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli stake-address key-gen \
   --verification-key-file stake.vkey \
   --signing-key-file stake.skey
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -304,12 +339,14 @@ cardano-cli stake-address key-gen \
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli stake-address build \
   --stake-verification-key-file stake.vkey \
   --out-file stake.addr \
   --${NODE_CONFIG}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -317,6 +354,7 @@ cardano-cli stake-address build \
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli address build \
   --payment-verification-key-file payment.vkey \
@@ -324,6 +362,7 @@ cardano-cli address build \
   --out-file payment.addr \
   --${NODE_CONFIG}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -349,11 +388,13 @@ Core noden on oltava synkronoitu lohkoketjun kärjen kanssa.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
   --${NODE_CONFIG}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -363,11 +404,13 @@ Myönnä staking rekisteröintisertifikaatti: **stake.cert**
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli stake-address registration-certificate \
   --stake-verification-key-file stake.vkey \
   --out-file stake.cert
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -377,10 +420,12 @@ Kysy ketjun nykyinen slotti eli kärki.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotNo: ${slotNo}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -388,6 +433,7 @@ Hae lompakon utxo tai saldo.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
@@ -411,6 +457,7 @@ txcnt=$(cat balance.out | wc -l)
 echo Total ADA balance: $((${total_balance} / 1000000))
 echo Number of UTXOs: ${txcnt}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -436,10 +483,12 @@ Nouda **stakeAddressDeposit** arvo **params.json**.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 stakeAddressDeposit=$(cat $NODE_HOME/params.json | jq -r '.stakeAddressDeposit')
 echo stakeAddressDeposit : ${stakeAddressDeposit}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -455,6 +504,7 @@ Rakenna **tx.tmp** tiedosto, jossa on jo joitakin tx tietoja.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli transaction build-raw \
   ${tx_in} \
@@ -464,6 +514,7 @@ cardano-cli transaction build-raw \
   --certificate stake.cert \
   --out-file tx.tmp
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -471,6 +522,7 @@ Laske minimimaksu.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 fee=$(cardano-cli transaction calculate-min-fee \
   --tx-body-file tx.tmp \
@@ -482,6 +534,7 @@ fee=$(cardano-cli transaction calculate-min-fee \
   --protocol-params-file params.json | awk '{ print $1 }')
 echo fee: $fee
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -489,10 +542,12 @@ Laske txOut.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 txOut=$((${total_balance}-${stakeAddressDeposit}-${fee}))
 echo Change Output: ${txOut}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -500,6 +555,7 @@ Rakenna koko tapahtuma rekisteröidäksesi staking osoitteesi.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli transaction build-raw \
   ${tx_in} \
@@ -509,6 +565,7 @@ cardano-cli transaction build-raw \
   --certificate-file stake.cert \
   --out-file tx.raw
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -516,6 +573,7 @@ Siirrä **tx.raw** kylmään offline-koneeseesi ja allekirjoita tapahtuma **paym
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli transaction sign \
   --tx-body-file tx.raw \
@@ -524,6 +582,7 @@ cardano-cli transaction sign \
   --${NODE_CONFIG} \
   --out-file tx.signed
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -533,11 +592,13 @@ Lähetä tapahtuma lohkoketjuun.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli transaction submit \
   --tx-file tx.signed \
   --${NODE_CONFIG}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -557,10 +618,12 @@ Kannatan tiedoston hostaamista Pi:ssä NGINX:in kanssa.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cd $NODE_HOME
 nano poolMetaData.json
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -572,6 +635,7 @@ Lisää seuraavat muokataksesi metatietojasi.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```
 {
 "name": "Pool Name",
@@ -581,15 +645,18 @@ Lisää seuraavat muokataksesi metatietojasi.
 "extended": "https://example.com/extendedPoolMetaData.json"
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli stake-pool metadata-hash \
   --pool-metadata-file poolMetaData.json > poolMetaDataHash.txt
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -605,10 +672,12 @@ Tässä on minun **poolMetaData.json** & **laajennettuPoolMetaData.json** viitte
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 minPoolCost=$(cat $NODE_HOME/params.json | jq -r .minPoolCost)
 echo minPoolCost: ${minPoolCost}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -616,35 +685,43 @@ Käytä alla olevaa muotoa rekisteröityäksesi yhden tai useamman relayn.
 
 {% tabs %}
 {% tab title="DNS Relay(1)" %}
+
 ```
 --single-host-pool-relay <r1.example.com> \
 --pool-relay-port <R1 NODE PORT> \
 ```
+
 {% endtab %}
 
 {% tab title="IPv4 Relay(1)" %}
+
 ```
 --pool-relay-ipv4 <RELAY NODE PUBLIC IP> \
 --pool-relay-port <R1 NODE PORT> \
 ```
+
 {% endtab %}
 
 {% tab title="DNS Relay(2)" %}
+
 ```
 --single-host-pool-relay <r1.example.com> \
 --pool-relay-port <R1 NODE PORT> \
 --single-host-pool-relay <r2.example.com> \
 --pool-relay-port <R2 NODE PORT> \
 ```
+
 {% endtab %}
 
 {% tab title="IPv4 Relay(2)" %}
+
 ```
 --pool-relay-ipv4 <R1 NODE PUBLIC IP> \
 --pool-relay-port <R1 NODE PORT> \
 --pool-relay-ipv4 <R2 NODE PUBLIC IP> \
 --pool-relay-port <R2 NODE PORT> \
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -656,6 +733,7 @@ Kopioi vrf.vkey ja poolMetaDataHash.txt kylmä koneeseen ja myönnä stake pooli
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli stake-pool registration-certificate \
   --cold-verification-key-file $HOME/cold-keys/node.vkey \
@@ -672,6 +750,7 @@ cardano-cli stake-pool registration-certificate \
   --metadata-hash $(cat poolMetaDataHash.txt) \
   --out-file pool.cert
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -679,12 +758,14 @@ Anna delegointitodistus **stake.skey** & **node.vkey** avainten avulla.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli stake-address delegation-certificate \
   --stake-verification-key-file stake.vkey \
   --cold-verification-key-file $HOME/cold-keys/node.vkey \
   --out-file deleg.cert
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -692,10 +773,12 @@ Nouda stake poolisi id.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli stake-pool id --cold-verification-key-file $HOME/cold-keys/node.vkey --output-format hex > stakePoolId.txt
 cat stakePoolId.txt
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -705,10 +788,12 @@ Kysy ketjun nykyinen slotti eli kärki.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotNo: ${slotNo}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -716,6 +801,7 @@ Hae lompakon utxo tai saldo.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
@@ -739,6 +825,7 @@ txcnt=$(cat balance.out | wc -l)
 echo Total ADA balance: $((${total_balance} / 1000000))
 echo Number of UTXOs: ${txcnt}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -746,10 +833,12 @@ Tiedustele **params.json** -tiedostosta stake poolin rekisteröintitalletuksen a
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 stakePoolDeposit=$(cat $NODE_HOME/params.json | jq -r '.stakePoolDeposit')
 echo stakePoolDeposit: ${stakePoolDeposit}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -757,6 +846,7 @@ Rakenna väliaikainen **tx.tmp** säilyttämään tietoja samalla kun rakennamme
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli transaction build-raw \
   ${tx_in} \
@@ -767,6 +857,7 @@ cardano-cli transaction build-raw \
   --certificate-file deleg.cert \
   --out-file tx.tmp
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -774,6 +865,7 @@ Laske tapahtumapalkkio.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 fee=$(cardano-cli transaction calculate-min-fee \
   --tx-body-file tx.tmp \
@@ -785,6 +877,7 @@ fee=$(cardano-cli transaction calculate-min-fee \
   --protocol-params-file params.json | awk '{ print $1 }')
   echo fee: ${fee}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -792,10 +885,12 @@ Laske muutoksesi tulos.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 txOut=$((${total_balance}-${stakePoolDeposit}-${fee}))
 echo txOut: ${txOut}
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -803,6 +898,7 @@ Rakenna **tx.raw** (allekirjoittamaton) tapahtumatiedosto.
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli transaction build-raw \
   ${tx_in} \
@@ -813,6 +909,7 @@ cardano-cli transaction build-raw \
   --certificate-file deleg.cert \
   --out-file tx.raw
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -822,6 +919,7 @@ Allekirjoita tapahtuma **payment.skey**, **node.skey** & **stake.skey** avainten
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
 ```bash
 cardano-cli transaction sign \
   --tx-body-file tx.raw \
@@ -831,6 +929,7 @@ cardano-cli transaction sign \
   --${NODE_CONFIG} \
   --out-file tx.signed
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -838,11 +937,13 @@ Siirrä **tx.signed** takaisin core palvelimellesi & lähetä tapahtuma lohkoket
 
 {% tabs %}
 {% tab title="Core" %}
+
 ```bash
 cardano-cli transaction submit \
   --tx-file tx.signed \
   --${NODE_CONFIG}
 ```
+
 {% endtab %}
 {% endtabs %}
 
