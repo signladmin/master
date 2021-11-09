@@ -81,7 +81,7 @@ sudo reboot now
 cat /etc/alpine-release
 ```
 
-6) Ongelmatilanteissa tutustu linkkiin: [https://wiki.alpinelinux.org/wiki/Upgrading_Alpine](https://wiki.alpinelinux.org/wiki/Upgrading_Alpine)
+6\) To troubleshoot the upgrade, refer to the link: [https://wiki.alpinelinux.org/wiki/Upgrading\_Alpine](https://wiki.alpinelinux.org/wiki/Upgrading\_Alpine)
 
 ## AlpineOS: ensiasennus Raspberry Pi 4B 8GB koneeseen:
 
@@ -234,11 +234,11 @@ Korvaa `<tag>` uusimmalla tunnisteella seuraavassa komennossa.
 ## Asenna Armada Alliancen Alpine Linux Cardano node -palvelu
 
 {% hint style="success" %}
-### Jos olet päättänyt käyttää AlpineOS käyttöjärjestelmää Cardano stake poolissasi, voit löytää tästä skripti ja palvelu kokoelmasta hyödyllisiä työkaluja.
+#### Jos olet päättänyt käyttää AlpineOS käyttöjärjestelmää Cardano stake poolissasi, saatat löytää tästä skripti ja palvelu kokoelmasta hyödyllisiä työkaluja.
 {% endhint %}
 
 {% hint style="info" %}
-### Asentaaksesi skriptit ja palvelut oikein, älä ohita vaiheita 🏴‍☠️😎
+#### Asentaaksesi skriptit ja palvelut oikein, älä ohita vaiheita 🏴‍☠️😎
 {% endhint %}
 
 1) Kloonaa tämä repo saadaksesi tarvittavat kansiot ja skriptit cardano noden nopeaan käynnistämiseen. Voit ohittaa tämän vaiheen, jos olet jo kloonannut tämän repon vaiheesta 12 AlpineOS:n perustamisen yhteydessä.
