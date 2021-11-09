@@ -30,6 +30,7 @@
   * [Static Build](intermediate-guide/updating-a-cardano-node/static-build.md)
 * [CNCLI Leader Logs📑](intermediate-guide/leader-logs.md)
 * [Wireguard Guide](intermediate-guide/wireguard-guide.md)
+* [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
 
 ## Other Cardano Guides <a href="cardano-developer-guides" id="cardano-developer-guides"></a>
 
