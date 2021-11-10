@@ -253,16 +253,21 @@ wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
 ```
 
-We have to edit the env file to work with our environment. The port number here will have to be updated to match the port cardano-node is running on. For the **Pi-Node** it's port 3003. As we build the pool we will work down. For example Pi-Relay(2) will run on port 3002, Pi-Relay(1) on 3001 and Pi-Core on port 3000.
+We have to edit the env file to work with our environment. This environment file holds most of the configuration for the topology updater script as well. The port number here will have to be updated to match the port cardano-node is running on. For the **Pi-Node** it's port 3003(default). As we build the pool we will work down. For example Pi-Relay(R2) will run on port 3002, Pi-Relay(R1) on 3001 and the Core(C1) on port 3000.
 
 {% hint style="info" %}
-You can change the port cardano-node runs on in the .adaenv file in your home directory.
+You can change the port cardano-node runs on in the .adaenv file in your home directory. Open the file edit the port number. Load the change into your shell & restart the cardano-node service.
+```bash
+nano /home/ada/.adaenv
+source /home/ada/.adaenv
+cardano-service restart
+```
 {% endhint %}
 
 ```bash
 sed -i env \
     -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/NODE_HOME=\"\/home\/${USER}\/pi-pool\"/g" \
-    -e "s/"6000"/"3003"/g" \
+    -e "s/"6000"/"${NODE_PORT}"/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/${NODE_CONFIG}-config.json\"/g"
     -e "s/\#TOPOLOGY=\"\${CNODE_HOME}\/files\/topology.json\"/TOPOLOGY=\"\${NODE_FILES}\/${NODE_CONFIG}-topology.json\"/g"
 ```
@@ -275,9 +280,9 @@ chmod +x gLiveView.sh
 
 ## topologyUpdater.sh
 
-Until peer to peer is enabled on the network operators need a way to get a list of relays/peers to connect to. The topology updater service runs in the background with cron. Every hour the script will run and tell the service you are a relay and want to be a part of the network. It will add your relay to it's directory and after four hours you should see in connections in gLiveView. &#x20;
+Until peer to peer is enabled on the network operators need a way to get a list of relays/peers to connect to. The topology updater service runs in the background with cron. Every hour the script will run and tell the service you are a relay and want to be a part of the network. It will add your relay to it's directory after four hours you should see in connections in gLiveView. &#x20;
 
-After four hours you can open ${NODE\_CONFIG}-topology.json and inspect the list of peers. Remove anything more than 7k distance(or less). IOHK recently suggested 8 out peers. The more out peers the more system resources it uses.
+After four hours you can open ${NODE\_CONFIG}-topology.json and inspect the list of out peers the service suggested for you. Remove anything more than 7k distance(or less). IOHK recently suggested 8 out peers. The more out peers the more system resources it uses. You can also add any peers you wish to connect to manualy inside the script. This is where you would add your block producer or any friends nodes.
 
 {% hint style="info" %}
 The list generated will show you the distance & a clue as to where the relay is located.
@@ -299,15 +304,14 @@ chmod +x topologyUpdater.sh
 You will not be able to successfully execute ./topologyUpdater.sh until you are fully synced up to the tip of the chain.
 {% endhint %}
 
-{% hint style="info" %}
-Choose nano when prompted for editor.
-{% endhint %}
-
 Create a cron job that will run the script every hour.
 
 ```bash
 crontab -e
 ```
+{% hint style="info" %}
+Choose nano when prompted for editor.
+{% endhint %}
 
 Add the following to the bottom, save & exit.
 
@@ -318,12 +322,6 @@ The Pi-Node image has this cron entry disabled by default. You can enable it by 
 ```bash
 33 * * * * . $HOME/.adaenv; /home/$USER/pi-pool/scripts/topologyUpdater.sh
 ```
-
-After 4 hours of on boarding you will be added to the service and can pull your new list of peers into the {NODE\_CONFIG}-topology file.
-
-Save, exit and make it executable.
-
-After 4 hours you can pull in your new list and restart the cardano-service.
 
 ```bash
 nano $NODE_FILES/${NODE_CONFIG}-topology.json
