@@ -8,6 +8,8 @@
 
 ### Vaikka keskiössämme on RPi-ARM pohjaisten stake poolien toiminta ja ylläpito, tarjoamme myös laajan kattauksen tietoa, oppaita ja resursseja Cardanon kehittämiseen.
 
+[https://www.youtube.com/watch?v=cBojbjoMttI](https://www.youtube.com/watch?v=cBojbjoMttI)
+
 | Ota yhteyttä:                                                                                          |
 | ------------------------------------------------------------------------------------------------------ |
 | [Verkkosivu](https://armada-alliance.com)                                                              |
