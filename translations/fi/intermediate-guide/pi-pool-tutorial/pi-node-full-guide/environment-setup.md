@@ -59,7 +59,7 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
 ```
 
-Run the following to modify ${NODE_CONFIG}-config.json and update TraceBlockFetchDecisions to "true" & listen on all interfaces with Prometheus Node Exporter.
+Run the following to modify ${NODE\_CONFIG}-config.json and update TraceBlockFetchDecisions to "true" & listen on all interfaces with Prometheus Node Exporter.
 
 ```bash
 sed -i ${NODE_CONFIG}-config.json \
@@ -68,7 +68,7 @@ sed -i ${NODE_CONFIG}-config.json \
 ```
 
 {% hint style="info" %}
-**Tip for relay nodes**: It's possible to reduce memory and cpu usage by setting "TraceMemPool" to "false" in **{NODE_CONFIG}-config.json.** This will turn off mempool data in Grafana and gLiveView.sh.
+**Tip for relay nodes**: It's possible to reduce memory and cpu usage by setting "TraceMemPool" to "false" in **{NODE\_CONFIG}-config.json.** This will turn off mempool data in Grafana and gLiveView.sh.
 {% endhint %}
 
 ### Nouda aarch64-binäärit
@@ -194,10 +194,10 @@ Lisäämämme funktio antaa meidän hallita cardano-nodea kirjoittamatta pitkiä
 
 Nyt meidän täytyy vain:
 
-* cardano-service enable (aktivoi cardano-node.servicen automaattisen käynnistyksen uudelleenkäynnistettäessä)
-* cardano-service start (käynnistä cardano-node.service)
-* cardano-service stop (pysäytä cardano-node.service)
-* cardano-service status (näyttää cardano-node.service tilan)
+* cardano-service enable (enables cardano-node.service auto start at boot)
+* cardano-service start (starts cardano-node.service)
+* cardano-service stop (stops cardano-node.service)
+* cardano-service status (shows the status of cardano-node.service)
 
 ## ⛓ Ketjun synkronointi ⛓
 
@@ -247,17 +247,23 @@ wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
 ```
 
-Meidän täytyy muokata env tiedostoa, jotta se toimii meidän ympäristössämme. Porttinumero on päivitettävä, jotta se vastaa oman cardano-nodemme porttia. **Pi-nodessamme** se on portti 3003. Rakentaessamme poolia valitsemme edelliset portit. For example Pi-Relay(2) will run on port 3002, Pi-Relay(1) on 3001 and Pi-Core on port 3000.
+Meidän täytyy muokata env tiedostoa, jotta se toimii meidän ympäristössämme. This environment file holds most of the configuration for the topology updater script as well. Porttinumero on päivitettävä, jotta se vastaa oman cardano-nodemme porttia. For the **Pi-Node** it's port 3003(default). Rakentaessamme poolia valitsemme edelliset portit. For example Pi-Relay(R2) will run on port 3002, Pi-Relay(R1) on 3001 and the Core(C1) on port 3000.
 
 {% hint style="info" %}
-You can change the port cardano-node runs on in the .adaenv file in your home directory.
+You can change the port cardano-node runs on in the .adaenv file in your home directory. Open the file edit the port number. Load the change into your shell & restart the cardano-node service.
+```bash
+nano /home/ada/.adaenv
+source /home/ada/.adaenv
+cardano-service restart
+```
 {% endhint %}
 
 ```bash
 sed -i env \
     -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/NODE_HOME=\"\/home\/${USER}\/pi-pool\"/g" \
-    -e "s/"6000"/"3003"/g" \
+    -e "s/"6000"/"${NODE_PORT}"/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/${NODE_CONFIG}-config.json\"/g"
+    -e "s/\#TOPOLOGY=\"\${CNODE_HOME}\/files\/topology.json\"/TOPOLOGY=\"\${NODE_FILES}\/${NODE_CONFIG}-topology.json\"/g"
 ```
 
 Salli gLiveView.sh:n suorittaminen.
@@ -268,24 +274,19 @@ chmod +x gLiveView.sh
 
 ## topologyUpdater.sh
 
-Kunnes vertaisverkko on otettu käyttöön verkko-operaattorit tarvitsevat tavan saada listan releistä/vertaisverkoista, joihin muodostaa yhteyden. Topologian päivityspalvelu toimii taustalla cron kanssa. Joka tunti skripti toimii ja kertoo palvelulle, että olet relay ja haluat olla osa verkkoa. Se lisää relaysi sen hakemistoon neljän tunnin kuluttua ja alkaa luoda listaa relaystä json tiedostoon $NODE\_HOME/logs hakemistoon. Toisella skriptillä, relay-topology\_pull.sh:lla, voidaan sitten manuaalisesti luoda mainnet-topolgy tiedosto, jossa on relayt, jotka ovat tietoisia sinusta ja jotka itse tiedät.
+Kunnes vertaisverkko on otettu käyttöön verkko-operaattorit tarvitsevat tavan saada listan releistä/vertaisverkoista, joihin muodostaa yhteyden. Topologian päivityspalvelu toimii taustalla cron kanssa. Joka tunti skripti toimii ja kertoo palvelulle, että olet relay ja haluat olla osa verkkoa. It will add your relay to it's directory after four hours you should see in connections in gLiveView. &#x20;
+
+After four hours you can open ${NODE\_CONFIG}-topology.json and inspect the list of out peers the service suggested for you. Remove anything more than 7k distance(or less). IOHK recently suggested 8 out peers. The more out peers the more system resources it uses. You can also add any peers you wish to connect to manualy inside the script. This is where you would add your block producer or any friends nodes.
 
 {% hint style="info" %}
-Luotu lista näyttää sinulle etäisyyden maileina sekä arvion siitä, missä relay sijaitsee.
+The list generated will show you the distance & a clue as to where the relay is located.
 {% endhint %}
 
-Avaa tiedosto nimeltä topologyUpdater.sh
-
-```bash
-cd $NODE_HOME/scripts
-nano topologyUpdater.sh
-```
-
-Download the topologyUpdater script.
+Download the topologyUpdater script and have a look at it. Lower the number of peers to 10 and add any custom peers you wish. These are outgoing connections. You will not see any incoming transactions untill other nodes start connecting to you.
 
 ```bash
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/topologyUpdater.sh
-
+nano topologyUpdater.sh
 ```
 
 Tallenna, sulje ja tee se suoritettavaksi.
@@ -298,15 +299,14 @@ chmod +x topologyUpdater.sh
 Et pysty suorittamaan ./topologyUpdater.sh onnistuneesti ennen kuin nodesi on täysin synkronoitu ketjun kärkeen.
 {% endhint %}
 
-{% hint style="info" %}
-Valitse nano pyydettäessä editoria.
-{% endhint %}
-
 Luo cron työ, joka suorittaa skriptin tunnin välein.
 
 ```bash
 crontab -e
 ```
+{% hint style="info" %}
+Valitse nano pyydettäessä editoria.
+{% endhint %}
 
 Lisää seuraava tiedoston loppuun omalle riville, tallenna & sulje nano.
 
@@ -318,52 +318,12 @@ Pi-node-imagessassa tämä cron merkintä on oletuksena pois päältä. You can 
 33 * * * * . $HOME/.adaenv; /home/$USER/pi-pool/scripts/topologyUpdater.sh
 ```
 
-After 4 hours of on boarding you will be added to the service and can pull your new list of peers into the {NODE_CONFIG}-topology file.
-
-Luo toinen tiedosto, relay-topology\_pull.sh ja liitä siihen seuraavat rivit.
-
-```bash
-nano relay-topology_pull.sh
-```
-{% hint style="Huomaa" %}
-If your running just an active relay you can add a random ip and port. Just remove it from the topology file after you pull and restart node.
-{% endhint %}
-
-```bash
-#!/bin/bash
-NODE_CONFIG=$(grep NODE_CONFIG /home/${USER}/.adaenv | cut -d '=' -f2)
-BLOCKPRODUCING_IP=<BLOCK PRODUCERS PRIVATE IP>
-BLOCKPRODUCING_PORT=3000
-curl -4 -s -o /home/${USER}/pi-pool/files/{${NODE_CONFIG}-topology.json "https://api.clio.one/htopology/v1/fetch/?max=10&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-${NODE_CONFIG}.iohk.io:3001:2"
-```
-
-Tallenna, sulje ja tee se suoritettavaksi.
-
-```bash
-chmod +x relay-topology_pull.sh
-```
-
-{% hint style="danger" %}
-Uuteen listan vetäminen korvaa olemassa olevan topologiatiedoston. Pidä tämä mielessä.
-{% endhint %}
-
-Neljän tunnin jälkeen voit vetää uuden listan ja käynnistää cardano-palvelun uudelleen.
-
-```bash
-cd $NODE_HOME/scripts
-./relay-topology_pull.sh
-```
-
-{% hint style="info" %}
-relay-topology\_pull.sh lisää 15 vertaista mainnet-topology tiedostoon. Yleensä poistan kauimmat 5 relaytä ja käyttän lähimpiä 10:tä.
-{% endhint %}
-
 ```bash
 nano $NODE_FILES/${NODE_CONFIG}-topology.json
 ```
 
 {% hint style="info" %}
-You can use gLiveView.sh to view ping times in relation to the peers in your {NODE_CONFIG}-topology file. Käytä Ping:ää palvelimien nimien selvittämiseen IP-osoitteissa.
+You can use gLiveView.sh to view ping times in relation to the peers in your {NODE\_CONFIG}-topology file. Käytä Ping:ää palvelimien nimien selvittämiseen IP-osoitteissa.
 {% endhint %}
 
 Muutokset tässä tiedostossa tulevat käyttöön vasta kun cardano-service käynnistetään uudelleen.
@@ -649,4 +609,4 @@ View network connections with netstat.
 sudo netstat -puntw
 ```
 
-Nyt sinulla on pi-node, jossa on työkaluja, joilla voit rakentaa stake poolin seuraavien sivujen ohjeiden ja tutoriaalien avulla. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! :muscle:&#x20;
+Nyt sinulla on pi-node, jossa on työkaluja, joilla voit rakentaa stake poolin seuraavien sivujen ohjeiden ja tutoriaalien avulla. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! :muscle:
