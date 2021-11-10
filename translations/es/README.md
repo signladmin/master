@@ -8,6 +8,8 @@
 
 ### Although our focus is ARM stake pool operations, we will provide a wide range of information, tutorials, and resources for developing on the Cardano blockchain.
 
+[https://www.youtube.com/watch?v=cBojbjoMttI](https://www.youtube.com/watch?v=cBojbjoMttI)
+
 | Contacta con nosotros                                                                                   |
 | ------------------------------------------------------------------------------------------------------- |
 | [Página Web](https://armada-alliance.com)                                                               |
