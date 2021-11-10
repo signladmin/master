@@ -7,8 +7,7 @@ description: Configure the environment for Cardano Node
 ## Choose testnet or mainnet.
 
 {% hint style="danger" %}
-There is a 500 ₳ Registration deposit and another 5 ₳ in registration costs.
-First time users are strongly reccomended to use testnet. You can get tada (test ada) from the testnet faucet or ask Alliance members in Telegram. Try not to lose it please.
+There is a 500 ₳ Registration deposit and another 5 ₳ in registration costs. First time users are strongly reccomended to use testnet. You can get tada (test ada) from the testnet faucet or ask Alliance members in Telegram. Try not to lose it please.
 {% endhint %}
 
 Create an .adaenv file, choose which network you want to be on and source the file. This file will hold the variables for operating a Pi-Node.
@@ -60,7 +59,7 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
 ```
 
-Run the following to modify ${NODE_CONFIG}-config.json and update TraceBlockFetchDecisions to "true" & listen on all interfaces with Prometheus Node Exporter.
+Run the following to modify ${NODE\_CONFIG}-config.json and update TraceBlockFetchDecisions to "true" & listen on all interfaces with Prometheus Node Exporter.
 
 ```bash
 sed -i ${NODE_CONFIG}-config.json \
@@ -69,7 +68,7 @@ sed -i ${NODE_CONFIG}-config.json \
 ```
 
 {% hint style="info" %}
-**Tip for relay nodes**: It's possible to reduce memory and cpu usage by setting "TraceMemPool" to "false" in **{NODE_CONFIG}-config.json.** This will turn off mempool data in Grafana and gLiveView.sh.
+**Tip for relay nodes**: It's possible to reduce memory and cpu usage by setting "TraceMemPool" to "false" in **{NODE\_CONFIG}-config.json.** This will turn off mempool data in Grafana and gLiveView.sh.
 {% endhint %}
 
 ### Retrieve aarch64 binaries
@@ -201,10 +200,10 @@ What we just did there was add a function to control our cardano-service without
 
 Now we just have to:
 
-* cardano-service enable  (enables cardano-node.service auto start at boot)
-* cardano-service start      (starts cardano-node.service)
-* cardano-service stop       (stops cardano-node.service)
-* cardano-service status    (shows the status of cardano-node.service)
+* cardano-service enable (enables cardano-node.service auto start at boot)
+* cardano-service start (starts cardano-node.service)
+* cardano-service stop (stops cardano-node.service)
+* cardano-service status (shows the status of cardano-node.service)
 
 ## ⛓ Syncing the chain ⛓
 
@@ -265,6 +264,7 @@ sed -i env \
     -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/NODE_HOME=\"\/home\/${USER}\/pi-pool\"/g" \
     -e "s/"6000"/"3003"/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/${NODE_CONFIG}-config.json\"/g"
+    -e "s/\#TOPOLOGY=\"\${CNODE_HOME}\/files\/topology.json\"/TOPOLOGY=\"\${NODE_FILES}\/${NODE_CONFIG}-topology.json\"/g"
 ```
 
 Allow execution of gLiveView.sh.
@@ -275,24 +275,18 @@ chmod +x gLiveView.sh
 
 ## topologyUpdater.sh
 
-Until peer to peer is enabled on the network operators need a way to get a list of relays/peers to connect to. The topology updater service runs in the background with cron. Every hour the script will run and tell the service you are a relay and want to be a part of the network. It will add your relay to it's directory after four hours and start generating a list of relays in a json file in the $NODE\_HOME/logs directory. A second script, relay-topology\_pull.sh can then be used manually to generate a mainnet-topolgy file with relays/peers that are aware of you and you of them.
+Until peer to peer is enabled on the network operators need a way to get a list of relays/peers to connect to. The topology updater service runs in the background with cron. Every hour the script will run and tell the service you are a relay and want to be a part of the network. It will add your relay to it's directory and after four hours you should see in connections in gLiveView. &#x20;
+
+After four hours you can open ${NODE\_CONFIG}-topology.json and inspect the list of peers. Remove anything more than 7k distance(or less). IOHK recently suggested 8 out peers. The more out peers the more system resources it uses.
 
 {% hint style="info" %}
-The list generated will show you the distance in miles & a clue as to where the relay is located.
+The list generated will show you the distance & a clue as to where the relay is located.
 {% endhint %}
-
-Open a file named topologyUpdater.sh
-
-```bash
-cd $NODE_HOME/scripts
-nano topologyUpdater.sh
-```
 
 Download the topologyUpdater script.
 
 ```bash
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/topologyUpdater.sh
-
 ```
 
 Save, exit and make it executable.
@@ -325,53 +319,18 @@ The Pi-Node image has this cron entry disabled by default. You can enable it by 
 33 * * * * . $HOME/.adaenv; /home/$USER/pi-pool/scripts/topologyUpdater.sh
 ```
 
-After 4 hours of on boarding you will be added to the service and can pull your new list of peers into the {NODE_CONFIG}-topology file.
-
-Create another file relay-topology\_pull.sh and paste in the following.
-
-```bash
-nano relay-topology_pull.sh
-```
-{% hint style="warning" %}
-If your running just an active relay you can add a random ip and port. Just remove it from
-the topology file after you pull and restart node.
-{% endhint %}
-
-```bash
-#!/bin/bash
-NODE_CONFIG=$(grep NODE_CONFIG /home/${USER}/.adaenv | cut -d '=' -f2)
-BLOCKPRODUCING_IP=<BLOCK PRODUCERS PRIVATE IP>
-BLOCKPRODUCING_PORT=3000
-curl -4 -s -o /home/${USER}/pi-pool/files/{${NODE_CONFIG}-topology.json "https://api.clio.one/htopology/v1/fetch/?max=10&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-${NODE_CONFIG}.iohk.io:3001:2"
-```
+After 4 hours of on boarding you will be added to the service and can pull your new list of peers into the {NODE\_CONFIG}-topology file.
 
 Save, exit and make it executable.
 
-```bash
-chmod +x relay-topology_pull.sh
-```
-
-{% hint style="danger" %}
-Pulling in a new list will overwrite your existing topology file. Keep that in mind.
-{% endhint %}
-
 After 4 hours you can pull in your new list and restart the cardano-service.
-
-```bash
-cd $NODE_HOME/scripts
-./relay-topology_pull.sh
-```
-
-{% hint style="info" %}
-relay-topology\_pull.sh will add 15 peers to your mainnet-topology file. I usually remove the furthest 5 relays and use the closest 10.
-{% endhint %}
 
 ```bash
 nano $NODE_FILES/${NODE_CONFIG}-topology.json
 ```
 
 {% hint style="info" %}
-You can use gLiveView.sh to view ping times in relation to the peers in your {NODE_CONFIG}-topology file. Use Ping to resolve hostnames to IP's.
+You can use gLiveView.sh to view ping times in relation to the peers in your {NODE\_CONFIG}-topology file. Use Ping to resolve hostnames to IP's.
 {% endhint %}
 
 Changes to this file will take affect upon restarting the cardano-service.
@@ -657,4 +616,4 @@ View network connections with netstat.
 sudo netstat -puntw
 ```
 
-From here you have a pi-node with tools to build a stake pool from the following pages. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! :muscle:&#x20;
+From here you have a pi-node with tools to build a stake pool from the following pages. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! :muscle:
