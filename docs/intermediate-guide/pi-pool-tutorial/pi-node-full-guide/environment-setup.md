@@ -288,10 +288,11 @@ After four hours you can open ${NODE\_CONFIG}-topology.json and inspect the list
 The list generated will show you the distance & a clue as to where the relay is located.
 {% endhint %}
 
-Download the topologyUpdater script.
+Download the topologyUpdater script and have a look at it. Lower the number of peers to 10 and add any custom peers you wish. These are outgoing connections. You will not see any incoming transactions untill other nodes start connecting to you.
 
 ```bash
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/topologyUpdater.sh
+nano topologyUpdater.sh
 ```
 
 Save, exit and make it executable.
