@@ -212,7 +212,7 @@ Replace `<tag>` with the latest tag in the next command.
 ## Installing/Upgrading the 'cardano-node' and 'cardano-cli' static binaries (AlpineOS uses static binaries almost exclusively so avoid non-static builds)
 
 {% hint style="info" %}
-**You may obtain the static binaries for version 1.30.1 via this** [**link**](https://ci.zw3rk.com/build/409517) **courtesy of Moritz Angermann, the SPO of ZW3RK pool 🙏**
+**You may obtain the static binaries for version 1.31.0 via this** [**link**](https://ci.zw3rk.com/build/410011) **courtesy of Moritz Angermann, the SPO of ZW3RK pool 🙏**
 {% endhint %}
 
 **Run the following commands to download and install the binaries into the correct directory.**
@@ -220,13 +220,13 @@ Replace `<tag>` with the latest tag in the next command.
 * Descargar los binarios
 
 ```
-    wget -O ~/aarch64-unknown-linux-musl-cardano-node-1.30.1.zip https://ci.zw3rk.com/build/409517/download/1/aarch64-unknown-linux-musl-cardano-node-1.30.1.zip
+    wget -O ~/aarch64-unknown-linux-musl-cardano-node-1.31.0.zip https://ci.zw3rk.com/build/410011/download/1/aarch64-unknown-linux-musl-cardano-node-1.31.0.zip
 ```
 
 * Descomprimir e instalar los binarios a través de los comandos
 
 ```
-    unzip -d ~/ aarch64-unknown-linux-musl-cardano-node-1.30.1.zip
+    unzip -d ~/ aarch64-unknown-linux-musl-cardano-node-1.31.0.zip
 
     sudo mv ~/cardano-node/* /usr/local/bin/
 ```
@@ -300,7 +300,7 @@ Replace `<tag>` with the latest tag in the next command.
 1\) Descargar Prometheus y node-exporter en el directorio de inicio
 
 ```
-    wget -O ~/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v2.29.2/prometheus-2.29.2.linux-arm64.tar.gz
+    wget -O ~/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v2.31.1/prometheus-2.31.1.linux-arm64.tar.gz
 ```
 
 ```
@@ -320,7 +320,7 @@ tar -xzvf node_exporter.tar.gz
 3\) Renombrar las carpetas con los siguientes comandos
 
 ```
-    mv prometheus-2.29.2.linux-arm64 prometheus
+    mv prometheus-2.31.1.linux-arm64 prometheus
 ```
 
 ```
