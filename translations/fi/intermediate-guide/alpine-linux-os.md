@@ -212,7 +212,7 @@ Korvaa `<tag>` uusimmalla tunnisteella seuraavassa komennossa.
 ## 'cardano-node' ja 'cardano-cli' staattisten binäärien Asentaminen/päivittäminen (AlpineOS käyttää lähes yksinomaan staattisia binäärejä, joten vältä ei-staattiset rakennelmia)
 
 {% hint style="info" %}
-**Saat staattiset binäärit versiolle 1.30.1 tästä ** [**linkistä**](https://ci.zw3rk.com/build/409517) **kiitokset Moritz Angermanille, ZW3RK poolin SPO 🙏**
+**You may obtain the static binaries for version 1.31.0 via this** [**link**](https://ci.zw3rk.com/build/410011) **courtesy of Moritz Angermann, the SPO of ZW3RK pool 🙏**
 {% endhint %}
 
 **Suorita seuraavat komennot ladataksesi ja asentaaksesi binäärit oikeaan kansioon.**
@@ -220,13 +220,13 @@ Korvaa `<tag>` uusimmalla tunnisteella seuraavassa komennossa.
 * Lataa binäärit
 
 ```
-    wget -O ~/aarch64-unknown-linux-musl-cardano-node-1.30.1.zip https://ci.zw3rk.com/build/409517/download/1/aarch64-unknown-linux-musl-cardano-node-1.30.1.zip
+    wget -O ~/aarch64-unknown-linux-musl-cardano-node-1.31.0.zip https://ci.zw3rk.com/build/410011/download/1/aarch64-unknown-linux-musl-cardano-node-1.31.0.zip
 ```
 
 * Pura ja asenna binäärit komentojen kautta
 
 ```
-    unzip -d ~/ aarch64-unknown-linux-musl-cardano-node-1.30.1.zip
+    unzip -d ~/ aarch64-unknown-linux-musl-cardano-node-1.31.0.zip
 
     sudo mv ~/cardano-node/* /usr/local/bin/
 ```
@@ -300,7 +300,7 @@ Korvaa `<tag>` uusimmalla tunnisteella seuraavassa komennossa.
 1) Lataa Prometheus ja node exporter kotihakemistoon
 
 ```
-    wget -O ~/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v2.29.2/prometheus-2.29.2.linux-arm64.tar.gz
+    wget -O ~/prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v2.31.1/prometheus-2.31.1.linux-arm64.tar.gz
 ```
 
 ```
@@ -320,7 +320,7 @@ tar -xzvf node_exporter.tar.gz
 3) Nimeä kansiot uudelleen seuraavilla komennoilla
 
 ```
-    mv prometheus-2.29.2.linux-arm64 prometheus
+    mv prometheus-2.31.1.linux-arm64 prometheus
 ```
 
 ```
