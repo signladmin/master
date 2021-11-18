@@ -5,10 +5,10 @@ Tämä opas noudattaa samoja asetuksia kuin meidän [Pi-Node opas ja image](../p
 {% endhint %}
 
 {% hint style="success" %}
-### Nykyinen Virallinen Cardano Node Versio: 1.30.1
+#### Current Official Cardano Node Version: 1.31.0
 {% endhint %}
 
-### Yleiskatsaus 🗒
+### Overview 🗒
 
 * [ ] Lataa Cardano Noden Staattinen versio & konfiguraatiotiedosto
 * [ ] Pura tiedoston sisältö
@@ -22,7 +22,7 @@ Tämä opas noudattaa samoja asetuksia kuin meidän [Pi-Node opas ja image](../p
 
 ## Lataa cardano-node & cli
 
-### Staattiset binäärit ja Cardano node -konfiguraatiotiedostot toimittaa [\[ZW3RK\]](https://armada-alliance.com/identities/zw3rk) pool🙏 ja ne löytyvät [Github repositorystamme](https://github.com/armada-alliance/cardano-node-binaries/tree/main/static-binaries).
+### Static binaries and Cardano node configuration files are provided by [\[ZW3RK\]](https://armada-alliance.com/identities/zw3rk) pool🙏 and can be found at our [Github repository](https://github.com/armada-alliance/cardano-node-binaries/tree/main/static-binaries).
 
 ```bash
 wget https://github.com/armada-alliance/cardano-node-binaries/raw/main/static-binaries/1_31_0.zip
@@ -34,7 +34,7 @@ Pura zip tiedoston sisältö.
 unzip 1_31_0.zip
 ```
 
-### Tarkista, onko kardano-solmu jo käynnissä
+### Tarkista, onko cardano-node jo käynnissä
 
 {% hint style="warning" %}
 **Nyt meidän on varmistettava, ettei meidän kardano-node ole jo käynnissä. Jos näin on, meidän on suljettava se ennen jatkamista.**
@@ -61,7 +61,7 @@ Jos käytät [Pi-Node -opasta](../pi-pool-tutorial/) ja cardano-node & -cli ovat
 mv cardano-node/* ~/.local/bin
 ```
 
-### Tarkista cardano-node-solmun versio
+### Tarkista cardano-noden versio
 
 ```bash
 cardano-node --version
@@ -92,11 +92,6 @@ git rev 0000000000000000000000000000000000000000
 {% hint style="info" %}
 This step is not needed every time you update your node, typically you only need to update/replace config files after hard fork events when moving into new eras of the [Cardano blockchain](https://roadmap.cardano.org/en/).
 {% endhint %}
-
-{% hint style="success" %}
-{% endhint %}
-
-{% hint style="Huomaa" %}
 
 {% tabs %}
 {% tab title="Mainnet" %}
