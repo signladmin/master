@@ -5,16 +5,16 @@ This guide follows the same setup as our [Pi-Node guide and image](../pi-pool-tu
 {% endhint %}
 
 {% hint style="success" %}
-### Current Official Cardano Node Version: 1.30.1
+#### Current Official Cardano Node Version: 1.31.0
 {% endhint %}
 
 ### Overview 🗒
 
 * [ ] Download Cardano Node Static build & configuration file
 * [ ] Extract the file's content
-* [ ] Check if you already have Cardano Node service running 
+* [ ] Check if you already have Cardano Node service running
   * Safely shutdown your Cardano node if it is running
-* [ ] Replace the old binaries with the new cardano-node and cardano-cli 
+* [ ] Replace the old binaries with the new cardano-node and cardano-cli
 * [ ] Check cardano-node and cli version is updated to the current version
 * [ ] Replace old configuration files with new ones (if needed)
 * [ ] Restart your Cardano Node
@@ -92,11 +92,6 @@ git rev 0000000000000000000000000000000000000000
 {% hint style="info" %}
 This step is not needed every time you update your node, typically you only need to update/replace config files after hard fork events when moving into new eras of the [Cardano blockchain](https://roadmap.cardano.org/en/).
 {% endhint %}
-
-{% hint style="success" %}
-{% endhint %}
-
-{% hint style="warning" %}
 
 {% tabs %}
 {% tab title="Mainnet" %}
