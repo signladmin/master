@@ -7,7 +7,7 @@ _**Me Armada Allianssissa rakennamme aktiivisesti tarvittavia ohjelmistopakettej
 {% endhint %}
 
 {% hint style="success" %}
-### Nykyinen Virallinen Cardano Node Versio: 1.30.1
+### Current Official Cardano Node Version: 1.31.0
 {% endhint %}
 
 ### Yleiskatsaus :notepad_spiral:
@@ -90,13 +90,13 @@ Tämä varmistaa, että järjestelmä on tietoinen libsodiumista (ei vain käytt
 Dynaamiset binaarit ja Cardano node asetustiedostot tarjoaa [SRN pool ](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0)🙏 ja ovat saatavissa [Github repositoryssamme](https://github.com/armada-alliance/cardano-node-binaries).
 
 ```bash
-wget https://github.com/armada-alliance/cardano-node-binaries/blob/main/dynamic-binaries/1.30.1/cardano-1_30_1-aarch64-ubuntu_2004.zip?raw=true
+wget https://github.com/armada-alliance/cardano-node-binaries/blob/main/dynamic-binaries/1.31.0/cardano-1_31_0-aarch64-ubuntu_2004.zip?raw=true
 ```
 
 Pura zip tiedoston sisältö.
 
 ```bash
-unzip cardano-1_30_1-aarch64-ubuntu_2004.zip?raw=true
+unzip cardano-1_31_0-aarch64-ubuntu_2004.zip?raw=true
 ```
 
 ### Tarkista, onko cardano-node jo käynnissä
@@ -123,7 +123,7 @@ Jos käytät Linuxin `htop` -komentoa, tarkista vain prosessi, joka alkaa `carda
 Jos käytät [Pi-Node -opasta](../pi-pool-tutorial/) ja cardano-node & -cli ovat kansiossa `~/.local/bin`
 
 ```bash
-mv cardano-1_30_1-aarch64-ubuntu_2004/cardano-node cardano-1_30_1-aarch64-ubuntu_2004/cardano-cli ~/.local/bin
+mv cardano-1_31_0-aarch64-ubuntu_2004/cardano-node cardano-1_31_0-aarch64-ubuntu_2004/cardano-cli ~/.local/bin
 ```
 
 ### Tarkista cardano-noden versio
@@ -135,8 +135,8 @@ cardano-node --version
 #### Tuloste:
 
 ```bash
-cardano-node 1.30.1 - linux-aarch64 - ghc-8.10
-git rev 0fb43f4e3da8b225f4f86557aed90a183981a64f
+cardano-node 1.31.0 - linux-aarch64 - ghc-8.10
+git rev 2cbe363874d0261bc62f52185cf23ed492cf4859
 ```
 
 ### Tarkista cardano-cli versio
@@ -148,8 +148,8 @@ cardano-cli --version
 #### Tuloste:
 
 ```bash
-cardano-cli 1.30.1 - linux-aarch64 - ghc-8.10
-git rev 0fb43f4e3da8b225f4f86557aed90a183981a64f
+cardano-cli 1.31.0 - linux-aarch64 - ghc-8.10
+git rev 2cbe363874d0261bc62f52185cf23ed492cf4859
 ```
 
 ### Korvaa cardano noden asetustiedostot
@@ -159,19 +159,19 @@ Olemme jo ladanneet kolmeen eri verkkoon (mainnet, testnet ja alonzo-purple test
 {% tabs %}
 {% tab title="Mainnet Config" %}
 ```bash
-mv cardano-1_30_1-aarch64-ubuntu_2004/files/mainnet/* ~/pi-pool/files
+mv cardano-1_31_0-aarch64-ubuntu_2004/files/mainnet/* ~/pi-pool/files
 ```
 {% endtab %}
 
 {% tab title="Testnet Config" %}
 ```bash
-mv cardano-1_30_1-aarch64-ubuntu_2004/files/testnet/* ~/pi-pool/files
+mv cardano-1_31_0-aarch64-ubuntu_2004/files/testnet/* ~/pi-pool/files
 ```
 {% endtab %}
 
 {% tab title="Alonzo Purple Config" %}
 ```bash
-mv cardano-1_30_1-aarch64-ubuntu_2004/files/alonzo-purple/* ~/pi-pool/files
+mv cardano-1_31_0-aarch64-ubuntu_2004/files/alonzo-purple/* ~/pi-pool/files
 ```
 {% endtab %}
 {% endtabs %}
