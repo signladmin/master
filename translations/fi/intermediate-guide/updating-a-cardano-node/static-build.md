@@ -25,13 +25,13 @@ Tämä opas noudattaa samoja asetuksia kuin meidän [Pi-Node opas ja image](../p
 ### Staattiset binäärit ja Cardano node -konfiguraatiotiedostot toimittaa [\[ZW3RK\]](https://armada-alliance.com/identities/zw3rk) pool🙏 ja ne löytyvät [Github repositorystamme](https://github.com/armada-alliance/cardano-node-binaries/tree/main/static-binaries).
 
 ```bash
-wget https://github.com/armada-alliance/cardano-node-binaries/raw/main/static-binaries/1_30_1.zip
+wget https://github.com/armada-alliance/cardano-node-binaries/raw/main/static-binaries/1_31_0.zip
 ```
 
 Pura zip tiedoston sisältö.
 
 ```bash
-unzip 1_30_1.zip
+unzip 1_31_0.zip
 ```
 
 ### Tarkista, onko kardano-solmu jo käynnissä
@@ -70,7 +70,7 @@ cardano-node --version
 #### Tuloste:
 
 ```bash
-cardano-node 1.30.1 - linux-aarch64 - ghc-8.10
+cardano-node 1.31.0 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
@@ -83,11 +83,20 @@ cardano-cli --version
 #### Tuloste:
 
 ```bash
-cardano-cli 1.30.1 - linux-aarch64 - ghc-8.10
+cardano-cli 1.31.0 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
-### Lataa & Korvaa Cardano noden asetustiedostot
+### Download & Replace the Cardano node configuration files (Optional)
+
+{% hint style="info" %}
+This step is not needed every time you update your node, typically you only need to update/replace config files after hard fork events when moving into new eras of the [Cardano blockchain](https://roadmap.cardano.org/en/).
+{% endhint %}
+
+{% hint style="success" %}
+{% endhint %}
+
+{% hint style="Huomaa" %}
 
 {% tabs %}
 {% tab title="Mainnet" %}
