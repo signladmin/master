@@ -5,16 +5,16 @@ This guide follows the same setup as our [Pi-Node guide and image](../pi-pool-tu
 {% endhint %}
 
 {% hint style="success" %}
-### Current Official Cardano Node Version: 1.30.1
+#### Current Official Cardano Node Version: 1.31.0
 {% endhint %}
 
 ### Overview 🗒
 
 * [ ] Download Cardano Node Static build & configuration file
 * [ ] Extract the file's content
-* [ ] Check if you already have Cardano Node service running 
+* [ ] Check if you already have Cardano Node service running
   * Safely shutdown your Cardano node if it is running
-* [ ] Replace the old binaries with the new cardano-node and cardano-cli 
+* [ ] Replace the old binaries with the new cardano-node and cardano-cli
 * [ ] Check cardano-node and cli version is updated to the current version
 * [ ] Replace old configuration files with new ones (if needed)
 * [ ] Restart your Cardano Node
@@ -25,13 +25,13 @@ This guide follows the same setup as our [Pi-Node guide and image](../pi-pool-tu
 ### Static binaries and Cardano node configuration files are provided by [\[ZW3RK\]](https://armada-alliance.com/identities/zw3rk) pool🙏 and can be found at our [Github repository](https://github.com/armada-alliance/cardano-node-binaries/tree/main/static-binaries).
 
 ```bash
-wget https://github.com/armada-alliance/cardano-node-binaries/raw/main/static-binaries/1_30_1.zip
+wget https://github.com/armada-alliance/cardano-node-binaries/raw/main/static-binaries/1_31_0.zip
 ```
 
 Extract the content from the zip file.
 
 ```bash
-unzip 1_30_1.zip
+unzip 1_31_0.zip
 ```
 
 ### Check if cardano-node is running already
@@ -70,7 +70,7 @@ cardano-node --version
 #### Output:
 
 ```bash
-cardano-node 1.30.1 - linux-aarch64 - ghc-8.10
+cardano-node 1.31.0 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
@@ -83,11 +83,15 @@ cardano-cli --version
 #### Output:
 
 ```bash
-cardano-cli 1.30.1 - linux-aarch64 - ghc-8.10
+cardano-cli 1.31.0 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
-### Download & Replace the Cardano node configuration files
+### Download & Replace the Cardano node configuration files (Optional)
+
+{% hint style="info" %}
+This step is not needed every time you update your node, typically you only need to update/replace config files after hard fork events when moving into new eras of the [Cardano blockchain](https://roadmap.cardano.org/en/).
+{% endhint %}
 
 {% tabs %}
 {% tab title="Mainnet" %}
