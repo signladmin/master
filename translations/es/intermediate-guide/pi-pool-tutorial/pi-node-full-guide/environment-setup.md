@@ -334,10 +334,10 @@ Los cambios en este archivo se verán afectados al reiniciar cardano-service.
 
 El estado debe mostrarse como habilitado y en ejecución.
 
-Once your node syncs past epoch 208(shelley era) you can use gLiveView.sh to monitor.
+Once your node syncs past epoch 208(shelley era) you can use gLiveView.sh to monitor your sync progress.
 
 {% hint style="danger" %}
-Puede tardar hasta una hora en sincronizar el nodo cardano con el final de la cadena. Use el script ./gliveView.sh, el comando htop y la salida del log para ver cómo evoluciona el proceso. Ten paciencia finalizará.
+It can take over an hour for cardano-node to sync to the tip of the chain. Use el script ./gliveView.sh, el comando htop y la salida del log para ver cómo evoluciona el proceso. Ten paciencia finalizará.
 {% endhint %}
 
 ```bash
@@ -362,7 +362,7 @@ Puedes conectar un bot de Telegram a Grafana que te puede alertar de problemas c
 ### Instalar Prometheus & Node Exporter.
 
 {% hint style="info" %}
-Prometheus puede tomar los datos http de otros servidores ejecutando el node-exporter. El mantenimiento de Grafana y Prometheus no tiene que ser instalado en su core ni en sus relays. Sólo se requiere el paquete de prometheus-node-exporter para construir un tablero de control de Grafana para el Pool, liberando así recursos.
+Prometheus puede tomar los datos http de otros servidores ejecutando el node-exporter. El mantenimiento de Grafana y Prometheus no tiene que ser instalado en su core ni en sus relays. Only the package prometheus-node-exporter is required if you would like to build a central Grafana dashboard for the pool, freeing up resources and having a single dashboard to monitor everything.
 {% endhint %}
 
 ```bash
@@ -553,7 +553,7 @@ Compruebe que Nginx está contento con nuestros cambios y reinicie.
 
 ```bash
 sudo nginx -t
-## if ok do
+## if ok, do
 sudo service nginx restart
 ```
 
@@ -569,7 +569,7 @@ Inicie sesión y establezca una nueva contraseña. El nombre de usuario y contra
 
 #### Configurar la fuente de datos
 
-In the left hand vertical menu go to **Configure** > **Datasources** and click to **Add data source**. Elige Prometheus. Escribe [http://localhost:9090](http://localhost:9090) donde está en gris, el resto puede dejarse por defecto. En la parte inferior pinchar en save & test. Deberías obtener el verde "Data source is working" si el cardano-monitor está iniciado. Si por alguna razón estos servicios no pudieron iniciar, reinicie con **cardano-service restart**.
+In the left hand vertical menu go to **Configure** > **Datasources** and click to **Add data source**. Elige Prometheus. Enter [http://localhost:9090](http://localhost:9090) where it is grayed out, everything else can be left default. En la parte inferior pinchar en save & test. Deberías obtener el verde "Data source is working" si el cardano-monitor está iniciado. Si por alguna razón estos servicios no pudieron iniciar, reinicie con **cardano-service restart**.
 
 #### Importar Panel de Control (Dashboards)
 
@@ -583,7 +583,7 @@ In the left hand vertical menu go to **Dashboards** > **Manage** and click on **
 
 ### Configurar poolDataLive
 
-Aquí puedes utilizar la api de PoolData para traer sus datos del Pool a Grafana.
+Here you can use the poolData api to bring extra pool data into Grafana like stake & price.
 
 {% embed url="https://api.pooldata.live/dashboard" %}
 
