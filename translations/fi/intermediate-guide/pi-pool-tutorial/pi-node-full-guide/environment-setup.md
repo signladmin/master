@@ -74,7 +74,7 @@ sed -i ${NODE_CONFIG}-config.json \
 ### Nouda aarch64-binäärit
 
 {% hint style="info" %}
-**Epäviralliset** käyttöön saamamme cardano-node & cardano-cli binäärit on rakentanut IOHK insinööri omalla **vapaa-ajallaan**. Ole hyvä ja tutustu '[Arming Cardano](https://t.me/joinchat/FeKTCBu-pn5OUZUz4joF2w)' Telegram ryhmään saadaksesi lisätietoja.
+**Epäviralliset** käyttöön saamamme cardano-node & cardano-cli binäärit on rakentanut IOHK insinööri omalla **vapaa-ajallaan**. Please visit the '[Arming Cardano](https://t.me/joinchat/wvTcCSpdjGllMmFk)' Telegram group for more information.
 {% endhint %}
 
 ```bash
