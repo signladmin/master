@@ -3,22 +3,22 @@
 _**We at the Armada Alliance actively build the required software packages needed to run a Cardano stake pool node on ARM-based computers like the Raspberry Pi or Apple's MacMini M1.**_
 
 {% hint style="warning" %}
-### To use our dynamic arm64 cardano-node build you must have [libsodium](https://github.com/input-output-hk/libsodium) installed.
+#### To use our dynamic arm64 cardano-node build you must have [libsodium](https://github.com/input-output-hk/libsodium) installed.
 {% endhint %}
 
 {% hint style="success" %}
-### Current Official Cardano Node Version: 1.31.0
+#### Current Official Cardano Node Version: 1.31.0
 {% endhint %}
 
-### Overview :notepad_spiral: 
+### Overview :notepad\_spiral:
 
 * [ ] Check if libsodium is installed on the local machine
   * Build libsodium if not installed already
 * [ ] Download Cardano Node Dynamic build & configuration file
 * [ ] Extract the file's content
-* [ ] Check if you already have Cardano Node service running 
+* [ ] Check if you already have Cardano Node service running
   * Safely shutdown your Cardano node if it is running
-* [ ] Replace the old binaries with the new cardano-node and cardano-cli 
+* [ ] Replace the old binaries with the new cardano-node and cardano-cli
 * [ ] Check cardano-node and cli version is updated to the current version
 * [ ] Replace old configuration files with new ones (if needed)
 * [ ] Restart your Cardano Node
@@ -87,7 +87,7 @@ This ensures the system is aware of libsodium (not just at the user level).
 
 ## Download the cardano-node & cli
 
-Dynamic binaries and Cardano node configuration files provided by [SRN pool ](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0):pray:  at our [Github repository](https://github.com/armada-alliance/cardano-node-binaries).
+Dynamic binaries and Cardano node configuration files provided by [SRN pool ](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0):pray: at our [Github repository](https://github.com/armada-alliance/cardano-node-binaries).
 
 ```bash
 wget https://github.com/armada-alliance/cardano-node-binaries/blob/main/dynamic-binaries/1.31.0/cardano-1_31_0-aarch64-ubuntu_2004.zip?raw=true
@@ -105,7 +105,7 @@ unzip cardano-1_31_0-aarch64-ubuntu_2004.zip?raw=true
 **Now we need to make sure we do not have a cardano-node already running. If we do we must shut it down before proceeding.**
 {% endhint %}
 
-You can check if you have a cardano-node process already running a few ways like using`htop` or by checking your systemd service. 
+You can check if you have a cardano-node process already running a few ways like using`htop` or by checking your systemd service.
 
 If you have been following our [Pi-Node guide](../pi-pool-tutorial/) you can check your cardano-node status and stop it using the following commands.
 
@@ -189,4 +189,3 @@ Wait a few seconds or so then check the status
 ```bash
 cardano-service status
 ```
-
