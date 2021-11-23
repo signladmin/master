@@ -3,14 +3,14 @@
 _**Me Armada Allianssissa rakennamme aktiivisesti tarvittavia ohjelmistopaketteja, joita tarvitaan Cardano stake poolin ylläpitoon ARM-pohjaisilla tietokoneilla, kuten Raspberry Pi:llä tai Applen MacMini M1:llä.**_
 
 {% hint style="warning" %}
-### Käyttääksesi dynaamista arm64 cardano-node versiota sinulla täytyy olla [libsodium](https://github.com/input-output-hk/libsodium) asennettuna.
+#### To use our dynamic arm64 cardano-node build you must have [libsodium](https://github.com/input-output-hk/libsodium) installed.
 {% endhint %}
 
 {% hint style="success" %}
-### Current Official Cardano Node Version: 1.31.0
+#### Current Official Cardano Node Version: 1.31.0
 {% endhint %}
 
-### Yleiskatsaus :notepad_spiral:
+### Overview :notepad\_spiral:
 
 * [ ] Tarkista, onko libsodium asennettu paikalliseen koneeseen
   * Rakenna libsodium, jos ei ole jo asennettu
@@ -34,7 +34,7 @@ which libsodium
 
 Jos tämä ei palauta mitään tulostetta, sinun täytyy asentaa libsodium.
 
-### Ohjeet libsodiumin asentamiseen
+### Instructions to install libsodium
 
 Luo työhakemisto omille rakennuksillesi:
 
@@ -87,7 +87,7 @@ Tämä varmistaa, että järjestelmä on tietoinen libsodiumista (ei vain käytt
 
 ## Lataa cardano-node & -cli
 
-Dynaamiset binaarit ja Cardano node asetustiedostot tarjoaa [SRN pool ](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0)🙏 ja ovat saatavissa [Github repositoryssamme](https://github.com/armada-alliance/cardano-node-binaries).
+Dynamic binaries and Cardano node configuration files provided by [SRN pool ](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0):pray: at our [Github repository](https://github.com/armada-alliance/cardano-node-binaries).
 
 ```bash
 wget https://github.com/armada-alliance/cardano-node-binaries/blob/main/dynamic-binaries/1.31.0/cardano-1_31_0-aarch64-ubuntu_2004.zip?raw=true
@@ -152,7 +152,7 @@ cardano-cli 1.31.0 - linux-aarch64 - ghc-8.10
 git rev 2cbe363874d0261bc62f52185cf23ed492cf4859
 ```
 
-### Korvaa cardano noden asetustiedostot
+### Replace the Cardano node configuration files
 
 Olemme jo ladanneet kolmeen eri verkkoon (mainnet, testnet ja alonzo-purple testnet) liittyvät konfiguraatiotiedostot.
 
@@ -189,4 +189,3 @@ Odota muutama sekunti tai tarkista sitten prosessin status
 ```bash
 cardano-service status
 ```
-
