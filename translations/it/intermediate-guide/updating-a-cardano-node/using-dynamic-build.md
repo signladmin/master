@@ -3,14 +3,14 @@
 _**We at the Armada Alliance actively build the required software packages needed to run a Cardano stake pool node on ARM-based computers like the Raspberry Pi or Apple's MacMini M1.**_
 
 {% hint style="warning" %}
-### To use our dynamic arm64 cardano-node build you must have [libsodium](https://github.com/input-output-hk/libsodium) installed.
+#### To use our dynamic arm64 cardano-node build you must have [libsodium](https://github.com/input-output-hk/libsodium) installed.
 {% endhint %}
 
 {% hint style="success" %}
-### Current Official Cardano Node Version: 1.31.0
+#### Current Official Cardano Node Version: 1.31.0
 {% endhint %}
 
-### Overview :notepad_spiral:
+### Overview :notepad\_spiral:
 
 * [ ] Check if libsodium is installed on the local machine
   * Build libsodium if not installed already
@@ -87,7 +87,7 @@ This ensures the system is aware of libsodium (not just at the user level).
 
 ## Download the cardano-node & cli
 
-Dynamic binaries and Cardano node configuration files provided by [SRN pool ](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0):pray:  at our [Github repository](https://github.com/armada-alliance/cardano-node-binaries).
+Dynamic binaries and Cardano node configuration files provided by [SRN pool ](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0):pray: at our [Github repository](https://github.com/armada-alliance/cardano-node-binaries).
 
 ```bash
 wget https://github.com/armada-alliance/cardano-node-binaries/blob/main/dynamic-binaries/1.31.0/cardano-1_31_0-aarch64-ubuntu_2004.zip?raw=true
@@ -189,4 +189,3 @@ Wait a few seconds or so then check the status
 ```bash
 cardano-service status
 ```
-
