@@ -1,3 +1,7 @@
+- - -
+cover: .gitbook/assets/banner-armada copy.png coverY: 0
+- - -
+
 # Welcome ARM Operators
 
 ## ¿Quieres ser un Operador de un Stake Pool de Cardano con una Raspberry Pi... por dónde deberías empezar?😳  😳  😳  😳
