@@ -2,7 +2,7 @@
 cover: .gitbook/assets/banner-armada copy.png coverY: 0
 - - -
 
-# Welcome ARM Operators
+# 🏴☠ Welcome ARM Operators
 
 ## ¿Quieres ser un Operador de un Stake Pool de Cardano con una Raspberry Pi... por dónde deberías empezar?😳  😳  😳  😳
 
@@ -11,8 +11,6 @@ cover: .gitbook/assets/banner-armada copy.png coverY: 0
 ### **Bienvenido a la sección de información y tutoriales de Armada Alliance.** Somos una comunidad de Operadores de Stake Pool basados en RPi/ARM que tienen como objetivo brindar apoyo y recursos educativos gratuitos a los futuros Operadores de Stake Pool.
 
 ### Although our focus is ARM stake pool operations, we will provide a wide range of information, tutorials, and resources for developing on the Cardano blockchain.
-
-[https://www.youtube.com/watch?v=cBojbjoMttI](https://www.youtube.com/watch?v=cBojbjoMttI)
 
 | Contacta con nosotros                                                                                   |
 | ------------------------------------------------------------------------------------------------------- |
