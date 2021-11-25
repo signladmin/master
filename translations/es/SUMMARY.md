@@ -1,6 +1,6 @@
 # Índice
 
-* [🏴☠ Welcome ARM Operators](README.md)
+* [🏴☠ 🏴☠ Welcome ARM Operators](README.md)
 
 ## Cardano Node
 
@@ -14,8 +14,8 @@
 * [Imagen del Pi-Node & Guías](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-Node (Guía completa)](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/README.md)
     * [Descargar y Flashear](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/download-and-write-it.md)
-    * [Configuración usuarios](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/user-setup.md)
     * [Iniciando sesión de forma segura](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/logging-in-securely.md)
+    * [Configuración usuarios](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/user-setup.md)
     * [Configuración del servidor](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/server-setup.md)
     * [Configuración del entorno](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/environment-setup.md)
   * [Pi-Node (inicio rápido)](intermediate-guide/pi-pool-tutorial/pi-node.md)
