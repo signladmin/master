@@ -20,20 +20,6 @@ Here are some links for overclocking and testing your drive speeds. If you have 
 Take note that Ubuntu stores config.txt in a different location than Raspbian.
 {% endhint %}
 
-### Test drive speed
-
-#### Write speed
-
-```
-sudo dd if=/dev/zero of=/tmp/output conv=fdatasync bs=384k count=1k; sudo rm -f /tmp/output
-```
-
-#### Read speed
-
-```
-sudo hdparm -Tt /dev/sda
-```
-
 ### Overclock, memory & radios
 
 Edit /boot/firmware/config.txt. Just paste Pi Node additions in at the bottom.
@@ -80,15 +66,20 @@ tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
 ### Increase open file limit for $USER
+
 Add a couple lines to the bottom of /etc/security/limits.conf
 
 ```bash
 sudo bash -c "echo -e '${USER} soft nofile 800000\n${USER} hard nofile 1048576\n' >> /etc/security/limits.conf"
 ```
 
-### Optimize performance & security
+Confirm it was added to the bottom.
 
-Add the following to the bottom of /etc/sysctl.conf. Save and exit.
+```bash
+cat /etc/security/limits.conf
+```
+
+### Optimize performance & security
 
 {% hint style="info" %}
 [https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3](https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3)
@@ -98,7 +89,9 @@ Add the following to the bottom of /etc/sysctl.conf. Save and exit.
 If you would like to disable ipv6 or turn on forwarding you can below.
 {% endhint %}
 
-```
+Add the following to the bottom of /etc/sysctl.conf. Save and exit.
+
+```bash
 sudo nano /etc/sysctl.conf
 ```
 
@@ -270,6 +263,7 @@ mem=$(((totalmem / 2 / ${NRDEVICES}) \* 1024 \* 3))
 
 ```bash
 #!/bin/sh
+
 # load dependency modules
 NRDEVICES=$(grep -c ^processor /proc/cpuinfo | sed 's/^0$/1/')
 if modinfo zram | grep -q ' zram_num_devices:' 2>/dev/null; then
@@ -280,9 +274,11 @@ else
   exit 1
 fi
 modprobe zram $MODPROBE_ARGS
+
 # Calculate memory to use for zram (1/2 of ram)
 totalmem=`LC_ALL=C free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
 mem=$(((totalmem / 2 / ${NRDEVICES}) * 1024 * 3))
+
 # initialize the devices
 for i in $(seq ${NRDEVICES}); do
   DEVNUMBER=$((i - 1))
@@ -290,6 +286,7 @@ for i in $(seq ${NRDEVICES}); do
   mkswap /dev/zram${DEVNUMBER}
   swapon -p 5 /dev/zram${DEVNUMBER}
 done
+
 ```
 
 {% hint style="info" %}
@@ -339,4 +336,18 @@ sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
 
 ```
 sudo reboot
+```
+
+### Optionally test drive speed
+
+#### Write speed
+
+```
+sudo dd if=/dev/zero of=/tmp/output conv=fdatasync bs=384k count=1k; sudo rm -f /tmp/output
+```
+
+#### Read speed
+
+```
+sudo hdparm -Tt /dev/sda
 ```
