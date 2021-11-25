@@ -71,6 +71,8 @@ cd /home/ada/pi-pool
 ```bash
 wget -r -np -nH -R "index.html*" -e robots=off https://$NODE_CONFIG.adamantium.online/db/
 ```
+Optionally skip chain verification to speed process up even more by creating a blank file named 'clean' in the db folder.
+
 ```bash
 touch /home/ada/pi-pool/db/clean
 ```
