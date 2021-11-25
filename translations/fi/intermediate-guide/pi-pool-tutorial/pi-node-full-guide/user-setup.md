@@ -13,12 +13,12 @@ If you are using a Pi-Node image you need only reference this material until we 
 Create a new user and add it to the sudo group.
 
 ```bash
-sudo adduser ada && sudo adduser ada sudo
+sudo adduser ada; sudo adduser ada sudo
 ```
 
 ### Vaihda salasana
 
-Voit vaihtaa ada käyttäjien salasanaa milloin tahansa.
+You can change the users password at anytime with.
 
 ```bash
 passwd
@@ -56,7 +56,7 @@ Ubuntun päivittäminen kestää 10 minuuttia tai enemmän, ellei rpi-imagerilla
 {% endhint %}
 
 ```bash
-sudo apt update && sudo apt upgrade
+sudo apt update; sudo apt upgrade -y
 ```
 
 Jos päivitys onnistui, voimme poistaa ubuntu käyttäjän ja sen kotihakemiston.
