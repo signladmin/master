@@ -79,19 +79,12 @@ Add this line at the bottom, save & exit.
 tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
-### Increase open file limit
+### Increase open file limit for $USER
 
-Open /etc/security/limits.conf.
 
-```
-sudo nano /etc/security/limits.conf
-```
+```bash
+sudo bash -c "echo -e '${USER} soft nofile 800000\n${USER} hard nofile 1048576\n' >> /etc/security/limits.conf"
 
-Add the following to the bottom, save & exit.
-
-```
-ada soft nofile 800000
-ada hard nofile 1048576
 ```
 
 ### Optimize performance & security
