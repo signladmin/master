@@ -314,7 +314,7 @@ crontab -e
 Elegir nano cuando se te pida que editor quieres usar.
 {% endhint %}
 
-Add the following to the bottom, save & exit.
+Añade lo siguiente en la parte inferior, guardar & salir.
 
 {% hint style="info" %}
 La imagen de Pi-Node tiene esta línea de cron deshabilitada por defecto. You can enable it by removing the #.
