@@ -13,7 +13,7 @@ There is a 500 ₳ Registration deposit and another 5 ₳ in registration costs.
 Create an .adaenv file, choose which network you want to be on and source the file. This file will hold the variables for operating a Pi-Node.
 
 ```shell
-echo -e NODE_CONFIG=testnet >> ${HOME}/.adaenv && source ${HOME}/.adaenv
+echo -e NODE_CONFIG=testnet >> ${HOME}/.adaenv; source ${HOME}/.adaenv
 ```
 
 Tee muutamia kansioita.
@@ -45,7 +45,7 @@ echo export NODE_PORT=3003 >> ${HOME}/.adaenv
 echo export NODE_FILES=${HOME}/pi-pool/files >> ${HOME}/.adaenv
 echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> ${HOME}/.adaenv
 echo export CARDANO_NODE_SOCKET_PATH="${HOME}/pi-pool/db/socket" >> ${HOME}/.adaenv
-source ${HOME}/.bashrc && source .adaenv
+source ${HOME}/.bashrc; source .adaenv
 ```
 
 ### Nouda palvelintiedostot
@@ -110,7 +110,7 @@ Liitä seuraavat, tallenna & sulje nano.
 ```bash
 #!/bin/bash
 . /home/ada/.adaenv
-#DIRECTORY=/home/${USER}/pi-pool
+
 TOPOLOGY=${NODE_FILES}/${NODE_CONFIG}-topology.json
 DB_PATH=${NODE_HOME}/db
 CONFIG=${NODE_FILES}/${NODE_CONFIG}-config.json
@@ -279,8 +279,6 @@ chmod +x gLiveView.sh
 
 Kunnes vertaisverkko on otettu käyttöön verkko-operaattorit tarvitsevat tavan saada listan releistä/vertaisverkoista, joihin muodostaa yhteyden. Topologian päivityspalvelu toimii taustalla cron kanssa. Joka tunti skripti toimii ja kertoo palvelulle, että olet relay ja haluat olla osa verkkoa. It will add your relay to it's directory after four hours you should see in connections in gLiveView. &#x20;
 
-After four hours you can open ${NODE\_CONFIG}-topology.json and inspect the list of out peers the service suggested for you. Remove anything more than 7k distance(or less). IOHK recently suggested 8 out peers. The more out peers the more system resources it uses. You can also add any peers you wish to connect to manualy inside the script. This is where you would add your block producer or any friends nodes.
-
 {% hint style="info" %}
 The list generated will show you the distance & a clue as to where the relay is located.
 {% endhint %}
@@ -323,6 +321,9 @@ Pi-node-imagessassa tämä cron merkintä on oletuksena pois päältä. You can 
 ```bash
 33 * * * * . $HOME/.adaenv; /home/$USER/pi-pool/scripts/topologyUpdater.sh
 ```
+
+
+After four hours you can open ${NODE\_CONFIG}-topology.json and inspect the list of out peers the service suggested for you. Remove anything more than 7k distance(or less). IOHK recently suggested 8 out peers. The more out peers the more system resources it uses. You can also add any peers you wish to connect to manualy inside the script. This is where you would add your block producer or any friends nodes.
 
 ```bash
 nano $NODE_FILES/${NODE_CONFIG}-topology.json
