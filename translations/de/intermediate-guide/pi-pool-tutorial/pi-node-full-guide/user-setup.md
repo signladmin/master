@@ -13,12 +13,12 @@ If you are using a Pi-Node image you need only reference this material until we 
 Create a new user and add it to the sudo group.
 
 ```bash
-sudo adduser ada && sudo adduser ada sudo
+sudo adduser ada; sudo adduser ada sudo
 ```
 
 ### Change password
 
-You can change the ada users password at anytime with.
+You can change the users password at anytime with.
 
 ```bash
 passwd
@@ -56,7 +56,7 @@ Updating Ubuntu is going to take 10 minutes or more unless they update the image
 {% endhint %}
 
 ```bash
-sudo apt update && sudo apt upgrade
+sudo apt update; sudo apt upgrade -y
 ```
 
 If that was successful we can delete the default ubuntu user and it's home directory.
