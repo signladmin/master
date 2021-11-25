@@ -1,6 +1,6 @@
 # Sisällys
 
-* [🏴☠ Welcome ARM Operators](README.md)
+* [🏴☠ 🏴☠ Welcome ARM Operators](README.md)
 
 ## Cardano Node
 
@@ -14,8 +14,8 @@
 * [Pi-Node Image & Ohjeet](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-node (täydellinen opas)](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/README.md)
     * [Lataa & Polta](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/download-and-write-it.md)
-    * [Käyttäjän Asetukset](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/user-setup.md)
     * [Suojattu kirjautuminen](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/logging-in-securely.md)
+    * [Käyttäjän Asetukset](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/user-setup.md)
     * [Palvelimen Asetukset](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/server-setup.md)
     * [Ympäristön Asetukset](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/environment-setup.md)
   * [Pi-Node (pikaopas)](intermediate-guide/pi-pool-tutorial/pi-node.md)
