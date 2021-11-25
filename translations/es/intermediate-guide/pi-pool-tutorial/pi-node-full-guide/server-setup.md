@@ -11,11 +11,11 @@ Let's save some power, raise the governor on the CPU a bit, and set GPU ram as l
 {% hint style="warning" %}
 Here are some links for overclocking and testing your drive speeds. If you have heat sinks you can safely go to 2000. Just pay attention to over volt recommendations to go with your chosen clock speed.
 
-* [https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md](https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md)
-* [https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/](https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/)
-* [https://www.tomshardware.com/how-to/raspberry-pi-4-23-ghz-overclock](https://www.tomshardware.com/how-to/raspberry-pi-4-23-ghz-overclock)
-* [https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/](https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/)
-* [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
+- [https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md](https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md)
+- [https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/](https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/)
+- [https://www.tomshardware.com/how-to/raspberry-pi-4-23-ghz-overclock](https://www.tomshardware.com/how-to/raspberry-pi-4-23-ghz-overclock)
+- [https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/](https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/)
+- [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
 
 Take note that Ubuntu stores config.txt in a different location than Raspbian.
 {% endhint %}
@@ -79,24 +79,16 @@ Add this line at the bottom, save & exit.
 tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
-### Increase open file limit
+### Increase open file limit for $USER
+Add a couple lines to the bottom of /etc/security/limits.conf
 
-Open /etc/security/limits.conf.
-
-```
-sudo nano /etc/security/limits.conf
-```
-
-Add the following to the bottom, save & exit.
-
-```
-ada soft nofile 800000
-ada hard nofile 1048576
+```bash
+sudo bash -c "echo -e '${USER} soft nofile 800000\n${USER} hard nofile 1048576\n' >> /etc/security/limits.conf"
 ```
 
 ### Optimize performance & security
 
-Add the following to the bottom of /etc/sysctl.conf. Save and exit.
+Agregue lo siguiente en la parte inferior de /etc/sysctl.conf . Save and exit.
 
 {% hint style="info" %}
 [https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3](https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3)
@@ -113,7 +105,7 @@ sudo nano /etc/sysctl.conf
 ```
 ## Pi Node ##
 
-# swap more to zram                     
+# swap more to zram
 vm.vfs_cache_pressure=500
 vm.swappiness=100
 vm.dirty_background_ratio=1
@@ -159,7 +151,7 @@ net.ipv4.tcp_congestion_control = bbr
 
 #### Load our changes after boot
 
-Create a new file. Paste, save & close.
+Crea un nuevo Archivo Pega, guarda y cierra.
 
 ```
 sudo nano /etc/rc.local
@@ -182,9 +174,9 @@ exit 0
 [**http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/**](http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/)
 {% endhint %}
 
-You should turn off IRQ Balance to make sure you do not get hardware interrupts in your threads. Turning off IRQ Balance will optimize the balance between power savings and performance through the distribution of hardware interrupts across multiple processors.
+Deberías deshabilitar el IRQ Balance para asegurarte de que no tiene interrupciones de hardware en los procesos. Si deshabilitar el IRQ Balance, se optimizará el equilibrio entre ahorro de energía y rendimiento mediante la distribución de interrupciones de hardware a través de sus múltiples procesadores.
 
-Open /etc/default/irqbalance and add to the bottom. Save, exit and reboot.
+Abre la ventana de inicio /default/irqbalance y añade en la parte inferior. Guarda, sal y reinicia.
 
 ```
 sudo nano /etc/default/irqbalance
@@ -196,7 +188,7 @@ ENABLED="0"
 
 ### Chrony
 
-We need to get our time synchronization as accurate as possible. Open /etc/chrony/chrony.conf
+Necesitamos que nuestra sincronización de la hora sea lo más precisa posible. Abre/chrony/chrony.conf
 
 ```
 sudo apt install chrony
@@ -206,7 +198,7 @@ sudo apt install chrony
 sudo nano /etc/chrony/chrony.conf
 ```
 
-Replace the contents of the file with below, Save and exit.
+Reemplaza el contenido del archivo con el de abajo, Guardar y salir.
 
 ```bash
 pool time.google.com       iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
@@ -253,7 +245,7 @@ sudo service chrony restart
 ### Zram swap
 
 {% hint style="info" %}
-We have found that cardano-node can safely use this compressed swap in ram essentially giving us around 20gb of ram. We already set kernel parameters for zram in /etc/sysctl.conf
+Hemos descubierto que el nodo de cardano puede usar de forma segura esta swap comprimida de Ram dándonos, básicamente, alrededor de 20gb de Ram. Ya establecimos los parámetros del kernel para zram en /etc/sysctl.conf
 {% endhint %}
 
 Swapping to disk is slow, swapping to compressed ram space is faster and gives us some overhead before out of memory (oom).
@@ -270,7 +262,7 @@ sudo apt install linux-modules-extra-raspi zram-config
 sudo nano /usr/bin/init-zram-swapping
 ```
 
-Multiply default config by 3. This will give you 11.5GB of virtual compressed swap in ram.
+Multiplica la configuración predeterminada por 3. This will give you 11.5GB of virtual compressed swap in ram.
 
 {% hint style="info" %}
 mem=$(((totalmem / 2 / ${NRDEVICES}) \* 1024 \* 3))
@@ -301,12 +293,13 @@ done
 ```
 
 {% hint style="info" %}
-View how much zram swap cardano-node is using.
+Revisa cuánto utiliza el nodo de zram swap.
 
 ```
 CNZRAM=$(pidof cardano-node)
 grep --color VmSwap /proc/$CNZRAM/status
 ```
+
 {% endhint %}
 
 ### Raspberry Pi & entropy
@@ -319,7 +312,7 @@ Before we start generating keys with a headless server we should have a safe amo
 [https://github.com/nhorman/rng-tools](https://github.com/nhorman/rng-tools)
 {% endhint %}
 
-> But consider the fate of a standalone, headless server (or a micro controller for that matter) with no human typing or mousing around, and no spinning iron drive providing mechanical irregularity. Where does _it_ get entropy after it starts up? What if an attacker, or bad luck, forces periodic reboots? This is a [real problem](http://www.theregister.co.uk/2015/12/02/raspberry\_pi\_weak\_ssh\_keys/).
+> But consider the fate of a standalone, headless server (or a micro controller for that matter) with no human typing or mousing around, and no spinning iron drive providing mechanical irregularity. Where does _it_ get entropy after it starts up? What if an attacker, or bad luck, forces periodic reboots? This is a [real problem](http://www.theregister.co.uk/2015/12/02/raspberry_pi_weak_ssh_keys/).
 
 ```
 sudo apt-get install rng-tools
@@ -332,7 +325,9 @@ Enable automatic security updates.
 ```bash
 sudo dpkg-reconfigure -plow unattended-upgrades
 ```
+
 ## Instalar paquetes
+
 Instala los paquetes que necesitaremos.
 
 ```bash
