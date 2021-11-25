@@ -11,11 +11,11 @@ Säästetään hieman energiaa, nostetaan CPU:n hallintaa pikkuisen ja asetetaan
 {% hint style="warning" %}
 Tässä muutamia linkkejä ylikellotukseen ja aseman nopeuksien testaamiseen. Jos sinulla on lämpöaltaita, voit turvallisesti asettaa 2000. Kiinnitä huomiota yli-voltitus suosituksiin jotta nekin sopivat valitsemaasi kellotusnopeuteen.
 
-* [https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md](https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md)
-* [https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/](https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/)
-* [https://www.tomshardware.com/how-to/raspberry-pi-4-23-ghz-overclock](https://www.tomshardware.com/how-to/raspberry-pi-4-23-ghz-overclock)
-* [https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/](https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/)
-* [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
+- [https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md](https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md)
+- [https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/](https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/)
+- [https://www.tomshardware.com/how-to/raspberry-pi-4-23-ghz-overclock](https://www.tomshardware.com/how-to/raspberry-pi-4-23-ghz-overclock)
+- [https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/](https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/)
+- [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
 
 Huomaa, että Ubuntu tallentaa config.txt -tiedoston eri paikkaan kuin Raspbian.
 {% endhint %}
@@ -79,19 +79,11 @@ Lisää seuraava tiedoston loppuun omalle riville, tallenna & sulje nano.
 tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
-### Lisää avoimen tiedoston rajaa
+### Increase open file limit for $USER
+Add a couple lines to the bottom of /etc/security/limits.conf
 
-Avaa /etc/security/limits.conf.
-
-```
-sudo nano /etc/security/limits.conf
-```
-
-Lisää seuraava tiedoston loppuun omalle riville, tallenna & sulje nano.
-
-```
-ada soft nofile 800000
-ada hard nofile 1048576
+```bash
+sudo bash -c "echo -e '${USER} soft nofile 800000\n${USER} hard nofile 1048576\n' >> /etc/security/limits.conf"
 ```
 
 ### Optimoi suorituskyky & tietoturva
@@ -113,7 +105,7 @@ sudo nano /etc/sysctl.conf
 ```
 ## Pi Node ##
 
-# swap more to zram                     
+# swap more to zram
 vm.vfs_cache_pressure=500
 vm.swappiness=100
 vm.dirty_background_ratio=1
@@ -168,7 +160,7 @@ sudo nano /etc/rc.local
 ```
 #!/bin/bash
 
-# Anna suorittimen käynnistyksen rutiinien aika asettua.
+# Give CPU startup routines time to settle.
 sleep 120
 
 sysctl -p /etc/sysctl.conf
@@ -196,14 +188,14 @@ ENABLED="0"
 
 ### Chrony
 
-Meidän täytyy saada aikamme synkronoitua niin tarkasti kuin mahdollista. Avaa /etc/chrony/chrony.conf
+Meidän täytyy saada aikamme synkronoitua niin tarkasti kuin mahdollista. Avaa /etc/security/chrony.conf
 
 ```
 sudo apt install chrony
 ```
 
 ```bash
-sudo nano /etc/chrony/chrony.conf
+sudo nano /etc/security/chrony.conf
 ```
 
 Korvaa tiedoston sisältö alla olevalla tekstillä, Tallenna ja poistu.
@@ -307,11 +299,12 @@ Katso, kuinka paljon zram swap:ia cardano-node käyttää.
 CNZRAM=$(pidof cardano-node)
 grep --color VmSwap /proc/$CNZRAM/status
 ```
+
 {% endhint %}
 
 ### Raspberry Pi & entropia
 
-Ennen kuin alamme tuottaa avaimia palvelimella meidän pitää luoda turvallinen määrä entropiaa.
+Before we start generating keys with a headless server we should have a safe amount of entropy.
 
 {% hint style="info" %}
 [https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/](https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/)
@@ -319,7 +312,7 @@ Ennen kuin alamme tuottaa avaimia palvelimella meidän pitää luoda turvallinen
 [https://github.com/nhorman/rng-tools](https://github.com/nhorman/rng-tools)
 {% endhint %}
 
-> But consider the fate of a standalone, headless server (or a micro controller for that matter) with no human typing or mousing around, and no spinning iron drive providing mechanical irregularity. Mistä _se_ saa entropiaa käynnistyttyään? Entä jos hyökkääjä tai huono onni, pakottaa säännöllisiä uudelleenkäynnistyksiä? This is a [real problem](http://www.theregister.co.uk/2015/12/02/raspberry\_pi\_weak\_ssh\_keys/).
+> But consider the fate of a standalone, headless server (or a micro controller for that matter) with no human typing or mousing around, and no spinning iron drive providing mechanical irregularity. Mistä _se_ saa entropiaa käynnistyttyään? Entä jos hyökkääjä tai huono onni, pakottaa säännöllisiä uudelleenkäynnistyksiä? Tämä on [todellinen ongelma](http://www.theregister.co.uk/2015/12/02/raspberry_pi_weak_ssh_keys/).
 
 ```
 sudo apt-get install rng-tools
@@ -332,7 +325,9 @@ Enable automatic security updates.
 ```bash
 sudo dpkg-reconfigure -plow unattended-upgrades
 ```
+
 ## Asenna paketit
+
 Asennetaan tarvittavat paketit.
 
 ```bash
