@@ -264,7 +264,7 @@ cardano-service restart
 ```
 {% endhint %}
 
-Add a line sourcing our .adaenv file to the top of the env file and set some paths.
+Add a line sourcing our .adaenv file to the top of the env file and adjust some paths.
 
 ```bash
 sed -i env \
