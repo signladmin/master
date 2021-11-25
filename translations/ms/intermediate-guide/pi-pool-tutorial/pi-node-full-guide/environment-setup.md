@@ -258,11 +258,14 @@ cardano-service restart
 ```
 {% endhint %}
 
+Add a line sourcing our .adaenv file to the top of the env file and set some paths.
+
 ```bash
 sed -i env \
+    -e "/#CNODEBIN/i. /home/${USER}/.adaenv" \
     -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/NODE_HOME=\"\/home\/${USER}\/pi-pool\"/g" \
     -e "s/"6000"/"${NODE_PORT}"/g" \
-    -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/${NODE_CONFIG}-config.json\"/g"
+    -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/${NODE_CONFIG}-config.json\"/g" \
     -e "s/\#TOPOLOGY=\"\${CNODE_HOME}\/files\/topology.json\"/TOPOLOGY=\"\${NODE_FILES}\/${NODE_CONFIG}-topology.json\"/g"
 ```
 
@@ -286,6 +289,9 @@ Download the topologyUpdater script and have a look at it. Lower the number of p
 
 ```bash
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/topologyUpdater.sh
+```
+
+```bash
 nano topologyUpdater.sh
 ```
 
