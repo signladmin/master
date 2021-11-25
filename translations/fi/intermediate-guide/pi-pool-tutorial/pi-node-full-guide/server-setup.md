@@ -20,20 +20,6 @@ Tässä muutamia linkkejä ylikellotukseen ja aseman nopeuksien testaamiseen. Jo
 Huomaa, että Ubuntu tallentaa config.txt -tiedoston eri paikkaan kuin Raspbian.
 {% endhint %}
 
-### Aseman nopeustesti
-
-#### Kirjoitusnopeus
-
-```
-sudo dd if=/dev/zero of=/tmp/output conv=fdatasync bs=384k count=1k; sudo rm -f /tmp/output
-```
-
-#### Lukunopeus
-
-```
-sudo hdparm -Tt /dev/sda
-```
-
 ### Ylikellotus, muisti & radiot
 
 Muokkaa /boot/firmware/config.txt. Just paste Pi Node additions in at the bottom.
@@ -80,15 +66,20 @@ tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
 ### Increase open file limit for $USER
+
 Add a couple lines to the bottom of /etc/security/limits.conf
 
 ```bash
 sudo bash -c "echo -e '${USER} soft nofile 800000\n${USER} hard nofile 1048576\n' >> /etc/security/limits.conf"
 ```
 
-### Optimoi suorituskyky & tietoturva
+Confirm it was added to the bottom.
 
-Lisää seuraava /etc/sysctl.conf tiedoston loppuun. Tallenna ja sulje.
+```bash
+cat /etc/security/limits.conf
+```
+
+### Optimoi suorituskyky & tietoturva
 
 {% hint style="info" %}
 [https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3](https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3)
@@ -98,7 +89,9 @@ Lisää seuraava /etc/sysctl.conf tiedoston loppuun. Tallenna ja sulje.
 If you would like to disable ipv6 or turn on forwarding you can below.
 {% endhint %}
 
-```
+Lisää seuraava /etc/sysctl.conf tiedoston loppuun. Tallenna ja sulje.
+
+```bash
 sudo nano /etc/sysctl.conf
 ```
 
@@ -270,6 +263,7 @@ mem=$(((totalmem / 2 / ${NRDEVICES}) \* 1024 \* 3))
 
 ```bash
 #!/bin/sh
+
 # load dependency modules
 NRDEVICES=$(grep -c ^processor /proc/cpuinfo | sed 's/^0$/1/')
 if modinfo zram | grep -q ' zram_num_devices:' 2>/dev/null; then
@@ -280,9 +274,11 @@ else
   exit 1
 fi
 modprobe zram $MODPROBE_ARGS
+
 # Calculate memory to use for zram (1/2 of ram)
 totalmem=`LC_ALL=C free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
 mem=$(((totalmem / 2 / ${NRDEVICES}) * 1024 * 3))
+
 # initialize the devices
 for i in $(seq ${NRDEVICES}); do
   DEVNUMBER=$((i - 1))
@@ -290,6 +286,7 @@ for i in $(seq ${NRDEVICES}); do
   mkswap /dev/zram${DEVNUMBER}
   swapon -p 5 /dev/zram${DEVNUMBER}
 done
+
 ```
 
 {% hint style="info" %}
@@ -339,4 +336,18 @@ sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
 
 ```
 sudo reboot
+```
+
+### Optionally test drive speed
+
+#### Kirjoitusnopeus
+
+```
+sudo dd if=/dev/zero of=/tmp/output conv=fdatasync bs=384k count=1k; sudo rm -f /tmp/output
+```
+
+#### Lukunopeus
+
+```
+sudo hdparm -Tt /dev/sda
 ```
