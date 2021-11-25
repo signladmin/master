@@ -80,6 +80,7 @@ tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
 ### Increase open file limit for $USER
+Add a couple lines to the bottom of /etc/security/limits.conf
 
 ```bash
 sudo bash -c "echo -e '${USER} soft nofile 800000\n${USER} hard nofile 1048576\n' >> /etc/security/limits.conf"
