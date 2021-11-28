@@ -9,15 +9,11 @@ To turn Pi-Node into a active relay we have to.
 2. Configure static IP.
 3. Configure port for cardano-service.
 4. Configure port forwarding on router.
-5. Update port in env file.
-6. Enable cron job.
-7. Configure both topology scripts.
-8. Wait for service on boarding(4 hours).
-9. Pull in new list of peers.
-10. Prune list of best peers.
-11. Update gLiveView's env file.
-12. Edit the alias name for Prometheus.
-13. Reboot.
+5. Enable cron job.
+6. Wait for service on boarding(4 hours).
+7.  Prune list of best (8) peers.
+8.  Edit the alias name for Prometheus.
+9.  Reboot.
 
 ## Hostname
 
@@ -111,31 +107,13 @@ sudo netplan apply
 
 ## Configure service port
 
-Open the cardano service file and change the port it listens on.
+Open the ~/.adaenv file and change the port it listens on.
 
 ```bash
-nano /home/ada/.local/bin/cardano-service
+nano $HOME/.adaenv
 ```
 
 Save and exit. **ctrl+x then y**.
-
-```bash
-#!/bin/bash
-DIRECTORY=/home/ada/pi-pool
-FILES=/home/ada/pi-pool/files
-PORT=3001
-TOPOLOGY=${FILES}/${NODE_CONFIG}-topology.json
-DB_PATH=${DIRECTORY}/db
-SOCKET_PATH=${DIRECTORY}/db/socket
-CONFIG=${FILES}/${NODE_CONFIG}-config.json
-## +RTS -N4 -RTS = Multicore(4)
-cardano-node run \
-  --topology ${TOPOLOGY} \
-  --database-path ${DB_PATH} \
-  --socket-path ${SOCKET_PATH} \
-  --port ${PORT} \
-  --config ${CONFIG}
-```
 
 Enable cardano-service at boot & restart the service to load changes.
 
@@ -165,7 +143,7 @@ If you are using IPv4 leave CNODE_HOSTNAME the way it is. The service will pick 
 {% endhint %}
 
 ```bash
-cd /home/ada/pi-pool/scripts/
+cd ${NODE_HOME}/scripts/
 ```
 
 ```bash
@@ -194,33 +172,7 @@ crontab -e
 
 Save and exit.
 
-### Pull in your list of peers
-
-Wait four hours or so and run the relay-topology_pull.sh to replace your mainnet-topology file with the list created in the log directory.
-
-Open relay-topology_pull.sh and configure it for your environment.
-
-```bash
-nano /home/ada/pi-pool/scripts/relay-topology_pull.sh
-```
-
-```bash
-#!/bin/bash
-BLOCKPRODUCING_IP=<core nodes private IPv4 address>
-BLOCKPRODUCING_PORT=3000
-curl -4 -s -o /home/ada/pi-pool/files/${NODE_CONFIG}-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
-```
-
-Save and exit.
-
-After four hours of on boarding your relay(s) will start to be available to other peers on the network. **topologyUpdater.sh** will create a list in /home/ada/pi-pool/logs.
-
-relay-topology_pull.sh will replace the contents of your relays mainnet-topology file.
-
-```bash
-cd /home/ada/pi-pool/scripts
-./relay-topology_pull.sh
-```
+After four hours of on boarding your relay(s) will start to be available to other peers on the network. **topologyUpdater.sh** will create a list in ${NODE_HOME}/logs.
 
 ### Prune the list
 
@@ -231,7 +183,7 @@ Remember to remove the last entries comma in your list or cardano-node will fail
 {% endhint %}
 
 ```bash
-nano /home/ada/pi-pool/files/mainnet-topology.json
+nano ${NODE_HOME}/files/${NODE_CONFIG}-topology.json
 ```
 
 ### Enable blockfetch tracing
@@ -240,16 +192,6 @@ nano /home/ada/pi-pool/files/mainnet-topology.json
 sed -i ${NODE_FILES}/mainnet-config.json \
     -e "s/TraceBlockFetchDecisions\": false/TraceBlockFetchDecisions\": true/g"
 ```
-
-## Update gLiveView port
-
-Open the env file in the scripts directory.
-
-```bash
-nano /home/ada/pi-pool/scripts/env
-```
-
-Update the port number to match the one set in the cardano-service file. 3001 in this guide.
 
 Reboot your new relay and let it sync back to the tip of the chain.
 
