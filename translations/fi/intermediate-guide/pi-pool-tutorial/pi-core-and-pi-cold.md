@@ -44,7 +44,7 @@ Luo a KES avainpari: **kes.vkey** & **kes.skey**
 {% tab title="Core" %}
 
 ```bash
-cd $NODE_HOME
+cd ${NODE_HOME}
 cardano-cli node key-gen-KES \
   --verification-key-file kes.vkey \
   --signing-key-file kes.skey
@@ -59,7 +59,7 @@ Luo noden kylmä avainpari: **node.vkey**, **node.skey** ja **node.counter** tal
 {% tab title="Cold Offline" %}
 
 ```bash
-mkdir $HOME/cold-keys
+mkdir ${HOME}/cold-keys
 cd cold-keys
 cardano-cli node key-gen \
   --cold-verification-key-file node.vkey \
@@ -76,7 +76,7 @@ Luo muuttujat, joissa on KES-jakson slottien määrä. Tämä määritetään ge
 {% tab title="Core" %}
 
 ```bash
-slotsPerKesPeriod=$(cat $NODE_FILES/${NODE_CONFIG}-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
+slotsPerKesPeriod=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
 slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotsPerKesPeriod: ${slotsPerKesPeriod}
 echo slotNo: ${slotNo}
@@ -110,8 +110,8 @@ Korvaa **\<startKesPeriod>** arvolla, jonka kirjoitit ylös.
 ```bash
 cardano-cli node issue-op-cert \
   --kes-verification-key-file kes.vkey \
-  --cold-signing-key-file $HOME/cold-keys/node.skey \
-  --operational-certificate-issue-counter $HOME/cold-keys/node.counter \
+  --cold-signing-key-file ${HOME}/cold-keys/node.skey \
+  --operational-certificate-issue-counter ${HOME}/cold-keys/node.counter \
   --kes-period <startKesPeriod> \
   --out-file node.cert
 ```
@@ -153,7 +153,7 @@ Muokkaa cardano-service startup skriptiä lisäämällä **kes.skey**, **vrf. av
 {% tab title="Core" %}
 
 ```bash
-nano $HOME/.local/bin/cardano-service
+nano ${HOME}/.local/bin/cardano-service
 ```
 
 {% endtab %}
@@ -164,13 +164,11 @@ nano $HOME/.local/bin/cardano-service
 
 ```bash
 #!/bin/bash
-DIRECTORY=/home/ada/pi-pool
-FILES=/home/ada/pi-pool/files
-PORT=3000
-TOPOLOGY=${FILES}/${NODE_CONFIG}-topology.json
-DB_PATH=${DIRECTORY}/db
-SOCKET_PATH=${DIRECTORY}/db/socket
-CONFIG=${FILES}/${NODE_CONFIG}-config.json
+. /home/ada/.adaenv
+
+TOPOLOGY=${NODE_FILES}/${NODE_CONFIG}-topology.json
+DB_PATH=${NODE_HOME}/db
+CONFIG=${NODE_FILES}/${NODE_CONFIG}-config.json
 KES=${DIRECTORY}/kes.skey
 VRF=${DIRECTORY}/vrf.skey
 CERT=${DIRECTORY}/node.cert
@@ -178,8 +176,8 @@ CERT=${DIRECTORY}/node.cert
 cardano-node run +RTS -N4 -RTS \
   --topology ${TOPOLOGY} \
   --database-path ${DB_PATH} \
-  --socket-path ${SOCKET_PATH} \
-  --port ${PORT} \
+  --socket-path ${CARDANO_NODE_SOCKET_PATH} \
+  --port ${NODE_PORT} \
   --config ${CONFIG} \
   --shelley-kes-key ${KES} \
   --shelley-vrf-key ${VRF} \
@@ -195,7 +193,7 @@ Add your relay(s) to ${NODE_CONFIG}-topolgy.json.
 {% tab title="Core" %}
 
 ```bash
-nano $NODE_FILES/${NODE_CONFIG}-topology.json
+nano ${NODE_FILES}/${NODE_CONFIG}-topology.json
 ```
 
 {% endtab %}
@@ -312,7 +310,7 @@ cardano-service restart
 {% tab title="Cold Offline" %}
 
 ```bash
-cd $NODE_HOME
+cd ${NODE_HOME}
 cardano-cli address key-gen \
   --verification-key-file payment.vkey \
   --signing-key-file payment.skey
@@ -485,7 +483,7 @@ Nouda **stakeAddressDeposit** arvo **params.json**.
 {% tab title="Core" %}
 
 ```bash
-stakeAddressDeposit=$(cat $NODE_HOME/params.json | jq -r '.stakeAddressDeposit')
+stakeAddressDeposit=$(cat ${NODE_HOME}/params.json | jq -r '.stakeAddressDeposit')
 echo stakeAddressDeposit : ${stakeAddressDeposit}
 ```
 
@@ -620,7 +618,7 @@ Kannatan tiedoston hostaamista Pi:ssä NGINX:in kanssa.
 {% tab title="Core" %}
 
 ```bash
-cd $NODE_HOME
+cd ${NODE_HOME}
 nano poolMetaData.json
 ```
 
@@ -674,7 +672,7 @@ Tässä on minun **poolMetaData.json** & **laajennettuPoolMetaData.json** viitte
 {% tab title="Core" %}
 
 ```bash
-minPoolCost=$(cat $NODE_HOME/params.json | jq -r .minPoolCost)
+minPoolCost=$(cat ${NODE_HOME}/params.json | jq -r .minPoolCost)
 echo minPoolCost: ${minPoolCost}
 ```
 
@@ -736,7 +734,7 @@ Kopioi vrf.vkey ja poolMetaDataHash.txt kylmä koneeseen ja myönnä stake pooli
 
 ```bash
 cardano-cli stake-pool registration-certificate \
-  --cold-verification-key-file $HOME/cold-keys/node.vkey \
+  --cold-verification-key-file ${HOME}/cold-keys/node.vkey \
   --vrf-verification-key-file vrf.vkey \
   --pool-pledge 10000000000 \
   --pool-cost 340000000 \
@@ -762,7 +760,7 @@ Anna delegointitodistus **stake.skey** & **node.vkey** avainten avulla.
 ```bash
 cardano-cli stake-address delegation-certificate \
   --stake-verification-key-file stake.vkey \
-  --cold-verification-key-file $HOME/cold-keys/node.vkey \
+  --cold-verification-key-file ${HOME}/cold-keys/node.vkey \
   --out-file deleg.cert
 ```
 
@@ -775,7 +773,7 @@ Nouda stake poolisi id.
 {% tab title="Cold Offline" %}
 
 ```bash
-cardano-cli stake-pool id --cold-verification-key-file $HOME/cold-keys/node.vkey --output-format hex > stakePoolId.txt
+cardano-cli stake-pool id --cold-verification-key-file ${HOME}/cold-keys/node.vkey --output-format hex > stakePoolId.txt
 cat stakePoolId.txt
 ```
 
@@ -835,7 +833,7 @@ Tiedustele **params.json** -tiedostosta stake poolin rekisteröintitalletuksen a
 {% tab title="Core" %}
 
 ```bash
-stakePoolDeposit=$(cat $NODE_HOME/params.json | jq -r '.stakePoolDeposit')
+stakePoolDeposit=$(cat ${NODE_HOME}/params.json | jq -r '.stakePoolDeposit')
 echo stakePoolDeposit: ${stakePoolDeposit}
 ```
 
@@ -924,7 +922,7 @@ Allekirjoita tapahtuma **payment.skey**, **node.skey** & **stake.skey** avainten
 cardano-cli transaction sign \
   --tx-body-file tx.raw \
   --signing-key-file payment.skey \
-  --signing-key-file $HOME/cold-keys/node.skey \
+  --signing-key-file ${HOME}/cold-keys/node.skey \
   --signing-key-file stake.skey \
   --${NODE_CONFIG} \
   --out-file tx.signed
