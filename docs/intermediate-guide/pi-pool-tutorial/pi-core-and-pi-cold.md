@@ -44,7 +44,7 @@ Generate a KES key pair: **kes.vkey** & **kes.skey**
 {% tab title="Core" %}
 
 ```bash
-cd $NODE_HOME
+cd ${NODE_HOME}
 cardano-cli node key-gen-KES \
   --verification-key-file kes.vkey \
   --signing-key-file kes.skey
@@ -59,7 +59,7 @@ Generate a node cold key pair: **node.vkey**, **node.skey** and **node.counter**
 {% tab title="Cold Offline" %}
 
 ```bash
-mkdir $HOME/cold-keys
+mkdir ${HOME}/cold-keys
 cd cold-keys
 cardano-cli node key-gen \
   --cold-verification-key-file node.vkey \
@@ -76,7 +76,7 @@ Create variables with the number of slots per KES period from the genesis file a
 {% tab title="Core" %}
 
 ```bash
-slotsPerKesPeriod=$(cat $NODE_FILES/${NODE_CONFIG}-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
+slotsPerKesPeriod=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
 slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
 echo slotsPerKesPeriod: ${slotsPerKesPeriod}
 echo slotNo: ${slotNo}
@@ -110,8 +110,8 @@ Replace **\<startKesPeriod>** with the value you wrote down.
 ```bash
 cardano-cli node issue-op-cert \
   --kes-verification-key-file kes.vkey \
-  --cold-signing-key-file $HOME/cold-keys/node.skey \
-  --operational-certificate-issue-counter $HOME/cold-keys/node.counter \
+  --cold-signing-key-file ${HOME}/cold-keys/node.skey \
+  --operational-certificate-issue-counter ${HOME}/cold-keys/node.counter \
   --kes-period <startKesPeriod> \
   --out-file node.cert
 ```
@@ -153,7 +153,7 @@ Edit the cardano-service startup script by adding **kes.skey**, **vrf.skey** and
 {% tab title="Core" %}
 
 ```bash
-nano $HOME/.local/bin/cardano-service
+nano ${HOME}/.local/bin/cardano-service
 ```
 
 {% endtab %}
@@ -164,13 +164,11 @@ nano $HOME/.local/bin/cardano-service
 
 ```bash
 #!/bin/bash
-DIRECTORY=/home/ada/pi-pool
-FILES=/home/ada/pi-pool/files
-PORT=3000
-TOPOLOGY=${FILES}/${NODE_CONFIG}-topology.json
-DB_PATH=${DIRECTORY}/db
-SOCKET_PATH=${DIRECTORY}/db/socket
-CONFIG=${FILES}/${NODE_CONFIG}-config.json
+. /home/ada/.adaenv
+
+TOPOLOGY=${NODE_FILES}/${NODE_CONFIG}-topology.json
+DB_PATH=${NODE_HOME}/db
+CONFIG=${NODE_FILES}/${NODE_CONFIG}-config.json
 KES=${DIRECTORY}/kes.skey
 VRF=${DIRECTORY}/vrf.skey
 CERT=${DIRECTORY}/node.cert
@@ -178,8 +176,8 @@ CERT=${DIRECTORY}/node.cert
 cardano-node run +RTS -N4 -RTS \
   --topology ${TOPOLOGY} \
   --database-path ${DB_PATH} \
-  --socket-path ${SOCKET_PATH} \
-  --port ${PORT} \
+  --socket-path ${CARDANO_NODE_SOCKET_PATH} \
+  --port ${NODE_PORT} \
   --config ${CONFIG} \
   --shelley-kes-key ${KES} \
   --shelley-vrf-key ${VRF} \
@@ -195,7 +193,7 @@ Add your relay(s) to ${NODE_CONFIG}-topolgy.json.
 {% tab title="Core" %}
 
 ```bash
-nano $NODE_FILES/${NODE_CONFIG}-topology.json
+nano ${NODE_FILES}/${NODE_CONFIG}-topology.json
 ```
 
 {% endtab %}
@@ -312,7 +310,7 @@ cardano-service restart
 {% tab title="Cold Offline" %}
 
 ```bash
-cd $NODE_HOME
+cd ${NODE_HOME}
 cardano-cli address key-gen \
   --verification-key-file payment.vkey \
   --signing-key-file payment.skey
@@ -485,7 +483,7 @@ Retrieve **stakeAddressDeposit** value from **params.json**.
 {% tab title="Core" %}
 
 ```bash
-stakeAddressDeposit=$(cat $NODE_HOME/params.json | jq -r '.stakeAddressDeposit')
+stakeAddressDeposit=$(cat ${NODE_HOME}/params.json | jq -r '.stakeAddressDeposit')
 echo stakeAddressDeposit : ${stakeAddressDeposit}
 ```
 
@@ -620,7 +618,7 @@ I say host it on your Pi with NGINX.
 {% tab title="Core" %}
 
 ```bash
-cd $NODE_HOME
+cd ${NODE_HOME}
 nano poolMetaData.json
 ```
 
@@ -674,7 +672,7 @@ Here is my **poolMetaData.json** & **extendedPoolMetaData.json** as a reference 
 {% tab title="Core" %}
 
 ```bash
-minPoolCost=$(cat $NODE_HOME/params.json | jq -r .minPoolCost)
+minPoolCost=$(cat ${NODE_HOME}/params.json | jq -r .minPoolCost)
 echo minPoolCost: ${minPoolCost}
 ```
 
@@ -736,7 +734,7 @@ Copy vrf.vkey and poolMetaDataHash.txt to your cold machine and issue a stake po
 
 ```bash
 cardano-cli stake-pool registration-certificate \
-  --cold-verification-key-file $HOME/cold-keys/node.vkey \
+  --cold-verification-key-file ${HOME}/cold-keys/node.vkey \
   --vrf-verification-key-file vrf.vkey \
   --pool-pledge 10000000000 \
   --pool-cost 340000000 \
@@ -762,7 +760,7 @@ Issue a delegation certificate from **stake.skey** & **node.vkey**.
 ```bash
 cardano-cli stake-address delegation-certificate \
   --stake-verification-key-file stake.vkey \
-  --cold-verification-key-file $HOME/cold-keys/node.vkey \
+  --cold-verification-key-file ${HOME}/cold-keys/node.vkey \
   --out-file deleg.cert
 ```
 
@@ -775,7 +773,7 @@ Retrieve your stake pool id.
 {% tab title="Cold Offline" %}
 
 ```bash
-cardano-cli stake-pool id --cold-verification-key-file $HOME/cold-keys/node.vkey --output-format hex > stakePoolId.txt
+cardano-cli stake-pool id --cold-verification-key-file ${HOME}/cold-keys/node.vkey --output-format hex > stakePoolId.txt
 cat stakePoolId.txt
 ```
 
@@ -835,7 +833,7 @@ Parse **params.json** for stake pool registration deposit value. Spoiler: it's 5
 {% tab title="Core" %}
 
 ```bash
-stakePoolDeposit=$(cat $NODE_HOME/params.json | jq -r '.stakePoolDeposit')
+stakePoolDeposit=$(cat ${NODE_HOME}/params.json | jq -r '.stakePoolDeposit')
 echo stakePoolDeposit: ${stakePoolDeposit}
 ```
 
@@ -924,7 +922,7 @@ Sign the transaction with your **payment.skey**, **node.skey** & **stake.skey**.
 cardano-cli transaction sign \
   --tx-body-file tx.raw \
   --signing-key-file payment.skey \
-  --signing-key-file $HOME/cold-keys/node.skey \
+  --signing-key-file ${HOME}/cold-keys/node.skey \
   --signing-key-file stake.skey \
   --${NODE_CONFIG} \
   --out-file tx.signed
