@@ -10,15 +10,11 @@ Jotta Pi-Node muuttuisi aktiiviseksi relayksi meidän on tehtävä seurrava.
 2. Määritä staattinen IP-osoite.
 3. Määritä portti cardano-palveluun.
 4. Määritä portin siirto reitittimessä.
-5. Päivitä portti env-tiedostossa.
-6. Ota cron työ käyttöön.
-7. Määritä molemmat topologian komentosarjat.
-8. Odota palvelua aktivointia\(4 tuntia).
-9. Vedä uusi käyttäjäluettelo.
-10. Jalosta luettelo parhaista käyttäjiä.
-11. Päivitä gLiveViewin env-tiedosto.
-12. Muokkaa Prometheuksen alias nimeä.
-13. Käynnistä uudelleen
+5. Enable cron job.
+6. Wait for service on boarding(4 hours).
+7.  Prune list of best (8) peers.
+8.  Edit the alias name for Prometheus.
+9.  Reboot.
 
 ## Hostname
 
@@ -112,31 +108,13 @@ sudo netplan apply
 
 ## Määritä palvelinportti
 
-Avaa cardano-service tiedosto ja muuta portti jota se kuuntelee.
+Open the ~/.adaenv file and change the port it listens on.
 
 ```bash
-nano /home/ada/.local/bin/cardano-service
+nano $HOME/.adaenv
 ```
 
 Tallenna ja sulje. **ctrl+x ja y**.
-
-```bash
-#!/bin/bash
-DIRECTORY=/home/ada/pi-pool
-FILES=/home/ada/pi-pool/files
-PORT=3001
-TOPOLOGY=${FILES}/${NODE_CONFIG}-topology.json
-DB_PATH=${DIRECTORY}/db
-SOCKET_PATH=${DIRECTORY}/db/socket
-CONFIG=${FILES}/${NODE_CONFIG}-config.json
-## +RTS -N4 -RTS = Multicore(4)
-cardano-node run \
-  --topology ${TOPOLOGY} \
-  --database-path ${DB_PATH} \
-  --socket-path ${SOCKET_PATH} \
-  --port ${PORT} \
-  --config ${CONFIG}
-```
 
 Ota cardano-service käyttöön käynnistyksen yhteydessä & käynnistä palvelu uudelleen ladataksesi muutokset.
 
@@ -166,7 +144,7 @@ Jos käytät IPv4:ää, jätä CNODE_HOSTNAME niin kuin se on. Palvelu hakee jul
 {% endhint %}
 
 ```bash
-cd /home/ada/pi-pool/scripts/topologyUpdater.sh
+cd ${NODE_HOME}/scripts/
 ```
 
 ```bash
@@ -195,100 +173,65 @@ crontab -e
 
 Tallenna ja sulje.
 
-### Vedä uusi käyttäjäluettelo
+After four hours of on boarding your relay(s) will start to be available to other peers on the network. **topologyUpdater.sh** will create a list in ${NODE_HOME}/logs.
 
-Odota neljä tuntia ja suorita relay-topology_pull.sh korvataksesi mainnet-topologian tiedoston lokihakemistoon luodulla listalla.
+### Prune the list
 
-Avaa relay-topology_pull.sh ja määritä se ympäristöllesi.
+Open your topolgy file and use **ctrl+k** to cut the entire line of any peer over 5,000 miles away.
 
-```bash
-nano /home/ada/pi-pool/scripts/relay-topology_pull.sh
-```
-
-```bash
-#!/bin/bash
-BLOCKPRODUCING_IP=<core nodes private IPv4 address>
-BLOCKPRODUCING_PORT=3000
-curl -4 -s -o /home/ada/pi-pool/files/${NODE_CONFIG}-topology.json "https://api.clio.one/htopology/v1/fetch/?max=15&customPeers=${BLOCKPRODUCING_IP}:${BLOCKPRODUCING_PORT}:1|relays-new.cardano-mainnet.iohk.io:3001:2"
-```
-
-Tallenna ja sulje.
-
-Neljän tunnin kuluttua relaysi on saatavilla muiden käyttäjien verkossa. **topologyUpdater.sh** luo listan /home/ada/pi-pool/logs.
-
-relay-topology_pull.sh korvaa relaysi mainnet-topology tiedoston sisällön.
-
-```bash
-nano /home/ada/pi-pool/scripts/relay-topology_pull.sh
-```
-
-### Jalosta lista
-
-Avaa topolgy tiedosto ja käytä **ctrl+k** leikataksesi koko rivi, jossa käyttäjän etäisyys on yli 5000 mailia.
-
-{% hint style="warning" %}
-Muista poistaa listasta viimeisen syötteen pilkku tai cardano-node ei käynnisty.
+{% hint style="Huomaa" %}
+Remember to remove the last entries comma in your list or cardano-node will fail to start.
 {% endhint %}
 
 ```bash
-nano /home/ada/pi-pool/files/mainnet-topology.json
+nano ${NODE_HOME}/files/${NODE_CONFIG}-topology.json
 ```
 
 ### Ota blockfetch seuranta käyttöön
 
 ```bash
-sed -i ${NODE_FILES}-mainnet-config.json \
+sed -i ${NODE_FILES}/mainnet-config.json \
     -e "s/TraceBlockFetchDecisions\": false/TraceBlockFetchDecisions\": true/g"
 ```
 
-## Päivitä gLiveView- portti
+Reboot your new relay and let it sync back to the tip of the chain.
 
-Avaa env tiedosto skripts hakemistossa.
-
-```bash
-nano /home/ada/pi-pool/scripts/env
-```
-
-Päivitä portin numero, jotta se vastaa kardano-palvelun tiedostossa asetettua numeroa. 3001 tässä oppaassa.
-
-Käynnistä uusi relay uudelleen ja anna sen synkronoida takaisin ketjun kärkeen.
-
-Käytä gLiveView.sh nähdäksesi vertaistiedot.
+Use gLiveView.sh to view peer info.
 
 ```bash
 cd /home/ada/pi-pool/scripts
 ./gLiveView.sh
 ```
 
-Monet operaattorit estävät icmp syn packets(ping) vuosikymmen sitten korjatun turvavirheen vuoksi. Joten odota näkeväsi --- RTT, koska emme saa vastausta kyseiseltä palvelimelta.
+Many operators block icmp syn packets(ping) because of a security flaw that was patched a decade ago. So expect to see --- for RTT because we are not receiving a response from that server.
 
-Enemmän saapuvia yhteyksiä on yleensä hyvä asia, sillä se lisää mahdollisuutta, että saat verkon dataa nopeammin. Vaikkakin saatat haluta asettaa rajan sille, kuinka monta yhteyttä voidaan muodostaa. Ainoa tapa pysäyttää saapuvat yhteydet olisi estää IPv4-osoite ufw.
+More incoming connections is generally a good thing, it increases the odds that you will get network data sooner. Though you may want to put a limit on how many connect. The only way to stop incoming connections would be to block the IPv4 address with ufw.
 
 ## Prometheus
 
-Viimeinen asia, mitä meidän pitäisi tehdä, on muuttaa nimi jonka Prometheus vie Grafanaan.
+Last thing we should do is change the name Prometheus is serving to Grafana.
 
 ```bash
 sudo nano /etc/prometheus/prometheus.yml
 ```
 
-{% hint style="warning" %}
-Voit muuttaa.
+{% hint style="Huomaa" %}
+You can change.
 
 ```bash
 alias: 'N1'
 ```
 
-arvoon
+to
 
 ```bash
 alias: 'R1'
 ```
 
-Tulevassa oppaassa kerron kuinka Prometheus asennetaan erilliselle Pi:lle ja hakee dataa poolista sen sijaan, että Prometheus käyttäisi node koneiden järjestelmän resursseja.
+In an upcoming guide I will show how to have Prometheus running on a separate Pi scraping data from the pool instead of having Prometheus using system resources on those machines.
 {% endhint %}
 
-Päivitä, tallenna ja poistu.
+Update, save and exit.
 
 ```bash
 global:
@@ -333,4 +276,4 @@ scrape_configs:
           type:  'node'
 ```
 
-Käynnistä palvelin uudelleen ja anna sille aikaa synkronoida ketjun kärkeen. Siinäpä se. Ole hyvä ja liity vapaasti Telegram-kanavamme tukeen. [https://t.me/armada_alli](https://t.me/armada_alli)
+Reboot the server and give it a while to sync back up. That is just about it. Please feel free to join our Telegram channel for support. [https://t.me/armada_alli](https://t.me/armada_alli)
