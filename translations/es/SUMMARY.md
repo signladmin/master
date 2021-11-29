@@ -1,6 +1,6 @@
 # Índice
 
-* [🏴☠ 🏴☠ Welcome ARM Operators](README.md)
+* [🏴☠ Welcome ARM Operators](README.md)
 
 ## Cardano Node
 
@@ -9,7 +9,7 @@
   * [Configuración del servidor](cardano-node/raspi-node/server-setup.md)
   * [Configuración del entorno](cardano-node/raspi-node/environment-setup.md)
 
-## Guias de Stake Pools <a href="intermediate-guide" id="intermediate-guide"></a>
+## Guias de Stake Pools <a href="#intermediate-guide" id="intermediate-guide"></a>
 
 * [Imagen del Pi-Node & Guías](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-Node (Guía completa)](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/README.md)
@@ -32,7 +32,7 @@
 * [Guía Wireguard](intermediate-guide/wireguard-guide.md)
 * [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
 
-## Otras Guías sobre Cardano <a href="cardano-developer-guides" id="cardano-developer-guides"></a>
+## Otras Guías sobre Cardano <a href="#cardano-developer-guides" id="cardano-developer-guides"></a>
 
 * [NFT (Tokens no fungibles) en Cardano 💰](cardano-developer-guides/nft-native-assets.md)
 * [Colección de Tutoriales NFT en Cardano](cardano-developer-guides/cardano-nft-collection-tutorial-coming-soon.md)
@@ -44,7 +44,7 @@
     * [Guía de Estilo](cardano-developer-guides/how-to-contribute/untitled-1/style-guide.md)
     * [Código de conducta](cardano-developer-guides/how-to-contribute/untitled-1/code-of-conduct.md)
 
-## Recursos <a href="before-you-get-started..." id="before-you-get-started..."></a>
+## Recursos <a href="#before-you-get-started..." id="before-you-get-started..."></a>
 
 * [Biblioteca 🏫](before-you-get-started.../library.md)
 * [Enlaces de compra de hardware 🏪](before-you-get-started.../hardware.md)
