@@ -21,7 +21,7 @@ description: Stake pool operator resources.
 | [**\*\*\*\*[**PowerCert Animated Videos**](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)\*\*\*\***](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)                                                                                          |
 {% endtab %}
 
-{% tab title="Community Tutorials/GitHubs" %}
+{% tab title="Cardano Community Resources" %}
 | Author               | Link to Tutorial                                                                                                                |
 |:-------------------- |:------------------------------------------------------------------------------------------------------------------------------- |
 | \[Berry\] Pool     | [https://github.com/alessandrokonrad/Pi-Pool](https://github.com/alessandrokonrad/Pi-Pool)                                      |
@@ -57,9 +57,9 @@ description: Stake pool operator resources.
 {% endtab %}
 
 {% tab title="Youtube and Video Resources" %}
-| Video link                                                                                                           |
-|:-------------------------------------------------------------------------------------------------------------------- |
-| \*\*\*\*[**IOHK Youtube Channel**](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w)\*\*\*\* |
+| Video link                                                                       |
+|:-------------------------------------------------------------------------------- |
+| [IOHK Youtube Channel](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w) |
 {% endtab %}
 
 {% tab title="Cardano Forum" %}
