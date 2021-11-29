@@ -1,6 +1,6 @@
 # Sisällys
 
-* [🏴☠ 🏴☠ Welcome ARM Operators](README.md)
+* [🏴☠ Welcome ARM Operators](README.md)
 
 ## Cardano Node
 
@@ -9,7 +9,7 @@
   * [Palvelimen Asetukset](cardano-node/raspi-node/server-setup.md)
   * [Ympäristön Asetukset](cardano-node/raspi-node/environment-setup.md)
 
-## Stake Pool -oppaat <a href="intermediate-guide" id="intermediate-guide"></a>
+## Stake Pool -oppaat <a href="#intermediate-guide" id="intermediate-guide"></a>
 
 * [Pi-Node Image & Ohjeet](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-node (täydellinen opas)](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/README.md)
@@ -32,7 +32,7 @@
 * [Wireguard Ohje](intermediate-guide/wireguard-guide.md)
 * [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
 
-## Muuita Cardano Oppaita <a href="cardano-developer-guides" id="cardano-developer-guides"></a>
+## Muuita Cardano Oppaita <a href="#cardano-developer-guides" id="cardano-developer-guides"></a>
 
 * [Cardano Native Asset (NFT) 💰](cardano-developer-guides/nft-native-assets.md)
 * [Cardano NFT Collection Tutorial](cardano-developer-guides/cardano-nft-collection-tutorial-coming-soon.md)
@@ -44,7 +44,7 @@
     * [Tyyliohjeet](cardano-developer-guides/how-to-contribute/untitled-1/style-guide.md)
     * [Ohjesääntö](cardano-developer-guides/how-to-contribute/untitled-1/code-of-conduct.md)
 
-## Resursseja <a href="before-you-get-started..." id="before-you-get-started..."></a>
+## Resursseja <a href="#before-you-get-started..." id="before-you-get-started..."></a>
 
 * [Kirjasto 🏫](before-you-get-started.../library.md)
 * [Hyödyllisiä linkkeja laitteiston hankintaan 🏪](before-you-get-started.../hardware.md)
