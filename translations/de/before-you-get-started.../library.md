@@ -21,7 +21,7 @@ description: Stake Pool Betreiber Ressourcen.
 | [**\*\*\*\*[**PowerCert Animated Videos**](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)\*\*\*\***](https://www.youtube.com/channel/UCJQJ4GjTiq5lmn8czf8oo0Q)                                                                                          |
 {% endtab %}
 
-{% tab title="Community Tutorials/GitHubs" %}
+{% tab title="Cardano Community Resources" %}
 | Autor                | Link zum Tutorial                                                                                                               |
 |:-------------------- |:------------------------------------------------------------------------------------------------------------------------------- |
 | \[Berry\] Pool     | [https://github.com/alessandrokonrad/Pi-Pool](https://github.com/alessandrokonrad/Pi-Pool)                                      |
@@ -57,9 +57,9 @@ description: Stake Pool Betreiber Ressourcen.
 {% endtab %}
 
 {% tab title="Youtube and Video Resources" %}
-| Video Link                                                                                                           |
-|:-------------------------------------------------------------------------------------------------------------------- |
-| \*\*\*\*[**IOHK Youtube Channel**](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w)\*\*\*\* |
+| Video Link                                                                       |
+|:-------------------------------------------------------------------------------- |
+| [IOHK Youtube Channel](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w) |
 {% endtab %}
 
 {% tab title="Cardano Forum" %}
