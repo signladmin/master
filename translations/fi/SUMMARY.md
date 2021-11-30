@@ -1,6 +1,6 @@
 # Sisällys
 
-* [🏴☠ Welcome ARM Operators](README.md)
+* [🏴☠ Tervetuloa ARM-operaattorit](README.md)
 
 ## Cardano Node
 
