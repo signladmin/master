@@ -59,7 +59,7 @@ description: Stake pool -operaattorin resurssit.
 {% tab title="Youtube and Video Resources" %}
 | Videon linkki                                                                    |
 |:-------------------------------------------------------------------------------- |
-| [IOHK Youtube Channel](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w) |
+| [IOHK Youtube -kanava](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w) |
 {% endtab %}
 
 {% tab title="Cardano Forum" %}
