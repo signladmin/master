@@ -264,7 +264,7 @@ Add a line sourcing our .adaenv file to the top of the env file and adjust some 
 sed -i env \
     -e "/#CNODEBIN/i. ${HOME}/.adaenv" \
     -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/NODE_HOME=\"\${HOME}\/pi-pool\"/g" \
-    -e "s/"6000"/"'${NODE_PORT}'"/g" \
+    -e "s/\#CNODE_PORT=6000"/CNODE_PORT=\"'${NODE_PORT}'\""/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/"'${NODE_CONFIG}'"-config.json\"/g" \
     -e "s/\#TOPOLOGY=\"\${CNODE_HOME}\/files\/topology.json\"/TOPOLOGY=\"\${NODE_FILES}\/"'${NODE_CONFIG}'"-topology.json\"/g"
 ```
