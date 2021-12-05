@@ -1,18 +1,11 @@
 # Sisällys
 
-* [🏴☠ Tervetuloa ARM-operaattorit](README.md)
+* [Welcome ARMada Operators 🏴‍☠️](README.md)
 
-## Cardano Node
-
-* [RasPi-Node🍓](cardano-node/raspi-node/README.md)
-  * [Lataa & Polta](cardano-node/raspi-node/download-and-flash.md)
-  * [Palvelimen Asetukset](cardano-node/raspi-node/server-setup.md)
-  * [Ympäristön Asetukset](cardano-node/raspi-node/environment-setup.md)
-
-## Stake Pool -oppaat <a href="#intermediate-guide" id="intermediate-guide"></a>
+## Stake Pool Guides <a href="#intermediate-guide" id="intermediate-guide"></a>
 
 * [Pi-Node Image & Ohjeet](intermediate-guide/pi-pool-tutorial/README.md)
-  * [Pi-node (täydellinen opas)](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/README.md)
+  * [Pi-Node (Full Guide)](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/README.md)
     * [Lataa & Polta](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/download-and-write-it.md)
     * [Suojattu kirjautuminen](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/logging-in-securely.md)
     * [Käyttäjän Asetukset](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/user-setup.md)
@@ -29,8 +22,15 @@
   * [Dynaaminen Versio](intermediate-guide/updating-a-cardano-node/using-dynamic-build.md)
   * [Staattinen Versio](intermediate-guide/updating-a-cardano-node/static-build.md)
 * [CNCLI Leader Lokit📑](intermediate-guide/leader-logs.md)
-* [Wireguard Ohje](intermediate-guide/wireguard-guide.md)
+* [Wireguard Guide](intermediate-guide/wireguard-guide.md)
 * [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
+
+## Cardano Node
+
+* [Pi-Node🍓](cardano-node/raspi-node/README.md)
+  * [Lataa & Polta](cardano-node/raspi-node/download-and-flash.md)
+  * [Palvelimen Asetukset](cardano-node/raspi-node/server-setup.md)
+  * [Ympäristön Asetukset](cardano-node/raspi-node/environment-setup.md)
 
 ## Muuita Cardano Oppaita <a href="#cardano-developer-guides" id="cardano-developer-guides"></a>
 
