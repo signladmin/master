@@ -1,13 +1,6 @@
 # Table of contents
 
-* [🏴☠ Welcome ARM Operators](README.md)
-
-## Cardano Node
-
-* [RasPi-Node🍓](cardano-node/raspi-node/README.md)
-  * [Download & Flash](cardano-node/raspi-node/download-and-flash.md)
-  * [Server Setup](cardano-node/raspi-node/server-setup.md)
-  * [Environment Setup](cardano-node/raspi-node/environment-setup.md)
+* [Welcome ARMada Operators 🏴‍☠️](README.md)
 
 ## Stake Pool Guides <a href="#intermediate-guide" id="intermediate-guide"></a>
 
@@ -31,6 +24,13 @@
 * [CNCLI Leader Logs📑](intermediate-guide/leader-logs.md)
 * [Wireguard Guide](intermediate-guide/wireguard-guide.md)
 * [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
+
+## Cardano Node
+
+* [RasPi-Node🍓](cardano-node/raspi-node/README.md)
+  * [Download & Flash](cardano-node/raspi-node/download-and-flash.md)
+  * [Server Setup](cardano-node/raspi-node/server-setup.md)
+  * [Environment Setup](cardano-node/raspi-node/environment-setup.md)
 
 ## Other Cardano Guides <a href="#cardano-developer-guides" id="cardano-developer-guides"></a>
 
