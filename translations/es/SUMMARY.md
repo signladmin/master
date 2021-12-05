@@ -1,6 +1,29 @@
 # Índice
 
-* [🏴☠ Welcome ARM Operators](README.md)
+* [Welcome ARMada Operators 🏴‍☠️](README.md)
+
+## Stake Pool Guides <a href="#intermediate-guide" id="intermediate-guide"></a>
+
+* [Imagen del Pi-Node & Guías](intermediate-guide/pi-pool-tutorial/README.md)
+  * [Pi-Node (Full Guide)](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/README.md)
+    * [Descargar y Flashear](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/download-and-write-it.md)
+    * [Iniciando sesión de forma segura](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/logging-in-securely.md)
+    * [Configuración usuarios](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/user-setup.md)
+    * [Configuración del servidor](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/server-setup.md)
+    * [Configuración del entorno](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/environment-setup.md)
+  * [Pi-Node (quick start)](intermediate-guide/pi-pool-tutorial/pi-node.md)
+  * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay.md)
+  * [Pi-Core/Frío](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
+  * [Rotate KES](intermediate-guide/pi-pool-tutorial/rotate-kes.md)
+* [Alpine Linux OS 🗻](intermediate-guide/alpine-linux-os.md)
+* [Topología de red de una Stake Pool](intermediate-guide/basic-stake-pool-networking.md)
+* [Add adapools Metrics to Grafana 📊](intermediate-guide/add-adapools-info-to-grafana.md)
+* [Updating a Cardano Node](intermediate-guide/updating-a-cardano-node/README.md)
+  * [Dynamic Build](intermediate-guide/updating-a-cardano-node/using-dynamic-build.md)
+  * [Static Build](intermediate-guide/updating-a-cardano-node/static-build.md)
+* [CNCLI Leader Logs📑](intermediate-guide/leader-logs.md)
+* [Wireguard Guide](intermediate-guide/wireguard-guide.md)
+* [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
 
 ## Cardano Node
 
@@ -8,29 +31,6 @@
   * [Descargar y Flashear](cardano-node/raspi-node/download-and-flash.md)
   * [Configuración del servidor](cardano-node/raspi-node/server-setup.md)
   * [Configuración del entorno](cardano-node/raspi-node/environment-setup.md)
-
-## Guias de Stake Pools <a href="#intermediate-guide" id="intermediate-guide"></a>
-
-* [Imagen del Pi-Node & Guías](intermediate-guide/pi-pool-tutorial/README.md)
-  * [Pi-Node (Guía completa)](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/README.md)
-    * [Descargar y Flashear](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/download-and-write-it.md)
-    * [Iniciando sesión de forma segura](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/logging-in-securely.md)
-    * [Configuración usuarios](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/user-setup.md)
-    * [Configuración del servidor](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/server-setup.md)
-    * [Configuración del entorno](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/environment-setup.md)
-  * [Pi-Node (inicio rápido)](intermediate-guide/pi-pool-tutorial/pi-node.md)
-  * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay.md)
-  * [Pi-Core/Frío](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
-  * [Rotando las claves KES](intermediate-guide/pi-pool-tutorial/rotate-kes.md)
-* [Alpine Linux OS 🗻](intermediate-guide/alpine-linux-os.md)
-* [Topología de red de una Stake Pool](intermediate-guide/basic-stake-pool-networking.md)
-* [Cómo añadir las métricas de adapools a Grafana](intermediate-guide/add-adapools-info-to-grafana.md)
-* [Actualizando el Nodo de Cardano](intermediate-guide/updating-a-cardano-node/README.md)
-  * [Build Dinámico](intermediate-guide/updating-a-cardano-node/using-dynamic-build.md)
-  * [Build estático](intermediate-guide/updating-a-cardano-node/static-build.md)
-* [CNCLI Leader Logs📑](intermediate-guide/leader-logs.md)
-* [Guía Wireguard](intermediate-guide/wireguard-guide.md)
-* [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
 
 ## Otras Guías sobre Cardano <a href="#cardano-developer-guides" id="cardano-developer-guides"></a>
 
