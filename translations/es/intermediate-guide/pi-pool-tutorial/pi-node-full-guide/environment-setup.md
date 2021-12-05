@@ -319,7 +319,10 @@ La imagen de Pi-Node tiene esta línea de cron deshabilitada por defecto. You ca
 {% endhint %}
 
 ```bash
-33 * * * * . $HOME/.adaenv; /home/$USER/pi-pool/scripts/topologyUpdater.sh
+SHELL=/bin/bash
+PATH=/home/ada/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+33 * * * * . $HOME/.adaenv
+33 * * * * $HOME/pi-pool/scripts/topologyUpdater.sh
 ```
 
 
