@@ -48,6 +48,34 @@ echo export CARDANO_NODE_SOCKET_PATH="${HOME}/pi-pool/db/socket" >> ${HOME}/.ada
 source ${HOME}/.bashrc; source .adaenv
 ```
 
+## Build Libsodium
+This is IOHK's fork of Libsodium.
+
+```bash
+cd; cd git/
+git clone https://github.com/input-output-hk/libsodium
+cd libsodium
+git checkout 66f017f1
+./autogen.sh
+./configure
+make
+sudo make install
+```
+
+Add the following to your .bashrc file and source it.
+
+```bash
+echo "export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"" >> ~/.bashrc
+echo "export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"" >> ~/.bashrc
+source ~/.bashrc
+```
+
+Update link cache for shared libraries and confirm.
+
+```bash
+sudo ldconfig; ldconfig -p | grep libsodium
+```
+
 ### Nouda palvelintiedostot
 
 ```bash
@@ -79,9 +107,9 @@ sed -i ${NODE_CONFIG}-config.json \
 
 ```bash
 cd ${HOME}/tmp
-wget -O cardano_node_$(date +"%m-%d-%y").zip wget https://ci.zw3rk.com/build/410011/download/1/aarch64-unknown-linux-musl-cardano-node-1.31.0.zip
+wget -O cardano-1_32_1-aarch64-ubuntu_2004.zip https://github.com/armada-alliance/cardano-node-binaries/blob/main/dynamic-binaries/1.32.1/cardano-1_32_1-aarch64-ubuntu_2004.zip?raw=true
 unzip *.zip
-mv cardano-node/* ${HOME}/.local/bin
+mv cardano-1_32_1-aarch64-ubuntu_2004/cardano-* ${HOME}/.local/bin
 rm -r cardano*
 cd ${HOME}
 ```
@@ -263,10 +291,11 @@ Add a line sourcing our .adaenv file to the top of the env file and adjust some 
 ```bash
 sed -i env \
     -e "/#CNODEBIN/i. ${HOME}/.adaenv" \
-    -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/NODE_HOME=\"\${HOME}\/pi-pool\"/g" \
+    -e "s/\#CNODE_HOME=\"\/opt\/cardano\/cnode\"/CNODE_HOME=\"\${HOME}\/pi-pool\"/g" \
     -e "s/\#CNODE_PORT=6000"/CNODE_PORT=\"'${NODE_PORT}'\""/g" \
     -e "s/\#CONFIG=\"\${CNODE_HOME}\/files\/config.json\"/CONFIG=\"\${NODE_FILES}\/"'${NODE_CONFIG}'"-config.json\"/g" \
-    -e "s/\#TOPOLOGY=\"\${CNODE_HOME}\/files\/topology.json\"/TOPOLOGY=\"\${NODE_FILES}\/"'${NODE_CONFIG}'"-topology.json\"/g"
+    -e "s/\#TOPOLOGY=\"\${CNODE_HOME}\/files\/topology.json\"/TOPOLOGY=\"\${NODE_FILES}\/"'${NODE_CONFIG}'"-topology.json\"/g" \
+    -e "s/\#LOG_DIR=\"\${CNODE_HOME}\/logs\"/LOG_DIR=\"\${CNODE_HOME}\/logs\"/g"
 ```
 
 Salli gLiveView.sh:n suorittaminen.
@@ -321,8 +350,7 @@ Pi-node-imagessassa tämä cron merkintä on oletuksena pois päältä. You can 
 ```bash
 SHELL=/bin/bash
 PATH=/home/ada/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-33 * * * * . $HOME/.adaenv
-33 * * * * $HOME/pi-pool/scripts/topologyUpdater.sh
+33 * * * * . $HOME/.adaenv; $HOME/pi-pool/scripts/topologyUpdater.sh
 ```
 
 
@@ -441,6 +469,12 @@ scrape_configs:
         labels:
           alias: 'N1'
           type:  'node'
+```
+Start Prometheus & Grafana
+
+```bash
+sudo systemctl start prometheus.service
+sudo systemctl start grafana-server.service
 ```
 
 Tallenna & poistu.
