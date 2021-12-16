@@ -48,13 +48,13 @@ Localiza tu unidad de destino & y grábala al disco.
 ![](../../../.gitbook/assets/custom\_os.png)
 {% endtab %}
 
-{% tab title="Fresh Ubuntu 21.10 installation" %}
+{% tab title="Fresh Ubuntu 22.04 LTS installation" %}
 #### Within Raspberry Pi Imager
 
-#### Select Ubuntu Server 21.10 (RPI 3/4/400)
+#### Download Ubuntu Server 22.04 (RPI 3/4/400)
 
-**Choose OS -> Other general purpose OS -> Ubuntu -> Ubuntu Server 21.10 (RPI 3/4/400)**. Opción de servidor de 64 bits.
+[Raspberry Pi Generic (64-bit ARM) preinstalled server image](https://cdimage.ubuntu.com/ubuntu-server/daily-preinstalled/current/jammy-preinstalled-server-arm64+raspi.img.xz)
 
-Localiza tu unidad de destino & y grábala al disco.
+****Choose OS -> Use custom**** Locate the .img.gz file you downloaded & wish to flash. Localiza tu unidad de destino & y grábala al disco.
 {% endtab %}
 {% endtabs %}
