@@ -169,9 +169,9 @@ nano ${HOME}/.local/bin/cardano-service
 TOPOLOGY=${NODE_FILES}/${NODE_CONFIG}-topology.json
 DB_PATH=${NODE_HOME}/db
 CONFIG=${NODE_FILES}/${NODE_CONFIG}-config.json
-KES=${DIRECTORY}/kes.skey
-VRF=${DIRECTORY}/vrf.skey
-CERT=${DIRECTORY}/node.cert
+KES=${NODE_HOME}/kes.skey
+VRF=${NODE_HOME}/vrf.skey
+CERT=${NODE_HOME}/node.cert
 ## +RTS -N4 -RTS = Multicore(4)
 cardano-node run +RTS -N4 -RTS \
   --topology ${TOPOLOGY} \
