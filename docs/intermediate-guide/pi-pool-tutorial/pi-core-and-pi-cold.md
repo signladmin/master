@@ -70,6 +70,8 @@ cardano-cli node key-gen \
 {% endtab %}
 {% endtabs %}
 
+## Variables for guide interopability
+
 {% hint style="warning" %}
 In order for these commands to work on mainnet & testnet we have to set the $CONFIG_NET variable and the $MAGIC variable.
 This is because on testnet we are required to use --testnet-magic $MAGIC, where MAGIC= the magic value found in your ${NODE_CONFIG}-shelley-genesis.json.
@@ -82,7 +84,6 @@ echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -
 echo export if [[ ${NODE_CONFIG} = 'testnet' ]]; then CONFIG_NET=testnet-magic\ ${MAGIC}; else CONFIG_NET=mainnet; fi >> ${HOME}/.adaenv
 . ~/.adaenv
 ```
-
 
 Create variables with the number of slots per KES period from the genesis file and current tip of the chain.
 
@@ -178,7 +179,9 @@ nano ${HOME}/.local/bin/cardano-service
 
 ```bash
 #!/bin/bash
-. /home/ada/.adaenv
+nano ${HOME}/.adaenv
+. ${HOME}/.adaenv
+```
 
 TOPOLOGY=${NODE_FILES}/${NODE_CONFIG}-topology.json
 DB_PATH=${NODE_HOME}/db
@@ -200,6 +203,12 @@ cardano-node run +RTS -N4 -RTS \
 
 {% endtab %}
 {% endtabs %}
+
+Change the port to 3000 in the .adaenv file.
+
+```bash
+nano $HOME/.adaenv
+```
 
 Add your relay(s) to ${NODE_CONFIG}-topolgy.json.
 
