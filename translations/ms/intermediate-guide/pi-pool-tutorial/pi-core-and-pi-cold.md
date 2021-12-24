@@ -70,6 +70,16 @@ cardano-cli node key-gen \
 {% endtab %}
 {% endtabs %}
 
+In order for these commands to work on mainnet & testnet we have too set a $CONFIG_NET variable and a $MAGIC variable. This is because on testnet we are required to use --testnet-magic $MAGIC, where MAGIC= the magic value found in your ${NODE_CONFIG}-shelley-genesis.json. The official docs do not do this for some reason and I don't want to write this all out twice. If working through documentation elsewhere please substitute ${NODE_CONFIG} with ${CONFIG_NET} when submitting to the chain.
+
+
+```bash
+echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv
+echo export if [[ ${NODE_CONFIG} = 'testnet' ]]; then CONFIG_NET=testnet-magic\ ${MAGIC}; else CONFIG_NET=mainnet; fi >> ${HOME}/.adaenv
+. ~/.adaenv
+```
+
+
 Create variables with the number of slots per KES period from the genesis file and current tip of the chain.
 
 {% tabs %}
@@ -77,7 +87,7 @@ Create variables with the number of slots per KES period from the genesis file a
 
 ```bash
 slotsPerKesPeriod=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.slotsPerKESPeriod')
-slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
+slotNo=$(cardano-cli query tip --${CONFIG_NET} | jq -r '.slot')
 echo slotsPerKesPeriod: ${slotsPerKesPeriod}
 echo slotNo: ${slotNo}
 ```
@@ -342,7 +352,7 @@ cardano-cli stake-address key-gen \
 cardano-cli stake-address build \
   --stake-verification-key-file stake.vkey \
   --out-file stake.addr \
-  --${NODE_CONFIG}
+  --${CONFIG_NET}
 ```
 
 {% endtab %}
@@ -358,7 +368,7 @@ cardano-cli address build \
   --payment-verification-key-file payment.vkey \
   --stake-verification-key-file stake.vkey \
   --out-file payment.addr \
-  --${NODE_CONFIG}
+  --${CONFIG_NET}
 ```
 
 {% endtab %}
@@ -390,7 +400,7 @@ Core node needs to be synced to the tip of the blockchain.
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
-  --${NODE_CONFIG}
+  --${CONFIG_NET}
 ```
 
 {% endtab %}
@@ -420,7 +430,7 @@ Query current slot number or tip of the chain.
 {% tab title="Core" %}
 
 ```bash
-slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
+slotNo=$(cardano-cli query tip --${CONFIG_NET} | jq -r '.slot')
 echo slotNo: ${slotNo}
 ```
 
@@ -435,7 +445,7 @@ Get the utxo or balance of the wallet.
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
-  --${NODE_CONFIG} > fullUtxo.out
+  --${CONFIG_NET} > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
 cat balance.out
@@ -469,12 +479,12 @@ It is because the core has not finished syncing to the tip of the blockchain. Th
 If however the cardano-node does not shutdown 'cleanly' for whatever reason it can take up to an hour to verify the database(chain) and create the socket file. Socket file is created once your synced.
 {% endhint %}
 
-Query ${NODE_CONFIG} for protocol parameters.
+Query --${CONFIG_NET} for protocol parameters.
 
-```
+```bash
 cardano-cli query protocol-parameters \
-    --${NODE_CONFIG} \
-    --out-file params.json
+  --${CONFIG_NET} \
+  --out-file params.json
 ```
 
 Retrieve **stakeAddressDeposit** value from **params.json**.
@@ -526,7 +536,7 @@ fee=$(cardano-cli transaction calculate-min-fee \
   --tx-body-file tx.tmp \
   --tx-in-count ${txcnt} \
   --tx-out-count 1 \
-  --${NODE_CONFIG} \
+  --${CONFIG_NET} \
   --witness-count 2 \
   --byron-witness-count 0 \
   --protocol-params-file params.json | awk '{ print $1 }')
@@ -577,7 +587,7 @@ cardano-cli transaction sign \
   --tx-body-file tx.raw \
   --signing-key-file payment.skey \
   --signing-key-file stake.skey \
-  --${NODE_CONFIG} \
+  --${CONFIG_NET} \
   --out-file tx.signed
 ```
 
@@ -594,7 +604,7 @@ Submit the transaction to the blockchain.
 ```bash
 cardano-cli transaction submit \
   --tx-file tx.signed \
-  --${NODE_CONFIG}
+  --${CONFIG_NET}
 ```
 
 {% endtab %}
@@ -612,7 +622,7 @@ metadata-url must be less than 64 characters.
 Hosting your poolMetaData.json on github is popular choice
 {% endembed %}
 
-I say host it on your Pi with NGINX.
+I say host it on your Pi with Nginx.
 
 {% tabs %}
 {% tab title="Core" %}
@@ -741,7 +751,7 @@ cardano-cli stake-pool registration-certificate \
   --pool-margin 0.01 \
   --pool-reward-account-verification-key-file stake.vkey \
   --pool-owner-stake-verification-key-file stake.vkey \
-  --${NODE_CONFIG} \
+  --${CONFIG_NET} \
   --single-host-pool-relay <r1.example.com> \
   --pool-relay-port 3001 \
   --metadata-url <https://example.com/poolMetaData.json> \
@@ -788,7 +798,7 @@ Query the current slot number or tip of the chain.
 {% tab title="Core" %}
 
 ```bash
-slotNo=$(cardano-cli query tip --${NODE_CONFIG} | jq -r '.slot')
+slotNo=$(cardano-cli query tip --${CONFIG_NET} | jq -r '.slot')
 echo slotNo: ${slotNo}
 ```
 
@@ -803,7 +813,7 @@ Get the utxo or balance of the wallet.
 ```bash
 cardano-cli query utxo \
   --address $(cat payment.addr) \
-  --${NODE_CONFIG} > fullUtxo.out
+  --${CONFIG_NET} > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
 cat balance.out
@@ -869,7 +879,7 @@ fee=$(cardano-cli transaction calculate-min-fee \
   --tx-body-file tx.tmp \
   --tx-in-count ${txcnt} \
   --tx-out-count 1 \
-  --${NODE_CONFIG} \
+  --${CONFIG_NET} \
   --witness-count 3 \
   --byron-witness-count 0 \
   --protocol-params-file params.json | awk '{ print $1 }')
@@ -924,7 +934,7 @@ cardano-cli transaction sign \
   --signing-key-file payment.skey \
   --signing-key-file ${HOME}/cold-keys/node.skey \
   --signing-key-file stake.skey \
-  --${NODE_CONFIG} \
+  --${CONFIG_NET} \
   --out-file tx.signed
 ```
 
@@ -939,7 +949,7 @@ Move **tx.signed** back to your core node & submit the transaction to the blockc
 ```bash
 cardano-cli transaction submit \
   --tx-file tx.signed \
-  --${NODE_CONFIG}
+  --${CONFIG_NET}
 ```
 
 {% endtab %}
