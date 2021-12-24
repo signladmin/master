@@ -70,9 +70,12 @@ cardano-cli node key-gen \
 {% endtab %}
 {% endtabs %}
 
-In order for these commands to work on mainnet & testnet we have too set a $CONFIG_NET variable and a $MAGIC variable.
-This is because on testnet we are required to use --testnet-magic $MAGIC, where MAGIC= the magic value found in your ${NODE_CONFIG}-shelley-genesis.json. The official docs do not do this for some reason and I don't want to write this all out twice. If working through documentation elsewhere please substitute ${NODE_CONFIG} with ${CONFIG_NET} when submitting to the chain.
+{% hint style="warning" %}
+In order for these commands to work on mainnet & testnet we have to set the $CONFIG_NET variable and the $MAGIC variable.
+This is because on testnet we are required to use --testnet-magic $MAGIC, where MAGIC= the magic value found in your ${NODE_CONFIG}-shelley-genesis.json.
 
+The official docs do not do this for some reason and I don't want to write this all out twice. If working through documentation elsewhere please substitute ${NODE_CONFIG} with ${CONFIG_NET} when submitting to the chain on testnet. For mainnet disregard /rant.
+{% endhint %}
 
 ```bash
 echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv
