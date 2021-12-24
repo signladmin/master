@@ -45,7 +45,7 @@ echo export NODE_PORT=3003 >> ${HOME}/.adaenv
 echo export NODE_FILES=${HOME}/pi-pool/files >> ${HOME}/.adaenv
 echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> ${HOME}/.adaenv
 echo export CARDANO_NODE_SOCKET_PATH="${HOME}/pi-pool/db/socket" >> ${HOME}/.adaenv
-source ${HOME}/.bashrc; source .adaenv
+source ${HOME}/.bashrc; source ${HOME}/.adaenv
 ```
 
 ## Build Libsodium
