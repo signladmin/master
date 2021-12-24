@@ -178,11 +178,6 @@ nano ${HOME}/.local/bin/cardano-service
 {% tab title="Core" %}
 
 ```bash
-#!/bin/bash
-nano ${HOME}/.adaenv
-. ${HOME}/.adaenv
-```
-
 TOPOLOGY=${NODE_FILES}/${NODE_CONFIG}-topology.json
 DB_PATH=${NODE_HOME}/db
 CONFIG=${NODE_FILES}/${NODE_CONFIG}-config.json
@@ -207,7 +202,8 @@ cardano-node run +RTS -N4 -RTS \
 Change the port to 3000 in the .adaenv file.
 
 ```bash
-nano $HOME/.adaenv
+nano ${HOME}/.adaenv
+. ${HOME}/.adaenv
 ```
 
 Add your relay(s) to ${NODE_CONFIG}-topolgy.json.
