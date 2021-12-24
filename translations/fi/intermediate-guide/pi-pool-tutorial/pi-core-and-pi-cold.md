@@ -70,15 +70,19 @@ cardano-cli node key-gen \
 {% endtab %}
 {% endtabs %}
 
-In order for these commands to work on mainnet & testnet we have too set a $CONFIG_NET variable and a $MAGIC variable. This is because on testnet we are required to use --testnet-magic $MAGIC, where MAGIC= the magic value found in your ${NODE_CONFIG}-shelley-genesis.json. The official docs do not do this for some reason and I don't want to write this all out twice. If working through documentation elsewhere please substitute ${NODE_CONFIG} with ${CONFIG_NET} when submitting to the chain.
+## Variables for guide interopability
 
+{% hint style="Huomaa" %}
+In order for these commands to work on mainnet & testnet we have to set the $CONFIG_NET variable and the $MAGIC variable. This is because on testnet we are required to use --testnet-magic $MAGIC, where MAGIC= the magic value found in your ${NODE_CONFIG}-shelley-genesis.json.
+
+The official docs do not do this for some reason and I don't want to write this all out twice. If working through documentation elsewhere please substitute ${NODE_CONFIG} with ${CONFIG_NET} when submitting to the chain on testnet. For mainnet disregard /rant.
+{% endhint %}
 
 ```bash
 echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv
 echo export if [[ ${NODE_CONFIG} = 'testnet' ]]; then CONFIG_NET=testnet-magic\ ${MAGIC}; else CONFIG_NET=mainnet; fi >> ${HOME}/.adaenv
 . ~/.adaenv
 ```
-
 
 Create variables with the number of slots per KES period from the genesis file and current tip of the chain.
 
@@ -173,9 +177,6 @@ nano ${HOME}/.local/bin/cardano-service
 {% tab title="Core" %}
 
 ```bash
-#!/bin/bash
-. /home/ada/.adaenv
-
 TOPOLOGY=${NODE_FILES}/${NODE_CONFIG}-topology.json
 DB_PATH=${NODE_HOME}/db
 CONFIG=${NODE_FILES}/${NODE_CONFIG}-config.json
@@ -196,6 +197,13 @@ cardano-node run +RTS -N4 -RTS \
 
 {% endtab %}
 {% endtabs %}
+
+Change the port to 3000 in the .adaenv file.
+
+```bash
+nano ${HOME}/.adaenv
+. ${HOME}/.adaenv
+```
 
 Add your relay(s) to ${NODE_CONFIG}-topolgy.json.
 
@@ -301,7 +309,7 @@ cardano-service restart
 {% endtab %}
 {% endtabs %}
 
-## Luo pool-lompakko, maksu & staking avainparit
+## Create the pool wallet payment & staking key pairs
 
 {% hint style="danger" %}
 **Cold offlline machine.** Take the time to visualize the operations here.
@@ -406,7 +414,7 @@ cardano-cli query utxo \
 {% endtab %}
 {% endtabs %}
 
-## Rekisteröi staking osoite
+## Register stake address
 
 Issue a staking registration certificate: **stake.cert**
 
@@ -610,7 +618,7 @@ cardano-cli transaction submit \
 {% endtab %}
 {% endtabs %}
 
-## Rekisteröi pooli 🏊
+## Register the pool 🏊
 
 Create a **poolMetaData.json** file. It will contain important information about your pool. You will need to host this file somewhere online forevermore. It must be online and you cannot edit it without resubmitting/updating your pool.cert. In the next couple steps we will hash
 
@@ -955,7 +963,7 @@ cardano-cli transaction submit \
 {% endtab %}
 {% endtabs %}
 
-## Vahvista onnistunut rekisteröinti
+## Confirm successful registration
 
 ### pool.vet
 
@@ -975,7 +983,7 @@ You should create an account and claim your pool here.
 
 {% embed url="https://pooltool.io/" %}
 
-## Varmuuskopiointi
+## Backups
 
 Get a couple small usb sticks and backup all your files and folders(except the db/ folder). Backup your online Core first then the Cold offline files and folders. **Do it now**, not worth the risk! **Do not plug the USB stick into anything online after Cold files are on it!**
 
