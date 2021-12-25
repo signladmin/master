@@ -80,9 +80,8 @@ The official docs do not do this for some reason and I don't want to write this 
 {% endhint %}
 
 ```bash
-echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv
-if [[ ${NODE_CONFIG} = 'testnet' ]]; then echo export CONFIG_NET=testnet-magic\ ${MAGIC}; else echo export CONFIG_NET=mainnet; fi >> ${HOME}/.adaenv
-. ~/.adaenv
+echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv; . ${HOME}/.adaenv
+if [[ ${NODE_CONFIG} = 'testnet' ]]; then echo export CONFIG_NET='testnet-magic\ ${MAGIC}'; else echo export CONFIG_NET=mainnet; fi >> ${HOME}/.adaenv; . ${HOME}/.adaenv
 ```
 
 Create variables with the number of slots per KES period from the genesis file and current tip of the chain.
