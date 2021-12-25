@@ -677,6 +677,10 @@ cardano-cli stake-pool metadata-hash \
 
 Copy poolMetaData.json to [https://pages.github.io](https://pages.github.io) or host it yourself along with your website. Be careful not to accidentally insert a space or a new line, which would result in a different hash.
 
+{% hint style="danger" %}
+--metadata-url must be 64 characters or less.
+{% endhint %}
+
 {% hint style="info" %}
 Here is my **poolMetaData.json** & **extendedPoolMetaData.json** as a reference and shameless links back to my site. 😰
 
@@ -744,10 +748,19 @@ Use the format below to register single or multiple relays.
 Edit the information below to match your pools desired configuration.
 {% endhint %}
 
-Copy vrf.vkey and poolMetaDataHash.txt to your cold machine and issue a stake pool registration certificate.
+Copy the vrf.vkey and poolMetaDataHash.txt to your cold machine and issue a stake pool registration certificate. Create a file name registration-cert.txt. Use this file to edit the below command before you issue it. It's also handy to leave this file on the cold machine for any future edits. Below is 1,000 ada pledge, 340 cost and a 1% margin.
 
 {% tabs %}
 {% tab title="Cold Offline" %}
+
+ ```bash
+ cd ${NODE_HOME}
+ nano registration-cert.txt
+ ```
+
+{% hint style="danger" %}
+--metadata-url must be 64 characters or less.
+{% endhint %}
 
 ```bash
 cardano-cli stake-pool registration-certificate \
