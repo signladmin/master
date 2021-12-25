@@ -235,4 +235,4 @@ cardano-cli transaction submit \
 {% endtab %}
 {% endtabs %}
 
-If you lower your pledge you need to wait two epochs before you can remove the ada or your pledge will show as unmet and you will not forge blocks.
+If you lower your pledge you need to wait two epochs before you can remove the ada or your pledge will show as unmet and you will be assigned and forge blocks but neither you nor your delegators will be paid.
