@@ -1,6 +1,6 @@
 # Update Pools Registration Certificate
 
-Query the chain for protocols, store them in a file named params.json.
+Query the chain for protocol parameters, store them in a file named params.json.
 
 
 {% tabs %}
