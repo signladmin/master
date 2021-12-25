@@ -15,6 +15,7 @@
   * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay.md)
   * [Pi-Core/Frío](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
   * [Rotate KES](intermediate-guide/pi-pool-tutorial/rotate-kes.md)
+  * [Update Registration](intermediate-guide/pi-pool-tutorial/update-registration-cert.md)
 * [Alpine Linux OS 🗻](intermediate-guide/alpine-linux-os.md)
 * [Topología de red de una Stake Pool](intermediate-guide/basic-stake-pool-networking.md)
 * [Add adapools Metrics to Grafana 📊](intermediate-guide/add-adapools-info-to-grafana.md)
