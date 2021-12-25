@@ -80,7 +80,7 @@ The official docs do not do this for some reason and I don't want to write this 
 
 ```bash
 echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv
-echo export if [[ ${NODE_CONFIG} = 'testnet' ]]; then CONFIG_NET=testnet-magic\ ${MAGIC}; else CONFIG_NET=mainnet; fi >> ${HOME}/.adaenv
+if [[ ${NODE_CONFIG} = 'testnet' ]]; then echo export CONFIG_NET=testnet-magic\ ${MAGIC}; else echo export CONFIG_NET=mainnet; fi >> ${HOME}/.adaenv
 . ~/.adaenv
 ```
 
