@@ -15,6 +15,7 @@
   * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay.md)
   * [Pi-Core/Kylmä kone](intermediate-guide/pi-pool-tutorial/pi-core-and-pi-cold.md)
   * [KES-avainten uusiminen](intermediate-guide/pi-pool-tutorial/rotate-kes.md)
+  * [Update Registration](intermediate-guide/pi-pool-tutorial/update-registration-cert.md)
 * [Alpine Linux OS](intermediate-guide/alpine-linux-os.md)
 * [Stake Pool -verkosto: Perusteita](intermediate-guide/basic-stake-pool-networking.md)
 * [Lisää adapoolien mittareita Grafanaan 📊](intermediate-guide/add-adapools-info-to-grafana.md)
