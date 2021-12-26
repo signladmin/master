@@ -175,7 +175,7 @@ Calculate output that comes back to you (change).
 {% tab title="Core" %}
 
 ```bash
-txOut=$((${total_balance}-${stakePoolDeposit}-${fee}))
+txOut=$((${total_balance}-${fee}))
 echo txOut: ${txOut}
 ```
 
