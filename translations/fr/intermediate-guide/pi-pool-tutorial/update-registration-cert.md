@@ -138,8 +138,8 @@ Build temporary **tx.tmp** to hold information while we build our raw transactio
 ```bash
 cardano-cli transaction build-raw \
   ${tx_in} \
-  --tx-out $(cat payment.addr)+$(( ${total_balance} - ${stakePoolDeposit}))  \
-  --invalid-hereafter $(( ${slotNo} + 10000)) \
+  --tx-out $(cat payment.addr)+${total_balance} \
+  --invalid-hereafter $(( ${currentSlot} + 10000)) \
   --fee 0 \
   --certificate-file pool.cert \
   --certificate-file deleg.cert \
