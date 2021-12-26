@@ -104,9 +104,7 @@ Query the wallets utxo history and build variables for a transaction.
 {% tab title="Core" %}
 
 ```bash
-cardano-cli query utxo \
-  --address $(cat payment.addr) \
-  --${CONFIG_NET} > fullUtxo.out
+cardano-cli query utxo --address $(cat payment.addr) --${CONFIG_NET} > fullUtxo.out
 
 tail -n +3 fullUtxo.out | sort -k3 -nr > balance.out
 
