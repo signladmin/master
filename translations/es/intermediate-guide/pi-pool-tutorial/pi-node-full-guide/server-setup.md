@@ -248,8 +248,9 @@ Swapping to disk is slow, swapping to compressed ram space is faster and gives u
 {% embed url="https://lists.ubuntu.com/archives/lubuntu-users/2013-October/005831.html" %}
 
 ```
-sudo apt install linux-modules-extra-raspi zram-config
+sudo apt install zram-config
 ```
+If zram fails to install you may also need the linux-modules-extra-raspi package depending on the version of Ubuntu you are using.
 
 ```bash
 sudo nano /usr/bin/init-zram-swapping
@@ -258,34 +259,22 @@ sudo nano /usr/bin/init-zram-swapping
 Multiplica la configuración predeterminada por 3. This will give you 11.5GB of virtual compressed swap in ram.
 
 {% hint style="info" %}
-mem=$(((totalmem / 2 / ${NRDEVICES}) \* 1024 \* 3))
+mem=$((totalmem / 2 * 1024 * 3))
 {% endhint %}
 
 ```bash
 #!/bin/sh
 
-# load dependency modules
-NRDEVICES=$(grep -c ^processor /proc/cpuinfo | sed 's/^0$/1/')
-if modinfo zram | grep -q ' zram_num_devices:' 2>/dev/null; then
-  MODPROBE_ARGS="zram_num_devices=${NRDEVICES}"
-elif modinfo zram | grep -q ' num_devices:' 2>/dev/null; then
-  MODPROBE_ARGS="num_devices=${NRDEVICES}"
-else
-  exit 1
-fi
-modprobe zram $MODPROBE_ARGS
+modprobe zram
 
 # Calculate memory to use for zram (1/2 of ram)
 totalmem=`LC_ALL=C free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
-mem=$(((totalmem / 2 / ${NRDEVICES}) * 1024 * 3))
+mem=$((totalmem / 2 * 1024 * 3))
 
 # initialize the devices
-for i in $(seq ${NRDEVICES}); do
-  DEVNUMBER=$((i - 1))
-  echo $mem > /sys/block/zram${DEVNUMBER}/disksize
-  mkswap /dev/zram${DEVNUMBER}
-  swapon -p 5 /dev/zram${DEVNUMBER}
-done
+echo $mem > /sys/block/zram0/disksize
+mkswap /dev/zram0
+swapon -p 5 /dev/zram0
 
 ```
 
@@ -329,7 +318,7 @@ Instala los paquetes que necesitaremos.
 
 ```bash
 sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
-         jq make automake autoconf unzip net-tools nginx ssl-cert pkg-config \
+         jq curl xxd make automake autoconf unzip net-tools nginx ssl-cert pkg-config \
          libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev \
          zlib1g-dev g++ libncursesw5 libtool bc -y
 ```
