@@ -52,7 +52,7 @@ ssh ada@<server-ip>
 Test that ada is in the sudo group by updating your package lists and upgrading the system.
 
 {% hint style="warning" %}
-Updating Ubuntu is going to take 10 minutes or more unless they update the image used with rpi-imager.
+If you get error about repos and time it is becuase the clock is not set. Install chrony now to fix, otherwise we will install it later.
 {% endhint %}
 
 ```bash
