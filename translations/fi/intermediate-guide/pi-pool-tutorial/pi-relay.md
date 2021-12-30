@@ -60,8 +60,10 @@ Tallenna ja sulje.
 
 Avaa **50-pilvi-init.yaml** ja korvaa tiedoston sisältö alla olevalla.
 
+[netplan configuration](https://netplan.io/examples/)
+
 {% hint style="Huomaa" %}
-Muista käyttää LAN aliverkon osoitetta. Tässä esimerkissä käytän **192.168.1.xxx**. Verkostosi voi hyvinkin käyttää erilaista yksityistä aluetta.
+Be sure to use an address on your LAN subnet. In this example I am using **192.168.1.xxx**. Your network may very well be using a different private range.
 {% endhint %}
 
 ```bash
@@ -75,32 +77,33 @@ sudo nano /etc/netplan/50-cloud-init.yaml
 # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
 # network: {config: disabled}
 network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    eth0:
-      dhcp4: no
-      addresses:
-        - 192.168.1.151/24
-      gateway4: 192.168.1.1
-      nameservers:
+    version: 2
+    renderer: networkd
+    ethernets:
+        enp3s0:
+            addresses:
+                - 192.168.1.151/24
+            nameservers:
 # Home router IP & QUAD9 https://quad9.net/
-          addresses: [192.168.1.1, 9.9.9.9, 149.112.112.112]
+                addresses: [192.168.1.1, 9.9.9.9, 149.112.112.112]
+            routes:
+                - to: default
+                  via: 192.168.1.1
 ```
 
-Luo tiedosto nimeltä **99-disable-network-config.cfg** poistaaksesi cloud-init käytöstä.
+Create a file named **99-disable-network-config.cfg** to disable cloud-init.
 
 ```bash
 sudo nano /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
 ```
 
-Liitä seuraavat, tallenna & sulje nano.
+Add the following, save and exit.
 
 ```bash
 network: {config: disabled}
 ```
 
-Ota muutoksesi käyttöön.
+Apply your changes.
 
 ```
 sudo netplan apply
@@ -114,9 +117,9 @@ Open the ~/.adaenv file and change the port it listens on.
 nano $HOME/.adaenv
 ```
 
-Tallenna ja sulje. **ctrl+x ja y**.
+Tallenna ja sulje. **ctrl+x then y**.
 
-Ota cardano-service käyttöön käynnistyksen yhteydessä & käynnistä palvelu uudelleen ladataksesi muutokset.
+Enable cardano-service at boot & restart the service to load changes.
 
 ```bash
 cardano-service enable
@@ -126,10 +129,10 @@ cardano-service restart
 ## Välitä portti reitittimessä
 
 {% hint style="danger" %}
-Älä tee portin siirtoa Core koneeseesi, sillä se muodostaa yhteyden vain LAN-verkossasi sijaitsevaan relayhin
+Do not forward a port to your Core machine it only connects to your relay(s) on your LAN
 {% endhint %}
 
-Kirjaudu reitittimeen ja siltaa portti 3001 relay noden LAN IPv4 osoiteporttiin 3001. Toiselle relaylle sillataan portti 3002 relay LAN IPv4 osoitteesseen porttiin 3002.
+Log into your router and forward port 3001 to your relay nodes LAN IPv4 address port 3001. Second relay forward port 3002 to LAN IPv4 address for relay 2 to port 3002.
 
 ## Topology Updater
 
@@ -137,10 +140,10 @@ Kirjaudu reitittimeen ja siltaa portti 3001 relay noden LAN IPv4 osoiteporttiin 
 cd $NODE_HOME/scripts
 ```
 
-Määritä skripti vastaamaan ympäristöäsi.
+Configure the script to match your environment.
 
 {% hint style="Huomaa" %}
-Jos käytät IPv4:ää, jätä CNODE_HOSTNAME niin kuin se on. Palvelu hakee julkisen IP-osoitteen ja käyttää sitä. Toistan, muuta vain portti arvoon 3001 DNS:llä muuta vain ensimmäinen ilmentymä. Älä muokkaa "CHANGE ME" tiedoston alemmilla riveillä.
+If you are using IPv4 leave CNODE_HOSTNAME the way it is. The service will pick up your public IP address on it's own. I repeat only change the port to 3001. For DNS change only the first instance. Do not edit "CHANGE ME" further down in the file.
 {% endhint %}
 
 ```bash
@@ -151,17 +154,17 @@ cd ${NODE_HOME}/scripts/
 nano topologyUpdater.sh
 ```
 
-Suorita päivitys kerran vahvistaa, että se toimii.
+Run the updater once to confirm it is working.
 
 ```bash
 ./topologyUpdater.sh
 ```
 
-Pitäisi näyttää samankaltaiselta kuin tämä.
+Should look similar to this.
 
 > `{ "resultcode": "201", "datetime":"2021-05-20 10:13:40", "clientIp": "1.2.3.4", "iptype": 4, "msg": "nice to meet you" }`
 
-Ota cron työ käyttöön poistamalla # merkki crontabista.
+Enable the cron job by removing the # character from crontab.
 
 ```bash
 crontab -e
