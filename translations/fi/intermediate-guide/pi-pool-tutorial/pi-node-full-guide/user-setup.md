@@ -52,7 +52,7 @@ ssh ada@<server-ip>
 Testaa, että ada on sudo-ryhmässä päivittämällä pakettiluettelot ja päivittämällä järjestelmä.
 
 {% hint style="Huomaa" %}
-Ubuntun päivittäminen kestää 10 minuuttia tai enemmän, ellei rpi-imagerilla käytettyä kuvaa ole päivitetty.
+If you get error about repos and time it is becuase the clock is not set. Install chrony now to fix, otherwise we will install it later.
 {% endhint %}
 
 ```bash
