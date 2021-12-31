@@ -32,7 +32,7 @@ cardano-node version
 ```
 {% endhint %}
 
-## Valitse testnet tai mainnet. Oletusarvona on testnet.
+## Valitse testnet tai mainnet. **Defaults to testnet**.
 Vaihda testnetin & mainnetin välillä, mainnetiä varten anna issue. Config tiedoston polku /home/ada/.adaenv
 ```bash
 sed -i .adaenv -e "s/NODE_CONFIG=testnet/NODE_CONFIG=mainnet/g"
