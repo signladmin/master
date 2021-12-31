@@ -258,9 +258,45 @@ We already set the location of our USB mount in the SPOS common.inc file. We can
 ```
 Lets copy the files we need on the offline machine to the USB stick for transfer.
 
+Create an rsync-exclude.txt file so we can rip through and grab everything we need and skip the rest.
+
+```bash
+cd; nano exclude-list.txt
+```
+Add the following.
+
+```bash
+.bash_history
+.bash_logout
+.bashrc
+.cache
+.config
+.local/bin/cardano-node
+.local/bin/cardano-service
+.profile
+.selected_editor
+.ssh
+.sudo_as_admin_successful
+.wget-hsts
+git
+tmp
+pi-pool/db
+pi-pool/scripts
+pi-pool/logs
+usb-transfer
+exclude-list.txt
+```
+If your drive is over 20gb you can remove the pi-pool/db entry but you need to shut down cardano-node first. This will give you a copy of the chain that can bbe transfere to other machines to save first sync times.
+
+Backup the files and folders to the USB stick.
+
+```bash
+rsync -av --exclude-from="exclude-list.txt" /home/ada /home/ada/usb-transfer
+```
 
 
-## Set up your cold machine.
+# Set up your cold machine.
 
+Go ahead and flash a new Pi-Node.img.gz on a 
 
 
