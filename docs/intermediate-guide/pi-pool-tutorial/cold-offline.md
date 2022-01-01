@@ -1,6 +1,6 @@
 # Cold server setup
 
-This can be any 64 bit capable Raspi. Any Raspberry Pi 4, Raspberry Pi 3b+ or a Raspberry Pi-400. I would use a Pi-400. Keyboard is built in which is convienant and safer. The cold machine is only used to sign transactions and is left powered down for 99% of the time(if not more). The Pi-400 can just be powered off and up on a bookshelf. Also unlike an online node, the Cold machine can be run from the sdcard. Just make sure you have mulitple copies of your keys just incase you get a bad sdcard.
+This can be any 64 bit capable Raspi. Any Raspberry Pi 4, Raspberry Pi 3b+ or a Raspberry Pi-400. I would use a Pi-400. Keyboard is built in which is convienant and safer. The cold machine is only used to sign transactions and is left powered down for 99% of the time(if not more). The Pi-400 can just be powered off and in a safe. Also unlike an online node, the Cold machine can be run from the sdcard. Just make sure you have mulitple copies of your keys just incase you get a bad sdcard.
 
 # Log in & setup user
 
