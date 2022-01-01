@@ -39,11 +39,14 @@ You must reload environment files after updating them. Same goes for cardano-nod
 {% endhint %}
 
 ```bash
-echo PATH="${HOME}/.local/bin:$PATH" >> ${HOME}/.bashrc
-echo . ~/pi-pool/adaenv >> ${HOME}/.bashrc
+echo . ~/.adaenv >> ${HOME}/.bashrc
+cd .local/bin; echo "export PATH=\"$PWD:\$PATH\"" >> $HOME/.adaenv
 echo export NODE_HOME=${HOME}/pi-pool >> ${HOME}/.adaenv
 echo export NODE_PORT=3003 >> ${HOME}/.adaenv
 echo export NODE_FILES=${HOME}/pi-pool/files >> ${HOME}/.adaenv
+echo export TOPOLOGY='${NODE_FILES}'/'${NODE_CONFIG}'-topology.json >> ${HOME}/.adaenv
+echo export DB_PATH='${NODE_HOME}'/db >> ${HOME}/.adaenv
+echo export CONFIG='${NODE_FILES}'/'${NODE_CONFIG}'-config.json >> ${HOME}/.adaenv
 echo export NODE_BUILD_NUM=$(curl https://hydra.iohk.io/job/Cardano/iohk-nix/cardano-deployment/latest-finished/download/1/index.html | grep -e "build" | sed 's/.*build\/\([0-9]*\)\/download.*/\1/g') >> ${HOME}/.adaenv
 echo export CARDANO_NODE_SOCKET_PATH="${HOME}/pi-pool/db/socket" >> ${HOME}/.adaenv
 source ${HOME}/.bashrc; source ${HOME}/.adaenv
@@ -154,14 +157,6 @@ Salli uuden käynnistyskomentosarjan suorittaminen.
 
 ```bash
 chmod +x ${HOME}/.local/bin/cardano-service
-```
-Create variables for the service in you .adaenv file
-
-```bash
-echo export TOPOLOGY='${NODE_FILES}'/'${NODE_CONFIG}'-topology.json >> ${HOME}/.adaenv
-echo export DB_PATH='${NODE_HOME}'/db >> ${HOME}/.adaenv
-echo export CONFIG='${NODE_FILES}'/'${NODE_CONFIG}'-config.json >> ${HOME}/.adaenv
-. ~/.adaenv
 ```
 
 Avaa /etc/systemd/system/cardano-node.service.
