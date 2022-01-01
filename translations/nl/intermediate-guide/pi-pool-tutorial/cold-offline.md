@@ -1,18 +1,29 @@
 # Cold server setup
 
-This can be any 64 bit capable Raspi. Any Raspberry Pi 4, Raspberry Pi 3b+ or a Raspberry Pi-400. I would use a Pi-400. Keyboard is built in which is convienant and safer. The cold machine is only used to sign transactions and is left powered down for 99% of the time(if not more). The Pi-400 can just be powered off and in a safe. Also unlike an online node, the Cold machine can be run from the sdcard. Just make sure you have mulitple copies of your keys just incase you get a bad sdcard.
+This can be any 64 bit capable Raspi. Any Raspberry Pi 4, Raspberry Pi 3b+ or a Raspberry Pi-400. I would use a Pi-400. Keyboard is built in which is convienant and safer. The cold machine is only used to sign transactions and is left powered down for 99% of the time(if not more). The Pi-400 can just be powered off and in a safe. Also unlike an online node, the Cold machine can be run from the sdcard. Just make sure you have mulitple copies of your keys just incase you get a bad sdcard. Or better yet clone this system onto 3 or 4 other bootable sdcards. Remember you can also boot from USB.
+
+### Ubuntu or Raspbian
+
+Raspberry Pi OS is a lot faster than the gnome desktop. There is now a 64bit image you can install but it is not available in rapi-imager selection, IDK why. Check out the images in the link below grab the latest version. It is a zip file so we have to unzip it.
+
+[https://downloads.raspberrypi.org/raspios_arm64/](https://downloads.raspberrypi.org/raspios_arm64/)
+
+Unzip the img file and flash it with Raspi-imager.
 
 # Log in & setup user
 
-Log in to Ubuntu and create the $USER, ad it to sudoers. ada in our case if using the guide.
+Log in and open a terminal create the $USER and add it to sudoers. ada in our case. We have to create a new user so the uid, gid and name match. It is far less error prone than trying to change the user id of the defualt user. With the user/group id of 1001 you will not run into issues with permissions transfering between systems. You can delete the Pi/Ubuntu user after you log back in or leave it.
 
 ```bash
 sudo adduser ada; sudo adduser ada sudo
 ```
 log out and back in as $USER.
 
+Source the .adaenv file on login.
 
-
+```bash
+echo . ~/.adaenv >> ${HOME}/.bashrc
+```
 
 ## USB transfer
 
@@ -95,21 +106,6 @@ The cold machine will never be online. We do not need the monitoring, cardano-no
 cd; rsync -aP usb-transfer/ada/ ~/
 ```
 
-Create a couple variables based on which network you are on (testnet or mainnet).
-
-```bash
-echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv; . ${HOME}/.adaenv
-if [[ ${NODE_CONFIG} = 'testnet' ]]; then echo export BYRON_SHELLEY_EPOCHS=74; else echo export BYRON_SHELLEY_EPOCHS=208; fi >> ${HOME}/.adaenv
-if [[ ${NODE_CONFIG} = 'testnet' ]]; then echo export CONFIG_NET='testnet-magic\ "${MAGIC}"'; else echo export CONFIG_NET=mainnet; fi >> ${HOME}/.adaenv; . ${HOME}/.adaenv
-```
-
-Add the Stake Pool Operator Scripts into your path.
-
-```bash
-echo "export PATH=\"$PWD:\$PATH\"" >> $HOME/.adaenv
-export PATH="$PWD:$PATH"; . $HOME/.adaenv
-```
-
 Switch the Stake Pool Operator scripts to 'offline mode'.
 
 ```bash
@@ -120,7 +116,7 @@ sed -i stakepoolscripts/bin/common.inc \
 Confirm.
 
 ```bash
-00_common.sh
+. .adaenv; 00_common.sh
 ```
 
 The wireless is disabled already. What I do is use a network jack without a cable inserted into the port to block it. This is to prevent a cable ever accidently being plugged into it. Or fill it with bubble gum..
