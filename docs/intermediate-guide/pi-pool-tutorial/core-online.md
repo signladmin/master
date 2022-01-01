@@ -68,6 +68,7 @@ if [[ ${NODE_CONFIG} = 'testnet' ]]; then echo export CONFIG_NET='testnet-magic\
 Copy the top portion of the 00_common.sh file into a new file named common.inc. This will hold the variable paths needed to connect these scripts to our running node.
 
 ```bash
+cd stakepoolscripts/bin/
 sed -n '1,69p' 00_common.sh >> common.inc
 ```
 
@@ -97,7 +98,9 @@ Let's test we have these scripts in our PATH and test they are working.
 cd; 00_common.sh
 ```
 
-Should see this on testnet or similiar for mainnet. If somethine went wrong Matin presents you with a nice mushroom cloud ascii drawing and a hint as to what failed.
+Should see this on testnet or similiar for mainnet. If somethine went wrong Matin presents you with a nice mushroom cloud ascii drawing and a hint as to what failed. If you are not synced to the tip of the chain it will warn you that the socket does not exist! 
+
+**You will need to have a fully synced node to continue.**
 
 ```bash
 Version-Info: cli 1.33.0 / node 1.33.0		Scripts-Mode: online		Testnet-Magic: 1097911063
@@ -113,7 +116,7 @@ Create the mountpoint & set default ACL for files and folders with umask.
 cd; mkdir $HOME/usb-transfer; umask 022 $HOME/usb-transfer
 ```
 
-Attach the external drive and list all drives with fdisk.
+Attach the external drive into one of USB2 ports and list all drives with fdisk. Some drive adaptors eat a lot of power and you do not want to risk another USB device eating too much power on the USB3 bus.
 
 ```bash
 sudo fdisk -l
@@ -178,7 +181,7 @@ badblocks -c 10240 -s -w -t random -v /dev/sdb
 
 ## Format the partition as ext4
 
-We still need to create an ext4 filesystem on the partition.
+We still need to create a new ext4 filesystem on the partition.
 
 ```bash
 sudo mkfs.ext4 /dev/sdb1
@@ -296,7 +299,7 @@ cd; sudo umount usb-transfer
 
 # Set up your cold machine.
 
-For the cold machine I would use 64bit Raspberry Pi OS with a desktop on a Raspi-400. It allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys and what they are used for.
+For the cold machine I would use 64bit Raspberry Pi OS(Raspbian) with a desktop on a Raspi-400. It allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys and what they are used for.
 
 add link to cold page
 
