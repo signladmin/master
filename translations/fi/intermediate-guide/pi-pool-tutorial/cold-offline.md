@@ -19,10 +19,11 @@ sudo adduser ada; sudo adduser ada sudo
 ```
 log out and back in as $USER.
 
-Source the .adaenv file on login.
+Disable the radios.
 
 ```bash
-echo . ~/.adaenv >> ${HOME}/.bashrc
+sudo rfkill block wifi
+sudo rfkill block bluetooth
 ```
 
 ## USB transfer
@@ -104,6 +105,12 @@ The cold machine will never be online. We do not need the monitoring, cardano-no
 
 ```bash
 cd; rsync -aP usb-transfer/ada/ ~/
+```
+
+Source the .adaenv file on login.
+
+```bash
+echo . ~/.adaenv >> ${HOME}/.bashrc
 ```
 
 Switch the Stake Pool Operator scripts to 'offline mode'.
