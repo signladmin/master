@@ -44,11 +44,12 @@ Attach the external drive and list all drives with fdisk.
 ```bash
 sudo fdisk -l
 ```
+If you are using an sdcard the first inserted disk is /dev/sda. The sdcard you are booting from will have /dev/mmcblk0 designation.
 
 Example output:
 
 ```bash
-Disk /dev/sdb: 57.66 GiB, 61907927040 bytes, 120913920 sectors
+Disk /dev/sda: 57.66 GiB, 61907927040 bytes, 120913920 sectors
 Disk model: Cruzer
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
@@ -57,7 +58,7 @@ Disklabel type: gpt
 Disk identifier: 75B71A3E-9E1A-4659-94D0-E0C949A26740
 
 Device     Start       End   Sectors  Size Type
-/dev/sdb1   2048 120913886 120911839 57.7G Linux filesystem
+/dev/sda1   2048 120913886 120911839 57.7G Linux filesystem
 ```
 
 In my case it is /dev/sdb with one partition designated /dev/sdb1. Yours may be /dev/sdc, /dev/sdd or so on. /dev/sda is usually the system drive. If you are using an sdcard they are designated /dev/mmcblk0 to boot so inserting a USB stick into a system booting from sdcard can designate /dev/sda. Just be careful you are dealing with the correct drive.
@@ -122,10 +123,19 @@ sed -i stakepoolscripts/bin/common.inc \
     -e 's#offlineMode="no"#offlineMode="yes"#'
 ```
 
-Confirm.
+Move the jq binary into it's system PATH.
+
+```bash
+sudo cp usb-transfer/ada/jq /usr/local/bin
+jq -V
+```
+
+Confirm SPOS is coreectly installed.
 
 ```bash
 . .adaenv; 00_common.sh
 ```
 
 ## Key creation
+
+That's it! you can now use Martins guide in the stakepoolscripts/bin file. Remember to always manually unmount your USB stick before unplugging it.
