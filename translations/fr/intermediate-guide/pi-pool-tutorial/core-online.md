@@ -1,12 +1,12 @@
 # Core server setup
 
-Using Martin Lang's StakePool Operator Scripts to manage cardano-node. These scripts not only handle pool operations. They can mint NFT's and query the blockchain handling many complex transactions with ease.
+Using Martin Lang's StakePool Operator Scripts to manage cardano-node. These scripts not only handle pool operations. They can mint NFT's and query the blockchain, handling many complex transactions with ease.
 
 https://github.com/gitmachtl/scripts
 
-Please visit and review the configuration, scriptfiles syntax & filenames to better familiarize yourself with the workflow and capabilities of this awesome toolset.
+Please visit and review the configuration, scriptfiles syntax & filenames to better familiarize yourself with the workflow and capabilities of this awesome toolset. All the instructions and commands needed to use these scripts are in the README files located in the stakepoolsripts folder.
 
-## Online Installation
+## Online Core Installation
 
 Clone the repo into your home directory. Create a folder to hold the scripts and add them to your PATH.
 
@@ -51,9 +51,9 @@ Copy the latest versions of the scripts into the bin folder.
 rsync -av $HOME/stakepoolscripts/cardano/${NODE_CONFIG}/* $HOME/stakepoolscripts/bin
 ```
 
-Martin hosts checksums but I have found he updates them faster than his webserver can serve them resulting in those newest updated files failing. Checking your local version against github before moving them to your cold machine is a good practice to get into. All of this is dependent on the replies you get from your DNS server, security wise.
+Martin hosts checksums for his files as well. You can learn how in the README files in the stakpoolscripts folder.
 
-I am in the habit of pulling updates, running a check against the repo and gathering copies of any binaries needed for USB transfer to the cold machine. These would include the latest $HOME/stakepoolscripts/bin folder and a copy of the cardano-cli binary in $HOME/.local/bin
+I am in the habit of pulling updates, running a check against the repo and gathering copies of any binaries needed for USB transfer to the cold machine. These would include the latest $HOME/stakepoolscripts/bin folder and a copy of the cardano-cli binary in $HOME/.local/bin. the rsync backup we take further down in this guide will copy everything necessary and it can be use repeatedly if necessary.
 
 ### Common.inc
 
@@ -100,7 +100,7 @@ cd; 00_common.sh
 
 Should see this on testnet or similiar for mainnet. If somethine went wrong Matin presents you with a nice mushroom cloud ascii drawing and a hint as to what failed. If you are not synced to the tip of the chain it will warn you that the socket does not exist!
 
-**You will need to have a fully synced node to continue.**
+**You need a fully synced node to continue.**
 
 Watch sync progress by following journalctl.
 
@@ -261,7 +261,16 @@ We already set the location of our USB mount in the SPOS common.inc file. We can
 ```bash
 01_workOffline.sh new
 ```
-Lets copy the files we need on the offline machine to the USB stick for transfer.
+Lets copy this environment to the offline machine.
+
+## Grab jq on your way out
+
+We need an arm64 binary of jq we can move to our offline machine.
+
+```bash
+which jq
+sudo cp /usr/local/bin/jq $HOME
+```
 
 Create an rsync-exclude.txt file so we can rip through and grab everything we need and skip the rest.
 
@@ -293,6 +302,15 @@ exclude-list.txt
 ```
 If your drive is over 20gb you can remove the pi-pool/db entry but you should shut down cardano-node first. This will give you a copy of the chain that can be transfered to other machines to save first sync time.
 
+## Download the guide markdown files
+
+Grab this guide so you can view it on the offline machine.
+
+```bash
+https://raw.githubusercontent.com/armada-alliance/master/master/docs/intermediate-guide/pi-pool-tutorial/core-online.md
+wget https://raw.githubusercontent.com/armada-alliance/master/master/docs/intermediate-guide/pi-pool-tutorial/cold-offline.md
+```
+
 Backup the files and folders to the USB stick.
 
 ```bash
@@ -305,6 +323,8 @@ cd; sudo umount usb-transfer
 # Set up your cold machine.
 
 For the cold machine I would use 64bit Raspberry Pi OS(Raspbian) with a desktop on a Raspi-400. It allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys and what they are used for.
+
+Having a built in keyboard is nice. The only way to get at these keys is physically stealing the drive or through inserting a badusb type root kit which is unlikely but possible. It is one less unknown device that has to be plugged in and you can put the whole thing in a safe quite nicely.
 
 add link to cold page
 
