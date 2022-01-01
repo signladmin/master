@@ -102,6 +102,12 @@ Should see this on testnet or similiar for mainnet. If somethine went wrong Mati
 
 **You will need to have a fully synced node to continue.**
 
+Watch sync progress by following journalctl. 
+
+```bash
+sudo journalctl --unit=cardano-node --follow
+```
+
 ```bash
 Version-Info: cli 1.33.0 / node 1.33.0		Scripts-Mode: online		Testnet-Magic: 1097911063
 ```
