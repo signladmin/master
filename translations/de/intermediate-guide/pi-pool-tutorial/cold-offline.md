@@ -17,6 +17,7 @@ Log in and open a terminal create the $USER and add it to sudoers. ada in our ca
 ```bash
 sudo adduser ada; sudo adduser ada sudo
 ```
+
 log out and back in as $USER.
 
 Disable the radios.
@@ -31,7 +32,6 @@ sudo rfkill block bluetooth
 Basically repeating the steps to setup an fstab entry. This is to mount the USB transfer disk at boot should you have it inserted when you power on. It also makes the mount command simpler. You can just sudo mount usb-transfer. You could also then make an alias for auto complete: usb-transfer.
 
 I would recommend against using usbmount for mounting on insert. It doesn't work well. Just manually mount it.
-
 
 Create the mountpoint & set default ACL for files and folders with umask.
 
@@ -49,7 +49,7 @@ Example output:
 
 ```bash
 Disk /dev/sdb: 57.66 GiB, 61907927040 bytes, 120913920 sectors
-Disk model: Cruzer          
+Disk model: Cruzer
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -97,6 +97,7 @@ Mount the drive and confirm it mounted by locating listing the contents. You sho
 ```bash
 sudo mount usb-transfer; ls $HOME/usb-transfer
 ```
+
 # System prep
 
 The cold machine will never be online. We do not need the monitoring, cardano-node, nginx or a handful of the variables we created. It is also important to note that these machines do not have any cmos battery to keep time. It should not pose too many issues if any. Just be aware that when you fire up the cold machine it's time is off.
@@ -118,27 +119,13 @@ Switch the Stake Pool Operator scripts to 'offline mode'.
 ```bash
 cd
 sed -i stakepoolscripts/bin/common.inc \
-    -e 's#offlineMode="no"#offlineMode="yes"#' 
+    -e 's#offlineMode="no"#offlineMode="yes"#'
 ```
+
 Confirm.
 
 ```bash
 . .adaenv; 00_common.sh
 ```
 
-The wireless is disabled already. What I do is use a network jack without a cable inserted into the port to block it. This is to prevent a cable ever accidently being plugged into it. Or fill it with bubble gum..
-
 ## Key creation
-
-
-
-
-
-
-
-
-
-
-
-
-
