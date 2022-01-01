@@ -282,7 +282,7 @@ pi-pool/logs
 usb-transfer
 exclude-list.txt
 ```
-If your drive is over 20gb you can remove the pi-pool/db entry but you need to shut down cardano-node first. This will give you a copy of the chain that can be transfered to other machines to save first sync time.
+If your drive is over 20gb you can remove the pi-pool/db entry but you should shut down cardano-node first. This will give you a copy of the chain that can be transfered to other machines to save first sync time.
 
 Backup the files and folders to the USB stick.
 
@@ -293,10 +293,9 @@ rsync -av --exclude-from="exclude-list.txt" /home/ada /home/ada/usb-transfer
 cd; sudo umount usb-transfer
 ```
 
-
 # Set up your cold machine.
 
-For the cold machine I would use an Ubuntu LTS release with a desktop on a Raspi-400. It allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys and what they are used for. The Raspi-imager will download the image and cache it for later use. You can Google around on how to verify the img or rather the zip file the imager downloads. It's an indepth topic, the checksums fail 20% of time. We will assume it's what it claims to be, it will never be online again anyway limiting it's attack surface to some sort of badusb attack from a usb stick, mouse or anything else inserted into a usb port. Again with the 400, it will always be one less usb device and it comes with a mouse!.
+For the cold machine I would use 64bit Raspberry Pi OS with a desktop on a Raspi-400. It allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys and what they are used for.
 
 add link to cold page
 
