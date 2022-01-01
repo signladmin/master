@@ -5,7 +5,7 @@ description: 'Luo ada käyttäjä, lisää ryhmään sudo'
 # Käyttäjän Asetukset
 
 {% hint style="Huomaa" %}
-If you are using a Pi-Node image you need only reference this material until we start configuring the Relay & Core. The guide builds the image you can download.
+If you are using a Pi-Node image you need only reference this material. The guide builds the image you can download.
 {% endhint %}
 
 ## Luo ada käyttäjä
