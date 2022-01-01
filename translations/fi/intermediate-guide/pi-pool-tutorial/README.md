@@ -5,34 +5,36 @@ description: >-
 
 # Pi-Node Image & Ohjeet
 
-[Pi-Node.img.gz](https://mainnet.adamantium.online/Pi-Node.img.gz) on ennalta määritetty Cardano Node, jota voidaan käyttää NFT:n luomiseen, lähettämään tapahtumia tai edelleen konfiguroida relay tai ydin nodeksi stake pool käyttöön. Se on konfiguroitu kaikella mitä tarvitset asentaaksesi nopeasti synkronoidun noden sisältäen Nginx proxypass Grafanan TLS salaukselle itse allekirjoitetulla varmenteella, toimintavalmiin topology updaterin ja gLiveView-ohjelman.
+The guide builds the image from a fresh install of Ubuntu. If you flashed the image you only need the guide as a reference. Head over to the quickstart to get synced up. The relay,core and cold guides will configure the the Pi-Node further.
+
+The [Pi-Node.img.gz](https://mainnet.adamantium.online/Pi-Node.img.gz) is a pre configured Cardano node that can be used for minting NFT's, submitting transactions and can be further configured into a relay or core node for stake pool creation. It is configured with everything you need to quickly bootstrap a synced node with Nginx proxypass of Grafana for TLS encryption with a self signed certificate, working topology updater and gLiveView.
 
 ![](../../../.gitbook/assets/photo\_2021-03-09-13.40.29.jpeg)
 
 {% hint style="danger" %}
-On erittäin suositeltavaa käydä läpi Cardano Foundationin [Stake Pool School](https://cardano-foundation.gitbook.io/stake-pool-course/) -kurssi.
+It is strongly recommended to work through the [Stake Pool School](https://cardano-foundation.gitbook.io/stake-pool-course/) course presented by the Cardano Foundation.
 {% endhint %}
 
 {% hint style="Huomaa" %}
-Jos haluat luoda .img tiedoston työstäsi, joka voidaan ottaa uudelleenkäyttöön muissa Raspberry Pi:ssäsi sinun kannattaa rakentaa se 8GB sd-kortille. Kuvan tekemiseen kuluu näin vähemmän aikaa. Katso [kuvan luontiosio](https://app.gitbook.com/@ada-pi/s/raspi-spo/intermediate-guide/pi-pool-tutorial/create-.img-file).
+If you would like to create a .img file of your work that can be flashed for reuse on other Raspberry Pi's you should build on an 8GB sd card. It will take less time to make an image. See [image creation section](https://app.gitbook.com/@ada-pi/s/raspi-spo/intermediate-guide/pi-pool-tutorial/create-.img-file).
 {% endhint %}
 
 ## Miksi tämä opas?
 
-Yhdistämme ja järjestelemme eri oppaita yhteen asiakirjaan, jota on helppo seurata tai johon voidaan viitata _erityisesti_ stake poolin ylläpitoon kahdella (tai useammalla) Raspberry Pi 4B:llä (8GB versio) ja yhdellä offline Pi:llä, joka tarvitaan kylmä avain operaatioihin.
+Consolidate and organize the various guides into a single document that can be followed or referenced _specifically_ for running a pool using two (or more) Raspberry Pi 4B (the 8GB version) and one offline Pi for cold key operations.
 
-Toimitetaan dokumentaatio jokaisesta vaiheesta kun samalla rakennetaan Pi-Node imagea pool luomiseen. Viite & opas.
+Provide documentation of every step taken while building the Pi-Node image available for bootstrapping pool creation. A reference & guide.
 
-Suosituimmat oppaat on tarkoitettu x86-arkkitehtuuriin ja '_tiedostaa se, mitä heittää pois ja, mitä pitää_' ei ole aina selvää. Aion muuttaa tämä '_with a little help from my friends_'. 🎸
+The most popular guides out there are aimed at x86 architecture and '_knowing what to throw away and knowing what to keep_' is not always clear. I aim to change that '_with a little help from my friends_'. 🎸
 
 ## Laitteisto
 
 {% hint style="Huomaa" %}
-Cardano-node ja cardano-cli, joihin tässä oppaassa viitataan, tarvitsevat toimiakseen aarch64 arkkitehtuurin taakseen. Sinun **täytyy** käyttää Pi4B 8GB Core & Relay laitteina, voit käyttää Pi3B+ tai PI4B 4GB tai 8GB versiota mikro sd-kortilla kylmänä offline koneenasi.
+The cardano-node & cardano-cli binaries linked to in this guide require aarch64 architecture to run. You **must** use Pi4B 8GB for the Core & Relays, you can use the Pi3B+ or PI4B 4GB or 8GB version with a micro sd card for your cold offline machine.
 {% endhint %}
 
 {% hint style="info" %}
-[Tässä pon lista toimivista adaptereista.](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/)
+[Here is a list of working adapters.](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/)
 {% endhint %}
 
 ### Ostoslista
@@ -56,6 +58,7 @@ Cardano-node ja cardano-cli, joihin tässä oppaassa viitataan, tarvitsevat toim
 * [Arming Cardano](https://t.me/joinchat/wvTcCSpdjGllMmFk) Telegram Group
 * [Berry Pool](https://t.me/berry_pool) Telegram group
 * [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
+* [StakePool Operator Scripts (SPOS)](https://github.com/gitmachtl/scripts/)
 
 ## Lataukset
 
