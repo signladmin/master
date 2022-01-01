@@ -6,6 +6,8 @@ description: >-
 
 # Pi-Node Image & Guide
 
+The guide builds the image from a fresh install of Ubuntu. If you flashed the image you only need the guide as a reference. Head over to the quickstart to get synced up. The relay,core and cold guides will configure the the Pi-Node further. 
+
 The [Pi-Node.img.gz](https://mainnet.adamantium.online/Pi-Node.img.gz) is a pre configured Cardano node that can be used for minting NFT's, submitting transactions and can be further configured into a relay or core node for stake pool creation. It is configured with everything you need to quickly bootstrap a synced node with Nginx proxypass of Grafana for TLS encryption with a self signed certificate, working topology updater and gLiveView.
 
 ![](../../../.gitbook/assets/photo\_2021-03-09-13.40.29.jpeg)
@@ -57,6 +59,7 @@ The cardano-node & cardano-cli binaries linked to in this guide require aarch64 
 * [Arming Cardano](https://t.me/joinchat/wvTcCSpdjGllMmFk) Telegram Group
 * [Berry Pool](https://t.me/berry_pool) Telegram group
 * [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
+* [StakePool Operator Scripts (SPOS)](https://github.com/gitmachtl/scripts/)
 
 ## Downloads
 

@@ -17,18 +17,16 @@ echo "export PATH=\"$PWD:\$PATH\"" >> $HOME/.adaenv
 export PATH="$PWD:$PATH"; . $HOME/.adaenv
 ```
 
-By now you should have chosen and synced your node on Testnet or Mainnet. There are two sets of scripts respectively. If you are on Testnet you can run a core with all the keys on it in Online mode. With Mainnet we set up an Online Core running a full node and an offline machine that runs the same version of cardano-cli as the online machine uses.
+By now you should have chosen and synced your node on Testnet or Mainnet. There are two sets of scripts respectively. If you are on Testnet you can run a core with all the keys on it in Online mode. With Mainnet we set up an Online Core running a full node and an offline machine that runs the same version of cardano-cli as the online machine uses. The Cold machine does not run cardano-node. It is offline.
 
 This offline or cold machine protects the nodes cold keys and the owners pledge keys. A json file with built transactions are transfered to the cold machine for signing and then moved back to the core for submission. Preventing Node and Wallet keys from ever being on a machine connected to the internet.
-
-Transactions
 
 ```bash
 cd $HOME/stakepoolscripts
 git fetch origin && git reset --hard origin/master
 ```
 
-Confirm these scripts are in your PATH and optionally check the tegrity of the scripts with git.
+Confirm these scripts are in your PATH and optionally check the integrity of the scripts with git.
 
 Git has checksums baked right in.
 
@@ -53,13 +51,13 @@ Copy the latest versions of the scripts into the bin folder.
 rsync -av $HOME/stakepoolscripts/cardano/${NODE_CONFIG}/* $HOME/stakepoolscripts/bin
 ```
 
-Martin hosts checksums but I have found he updates them faster than his webserver can serve them resulting in those newest updated files failing. Checking your local version against github before moving them to your cold machine is a good practice to get into. All of this is dependent on the replies you get from your DNS server. Is it really your chosen DNS server? Anyway..
+Martin hosts checksums but I have found he updates them faster than his webserver can serve them resulting in those newest updated files failing. Checking your local version against github before moving them to your cold machine is a good practice to get into. All of this is dependent on the replies you get from your DNS server, security wise.
 
 I am in the habit of pulling updates, running a check against the repo and gathering copies of any binaries needed for USB transfer to the cold machine. These would include the latest $HOME/stakepoolscripts/bin folder and a copy of the cardano-cli binary in $HOME/.local/bin
 
 ### Common.inc
 
-Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we apend the magic value ontoo out CONFIG_NET variable.
+Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we apend the magic value onto out CONFIG_NET variable.
 
 ```bash
 echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv; . ${HOME}/.adaenv
@@ -99,7 +97,7 @@ Let's test we have these scripts in our PATH and test they are working.
 cd; 00_common.sh
 ```
 
-Should see this on testnet or similiar for mainnet.
+Should see this on testnet or similiar for mainnet. If somethine went wrong Matin presents you with a nice mushroom cloud ascii drawing and a hint as to what failed.
 
 ```bash
 Version-Info: cli 1.33.0 / node 1.33.0		Scripts-Mode: online		Testnet-Magic: 1097911063
@@ -107,7 +105,7 @@ Version-Info: cli 1.33.0 / node 1.33.0		Scripts-Mode: online		Testnet-Magic: 109
 
 # Configure your USB transfer stick
 
-Grab a USB stick and set it up with an ext4 partition owned by $USER that we can use between our two machines.
+Grab a USB stick and set it up with an ext4 partition owned by $USER that we can transfer between our two machines.
 
 Create the mountpoint & set default ACL for files and folders with umask.
 
@@ -116,8 +114,6 @@ cd; mkdir $HOME/usb-transfer; umask 022 $HOME/usb-transfer
 ```
 
 Attach the external drive and list all drives with fdisk.
-
-You can also print a list of drives with fdisk.
 
 ```bash
 sudo fdisk -l
@@ -287,17 +283,22 @@ pi-pool/logs
 usb-transfer
 exclude-list.txt
 ```
-If your drive is over 20gb you can remove the pi-pool/db entry but you need to shut down cardano-node first. This will give you a copy of the chain that can bbe transfere to other machines to save first sync times.
+If your drive is over 20gb you can remove the pi-pool/db entry but you need to shut down cardano-node first. This will give you a copy of the chain that can be transfered to other machines to save first sync time.
 
 Backup the files and folders to the USB stick.
 
 ```bash
 rsync -av --exclude-from="exclude-list.txt" /home/ada /home/ada/usb-transfer
 ```
+```bash
+cd; sudo umount usb-transfer
+```
 
 
 # Set up your cold machine.
 
-Go ahead and flash a new Pi-Node.img.gz on a 
+For the cold machine I would use an Ubuntu LTS release with a desktop on a Raspi-400. It allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys and what they are used for. The Raspi-imager will download the image and cache it for later use. You can Google around on how to verify the img or rather the zip file the imager downloads. It's an indepth topic, the checksums fail 20% of time. We will assume it's what it claims to be, it will never be online again anyway limiting it's attack surface to some sort of badusb attack from a usb stick, mouse or anything else inserted into a usb port. Again with the 400, it will always be one less usb device and it comes with a mouse!.
+
+add link to cold page
 
 
