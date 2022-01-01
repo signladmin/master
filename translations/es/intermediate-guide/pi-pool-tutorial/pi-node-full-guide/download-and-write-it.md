@@ -33,17 +33,15 @@ Conecta el Pi a un monitor, inserta la tarjeta SD y enciéndela. Una vez que vea
 {% tab title="Pre configured Pi-Node.img.gz" %}
 #### Obtain Pi-Node.img.gz file
 
-| [Pi-Node](https://mainnet.adamantium.online/Pi-Node.img.gz) |
-| ----------------------------------------------------------- |
-|                                                             |
+| [Pi-Node](https://mainnet.adamantium.online/Pi-Node.img.gz)
 
 #### Within Raspberry Pi Imager
 
 **Choose OS -> Use custom**
 
-Localiza el archivo .img.gz que descargaste & y flashealo.
+Locate the .img.gz file you downloaded & wish to flash.
 
-Localiza tu unidad de destino & y grábala al disco.
+Locate your target drive & write it to disk.
 
 ![](../../../.gitbook/assets/custom\_os.png)
 {% endtab %}
@@ -55,6 +53,6 @@ Localiza tu unidad de destino & y grábala al disco.
 
 [Raspberry Pi Generic (64-bit ARM) preinstalled server image](https://cdimage.ubuntu.com/ubuntu-server/daily-preinstalled/current/jammy-preinstalled-server-arm64+raspi.img.xz)
 
-****Choose OS -> Use custom**** Locate the .img.gz file you downloaded & wish to flash. Localiza tu unidad de destino & y grábala al disco.
+****Choose OS -> Use custom**** Locate the .img.gz file you downloaded & wish to flash. Locate your target drive & write it to disk.
 {% endtab %}
 {% endtabs %}
