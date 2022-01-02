@@ -53,13 +53,13 @@ Copy the latest versions of the scripts into the bin folder.
 rsync -av $HOME/stakepoolscripts/cardano/${NODE_CONFIG}/* $HOME/stakepoolscripts/bin
 ```
 
-Martin hosts checksums for his files as well. You can learn how in the README files in the stakpoolscripts folder.
+Martin hosts checksums for his files as well. You can learn how in the README files in the stakpoolscripts/bin folder.
 
 I am in the habit of pulling updates, running a check against the repo and gathering copies of any binaries needed for USB transfer to the cold machine. These would include the latest $HOME/stakepoolscripts/bin folder and a copy of the cardano-cli binary in $HOME/.local/bin. the rsync backup we take further down in this guide will copy everything necessary and it can be used to update the cold machines environment to match the core machine.
 
 #### Common.inc
 
-Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we append the magic value onto our CONFIG\_NET variable.
+Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we append the magic value onto our CONFIG_NET variable.
 
 ```bash
 echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv; . ${HOME}/.adaenv
@@ -144,7 +144,7 @@ Disk identifier: EECA81B9-3683-4A59-BC63-02EEDC04FD21
 
 In my case it is /dev/sdb. Yours may be /dev/sdc, /dev/sdd or so on. /dev/sda is usually the system drive. **Do not format your system drive by accident**.
 
-### Create an new GUID Partition Table (GPT)
+### Create a new GUID Partition Table (GPT)
 
 **This will wipe the disk**
 
