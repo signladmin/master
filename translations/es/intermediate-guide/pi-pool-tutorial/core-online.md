@@ -2,7 +2,11 @@
 
 ## Core server setup
 
-Using Martin Lang's StakePool Operator Scripts to manage cardano-node. These scripts not only handle pool creation & operations. They can query the blockchain, handling many complex transactions with ease.
+We will be using Martin Lang's [ATADA](https://cardanoscan.io/pool/00000036d515e12e18cd3c88c74f09a67984c2c279a5296aa96efe89) StakePool Operator Scripts to manage our pool and interact with the blockchain. These scripts not only handle pool creation & operations. They can be used with a hardware wallet, send ada, create NFT's and more.
+
+Unlike [CNTools](https://cardano-community.github.io/guild-operators/Scripts/cntools/) they do not hook into systemd and can be used in any directory under the users home folder. We already have gLiveView.sh and you can retreive the pools slot schedule [1.5 days before epoch boundary](https://github.com/asnakep/ScheduledBlocks) without CNCLI thanks to [SNAKE](https://cardanoscan.io/pool/342350284fd76ba9dbd7fd4ed579b2a2058d5ee558f8872b37817b28) pool!
+
+Martin provides a [script](https://github.com/gitmachtl/scripts/tree/master/cardano/mainnet#import-your-existing-pool-from-cli-keys-or-tutorials) that can help you import your existing pool to work with SPOS.
 
 {% embed url="https://github.com/gitmachtl/scripts" %}
 
@@ -10,7 +14,7 @@ Please visit and review the configuration, scriptfiles syntax & filenames to bet
 
 ### Online Core Installation
 
-Clone the repo into your home directory. Create a folder to hold the scripts and add them to your PATH.
+On your fully synced Pi-Node clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
 
 ```bash
 cd; git clone https://github.com/gitmachtl/scripts.git $HOME/stakepoolscripts
