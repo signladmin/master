@@ -325,13 +325,15 @@ Backup the files and folders to the USB stick.
 rsync -av --exclude-from="exclude-list.txt" /home/ada /home/ada/usb-transfer
 ```
 
+Unmount the drive before removing it.
+
 ```bash
 cd; sudo umount usb-transfer
 ```
 
 # Set up your cold machine.
 
-For the cold machine I would use 64bit Raspberry Pi OS(Raspbian) with a desktop on a Raspi-400. It already has rng-tools by default. We want entropy on the offline machine that is generating all our keys. 
+For the cold machine I would use 64bit Raspberry Pi OS(Raspbian) with a desktop on a Raspi-400. It already has rng-tools by default. We want entropy on the offline machine that is generating all our keys.
 
 A desktop allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys/certificates and what they are used for. Raspberry Pi OS is in my opinion a more stable desktop. Gnome on Ubuntu tends to be a little sluggish and can freeze up at times. Totally fine if you would rather use Ubuntu. Just make sure you have a username(ada) with a UID of 1001 and GID of 1001. Allowing for smooth transfer between machines.
 
