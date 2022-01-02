@@ -130,7 +130,7 @@ sudo cp usb-transfer/ada/jq /usr/local/bin
 jq -V
 ```
 
-Confirm SPOS is coreectly installed.
+Confirm SPOS is installed.
 
 ```bash
 . .adaenv; 00_common.sh
