@@ -53,13 +53,13 @@ Copy the latest versions of the scripts into the bin folder.
 rsync -av $HOME/stakepoolscripts/cardano/${NODE_CONFIG}/* $HOME/stakepoolscripts/bin
 ```
 
-Martin hosts checksums for his files as well. You can learn how in the README files in the stakpoolscripts folder.
+Martin hosts checksums for his files as well. You can learn how in the README files in the stakpoolscripts/bin folder.
 
 I am in the habit of pulling updates, running a check against the repo and gathering copies of any binaries needed for USB transfer to the cold machine. These would include the latest $HOME/stakepoolscripts/bin folder and a copy of the cardano-cli binary in $HOME/.local/bin. the rsync backup we take further down in this guide will copy everything necessary and it can be used to update the cold machines environment to match the core machine.
 
 #### Common.inc
 
-Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we append the magic value onto our CONFIG\_NET variable.
+Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we append the magic value onto our CONFIG_NET variable.
 
 ```bash
 echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv; . ${HOME}/.adaenv
@@ -144,7 +144,7 @@ Disk identifier: EECA81B9-3683-4A59-BC63-02EEDC04FD21
 
 In my case it is /dev/sdb. Yours may be /dev/sdc, /dev/sdd or so on. /dev/sda is usually the system drive. **Do not format your system drive by accident**.
 
-### Create an new GUID Partition Table (GPT)
+### Create a new GUID Partition Table (GPT)
 
 **This will wipe the disk**
 
@@ -212,7 +212,7 @@ Writing superblocks and filesystem accounting information: done
 
 ### Mount the drive at boot
 
-We want this drive to always be available to our backup job. Since it will be holding sensitive data we will mount it in a way where only root and the user cardano-node runs as can access.
+Since it will be holding sensitive data we will mount it in a way where only root and the user cardano-node runs as can access.
 
 Run blkid and pipe it through awk to get the UUID of the file system we just created.
 
@@ -228,7 +228,7 @@ c2a8f8c7-3e7a-40f2-8dac-c2b16ab07f37
 
 For me the UUID=c2a8f8c7-3e7a-40f2-8dac-c2b16ab07f37
 
-Add a mount entry to the bottom of fstab adding your UUID and the full system path to you backup folder.
+Add a mount entry to the bottom of fstab adding your UUID and the full system path to you usb-transfer folder.
 
 ```bash
 sudo nano /etc/fstab
@@ -266,7 +266,11 @@ Lets copy this environment to the offline machine. We want the environment ident
 
 ### Grab jq on your way out
 
-We need an arm64 binary of jq we can move to our offline machine.
+We need an arm64 binary of jq we can move to our offline machine. Why build from source when there is already an arm64 binary on the core?
+
+{% embed url="https://github.com/stedolan/jq" %}
+
+Locate and copy this systems jq binary to our $HOME directory.
 
 ```bash
 which jq
@@ -316,11 +320,13 @@ wget https://raw.githubusercontent.com/armada-alliance/master/master/docs/interm
 
 Optionally use VSCodium editor, the opensource VSCode to render markdown files on the offline machine. This makes Martins markdown easier to read. It has no Microsoft non free blobs like VSCode.
 
+{% embed url="https://vscodium.com" %}
+
 ```bash
 wget https://github.com/VSCodium/vscodium/releases/download/1.63.2/codium_1.63.2-1639700587_arm64.deb
 ```
 
-Backup the files and folders to the USB stick.
+Copy the files and folders to the USB stick.
 
 ```bash
 rsync -av --exclude-from="exclude-list.txt" /home/ada /home/ada/usb-transfer
@@ -339,5 +345,3 @@ For the cold machine I would use 64bit Raspberry Pi OS(Raspbian) with a desktop 
 A desktop allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys/certificates and what they are used for. Raspberry Pi OS is in my opinion a more stable desktop. Gnome on Ubuntu tends to be a little sluggish and can freeze up at times. Totally fine if you would rather use Ubuntu. Just make sure you have a username(ada) with a UID of 1001 and GID of 1001. Allowing for smooth transfer between machines.
 
 Having a built in keyboard is nice. The only way to get at these keys is physically stealing the drive or through inserting a badusb type root kit which is unlikely but possible. It is one less unknown device that has to be plugged in and you can put the whole thing in a safe quite nicely.
-
-add link to cold page
