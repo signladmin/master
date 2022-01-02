@@ -2,7 +2,7 @@
 
 ## Core server setup
 
-Using Martin Lang's StakePool Operator Scripts to manage cardano-node. These scripts not only handle pool creation & operations. They can query the blockchain, handling many complex transactions with ease.
+We will be using Martin Lang's [ATADA](https://cardanoscan.io/pool/00000036d515e12e18cd3c88c74f09a67984c2c279a5296aa96efe89) StakePool Operator Scripts to manage our pool and interact with the blockchain. These scripts not only handle pool creation & operations. They can be used with a hardware wallet, send ada, create NFT's and more. Unlike CNTools they do not hook into systemd and can be used in any directory under the users home folder. We already have gLiveView.sh and you can retreive the pools slot schedule [1.5 days before epoch boundary](https://github.com/asnakep/ScheduledBlocks) without CNCLI thanks to [SNAKE](https://cardanoscan.io/pool/342350284fd76ba9dbd7fd4ed579b2a2058d5ee558f8872b37817b28) pool!
 
 {% embed url="https://github.com/gitmachtl/scripts" %}
 
