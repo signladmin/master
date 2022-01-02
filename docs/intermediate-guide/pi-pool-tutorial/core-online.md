@@ -212,7 +212,7 @@ Writing superblocks and filesystem accounting information: done
 
 ### Mount the drive at boot
 
-We want this drive to always be available to our backup job. Since it will be holding sensitive data we will mount it in a way where only root and the user cardano-node runs as can access.
+Since it will be holding sensitive data we will mount it in a way where only root and the user cardano-node runs as can access.
 
 Run blkid and pipe it through awk to get the UUID of the file system we just created.
 
@@ -228,7 +228,7 @@ c2a8f8c7-3e7a-40f2-8dac-c2b16ab07f37
 
 For me the UUID=c2a8f8c7-3e7a-40f2-8dac-c2b16ab07f37
 
-Add a mount entry to the bottom of fstab adding your UUID and the full system path to you backup folder.
+Add a mount entry to the bottom of fstab adding your UUID and the full system path to you usb-transfer folder.
 
 ```bash
 sudo nano /etc/fstab
@@ -326,7 +326,7 @@ Optionally use VSCodium editor, the opensource VSCode to render markdown files o
 wget https://github.com/VSCodium/vscodium/releases/download/1.63.2/codium_1.63.2-1639700587_arm64.deb
 ```
 
-Backup the files and folders to the USB stick.
+Copy the files and folders to the USB stick.
 
 ```bash
 rsync -av --exclude-from="exclude-list.txt" /home/ada /home/ada/usb-transfer
