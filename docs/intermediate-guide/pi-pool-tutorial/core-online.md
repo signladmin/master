@@ -1,12 +1,14 @@
-# Core server setup
+# Pi-Core
+
+## Core server setup
 
 Using Martin Lang's StakePool Operator Scripts to manage cardano-node. These scripts not only handle pool creation & operations. They can query the blockchain, handling many complex transactions with ease.
 
-https://github.com/gitmachtl/scripts
+{% embed url="https://github.com/gitmachtl/scripts" %}
 
 Please visit and review the configuration, scriptfiles syntax & filenames to better familiarize yourself with the workflow and capabilities of this awesome toolset. All the instructions and commands needed to use these scripts are in the README files located in the stakepoolsripts folder.
 
-## Online Core Installation
+### Online Core Installation
 
 Clone the repo into your home directory. Create a folder to hold the scripts and add them to your PATH.
 
@@ -34,9 +36,9 @@ Everything in Git is an object. Every object has an ID. The IDs are a checksum o
 
 For example, a commit ID is basically a checksum of...
 
-- The contents and permissions of all files (git calls them "blobs") at the point of that commit (which have their own IDs).
-- The fields of the commit like author, date, log message, etc...
-- The commit IDs of the parent commits.
+* The contents and permissions of all files (git calls them "blobs") at the point of that commit (which have their own IDs).
+* The fields of the commit like author, date, log message, etc...
+* The commit IDs of the parent commits.
 
 ```bash
 git fsck --full
@@ -55,9 +57,9 @@ Martin hosts checksums for his files as well. You can learn how in the README fi
 
 I am in the habit of pulling updates, running a check against the repo and gathering copies of any binaries needed for USB transfer to the cold machine. These would include the latest $HOME/stakepoolscripts/bin folder and a copy of the cardano-cli binary in $HOME/.local/bin. the rsync backup we take further down in this guide will copy everything necessary and it can be used to update the cold machines environment to match the core machine.
 
-### Common.inc
+#### Common.inc
 
-Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we append the magic value onto our CONFIG_NET variable.
+Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we append the magic value onto our CONFIG\_NET variable.
 
 ```bash
 echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv; . ${HOME}/.adaenv
@@ -65,7 +67,7 @@ if [[ ${NODE_CONFIG} = 'testnet' ]]; then echo export BYRON_SHELLEY_EPOCHS=74; e
 if [[ ${NODE_CONFIG} = 'testnet' ]]; then echo export CONFIG_NET='testnet-magic\ "${MAGIC}"'; else echo export CONFIG_NET=mainnet; fi >> ${HOME}/.adaenv; . ${HOME}/.adaenv
 ```
 
-Copy the top portion of the 00_common.sh file into a new file named common.inc. This will hold the variable paths needed to connect these scripts to our running node.
+Copy the top portion of the 00\_common.sh file into a new file named common.inc. This will hold the variable paths needed to connect these scripts to our running node.
 
 ```bash
 cd stakepoolscripts/bin/
@@ -90,7 +92,7 @@ sed -i common.inc \
 
 This gets us what we need to continue. Have a look in the file for more options and edits you may need to make depending on your task(like catalyst voting, minting tokens or setting up a hardware wallet).
 
-### Test installation
+#### Test installation
 
 Let's test we have these scripts in our PATH and test they are working.
 
@@ -98,7 +100,7 @@ Let's test we have these scripts in our PATH and test they are working.
 cd; 00_common.sh
 ```
 
-Should see this on testnet or similiar for mainnet. If something went wrong Martin presents you with a nice mushroom cloud ascii drawing and a hint as to what failed. If you are not synced to the tip of the chain it will warn you that the socket does not exist!
+Should see this on testnet or similar for mainnet. If something went wrong Martin presents you with a nice mushroom cloud ascii drawing and a hint as to what failed. If you are not synced to the tip of the chain it will warn you that the socket does not exist!
 
 ```bash
 Version-Info: cli 1.33.0 / node 1.33.0		Scripts-Mode: online		Testnet-Magic: 1097911063
@@ -112,17 +114,17 @@ Watch sync progress by following journalctl.
 sudo journalctl --unit=cardano-node --follow
 ```
 
-# Configure your USB transfer stick
+## Configure your USB transfer stick
 
 Grab a USB stick and set it up with an ext4 partition owned by $USER that we can transfer between our two machines.
 
-Create the mountpoint & set default ACL for files and folders with umask.
+Create the mount point & set default ACL for files and folders with umask.
 
 ```bash
 cd; mkdir $HOME/usb-transfer; umask 022 $HOME/usb-transfer
 ```
 
-Attach the external drive into one of the USB2 ports and list all drives with fdisk. Some drive adaptors eat a lot of power and you do not want to risk another USB device eating too much power on USB3 triggering a bus reset.
+Attach the external drive into one of the USB2 ports and list all drives with fdisk. Some drive adapters eat a lot of power and you do not want to risk another USB device eating too much power on USB3 triggering a bus reset.
 
 ```bash
 sudo fdisk -l
@@ -140,12 +142,11 @@ Disklabel type: gpt
 Disk identifier: EECA81B9-3683-4A59-BC63-02EEDC04FD21
 ```
 
-In my case it is /dev/sdb. Yours may be /dev/sdc, /dev/sdd or so on. /dev/sda is usually the system drive.
-**<span style="color:red">Do not format your system drive by accident</span>**.
+In my case it is /dev/sdb. Yours may be /dev/sdc, /dev/sdd or so on. /dev/sda is usually the system drive. **Do not format your system drive by accident**.
 
-## Create an new GUID Partition Table (GPT)
+### Create an new GUID Partition Table (GPT)
 
-**<span style="color:red">This will wipe the disk</span>**
+**This will wipe the disk**
 
 ```bash
 sudo gdisk /dev/sdb
@@ -179,15 +180,15 @@ x	extra functionality (experts only)
 
 Your new partition can be found at /dev/sdb1, the first partition on sdb.
 
-### Optionaly Check the drive for bad blocks (takes a few hours)
+#### Optionally Check the drive for bad blocks (takes a few hours)
 
 ```bash
 badblocks -c 10240 -s -w -t random -v /dev/sdb
 ```
 
-## Format the partition as ext4
+### Format the partition as ext4
 
-We still need to create a new ext4 filesystem on the partition.
+We still need to create a new ext4 file system on the partition.
 
 ```bash
 sudo mkfs.ext4 /dev/sdb1
@@ -209,11 +210,11 @@ Creating journal (65536 blocks): done
 Writing superblocks and filesystem accounting information: done
 ```
 
-## Mount the drive at boot
+### Mount the drive at boot
 
 We want this drive to always be available to our backup job. Since it will be holding sensitive data we will mount it in a way where only root and the user cardano-node runs as can access.
 
-Run blkid and pipe it through awk to get the UUID of the filesystem we just created.
+Run blkid and pipe it through awk to get the UUID of the file system we just created.
 
 ```bash
 sudo blkid /dev/sdb1 | awk -F'"' '{print $2}'
@@ -239,7 +240,7 @@ UUID=c2a8f8c7-3e7a-40f2-8dac-c2b16ab07f37 /home/ada/usb-transfer auto nosuid,nod
 
 > nofail allows the server to boot if the drive is not inserted.
 
-### Test your drive mounts
+#### Test your drive mounts
 
 Mount the drive and confirm it mounted by locating the lost+found folder. If it is not present then your drive is not mounted.
 
@@ -247,13 +248,13 @@ Mount the drive and confirm it mounted by locating the lost+found folder. If it 
 sudo mount usb-transfer; ls $HOME/usb-transfer
 ```
 
-Take ownership of the filesystem.
+Take ownership of the file system.
 
 ```bash
 sudo chown -R $USER:$USER $HOME/usb-transfer
 ```
 
-Now your stick will automount if it is left in the core machine and it is rebooted. We will repeat these steps on the offline cold machine. When you plug it into a running server just issue the same mount/check command.
+Now your stick will auto mount if it is left in the core machine and it is rebooted. We will repeat these steps on the offline cold machine. When you plug it into a running server just issue the same mount/check command.
 
 We already set the location of our USB mount in the SPOS common.inc file. We can again test our installation by creating a new offlineTransfer.json file which we need for continuing in offline mode on our Cold machine.
 
@@ -263,7 +264,7 @@ We already set the location of our USB mount in the SPOS common.inc file. We can
 
 Lets copy this environment to the offline machine. We want the environment identicle and rsync is great for this.
 
-## Grab jq on your way out
+### Grab jq on your way out
 
 We need an arm64 binary of jq we can move to our offline machine.
 
@@ -302,9 +303,9 @@ usb-transfer
 exclude-list.txt
 ```
 
-If your drive is over 20gb you can remove the pi-pool/db entry and grab a copy of the db/ folder. You should shutdown cardano-node first. This will give you a copy of the chain that can be transfered to other machines to save first sync time.
+If your drive is over 20gb you can remove the pi-pool/db entry and grab a copy of the db/ folder. You should shutdown cardano-node first. This will give you a copy of the chain that can be transferred to other machines to save first sync time.
 
-## Download the guide markdown files
+### Download the guide markdown files
 
 Grab this guide so you can view it on the offline machine.
 
@@ -331,7 +332,7 @@ Unmount the drive before removing it.
 cd; sudo umount usb-transfer
 ```
 
-# Set up your cold machine.
+## Set up your cold machine.
 
 For the cold machine I would use 64bit Raspberry Pi OS(Raspbian) with a desktop on a Raspi-400. It already has rng-tools by default. We want entropy on the offline machine that is generating all our keys.
 
