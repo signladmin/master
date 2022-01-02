@@ -266,7 +266,11 @@ Lets copy this environment to the offline machine. We want the environment ident
 
 ### Grab jq on your way out
 
-We need an arm64 binary of jq we can move to our offline machine.
+We need an arm64 binary of jq we can move to our offline machine. Why build from source when there is already an arm64 binary on the core?
+
+{% embed url="https://github.com/stedolan/jq" %}
+
+Locate and copy this systems jq binary to our $HOME directory.
 
 ```bash
 which jq
@@ -316,6 +320,8 @@ wget https://raw.githubusercontent.com/armada-alliance/master/master/docs/interm
 
 Optionally use VSCodium editor, the opensource VSCode to render markdown files on the offline machine. This makes Martins markdown easier to read. It has no Microsoft non free blobs like VSCode.
 
+{% embed url="https://vscodium.com" %}
+
 ```bash
 wget https://github.com/VSCodium/vscodium/releases/download/1.63.2/codium_1.63.2-1639700587_arm64.deb
 ```
@@ -339,5 +345,3 @@ For the cold machine I would use 64bit Raspberry Pi OS(Raspbian) with a desktop 
 A desktop allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys/certificates and what they are used for. Raspberry Pi OS is in my opinion a more stable desktop. Gnome on Ubuntu tends to be a little sluggish and can freeze up at times. Totally fine if you would rather use Ubuntu. Just make sure you have a username(ada) with a UID of 1001 and GID of 1001. Allowing for smooth transfer between machines.
 
 Having a built in keyboard is nice. The only way to get at these keys is physically stealing the drive or through inserting a badusb type root kit which is unlikely but possible. It is one less unknown device that has to be plugged in and you can put the whole thing in a safe quite nicely.
-
-add link to cold page

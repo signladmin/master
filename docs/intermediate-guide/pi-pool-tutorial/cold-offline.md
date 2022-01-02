@@ -2,7 +2,7 @@
 
 ## Cold server setup
 
-This can be any 64 bit capable Raspi. Any Raspberry Pi 4, Raspberry Pi 3b+ or a Raspberry Pi-400. I would use a Pi-400. Keyboard is built in which is convienant and safer. The cold machine is only used to sign transactions and is left powered down for 99% of the time(if not more). The Pi-400 can just be powered off and in a safe. Also unlike an online node, the Cold machine can be run from the sdcard. Just make sure you have mulitple copies of your keys just incase you get a bad sdcard. Or better yet clone this system onto 3 or 4 other bootable sdcards. Remember you can also boot from USB.
+This can be any 64 bit capable Raspi. Any Raspberry Pi 4, Raspberry Pi 3b+ or a Raspberry Pi-400. I would use a Pi-400. Keyboard is built in which is convenient and safer. The cold machine is only used to sign transactions and is left powered down for 99% of the time(if not more). The Pi-400 can just be powered off and in a safe. Also unlike an online node, the Cold machine can be run from the sdcard. Just make sure you have multiple copies of your keys just in case you get a bad sdcard. Or better yet clone this system onto 3 or 4 other bootable sdcards. Remember you can also boot from USB.
 
 #### Ubuntu or Raspbian
 
@@ -14,7 +14,7 @@ Unzip the img file and flash it with Raspi-imager.
 
 ### Log in & setup user
 
-Log in and open a terminal create the $USER and add it to sudoers. ada in our case. We have to create a new user so the uid, gid and name match thof the core. It is far less error prone than trying to change the user id of the defualt user. With the user/group id of 1001 you will not run into issues with permissions transferring between systems.&#x20;
+Log in and open a terminal create the $USER and add it to sudoers. ada in our case. We have to create a new user so the uid, gid and name match thof the core. It is far less error prone than trying to change the user id of the default user. With the user/group id of 1001 you will not run into issues with permissions transferring between systems.&#x20;
 
 You can delete the Pi/Ubuntu user after you log back in or leave it be.
 
@@ -143,6 +143,8 @@ Confirm SPOS is installed.
 
 Right click on the VSCodium .deb file in the usb-transfer folder and choose install. You can then open the markdown files and use ctr+shift+V to render a preview.
 
-### Key creation
+{% embed url="https://vscodium.com" %}
+
+### Pool Creation
 
 That's it! you can now use Martins guide in the stakepoolscripts/bin file. Remember to always manually unmount your USB stick before unplugging it.
