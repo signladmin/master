@@ -6,7 +6,7 @@ This can be any 64 bit capable Raspi. Any Raspberry Pi 4, Raspberry Pi 3b+ or a 
 
 #### Ubuntu or Raspbian
 
-Raspberry Pi OS is a lot faster and more stable than the gnome desktop in Ubuntu. There is now a 64bit image you can install, it is not available in rapi-imager selection, IDK why. Check out the images in the link below grab the latest version. It is a zip file so we have to unzip it.
+Raspberry Pi OS desktop is a lot faster and more stable than the gnome desktop in Ubuntu. There is now a 64bit image you can install, it is not available in rapi-imager selection, IDK why. Check out the images in the link below grab the latest version. It is a zip file so we have to unzip it.
 
 {% embed url="https://downloads.raspberrypi.org/raspios_arm64" %}
 
@@ -14,7 +14,7 @@ Unzip the img file and flash it with Raspi-imager.
 
 ### Log in & setup user
 
-Log in and open a terminal create the $USER and add it to sudoers. ada in our case. We have to create a new user so the uid, gid and name match thof the core. It is far less error prone than trying to change the user id of the default user. With the user/group id of 1001 you will not run into issues with permissions transferring between systems.&#x20;
+Log in and open a terminal create the $USER and add it to sudoers. ada in our case. We have to create a new user so the uid, gid and name match that of the core. It is far less error prone than trying to change the user id of the default user. With the user/group id of 1001 you will not run into issues with permissions transferring between systems.
 
 You can delete the Pi/Ubuntu user after you log back in or leave it be.
 
@@ -24,16 +24,18 @@ sudo adduser ada; sudo adduser ada sudo
 
 log out and back in as $USER.
 
-Disable the radios. It would just be foolish to leave these enabled..&#x20;
+Disable the radios. It would just be foolish to leave these enabled..
 
 ```bash
 sudo rfkill block wifi
 sudo rfkill block bluetooth
 ```
 
+I put a network jack without a wire into the NIC port to block it. Preventing any accidental insertion.
+
 ### USB transfer
 
-Basically repeating the steps to setup an fstab entry from the core guide. This is to mount the USB transfer disk at boot should you have it inserted when you power on. It also makes the mount command simpler. You can just sudo mount usb-transfer.&#x20;
+Basically repeating the steps to setup an fstab entry from the Core guide. This is to mount the USB transfer disk at boot should you have it inserted when you power on. It also makes the mount command simpler. You can just sudo mount usb-transfer.
 
 Create the mount point & set default ACL for files and folders with umask.
 
@@ -47,7 +49,7 @@ Attach the external drive and list all drives with fdisk.
 sudo fdisk -l
 ```
 
-If you are using an sdcard the first inserted disk is /dev/sda. The sdcard you are booting from will have the /dev/mmcblk0 designation.
+If you are booting from the sdcard the first inserted disk is /dev/sda. The sdcard you are booting from will have the /dev/mmcblk0 designation.
 
 Example output for my system:
 
