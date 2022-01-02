@@ -1,6 +1,6 @@
 # Core server setup
 
-Using Martin Lang's StakePool Operator Scripts to manage cardano-node. These scripts not only handle pool operations. They can mint NFT's and query the blockchain, handling many complex transactions with ease.
+Using Martin Lang's StakePool Operator Scripts to manage cardano-node. These scripts not only handle pool creation & operations. They can query the blockchain, handling many complex transactions with ease.
 
 https://github.com/gitmachtl/scripts
 
@@ -17,16 +17,16 @@ echo "export PATH=\"$PWD:\$PATH\"" >> $HOME/.adaenv
 export PATH="$PWD:$PATH"; . $HOME/.adaenv
 ```
 
-By now you should have chosen and synced your node on Testnet or Mainnet. There are two sets of scripts respectively. If you are on Testnet you can run a core with all the keys on it in Online mode. With Mainnet we set up an Online Core running a full node and an offline machine that runs the same version of cardano-cli as the online machine uses. The Cold machine does not run cardano-node. It is offline.
+By now you should have chosen and synced your node on Testnet or Mainnet. There are two sets of scripts respectively. If you are on Testnet you can run a core with all the keys on it in Online mode. With Mainnet we set up an online Core running a full node and an offline machine that runs the same version of cardano-cli as the online machine uses. The Cold machine does not run cardano-node. It is offline.
 
-This offline or cold machine protects the nodes cold keys and the owners pledge keys. A json file with built transactions are transfered to the cold machine for signing and then moved back to the core for submission. Preventing Node and Wallet keys from ever being on a machine connected to the internet.
+This offline or cold machine protects the nodes cold keys and the owners pledge keys. A json file with built transactions are transfered to the cold machine for signing and then moved back to the core for submission. Preventing node and wallet keys from ever being on a machine connected to the internet.
 
 ```bash
 cd $HOME/stakepoolscripts
 git fetch origin && git reset --hard origin/master
 ```
 
-Confirm these scripts are in your PATH and optionally check the integrity of the scripts with git.
+Confirm these scripts are in your PATH and check the integrity of the scripts with git.
 
 Git has checksums baked right in.
 
@@ -53,11 +53,11 @@ rsync -av $HOME/stakepoolscripts/cardano/${NODE_CONFIG}/* $HOME/stakepoolscripts
 
 Martin hosts checksums for his files as well. You can learn how in the README files in the stakpoolscripts folder.
 
-I am in the habit of pulling updates, running a check against the repo and gathering copies of any binaries needed for USB transfer to the cold machine. These would include the latest $HOME/stakepoolscripts/bin folder and a copy of the cardano-cli binary in $HOME/.local/bin. the rsync backup we take further down in this guide will copy everything necessary and it can be use repeatedly if necessary.
+I am in the habit of pulling updates, running a check against the repo and gathering copies of any binaries needed for USB transfer to the cold machine. These would include the latest $HOME/stakepoolscripts/bin folder and a copy of the cardano-cli binary in $HOME/.local/bin. the rsync backup we take further down in this guide will copy everything necessary and it can be used to update the cold machines environment to match the core machine.
 
 ### Common.inc
 
-Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we apend the magic value onto out CONFIG_NET variable.
+Create a variable for testnet magic, Byron to Shelley epoch value and a variable to determine whether we are on mainnet or testnet. If on testnet we append the magic value onto our CONFIG_NET variable.
 
 ```bash
 echo export MAGIC=$(cat ${NODE_FILES}/${NODE_CONFIG}-shelley-genesis.json | jq -r '.networkMagic') >> ${HOME}/.adaenv; . ${HOME}/.adaenv
@@ -88,7 +88,7 @@ sed -i common.inc \
     -e 's#addrformat="--mainnet"#addrformat="--${CONFIG_NET}"#'
 ```
 
-This gets us what we need to continue. Have a look in the file for more options and edits you may need to make depending on your task(like catalyst voting, minting tokens and setting up a hardware wallet).
+This gets us what we need to continue. Have a look in the file for more options and edits you may need to make depending on your task(like catalyst voting, minting tokens or setting up a hardware wallet).
 
 ### Test installation
 
@@ -98,7 +98,11 @@ Let's test we have these scripts in our PATH and test they are working.
 cd; 00_common.sh
 ```
 
-Should see this on testnet or similiar for mainnet. If somethine went wrong Matin presents you with a nice mushroom cloud ascii drawing and a hint as to what failed. If you are not synced to the tip of the chain it will warn you that the socket does not exist!
+Should see this on testnet or similiar for mainnet. If something went wrong Martin presents you with a nice mushroom cloud ascii drawing and a hint as to what failed. If you are not synced to the tip of the chain it will warn you that the socket does not exist!
+
+```bash
+Version-Info: cli 1.33.0 / node 1.33.0      Scripts-Mode: online        Testnet-Magic: 1097911063
+```
 
 **You need a fully synced node to continue.**
 
@@ -106,10 +110,6 @@ Watch sync progress by following journalctl.
 
 ```bash
 sudo journalctl --unit=cardano-node --follow
-```
-
-```bash
-Version-Info: cli 1.33.0 / node 1.33.0      Scripts-Mode: online        Testnet-Magic: 1097911063
 ```
 
 # Configure your USB transfer stick
@@ -122,7 +122,7 @@ Create the mountpoint & set default ACL for files and folders with umask.
 cd; mkdir $HOME/usb-transfer; umask 022 $HOME/usb-transfer
 ```
 
-Attach the external drive into one of USB2 ports and list all drives with fdisk. Some drive adaptors eat a lot of power and you do not want to risk another USB device eating too much power on the USB3 bus.
+Attach the external drive into one of the USB2 ports and list all drives with fdisk. Some drive adaptors eat a lot of power and you do not want to risk another USB device eating too much power on USB3 triggering a bus reset.
 
 ```bash
 sudo fdisk -l
@@ -178,7 +178,7 @@ x   extra functionality (experts only)
 
 Your new partition can be found at /dev/sdb1, the first partition on sdb.
 
-### Optionaly Check the drive for bad blocks (takes a couple of hours)
+### Optionaly Check the drive for bad blocks (takes a few hours)
 
 ```bash
 badblocks -c 10240 -s -w -t random -v /dev/sdb
@@ -251,17 +251,16 @@ Take ownership of the filesystem.
 ```bash
 sudo chown -R $USER:$USER $HOME/usb-transfer
 ```
-Now your stick will automount if it is left in the core machine and is rebooted. We will repeat these steps on the offline cold machine. When you plug it into a running server just issue the same mount/check command.
 
-```bash
-sudo mount usb-transfer; ls $HOME/usb-transfer
-```
+Now your stick will automount if it is left in the core machine and it is rebooted. We will repeat these steps on the offline cold machine. When you plug it into a running server just issue the same mount/check command.
+
 We already set the location of our USB mount in the SPOS common.inc file. We can again test our installation by creating a new offlineTransfer.json file which we need for continuing in offline mode on our Cold machine.
 
 ```bash
 01_workOffline.sh new
 ```
-Lets copy this environment to the offline machine.
+
+Lets copy this environment to the offline machine. We want the environment identicle and rsync is great for this.
 
 ## Grab jq on your way out
 
@@ -277,6 +276,7 @@ Create an rsync-exclude.txt file so we can rip through and grab everything we ne
 ```bash
 cd; nano exclude-list.txt
 ```
+
 Add the following.
 
 ```bash
@@ -300,7 +300,8 @@ pi-pool/logs
 usb-transfer
 exclude-list.txt
 ```
-If your drive is over 20gb you can remove the pi-pool/db entry but you should shut down cardano-node first. This will give you a copy of the chain that can be transfered to other machines to save first sync time.
+
+If your drive is over 20gb you can remove the pi-pool/db entry and grab a copy of the db/ folder. You should shutdown cardano-node first. This will give you a copy of the chain that can be transfered to other machines to save first sync time.
 
 ## Download the guide markdown files
 
@@ -311,21 +312,30 @@ https://raw.githubusercontent.com/armada-alliance/master/master/docs/intermediat
 wget https://raw.githubusercontent.com/armada-alliance/master/master/docs/intermediate-guide/pi-pool-tutorial/cold-offline.md
 ```
 
+Optionally use VSCodium editor, the opensource VSCode to render markdown files on the offline machine. This makes Martins markdown easier to read. It has no Microsoft non free blobs like VSCode.
+
+```bash
+wget https://github.com/VSCodium/vscodium/releases/download/1.63.2/codium_1.63.2-1639700587_arm64.deb
+```
+
 Backup the files and folders to the USB stick.
 
 ```bash
 rsync -av --exclude-from="exclude-list.txt" /home/ada /home/ada/usb-transfer
 ```
+
+Unmount the drive before removing it.
+
 ```bash
 cd; sudo umount usb-transfer
 ```
 
 # Set up your cold machine.
 
-For the cold machine I would use 64bit Raspberry Pi OS(Raspbian) with a desktop on a Raspi-400. It allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys and what they are used for.
+For the cold machine I would use 64bit Raspberry Pi OS(Raspbian) with a desktop on a Raspi-400. It already has rng-tools by default. We want entropy on the offline machine that is generating all our keys.
+
+A desktop allows for multiple windows, copy and paste and another way to see your keys. It will help you start figuring out the different keys/certificates and what they are used for. Raspberry Pi OS is in my opinion a more stable desktop. Gnome on Ubuntu tends to be a little sluggish and can freeze up at times. Totally fine if you would rather use Ubuntu. Just make sure you have a username(ada) with a UID of 1001 and GID of 1001. Allowing for smooth transfer between machines.
 
 Having a built in keyboard is nice. The only way to get at these keys is physically stealing the drive or through inserting a badusb type root kit which is unlikely but possible. It is one less unknown device that has to be plugged in and you can put the whole thing in a safe quite nicely.
 
 add link to cold page
-
-
