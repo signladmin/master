@@ -14,7 +14,7 @@ Please visit and review the configuration, scriptfiles syntax & filenames to bet
 
 ### Online Core Installation
 
-Clone the repo into your home directory. Create a folder to hold the scripts and add them to your PATH.
+On your fully synced Pi-Node clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
 
 ```bash
 cd; git clone https://github.com/gitmachtl/scripts.git $HOME/stakepoolscripts
