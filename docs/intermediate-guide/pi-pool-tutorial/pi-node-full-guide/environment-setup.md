@@ -650,9 +650,9 @@ Follow the instructions to install the Grafana plugin, configure your datasource
 
 {% hint style="info" %}
 
-```bash
-
 View how much zram swap cardano-node is using.
+
+```bash
 
 CNZRAM=$(pidof cardano-node)
 grep --color VmSwap /proc/$CNZRAM/status
