@@ -332,7 +332,7 @@ If your drive is over 20gb you can remove the pi-pool/db entry and grab a copy o
 Grab this guide so you can view it on the offline machine.
 
 ```bash
-https://raw.githubusercontent.com/armada-alliance/master/master/docs/intermediate-guide/pi-pool-tutorial/core-online.md
+wget https://raw.githubusercontent.com/armada-alliance/master/master/docs/intermediate-guide/pi-pool-tutorial/core-online.md
 wget https://raw.githubusercontent.com/armada-alliance/master/master/docs/intermediate-guide/pi-pool-tutorial/cold-offline.md
 ```
 
