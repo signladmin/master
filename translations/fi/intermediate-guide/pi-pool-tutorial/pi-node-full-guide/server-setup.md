@@ -53,7 +53,7 @@ sudo passwd -l root
 
 ### Suojaa jaettu muisti
 
-Avaa /etc/fstab.
+Mount shared memory as read only. Avaa /etc/fstab.
 
 ```
 sudo nano /etc/fstab
@@ -258,7 +258,7 @@ sudo nano /usr/bin/init-zram-swapping
 Kerro oletusasetukset kolmella. This will give you 11.5GB of virtual compressed swap in ram.
 
 {% hint style="info" %}
-mem=$((totalmem / 2 * 1024 * 3))
+mem=$((totalmem / 2 _ 1024 _ 3))
 {% endhint %}
 
 ```bash
@@ -276,16 +276,6 @@ mkswap /dev/zram0
 swapon -p 5 /dev/zram0
 
 ```
-
-{% hint style="info" %}
-Katso, kuinka paljon zram swap:ia cardano-node käyttää.
-
-```
-CNZRAM=$(pidof cardano-node)
-grep --color VmSwap /proc/$CNZRAM/status
-```
-
-{% endhint %}
 
 ### Raspberry Pi & entropia
 
