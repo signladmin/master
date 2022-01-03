@@ -4,14 +4,14 @@
 
 ## Stake Pool Guides <a href="#intermediate-guide" id="intermediate-guide"></a>
 
-* [Pi-Node Image & Ohjeet](intermediate-guide/pi-pool-tutorial/README.md)
+* [Pi-Node/Pi-Pool Guide](intermediate-guide/pi-pool-tutorial/README.md)
   * [Pi-Node (Full Guide)](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/README.md)
     * [Lataa & Polta](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/download-and-write-it.md)
     * [Suojattu kirjautuminen](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/logging-in-securely.md)
     * [Käyttäjän Asetukset](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/user-setup.md)
     * [Palvelimen Asetukset](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/server-setup.md)
     * [Ympäristön Asetukset](intermediate-guide/pi-pool-tutorial/pi-node-full-guide/environment-setup.md)
-  * [Pi-Node (pikaopas)](intermediate-guide/pi-pool-tutorial/pi-node.md)
+  * [Pi-Node (img quick start)](intermediate-guide/pi-pool-tutorial/pi-node.md)
   * [Pi-Relay](intermediate-guide/pi-pool-tutorial/pi-relay.md)
   * [Pi-Core](intermediate-guide/pi-pool-tutorial/core-online.md)
   * [Pi-Cold](intermediate-guide/pi-pool-tutorial/cold-offline.md)
