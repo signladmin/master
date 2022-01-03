@@ -152,4 +152,8 @@ Right click on the VSCodium .deb file in the usb-transfer folder and choose inst
 
 ### Pool Creation
 
-That's it! you can now use Martins guide in the stakepoolscripts/bin file. Remember to always manually unmount your USB stick before unplugging it.
+That's it! you can now use Martins guide in the stakepoolscripts/bin file. Remember to always manually unmount your USB stick before unplugging it. 
+
+{% embed url="https://github.com/gitmachtl/scripts" %}
+
+Thank you Martin for all your hard work!
