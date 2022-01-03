@@ -52,14 +52,14 @@ ssh ada@<server-ip>
 Test that ada is in the sudo group by updating your package lists and upgrading the system.
 
 {% hint style="warning" %}
-If you get error about repos and time it is becuase the clock is not set. Install chrony now to fix, otherwise we will install it later.
+If you get error about repos and time it is because the clock is not set. Install chrony now to fix, otherwise we will install and configure it later.
 {% endhint %}
 
 ```bash
 sudo apt update; sudo apt upgrade -y
 ```
 
-If that was successful we can delete the default ubuntu user and it's home directory.
+We can delete the default ubuntu user and it's home directory.
 
 ```bash
 sudo deluser --remove-home ubuntu
