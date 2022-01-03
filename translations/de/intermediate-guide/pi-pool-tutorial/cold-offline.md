@@ -120,7 +120,7 @@ cd; rsync -aP usb-transfer/ada/ ~/
 Source the .adaenv file on login.
 
 ```bash
-echo . ~/.adaenv >> ${HOME}/.bashrc
+echo . ~/.adaenv >> ~/.bashrc
 ```
 
 Switch the Stake Pool Operator scripts to 'offline mode'.
@@ -153,3 +153,7 @@ Right click on the VSCodium .deb file in the usb-transfer folder and choose inst
 ### Pool Creation
 
 That's it! you can now use Martins guide in the stakepoolscripts/bin file. Remember to always manually unmount your USB stick before unplugging it.
+
+{% embed url="https://github.com/gitmachtl/scripts" %}
+
+Thank you Martin for all your hard work!
