@@ -23,7 +23,7 @@ Refer to the Pi-Relay guide and update these settings accordingly for a Core ser
 sudo reboot
 ```
 
-On your fully synced node, clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
+While your node is syncing back up, clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
 
 ```bash
 cd; git clone https://github.com/gitmachtl/scripts.git $HOME/stakepoolscripts
