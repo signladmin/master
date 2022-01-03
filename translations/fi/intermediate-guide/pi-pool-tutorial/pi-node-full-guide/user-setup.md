@@ -52,14 +52,14 @@ ssh ada@<server-ip>
 Testaa, että ada on sudo-ryhmässä päivittämällä pakettiluettelot ja päivittämällä järjestelmä.
 
 {% hint style="Huomaa" %}
-If you get error about repos and time it is becuase the clock is not set. Install chrony now to fix, otherwise we will install it later.
+If you get error about repos and time it is because the clock is not set. Install chrony now to fix, otherwise we will install and configure it later.
 {% endhint %}
 
 ```bash
 sudo apt update; sudo apt upgrade -y
 ```
 
-Jos päivitys onnistui, voimme poistaa ubuntu käyttäjän ja sen kotihakemiston.
+We can delete the default ubuntu user and it's home directory.
 
 ```bash
 sudo deluser --remove-home ubuntu
