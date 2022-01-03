@@ -40,10 +40,10 @@ The cardano-node & cardano-cli binaries linked to in this guide require aarch64 
 ### Ostoslista
 
 * 2 [Pi4B 8GB](https://thepihut.com/products/raspberry-pi-4-model-b?variant=31994565689406) versio.
-* 2 Asemaa: (NVMe **pieni virrankulutus**, muoto & nopeus).
-* M.2 avain USB3.1 adapteriin tai mikä tahansa mikä toimii oman asemasi kanssa.
+* 2 Drives : SSD of some sort. Check your drive for compatability.
+* M.2 or other scsi to USB3 adapter or whatever works with your drive.
 * Kolmas 64bit kykenevä Pi offline-kone (Cold).
-* Luokan 10 micro Sd-kortti 8GB tai suurempi.
+* Class 10 micro sd card 16GB or larger.
 * Ylimääräisiä USB flash-asemia avainten ja konfiguraatioiden varmuuskopiointiin.
 * Harkitse yhtä 50 watin virtalähdettä
 * Harkitse 5 voltin gigabitin kytkintä
