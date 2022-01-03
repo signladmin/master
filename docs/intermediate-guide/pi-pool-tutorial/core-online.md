@@ -32,7 +32,7 @@ echo "export PATH=\"$PWD:\$PATH\"" >> $HOME/.adaenv
 export PATH="$PWD:$PATH"; . $HOME/.adaenv
 ```
 
-By now you should have chosen and synced your node on Testnet or Mainnet. There are two sets of scripts respectively. If you are on Testnet you can run a core with all the keys on it in Online mode. With Mainnet we set up an online Core running a full node and an offline machine that runs the same version of cardano-cli as the online machine uses.
+By now you should have chosen and synced your node on Testnet or Mainnet. There are two sets of scripts respectively. If you are on Testnet you can run a core with all the keys on it in Online mode. With Mainnet we set up an online Core running a full node and an offline machine that runs the same version of cardano-cli as the online machine uses. All key generation takes place on the cold machine for mainnet.
 
 The Cold machine does not run cardano-node. It is offline.
 
