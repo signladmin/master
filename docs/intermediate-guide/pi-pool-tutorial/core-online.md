@@ -14,13 +14,13 @@ Please visit and review the configuration, scriptfiles syntax & filenames to bet
 
 ### Online Core Installation
 
-Refer to the Pi-Relay guide and update these settings accordingly.
-- Set hostname
-- Static IP 150 or whatever works for you on your LAN
+Refer to the Pi-Relay guide and update these settings accordingly for a Core server.
+- Set hostname in /etc/hosts & /etc/hostname
+- Static IP (192.168.1.150 or whatever works for you on your LAN)
 - Port to 3000
 - Prometheus alias to C1
 
-On your fully synced Pi-Node clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
+On your fully synced Pi-Node, clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
 
 ```bash
 cd; git clone https://github.com/gitmachtl/scripts.git $HOME/stakepoolscripts
