@@ -120,7 +120,7 @@ cd; rsync -aP usb-transfer/ada/ ~/
 Source the .adaenv file on login.
 
 ```bash
-echo . ~/.adaenv >> ${HOME}/.bashrc
+echo . ~/.adaenv >> ~/.bashrc
 ```
 
 Switch the Stake Pool Operator scripts to 'offline mode'.
