@@ -111,7 +111,7 @@ sudo netplan apply
 
 ## Määritä palvelinportti
 
-Open the ~/.adaenv file and change the port it listens on.
+Open the ~/.adaenv file and change the port it listens on. For R1 or my first relay I will designate port 3001.
 
 ```bash
 nano $HOME/.adaenv
@@ -212,7 +212,7 @@ More incoming connections is generally a good thing, it increases the odds that 
 
 ## Prometheus
 
-Last thing we should do is change the name Prometheus is serving to Grafana.
+Last thing we can do is change the alias name Prometheus is serving to Grafana. You will have to go into Grafana and edit the panels alias accordingly as well.
 
 ```bash
 sudo nano /etc/prometheus/prometheus.yml
@@ -231,7 +231,7 @@ to
 alias: 'R1'
 ```
 
-In an upcoming guide I will show how to have Prometheus running on a separate Pi scraping data from the pool instead of having Prometheus using system resources on those machines.
+In an upcoming guide I will show how to have Prometheus running on a separate Pi scraping data from the pool instead of having Prometheus using system resources on those machines. This is a yaml file and indentation has to be correct.
 {% endhint %}
 
 Update, save and exit.
