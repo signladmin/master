@@ -211,7 +211,7 @@ More incoming connections is generally a good thing, it increases the odds that 
 
 ## Prometheus
 
-Last thing we do is change the alias name Prometheus is serving to Grafana.
+Last thing we can do is change the alias name Prometheus is serving to Grafana. You will have to go into Grafana and edit the panels alias accordingly as well.
 
 ```bash
 sudo nano /etc/prometheus/prometheus.yml
