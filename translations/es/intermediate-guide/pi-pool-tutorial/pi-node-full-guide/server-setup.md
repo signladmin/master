@@ -33,8 +33,8 @@ sudo nano /boot/firmware/config.txt
 over_voltage=6
 arm_freq=2000
 gpu_mem=16
-disable-wifi
-disable-bt
+dtoverlay=disable-wifi
+dtoverlay=disable-bt
 ```
 
 Save and reboot.
