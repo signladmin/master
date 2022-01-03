@@ -475,13 +475,13 @@ scrape_configs:
           type: "node"
 ```
 
-Start Prometheus & Grafana
+Tallenna & poistu.
+
+Start Prometheus.
 
 ```bash
 sudo systemctl start prometheus.service
 ```
-
-Tallenna & poistu.
 
 ### Asenna Grafana
 
@@ -510,8 +510,8 @@ Muuta portti jota Grafana kuuntelee, jotta se ei ole ristiriidassa cardano-noden
 
 ```bash
 sudo sed -i /etc/grafana/grafana.ini \
--e "s/;http_port/http_port/" \
--e "s/3000/5000/"
+         -e "s#;http_port#http_port#" \
+         -e "s#3000#5000#"
 ```
 Start Grafana
 
@@ -662,4 +662,4 @@ View network connections with netstat.
 sudo netstat -puntw
 ```
 
-Nyt sinulla on pi-node, jossa on työkaluja, joilla voit rakentaa stake poolin seuraavien sivujen ohjeiden ja tutoriaalien avulla. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! :muscle:
+From here you have a Pi-node with tools to build an active relay or a stake pool from the following pages. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! :muscle:
