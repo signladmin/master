@@ -78,7 +78,7 @@ if [[ ${NODE_CONFIG} = 'testnet' ]]; then echo export CONFIG_NET='testnet-magic\
 Copy the top portion of the 00\_common.sh file into a new file named common.inc. This will hold the variable paths needed to connect these scripts to our running node.
 
 ```bash
-cd stakepoolscripts/bin/
+cd $HOME/stakepoolscripts/bin/
 sed -n '1,69p' 00_common.sh >> common.inc
 ```
 
