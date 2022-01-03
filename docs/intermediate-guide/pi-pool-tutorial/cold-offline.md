@@ -14,24 +14,31 @@ Unzip the img file and flash it with Raspi-imager.
 
 ### Log in & setup user
 
-Log in and open a terminal create the $USER and add it to sudoers. ada in our case. We have to create a new user so the uid, gid and name match that of the core. It is far less error prone than trying to change the user id of the default user. With the user/group id of 1001 you will not run into issues with permissions transferring between systems.
-
-You can delete the Pi/Ubuntu user after you log back in or leave it be.
-
-```bash
-sudo adduser ada; sudo adduser ada sudo
-```
-
-log out and back in as $USER.
-
 Disable the radios. It would just be foolish to leave these enabled..
 
 ```bash
 sudo rfkill block wifi
 sudo rfkill block bluetooth
 ```
-
 I put a network jack without a wire into the NIC port to block it. Preventing any accidental insertion.
+
+Open up Preferences/Raspberry Pi Configuration window(GUI) and disable auto login.
+
+Create the $USER and add it to sudoers. ada in our case. We have to create a new user so the uid, gid and name match that of the core. It is far less error prone than trying to change the user id of the default user. With the user/group id of 1001 you will not run into issues with permissions transferring between systems.
+
+```bash
+sudo adduser ada; sudo adduser ada sudo
+```
+
+Reboot the server to stop the autologin pi user process running in the background. Log in as ada and delete the pi user.
+
+
+```bash
+sudo deluser --remove-home pi
+```
+{% hint style="warning" %}
+If you find your keyboard is not correctly printing the home symbol ~, you repair with, sudo locale-gen and reboot.
+{% endhint %}
 
 ### USB transfer
 
@@ -70,19 +77,17 @@ In my case it is /dev/sda because I am using the sdcard slot in the pi-400. Your
 
 Locate your drive and get the UUID for the partition we created earlier.
 
-Run blkid and pipe it through awk to get the UUID of the file system we just created.
+Run blkid and copy the UUID. In my case it is the UUID for /dev/sda1.
 
 ```bash
-sudo blkid /dev/sdb1 | awk -F'"' '{print $2}'
+sudo blkid
 ```
 
 Example output:
 
 ```bash
-c2a8f8c7-3e7a-40f2-8dac-c2b16ab07f37
+UUID="c2a8f8c7-3e7a-40f2-8dac-c2b16ab07f37"
 ```
-
-For me the UUID=c2a8f8c7-3e7a-40f2-8dac-c2b16ab07f37
 
 Add a mount entry to the bottom of fstab adding your UUID and the full system path to you backup folder.
 
@@ -107,8 +112,6 @@ sudo mount usb-transfer; ls $HOME/usb-transfer
 ### Transfer contents of the USB stick.
 
 The cold machine will never be online, these machines do not have any cmos battery to keep time. It should not pose too many issues if any. Just be aware that when you fire up the cold machine it's time is off.
-
-
 
 ```bash
 cd; rsync -aP usb-transfer/ada/ ~/
