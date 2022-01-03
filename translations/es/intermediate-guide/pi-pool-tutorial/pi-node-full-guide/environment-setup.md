@@ -10,7 +10,6 @@ description: Configure the environment for Cardano Node
 There is a 500 ₳ Registration deposit and another 5 ₳ in registration costs. First time users are strongly reccomended to use testnet. You can get tada (test ada) from the testnet faucet or ask Alliance members in Telegram. Try not to lose it please.
 {% endhint %}
 
-
 Crear algunos directorios.
 
 ```bash
@@ -54,7 +53,7 @@ source ${HOME}/.bashrc; source ${HOME}/.adaenv
 
 ## Build Libsodium
 
-This is IOHK's fork of Libsodium.
+This is IOHK's fork of Libsodium. It is needed for the dynamic build binary of cardano-node.
 
 ```bash
 cd; cd git/
@@ -72,7 +71,7 @@ Add the following to your .bashrc file and source it.
 ```bash
 echo "export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"" >> ~/.bashrc
 echo "export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"" >> ~/.bashrc
-source ~/.bashrc
+. ~/.bashrc
 ```
 
 Update link cache for shared libraries and confirm.
@@ -277,7 +276,6 @@ wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/gLiveView.sh
 ```
 
-
 {% hint style="info" %}
 You can change the port cardano-node runs on in the .adaenv file in your home directory. Open the file edit the port number. Load the change into your shell & restart the cardano-node service.
 
@@ -320,6 +318,7 @@ Download the topologyUpdater script and have a look at it. Lower the number of p
 ```bash
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/topologyUpdater.sh
 ```
+
 Lower the number of MX_PEERS to 10.
 
 ```bash
@@ -502,8 +501,7 @@ echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/a
 Actualiza tus listas de paquetes e instala Grafana.
 
 ```bash
-sudo apt update
-sudo apt install grafana
+sudo apt update; sudo apt install grafana
 ```
 
 Cambia el puerto que escucha Grafana para que no choque con el nodo cardano.
@@ -513,6 +511,7 @@ sudo sed -i /etc/grafana/grafana.ini \
          -e "s#;http_port#http_port#" \
          -e "s#3000#5000#"
 ```
+
 Start Grafana
 
 ```bash
@@ -524,8 +523,7 @@ sudo systemctl start grafana-server.service
 Open .adaenv.
 
 ```bash
-cd ${HOME}
-nano .adaenv
+cd ${HOME}; nano .adaenv
 ```
 
 Abajo en la parte inferior.
@@ -644,6 +642,16 @@ Siga las instrucciones para instalar el plugin Grafana, configurar su fuente de 
 
 ## Useful Commands
 
+{% hint style="info" %}
+
+Revisa cuánto utiliza el nodo de zram swap.
+
+```bash
+
+CNZRAM=$(pidof cardano-node)
+grep --color VmSwap /proc/$CNZRAM/status
+```
+
 Seguir salida de log al journal.
 
 ```bash
@@ -662,4 +670,6 @@ View network connections with netstat.
 sudo netstat -puntw
 ```
 
-From here you have a Pi-node with tools to build an active relay or a stake pool from the following pages. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! :muscle:
+{% endhint %}
+
+From here you have a Pi-Node with tools to build an active relay or a stake pool from the following pages. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! :muscle:
