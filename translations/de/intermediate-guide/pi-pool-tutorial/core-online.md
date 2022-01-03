@@ -14,12 +14,16 @@ Please visit and review the configuration, scriptfiles syntax & filenames to bet
 
 ### Online Core Installation
 
-Refer to the Pi-Relay guide and update these settings accordingly for a Core server.
+Refer to the Pi-Relay guide and update these settings accordingly for a Core server and reboot.
 - Set hostname in /etc/hosts & /etc/hostname
 - Static IP (192.168.1.150 or whatever works for you on your LAN)
 - Port to 3000
 
-On your fully synced node, clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
+```bash
+sudo reboot
+```
+
+While your node is syncing back up, clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
 
 ```bash
 cd; git clone https://github.com/gitmachtl/scripts.git $HOME/stakepoolscripts
@@ -28,7 +32,7 @@ echo "export PATH=\"$PWD:\$PATH\"" >> $HOME/.adaenv
 export PATH="$PWD:$PATH"; . $HOME/.adaenv
 ```
 
-By now you should have chosen and synced your node on Testnet or Mainnet. There are two sets of scripts respectively. If you are on Testnet you can run a core with all the keys on it in Online mode. With Mainnet we set up an online Core running a full node and an offline machine that runs the same version of cardano-cli as the online machine uses.
+By now you should have chosen and synced your node on Testnet or Mainnet. There are two sets of scripts respectively. If you are on Testnet you can run a core with all the keys on it in Online mode. With Mainnet we set up an online Core running a full node and an offline machine that runs the same version of cardano-cli as the online machine uses. All key generation takes place on the cold machine for mainnet.
 
 The Cold machine does not run cardano-node. It is offline.
 
