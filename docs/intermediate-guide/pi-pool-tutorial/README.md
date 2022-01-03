@@ -41,10 +41,10 @@ The cardano-node & cardano-cli binaries linked to in this guide require aarch64 
 ### Shopping list
 
 * 2 [Pi4B 8GB](https://thepihut.com/products/raspberry-pi-4-model-b?variant=31994565689406) version.
-* 2 Drives : (NVMe **low power**, form & speed).
-* M.2 key to USB3.1 adapter or whatever works with your drive.
+* 2 Drives : SSD of some sort. Check your drive for compatability.
+* M.2 or other scsi to USB3 adapter or whatever works with your drive.
 * A 3'rd 64bit capable Pi as an offline machine(Cold).
-* Class 10 micro sd card 8GB or larger. 
+* Class 10 micro sd card 16GB or larger. 
 * Extra USB flash drives for backing up keys and configurations.
 * Consider a single 50+ watt power supply
 * Consider a 5 volt gigabit switch
