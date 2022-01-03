@@ -14,11 +14,16 @@ Please visit and review the configuration, scriptfiles syntax & filenames to bet
 
 ### Online Core Installation
 
-On your fully synced Pi-Node clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
+Refer to the Pi-Relay guide and update these settings accordingly for a Core server.
+- Set hostname in /etc/hosts & /etc/hostname
+- Static IP (192.168.1.150 or whatever works for you on your LAN)
+- Port to 3000
+
+On your fully synced node, clone the Stakepool Operator Scripts repo into your home directory. Create the bin folder to hold the scripts and add them to your PATH.
 
 ```bash
 cd; git clone https://github.com/gitmachtl/scripts.git $HOME/stakepoolscripts
-mkdir -p $HOME/stakepoolscripts/bin && cd $_
+mkdir -p $HOME/stakepoolscripts/bin; cd $_
 echo "export PATH=\"$PWD:\$PATH\"" >> $HOME/.adaenv
 export PATH="$PWD:$PATH"; . $HOME/.adaenv
 ```
@@ -31,7 +36,7 @@ This offline or cold machine protects the nodes cold keys and the owners pledge 
 
 ```bash
 cd $HOME/stakepoolscripts
-git fetch origin && git reset --hard origin/master
+git fetch origin; git reset --hard origin/master
 ```
 
 Confirm these scripts are in your PATH and check the integrity of the scripts with git.
@@ -48,6 +53,7 @@ For example, a commit ID is basically a checksum of...
 
 ```bash
 git fsck --full
+# silence is golden
 git status
 ```
 
