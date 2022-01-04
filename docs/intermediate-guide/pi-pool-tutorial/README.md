@@ -30,10 +30,6 @@ The most popular guides out there are aimed at x86 architecture and '_knowing wh
 
 ## Hardware
 
-{% hint style="warning" %}
-The cardano-node & cardano-cli binaries linked to in this guide require aarch64 architecture to run. You **must** use Pi4B 8GB for the Core & Relays, you can use the Pi3B+ or PI4B 4GB or 8GB version with a micro sd card for your cold offline machine.
-{% endhint %}
-
 {% hint style="info" %}
 [Here is a list of working adapters.](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/)
 {% endhint %}
