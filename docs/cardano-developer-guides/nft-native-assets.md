@@ -4,6 +4,10 @@ description: Let's make some native assets on Cardano ❤️✨
 
 # Cardano Native Asset (NFT) 💰
 
+{% hint style="info" %}
+## THIS GUIDE IS DEPRECEATED&#x20;
+{% endhint %}
+
 ## Who is this guide for?
 
 * For people who want to make NFT's or Native Assets on Cardano
