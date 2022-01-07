@@ -5,7 +5,7 @@ This guide follows the same setup as our [Pi-Node guide and image](../pi-pool-tu
 {% endhint %}
 
 {% hint style="success" %}
-#### Current Official Cardano Node Version: 1.31.0
+#### Current Official Cardano Node Version: 1.32.1
 {% endhint %}
 
 ### Overview 🗒
@@ -25,13 +25,13 @@ This guide follows the same setup as our [Pi-Node guide and image](../pi-pool-tu
 ### Static binaries and Cardano node configuration files are provided by [\[ZW3RK\]](https://armada-alliance.com/identities/zw3rk) pool🙏 and can be found at our [Github repository](https://github.com/armada-alliance/cardano-node-binaries/tree/main/static-binaries).
 
 ```bash
-wget https://github.com/armada-alliance/cardano-node-binaries/raw/main/static-binaries/1_31_0.zip
+wget -O 1_32_1.zip https://github.com/armada-alliance/cardano-node-binaries/blob/main/static-binaries/1_32_1.zip?raw=true
 ```
 
 Extract the content from the zip file.
 
 ```bash
-unzip 1_31_0.zip
+unzip 1_32_1.zip
 ```
 
 ### Check if cardano-node is running already
@@ -70,7 +70,7 @@ cardano-node --version
 #### Output:
 
 ```bash
-cardano-node 1.31.0 - linux-aarch64 - ghc-8.10
+cardano-node 1.32.0 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
@@ -83,7 +83,7 @@ cardano-cli --version
 #### Output:
 
 ```bash
-cardano-cli 1.31.0 - linux-aarch64 - ghc-8.10
+cardano-cli 1.32.1 - linux-aarch64 - ghc-8.10
 git rev 0000000000000000000000000000000000000000
 ```
 
