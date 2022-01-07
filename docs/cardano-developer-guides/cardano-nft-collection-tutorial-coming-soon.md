@@ -1,7 +1,7 @@
 # Cardano NFT Collection Tutorial 👛
 
 {% hint style="info" %}
-## THIS GUIDE IS DEPRECEATED
+## THIS GUIDE IS DEPRECATED
 {% endhint %}
 
 ## Prerequisites
