@@ -7,7 +7,7 @@ _**Me Armada Allianssissa rakennamme aktiivisesti tarvittavia ohjelmistopakettej
 {% endhint %}
 
 {% hint style="success" %}
-#### Current Official Cardano Node Version: 1.32.1
+#### Current Official Cardano Node Version: 1.33.0
 {% endhint %}
 
 ### Overview :notepad\_spiral:
