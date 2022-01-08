@@ -5,7 +5,7 @@ Tämä opas noudattaa samoja asetuksia kuin meidän [Pi-Node opas ja image](../p
 {% endhint %}
 
 {% hint style="success" %}
-#### Current Official Cardano Node Version: 1.32.1
+#### Current Official Cardano Node Version: 1.33.0
 {% endhint %}
 
 ### Overview 🗒
