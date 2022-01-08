@@ -7,7 +7,7 @@ _**We at the Armada Alliance actively build the required software packages neede
 {% endhint %}
 
 {% hint style="success" %}
-#### Current Official Cardano Node Version: 1.32.1
+#### Current Official Cardano Node Version: 1.33.0
 {% endhint %}
 
 ### Overview :notepad\_spiral:
