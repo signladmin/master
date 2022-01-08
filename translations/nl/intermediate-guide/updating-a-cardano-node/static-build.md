@@ -5,7 +5,7 @@ This guide follows the same setup as our [Pi-Node guide and image](../pi-pool-tu
 {% endhint %}
 
 {% hint style="success" %}
-#### Current Official Cardano Node Version: 1.32.1
+#### Current Official Cardano Node Version: 1.33.0
 {% endhint %}
 
 ### Overview 🗒
