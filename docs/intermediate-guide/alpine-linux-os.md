@@ -353,6 +353,10 @@ sudo nano /etc/ssh/sshd_config
 
 Edit the line `AllowTcpForwarding no` to `AllowTcpForwarding yes`
 
+{% hint style="info" %}
+Make sure this line is not commented out with a`#`
+{% endhint %}
+
 2\) If you run into a situation where you get the error:
 
 > /lib/rc/sh/openrc-run.sh: source: line 10: can't open '/home//cnode\_env': No such file or directory
@@ -369,10 +373,6 @@ Then reboot:
 ```
 sudo reboot
 ```
-
-{% hint style="info" %}
-Make sure this line is not commented out with a`#`
-{% endhint %}
 
 {% hint style="success" %}
 We would like to give a special shoutout to our [alliance member](https://armada-alliance.com), [Sayshar](https://armada-alliance.com/identities/sayshar-srn), operator of [\[SRN\] Pool](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0), for providing this tutorial 🏴‍☠️ 🙏 😎
