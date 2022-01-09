@@ -33,7 +33,7 @@ git tag
 git checkout tags/<tag>
 ```
 
-## Upgrading to Alpine v3.14 from Alpine v3.13:
+## Upgrading to Alpine v3.15 from Alpine v3.14:
 
 1\) Update your current version of AlpineOS.
 
@@ -45,10 +45,10 @@ sudo apk update
 sudo apk upgrade
 ```
 
-2\) Edit the repository to reflect Alpine v3.14.
+2\) Edit the repository to reflect Alpine v3.15.
 
 ```
-sudo sed -i 's@v3.13@v3.14@g' /etc/apk/repositories
+sudo sed -i 's@v3.14@v3.15@g' /etc/apk/repositories
 ```
 
 3\) Update the package list.
@@ -57,7 +57,7 @@ sudo sed -i 's@v3.13@v3.14@g' /etc/apk/repositories
 sudo apk update
 ```
 
-4\) Upgrading packages to v3.14
+4\) Upgrading packages to v3.15
 
 ```
 sudo apk add --upgrade apk-tools
@@ -75,7 +75,7 @@ sudo sync
 sudo reboot now
 ```
 
-5\) Now you should have AlpineOS upgraded to v3.14 🍷.
+5\) Now you should have AlpineOS upgraded to v3.15 🍷.
 
 ```
 cat /etc/alpine-release
@@ -85,7 +85,7 @@ cat /etc/alpine-release
 
 ## Initial Setup for AlpineOS on Raspberry Pi 4B 8GB:
 
-1\) Download the AlpineOS for RPi 4 aarch64 here: [https://dl-cdn.alpinelinux.org/alpine/v3.14/releases/aarch64/alpine-rpi-3.14.2-aarch64.tar.gz](https://dl-cdn.alpinelinux.org/alpine/v3.14/releases/aarch64/alpine-rpi-3.14.2-aarch64.tar.gz)
+1\) Download the AlpineOS for RPi 4 aarch64 [here](https://dl-cdn.alpinelinux.org/alpine/v3.15/releases/aarch64/alpine-rpi-3.15.0-aarch64.tar.gz).&#x20;
 
 2\) Decompress the .tar.gz file and copy it's contents into an SSD/SD card
 
