@@ -79,7 +79,7 @@ network:
     version: 2
     renderer: networkd
     ethernets:
-        enp3s0:
+        eth0:
             addresses:
                 - 192.168.1.151/24
             nameservers:
