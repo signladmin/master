@@ -76,18 +76,18 @@ sudo nano /etc/netplan/50-cloud-init.yaml
 # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
 # network: {config: disabled}
 network:
-    version: 2
-    renderer: networkd
-    ethernets:
-        eth0:
-            addresses:
-                - 192.168.1.151/24
-            nameservers:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses:
+        - 192.168.1.151/24
+      gateway4: 192.168.1.1
+      nameservers:
 # Home router IP & QUAD9 https://quad9.net/
-                addresses: [192.168.1.1, 9.9.9.9, 149.112.112.112]
-            routes:
-                - to: default
-                  via: 192.168.1.1
+          addresses: [192.168.1.1, 9.9.9.9, 149.112.112.112]
+
 ```
 
 Create a file named **99-disable-network-config.cfg** to disable cloud-init.
