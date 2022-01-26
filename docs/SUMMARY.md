@@ -27,26 +27,26 @@
 * [Wireguard Guide](intermediate-guide/wireguard-guide.md)
 * [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
 
-## Cardano Node
-
-* [RasPi-Node🍓](cardano-node/raspi-node/README.md)
-  * [Download & Flash](cardano-node/raspi-node/download-and-flash.md)
-  * [Server Setup](cardano-node/raspi-node/server-setup.md)
-  * [Environment Setup](cardano-node/raspi-node/environment-setup.md)
-
 ## Other Cardano Guides <a href="#cardano-developer-guides" id="cardano-developer-guides"></a>
 
+* [RasPi-Node🍓](cardano-developer-guides/raspi-node/README.md)
+  * [Download & Flash](cardano-developer-guides/raspi-node/download-and-flash.md)
+  * [Server Setup](cardano-developer-guides/raspi-node/server-setup.md)
+  * [Environment Setup](cardano-developer-guides/raspi-node/environment-setup.md)
 * [Cardano Native Asset (NFT) 💰](cardano-developer-guides/nft-native-assets.md)
 * [Cardano NFT Collection Tutorial 👛](cardano-developer-guides/cardano-nft-collection-tutorial-coming-soon.md)
 * [Create .img file](cardano-developer-guides/create-.img-file.md)
 * [Staking Guide 🚀](cardano-developer-guides/how-to-delegate-ada.md)
-* [Delegate 🤗](cardano-developer-guides/delegate.md)
-* [Contribute 🐱‍🚀](cardano-developer-guides/how-to-contribute/README.md)
-  * [Contributing Guide](cardano-developer-guides/how-to-contribute/untitled-1/README.md)
-    * [Style Guide](cardano-developer-guides/how-to-contribute/untitled-1/style-guide.md)
-    * [Code of Conduct](cardano-developer-guides/how-to-contribute/untitled-1/code-of-conduct.md)
 
 ## Resources <a href="#before-you-get-started..." id="before-you-get-started..."></a>
 
 * [Library 🏫](before-you-get-started.../library.md)
 * [Hardware Purchase Links 🏪](before-you-get-started.../hardware.md)
+
+***
+
+* [Delegate 🤗](delegate.md)
+* [Contribute 🐱‍🚀](how-to-contribute/README.md)
+  * [Contributing Guide](how-to-contribute/untitled-1/README.md)
+    * [Style Guide](how-to-contribute/untitled-1/style-guide.md)
+    * [Code of Conduct](how-to-contribute/untitled-1/code-of-conduct.md)
