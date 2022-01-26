@@ -1,7 +1,7 @@
 # Cardano NFT Collection Tutorial 👛
 
 {% hint style="info" %}
-## THIS GUIDE IS DEPRECATED
+### THIS GUIDE IS DEPRECATED
 {% endhint %}
 
 ## Prerequisites
@@ -341,7 +341,7 @@ node src/pin-images-to-ipfs.js
 ```
 
 {% hint style="warning" %}
-### Before you continue to the minting process, please understand the importance of minting policies and their scripts!
+#### Before you continue to the minting process, please understand the importance of minting policies and their scripts!
 {% endhint %}
 
 **Read the Cardano Documentation on "**[**Scripts**](https://docs.cardano.org/projects/cardano-node/en/latest/reference/simple-scripts.html#Step-1---construct-the-tx-body)**" and/or watch a video we made discussing the subject:**
