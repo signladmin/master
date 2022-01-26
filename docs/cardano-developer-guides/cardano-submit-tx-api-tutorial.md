@@ -43,7 +43,11 @@ cardano-submit-api \
   --mainnet
 ```
 
-**Before you save and exit you need to make sure you have entered the correct full-path to your Cardano node's `socket` and `tx-submit-mainnet-config.yaml file` because it will be different.**
+{% hint style="warning" %}
+**Before** you save and exit you need to make sure you have entered the correct **full path** to your Cardano node's `socket` and `tx-submit-mainnet-config.yaml file` because it will be different.
+{% endhint %}
+
+
 
 Save and exit. Now we need to give permissions to the file so that it can be executed.
 
@@ -80,7 +84,7 @@ You should see the following output in your terminal:
 Now you just need to connect the Cardano Submit API with Nami Wallet. Open your browser with your Nami wallet navigate to settings, select network, switch on custom node mode, then enter in `http://localhost:8090/api/submit/tx`.
 
 {% hint style="warning" %}
-_**If you are using a local network node (i.e. a node running at home in your local network) then you need to enter \`****`` http://x.x.x.x:8090/api/submit/tx` ``**** ****and replace the \`****`` x.x.x.x` ``**** ****with the IP address of your local network node.**_
+_**If you are using a local network node (i.e. a node running at home in your local network) then you need to enter**** ****`http://x.x.x.x:8090/api/submit/tx`**** ****and replace the**** ****`x.x.x.x`**** ****with the IP address of your local network node.**_
 {% endhint %}
 
 _****_
