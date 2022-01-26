@@ -4,6 +4,14 @@
 
 * This guide is intended to show Raspberry-pi/ARM users how to use the Cardano Submit API with their own running Cardano node to watch for successful transaction submissions while using Nami wallet.
 
+{% hint style="warning" %}
+In order to follow this guide you need:
+
+1. A raspberry pi 4 or other arm64 based computer
+2. Your computer must already have the Cardano Node software actively running and synced to the blockchain
+3. You need to install the Nami Wallet google chrome extension from the google app store.
+{% endhint %}
+
 ## Download and Install Cardano Submit API
 
 Download the latest version of the Cardano node, cli, and tx-submit-api from the [Armada Alliance Github repository](https://github.com/armada-alliance/cardano-node-binaries).
