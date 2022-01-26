@@ -1,7 +1,7 @@
 # Cardano NFT-kokoelma opas
 
 {% hint style="info" %}
-## THIS GUIDE IS DEPRECATED
+### THIS GUIDE IS DEPRECATED
 {% endhint %}
 
 ## Edellytykset
@@ -17,14 +17,14 @@
 
 {% embed url="https://youtu.be/OeOliguGn7Y" %}
 
-### Kloonaa cardano-minter repo jos et ole jo...
+### Clone the cardano-minter repo if you haven't already...
 
 ```
 git clone https://github.com/armada-alliance/cardano-minter
 cd cardano-minter
 ```
 
-### Riippuvuuksien asennus
+### Install additional dependencies
 
 ```
 npm install form-data dotenv axios lodash sharp promise-parallel-throttle --save
@@ -32,7 +32,7 @@ npm install form-data dotenv axios lodash sharp promise-parallel-throttle --save
 
 ## Now, let's start with the tutorial 😊
 
-### 1. Luo alkuperäiset assetit
+### 1. Create our initial assets
 
 * "cardano-minter" hakemistossa, tee skripti, joka luo assetit nätisti muotoiltuun JSON tiedostoon nimeltä "assets.json".
 
@@ -92,7 +92,7 @@ node src/create-initial-assets-json.js
 
 * Assets.json tiedoston pitäisi näyttää [tältä](https://github.com/armada-alliance/cardano-minter-collection/blob/master/src/assets.json).
 
-### 2. Lataa satunnaisia kuvia testausta varten
+### 2. Download random images for testing
 
 * Tee hakemisto nimeltä 'kuvat', johon voit ladata testikuvat
 * Luo skripti, joka menee ja nappaa kuvia internetistä ja lataa ne kuvat-kansioon
@@ -183,7 +183,7 @@ node src/generate-thumbnails.js
 1. Luo käyttäjätili
 2. Luo API-avaimet
 
-### 5. API-avaimia on säilytettävä turvallisesti
+### 5. Need to safely store our API keys
 
 * luo .env tiedosto ja liitä siihen avaimet
 
@@ -200,7 +200,7 @@ PINATA_API_KEY='Enter Your API Key'
 PINATA_API_SECRET='Enter Your API Secret Key'
 ```
 
-### 6. Lataa ja kiinnitä data IPFS-järjestelmään
+### 6. Upload and pin our data to IPFS
 
 {% hint style="info" %}
 Read [this article ](https://docs.ipfs.io/how-to/pin-files/#three-kinds-of-pins)to learn more about why we want to Pin our NFTs to IPFS.
@@ -332,7 +332,7 @@ node src/pin-images-to-ipfs.js
 ```
 
 {% hint style="Huomaa" %}
-### Ennen kuin jatkat painoprosessia (minting process), on hyvä ymmärtää painotoiminnan säännösten ja niiden skriptien tärkeys!
+#### Before you continue to the minting process, please understand the importance of minting policies and their scripts!
 {% endhint %}
 
 **Read the Cardano Documentation on "**[**Scripts**](https://docs.cardano.org/projects/cardano-node/en/latest/reference/simple-scripts.html#Step-1---construct-the-tx-body)**" and/or watch a video we made discussing the subject:**
