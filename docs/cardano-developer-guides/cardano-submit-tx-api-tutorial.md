@@ -87,9 +87,7 @@ Now you just need to connect the Cardano Submit API with Nami Wallet. Open your 
 _**If you are using a local network node (i.e. a node running at home in your local network) then you need to enter**** ****`http://x.x.x.x:8090/api/submit/tx`**** ****and replace the**** ****`x.x.x.x`**** ****with the IP address of your local network node.**_
 {% endhint %}
 
-_****_
-
-[![How to Connect Cardano Node with Nami Wallet](https://res.cloudinary.com/marcomontalbano/image/upload/v1643225455/video\_to\_markdown/images/youtube--23SDU4dcJr0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/23SDU4dcJr0)
+{% embed url="https://www.youtube.com/watch?v=23SDU4dcJr0" %}
 
 ## Test the Cardano Submit API with Nami Wallet
 
