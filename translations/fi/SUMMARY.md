@@ -27,26 +27,27 @@
 * [Wireguard Guide](intermediate-guide/wireguard-guide.md)
 * [Grafana Alerts with Telegram](intermediate-guide/grafana-alerts-with-telegram.md)
 
-## Cardano Node
+## Other Cardano Guides <a href="#cardano-developer-guides" id="cardano-developer-guides"></a>
 
-* [Pi-Node🍓](cardano-node/raspi-node/README.md)
-  * [Lataa & Polta](cardano-node/raspi-node/download-and-flash.md)
-  * [Palvelimen Asetukset](cardano-node/raspi-node/server-setup.md)
-  * [Ympäristön Asetukset](cardano-node/raspi-node/environment-setup.md)
-
-## Muuita Cardano Oppaita <a href="#cardano-developer-guides" id="cardano-developer-guides"></a>
-
+* [Pi-Node🍓](cardano-developer-guides/raspi-node/README.md)
+  * [Lataa & Polta](cardano-developer-guides/raspi-node/download-and-flash.md)
+  * [Palvelimen Asetukset](cardano-developer-guides/raspi-node/server-setup.md)
+  * [Ympäristön Asetukset](cardano-developer-guides/raspi-node/environment-setup.md)
 * [Cardano Native Asset (NFT) 💰](cardano-developer-guides/nft-native-assets.md)
-* [Cardano NFT Collection Tutorial](cardano-developer-guides/cardano-nft-collection-tutorial-coming-soon.md)
+* [Cardano NFT-kokoelma opas](cardano-developer-guides/cardano-nft-collection-tutorial-coming-soon.md)
+* [Cardano Submit Transaction API Tutorial 📦](cardano-developer-guides/cardano-submit-tx-api-tutorial.md)
 * [Luo .img-tiedosto](cardano-developer-guides/create-.img-file.md)
 * [Staking Guide 🚀](cardano-developer-guides/how-to-delegate-ada.md)
-* [Delegoi 🤗](cardano-developer-guides/delegate.md)
-* [Ota osaa 🐱 🚀](cardano-developer-guides/how-to-contribute/README.md)
-  * [Osallistumisohje](cardano-developer-guides/how-to-contribute/untitled-1/README.md)
-    * [Tyyliohjeet](cardano-developer-guides/how-to-contribute/untitled-1/style-guide.md)
-    * [Ohjesääntö](cardano-developer-guides/how-to-contribute/untitled-1/code-of-conduct.md)
 
-## Resursseja <a href="#before-you-get-started..." id="before-you-get-started..."></a>
+## Resources <a href="#before-you-get-started..." id="before-you-get-started..."></a>
 
 * [Kirjasto 🏫](before-you-get-started.../library.md)
 * [Hyödyllisiä linkkeja laitteiston hankintaan 🏪](before-you-get-started.../hardware.md)
+
+***
+
+* [Delegoi 🤗](delegate.md)
+* [Ota osaa 🐱 🚀](how-to-contribute/README.md)
+  * [Osallistumisohje](how-to-contribute/untitled-1/README.md)
+    * [Tyyliohjeet](how-to-contribute/untitled-1/style-guide.md)
+    * [Ohjesääntö](how-to-contribute/untitled-1/code-of-conduct.md)
