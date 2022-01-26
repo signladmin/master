@@ -72,7 +72,7 @@ Sinun **relay nodesi** tulisi saavuttaa muilta relay nodeja sekä oma lohkon tuo
 Yllä olevat **addr** ja **port** -merkintöjen pitäisi olla relay nodiesi IP-osoitteita. Se on siinä. Lohkon tuottajasi palomuuriasetusten pitäisi rajoittaa pääsy muuaalle kuin näihin IP-osoitteisiin portissa, jossa käytät lohkon tuottajaa. Alla on esimerkki palomuurin tilasta lohkon tuottajassa joka kuuntelee porttia 6000.
 
 {% code title="> sudo ufw status" %}
-```text
+```
 To                         Action      From
 --                         ------      ----
 6000/tcp                   ALLOW       10.20.30.1
@@ -84,12 +84,12 @@ To                         Action      From
 
 Esimerkin ensimmäinen **addr** rivi  **10.20.30.** on lohkon tuottajan IP-osoite ja **port 6000** on portti, jonka olet määrittänyt lohkon tuottajalle. Tämän kohdan pitäisi olla täsmälleen sama kaikissa relay nodeissasi.
 
-Muut kolme objektia ovat verkoston muiten käyttäjien osoitteita. Voit asettaa ne manuaalisesti tai voit käyttää **topologyUpdater.sh** skriptiä Guild-operaattoreilta. Jos päätät käyttää topologyUpdater.sh skriptiä varmista, että asetat **CUSTOM\_PEERS** -rivin oikein ennen kuin suoritat sen. Tämä on pipe-erotettu joukko addr:port:valency pareja vertaisnodeista, joita haluat komentosarjan lisävän lopulliseen topology.json tiedostoon. Tämän rivin pitää sisältää myös oma lohkon tuottajasi. Valenssin oletusarvo on 1 \(yksi\), jos sitä ei ole määritelty. Tässä esimerkki, jossa kaksi ensimmäistä objektia yllä olevasta mainnet-topology.json tiedostosta:
+Muut kolme objektia ovat verkoston muiten käyttäjien osoitteita. Voit asettaa ne manuaalisesti tai voit käyttää **topologyUpdater.sh** skriptiä Guild-operaattoreilta. Jos päätät käyttää topologyUpdater.sh skriptiä varmista, että asetat **CUSTOM\_PEERS** -rivin oikein ennen kuin suoritat sen. Tämä on pipe-erotettu joukko addr:port:valency pareja vertaisnodeista, joita haluat komentosarjan lisävän lopulliseen topology.json tiedostoon. Tämän rivin pitää sisältää myös oma lohkon tuottajasi. Default valency is 1 (one) if not specified. Tässä esimerkki, jossa kaksi ensimmäistä objektia yllä olevasta mainnet-topology.json tiedostosta:
 
-CUSTOM\_PEERS="10.20.30.3**:**6000**\|**138.197.71.216**:**6000"
+CUSTOM\_PEERS="10.20.30.3\*\*:**6000**|**138.197.71.216**:\*\*6000"
 
 {% hint style="info" %}
-Aseta **valenssi** arvoon 0 \(nolla\) poistaaksesi etäkäyttäjän käytöstä, jos et halua poistaa käyttäjää kokonaan tiedostosta.
+Set **valency** to 0 (zero) to disable a remote peer if you do not wish to delete the peer entirely from the file.
 {% endhint %}
 
 ## Poolin Rekisteröinti
@@ -113,7 +113,7 @@ Kun luot stake poolisi **pool.json** metadatatiedoston huomaat osion nimeltä **
 ```
 {% endcode %}
 
-Tyypillinen kotiverkko altistaa maailmalle vain yhden ulkoisen IP-osoitteen, joka on dynaamisesti määritetty Internet-palveluntarjoajasi kautta \(Internet Service Provider\). Dynaamisesti määritetyt ulkoiset IP-osoitteet voivat olla suhteellisen staattisia pitkäänkin, mutta tämä ei ole taattu ja sinun kannattaa harkita DNS tunnuksen rekisteröimistä, jotta voit käyttää dns merkintöjä pool.json tiedostossa. Muuten, joka kerta kun ulkoinen IP-osoitteesi muuttuu sinun täytyy uudelleen rekisteröidä poolisi ja päivittää uudet relay IP-osoitteet.
+A typical home network will only expose a single external IP address to the world, dynamically assigned by your ISP (Internet Service Provider). Dynaamisesti määritetyt ulkoiset IP-osoitteet voivat olla suhteellisen staattisia pitkäänkin, mutta tämä ei ole taattu ja sinun kannattaa harkita DNS tunnuksen rekisteröimistä, jotta voit käyttää dns merkintöjä pool.json tiedostossa. Muuten, joka kerta kun ulkoinen IP-osoitteesi muuttuu sinun täytyy uudelleen rekisteröidä poolisi ja päivittää uudet relay IP-osoitteet.
 
 ## DNS Client
 
@@ -125,5 +125,4 @@ Ellei sinulla ole ISP:n osoittamaa staattista IP-osoitetta, jossain vaiheessa si
 * no-ip
 * namecheap.com openwrt ddns-scripts
 
-Oliko tämä tieto hyödyllistä? Ansaitse palkintoja kanssamme! [Harkitse ADA: n delegoimista pooleihimme](../cardano-developer-guides/delegate.md).
-
+Oliko tämä tieto hyödyllistä? Ansaitse palkintoja kanssamme! [Consider delegating some ADA](../delegate.md).
