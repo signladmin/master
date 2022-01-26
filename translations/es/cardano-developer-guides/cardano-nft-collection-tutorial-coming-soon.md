@@ -1,7 +1,7 @@
 # Colección de Tutoriales NFT en Cardano
 
 {% hint style="info" %}
-## THIS GUIDE IS DEPRECATED
+### THIS GUIDE IS DEPRECATED
 {% endhint %}
 
 ## Prerrequisitos
@@ -17,14 +17,14 @@
 
 {% embed url="https://youtu.be/OeOliguGn7Y" %}
 
-### Clona el repositorio de cardano-minter repo si todavía no lo has hecho...
+### Clone the cardano-minter repo if you haven't already...
 
 ```
 git clone https://github.com/armada-alliance/cardano-minter
 cd cardano-minter
 ```
 
-### Instalación de dependencias adicionales
+### Install additional dependencies
 
 ```
 npm install form-data dotenv axios lodash sharp promise-parallel-throttle --save
@@ -32,7 +32,7 @@ npm install form-data dotenv axios lodash sharp promise-parallel-throttle --save
 
 ## Now, let's start with the tutorial 😊
 
-### 1. Crear nuestros activos iniciales
+### 1. Create our initial assets
 
 * Mientras que en el directorio "cardano-minter" crea un script que generará nuestros activos en un archivo JSON bien estructurado llamado "assets.json".
 
@@ -92,7 +92,7 @@ node src/create-initial-assets-json.js
 
 * Tu archivo assets.json debería verse como [este](https://github.com/armada-alliance/cardano-minter-collection/blob/master/src/assets.json).
 
-### 2. Descargar imágenes aleatorias para probar
+### 2. Download random images for testing
 
 * Crea una carpeta llamada images en la que descargar las imágenes de prueba
 * Crear un script que vaya y tome las imágenes de Internet y las descargue en la carpeta de images
@@ -183,7 +183,7 @@ node src/generate-thumbnails.js
 1. Crea una cuenta
 2. Crea una clave API
 
-### 5. Necesitas almacenar con seguridad las claves API
+### 5. Need to safely store our API keys
 
 * crear archivo .env y pegar en él nuestras claves
 
@@ -200,7 +200,7 @@ PINATA_API_KEY='Enter Your API Key'
 PINATA_API_SECRET='Enter Your API Secret Key'
 ```
 
-### 6. Sube y fija tus archivos en el IPFS
+### 6. Upload and pin our data to IPFS
 
 {% hint style="info" %}
 Read [this article ](https://docs.ipfs.io/how-to/pin-files/#three-kinds-of-pins)to learn more about why we want to Pin our NFTs to IPFS.
@@ -332,7 +332,7 @@ node src/pin-images-to-ipfs.js
 ```
 
 {% hint style="warning" %}
-### Antes de continuar con el proceso de minting, por favor comprende la importancia que tienen las políticas de minting y sus scripts!
+#### Before you continue to the minting process, please understand the importance of minting policies and their scripts!
 {% endhint %}
 
 **Read the Cardano Documentation on "**[**Scripts**](https://docs.cardano.org/projects/cardano-node/en/latest/reference/simple-scripts.html#Step-1---construct-the-tx-body)**" and/or watch a video we made discussing the subject:**
