@@ -106,6 +106,7 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-shelley-genesis.json
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-alonzo-genesis.json
 wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-topology.json
+wget -N https://raw.githubusercontent.com/input-output-hk/cardano-node/master/cardano-submit-api/config/tx-submit-mainnet-config.yaml
 ```
 
 Run the following to modify ${NODE_CONFIG}-config.json and update TraceBlockFetchDecisions to "true" & listen on all interfaces with Prometheus Node Exporter.
@@ -146,7 +147,7 @@ cardano-node version
 cardano-cli version
 ```
 
-### Systemd unit files
+### Systemd unit startup scripts
 
 Create the systemd unit file and startup script so systemd can manage cardano-node.
 
@@ -169,10 +170,34 @@ cardano-node run +RTS -N4 -RTS \
   --config ${CONFIG}
 ```
 
-Allow execution of our new startup script.
+Allow execution of our new cardano-node service file.
 
 ```bash
 chmod +x ${HOME}/.local/bin/cardano-service
+```
+
+Create the systemd unit file and startup script so systemd can manage cardano-submit-api.
+
+```bash
+nano ${HOME}/.local/bin/cardano-submit-service file.
+```
+
+```bash
+#!/bin/bash
+. /home/ada/.adaenv
+
+cardano-submit-api \
+  --socket-path ${CARDANO_NODE_SOCKET_PATH} \
+  --port 8090 \
+  --config /home/ada/pi-pool/files/tx-submit-mainnet-config.yaml \
+  --listen-address 0.0.0.0 \
+  --mainnet
+```
+
+Allow execution of our new cardano-submit-api service script.
+
+```bash
+chmod +x ${HOME}/.local/bin/cardano-submit-service
 ```
 
 Open /etc/systemd/system/cardano-node.service.
@@ -209,6 +234,40 @@ EnvironmentFile=-/home/ada/.adaenv
 WantedBy= multi-user.target
 ```
 
+Open /etc/systemd/system/cardano-submit.service.
+
+```bash
+sudo nano /etc/systemd/system/cardano-submit.service
+```
+
+Paste the following, You will need to edit the username here if you chose to not use ada. save & exit.
+
+```bash
+# The Cardano Submit Service (part of systemd)
+# file: /etc/systemd/system/cardano-submit.service
+
+[Unit]
+Description     = Cardano submit service
+Wants           = network-online.target
+After           = network-online.target
+
+[Service]
+User            = ada
+Type            = simple
+WorkingDirectory= /home/ada/pi-pool
+ExecStart       = /bin/bash -c "PATH=/home/ada/.local/bin:$PATH exec /home/ada/.local/bin/cardano-submit-service"
+KillSignal=SIGINT
+RestartKillSignal=SIGINT
+TimeoutStopSec=10
+LimitNOFILE=32768
+Restart=always
+RestartSec=10
+EnvironmentFile=-/home/ada/.adaenv
+
+[Install]
+WantedBy= multi-user.target
+```
+
 Reload systemd so it picks up our new service file.
 
 ```bash
@@ -225,6 +284,11 @@ nano ${HOME}/.adaenv
 cardano-service() {
     #do things with parameters like $1 such as
     sudo systemctl "$1" cardano-node.service
+}
+
+cardano-submit-service() {
+    #do things with parameters like $1 such as
+    sudo systemctl "$1" cardano-submit.service
 }
 ```
 
