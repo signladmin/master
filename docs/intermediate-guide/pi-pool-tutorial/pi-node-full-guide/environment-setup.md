@@ -124,7 +124,7 @@ sed -i ${NODE_CONFIG}-config.json \
 ### Retrieve aarch64 1.33.0 binaries
 
 {% hint style="info" %}
-The **unofficial** cardano-node & cardano-cli binaries available to us are being built by an IOHK engineer in his **spare time**. Please visit the '[Arming Cardano](https://t.me/joinchat/wvTcCSpdjGllMmFk)' Telegram group for more information.
+The **unofficial** cardano-node, cardano-cli and cardano-submit-api binaries available to us are being built by an IOHK engineer in his **spare time**. Please visit the '[Arming Cardano](https://t.me/joinchat/wvTcCSpdjGllMmFk)' Telegram group for more information.
 {% endhint %}
 
 ```bash
