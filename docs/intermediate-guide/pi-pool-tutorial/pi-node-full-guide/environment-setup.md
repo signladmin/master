@@ -274,7 +274,7 @@ Reload systemd so it picks up our new service files.
 sudo systemctl daemon-reload
 ```
 
-Let's add a function to the bottom of our .adaenv file to make life a little easier.
+Let's add a couple functions to the bottom of our .adaenv file to make life a little easier.
 
 ```bash
 nano ${HOME}/.adaenv
