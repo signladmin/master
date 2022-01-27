@@ -268,7 +268,7 @@ EnvironmentFile=-/home/ada/.adaenv
 WantedBy= multi-user.target
 ```
 
-Reload systemd so it picks up our new service file.
+Reload systemd so it picks up our new service files.
 
 ```bash
 sudo systemctl daemon-reload
