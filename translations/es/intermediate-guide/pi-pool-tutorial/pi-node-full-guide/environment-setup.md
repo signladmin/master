@@ -74,10 +74,27 @@ echo "export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"" >> ~/.
 . ~/.bashrc
 ```
 
+
 Update link cache for shared libraries and confirm.
 
 ```bash
 sudo ldconfig; ldconfig -p | grep libsodium
+```
+
+## Build a static binary of jq
+
+We need a static binary we can move to the offline machine later in the guide.
+
+```bash
+cd; cd git
+git clone https://github.com/stedolan/jq.git
+cd jq/
+git submodule update --init
+autoreconf -fi
+./configure --with-oniguruma=builtin
+make LDFLAGS=-all-static
+make check
+sudo make install
 ```
 
 ### Recuperar archivos del nodo
