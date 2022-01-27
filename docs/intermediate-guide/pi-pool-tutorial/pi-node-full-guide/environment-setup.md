@@ -298,7 +298,7 @@ Save & exit.
 source ${HOME}/.adaenv
 ```
 
-What we just did there was add a function to control our cardano-service without having to type out
+What we just did there was add a function to control our cardano-service and cardano-submit without having to type out
 
 > > sudo systemctl enable cardano-node.service
 > >
