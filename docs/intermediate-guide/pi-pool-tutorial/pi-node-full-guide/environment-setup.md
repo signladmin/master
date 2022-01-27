@@ -286,7 +286,7 @@ cardano-service() {
     sudo systemctl "$1" cardano-node.service
 }
 
-cardano-submit-service() {
+cardano-submit() {
     #do things with parameters like $1 such as
     sudo systemctl "$1" cardano-submit.service
 }
