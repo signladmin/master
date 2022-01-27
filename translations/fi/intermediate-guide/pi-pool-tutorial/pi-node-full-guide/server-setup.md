@@ -307,9 +307,9 @@ Asennetaan tarvittavat paketit.
 
 ```bash
 sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
-         jq curl xxd make automake autoconf unzip net-tools nginx ssl-cert pkg-config \
+         make automake unzip net-tools nginx ssl-cert pkg-config \
          libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev \
-         zlib1g-dev g++ libncursesw5 libtool bc -y
+         zlib1g-dev g++ libncursesw5 libtool autoconf flex bison -y
 ```
 
 ```
