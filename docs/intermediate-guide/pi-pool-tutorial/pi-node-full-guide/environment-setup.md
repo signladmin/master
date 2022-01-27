@@ -128,7 +128,7 @@ The **unofficial** cardano-node & cardano-cli binaries available to us are being
 
 ```bash
 cd ${HOME}/tmp
-wget https://ci.zw3rk.com/build/427668/download/1/aarch64-unknown-linux-musl-cardano-node-1.33.0-rc2.zip
+wget https://ci.zw3rk.com/build/430108/download/1/aarch64-unknown-linux-musl-cardano-node-1.33.1.zip
 unzip *.zip
 mv cardano-node/cardano-* ${HOME}/.local/bin
 rm -r cardano*
