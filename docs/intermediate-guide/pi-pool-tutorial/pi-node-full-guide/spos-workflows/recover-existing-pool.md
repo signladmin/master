@@ -36,3 +36,16 @@ Then move the newly created offlineTransfer.json file to the usb-transfer drive
 ```bash
 cp offlineTransfer.json $HOME/usb-transfer
 ```
+#### Cold-Offline
+
+Moving over to your cold machine, insert the transfer flash drive and verify it is mounted. If you placed the offlineTransfer.json file correcetly you will be able to copy it to the stakepoolscripts/bin directory.
+
+```bash
+cd $HOME/stakepoolscripts/bin
+cp $HOME/usb-transfer/offlineTransfer.json $HOME/stakepoolscripts/bin
+```
+
+You will also need to move your node.skey file from where ever you have it stored into the $HOME/stakepoolscripts/bin directory.
+
+### Unpack Node Files
+
